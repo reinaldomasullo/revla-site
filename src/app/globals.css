@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #111111;
+  --color-paper: #ffffff;
+  --color-muted: #f4f6fa;
+  --color-border: #e2e6ed;
+  --color-primary: #0a1f44;
+  --color-primary-dark: #020611;
+  --color-secondary: #123b7a;
+  --color-accent: #e2231a;
+  --color-accent-dark: #b81811;
+  --color-accent-gradient: #ff3b2f;
+  --color-blue-gradient: #1e90ff;
+  --color-silver: #e5e5e5;
+  --color-steel: #a8a8a8;
+  --color-whatsapp: #0f7a6b;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-accent-gradient: var(--color-accent-gradient);
+  --color-blue-gradient: var(--color-blue-gradient);
+  --color-silver: var(--color-silver);
+  --color-steel: var(--color-steel);
+  --color-whatsapp: var(--color-whatsapp);
+  --font-sans: "Segoe UI", ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.section-muted {
+  background: var(--color-muted);
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
