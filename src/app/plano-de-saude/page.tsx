@@ -92,7 +92,7 @@ export default function PlanoDeSaudePage() {
         title="Plano de saúde Prevent Senior, com rede própria em São Paulo"
         description="Trabalhamos com os planos de saúde da Prevent Senior — individuais, familiares e empresariais — com rede própria e parceria com a Sancta Maggiore, cobertura ambulatorial e hospitalar e carência reduzida para doenças preexistentes. Simulação gratuita e sem compromisso."
       >
-        <CTAButton href={whatsappLink("Olá! Quero simular um plano de saúde Prevent Senior.")} external>
+        <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Simular plano de saúde
         </CTAButton>
       </Hero>
@@ -117,7 +117,7 @@ export default function PlanoDeSaudePage() {
       <CTASection
         title="Compare planos de saúde sem sair de casa"
         description="Envie sua idade e cidade pelo WhatsApp e receba uma comparação gratuita entre operadoras."
-        whatsappMessage="Olá! Quero simular um plano de saúde."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         buttonLabel="Simular agora"
       />
     </>

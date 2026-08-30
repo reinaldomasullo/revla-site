@@ -126,7 +126,7 @@ export default function Footer() {
             ))}
           </ul>
           <CTAButton
-            href={whatsappLink("Olá! Vim pelo site, quero falar com um consultor da Revla.")}
+            href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
             external
             variant="secondary"
             className="mt-6 px-5 py-2.5 text-sm"

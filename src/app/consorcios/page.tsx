@@ -99,7 +99,7 @@ export default function ConsorciosPage() {
         title="Carta de crédito sem juros: simule seu consórcio contemplado agora"
         description="A Revla pesquisa entre administradoras autorizadas pelo Banco Central para oferecer parcelas flexíveis e suporte completo, da simulação até a contemplação."
       >
-        <CTAButton href={whatsappLink("Olá! Quero simular um consórcio.")} external>
+        <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Iniciar minha simulação gratuita
         </CTAButton>
         <CTAButton href="/consorcios/calculadora" variant="ghost">
@@ -136,7 +136,7 @@ export default function ConsorciosPage() {
       <CTASection
         title="Simule sua carta de crédito agora"
         description="Fale com um consultor da Revla e receba uma simulação gratuita e sem compromisso."
-        whatsappMessage="Olá! Quero simular um consórcio."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         buttonLabel="Falar com consultor"
       />
     </>

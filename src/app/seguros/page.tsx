@@ -144,7 +144,7 @@ export default function SegurosPage() {
         title="Seguros para proteger você, sua família e seu patrimônio"
         description="Trabalhamos com todos os tipos de seguro — vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular — comparando as melhores seguradoras do Brasil para encontrar a cobertura ideal, com simulação gratuita."
       >
-        <CTAButton href={whatsappLink("Olá! Quero simular um seguro.")} external>
+        <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Cotar seguro
         </CTAButton>
       </Hero>
@@ -177,7 +177,7 @@ export default function SegurosPage() {
       <CTASection
         title="Descubra qual seguro faz sentido para você"
         description="Fale com um consultor da Revla e receba uma comparação gratuita entre seguradoras."
-        whatsappMessage="Olá! Quero cotar um seguro."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         buttonLabel="Cotar agora"
       />
     </>

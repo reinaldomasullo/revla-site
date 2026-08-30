@@ -18,7 +18,7 @@ export default function Hero({
 }) {
   return (
     <section
-      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] pt-6 sm:pt-8 ${
+      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] pt-4 sm:pt-6 ${
         compact ? "pb-10 sm:pb-14" : "pb-12 sm:pb-16"
       }`}
     >

@@ -176,7 +176,7 @@ export default async function BlogPostPage({
       <CTASection
         title="Quer uma orientação personalizada?"
         description="Fale com um consultor da Revla e tire suas dúvidas sem compromisso."
-        whatsappMessage={`Olá! Li o artigo "${post.title}" no blog e quero saber mais.`}
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
       />
     </>
   );

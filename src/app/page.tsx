@@ -215,7 +215,7 @@ export default function HomePage() {
         description="A Revla Corretora compara e contrata seguros, plano de saúde, consórcio, amparo funeral e planejamento patrimonial — unindo proteção e construção de patrimônio, com consultoria gratuita do início ao fim."
       >
         <CTAButton
-          href={whatsappLink("Olá! Vim pelo site, gostaria de falar com um consultor da Revla.")}
+          href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
           external
         >
           Falar com um consultor
@@ -315,7 +315,7 @@ export default function HomePage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <CTAButton
-              href={whatsappLink("Olá! Vim pelo site, gostaria de falar com um consultor da Revla.")}
+              href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
               external
               className="px-5 py-3 text-sm"
             >
@@ -372,7 +372,7 @@ export default function HomePage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <CTAButton
-              href={whatsappLink("Olá! Vim pelo site, gostaria de falar com um consultor da Revla.")}
+              href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
               external
               className="px-5 py-3 text-sm"
             >
@@ -414,7 +414,7 @@ export default function HomePage() {
         ]}
         note="Valores a partir de R$ 759,84/mês (referência, sujeito a faixa etária e atualização mensal) — fale com um consultor para a tabela vigente."
         ctaHref="/plano-de-saude"
-        whatsappMessage="Olá! Vim pelo site, gostaria de falar com um consultor da Revla."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         muted
       />
 
@@ -431,7 +431,7 @@ export default function HomePage() {
           "Atendimento 24 horas em todo o Brasil",
         ]}
         ctaHref="/amparo-funeral"
-        whatsappMessage="Olá! Vim pelo site, gostaria de falar com um consultor da Revla."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         reverse
         tint="blue"
       />
@@ -448,7 +448,7 @@ export default function HomePage() {
       <CTASection
         title="Quer alavancar patrimônio ou deseja proteger o que importa?"
         description="Fale agora com um consultor da Revla e receba uma simulação gratuita e sem compromisso."
-        whatsappMessage="Olá! Vim pelo site, gostaria de falar com um consultor da Revla."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
       />
     </>
   );

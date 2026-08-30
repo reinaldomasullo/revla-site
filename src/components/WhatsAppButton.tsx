@@ -1,7 +1,7 @@
 import { whatsappLink } from "@/lib/site-config";
 
 export default function WhatsAppButton({
-  message = "Olá! Vim pelo site da Revla e gostaria de mais informações.",
+  message = "Olá! Vim pelo site e gostaria de falar com um consultor da Revla.",
 }: {
   message?: string;
 }) {

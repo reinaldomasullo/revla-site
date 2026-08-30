@@ -92,7 +92,7 @@ export default function AmparoFuneralPage() {
         title="Tranquilidade para sua família nos momentos mais difíceis"
         description="O amparo funeral organiza e cobre as despesas do funeral, com assistência imediata à família — para que ninguém precise se preocupar com burocracia ou custos num momento de luto."
       >
-        <CTAButton href={whatsappLink("Olá! Quero simular um plano de amparo funeral.")} external>
+        <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Simular amparo funeral
         </CTAButton>
       </Hero>
@@ -115,7 +115,7 @@ export default function AmparoFuneralPage() {
       <CTASection
         title="Garanta essa tranquilidade para quem você ama"
         description="Fale com um consultor da Revla e entenda qual modalidade de amparo funeral faz sentido para sua família."
-        whatsappMessage="Olá! Quero simular um plano de amparo funeral."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         buttonLabel="Simular agora"
       />
     </>

@@ -118,7 +118,7 @@ export default function PlanejamentoPatrimonialPage() {
         description="Combinamos consórcio, seguro e plano de saúde de forma estratégica: consórcio para alavancar patrimônio, seguro para proteger o que você já construiu e plano de saúde para proteger sua vida — com consultoria gratuita da Revla."
       >
         <CTAButton
-          href={whatsappLink("Olá! Quero montar um planejamento patrimonial com a Revla.")}
+          href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
           external
         >
           Falar com um consultor
@@ -183,7 +183,7 @@ export default function PlanejamentoPatrimonialPage() {
       <CTASection
         title="Vamos montar seu planejamento patrimonial?"
         description="Fale com um consultor da Revla e receba uma análise gratuita e sem compromisso."
-        whatsappMessage="Olá! Quero montar um planejamento patrimonial com a Revla."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
       />
     </>
   );

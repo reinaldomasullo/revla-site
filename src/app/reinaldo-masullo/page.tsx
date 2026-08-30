@@ -120,7 +120,7 @@ export default function ReinaldoMasulloPage() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <CTAButton
-                href={whatsappLink("Olá, Reinaldo! Vim pelo site da Revla e gostaria de conversar.")}
+                href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
                 external
               >
                 Falar no WhatsApp

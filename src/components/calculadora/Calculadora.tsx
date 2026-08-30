@@ -243,7 +243,7 @@ export default function Calculadora() {
           </p>
 
           <CTAButton
-            href={whatsappLink("Olá! Fiz uma simulação de consórcio no site e quero conversar com um consultor.")}
+            href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
             external
             className="mt-5 w-full"
           >
