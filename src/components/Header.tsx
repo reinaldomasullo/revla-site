@@ -104,7 +104,7 @@ export default function Header() {
 
           <div className="hidden shrink-0 lg:block">
             <CTAButton
-              href={whatsappLink("Olá! Quero falar com um consultor da Revla.")}
+              href={whatsappLink("Olá! Vim pelo site, quero falar com um consultor da Revla.")}
               variant="secondary"
               external
               className="px-5 py-2.5 text-sm"
@@ -177,7 +177,7 @@ export default function Header() {
               </Link>
 
               <CTAButton
-                href={whatsappLink("Olá! Quero falar com um consultor da Revla.")}
+                href={whatsappLink("Olá! Vim pelo site, quero falar com um consultor da Revla.")}
                 variant="secondary"
                 external
                 className="mt-3 w-full"

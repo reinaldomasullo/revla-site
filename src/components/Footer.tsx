@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import Container from "./Container";
 import CTAButton from "./CTAButton";
@@ -53,10 +56,19 @@ function FooterHeading({ children }: { children: ReactNode }) {
   );
 }
 
-function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+function FooterLink({
+  href,
+  onClick,
+  children,
+}: {
+  href: string;
+  onClick?: () => void;
+  children: ReactNode;
+}) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="group flex items-center gap-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
     >
       <span
@@ -69,6 +81,16 @@ function FooterLink({ href, children }: { href: string; children: ReactNode }) {
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Clicar em "Início" enquanto já se está na home não navega (mesma URL),
+  // então o Next não rola a página — forçamos a volta ao topo nesse caso.
+  const handleNavClick = (href: string) => {
+    if (href === "/" && pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="mt-auto border-t border-[var(--color-border)] bg-[var(--color-primary)] text-white">
       <div className="h-1.5 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-gradient)] to-[var(--color-blue-gradient)]" />
@@ -104,7 +126,7 @@ export default function Footer() {
             ))}
           </ul>
           <CTAButton
-            href={whatsappLink("Olá! Quero falar com um consultor da Revla.")}
+            href={whatsappLink("Olá! Vim pelo site, quero falar com um consultor da Revla.")}
             external
             variant="secondary"
             className="mt-6 px-5 py-2.5 text-sm"
@@ -118,7 +140,12 @@ export default function Footer() {
           <ul className="mt-4 space-y-3">
             {mainNav.map((item) => (
               <li key={item.href}>
-                <FooterLink href={item.href}>{item.label}</FooterLink>
+                <FooterLink
+                  href={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                >
+                  {item.label}
+                </FooterLink>
               </li>
             ))}
             <li>
@@ -143,7 +170,7 @@ export default function Footer() {
             <li>CEP {siteConfig.address.zip}</li>
             <li>
               <a
-                href={`https://wa.me/${siteConfig.whatsapp}`}
+                href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 font-medium text-white/90 transition-colors hover:text-[var(--color-blue-gradient)]"
