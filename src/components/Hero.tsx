@@ -18,8 +18,8 @@ export default function Hero({
 }) {
   return (
     <section
-      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] ${
-        compact ? "py-8 sm:py-10" : "py-12 sm:py-16"
+      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] pt-4 sm:pt-6 ${
+        compact ? "pb-8 sm:pb-10" : "pb-12 sm:pb-16"
       }`}
     >
       <Container>
