@@ -18,8 +18,8 @@ export default function Hero({
 }) {
   return (
     <section
-      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] pt-4 sm:pt-6 ${
-        compact ? "pb-8 sm:pb-10" : "pb-12 sm:pb-16"
+      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] pt-6 sm:pt-8 ${
+        compact ? "pb-8 sm:pb-10" : "pb-9 sm:pb-11"
       }`}
     >
       <Container>
@@ -29,26 +29,14 @@ export default function Hero({
               {eyebrow}
             </p>
           )}
-          <h1
-            className={`font-extrabold leading-tight tracking-tight text-[var(--color-primary)] ${
-              compact
-                ? "mt-2 text-3xl sm:text-4xl lg:text-5xl"
-                : "mt-3 text-4xl sm:text-5xl"
-            }`}
-          >
+          <h1 className="mt-2 font-extrabold leading-tight tracking-tight text-[var(--color-primary)] text-3xl sm:text-4xl lg:text-5xl">
             {title}
           </h1>
-          <p
-            className={`max-w-2xl leading-relaxed text-[var(--color-ink)]/75 ${
-              compact ? "mt-3 text-base sm:text-lg" : "mt-5 text-lg"
-            }`}
-          >
+          <p className="mt-3 max-w-2xl leading-relaxed text-[var(--color-ink)]/75 text-base sm:text-lg">
             {description}
           </p>
           {children && (
-            <div className={`flex flex-wrap gap-4 ${compact ? "mt-6" : "mt-8"}`}>
-              {children}
-            </div>
+            <div className="mt-6 flex flex-wrap gap-4">{children}</div>
           )}
         </div>
       </Container>

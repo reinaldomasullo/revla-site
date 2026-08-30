@@ -114,8 +114,8 @@ export default function PlanejamentoPatrimonialPage() {
       />
       <Hero
         eyebrow="Planejamento Patrimonial"
-        title="Planejamento patrimonial: proteja e construa seu patrimônio com estratégia"
-        description="Planejamento patrimonial é combinar consórcio, seguro e plano de saúde de forma estratégica: consórcio para alavancar patrimônio, seguro para proteger o que você já construiu, e plano de saúde para proteger sua vida. A Revla monta essa estratégia com você, com consultoria gratuita."
+        title="Planejamento patrimonial: proteja e construa seu patrimônio"
+        description="Combinamos consórcio, seguro e plano de saúde de forma estratégica: consórcio para alavancar patrimônio, seguro para proteger o que você já construiu e plano de saúde para proteger sua vida — com consultoria gratuita da Revla."
       >
         <CTAButton
           href={whatsappLink("Olá! Quero montar um planejamento patrimonial com a Revla.")}
