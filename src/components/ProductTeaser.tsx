@@ -14,6 +14,7 @@ export default function ProductTeaser({
   whatsappMessage,
   reverse = false,
   muted = false,
+  tint,
 }: {
   id: string;
   eyebrow: string;
@@ -26,11 +27,16 @@ export default function ProductTeaser({
   whatsappMessage: string;
   reverse?: boolean;
   muted?: boolean;
+  /** Opt-in only: colored section background instead of plain white/muted. */
+  tint?: "blue";
 }) {
+  const bgClass =
+    tint === "blue" ? "section-tint-blue" : muted ? "section-muted" : "";
+
   return (
     <section
       id={id}
-      className={`py-12 sm:py-16 ${muted ? "section-muted" : ""}`}
+      className={`py-10 sm:py-14 ${bgClass}`}
       aria-labelledby={`${id}-heading`}
     >
       <Container>
@@ -73,7 +79,7 @@ export default function ProductTeaser({
             {highlights.map((item) => (
               <li
                 key={item}
-                className="rounded-xl border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-3.5 text-sm leading-relaxed text-[var(--color-ink)]"
+                className="flex items-start gap-2.5 rounded-xl border border-[var(--color-border)] border-l-4 border-l-[var(--color-blue-gradient)] bg-[var(--color-paper)] px-4 py-3.5 text-sm leading-relaxed text-[var(--color-ink)]"
               >
                 {item}
               </li>

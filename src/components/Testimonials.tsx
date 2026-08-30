@@ -8,9 +8,17 @@ export type Testimonial = {
 export default function Testimonials({
   title = "Quem confia na Revla",
   items,
+  accentCards = false,
+  darkBg = false,
 }: {
   title?: string;
   items: Testimonial[];
+  /** Opt-in only: adds a colored top border to each card. Defaults to false
+   *  so existing pages (ex.: /amparo-funeral) keep their current look. */
+  accentCards?: boolean;
+  /** Opt-in only: navy section background with white heading. Defaults to
+   *  false so existing pages (ex.: /amparo-funeral) keep their current look. */
+  darkBg?: boolean;
 }) {
   // Evita "sobrar" espaço vazio quando o número de depoimentos não fecha
   // uma linha de 3 colunas (ex.: 1, 2 ou 4 itens deixariam um card órfão).
@@ -24,11 +32,16 @@ export default function Testimonials({
           : "sm:grid-cols-2";
 
   return (
-    <section className="section-muted py-12 sm:py-16" aria-labelledby="depoimentos-heading">
+    <section
+      className={`py-12 sm:py-16 ${darkBg ? "bg-[var(--color-primary)]" : "section-muted"}`}
+      aria-labelledby="depoimentos-heading"
+    >
       <Container>
         <h2
           id="depoimentos-heading"
-          className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl"
+          className={`text-2xl font-bold tracking-tight sm:text-3xl ${
+            darkBg ? "text-white" : "text-[var(--color-primary)]"
+          }`}
         >
           {title}
         </h2>
@@ -36,7 +49,9 @@ export default function Testimonials({
           {items.map((t) => (
             <figure
               key={t.name}
-              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6 shadow-sm"
+              className={`rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6 shadow-sm ${
+                accentCards ? "border-t-4 border-t-[var(--color-blue-gradient)]" : ""
+              }`}
             >
               <blockquote className="text-sm leading-relaxed text-[var(--color-ink)]/85">
                 “{t.quote}”

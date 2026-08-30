@@ -49,6 +49,14 @@ body {
   background: var(--color-muted);
 }
 
+.section-tint-blue {
+  background: #e6f0fb;
+}
+
+.section-tint-red {
+  background: #fbeae8;
+}
+
 a {
   text-underline-offset: 3px;
 }

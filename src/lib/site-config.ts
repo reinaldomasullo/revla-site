@@ -26,13 +26,14 @@ export const siteConfig = {
     youtube: "https://youtube.com/@revlacorretora",
   },
   partners: [
+    "Ademicon",
     "Porto Seguro",
     "Icatu",
     "MAG Mongeral",
     "AZOS",
     "PASI",
     "Tokio Marine",
-    "Capemisa",
+    "Prevent Senior",
   ],
 };
 
@@ -104,10 +105,10 @@ export function buildMetadata({
 
 export const mainNav = [
   { label: "Início", href: "/" },
+  { label: "Consórcios", href: "/consorcios" },
   { label: "Seguros", href: "/seguros" },
   { label: "Plano de Saúde", href: "/plano-de-saude" },
   { label: "Amparo Funeral", href: "/amparo-funeral" },
-  { label: "Consórcios", href: "/consorcios" },
   { label: "Planejamento Patrimonial", href: "/planejamento-patrimonial" },
   { label: "Blog", href: "/blog" },
 ];

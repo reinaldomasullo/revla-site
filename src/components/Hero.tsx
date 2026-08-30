@@ -6,14 +6,22 @@ export default function Hero({
   title,
   description,
   children,
+  compact = false,
 }: {
   eyebrow?: string;
   title: string;
   description: string;
   children?: ReactNode;
+  /** Opt-in only: tightens padding/spacing so the CTAs land in the first fold.
+   *  Defaults to false so existing pages (ex.: /consorcios) keep their current look. */
+  compact?: boolean;
 }) {
   return (
-    <section className="border-b border-[var(--color-border)] bg-[var(--color-paper)] py-12 sm:py-16">
+    <section
+      className={`border-b border-[var(--color-border)] bg-[var(--color-paper)] ${
+        compact ? "py-8 sm:py-10" : "py-12 sm:py-16"
+      }`}
+    >
       <Container>
         <div className="max-w-3xl">
           {eyebrow && (
@@ -21,13 +29,27 @@ export default function Hero({
               {eyebrow}
             </p>
           )}
-          <h1 className="mt-3 text-4xl font-extrabold leading-tight tracking-tight text-[var(--color-primary)] sm:text-5xl">
+          <h1
+            className={`font-extrabold leading-tight tracking-tight text-[var(--color-primary)] ${
+              compact
+                ? "mt-2 text-3xl sm:text-4xl lg:text-5xl"
+                : "mt-3 text-4xl sm:text-5xl"
+            }`}
+          >
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--color-ink)]/75">
+          <p
+            className={`max-w-2xl leading-relaxed text-[var(--color-ink)]/75 ${
+              compact ? "mt-3 text-base sm:text-lg" : "mt-5 text-lg"
+            }`}
+          >
             {description}
           </p>
-          {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
+          {children && (
+            <div className={`flex flex-wrap gap-4 ${compact ? "mt-6" : "mt-8"}`}>
+              {children}
+            </div>
+          )}
         </div>
       </Container>
     </section>

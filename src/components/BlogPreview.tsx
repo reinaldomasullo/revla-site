@@ -10,15 +10,32 @@ function formatDate(iso: string) {
   });
 }
 
+// Mesma ordem usada nos outros blocos da home (produtos, header, footer):
+// Consórcios, Seguros, Plano de Saúde, Amparo Funeral, Planejamento Patrimonial.
+const CATEGORY_ORDER = [
+  "Consórcios",
+  "Seguros",
+  "Plano de Saúde",
+  "Amparo Funeral",
+  "Planejamento Patrimonial",
+];
+
 export default function BlogPreview() {
-  const latest = [...posts]
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .slice(0, 3);
+  // Um post por categoria (o mais recente de cada), na ordem oficial —
+  // evita mostrar 3 posts da mesma categoria só porque têm a mesma data.
+  const latest = CATEGORY_ORDER.map((category) =>
+    [...posts]
+      .filter((post) => post.category === category)
+      .sort((a, b) => (a.date < b.date ? 1 : -1))[0]
+  ).filter((post): post is (typeof posts)[number] => Boolean(post));
 
   if (latest.length === 0) return null;
 
   return (
-    <section className="py-12 sm:py-16" aria-labelledby="blog-heading">
+    <section
+      className="section-tint-red pb-10 pt-6 sm:pb-14 sm:pt-8"
+      aria-labelledby="blog-heading"
+    >
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -45,7 +62,7 @@ export default function BlogPreview() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group overflow-hidden rounded-2xl border border-[var(--color-border)] transition-colors hover:border-[var(--color-primary)]"
+              className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-primary)] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               {post.coverImage && (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -54,26 +71,27 @@ export default function BlogPreview() {
                   alt={post.coverImage.alt}
                   width={post.coverImage.width}
                   height={post.coverImage.height}
-                  loading="lazy"
-                  className="aspect-[1200/630] w-full object-cover"
+                  className="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               )}
               <div className="p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-blue-gradient)]">
                 {post.category}
               </p>
-              <h3 className="mt-2 text-base font-semibold leading-snug text-[var(--color-ink)]">
+              <h3 className="mt-2 text-base font-semibold leading-snug text-white">
                 {post.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
                 {post.description}
               </p>
-              <time
-                dateTime={post.date}
-                className="mt-4 block text-xs text-[var(--color-ink)]/70"
-              >
-                {formatDate(post.date)}
-              </time>
+              <div className="mt-4 flex items-center justify-between">
+                <time dateTime={post.date} className="text-xs text-white/60">
+                  {formatDate(post.date)}
+                </time>
+                <span className="text-xs font-semibold text-[var(--color-blue-gradient)] opacity-0 transition-opacity group-hover:opacity-100">
+                  Ler mais →
+                </span>
+              </div>
               </div>
             </Link>
           ))}

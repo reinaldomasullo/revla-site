@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 import Container from "./Container";
-import { mainNav, siteConfig } from "@/lib/site-config";
+import CTAButton from "./CTAButton";
+import { mainNav, siteConfig, whatsappLink } from "@/lib/site-config";
 
 const legalLinks = [
   { label: "Política de Privacidade", href: "/politica-de-privacidade" },
@@ -39,10 +41,39 @@ const socialLinks = [
   },
 ];
 
+function FooterHeading({ children }: { children: ReactNode }) {
+  return (
+    <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white">
+      <span
+        className="h-4 w-1 rounded-full bg-[var(--color-blue-gradient)]"
+        aria-hidden="true"
+      />
+      {children}
+    </h2>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="group flex items-center gap-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
+    >
+      <span
+        className="h-1 w-1 shrink-0 rounded-full bg-white/30 transition-colors group-hover:bg-[var(--color-blue-gradient)]"
+        aria-hidden="true"
+      />
+      {children}
+    </Link>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[var(--color-border)] bg-[var(--color-primary)] text-white">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="h-1.5 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-gradient)] to-[var(--color-blue-gradient)]" />
+
+      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -63,7 +94,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${siteConfig.name} no ${social.label}`}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-[var(--color-blue-gradient)] hover:bg-[var(--color-blue-gradient)]/15 hover:text-white"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     {social.icon}
@@ -72,33 +103,38 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+          <CTAButton
+            href={whatsappLink("Olá! Quero falar com um consultor da Revla.")}
+            external
+            variant="secondary"
+            className="mt-6 px-5 py-2.5 text-sm"
+          >
+            Falar com um consultor
+          </CTAButton>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/60">
-            Navegação
-          </h2>
-          <ul className="mt-4 space-y-2.5">
+          <FooterHeading>Navegação</FooterHeading>
+          <ul className="mt-4 space-y-3">
             {mainNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-sm text-white/85 hover:text-white">
-                  {item.label}
-                </Link>
+                <FooterLink href={item.href}>{item.label}</FooterLink>
               </li>
             ))}
             <li>
-              <Link href="/reinaldo-masullo" className="text-sm text-white/85 hover:text-white">
-                Reinaldo Masullo
-              </Link>
+              <FooterLink href="/consorcios/calculadora">
+                Calculadora de consórcio
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink href="/reinaldo-masullo">Reinaldo Masullo</FooterLink>
             </li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/60">
-            Contato
-          </h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-white/85">
+          <FooterHeading>Contato</FooterHeading>
+          <ul className="mt-4 space-y-3 text-sm text-white/80">
             <li>{siteConfig.address.street}</li>
             <li>
               {siteConfig.address.district}, {siteConfig.address.city} -{" "}
@@ -110,13 +146,16 @@ export default function Footer() {
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white"
+                className="flex items-center gap-2 font-medium text-white/90 transition-colors hover:text-[var(--color-blue-gradient)]"
               >
                 WhatsApp: {siteConfig.whatsappDisplay}
               </a>
             </li>
             <li>
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="transition-colors hover:text-[var(--color-blue-gradient)]"
+              >
                 {siteConfig.email}
               </a>
             </li>
@@ -124,18 +163,14 @@ export default function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/60">
-            Institucional
-          </h2>
-          <ul className="mt-4 space-y-2.5 text-sm text-white/85">
+          <FooterHeading>Institucional</FooterHeading>
+          <ul className="mt-4 space-y-3">
             {legalLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-white">
-                  {item.label}
-                </Link>
+                <FooterLink href={item.href}>{item.label}</FooterLink>
               </li>
             ))}
-            <li className="pt-1 text-white/60">
+            <li className="pt-1 text-xs text-white/55">
               {siteConfig.susep
                 ? `SUSEP: ${siteConfig.susep}`
                 : "Registro SUSEP a inserir"}

@@ -20,34 +20,39 @@ export const metadata: Metadata = buildMetadata({
 
 const products = [
   {
+    title: "Consórcios",
+    description:
+      "Cartas de crédito para imóveis, veículos, motos, investimentos, serviços, agro e máquinas, sem juros, com simulação gratuita.",
+    href: "/consorcios",
+    accent: "var(--color-secondary)",
+  },
+  {
     title: "Seguros",
     description:
       "Trabalhamos com todos os tipos de seguro — vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular — comparando as melhores seguradoras do Brasil.",
     href: "/seguros",
+    accent: "var(--color-accent)",
   },
   {
     title: "Plano de Saúde",
     description:
       "Planos de saúde individuais, familiares e empresariais com a Prevent Senior, com rede própria e cobertura em São Paulo e região.",
     href: "/plano-de-saude",
+    accent: "var(--color-blue-gradient)",
   },
   {
     title: "Amparo Funeral",
     description:
       "Assistência funeral individual, familiar e sênior com a PASI, com suporte imediato à família nos momentos mais difíceis.",
     href: "/amparo-funeral",
-  },
-  {
-    title: "Consórcios",
-    description:
-      "Cartas de crédito para imóveis, veículos, motos, investimentos, serviços, agro e máquinas, sem juros, com simulação gratuita.",
-    href: "/consorcios",
+    accent: "var(--color-steel)",
   },
   {
     title: "Planejamento Patrimonial",
     description:
       "Estratégia que une consórcio para alavancar patrimônio, seguro para proteger seu patrimônio e plano de saúde para proteger sua vida, com acompanhamento consultivo.",
     href: "/planejamento-patrimonial",
+    accent: "var(--color-accent-gradient)",
   },
 ];
 
@@ -157,7 +162,7 @@ const faqItems = [
   {
     question: "A Revla é uma seguradora ou uma corretora?",
     answer:
-      "A Revla é uma corretora de seguros registrada na SUSEP. Comparamos opções entre seguradoras e administradoras parceiras — como Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Capemisa — para encontrar a que melhor atende cada cliente, sem custo pela consultoria.",
+      "A Revla é uma corretora de seguros registrada na SUSEP. Comparamos opções entre seguradoras e administradoras parceiras — como Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Prevent Senior — para encontrar a que melhor atende cada cliente, sem custo pela consultoria.",
   },
   {
     question: "Quanto custa falar com um consultor da Revla?",
@@ -204,9 +209,10 @@ export default function HomePage() {
     <>
       {/* Dobra 1 — Hero */}
       <Hero
+        compact
         eyebrow="Corretora de seguros e planejamento patrimonial em São Paulo"
         title="Seguros, plano de saúde, consórcio e planejamento patrimonial para você e sua família"
-        description="A Revla Corretora compara e contrata seguros, plano de saúde, consórcio, amparo funeral e planejamento patrimonial em São Paulo — unindo proteção e construção de patrimônio em um só lugar, com consultoria gratuita do início ao fim."
+        description="A Revla Corretora compara e contrata seguros, plano de saúde, consórcio, amparo funeral e planejamento patrimonial — unindo proteção e construção de patrimônio, com consultoria gratuita do início ao fim."
       >
         <CTAButton
           href={whatsappLink("Olá! Quero uma simulação gratuita com a Revla.")}
@@ -220,29 +226,40 @@ export default function HomePage() {
       </Hero>
 
       {/* Dobra 2 — Os 4 produtos */}
-      <section className="py-12 sm:py-16" aria-labelledby="produtos-heading">
+      <section className="bg-[var(--color-primary)] py-10 sm:py-14" aria-labelledby="produtos-heading">
         <JsonLd data={servicesSchema} />
         <Container>
           <h2
             id="produtos-heading"
-            className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl"
+            className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
           >
-            Seguros, plano de saúde, amparo funeral, consórcio e planejamento patrimonial
+            Consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
               <Link
                 key={product.href}
                 href={product.href}
-                className="group rounded-2xl border border-[var(--color-border)] p-7 transition-colors hover:border-[var(--color-primary)]"
+                className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-7 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                style={{ borderTopWidth: 4, borderTopColor: product.accent }}
               >
-                <h3 className="text-lg font-semibold text-[var(--color-ink)]">
+                <span
+                  className="flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold text-white"
+                  style={{ backgroundColor: product.accent }}
+                  aria-hidden="true"
+                >
+                  {product.title.charAt(0)}
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-[var(--color-ink)]">
                   {product.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
                   {product.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+                <span
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold"
+                  style={{ color: product.accent }}
+                >
                   Saiba mais
                   <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
                     →
@@ -255,10 +272,10 @@ export default function HomePage() {
       </section>
 
       {/* Dobra 3 — Consórcio e subprodutos */}
-      <section className="section-muted py-12 sm:py-16" aria-labelledby="consorcio-heading">
+      <section className="section-tint-red py-10 sm:py-14" aria-labelledby="consorcio-heading">
         <Container>
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
               Consórcios
             </p>
             <h2
@@ -277,13 +294,19 @@ export default function HomePage() {
               da Revla.
             </p>
           </div>
-          <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {consorcioSubprodutos.map((item) => (
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {consorcioSubprodutos.map((item, i) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
               >
-                <h3 className="text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
+                <span
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-secondary)]/15 text-xs font-bold text-[var(--color-secondary)]"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+                <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
                   {item.description}
                 </p>
@@ -306,7 +329,7 @@ export default function HomePage() {
       </section>
 
       {/* Dobra 4 — Seguros e subprodutos */}
-      <section className="py-12 sm:py-16" aria-labelledby="seguros-heading">
+      <section className="section-tint-blue py-10 sm:py-14" aria-labelledby="seguros-heading">
         <Container>
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
@@ -328,13 +351,19 @@ export default function HomePage() {
               .
             </p>
           </div>
-          <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {segurosSubprodutos.map((item) => (
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {segurosSubprodutos.map((item, i) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-[var(--color-border)] p-5"
+                className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
               >
-                <h3 className="text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
+                <span
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)]/15 text-xs font-bold text-[var(--color-accent-dark)]"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+                <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
                   {item.description}
                 </p>
@@ -356,14 +385,14 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="section-muted py-12" aria-label="Seguradoras parceiras">
+      <section className="bg-[var(--color-primary)] py-8 sm:py-10" aria-label="Seguradoras parceiras">
         <Container>
-          <p className="text-center text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/70">
+          <p className="text-center text-xs font-semibold uppercase tracking-wide text-white/60">
             Seguradoras e administradoras parceiras
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
             {siteConfig.partners.map((partner) => (
-              <span key={partner} className="text-sm font-medium text-[var(--color-ink)]/70">
+              <span key={partner} className="text-sm font-medium text-white/85">
                 {partner}
               </span>
             ))}
@@ -386,6 +415,7 @@ export default function HomePage() {
         note="Valores a partir de R$ 759,84/mês (referência, sujeito a faixa etária e atualização mensal) — fale com um consultor para a tabela vigente."
         ctaHref="/plano-de-saude"
         whatsappMessage="Olá! Quero uma simulação de plano de saúde com a Revla."
+        muted
       />
 
       {/* Dobra 6 — Amparo Funeral */}
@@ -403,11 +433,11 @@ export default function HomePage() {
         ctaHref="/amparo-funeral"
         whatsappMessage="Olá! Quero saber mais sobre o amparo funeral da Revla."
         reverse
-        muted
+        tint="blue"
       />
 
       {/* Dobra 7 — Depoimentos */}
-      <Testimonials items={testimonials} />
+      <Testimonials items={testimonials} accentCards darkBg />
 
       {/* Dobra 8 — FAQ genérico */}
       <FAQ items={faqItems} />
@@ -416,7 +446,7 @@ export default function HomePage() {
       <BlogPreview />
 
       <CTASection
-        title="Pronto para proteger o que importa?"
+        title="Quer alavancar patrimônio ou deseja proteger o que importa?"
         description="Fale agora com um consultor da Revla e receba uma simulação gratuita e sem compromisso."
         whatsappMessage="Olá! Quero uma simulação gratuita com a Revla."
       />
