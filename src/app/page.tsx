@@ -12,9 +12,9 @@ import JsonLd from "@/components/JsonLd";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Seguros, Saúde, Consórcio e Patrimônio",
+  title: "Consórcio, Seguros, Saúde e Patrimônio",
   description:
-    "Corretora de seguros, plano de saúde, consórcio, amparo funeral e planejamento patrimonial em São Paulo. Compare as melhores opções com consultoria gratuita da Revla.",
+    "Corretora de consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial em São Paulo. Compare as melhores opções com consultoria gratuita da Revla.",
   path: "/",
 });
 
@@ -22,7 +22,7 @@ const products = [
   {
     title: "Consórcios",
     description:
-      "Cartas de crédito para imóveis, veículos, motos, investimentos, serviços, agro e máquinas, sem juros, com simulação gratuita.",
+      "Cartas de crédito para imóveis, veículos, motos, caminhões, máquinas, investimentos, serviços e agro, sem juros, com simulação gratuita.",
     href: "/consorcios",
     accent: "var(--color-secondary)",
   },
@@ -210,9 +210,9 @@ export default function HomePage() {
       {/* Dobra 1 — Hero */}
       <Hero
         compact
-        eyebrow="Corretora de seguros e planejamento patrimonial em São Paulo"
-        title="Seguros, plano de saúde, consórcio e planejamento patrimonial para você e sua família"
-        description="A Revla Corretora compara e contrata seguros, plano de saúde, consórcio, amparo funeral e planejamento patrimonial — unindo proteção e construção de patrimônio, com consultoria gratuita do início ao fim."
+        eyebrow="Corretora de consórcio e planejamento patrimonial em São Paulo"
+        title="Consórcio, seguros, plano de saúde e planejamento patrimonial para você e sua família"
+        description="A Revla Corretora compara e contrata consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial — unindo proteção e construção de patrimônio, com consultoria gratuita do início ao fim."
       >
         <CTAButton
           href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
@@ -257,8 +257,7 @@ export default function HomePage() {
                   {product.description}
                 </p>
                 <span
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold"
-                  style={{ color: product.accent }}
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-secondary)]"
                 >
                   Saiba mais
                   <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
@@ -319,7 +318,7 @@ export default function HomePage() {
               external
               className="px-5 py-3 text-sm"
             >
-              Simular consórcio
+              Iniciar simulação gratuita
             </CTAButton>
             <CTAButton href="/consorcios" variant="ghost" className="px-5 py-3 text-sm">
               Ver todos os consórcios
@@ -414,6 +413,7 @@ export default function HomePage() {
         ]}
         note="Valores a partir de R$ 759,84/mês (referência, sujeito a faixa etária e atualização mensal) — fale com um consultor para a tabela vigente."
         ctaHref="/plano-de-saude"
+        ctaLabel="Saiba mais sobre plano de saúde"
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         muted
       />
@@ -431,6 +431,7 @@ export default function HomePage() {
           "Atendimento 24 horas em todo o Brasil",
         ]}
         ctaHref="/amparo-funeral"
+        ctaLabel="Saiba mais sobre amparo funeral"
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         reverse
         tint="blue"

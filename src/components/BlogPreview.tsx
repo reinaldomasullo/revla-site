@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
 import { posts } from "@/lib/posts";
@@ -65,12 +66,12 @@ export default function BlogPreview() {
               className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-primary)] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               {post.coverImage && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                   src={post.coverImage.src}
                   alt={post.coverImage.alt}
                   width={post.coverImage.width}
                   height={post.coverImage.height}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               )}

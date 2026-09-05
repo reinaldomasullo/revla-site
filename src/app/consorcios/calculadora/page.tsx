@@ -4,13 +4,14 @@ import Container from "@/components/Container";
 import FAQ from "@/components/FAQ";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Calculadora from "@/components/calculadora/Calculadora";
+import { buildMetadata } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Calculadora de Consórcio: Simule Ganhos com Venda ou Alavancagem",
   description:
     "Simule o lucro de vender sua carta de consórcio contemplada com ágio, ou de usar o consórcio para alavancagem patrimonial com renda de aluguel. Ferramenta gratuita da Revla Corretora.",
-  alternates: { canonical: "/consorcios/calculadora" },
-};
+  path: "/consorcios/calculadora",
+});
 
 const faqItems = [
   {

@@ -1,33 +1,34 @@
 # Revla Corretora
 
-> Corretora de seguros, planos de saúde, consórcios e planejamento patrimonial, com sede em São Paulo (Avenida Paulista) e atendimento em todo o Brasil.
+> Corretora especializada em consórcios e planejamento patrimonial, com seguros e planos de saúde, sede em São Paulo (Avenida Paulista) e atendimento em todo o Brasil.
 
-A Revla Corretora compara opções entre seguradoras e administradoras parceiras — Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Capemisa — para ajudar clientes a encontrar o produto certo pelo preço certo, com consultoria gratuita.
+A Revla Corretora compara opções entre seguradoras e administradoras parceiras — Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Prevent Senior — para ajudar clientes a encontrar o produto certo pelo preço certo, com consultoria gratuita.
 
 ## Produtos e serviços
 
+- Consórcios (produto principal): imóveis, veículos, motos, caminhões, máquinas, agro, investimento, serviços
+- Planejamento patrimonial: consórcio para alavancar patrimônio, seguro para proteger patrimônio, plano de saúde para proteger a vida
 - Seguros: vida (individual, familiar, PME, estagiário, resgatável, temporário), auto, residencial, empresarial, condominial, viagem, RC profissional, celular
 - Planos de saúde e odontológicos com a Prevent Senior: individual, familiar, PME, por adesão
 - Amparo funeral com a PASI: individual, familiar, sênior (acima de 75 anos)
-- Consórcios: imóveis, veículos, motos, investimento, serviços, agro, máquinas
-- Planejamento patrimonial: consórcio para alavancar patrimônio, seguro para proteger patrimônio, plano de saúde para proteger a vida
 
 ## Páginas principais
 
-- Início: /
-- Seguros: /seguros
-- Plano de saúde: /plano-de-saude
-- Amparo funeral: /amparo-funeral
-- Consórcios: /consorcios
-- Calculadora de consórcio: /consorcios/calculadora
-- Planejamento patrimonial: /planejamento-patrimonial
-- Reinaldo Masullo (especialista responsável): /reinaldo-masullo
-- Blog: /blog — categorias: Planejamento Patrimonial, Seguros, Consórcios, Plano de Saúde, Amparo Funeral
+- [Início](https://revlacorretora.com.br/): visão geral de todos os produtos da Revla
+- [Consórcios](https://revlacorretora.com.br/consorcios): consórcio sem juros para imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços
+- [Calculadora de consórcio](https://revlacorretora.com.br/consorcios/calculadora): simulação de venda de carta contemplada e de alavancagem patrimonial
+- [Planejamento patrimonial](https://revlacorretora.com.br/planejamento-patrimonial): estratégia combinando consórcio, seguro e plano de saúde
+- [Seguros](https://revlacorretora.com.br/seguros): vida, auto, residencial, empresarial, condominial, viagem, RC profissional, celular
+- [Plano de saúde](https://revlacorretora.com.br/plano-de-saude): planos individuais, familiares, PME e por adesão com a Prevent Senior
+- [Amparo funeral](https://revlacorretora.com.br/amparo-funeral): assistência funeral individual, familiar e sênior com a PASI
+- [Reinaldo Masullo](https://revlacorretora.com.br/reinaldo-masullo): especialista responsável, registro SUSEP pessoal
+- [Blog](https://revlacorretora.com.br/blog): artigos sobre planejamento patrimonial, consórcios, seguros, plano de saúde e amparo funeral
 
 ## Contato
 
-- WhatsApp: (11) 94726-3140
+- WhatsApp / Telefone: (11) 94726-3140
 - E-mail: contato@revlacorretora.com.br
 - Endereço: Avenida Paulista, 1471 - Conj. 511, Bela Vista, São Paulo - SP
+- Horário: segunda a sexta, 8h às 19h; sábado, 8h às 13h; WhatsApp disponível também fora desse horário
 
 A Revla Corretora não é uma seguradora nem uma administradora de consórcio — atua como corretora intermediária, comparando opções entre parceiros autorizados.

@@ -105,8 +105,8 @@ export default function Footer() {
             height={548}
             className="h-9 w-auto"
           />
-          <p className="mt-3 max-w-xs text-sm text-white/70">
-            {siteConfig.description}
+          <p className="mt-3 max-w-md text-sm text-white/70">
+            {siteConfig.longDescription}
           </p>
           <ul className="mt-5 flex items-center gap-3">
             {socialLinks.map((social) => (
@@ -185,6 +185,11 @@ export default function Footer() {
               >
                 {siteConfig.email}
               </a>
+            </li>
+            <li className="pt-1 text-xs text-white/55">
+              {siteConfig.businessHoursDisplay}
+              <br />
+              WhatsApp disponível também fora desse horário
             </li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Seguros, Planos de Saúde e Consórcios em São Paulo`,
+    default: `${siteConfig.name} — Consórcios, Seguros e Planos de Saúde em São Paulo`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: siteConfig.name,
     url: siteConfig.url,
-    title: `${siteConfig.name} — Seguros, Planos de Saúde e Consórcios`,
+    title: `${siteConfig.name} — Consórcios, Seguros e Planos de Saúde`,
     description: siteConfig.description,
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — Seguros, Plano de Saúde, Consórcio e Planejamento Patrimonial`,
+        alt: `${siteConfig.name} — Consórcio, Seguros, Plano de Saúde e Planejamento Patrimonial`,
       },
     ],
   },
@@ -50,7 +50,7 @@ const organizationSchema = {
   name: siteConfig.legalName,
   url: siteConfig.url,
   description: siteConfig.description,
-  telephone: siteConfig.phoneDisplay,
+  telephone: siteConfig.whatsappDisplay,
   email: siteConfig.email,
   identifier: {
     "@type": "PropertyValue",
@@ -58,6 +58,26 @@ const organizationSchema = {
     value: siteConfig.susep,
   },
   taxID: siteConfig.cnpj,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      opens: "08:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:00",
+      closes: "13:00",
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.address.street,

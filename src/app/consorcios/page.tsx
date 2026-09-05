@@ -7,14 +7,14 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Consórcio de Imóveis e Veículos sem Juros: Simule Grátis",
   description:
     "Carta de crédito sem juros para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita e sem compromisso com a Revla Corretora.",
-  alternates: { canonical: "/consorcios" },
-};
+  path: "/consorcios",
+});
 
 const categorias = [
   {
@@ -23,15 +23,31 @@ const categorias = [
   },
   {
     title: "Veículos",
-    description: "Carros, motos e utilitários, com parcelas menores que o financiamento tradicional.",
+    description: "Carros e utilitários, com parcelas menores que o financiamento tradicional.",
   },
   {
-    title: "Serviços",
-    description: "Reformas, viagens, procedimentos estéticos ou odontológicos.",
+    title: "Motos",
+    description: "Motocicletas de todas as categorias, com parcelas que cabem no seu orçamento.",
+  },
+  {
+    title: "Caminhões",
+    description: "Caminhões e veículos pesados para renovar ou expandir a frota da sua empresa.",
+  },
+  {
+    title: "Máquinas",
+    description: "Máquinas e equipamentos agrícolas, industriais ou para construção civil.",
+  },
+  {
+    title: "Agro",
+    description: "Insumos, maquinário e expansão para o produtor rural, sem comprometer o caixa.",
   },
   {
     title: "Investimento",
     description: "Poupança programada sem juros, com possibilidade de lance para antecipar a contemplação.",
+  },
+  {
+    title: "Serviços",
+    description: "Reformas, viagens, procedimentos estéticos ou odontológicos.",
   },
 ];
 
@@ -63,7 +79,7 @@ const faqItems = [
   {
     question: "Posso usar a carta de crédito em qualquer coisa?",
     answer:
-      "A carta deve ser usada dentro da categoria contratada (imóveis, veículos, serviços ou investimento), respeitando as regras da administradora.",
+      "A carta deve ser usada dentro da categoria contratada (imóveis, veículos, motos, caminhões, máquinas, agro, investimento ou serviços), respeitando as regras da administradora.",
   },
   {
     question: "Qual o valor mínimo de uma carta de consórcio?",
@@ -86,7 +102,7 @@ const serviceSchema = {
   },
   areaServed: "BR",
   description:
-    "Corretagem de cartas de consórcio de imóveis, veículos, serviços e investimento, sem juros.",
+    "Corretagem de cartas de consórcio de imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços, sem juros.",
 };
 
 export default function ConsorciosPage() {

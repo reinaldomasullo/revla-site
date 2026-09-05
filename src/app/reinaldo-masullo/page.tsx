@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/Container";
 import CTAButton from "@/components/CTAButton";
 import JsonLd from "@/components/JsonLd";
@@ -65,7 +66,7 @@ const faqItems = [
   {
     question: "Como falar com Reinaldo Masullo?",
     answer:
-      "Você pode falar diretamente pelo WhatsApp (11) 94726-3140, pelo telefone (11) 98980-3819, ou pelas redes sociais listadas nesta página.",
+      "Você pode falar diretamente pelo WhatsApp ou telefone (11) 94726-3140, ou pelas redes sociais listadas nesta página.",
   },
   {
     question: "Reinaldo Masullo atende que tipo de cliente?",
@@ -125,8 +126,8 @@ export default function ReinaldoMasulloPage() {
               >
                 Falar no WhatsApp
               </CTAButton>
-              <CTAButton href={`tel:+5511989803819`} variant="ghost">
-                (11) 98980-3819
+              <CTAButton href={`tel:+${siteConfig.whatsapp}`} variant="ghost">
+                {siteConfig.whatsappDisplay}
               </CTAButton>
             </div>
           </div>
@@ -136,12 +137,13 @@ export default function ReinaldoMasulloPage() {
               aria-hidden="true"
               className="absolute inset-x-6 inset-y-4 -z-10 rounded-[2rem] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)]"
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/reinaldo-masullo.webp"
               alt="Reinaldo Masullo, especialista em planejamento patrimonial na Revla Corretora"
               width={800}
               height={1200}
+              sizes="(min-width: 640px) 320px, 280px"
+              priority
               className="relative mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-xs"
             />
           </div>
@@ -193,8 +195,7 @@ export default function ReinaldoMasulloPage() {
               Contato direto
             </h2>
             <ul className="mt-5 space-y-2 text-sm text-[var(--color-ink)]/80">
-              <li>WhatsApp: {siteConfig.whatsappDisplay}</li>
-              <li>Telefone: (11) 98980-3819</li>
+              <li>WhatsApp / Telefone: {siteConfig.whatsappDisplay}</li>
               <li className="text-[var(--color-ink)]/70">Registro SUSEP: 231149772</li>
             </ul>
           </div>

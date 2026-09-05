@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Container from "@/components/Container";
@@ -38,13 +39,12 @@ export default function BlogPage() {
                   className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] transition-colors hover:border-[var(--color-primary)]"
                 >
                   {post.coverImage && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                       src={post.coverImage.src}
                       alt={post.coverImage.alt}
                       width={post.coverImage.width}
                       height={post.coverImage.height}
-                      loading="lazy"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="aspect-[1200/630] w-full object-cover"
                     />
                   )}

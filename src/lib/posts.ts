@@ -184,7 +184,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "Na Revla, comparamos opções entre seguradoras parceiras — Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Capemisa — para dimensionar o capital segurado ideal para o seu momento de vida, sem custo pela consultoria.",
+        text: "Na Revla, comparamos opções entre seguradoras parceiras — Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI e Tokio Marine — para dimensionar o capital segurado ideal para o seu momento de vida, sem custo pela consultoria.",
       },
     ],
     faq: [
@@ -546,7 +546,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "É aqui que entra o papel de uma corretora: como corretora de seguros registrada na SUSEP, a Revla compara apólices de seguradoras parceiras — como Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Capemisa — e ajuda o profissional a entender qual condição faz mais sentido para o tipo de atividade exercida e para o volume de risco envolvido, sem custo adicional para quem contrata. A Revla não é seguradora: a análise do risco e a decisão final de aceitar a apólice são sempre da seguradora escolhida."
+        "text": "É aqui que entra o papel de uma corretora: como corretora de seguros registrada na SUSEP, a Revla compara apólices de seguradoras parceiras — como Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI e Tokio Marine — e ajuda o profissional a entender qual condição faz mais sentido para o tipo de atividade exercida e para o volume de risco envolvido, sem custo adicional para quem contrata. A Revla não é seguradora: a análise do risco e a decisão final de aceitar a apólice são sempre da seguradora escolhida."
       },
       {
         "type": "h2",
@@ -581,7 +581,7 @@ export const posts: Post[] = [
       },
       {
         "question": "A Revla vende diretamente o seguro RC Profissional?",
-        "answer": "A Revla é corretora de seguros registrada na SUSEP e compara apólices de seguradoras parceiras, como Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Capemisa. A contratação e a análise do risco são sempre feitas pela seguradora escolhida."
+        "answer": "A Revla é corretora de seguros registrada na SUSEP e compara apólices de seguradoras parceiras, como Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI e Tokio Marine. A contratação e a análise do risco são sempre feitas pela seguradora escolhida."
       }
     ]
   },
@@ -729,7 +729,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "A Revla é uma corretora de seguros registrada na SUSEP e compara propostas de seguradoras parceiras — como Porto Seguro, Tokio Marine, MAG Mongeral, Icatu, AZOS, PASI e Capemisa — para te ajudar a entender não só qual é mais barata, mas qual cobertura realmente faz sentido para o seu perfil, seu carro e sua região. Como corretora, a Revla não vende apólice própria: ela trabalha para você, comparando condições, franquias e coberturas antes de indicar a melhor opção. Se o seguro auto é parte de uma estratégia maior de proteção patrimonial e familiar, você também pode explorar a página de [seguros](/seguros) da Revla, ou conhecer melhor o trabalho do corretor [Reinaldo Masullo](/reinaldo-masullo), responsável por orientar essas escolhas caso a caso."
+        "text": "A Revla é uma corretora de seguros registrada na SUSEP e compara propostas de seguradoras parceiras — como Porto Seguro, Tokio Marine, MAG Mongeral, Icatu, AZOS e PASI — para te ajudar a entender não só qual é mais barata, mas qual cobertura realmente faz sentido para o seu perfil, seu carro e sua região. Como corretora, a Revla não vende apólice própria: ela trabalha para você, comparando condições, franquias e coberturas antes de indicar a melhor opção. Se o seguro auto é parte de uma estratégia maior de proteção patrimonial e familiar, você também pode explorar a página de [seguros](/seguros) da Revla, ou conhecer melhor o trabalho do corretor [Reinaldo Masullo](/reinaldo-masullo), responsável por orientar essas escolhas caso a caso."
       },
       {
         "type": "p",
@@ -1838,7 +1838,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Para conhecer as modalidades disponíveis, incluindo imóveis, veículos, motos, serviços, agro e máquinas, vale visitar a página de [consórcios da Revla](/consorcios) e simular o plano que melhor se encaixa no seu objetivo. Quem preferir uma orientação mais próxima também pode falar diretamente com [Reinaldo Masullo](/reinaldo-masullo), especialista da Revla, para tirar dúvidas específicas sobre grupos, taxas e prazos antes de decidir."
+        "text": "Para conhecer as modalidades disponíveis, incluindo imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços, vale visitar a página de [consórcios da Revla](/consorcios) e simular o plano que melhor se encaixa no seu objetivo. Quem preferir uma orientação mais próxima também pode falar diretamente com [Reinaldo Masullo](/reinaldo-masullo), especialista da Revla, para tirar dúvidas específicas sobre grupos, taxas e prazos antes de decidir."
       },
       {
         "type": "p",
@@ -2219,7 +2219,7 @@ export const posts: Post[] = [
     "content": [
       {
         "type": "p",
-        "text": "Lance no consórcio é uma oferta em dinheiro que o consorciado apresenta durante a assembleia, com o objetivo de furar a fila e antecipar a contemplação da carta de crédito, sem depender apenas do sorteio mensal. O valor ofertado é comparado ao dos demais participantes do grupo e, se for o maior (ou um dos critérios definidos pela administradora), garante a contemplação naquele mês. Isso vale para qualquer segmento de consórcio — imóveis, veículos, motos, serviços, investimentos, agro ou máquinas."
+        "text": "Lance no consórcio é uma oferta em dinheiro que o consorciado apresenta durante a assembleia, com o objetivo de furar a fila e antecipar a contemplação da carta de crédito, sem depender apenas do sorteio mensal. O valor ofertado é comparado ao dos demais participantes do grupo e, se for o maior (ou um dos critérios definidos pela administradora), garante a contemplação naquele mês. Isso vale para qualquer segmento de consórcio — imóveis, veículos, motos, caminhões, máquinas, agro, investimento ou serviços."
       },
       {
         "type": "h2",

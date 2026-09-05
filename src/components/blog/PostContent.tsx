@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ContentBlock } from "@/lib/posts";
 import { renderInline } from "@/lib/inline-markdown";
 
@@ -55,13 +56,12 @@ export default function PostContent({ blocks }: { blocks: ContentBlock[] }) {
           case "image":
             return (
               <figure key={i} className="!my-8">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={block.src}
                   alt={block.alt}
                   width={block.width}
                   height={block.height}
-                  loading="lazy"
+                  sizes="(min-width: 768px) 768px, 100vw"
                   className="w-full rounded-2xl border border-[var(--color-border)]"
                 />
                 {block.caption && (

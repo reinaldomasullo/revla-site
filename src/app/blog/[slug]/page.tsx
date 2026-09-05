@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import CTASection from "@/components/CTASection";
@@ -109,12 +110,12 @@ export default async function BlogPostPage({
           </h1>
           <div className="mt-4 flex items-center gap-3">
             <Link href="/reinaldo-masullo" aria-hidden="true" tabIndex={-1}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/images/reinaldo-avatar.jpg"
                 alt=""
                 width={40}
                 height={40}
+                sizes="40px"
                 className="h-10 w-10 rounded-full object-cover"
               />
             </Link>
@@ -152,12 +153,13 @@ export default async function BlogPostPage({
 
           {post.coverImage && (
             <div className="mt-8">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={post.coverImage.src}
                 alt={post.coverImage.alt}
                 width={post.coverImage.width}
                 height={post.coverImage.height}
+                sizes="(min-width: 768px) 768px, 100vw"
+                priority
                 className="w-full rounded-2xl border border-[var(--color-border)]"
               />
             </div>
