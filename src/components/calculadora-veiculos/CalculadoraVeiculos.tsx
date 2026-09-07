@@ -7,43 +7,48 @@ import { formatBRL, formatPercent } from "@/components/calculadora/formatters";
 import {
   calcularConsorcioVeiculo,
   calcularFinanciamento,
+  ENTRADA_FINANCIAMENTO_VEICULO_PCT,
+  INPC_REFERENCIA_PCT,
   MES_LIMITE_REDUCAO_VEICULO,
+  PARCELA_REDUZIDA_PADRAO_PCT,
+  PRAZO_FINANCIAMENTO_VEICULO_MESES,
   PRAZO_TOTAL_VEICULO,
   TAXA_ADMINISTRATIVA_VEICULO_PCT,
+  TAXA_JUROS_FINANCIAMENTO_VEICULO_AM_PCT,
 } from "./calculoVeiculos";
 import { whatsappLink } from "@/lib/site-config";
 import CTAButton from "@/components/CTAButton";
 
 export default function CalculadoraVeiculos() {
-  const [credito, setCredito] = useState<number | null>(null);
-  const [indiceCorrecao, setIndiceCorrecao] = useState<number | null>(null);
-  const [percentualParcela, setPercentualParcela] = useState<number | null>(null);
+  // Único campo de valor — usado como crédito do consórcio e como valor do veículo no
+  // financiamento, pra comparar sempre em cima do mesmo valor total a ser contratado.
+  const [valor, setValor] = useState<number | null>(null);
+  // Único outro campo aberto: mês da contemplação (aleatório na vida real, então faz
+  // sentido deixar o usuário explorar cenários).
   const [mesContemplacao, setMesContemplacao] = useState<number | null>(null);
 
-  const [taxaJurosMensal, setTaxaJurosMensal] = useState<number | null>(null);
-  const [prazoFinanciamento, setPrazoFinanciamento] = useState<number | null>(null);
-  const [entrada, setEntrada] = useState<number | null>(null);
+  const entrada = useMemo(() => (valor ?? 0) * (ENTRADA_FINANCIAMENTO_VEICULO_PCT / 100), [valor]);
 
   const resultadoConsorcio = useMemo(
     () =>
       calcularConsorcioVeiculo({
-        credito: credito ?? 0,
-        indiceCorrecao: indiceCorrecao ?? 0,
-        percentualParcela: percentualParcela ?? 0,
+        credito: valor ?? 0,
+        indiceCorrecao: INPC_REFERENCIA_PCT,
+        percentualParcela: PARCELA_REDUZIDA_PADRAO_PCT,
         mesContemplacao: mesContemplacao ?? 0,
       }),
-    [credito, indiceCorrecao, percentualParcela, mesContemplacao]
+    [valor, mesContemplacao]
   );
 
   const resultadoFinanciamento = useMemo(
     () =>
       calcularFinanciamento({
-        valorVeiculo: credito ?? 0,
-        entrada: entrada ?? 0,
-        taxaJurosMensal: taxaJurosMensal ?? 0,
-        prazoMeses: prazoFinanciamento ?? 0,
+        valorVeiculo: valor ?? 0,
+        entrada,
+        taxaJurosMensal: TAXA_JUROS_FINANCIAMENTO_VEICULO_AM_PCT,
+        prazoMeses: PRAZO_FINANCIAMENTO_VEICULO_MESES,
       }),
-    [credito, entrada, taxaJurosMensal, prazoFinanciamento]
+    [valor, entrada]
   );
 
   const diferenca = resultadoFinanciamento.totalPago - resultadoConsorcio.totalPago90Meses;
@@ -58,36 +63,29 @@ export default function CalculadoraVeiculos() {
         <div className="space-y-8">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-ink)]/60">
-              Dados do consórcio de veículos
+              Dados da simulação
             </h2>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="sm:col-span-2">
-                <CurrencyField label="Valor do veículo (crédito)" value={credito} onChange={setCredito} />
+                <CurrencyField label="Valor do veículo" value={valor} onChange={setValor} />
               </div>
-              <NumberField
-                label="Índice de correção"
-                value={indiceCorrecao}
-                onChange={setIndiceCorrecao}
-                suffix="% a.a."
-                helpText="Referência: INPC — reajuste em janeiro"
-              />
               <NumberField
                 label="Mês da contemplação"
                 value={mesContemplacao}
                 onChange={setMesContemplacao}
                 suffix="mês"
+                helpText="Depende do grupo — explore diferentes meses"
               />
-              <div className="sm:col-span-2">
-                <NumberField
-                  label="Parcela reduzida"
-                  value={percentualParcela}
-                  onChange={setPercentualParcela}
-                  suffix="%"
-                  helpText={`Só vale até o mês ${MES_LIMITE_REDUCAO_VEICULO} ou até a contemplação, o que ocorrer primeiro (100% = sem redução)`}
-                />
-              </div>
+              <InfoTile label="Prazo total (consórcio)" value={`${PRAZO_TOTAL_VEICULO} meses (fixo)`} />
               <InfoTile label="Taxa administrativa" value={`${formatPercent(TAXA_ADMINISTRATIVA_VEICULO_PCT, 0)} (fixa, sobre o crédito)`} />
-              <InfoTile label="Prazo total" value={`${PRAZO_TOTAL_VEICULO} meses (fixo)`} />
+              <InfoTile
+                label="Parcela reduzida"
+                value={`${formatPercent(PARCELA_REDUZIDA_PADRAO_PCT, 0)} (prática comum de mercado — só até o mês ${MES_LIMITE_REDUCAO_VEICULO} ou a contemplação)`}
+              />
+              <InfoTile
+                label="Índice de correção"
+                value={`${formatPercent(INPC_REFERENCIA_PCT)} a.a. (INPC, IBGE — acum. 12m ago/25 a jul/26, reajuste em jan)`}
+              />
             </div>
           </div>
 
@@ -96,23 +94,14 @@ export default function CalculadoraVeiculos() {
               Dados do financiamento (comparação)
             </h2>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <InfoTile label="Entrada" value={`${formatPercent(ENTRADA_FINANCIAMENTO_VEICULO_PCT, 0)} do veículo — ${formatBRL(entrada, 0)} (piso recomendado, Comprecar 2026)`} />
+              <InfoTile label="Prazo do financiamento" value={`${PRAZO_FINANCIAMENTO_VEICULO_MESES} meses (financiamento tradicional)`} />
               <div className="sm:col-span-2">
-                <CurrencyField label="Entrada" value={entrada} onChange={setEntrada} />
+                <InfoTile
+                  label="Taxa de juros"
+                  value={`${formatPercent(TAXA_JUROS_FINANCIAMENTO_VEICULO_AM_PCT, 1)} a.m. (≈27,7% a.a., Banco Central — jan/2026)`}
+                />
               </div>
-              <NumberField
-                label="Taxa de juros"
-                value={taxaJurosMensal}
-                onChange={setTaxaJurosMensal}
-                suffix="% a.m."
-                helpText="Referência: média de mercado p/ 0km ≈ 27,7% a.a. (Banco Central, jan/2026)"
-              />
-              <NumberField
-                label="Prazo do financiamento"
-                value={prazoFinanciamento}
-                onChange={setPrazoFinanciamento}
-                suffix="meses"
-                helpText="Financiamento tradicional costuma ir até 60 meses"
-              />
             </div>
           </div>
         </div>
@@ -122,14 +111,14 @@ export default function CalculadoraVeiculos() {
             Resultado da comparação
           </h2>
 
-          <div className="mt-4 rounded-xl bg-[var(--color-accent)]/10 p-4">
+          <div className="mt-4 rounded-xl bg-[var(--color-primary)]/10 p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/60">
               {consorcioMaisBarato ? "Consórcio sai mais barato" : "Financiamento sai mais barato"}
             </p>
-            <p className="mt-1 text-2xl font-bold text-[var(--color-accent-dark)]">{formatBRL(Math.abs(diferenca), 0)}</p>
+            <p className="mt-1 text-2xl font-bold text-[var(--color-primary)]">{formatBRL(Math.abs(diferenca), 0)}</p>
             <p className="mt-1 text-xs leading-relaxed text-[var(--color-ink)]/65">
               de diferença no total pago ao final, comparando os {PRAZO_TOTAL_VEICULO} meses do consórcio com os{" "}
-              {prazoFinanciamento ?? 0} meses do financiamento.
+              {PRAZO_FINANCIAMENTO_VEICULO_MESES} meses do financiamento.
             </p>
           </div>
 
@@ -145,7 +134,7 @@ export default function CalculadoraVeiculos() {
             </div>
             <div>
               <div className="flex items-center justify-between text-xs font-medium text-[var(--color-ink)]">
-                <span>Financiamento — total pago em {prazoFinanciamento ?? 0} meses</span>
+                <span>Financiamento — total pago em {PRAZO_FINANCIAMENTO_VEICULO_MESES} meses</span>
                 <span>{formatBRL(resultadoFinanciamento.totalPago, 0)}</span>
               </div>
               <div className="mt-1 h-2 rounded-full bg-[var(--color-border)]">
@@ -184,8 +173,8 @@ export default function CalculadoraVeiculos() {
           <p className="mt-6 text-xs leading-relaxed text-[var(--color-ink)]/70">
             <strong>Simulação, não promessa.</strong> No consórcio, o veículo só é liberado na contemplação — que
             depende do comportamento do grupo, ninguém garante o mês exato — enquanto no financiamento o veículo sai
-            na hora. A taxa de juros do financiamento varia bastante por banco, perfil de crédito, entrada e idade do
-            veículo; confirme sempre as condições reais com sua instituição financeira e com um consultor da Revla
+            na hora. Os campos fixos acima usam referências de mercado pesquisadas (fonte e período indicados em
+            cada um); confirme sempre as condições reais com sua instituição financeira e com um consultor da Revla
             antes de decidir.
           </p>
 

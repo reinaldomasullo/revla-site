@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Container from "./Container";
 import CTAButton from "./CTAButton";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
@@ -31,12 +31,21 @@ const produtos = [
   },
 ];
 
+const calculadoras = [
+  { label: "Calculadora de imóveis", href: "/consorcios/calculadora" },
+  { label: "Calculadora de veículos", href: "/consorcios/calculadora-veiculos" },
+  { label: "Calculadora de financiamento", href: "/consorcios/calculadora-financiamento" },
+];
+
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [calcOpen, setCalcOpen] = useState(false);
+  const calcRef = useRef<HTMLDivElement>(null);
 
   const inicioAtivo = pathname === "/";
   const blogAtivo = pathname === "/blog" || pathname?.startsWith("/blog/");
+  const calculadorasAtivo = pathname?.startsWith("/consorcios/calculadora") ?? false;
 
   // Fecha o menu mobile ao navegar (ajuste de estado durante a renderização,
   // evitando o refluxo extra de fazer isso em um efeito)
@@ -44,7 +53,27 @@ export default function Header() {
   if (pathname !== lastPathname) {
     setLastPathname(pathname);
     setMobileOpen(false);
+    setCalcOpen(false);
   }
+
+  // Fecha o dropdown "Calculadoras" ao clicar fora ou pressionar Esc.
+  useEffect(() => {
+    if (!calcOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (calcRef.current && !calcRef.current.contains(e.target as Node)) {
+        setCalcOpen(false);
+      }
+    };
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setCalcOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [calcOpen]);
 
   const navLinkClass = (active: boolean) =>
     `whitespace-nowrap text-sm font-medium transition-colors hover:text-[var(--color-primary)] ${
@@ -92,6 +121,51 @@ export default function Header() {
                 {produto.navLabel ?? produto.label}
               </Link>
             ))}
+
+            <div
+              className="relative"
+              ref={calcRef}
+              onMouseEnter={() => setCalcOpen(true)}
+              onMouseLeave={() => setCalcOpen(false)}
+            >
+              <button
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={calcOpen}
+                onClick={() => setCalcOpen(true)}
+                className={`flex items-center gap-1 ${navLinkClass(calculadorasAtivo)}`}
+              >
+                Calculadoras
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  aria-hidden="true"
+                  className={`transition-transform ${calcOpen ? "rotate-180" : ""}`}
+                >
+                  <path d="M1.5 3.5L5 7l3.5-3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              {calcOpen && (
+                <div className="absolute left-0 top-full z-10 mt-2 w-64 rounded-xl border border-[var(--color-border)] bg-[var(--color-paper)] p-2 shadow-lg">
+                  {calculadoras.map((calc) => (
+                    <Link
+                      key={calc.href}
+                      href={calc.href}
+                      onClick={() => setCalcOpen(false)}
+                      aria-current={pathname === calc.href ? "page" : undefined}
+                      className={`block rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-[var(--color-muted)] ${
+                        pathname === calc.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
+                      }`}
+                    >
+                      {calc.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <Link
               href="/blog"
@@ -163,6 +237,22 @@ export default function Header() {
                   }`}
                 >
                   {produto.label}
+                </Link>
+              ))}
+
+              <p className="mt-2 px-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/50">
+                Calculadoras
+              </p>
+              {calculadoras.map((calc) => (
+                <Link
+                  key={calc.href}
+                  href={calc.href}
+                  aria-current={pathname === calc.href ? "page" : undefined}
+                  className={`rounded-md px-2 py-2.5 text-base font-medium hover:bg-[var(--color-muted)] ${
+                    pathname === calc.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
+                  }`}
+                >
+                  {calc.label}
                 </Link>
               ))}
 

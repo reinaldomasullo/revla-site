@@ -28,6 +28,15 @@ export const TAXA_ADMINISTRATIVA_VEICULO_PCT = 16; // % total sobre o crédito, 
 export const PRAZO_TOTAL_VEICULO = 90; // meses, fixo
 export const MES_LIMITE_REDUCAO_VEICULO = 24; // parcela reduzida só vale até aqui, ou até contemplar antes
 
+// Valores padrão fixos (pesquisados em set/2026 — ver citação de cada um na UI). Só o
+// "valor" e o "mês da contemplação" ficam abertos pro usuário — o resto é premissa de
+// mercado, pra evitar que um dado irreal distorça a comparação com o financiamento.
+export const INPC_REFERENCIA_PCT = 4.1; // INPC (IBGE), acumulado 12 meses ago/2025-jul/2026
+export const PARCELA_REDUZIDA_PADRAO_PCT = 50; // prática comum de mercado (redução até a contemplação/mês 24)
+export const ENTRADA_FINANCIAMENTO_VEICULO_PCT = 20; // piso recomendado (Comprecar, 2026)
+export const TAXA_JUROS_FINANCIAMENTO_VEICULO_AM_PCT = 2.1; // ≈27,7% a.a. (Banco Central, jan/2026)
+export const PRAZO_FINANCIAMENTO_VEICULO_MESES = 60; // financiamento tradicional (calculafinanciamento.com.br, 2026)
+
 export type ConsorcioVeiculoInput = {
   credito: number; // R$ (valor do veículo / carta de crédito)
   indiceCorrecao: number; // % a.a. (referência: INPC)

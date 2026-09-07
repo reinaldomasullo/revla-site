@@ -14,7 +14,7 @@
 //   (não somado a ele) — ex.: ágio de 35% sobre um crédito atualizado de
 //   R$315.500 gera venda de R$110.425, não de R$425.925.
 
-function fatorMes(indiceAA: number, mes: number): number {
+export function fatorMes(indiceAA: number, mes: number): number {
   // Correção composta com passo mensal a partir do índice anual, sem correção no mês 1.
   return Math.pow(1 + indiceAA / 100, (mes - 1) / 12);
 }
@@ -25,8 +25,29 @@ function fatorAnoDegrau(taxaAA: number, mes: number): number {
 }
 
 // Taxa administrativa e lance embutido são fixos, iguais em todos os grupos da Revla.
-const TAXA_ADMINISTRATIVA_PCT = 24.2; // % total sobre o crédito
+// Exportado porque a calculadora de "consórcio x financiamento SFH" reaproveita a mesma
+// taxa administrativa (consórcio de imóveis) sem duplicar o número.
+export const TAXA_ADMINISTRATIVA_PCT = 24.2; // % total sobre o crédito
 const LANCE_EMBUTIDO_PCT = 25; // % (sobre crédito + taxa administrativa)
+
+// Valores padrão fixos das calculadoras (imóveis e financiamento SFH, que reaproveita
+// o índice/prazo/parcela reduzida daqui). Pesquisados em set/2026 — ver citação de cada
+// um nos InfoTiles da UI. Deixados só o "valor" e o "mês da contemplação" como campos
+// editáveis pelo usuário, pra evitar que ele digite um índice/taxa fora da realidade e
+// a calculadora mostre um resultado que não reflete o mercado.
+export const INCC_REFERENCIA_PCT = 6.46; // INCC-DI (FGV), acumulado 12 meses ago/2025-jul/2026
+export const PARCELA_REDUZIDA_PADRAO_PCT = 50; // prática comum de mercado (redução de até 50% até a contemplação)
+export const PRAZO_TOTAL_PADRAO_MESES = 220; // exemplo de referência do setor (Ademicon, consórcio de imóveis)
+export const AGIO_VENDA_PADRAO_PCT = 40; // padrão praticado pela Revla na venda de carta contemplada (informado pelo usuário, set/2026)
+// Rendimento comparativo: usa a Selic atual (taxa vigente, definida pelo Copom), não uma
+// projeção. Testado: com o ágio de venda correto (40%, ver AGIO_VENDA_PADRAO_PCT), a
+// diferença entre usar a Selic atual (14%) ou uma média de projeções mais conservadora
+// (Boletim Focus dez/26-dez/28 ≈ 12,1%) é pequena (o consórcio passa a perder pra
+// aplicação financeira só no mês 52 ou 55, respectivamente, num horizonte de contemplação
+// bem além do praticado) — então usa-se o dado real e mais simples de defender.
+export const RENDIMENTO_COMPARATIVO_PADRAO_PCT = 14; // Selic (Banco Central), taxa vigente desde a reunião do Copom de 04-05/08/2026
+export const REAJUSTE_ALUGUEL_PADRAO_PCT = 4.44; // IPCA acumulado 12 meses (IBGE), ago/2025-jul/2026
+export const IMPOSTO_ALUGUEL_PADRAO_PCT = 27.5; // teto da tabela progressiva do IR (Receita Federal), 2026
 
 export type SimulacaoInput = {
   credito: number; // R$

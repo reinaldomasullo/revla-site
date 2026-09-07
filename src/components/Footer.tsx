@@ -149,12 +149,26 @@ export default function Footer() {
               </li>
             ))}
             <li>
+              <FooterLink href="/reinaldo-masullo">Sobre Reinaldo Masullo</FooterLink>
+            </li>
+          </ul>
+
+          <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-white/50">Calculadoras</p>
+          <ul className="mt-3 space-y-3">
+            <li>
               <FooterLink href="/consorcios/calculadora">
-                Calculadora de consórcio
+                Calculadora de imóveis
               </FooterLink>
             </li>
             <li>
-              <FooterLink href="/reinaldo-masullo">Sobre Reinaldo Masullo</FooterLink>
+              <FooterLink href="/consorcios/calculadora-veiculos">
+                Calculadora de veículos
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink href="/consorcios/calculadora-financiamento">
+                Calculadora de financiamento
+              </FooterLink>
             </li>
           </ul>
         </div>

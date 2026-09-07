@@ -130,6 +130,9 @@ export default function ConsorciosPage() {
         <CTAButton href="/consorcios/calculadora-veiculos" variant="ghost">
           Calculadora de veículos
         </CTAButton>
+        <CTAButton href="/consorcios/calculadora-financiamento" variant="ghost">
+          Calculadora de financiamento
+        </CTAButton>
       </Hero>
 
       <FeatureGrid title="Categorias de consórcio" columns={4} items={categorias} />

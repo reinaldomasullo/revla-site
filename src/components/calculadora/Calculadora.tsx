@@ -4,7 +4,17 @@ import { useMemo, useState } from "react";
 import NumberField from "./NumberField";
 import CurrencyField from "./CurrencyField";
 import { formatBRL, formatPercent } from "./formatters";
-import { calcularCenarioAlavancagem, calcularCenarioVenda } from "./calculo";
+import {
+  calcularCenarioAlavancagem,
+  calcularCenarioVenda,
+  AGIO_VENDA_PADRAO_PCT,
+  IMPOSTO_ALUGUEL_PADRAO_PCT,
+  INCC_REFERENCIA_PCT,
+  PARCELA_REDUZIDA_PADRAO_PCT,
+  PRAZO_TOTAL_PADRAO_MESES,
+  REAJUSTE_ALUGUEL_PADRAO_PCT,
+  RENDIMENTO_COMPARATIVO_PADRAO_PCT,
+} from "./calculo";
 import { whatsappLink } from "@/lib/site-config";
 import CTAButton from "@/components/CTAButton";
 
@@ -13,37 +23,25 @@ type Cenario = "venda" | "alavancagem";
 export default function Calculadora() {
   const [cenario, setCenario] = useState<Cenario>("venda");
 
-  const [credito, setCredito] = useState<number | null>(null);
-  const [indiceCorrecao, setIndiceCorrecao] = useState<number | null>(null);
-  const [percentualParcela, setPercentualParcela] = useState<number | null>(null);
-  const [prazoTotal, setPrazoTotal] = useState<number | null>(null);
+  // Único campo de valor pra toda a simulação — a comparação é sempre feita em cima do
+  // valor total a ser contratado (mesmo número usado como crédito da carta e como valor
+  // do imóvel no cenário de alavancagem, pra não pedir esse dado duas vezes).
+  const [valor, setValor] = useState<number | null>(null);
+  // Único outro campo aberto: ninguém controla o mês da contemplação (depende do grupo),
+  // então faz sentido deixar o usuário explorar "e se eu contemplar no mês X".
   const [mesContemplacao, setMesContemplacao] = useState<number | null>(null);
-  const [agioVenda, setAgioVenda] = useState<number | null>(null);
-  const [rendimentoComparativo, setRendimentoComparativo] = useState<number | null>(null);
-
-  const [valorImovel, setValorImovel] = useState<number | null>(null);
-  const [reajusteAluguel, setReajusteAluguel] = useState<number | null>(null);
-  const [impostoAluguel, setImpostoAluguel] = useState<number | null>(null);
 
   const inputVenda = useMemo(
     () => ({
-      credito: credito ?? 0,
-      indiceCorrecao: indiceCorrecao ?? 0,
-      percentualParcela: percentualParcela ?? 0,
-      prazoTotal: prazoTotal ?? 0,
+      credito: valor ?? 0,
+      indiceCorrecao: INCC_REFERENCIA_PCT,
+      percentualParcela: PARCELA_REDUZIDA_PADRAO_PCT,
+      prazoTotal: PRAZO_TOTAL_PADRAO_MESES,
       mesContemplacao: mesContemplacao ?? 0,
-      agioVenda: agioVenda ?? 0,
-      rendimentoComparativo: rendimentoComparativo ?? 0,
+      agioVenda: AGIO_VENDA_PADRAO_PCT,
+      rendimentoComparativo: RENDIMENTO_COMPARATIVO_PADRAO_PCT,
     }),
-    [
-      credito,
-      indiceCorrecao,
-      percentualParcela,
-      prazoTotal,
-      mesContemplacao,
-      agioVenda,
-      rendimentoComparativo,
-    ]
+    [valor, mesContemplacao]
   );
 
   const resultadoVenda = useMemo(() => calcularCenarioVenda(inputVenda), [inputVenda]);
@@ -53,13 +51,13 @@ export default function Calculadora() {
       calcularCenarioAlavancagem(
         {
           ...inputVenda,
-          valorImovel: valorImovel ?? 0,
-          reajusteAluguel: reajusteAluguel ?? 0,
-          impostoAluguel: impostoAluguel ?? 0,
+          valorImovel: valor ?? 0,
+          reajusteAluguel: REAJUSTE_ALUGUEL_PADRAO_PCT,
+          impostoAluguel: IMPOSTO_ALUGUEL_PADRAO_PCT,
         },
         resultadoVenda.valorVenda
       ),
-    [inputVenda, valorImovel, reajusteAluguel, impostoAluguel, resultadoVenda.valorVenda]
+    [inputVenda, valor, resultadoVenda.valorVenda]
   );
 
   const seloConfig = {
@@ -107,51 +105,40 @@ export default function Calculadora() {
       <div className="mt-8 grid gap-10 lg:grid-cols-2">
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-ink)]/60">
-            Dados da carta de consórcio
+            Dados da simulação
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
-              <CurrencyField label="Crédito" value={credito} onChange={setCredito} />
+              <CurrencyField label="Valor do imóvel" value={valor} onChange={setValor} />
             </div>
-            <NumberField
-              label="Índice de correção"
-              value={indiceCorrecao}
-              onChange={setIndiceCorrecao}
-              suffix="% a.a."
-              helpText="Referência: INCC"
-            />
-            <NumberField
-              label="Parcela reduzida"
-              value={percentualParcela}
-              onChange={setPercentualParcela}
-              suffix="%"
-              helpText="% da parcela cheia paga até contemplar (100% = sem redução)"
-            />
-            <NumberField label="Prazo total" value={prazoTotal} onChange={setPrazoTotal} suffix="meses" />
             <NumberField
               label="Mês da contemplação"
               value={mesContemplacao}
               onChange={setMesContemplacao}
               suffix="mês"
+              helpText="Depende do grupo — explore diferentes meses"
             />
+            <InfoTile label="Prazo total" value={`${PRAZO_TOTAL_PADRAO_MESES} meses (referência de mercado, Ademicon)`} />
             <InfoTile label="Taxa administrativa" value="24,20% (fixa, padrão Revla)" />
             <InfoTile label="Lance embutido" value="25,00% (fixo, sobre crédito + taxa administrativa)" />
+            <InfoTile
+              label="Parcela reduzida"
+              value={`${formatPercent(PARCELA_REDUZIDA_PADRAO_PCT, 0)} (prática comum de mercado até a contemplação)`}
+            />
+            <InfoTile
+              label="Índice de correção"
+              value={`${formatPercent(INCC_REFERENCIA_PCT)} a.a. (INCC-DI, FGV — acum. 12m ago/25 a jul/26)`}
+            />
 
             {cenario === "venda" && (
               <>
-                <NumberField
+                <InfoTile
                   label="Ágio na venda da carta"
-                  value={agioVenda}
-                  onChange={setAgioVenda}
-                  suffix="%"
-                  helpText="Aplicado sobre o crédito já atualizado"
+                  value={`${formatPercent(AGIO_VENDA_PADRAO_PCT, 0)} (padrão praticado pela Revla na venda de carta contemplada)`}
                 />
-                <NumberField
+                <InfoTile
                   label="Rendimento comparativo"
-                  value={rendimentoComparativo}
-                  onChange={setRendimentoComparativo}
-                  suffix="% a.a."
-                  helpText="Referência: CDB/Tesouro"
+                  value={`${formatPercent(RENDIMENTO_COMPARATIVO_PADRAO_PCT, 0)} a.a. (Selic, Banco Central — taxa vigente desde a reunião do Copom de 04-05/08/2026)`}
                 />
               </>
             )}
@@ -160,33 +147,22 @@ export default function Calculadora() {
           {cenario === "alavancagem" && (
             <>
               <h2 className="mt-8 text-sm font-semibold uppercase tracking-wide text-[var(--color-ink)]/60">
-                Dados do imóvel e do aluguel
+                Dados do aluguel
               </h2>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="sm:col-span-2">
-                  <CurrencyField label="Valor do imóvel" value={valorImovel} onChange={setValorImovel} />
-                </div>
-                <NumberField
+                <InfoTile
                   label="Reajuste do aluguel"
-                  value={reajusteAluguel}
-                  onChange={setReajusteAluguel}
-                  suffix="% a.a."
-                  helpText="Referência: IPCA"
+                  value={`${formatPercent(REAJUSTE_ALUGUEL_PADRAO_PCT)} a.a. (IPCA, IBGE — acum. 12m ago/25 a jul/26)`}
                 />
-                <NumberField
+                <InfoTile
                   label="Imposto sobre o aluguel"
-                  value={impostoAluguel}
-                  onChange={setImpostoAluguel}
-                  suffix="%"
+                  value={`${formatPercent(IMPOSTO_ALUGUEL_PADRAO_PCT, 1)} (teto da tabela progressiva do IR, Receita Federal 2026)`}
                 />
-              </div>
-
-              <div className="mt-4 grid grid-cols-2 gap-4">
                 <InfoTile label="Prazo restante após contemplar" value={`${resultadoAlavancagem.prazoRestante} meses`} />
                 <InfoTile label="Aluguel mensal inicial (0,50% a.m. do imóvel)" value={formatBRL(resultadoAlavancagem.aluguelMensalInicial, 0)} />
                 <InfoTile
                   label="Valorização do imóvel"
-                  value={`${formatPercent(indiceCorrecao ?? 0)} a.a. (mesmo índice de correção da carta)`}
+                  value={`${formatPercent(INCC_REFERENCIA_PCT)} a.a. (mesmo índice de correção da carta)`}
                 />
                 <InfoTile label="Valor futuro estimado do imóvel" value={formatBRL(resultadoAlavancagem.valorFuturoImovel, 0)} />
               </div>
@@ -236,7 +212,7 @@ export default function Calculadora() {
                   <div>
                     <div className="flex items-center justify-between text-xs font-medium text-[var(--color-ink)]">
                       <span>
-                        Aplicação a {rendimentoComparativo ?? 0}% a.a. ({formatPercent(resultadoVenda.rendimentoComparativoAM)} a.m.)
+                        Aplicação a {formatPercent(RENDIMENTO_COMPARATIVO_PADRAO_PCT, 0)} a.a. ({formatPercent(resultadoVenda.rendimentoComparativoAM)} a.m.)
                       </span>
                       <span>{formatPercent(resultadoVenda.lucroFinanceiroComparativoPct)}</span>
                     </div>
@@ -282,7 +258,7 @@ export default function Calculadora() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between rounded-xl bg-[var(--color-accent)]/10 p-4">
+              <div className="flex items-center justify-between rounded-xl bg-[var(--color-primary)]/10 p-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/60">
                     Do bolso sobre o patrimônio futuro
@@ -299,12 +275,12 @@ export default function Calculadora() {
           )}
 
           <p className="mt-6 text-xs leading-relaxed text-[var(--color-ink)]/70">
-            <strong>Simulação, não promessa.</strong> Os números desta tela são uma projeção calculada a partir dos
-            dados que você preencheu. Cada administradora aplica regras próprias — forma e limite de lance, vagas no
-            grupo, índice de correção e condições da parcela reduzida — e o mês da contemplação depende do
-            comportamento do grupo, ninguém garante. O ágio na venda da carta oscila com o mercado. Use esta
-            calculadora como referência e confirme sempre as condições no regulamento do grupo com um consultor da
-            Revla.
+            <strong>Simulação, não promessa.</strong> Os números desta tela usam o valor que você informou e
+            referências de mercado pesquisadas (índices, taxas e faixas praticadas — indicadas em cada campo fixo
+            acima, com fonte e período). Cada administradora aplica regras próprias — forma e limite de lance, vagas
+            no grupo e condições da parcela reduzida — e o mês da contemplação depende do comportamento do grupo,
+            ninguém garante. Use esta calculadora como referência e confirme sempre as condições reais com um
+            consultor da Revla.
           </p>
 
           <CTAButton
@@ -337,7 +313,7 @@ export default function Calculadora() {
               <p className="text-xs font-medium uppercase tracking-wide text-white/60">
                 {diferencaGanho >= 0 ? "O consórcio gerou a mais" : "A aplicação financeira gerou a mais"}
               </p>
-              <p className="mt-1 text-2xl font-bold text-[var(--color-accent)]">
+              <p className="mt-1 text-3xl font-bold text-white">
                 {formatBRL(Math.abs(diferencaGanho), 0)}
               </p>
             </div>
@@ -369,11 +345,11 @@ function ResultRow({
   return (
     <div
       className={`flex items-center justify-between gap-4 rounded-xl px-4 py-3 ${
-        highlight ? "bg-[var(--color-accent)]/12" : "bg-[var(--color-muted)]"
+        highlight ? "bg-[var(--color-primary)]/10" : "bg-[var(--color-muted)]"
       }`}
     >
       <span className="text-sm text-[var(--color-ink)]/75">{label}</span>
-      <span className={`text-sm font-bold ${highlight ? "text-[var(--color-accent-dark)]" : "text-[var(--color-ink)]"}`}>
+      <span className={`text-sm font-bold ${highlight ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"}`}>
         {value}
       </span>
     </div>
