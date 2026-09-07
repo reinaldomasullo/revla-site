@@ -5,16 +5,16 @@ export default function NumberField({
   value,
   onChange,
   suffix,
-  min = 0,
-  step = 1,
+  placeholder,
   helpText,
 }: {
   label: string;
-  value: number;
-  onChange: (value: number) => void;
+  /** null = campo vazio (não preenchido pelo usuário ainda). */
+  value: number | null;
+  onChange: (value: number | null) => void;
   suffix?: string;
-  min?: number;
-  step?: number;
+  /** Exemplo de formato, exibido apagado — nunca um valor de referência real. */
+  placeholder?: string;
   helpText?: string;
 }) {
   const id = `field-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
@@ -29,11 +29,13 @@ export default function NumberField({
           id={id}
           type="number"
           inputMode="decimal"
-          className="w-full bg-transparent px-3 py-2.5 text-sm text-[var(--color-ink)] outline-none"
-          value={Number.isFinite(value) ? value : 0}
-          min={min}
-          step={step}
-          onChange={(e) => onChange(e.target.valueAsNumber || 0)}
+          placeholder={placeholder}
+          className="w-full bg-transparent px-3 py-2.5 text-sm text-[var(--color-ink)] outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          value={value === null ? "" : value}
+          onChange={(e) => {
+            const raw = e.target.value;
+            onChange(raw === "" ? null : e.target.valueAsNumber);
+          }}
         />
         {suffix && (
           <span className="shrink-0 border-l border-[var(--color-border)] bg-[var(--color-muted)] px-3 py-2.5 text-xs font-medium text-[var(--color-ink)]/60">
