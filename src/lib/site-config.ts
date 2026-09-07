@@ -42,6 +42,43 @@ export const siteConfig = {
   ],
 };
 
+// Depoimentos reais de clientes (copy redigida a partir do relato de cada
+// um, aprovada por eles antes de publicar). Fonte única: usada tanto na
+// seção visual "Quem confia na Revla" (home) quanto no schema de avaliação
+// (layout.tsx) — nota 5/5 confirmada pela Revla para todos.
+export const testimonials = [
+  {
+    name: "Leonardo",
+    quote:
+      "Eu não sabia que dava pra usar consórcio como estratégia de investimento até conversar com a Revla. Me explicaram tudo com calma, sem empurrar nada, e hoje entendo exatamente como funciona cada parcela.",
+  },
+  {
+    name: "Ginaldo",
+    quote:
+      "Pesquisei sozinho antes e me perdi entre tantas administradoras. A Revla comparou as opções pra mim e me mostrou o grupo com o prazo que fazia sentido pro meu bolso, sem pressa nenhuma.",
+  },
+  {
+    name: "Paulo",
+    quote:
+      "Eu tinha interesse em uma cobertura específica, diária por incapacidade temporária, caso precisasse ficar afastado do trabalho por algum motivo. A Revla montou meu seguro de vida já incluindo essa cobertura, e me explicaram cada detalhe com muita paciência.",
+  },
+  {
+    name: "Aurencie",
+    quote:
+      "Passei por um momento muito difícil no ano passado e o amparo funeral foi acionado exatamente como contratado. A equipe da Revla esteve ao meu lado com todo o cuidado e respeito que eu precisava naquele momento.",
+  },
+  {
+    name: "Vinicius",
+    quote:
+      "Toda vez que tive dúvida sobre o meu consórcio de imóvel, fui respondido rápido pelo WhatsApp, sem enrolação. Isso fez toda diferença pra eu me sentir seguro na decisão.",
+  },
+  {
+    name: "Walmir",
+    quote:
+      "O que mais me chamou atenção foi a transparência: me mostraram exatamente quanto era taxa de administração e quanto ia pro crédito, sem letra miúda. Isso me deu confiança pra fechar.",
+  },
+];
+
 export const whatsappLink = (message: string) =>
   `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 

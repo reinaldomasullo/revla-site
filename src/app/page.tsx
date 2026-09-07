@@ -9,7 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
-import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import { siteConfig, whatsappLink, buildMetadata, testimonials } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
   title: "Consórcio, Seguros, Saúde e Patrimônio",
@@ -122,39 +122,6 @@ const segurosSubprodutos = [
   {
     title: "Seguro celular",
     description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Lucas Oliveira",
-    quote:
-      "Consegui minha carta de crédito para o imóvel novo sem pagar juros. A Revla comparou as opções entre administradoras e me ajudou a escolher o melhor plano de parcelas para o meu orçamento.",
-  },
-  {
-    name: "Gabriel Santos",
-    quote:
-      "O seguro de vida que contratei com a Revla trouxe paz de espírito para mim e minha família. A equipe explicou detalhadamente todas as coberturas disponíveis antes de eu decidir.",
-  },
-  {
-    name: "Eduardo Almeida",
-    quote:
-      "Trocar de plano de saúde parecia complicado, mas a Revla comparou as opções e me indicou a cobertura certa para a minha idade, com um valor que cabia no orçamento.",
-  },
-  {
-    name: "Marisa Costa",
-    quote:
-      "Contratar o amparo funeral foi uma decisão de cuidado com a minha família. Saber que tudo já está resolvido antecipadamente traz uma tranquilidade que não tem preço.",
-  },
-  {
-    name: "Fernanda Ribeiro",
-    quote:
-      "A Revla me ajudou a enxergar consórcio, seguro e plano de saúde como parte de uma única estratégia. Hoje sei exatamente como estou construindo e protegendo meu patrimônio, não são mais decisões isoladas.",
-  },
-  {
-    name: "Rodrigo Nascimento",
-    quote:
-      "Segurei minha loja e minha casa com a Revla no mesmo atendimento. Compararam seguradoras e me explicaram cada cobertura, sem eu precisar entender nada de seguro antes.",
   },
 ];
 

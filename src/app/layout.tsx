@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, testimonials } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -87,6 +87,30 @@ const organizationSchema = {
     addressCountry: siteConfig.address.country,
   },
   sameAs: Object.values(siteConfig.social),
+  // Nota: o Google ignora deliberadamente review/aggregateRating "self-serving"
+  // (a própria empresa avaliando a si mesma) para LocalBusiness/Organization —
+  // não gera estrelas na busca. Mantido mesmo assim por ser dado real e
+  // correto (depoimentos reais de clientes, aprovados por eles); estrelas de
+  // verdade na busca dependem das avaliações no Google Meu Negócio.
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    bestRating: "5",
+    reviewCount: String(testimonials.length),
+  },
+  review: testimonials.map((t) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: t.name,
+    },
+    reviewBody: t.quote,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+  })),
 };
 
 export default function RootLayout({
