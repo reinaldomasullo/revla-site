@@ -157,12 +157,12 @@ export default function Footer() {
           <ul className="mt-3 space-y-3">
             <li>
               <FooterLink href="/consorcios/calculadora">
-                Calculadora de imóveis
+                Calculadora de consórcio de imóveis
               </FooterLink>
             </li>
             <li>
               <FooterLink href="/consorcios/calculadora-veiculos">
-                Calculadora de veículos
+                Calculadora de consórcio de veículos
               </FooterLink>
             </li>
             <li>
