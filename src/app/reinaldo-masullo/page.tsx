@@ -42,6 +42,10 @@ const redes = [
   { label: "Facebook", href: "https://facebook.com/reinaldomasullo" },
   { label: "YouTube", href: "https://youtube.com/@reinaldomasullo" },
   { label: "TikTok", href: "https://tiktok.com/@reinaldomasullo" },
+  { label: "Pinterest", href: "https://pinterest.com/reinaldomasullocorrretor" },
+  { label: "X (Twitter)", href: "https://x.com/reinaldomasullo" },
+  { label: "Threads", href: "https://www.threads.com/@reinaldomasullo" },
+  { label: "Telegram", href: "https://t.me/reinaldomasullo" },
 ];
 
 const especialidades = [
