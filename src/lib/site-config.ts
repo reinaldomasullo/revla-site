@@ -42,6 +42,8 @@ export const siteConfig = {
     "AZOS",
     "PASI",
     "Tokio Marine",
+    "Junto",
+    "Suhai",
     "Prevent Senior",
   ],
 };
