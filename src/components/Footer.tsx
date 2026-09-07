@@ -167,7 +167,7 @@ export default function Footer() {
             </li>
             <li>
               <FooterLink href="/consorcios/calculadora-financiamento">
-                Calculadora de financiamento
+                Calculadora de consórcio x financiamento
               </FooterLink>
             </li>
           </ul>

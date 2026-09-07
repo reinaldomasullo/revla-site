@@ -42,7 +42,7 @@ export default function CalculadoraVeiculosPage() {
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
-          { label: "Calculadora de veículos", href: "/consorcios/calculadora-veiculos" },
+          { label: "Calculadora de consórcio de veículos", href: "/consorcios/calculadora-veiculos" },
         ]}
       />
       <Hero
