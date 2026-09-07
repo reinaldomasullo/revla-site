@@ -13,6 +13,10 @@ export const siteConfig = {
   whatsapp: "5511947263140",
   whatsappDisplay: "(11) 94726-3140",
   email: "contato@revlacorretora.com.br",
+  // Canal do Encarregado de Dados (DPO), exigido pelo art. 41 da LGPD —
+  // usado na Política de Privacidade para pedidos relacionados a dados
+  // pessoais (acesso, correção, exclusão etc.), separado do e-mail geral.
+  lgpdEmail: "lgpd@revlacorretora.com.br",
   address: {
     street: "Avenida Paulista, 1471 - Conj. 511",
     district: "Bela Vista",
@@ -77,6 +81,18 @@ export const testimonials = [
     quote:
       "O que mais me chamou atenção foi a transparência: me mostraram exatamente quanto era taxa de administração e quanto ia pro crédito, sem letra miúda. Isso me deu confiança pra fechar.",
   },
+];
+
+// Lista simples (rótulo + link) dos canais oficiais de redes sociais —
+// usada nas páginas institucionais/legais (Política de Privacidade, Termos
+// de Uso, Disclaimer) para orientar o usuário sobre onde nos encontrar de
+// verdade e alertar contra perfis falsos. O Footer usa sua própria lista
+// (com ícones SVG); esta é a versão só de texto.
+export const socialChannels = [
+  { label: "Instagram", href: siteConfig.social.instagram },
+  { label: "Facebook", href: siteConfig.social.facebook },
+  { label: "LinkedIn", href: siteConfig.social.linkedin },
+  { label: "YouTube", href: siteConfig.social.youtube },
 ];
 
 export const whatsappLink = (message: string) =>
