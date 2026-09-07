@@ -12,45 +12,48 @@ import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 export const metadata: Metadata = buildMetadata({
   title: "Plano de Saúde com a Prevent Senior",
   description:
-    "Planos de saúde Prevent Senior individuais, familiares e empresariais, com rede própria e parceria com a Sancta Maggiore. Simulação gratuita e sem compromisso.",
+    "Planos de saúde Prevent Senior (MA+S e 1025), com rede própria em São Paulo, Rio de Janeiro e Niterói. Simulação gratuita e sem compromisso.",
   path: "/plano-de-saude",
 });
 
-// A Prevent Senior trabalha com apenas duas opções de acomodação (linha
-// 1025) — usado tanto na seção de planos quanto na tabela de preços abaixo.
-const planos = [
+// A Prevent Senior tem apenas 2 planos: MA+S (abrangência maior, inclui Rio
+// de Janeiro e Niterói) e 1025 (região de São Paulo/Baixada Santista). Cada
+// um tem 2 opções de acomodação (Enfermaria/Apartamento) — mesma fonte de
+// dados usada na seção "Os 2 planos" e na tabela de preços abaixo.
+const pricingPlans = [
   {
-    title: "Prevent Senior 1025 — Enfermaria",
-    description:
-      "ANS nº 505.407/25-9. Cobertura ambulatorial e hospitalar, internação em quarto coletivo, a partir de R$ 759,84/mês.",
+    name: "Prevent MA+S",
+    areas:
+      "São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói",
+    ansEnfermaria: "505.028/25-6",
+    ansApartamento: "505.029/25-4",
+    startingPrice: "R$ 883,53",
+    rows: [
+      { faixa: "Até 43 anos", enfermaria: "R$ 883,53", apartamento: "R$ 1.055,50" },
+      { faixa: "44 a 58 anos", enfermaria: "R$ 1.162,60", apartamento: "R$ 1.389,60" },
+      { faixa: "59 anos em diante", enfermaria: "R$ 1.529,75", apartamento: "R$ 1.828,43" },
+    ],
   },
   {
-    title: "Prevent Senior 1025 — Apartamento",
-    description:
-      "ANS nº 505.408/25-7. Cobertura ambulatorial e hospitalar, internação em quarto individual, a partir de R$ 907,73/mês.",
-  },
-];
-
-const modalidades = [
-  {
-    title: "Individual/Familiar",
-    description: "Contratação direta para você e seus dependentes, sem necessidade de vínculo empregatício ou associativo.",
-  },
-  {
-    title: "PME (empresarial)",
-    description: "Planos para empresas de pequeno e médio porte, com condições diferenciadas por número de vidas.",
-  },
-  {
-    title: "Por adesão",
-    description: "Contratação através de sindicatos, associações ou conselhos de classe, geralmente com preços mais competitivos.",
-  },
-  {
-    title: "Odontológico",
-    description: "Planos odontológicos individuais, familiares e empresariais, avulsos ou combinados ao plano de saúde.",
+    name: "Prevent Senior 1025",
+    areas: "São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande",
+    ansEnfermaria: "505.407/25-9",
+    ansApartamento: "505.408/25-7",
+    startingPrice: "R$ 759,84",
+    rows: [
+      { faixa: "Até 43 anos", enfermaria: "R$ 759,84", apartamento: "R$ 907,73" },
+      { faixa: "44 a 58 anos", enfermaria: "R$ 999,84", apartamento: "R$ 1.195,06" },
+      { faixa: "59 anos em diante", enfermaria: "R$ 1.315,59", apartamento: "R$ 1.572,45" },
+    ],
   },
 ];
 
-const diferenciais1 = [
+const planos = pricingPlans.map((plan) => ({
+  title: plan.name,
+  description: `Abrangência em ${plan.areas}. Cobertura ambulatorial e hospitalar (Enfermaria ou Apartamento), a partir de ${plan.startingPrice}/mês.`,
+}));
+
+const diferenciais = [
   {
     title: "Sem reajuste por faixa etária a partir dos 44 anos",
     description: "A partir dos 44 anos, a mensalidade deixa de sofrer reajuste por mudança de faixa etária — só a atualização anual prevista em contrato.",
@@ -67,12 +70,9 @@ const diferenciais1 = [
     title: "Estruturas modernas e acolhedoras",
     description: "Hospitais, prontos-socorros e unidades ambulatoriais com estrutura própria, projetados para o conforto de quem os utiliza.",
   },
-];
-
-const diferenciais2 = [
   {
-    title: "Cobertura completa em São Paulo e região",
-    description: "Rede própria em São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande.",
+    title: "Cobertura em São Paulo, Rio de Janeiro e Niterói",
+    description: "Rede própria em São Paulo e região (plano 1025) e também no Rio de Janeiro e Niterói (plano MA+S).",
   },
   {
     title: "Carências reduzidas",
@@ -88,22 +88,16 @@ const diferenciais2 = [
   },
 ];
 
-const pricingRows = [
-  { faixa: "Até 43 anos", enfermaria: "R$ 759,84", apartamento: "R$ 907,73" },
-  { faixa: "44 a 58 anos", enfermaria: "R$ 999,84", apartamento: "R$ 1.195,06" },
-  { faixa: "59 anos em diante", enfermaria: "R$ 1.315,59", apartamento: "R$ 1.572,45" },
-];
-
 const faqItems = [
   {
-    question: "Qual a diferença entre plano individual e por adesão?",
+    question: "Qual a diferença entre os planos MA+S e 1025?",
     answer:
-      "O plano individual é contratado diretamente pela pessoa física. O plano por adesão exige vínculo com um sindicato, associação ou conselho de classe, e costuma ter mensalidades mais competitivas.",
+      "A principal diferença é a área de abrangência: o MA+S atende também Rio de Janeiro e Niterói, além de São Paulo e região; o 1025 atende só a região de São Paulo e Baixada Santista. A cobertura ambulatorial e hospitalar é equivalente nos dois.",
   },
   {
     question: "Qual a diferença entre os planos Enfermaria e Apartamento?",
     answer:
-      "A diferença está na acomodação em internações: no plano Enfermaria, a internação é em quarto coletivo; no plano Apartamento, em quarto individual. A cobertura ambulatorial e hospitalar é a mesma nos dois planos — a escolha é uma questão de conforto e orçamento.",
+      "A diferença está na acomodação em internações: no plano Enfermaria, a internação é em quarto coletivo; no plano Apartamento, em quarto individual. Essa opção existe tanto no MA+S quanto no 1025 — a escolha é uma questão de conforto e orçamento.",
   },
   {
     question: "O que é carência e como funciona?",
@@ -118,12 +112,12 @@ const faqItems = [
   {
     question: "Quanto custa um plano de saúde?",
     answer:
-      "Os planos Prevent Senior 1025 partem de R$ 759,84/mês (Enfermaria) e R$ 907,73/mês (Apartamento) para beneficiários de até 43 anos, com valores por faixa etária — veja a tabela de preços completa acima ou fale com um consultor para a tabela vigente.",
+      "Os planos Prevent Senior partem de R$ 759,84/mês (1025 Enfermaria) e R$ 883,53/mês (MA+S Enfermaria) para beneficiários de até 43 anos, com valores por faixa etária — veja a tabela de preços completa acima ou fale com um consultor para a tabela vigente.",
   },
   {
     question: "A Revla trabalha só com a Prevent Senior?",
     answer:
-      "A Prevent Senior é nossa parceira oficial em plano de saúde, com rede própria e parceria com a Sancta Maggiore, e trabalhamos com os dois planos da linha 1025 (Enfermaria e Apartamento). Para necessidades específicas, também ajudamos a avaliar outras operadoras — fale com um consultor para entender a melhor opção para seu caso.",
+      "A Prevent Senior é nossa parceira oficial em plano de saúde, e trabalhamos com os dois planos disponíveis — MA+S e 1025. Para necessidades específicas, também ajudamos a avaliar outras operadoras — fale com um consultor para entender a melhor opção para seu caso.",
   },
 ];
 
@@ -137,7 +131,7 @@ const serviceSchema = {
   },
   areaServed: "BR",
   description:
-    "Corretagem de planos de saúde Prevent Senior — linha 1025, planos Enfermaria e Apartamento — individuais, familiares, empresariais e por adesão.",
+    "Corretagem de planos de saúde Prevent Senior — MA+S (São Paulo, Rio de Janeiro e Niterói) e 1025 (São Paulo e região) —, individuais, familiares, empresariais e por adesão.",
 };
 
 export default function PlanoDeSaudePage() {
@@ -147,8 +141,8 @@ export default function PlanoDeSaudePage() {
       <Breadcrumbs items={[{ label: "Plano de Saúde", href: "/plano-de-saude" }]} />
       <Hero
         eyebrow="Parceria oficial"
-        title="Revla e Prevent Senior: dois planos com rede própria em São Paulo"
-        description="A Revla é corretora parceira oficial da Prevent Senior, operadora com rede própria e parceria com a Sancta Maggiore. Trabalhamos com os dois planos da linha 1025 — Enfermaria e Apartamento —, com cobertura ambulatorial e hospitalar em São Paulo e região. Simulação gratuita e sem compromisso."
+        title="Revla e Prevent Senior: dois planos, com rede em SP, Rio de Janeiro e Niterói"
+        description="A Revla é corretora parceira oficial da Prevent Senior. Trabalhamos com os dois planos da operadora — MA+S, com abrangência inclusive no Rio de Janeiro e Niterói, e 1025, focado em São Paulo e região —, com cobertura ambulatorial e hospitalar. Simulação gratuita e sem compromisso."
       >
         <CTAButton
           href={whatsappLink(
@@ -174,18 +168,20 @@ export default function PlanoDeSaudePage() {
             </h2>
             <p className="mt-3 text-base leading-relaxed text-white">
               A Prevent Senior é referência em cuidado para a melhor idade no Brasil, com rede
-              própria e parceria com a Sancta Maggiore. A Revla é corretora parceira oficial e
-              ajuda você a escolher entre os dois planos disponíveis.
+              própria. A Revla é corretora parceira oficial e ajuda você a escolher entre os dois
+              planos disponíveis.
             </p>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             <div className="rounded-2xl border border-white/30 p-6">
               <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">2</p>
-              <p className="mt-2 text-sm text-white">planos com rede própria: Enfermaria e Apartamento</p>
+              <p className="mt-2 text-sm text-white">planos com rede própria: MA+S e 1025</p>
             </div>
             <div className="rounded-2xl border border-white/30 p-6">
-              <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">6</p>
-              <p className="mt-2 text-sm text-white">cidades atendidas na Grande São Paulo e Baixada Santista</p>
+              <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">8</p>
+              <p className="mt-2 text-sm text-white">
+                cidades atendidas, incluindo Rio de Janeiro e Niterói (plano MA+S)
+              </p>
             </div>
             <div className="rounded-2xl border border-white/30 p-6">
               <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">180 dias</p>
@@ -197,8 +193,8 @@ export default function PlanoDeSaudePage() {
               Operadora registrada na Agência Nacional de Saúde Suplementar (ANS)
             </span>
             <span>
-              Planos: Prevent Senior 1025 Enfermaria (ANS 505.407/25-9) e Apartamento
-              (ANS 505.408/25-7).
+              MA+S: Enfermaria (ANS 505.028/25-6) e Apartamento (ANS 505.029/25-4). 1025:
+              Enfermaria (ANS 505.407/25-9) e Apartamento (ANS 505.408/25-7).
             </span>
           </div>
         </Container>
@@ -206,29 +202,18 @@ export default function PlanoDeSaudePage() {
 
       <FeatureGrid
         title="Os 2 planos Prevent Senior"
-        description="A Prevent Senior trabalha com apenas duas opções de acomodação — escolha a que faz sentido para você."
+        description="A Prevent Senior trabalha com apenas duas opções de plano — escolha a que faz sentido para você."
         columns={2}
         items={planos}
       />
 
       <section className="section-muted">
         <FeatureGrid
-          title="Formas de contratação"
-          description="Qualquer um dos dois planos pode ser contratado nos seguintes formatos."
+          title="Diferenciais Prevent Senior"
+          description="Oito motivos pelos quais famílias escolhem a Prevent Senior."
           columns={4}
-          items={modalidades}
+          items={diferenciais}
         />
-      </section>
-
-      <FeatureGrid
-        title="Diferenciais Prevent Senior"
-        description="Oito motivos pelos quais famílias escolhem a Prevent Senior."
-        columns={4}
-        items={diferenciais1}
-      />
-
-      <section className="section-muted">
-        <FeatureGrid title="Mais diferenciais Prevent Senior" columns={4} items={diferenciais2} />
       </section>
 
       <section className="py-12 sm:py-16">
@@ -238,52 +223,61 @@ export default function PlanoDeSaudePage() {
               Tabela de preços
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
-              Valores de referência para os planos Prevent Senior 1025, cobertura ambulatorial e
-              hospitalar sem obstetrícia, para São Paulo, Santo André, São Bernardo do Campo, São
-              Caetano do Sul, Santos e Praia Grande.
+              Valores de referência, cobertura ambulatorial e hospitalar sem obstetrícia, para os
+              dois planos Prevent Senior.
             </p>
           </div>
 
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-[var(--color-border)]">
-            <table className="w-full min-w-[560px] border-collapse text-sm">
-              <thead>
-                <tr className="bg-[var(--color-muted)] text-left">
-                  <th scope="col" className="px-5 py-4 font-semibold text-[var(--color-ink)]">
-                    Faixa etária
-                  </th>
-                  <th scope="col" className="px-5 py-4 font-semibold text-[var(--color-ink)]">
-                    Enfermaria
-                    <span className="block text-xs font-normal text-[var(--color-ink)]/60">
-                      ANS 505.407/25-9
-                    </span>
-                  </th>
-                  <th scope="col" className="px-5 py-4 font-semibold text-[var(--color-ink)]">
-                    Apartamento
-                    <span className="block text-xs font-normal text-[var(--color-ink)]/60">
-                      ANS 505.408/25-7
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {pricingRows.map((row) => (
-                  <tr key={row.faixa} className="border-t border-[var(--color-border)]">
-                    <td className="px-5 py-4 text-[var(--color-ink)]">{row.faixa}</td>
-                    <td className="px-5 py-4 font-semibold tabular-nums text-[var(--color-primary)]">
-                      {row.enfermaria}
-                      <span className="font-normal text-[var(--color-ink)]/60">/mês</span>
-                    </td>
-                    <td className="px-5 py-4 font-semibold tabular-nums text-[var(--color-primary)]">
-                      {row.apartamento}
-                      <span className="font-normal text-[var(--color-ink)]/60">/mês</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="mt-10 space-y-10">
+            {pricingPlans.map((plan) => (
+              <div key={plan.name}>
+                <h3 className="text-lg font-semibold text-[var(--color-ink)]">{plan.name}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                  Abrangência: {plan.areas}.
+                </p>
+                <div className="mt-4 overflow-x-auto rounded-2xl border border-[var(--color-border)]">
+                  <table className="w-full min-w-[560px] border-collapse text-sm">
+                    <thead>
+                      <tr className="bg-[var(--color-muted)] text-left">
+                        <th scope="col" className="px-5 py-4 font-semibold text-[var(--color-ink)]">
+                          Faixa etária
+                        </th>
+                        <th scope="col" className="px-5 py-4 font-semibold text-[var(--color-ink)]">
+                          Enfermaria
+                          <span className="block text-xs font-normal text-[var(--color-ink)]/60">
+                            ANS {plan.ansEnfermaria}
+                          </span>
+                        </th>
+                        <th scope="col" className="px-5 py-4 font-semibold text-[var(--color-ink)]">
+                          Apartamento
+                          <span className="block text-xs font-normal text-[var(--color-ink)]/60">
+                            ANS {plan.ansApartamento}
+                          </span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {plan.rows.map((row) => (
+                        <tr key={row.faixa} className="border-t border-[var(--color-border)]">
+                          <td className="px-5 py-4 text-[var(--color-ink)]">{row.faixa}</td>
+                          <td className="px-5 py-4 font-semibold tabular-nums text-[var(--color-primary)]">
+                            {row.enfermaria}
+                            <span className="font-normal text-[var(--color-ink)]/60">/mês</span>
+                          </td>
+                          <td className="px-5 py-4 font-semibold tabular-nums text-[var(--color-primary)]">
+                            {row.apartamento}
+                            <span className="font-normal text-[var(--color-ink)]/60">/mês</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <p className="mt-4 text-xs leading-relaxed text-[var(--color-ink)]/70">
+          <p className="mt-6 text-xs leading-relaxed text-[var(--color-ink)]/70">
             Valores de referência, sujeitos a atualização e à faixa etária vigente na data da
             contratação — fale com um consultor para a tabela atualizada. Para beneficiários de 0
             a 18 anos, a adesão passa por entrevista qualificada, conforme a Resolução Normativa
@@ -292,7 +286,9 @@ export default function PlanoDeSaudePage() {
         </Container>
       </section>
 
-      <FAQ items={faqItems} />
+      <section className="section-muted">
+        <FAQ items={faqItems} />
+      </section>
 
       <CTASection
         title="Compare planos de saúde sem sair de casa"
