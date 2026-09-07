@@ -253,7 +253,7 @@ export default function HomePage() {
         >
           Falar com um consultor
         </CTAButton>
-        <CTAButton href="/consorcios/calculadora" variant="ghost">
+        <CTAButton href="/consorcios" variant="ghost">
           Simular consórcio
         </CTAButton>
       </Hero>
@@ -359,6 +359,23 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {/* Dobra 3.5 — Consórcio x financiamento (comparativo) */}
+      <ProductTeaser
+        id="consorcio-x-financiamento"
+        eyebrow="Consórcio x Financiamento"
+        title="Consórcio ou financiamento: qual compensa mais para comprar seu imóvel?"
+        description="Os dois caminhos levam ao mesmo imóvel, mas o custo total até a quitação pode ser bem diferente. Nossa calculadora compara o consórcio com o financiamento pelo SFH, nos sistemas SAC e SACRE, simulando parcelas, juros e o valor final de cada opção lado a lado — com números, não achismo."
+        highlights={[
+          "Consórcio sem juros — só taxa administrativa",
+          "Financiamento SFH: entrada de 20%, taxa + TR",
+          "Compare o total pago até a quitação em cada opção",
+          "Simulação gratuita, leva menos de 1 minuto",
+        ]}
+        ctaHref="/consorcios/calculadora-financiamento"
+        ctaLabel="Usar a calculadora comparativa"
+        whatsappMessage="Olá! Vim pelo site e quero entender se o consórcio ou o financiamento compensa mais para comprar meu imóvel."
+      />
 
       {/* Dobra 4 — Seguros e subprodutos */}
       <section className="section-tint-blue py-10 sm:py-14" aria-labelledby="seguros-heading">
