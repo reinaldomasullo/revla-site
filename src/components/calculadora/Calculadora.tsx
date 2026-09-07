@@ -16,15 +16,11 @@ export default function Calculadora() {
   const [indiceCorrecao, setIndiceCorrecao] = useState<number | null>(null);
   const [percentualParcela, setPercentualParcela] = useState<number | null>(null);
   const [prazoTotal, setPrazoTotal] = useState<number | null>(null);
-  const [taxaAdministrativa, setTaxaAdministrativa] = useState<number | null>(null);
-  const [lanceEmbutido, setLanceEmbutido] = useState<number | null>(null);
   const [mesContemplacao, setMesContemplacao] = useState<number | null>(null);
   const [agioVenda, setAgioVenda] = useState<number | null>(null);
   const [rendimentoComparativo, setRendimentoComparativo] = useState<number | null>(null);
 
   const [valorImovel, setValorImovel] = useState<number | null>(null);
-  const [valorizacaoAnual, setValorizacaoAnual] = useState<number | null>(null);
-  const [aluguelPercentual, setAluguelPercentual] = useState<number | null>(null);
   const [reajusteAluguel, setReajusteAluguel] = useState<number | null>(null);
   const [impostoAluguel, setImpostoAluguel] = useState<number | null>(null);
 
@@ -34,8 +30,6 @@ export default function Calculadora() {
       indiceCorrecao: indiceCorrecao ?? 0,
       percentualParcela: percentualParcela ?? 0,
       prazoTotal: prazoTotal ?? 0,
-      taxaAdministrativa: taxaAdministrativa ?? 0,
-      lanceEmbutido: lanceEmbutido ?? 0,
       mesContemplacao: mesContemplacao ?? 0,
       agioVenda: agioVenda ?? 0,
       rendimentoComparativo: rendimentoComparativo ?? 0,
@@ -45,8 +39,6 @@ export default function Calculadora() {
       indiceCorrecao,
       percentualParcela,
       prazoTotal,
-      taxaAdministrativa,
-      lanceEmbutido,
       mesContemplacao,
       agioVenda,
       rendimentoComparativo,
@@ -61,14 +53,12 @@ export default function Calculadora() {
         {
           ...inputVenda,
           valorImovel: valorImovel ?? 0,
-          valorizacaoAnual: valorizacaoAnual ?? 0,
-          aluguelPercentual: aluguelPercentual ?? 0,
           reajusteAluguel: reajusteAluguel ?? 0,
           impostoAluguel: impostoAluguel ?? 0,
         },
         resultadoVenda.valorVenda
       ),
-    [inputVenda, valorImovel, valorizacaoAnual, aluguelPercentual, reajusteAluguel, impostoAluguel, resultadoVenda.valorVenda]
+    [inputVenda, valorImovel, reajusteAluguel, impostoAluguel, resultadoVenda.valorVenda]
   );
 
   const seloConfig = {
@@ -137,24 +127,13 @@ export default function Calculadora() {
             />
             <NumberField label="Prazo total" value={prazoTotal} onChange={setPrazoTotal} suffix="meses" />
             <NumberField
-              label="Taxa administrativa"
-              value={taxaAdministrativa}
-              onChange={setTaxaAdministrativa}
-              suffix="%"
-            />
-            <NumberField
-              label="Lance embutido"
-              value={lanceEmbutido}
-              onChange={setLanceEmbutido}
-              suffix="%"
-              helpText="Calculado sobre crédito + taxa administrativa"
-            />
-            <NumberField
               label="Mês da contemplação"
               value={mesContemplacao}
               onChange={setMesContemplacao}
               suffix="mês"
             />
+            <InfoTile label="Taxa administrativa" value="24,20% (fixa, padrão Revla)" />
+            <InfoTile label="Lance embutido" value="25,00% (fixo, sobre crédito + taxa administrativa)" />
 
             {cenario === "venda" && (
               <>
@@ -186,20 +165,6 @@ export default function Calculadora() {
                   <NumberField label="Valor do imóvel" value={valorImovel} onChange={setValorImovel} suffix="R$" />
                 </div>
                 <NumberField
-                  label="Valorização"
-                  value={valorizacaoAnual}
-                  onChange={setValorizacaoAnual}
-                  suffix="% a.a."
-                  helpText="Referência: FipeZap"
-                />
-                <NumberField
-                  label="Aluguel mensal"
-                  value={aluguelPercentual}
-                  onChange={setAluguelPercentual}
-                  suffix="% a.m."
-                  helpText="% do valor do imóvel cobrado de aluguel por mês"
-                />
-                <NumberField
                   label="Reajuste do aluguel"
                   value={reajusteAluguel}
                   onChange={setReajusteAluguel}
@@ -216,7 +181,12 @@ export default function Calculadora() {
 
               <div className="mt-4 grid grid-cols-2 gap-4">
                 <InfoTile label="Prazo restante após contemplar" value={`${resultadoAlavancagem.prazoRestante} meses`} />
-                <InfoTile label="Aluguel mensal inicial" value={formatBRL(resultadoAlavancagem.aluguelMensalInicial, 0)} />
+                <InfoTile label="Aluguel mensal inicial (0,50% a.m. do imóvel)" value={formatBRL(resultadoAlavancagem.aluguelMensalInicial, 0)} />
+                <InfoTile
+                  label="Valorização do imóvel"
+                  value={`${formatPercent(indiceCorrecao ?? 0)} a.a. (mesmo índice de correção da carta)`}
+                />
+                <InfoTile label="Valor futuro estimado do imóvel" value={formatBRL(resultadoAlavancagem.valorFuturoImovel, 0)} />
               </div>
             </>
           )}

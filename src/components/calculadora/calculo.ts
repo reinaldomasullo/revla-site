@@ -24,13 +24,15 @@ function fatorAnoDegrau(taxaAA: number, mes: number): number {
   return Math.pow(1 + taxaAA / 100, Math.floor((mes - 1) / 12));
 }
 
+// Taxa administrativa e lance embutido são fixos, iguais em todos os grupos da Revla.
+const TAXA_ADMINISTRATIVA_PCT = 24.2; // % total sobre o crédito
+const LANCE_EMBUTIDO_PCT = 25; // % (sobre crédito + taxa administrativa)
+
 export type SimulacaoInput = {
   credito: number; // R$
   indiceCorrecao: number; // % a.a. (ex: INCC)
   percentualParcela: number; // % da parcela cheia que é paga na fase reduzida (100 = sem redução)
   prazoTotal: number; // meses
-  taxaAdministrativa: number; // % total sobre o crédito
-  lanceEmbutido: number; // % (sobre crédito + taxa administrativa)
   mesContemplacao: number; // mês em que ocorre a contemplação
   agioVenda: number; // % aplicado sobre o crédito atualizado, na venda da carta
   rendimentoComparativo: number; // % a.a. (ex: CDB/Tesouro)
@@ -60,8 +62,6 @@ export function calcularCenarioVenda(input: SimulacaoInput): ResultadoVenda {
     indiceCorrecao,
     percentualParcela,
     prazoTotal,
-    taxaAdministrativa,
-    lanceEmbutido,
     mesContemplacao,
     agioVenda,
     rendimentoComparativo,
@@ -69,19 +69,19 @@ export function calcularCenarioVenda(input: SimulacaoInput): ResultadoVenda {
 
   const prazoRestante = Math.max(0, prazoTotal - mesContemplacao);
 
-  const lanceEmbutidoValor = credito * (1 + taxaAdministrativa / 100) * (lanceEmbutido / 100);
+  const lanceEmbutidoValor = credito * (1 + TAXA_ADMINISTRATIVA_PCT / 100) * (LANCE_EMBUTIDO_PCT / 100);
   const creditoLiquido = Math.max(0, credito - lanceEmbutidoValor);
   const creditoAtualizado =
     creditoLiquido * Math.pow(1 + indiceCorrecao / 100, Math.floor(mesContemplacao / 12));
 
   const parcelaReduzidaBase =
     prazoTotal > 0
-      ? (credito * (percentualParcela / 100) + credito * (taxaAdministrativa / 100)) / prazoTotal
+      ? (credito * (percentualParcela / 100) + credito * (TAXA_ADMINISTRATIVA_PCT / 100)) / prazoTotal
       : 0;
   const parcelaInicial = parcelaReduzidaBase;
   const parcelaContemplacao = parcelaReduzidaBase * fatorMes(indiceCorrecao, mesContemplacao);
 
-  const totalDevidoConsorcio = credito * (1 + taxaAdministrativa / 100);
+  const totalDevidoConsorcio = credito * (1 + TAXA_ADMINISTRATIVA_PCT / 100);
   const pagoAntesContemplacao = parcelaReduzidaBase * mesContemplacao;
   const parcelaPosContemplacao =
     prazoRestante > 0
@@ -123,10 +123,13 @@ export function calcularCenarioVenda(input: SimulacaoInput): ResultadoVenda {
   };
 }
 
+// Aluguel considerado como referência fixa: 0,50% a.m. sobre o valor do imóvel.
+const ALUGUEL_PCT_MENSAL = 0.5;
+
 export type AlavancagemInput = SimulacaoInput & {
   valorImovel: number; // R$
-  valorizacaoAnual: number; // % a.a. (ex: FipeZap)
-  aluguelPercentual: number; // % ao mês sobre o valor do imóvel
+  // Valorização do imóvel usa o mesmo índice de correção informado para a carta
+  // (indiceCorrecao, ex: INCC) — não é mais um campo separado.
   reajusteAluguel: number; // % a.a. (ex: IPCA)
   impostoAluguel: number; // %
 };
@@ -154,19 +157,16 @@ export function calcularCenarioAlavancagem(
     credito,
     indiceCorrecao,
     prazoTotal,
-    taxaAdministrativa,
     mesContemplacao,
     rendimentoComparativo,
     valorImovel,
-    valorizacaoAnual,
-    aluguelPercentual,
     reajusteAluguel,
     impostoAluguel,
   } = input;
 
   const prazoRestante = Math.max(0, prazoTotal - mesContemplacao);
 
-  const aluguelMensalInicial = valorImovel * (aluguelPercentual / 100);
+  const aluguelMensalInicial = valorImovel * (ALUGUEL_PCT_MENSAL / 100);
   let aluguelBrutoAcumulado = 0;
   for (let mes = 1; mes <= prazoRestante; mes += 1) {
     aluguelBrutoAcumulado += aluguelMensalInicial * fatorAnoDegrau(reajusteAluguel, mes);
@@ -174,9 +174,9 @@ export function calcularCenarioAlavancagem(
 
   const impostoTotal = aluguelBrutoAcumulado * (impostoAluguel / 100);
   const aluguelLiquidoAcumulado = aluguelBrutoAcumulado - impostoTotal;
-  const valorFuturoImovel = valorImovel * Math.pow(1 + valorizacaoAnual / 100, prazoRestante / 12);
+  const valorFuturoImovel = valorImovel * Math.pow(1 + indiceCorrecao / 100, prazoRestante / 12);
 
-  const totalDevidoBase = credito * (1 + taxaAdministrativa / 100);
+  const totalDevidoBase = credito * (1 + TAXA_ADMINISTRATIVA_PCT / 100);
   const totalPagoConsorcio = totalDevidoBase * fatorMes(indiceCorrecao, mesContemplacao);
   const dinheiroDoBolso = totalPagoConsorcio - aluguelLiquidoAcumulado;
   const percentualBolsoSobreFuturo =
