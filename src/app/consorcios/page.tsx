@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Consórcio de Imóveis e Veículos sem Juros: Simule Grátis",
+  title: "Consórcio de Imóveis e Veículos sem Juros",
   description:
     "Carta de crédito sem juros para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita e sem compromisso com a Revla Corretora.",
   path: "/consorcios",
@@ -63,6 +63,12 @@ const etapas = [
   { title: "2. Escolha do grupo e prazo", description: "Apresentamos as opções disponíveis entre as administradoras parceiras autorizadas pelo Banco Central." },
   { title: "3. Pagamento das parcelas", description: "Você paga as parcelas mensais, com opção de dar lances para antecipar a contemplação." },
   { title: "4. Contemplação", description: "Por sorteio mensal ou lance — a partir daí você recebe a carta de crédito." },
+];
+
+const ademiconStats = [
+  { value: "35+", label: "anos de história" },
+  { value: "+675 mil", label: "clientes atendidos" },
+  { value: "R$ 145,8 bi", label: "em créditos comercializados" },
 ];
 
 const faqItems = [
@@ -143,6 +149,49 @@ export default function ConsorciosPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section
+        className="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-dark)] py-12 sm:py-16"
+        aria-labelledby="ademicon-heading"
+      >
+        <Container>
+          <div className="max-w-2xl">
+            <h2
+              id="ademicon-heading"
+              className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
+            >
+              Consórcio com o respaldo de quem já é referência no Brasil
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-white">
+              A Revla trabalha com a Ademicon, uma das maiores administradoras de consórcio do
+              país, regulamentada pelo Banco Central.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {ademiconStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-white/30 p-6"
+              >
+                <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-sm text-white">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-2 rounded-2xl bg-white px-5 py-4 text-xs leading-relaxed text-[var(--color-ink)]/70 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+            <span className="font-semibold text-[var(--color-accent-dark)]">
+              Regulamentada pelo Banco Central do Brasil — Lei nº 11.795/2008 (Sistema de
+              Consórcios)
+            </span>
+            <span>
+              Fonte: dados institucionais da Ademicon, administradora parceira da Revla para
+              consórcios.
+            </span>
           </div>
         </Container>
       </section>
