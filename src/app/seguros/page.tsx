@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
 import FeatureGrid from "@/components/FeatureGrid";
+import Container from "@/components/Container";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
@@ -9,115 +10,214 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Seguros: Vida, Auto, Residencial e Mais",
+  title: "Seguros: Auto, Residencial, Vida e Mais",
   description:
-    "Trabalhamos com todos os tipos de seguro — vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular — comparando as melhores seguradoras do Brasil.",
+    "Seguro auto, residencial, empresarial, vida, viagem, seguro garantia, fiança locatícia e muito mais — comparamos as maiores seguradoras do Brasil, como Porto Seguro, AZOS e Tokio Marine, para você.",
   path: "/seguros",
 });
 
-const todosOsSeguros = [
+// Seguradoras parceiras relevantes pra este hub (Ademicon é de consórcio e
+// Prevent Senior é de plano de saúde — não entram aqui).
+const seguradorasParceiras = siteConfig.partners.filter(
+  (p) => !["Ademicon", "Prevent Senior"].includes(p)
+);
+
+const automovel = [
   {
-    title: "Seguro de vida",
-    description:
-      "Indenização para a família em caso de morte ou invalidez, com coberturas para doenças graves. Veja as modalidades logo abaixo.",
+    title: "Auto Individual",
+    description: "Cobertura para colisão, roubo, furto, terceiros e assistência 24h para o seu carro.",
+    href: "/blog/seguro-auto-vale-a-pena",
+    linkLabel: "Seguro auto vale a pena?",
   },
   {
-    title: "Seguro empresarial",
+    title: "Auto Frota",
+    description: "Gestão de apólices e sinistros centralizada para frotas de veículos de empresas.",
+  },
+  {
+    title: "Carta Azul",
+    description: "Seguro de responsabilidade civil para máquinas e veículos sem placa, como tratores e equipamentos agrícolas.",
+  },
+];
+
+const ramosElementares = [
+  {
+    title: "Agronegócios",
+    description: "Proteção para produção rural, maquinário agrícola, rebanhos e instalações do agronegócio.",
+  },
+  {
+    title: "Bike",
+    description: "Cobertura contra roubo, furto e danos para bicicletas comuns e elétricas.",
+  },
+  {
+    title: "Celular",
+    description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
+  },
+  {
+    title: "Condomínio",
+    description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
+  },
+  {
+    title: "Empresarial",
     description: "Proteção para patrimônio, faturamento e operação do seu negócio.",
     href: "/blog/seguro-empresarial-guia-completo",
     linkLabel: "Ler o guia completo",
   },
   {
-    title: "Seguro residencial",
-    description: "Cobertura para incêndio, roubo, danos elétricos e desastres naturais.",
+    title: "Foto e Vídeo",
+    description: "Cobertura para câmeras, lentes e equipamentos fotográficos e de filmagem.",
+  },
+  {
+    title: "Notebook e Tablet",
+    description: "Proteção contra roubo, furto e quebra acidental de notebooks e tablets.",
+  },
+  {
+    title: "Smart e Games",
+    description: "Cobertura para smartwatches, consoles e outros equipamentos eletrônicos de jogos.",
+  },
+  {
+    title: "Equipamentos Portáteis Multi-Itens",
+    description: "Uma única apólice para proteger vários equipamentos eletrônicos portáteis ao mesmo tempo.",
+  },
+  {
+    title: "Eventos",
+    description: "Cobertura para cancelamento, responsabilidade civil e imprevistos em festas e eventos.",
+  },
+  {
+    title: "Imobiliária",
+    description: "Proteção para imóveis em construção, reforma ou comercialização, sob responsabilidade de incorporadoras e imobiliárias.",
+  },
+  {
+    title: "Máquinas e Equipamentos",
+    description: "Cobertura contra quebra, roubo e danos para máquinas e equipamentos industriais ou agrícolas.",
+  },
+  {
+    title: "Residencial",
+    description: "Cobertura para incêndio, roubo, danos elétricos e desastres naturais na sua casa ou apartamento.",
     href: "/blog/seguro-residencial-o-que-cobre-quanto-custa",
     linkLabel: "O que cobre e quanto custa",
   },
   {
-    title: "Seguro condominial",
-    description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
-  },
-  {
-    title: "Seguro auto",
-    description: "Cobertura para colisão, roubo, furto e responsabilidade civil do veículo.",
-    href: "/blog/seguro-auto-vale-a-pena",
-    linkLabel: "Seguro auto vale a pena?",
-  },
-  {
-    title: "Seguro viagem",
-    description: "Assistência médica, bagagem e imprevistos em viagens nacionais e internacionais.",
-  },
-  {
-    title: "Seguro RC profissional",
-    description: "Proteção contra erros e omissões no exercício da sua atividade profissional.",
+    title: "Responsabilidade Civil",
+    description: "Proteção contra indenizações por danos causados a terceiros, no exercício profissional ou empresarial.",
     href: "/blog/seguro-rc-profissional",
     linkLabel: "Entenda o que cobre",
   },
+];
+
+const transportesEViagem = [
   {
-    title: "Seguro celular",
-    description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
+    title: "Seguros para Embarcadores",
+    description: "Proteção para a carga durante o transporte, contratada por quem envia a mercadoria.",
+  },
+  {
+    title: "Seguros para Transportadoras",
+    description: "Cobertura de responsabilidade civil e danos à carga para empresas de transporte.",
+  },
+  {
+    title: "Viagem",
+    description: "Assistência médica, bagagem e imprevistos em viagens nacionais e internacionais.",
   },
 ];
 
-const tiposDeSeguro = [
+const vida = [
   {
-    title: "Seguro de vida individual",
-    description:
-      "Proteção financeira para você e seus beneficiários, com capital segurado definido conforme sua necessidade.",
+    title: "Vida Individual",
+    description: "Indenização para a família em caso de morte ou invalidez, com capital segurado definido conforme sua necessidade.",
   },
   {
-    title: "Seguro de vida familiar",
-    description: "Uma única apólice cobrindo o titular e dependentes, com condições facilitadas.",
+    title: "Vida Presente",
+    description: "Seguro de vida oferecido como presente para proteger uma pessoa querida, geralmente crianças.",
   },
   {
-    title: "Seguro resgatável",
-    description:
-      "Seguro de vida com devolução do valor pago ao final do plano, caso o segurado não utilize a cobertura.",
+    title: "Vida em Grupo",
+    description: "Seguro de vida coletivo contratado pela empresa para proteger seus colaboradores.",
   },
   {
-    title: "Seguro PME e estagiário",
-    description: "Planos coletivos para empresas de pequeno e médio porte e para estagiários.",
+    title: "Vida PME+",
+    description: "Seguro de vida em grupo desenhado especialmente para pequenas e médias empresas.",
   },
   {
-    title: "Seguro temporário",
-    description: "Cobertura por um período determinado, com prêmio reduzido.",
+    title: "Acidentes Pessoais Coletivos",
+    description: "Cobertura para morte ou invalidez por acidente, contratada em grupo pela empresa.",
+  },
+  {
+    title: "Acidentes Pessoais Escolar",
+    description: "Proteção para alunos contra acidentes dentro e fora do ambiente escolar.",
+  },
+  {
+    title: "Acidentes Pessoais Prazo Curto",
+    description: "Cobertura por acidentes para períodos determinados, como viagens corporativas ou eventos.",
+  },
+  {
+    title: "Capital Global",
+    description: "Apólice de acidentes pessoais para grupos, com um capital segurado único para todos os participantes.",
+  },
+  {
+    title: "Convenções Coletivas",
+    description: "Seguro de vida em grupo negociado por sindicatos para toda a categoria profissional.",
+  },
+  {
+    title: "Prestamista",
+    description: "Quita ou reduz o saldo devedor de um financiamento em caso de morte ou invalidez do titular.",
   },
 ];
 
-const coberturas = [
-  { title: "Morte natural e acidental", description: "Indenização aos beneficiários em caso de falecimento do segurado." },
-  { title: "Invalidez total ou parcial", description: "Cobertura por incapacidade permanente decorrente de acidente." },
-  { title: "Doenças graves", description: "Indenização antecipada em caso de diagnóstico de doenças graves cobertas." },
-  { title: "DIT — Diária por Incapacidade Temporária", description: "Renda mensal enquanto o segurado está afastado do trabalho." },
-  { title: "DIH — Diária de Internação Hospitalar", description: "Valor diário para cada dia de internação hospitalar." },
-  { title: "Auxílio funeral", description: "Cobertura das despesas de funeral do segurado ou de dependentes." },
+const previdenciaEGarantias = [
+  {
+    title: "Previdência Individual",
+    description: "Planos PGBL e VGBL para construir uma reserva de longo prazo com vantagens tributárias.",
+  },
+  {
+    title: "Previdência Infantil",
+    description: "Reserva financeira de longo prazo construída em nome de filhos ou netos.",
+  },
+  {
+    title: "Proteção Planejada",
+    description: "Combina previdência e proteção, com aportes programados conforme seus objetivos de vida.",
+  },
+  {
+    title: "Seguro Garantia",
+    description: "Garante o cumprimento de obrigações contratuais e licitações, substituindo caução em dinheiro ou carta fiança.",
+  },
+  {
+    title: "Capitalização Garantia Contratual",
+    description: "Título de capitalização usado como garantia em contratos, com possibilidade de resgate.",
+  },
+  {
+    title: "Fiança Locatícia",
+    description: "Substitui o fiador na locação de imóveis, com aprovação mais rápida para o inquilino.",
+  },
+  {
+    title: "Título de Capitalização Aluguel",
+    description: "Título de capitalização usado como garantia de aluguel, no lugar de fiador ou caução.",
+  },
 ];
 
 const faqItems = [
   {
-    question: "A Revla trabalha com quais tipos de seguro?",
+    question: "Quais tipos de seguro a Revla trabalha?",
     answer:
-      "Trabalhamos com todos os tipos de seguro — vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular — comparando seguradoras parceiras para encontrar a cobertura ideal para cada cliente.",
+      "Praticamente todos os ramos do mercado: automóvel, ramos elementares (residencial, condomínio, empresarial, bike, celular, entre outros), transportes, viagem, vida individual e empresarial, previdência, seguro garantia e fiança locatícia. Veja o catálogo completo acima.",
   },
   {
-    question: "Qual a diferença entre seguro de vida tradicional e resgatável?",
+    question: "Como funciona a comparação entre seguradoras?",
     answer:
-      "No seguro tradicional, o valor pago garante apenas a cobertura durante a vigência. No resgatável, parte ou todo o valor pago é devolvido ao segurado ao final do plano, caso a cobertura não seja utilizada.",
+      "Comparamos as condições de seguradoras parceiras — como Porto Seguro, AZOS, Tokio Marine, Icatu, MAG Mongeral e PASI — para encontrar a cobertura com melhor custo-benefício para o seu caso, com simulação gratuita e sem compromisso.",
   },
   {
-    question: "Quem pode contratar um seguro de vida?",
+    question: "O que é a Carta Azul?",
     answer:
-      "Qualquer pessoa maior de idade pode contratar, com condições que variam conforme idade, profissão e estado de saúde declarado.",
+      "É o seguro de responsabilidade civil para máquinas e veículos que não circulam em via pública com placa, como tratores e equipamentos agrícolas — cobre danos causados a terceiros durante o uso desses equipamentos.",
   },
   {
-    question: "O seguro de vida cobre qualquer causa de morte?",
+    question: "Qual a diferença entre Seguro Garantia e Fiança Locatícia?",
     answer:
-      "As condições variam por seguradora e produto. Nossa consultoria explica exatamente o que está e o que não está coberto antes da contratação.",
+      "O Seguro Garantia protege o cumprimento de obrigações em contratos e licitações, geralmente entre empresas. A Fiança Locatícia é usada especificamente para substituir o fiador na locação de imóveis.",
   },
   {
-    question: "Quanto custa um seguro com a Revla?",
+    question: "Quanto custa contratar um seguro com a Revla?",
     answer:
-      "O valor depende do tipo de seguro, capital segurado, coberturas escolhidas e seguradora. Fazemos uma simulação gratuita comparando opções entre parceiros para encontrar o melhor custo-benefício.",
+      "O valor depende do tipo de seguro, das coberturas escolhidas e da seguradora. Fazemos uma simulação gratuita comparando opções entre parceiros para encontrar o melhor custo-benefício.",
   },
 ];
 
@@ -131,7 +231,7 @@ const serviceSchema = {
   },
   areaServed: "BR",
   description:
-    "Corretagem de seguros de vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular.",
+    "Corretagem de seguros de automóvel, ramos elementares (residencial, condomínio, empresarial e mais), transportes, viagem, vida individual e empresarial, previdência, seguro garantia e fiança locatícia.",
 };
 
 export default function SegurosPage() {
@@ -141,38 +241,71 @@ export default function SegurosPage() {
       <Breadcrumbs items={[{ label: "Seguros", href: "/seguros" }]} />
       <Hero
         eyebrow="Seguros"
-        title="Seguros para proteger você, sua família e seu patrimônio"
-        description="Trabalhamos com todos os tipos de seguro — vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular — comparando as melhores seguradoras do Brasil para encontrar a cobertura ideal, com simulação gratuita."
+        title="Seguros para proteger você, sua família, seu negócio e seu patrimônio"
+        description="Trabalhamos com praticamente todos os ramos de seguro — automóvel, residencial, empresarial, vida, viagem, transportes, previdência, seguro garantia e fiança locatícia — comparando as maiores seguradoras do Brasil para encontrar a cobertura ideal, com simulação gratuita."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Cotar seguro
         </CTAButton>
       </Hero>
 
+      <section className="bg-[var(--color-primary)] py-8 sm:py-10" aria-label="Seguradoras parceiras">
+        <Container>
+          <p className="text-center text-xs font-semibold uppercase tracking-wide text-white/60">
+            Parceria com as maiores seguradoras do Brasil
+          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+            {seguradorasParceiras.map((seguradora) => (
+              <span key={seguradora} className="text-sm font-medium text-white/85">
+                {seguradora}
+              </span>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <FeatureGrid
-        title="Todos os tipos de seguro que trabalhamos"
-        description="Cada apólice é comparada entre seguradoras parceiras para encontrar o melhor custo-benefício."
-        columns={4}
-        items={todosOsSeguros}
+        title="Seguro Automóvel"
+        description="Para o seu carro, sua frota ou máquinas e veículos sem placa."
+        columns={3}
+        items={automovel}
       />
 
       <section className="section-muted">
         <FeatureGrid
-          title="Seguro de vida: conheça as modalidades"
-          description="O seguro de vida é o produto mais buscado dentro do nosso portfólio — veja as principais modalidades que trabalhamos."
-          columns={3}
-          items={tiposDeSeguro}
+          title="Ramos Elementares"
+          description="Proteção para bens, equipamentos e negócios — do dia a dia às operações da sua empresa."
+          columns={4}
+          items={ramosElementares}
         />
       </section>
 
       <FeatureGrid
-        title="Coberturas disponíveis no seguro de vida"
-        description="As coberturas podem ser combinadas conforme sua necessidade e orçamento."
+        title="Transportes e Viagem"
+        description="Cobertura para cargas em trânsito e imprevistos durante viagens."
         columns={3}
-        items={coberturas}
+        items={transportesEViagem}
       />
 
-      <FAQ items={faqItems} />
+      <section className="section-muted">
+        <FeatureGrid
+          title="Seguro de Vida"
+          description="Para você, sua família ou seus colaboradores — individual ou em grupo."
+          columns={4}
+          items={vida}
+        />
+      </section>
+
+      <FeatureGrid
+        title="Previdência, Garantias e Aluguel"
+        description="Soluções de longo prazo e alternativas a caução e fiador."
+        columns={4}
+        items={previdenciaEGarantias}
+      />
+
+      <section className="section-muted">
+        <FAQ items={faqItems} />
+      </section>
 
       <CTASection
         title="Descubra qual seguro faz sentido para você"

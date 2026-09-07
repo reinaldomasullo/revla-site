@@ -193,6 +193,21 @@ export default function ReinaldoMasulloPage() {
                   </a>
                 </li>
               ))}
+              {/* WhatsApp fica fora do array `redes` de propósito: aquele array
+                  também alimenta o `sameAs` do schema Person, que deve listar só
+                  perfis (não um link de ação como o wa.me) */}
+              <li>
+                <a
+                  href={whatsappLink(
+                    "Olá! Vim pelo site e gostaria de falar com o Reinaldo Masullo da Revla."
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-xl border border-[var(--color-border)] px-4 py-3 text-sm font-medium text-[var(--color-ink)] hover:border-[var(--color-primary)]"
+                >
+                  WhatsApp
+                </a>
+              </li>
             </ul>
 
             <h2 className="mt-10 text-xl font-bold tracking-tight text-[var(--color-primary)]">
