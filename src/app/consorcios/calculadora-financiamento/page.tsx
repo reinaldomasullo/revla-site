@@ -42,7 +42,7 @@ export default function CalculadoraFinanciamentoPage() {
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
-          { label: "Calculadora de consórcio x financiamento", href: "/consorcios/calculadora-financiamento" },
+          { label: "Calculadora comparativa consórcio x financiamento", href: "/consorcios/calculadora-financiamento" },
         ]}
       />
       <Hero
