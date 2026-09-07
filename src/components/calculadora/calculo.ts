@@ -52,6 +52,7 @@ export type ResultadoVenda = {
   lucroPercentual: number;
   rendimentoEquivalenteAM: number;
   aporteSobreCreditoPct: number;
+  ganhoFinanceiro: number;
   lucroFinanceiroComparativoPct: number;
   rendimentoComparativoAM: number;
 };
@@ -118,6 +119,7 @@ export function calcularCenarioVenda(input: SimulacaoInput): ResultadoVenda {
     lucroPercentual,
     rendimentoEquivalenteAM,
     aporteSobreCreditoPct,
+    ganhoFinanceiro,
     lucroFinanceiroComparativoPct,
     rendimentoComparativoAM,
   };

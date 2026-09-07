@@ -71,6 +71,7 @@ export default function Calculadora() {
   const maxPct = Math.max(resultadoVenda.lucroPercentual, resultadoVenda.lucroFinanceiroComparativoPct, 1);
   const barConsorcio = Math.min(100, Math.max(0, (resultadoVenda.lucroPercentual / maxPct) * 100));
   const barAplicacao = Math.min(100, Math.max(0, (resultadoVenda.lucroFinanceiroComparativoPct / maxPct) * 100));
+  const diferencaGanho = resultadoVenda.lucroLiquido - resultadoVenda.ganhoFinanceiro;
 
   return (
     <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5 sm:p-8">
@@ -315,6 +316,34 @@ export default function Calculadora() {
           </CTAButton>
         </div>
       </div>
+
+      {cenario === "venda" && (
+        <div className="mt-8 rounded-2xl bg-[var(--color-primary)] p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-wide text-white/70">
+            Consórcio x aplicação financeira — quanto cada um rendeu em reais
+          </p>
+          <div className="mt-4 grid gap-6 sm:grid-cols-3">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide text-white/60">Ganho no consórcio</p>
+              <p className="mt-1 text-2xl font-bold text-white">{formatBRL(resultadoVenda.lucroLiquido, 0)}</p>
+            </div>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide text-white/60">
+                Ganho na aplicação financeira
+              </p>
+              <p className="mt-1 text-2xl font-bold text-white">{formatBRL(resultadoVenda.ganhoFinanceiro, 0)}</p>
+            </div>
+            <div className="sm:border-l sm:border-white/20 sm:pl-6">
+              <p className="text-xs font-medium uppercase tracking-wide text-white/60">
+                {diferencaGanho >= 0 ? "O consórcio gerou a mais" : "A aplicação financeira gerou a mais"}
+              </p>
+              <p className="mt-1 text-2xl font-bold text-[var(--color-accent)]">
+                {formatBRL(Math.abs(diferencaGanho), 0)}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
