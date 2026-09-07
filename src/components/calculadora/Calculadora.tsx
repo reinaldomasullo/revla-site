@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import NumberField from "./NumberField";
+import CurrencyField from "./CurrencyField";
 import { formatBRL, formatPercent } from "./formatters";
 import { calcularCenarioAlavancagem, calcularCenarioVenda } from "./calculo";
 import { whatsappLink } from "@/lib/site-config";
@@ -109,7 +110,7 @@ export default function Calculadora() {
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
-              <NumberField label="Crédito" value={credito} onChange={setCredito} suffix="R$" />
+              <CurrencyField label="Crédito" value={credito} onChange={setCredito} />
             </div>
             <NumberField
               label="Índice de correção"
@@ -162,7 +163,7 @@ export default function Calculadora() {
               </h2>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <NumberField label="Valor do imóvel" value={valorImovel} onChange={setValorImovel} suffix="R$" />
+                  <CurrencyField label="Valor do imóvel" value={valorImovel} onChange={setValorImovel} />
                 </div>
                 <NumberField
                   label="Reajuste do aluguel"

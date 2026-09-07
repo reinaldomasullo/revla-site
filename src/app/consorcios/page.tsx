@@ -125,7 +125,10 @@ export default function ConsorciosPage() {
           Iniciar minha simulação gratuita
         </CTAButton>
         <CTAButton href="/consorcios/calculadora" variant="ghost">
-          Usar a calculadora
+          Calculadora de imóveis
+        </CTAButton>
+        <CTAButton href="/consorcios/calculadora-veiculos" variant="ghost">
+          Calculadora de veículos
         </CTAButton>
       </Hero>
 
