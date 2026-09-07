@@ -123,6 +123,72 @@ const segurosSubprodutos = [
     title: "Seguro celular",
     description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
   },
+  {
+    title: "Agrovida",
+    description: "Seguro de vida da PASI para produtores rurais e colaboradores do agronegócio, com coberturas específicas do setor.",
+  },
+  {
+    title: "Seguro Estagiários",
+    description: "Seguro obrigatório por lei para estagiários, com planos Básico e Plus da PASI, cobrindo morte acidental e invalidez.",
+  },
+  {
+    title: "Convenções Coletivas (CCT)",
+    description: "Seguro de vida em grupo negociado por sindicato, com indenização rápida e sem limite de idade para o ativo.",
+  },
+  {
+    title: "Seguro para PME",
+    description: "Seguro de vida em grupo da PASI para micro, pequenas e médias empresas, a partir de 1 colaborador.",
+  },
+  {
+    title: "AP Temporário",
+    description: "Seguro de acidentes pessoais por prazo determinado, ideal para viagens, eventos ou períodos específicos.",
+  },
+];
+
+// Demais produtos e benefícios PASI que ainda não são "seguro" no sentido
+// clássico (são assistências/benefícios agregados) — cada um vai ganhar
+// página própria depois; por ora só damos visibilidade na home.
+const solucoesPasi = [
+  {
+    title: "Medicamento Garantido",
+    description: "Crédito mensal via Pix para compra de medicamentos com receita, em qualquer farmácia do Brasil.",
+  },
+  {
+    title: "PASI Farma",
+    description: "Compra de medicamentos, vitaminas e suplementos a preço de custo, sem teto de uso, com entrega em casa.",
+  },
+  {
+    title: "Telemedicina PASI",
+    description: "9 modalidades de consulta médica remota, com pronto atendimento, especialidades e descontos em farmácia e exames.",
+  },
+  {
+    title: "PASI NR-1",
+    description: "Solução de compliance para a Norma Regulamentadora 1, com gestão de riscos psicossociais para empresas.",
+  },
+  {
+    title: "Amparo Oncológico",
+    description: "Produtos dermocosméticos de apoio ao tratamento oncológico para o segurado em tratamento.",
+  },
+  {
+    title: "Sorriso PASI",
+    description: "Plano odontológico da PASI, com rede credenciada para tratamentos preventivos e corretivos.",
+  },
+  {
+    title: "Assistência Residencial",
+    description: "Suporte para emergências domésticas, como problemas elétricos, hidráulicos e chaveiro.",
+  },
+  {
+    title: "Assistência Empresarial",
+    description: "Suporte para emergências no imóvel da empresa, com a mesma lógica da assistência residencial.",
+  },
+  {
+    title: "Amparo Psicossocial",
+    description: "Atendimento online com psicologia, psiquiatria, nutrição, neurologia, geriatria e educação física.",
+  },
+  {
+    title: "PASI PET",
+    description: "Plano de cuidados para o seu animal de estimação, dentro do ecossistema de benefícios PASI.",
+  },
 ];
 
 const faqItems = [
@@ -403,6 +469,56 @@ export default function HomePage() {
         reverse
         tint="blue"
       />
+
+      {/* Dobra 6.5 — Mais soluções PASI (benefícios/assistências, além do amparo funeral) */}
+      <section className="section-muted py-10 sm:py-14" aria-labelledby="pasi-heading">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-steel)]">
+              Soluções PASI
+            </p>
+            <h2
+              id="pasi-heading"
+              className="mt-2 text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl"
+            >
+              Mais soluções PASI para você e sua empresa
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
+              Além do amparo funeral, a PASI oferece um catálogo de produtos e assistências para
+              pessoas físicas e empresas. Em breve, cada um vai ganhar sua própria página com
+              todos os detalhes — por enquanto, fale com um consultor para saber mais.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {solucoesPasi.map((item, i) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
+              >
+                <span
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-steel)]/15 text-xs font-bold text-[var(--color-steel)]"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+                <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <CTAButton
+              href={whatsappLink("Olá! Vim pelo site e gostaria de saber mais sobre as soluções PASI.")}
+              external
+              className="px-5 py-3 text-sm"
+            >
+              Falar sobre soluções PASI
+            </CTAButton>
+          </div>
+        </Container>
+      </section>
 
       {/* Dobra 7 — Depoimentos */}
       <Testimonials items={testimonials} accentCards darkBg />
