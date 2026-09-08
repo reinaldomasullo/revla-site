@@ -149,6 +149,9 @@ export default function Footer() {
               </li>
             ))}
             <li>
+              <FooterLink href="/sobre-a-revla">Sobre a Revla</FooterLink>
+            </li>
+            <li>
               <FooterLink href="/reinaldo-masullo">Sobre Reinaldo Masullo</FooterLink>
             </li>
           </ul>

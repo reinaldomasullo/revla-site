@@ -108,6 +108,34 @@ export default function PoliticaDePrivacidadePage() {
             </p>
 
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">
+              Publicidade e cookies de terceiros
+            </h2>
+            <p>
+              Este site pode exibir anúncios de terceiros, incluindo do Google. Esses
+              parceiros — assim como o próprio Google — podem usar cookies para veicular
+              anúncios com base em visitas anteriores suas a este e a outros sites. Você pode
+              desativar a publicidade personalizada do Google visitando as{" "}
+              <a
+                href="https://adssettings.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[var(--color-primary)]/50 underline-offset-2 hover:decoration-[var(--color-primary)]"
+              >
+                Configurações de anúncios do Google
+              </a>
+              , e também pode revisar as opções de outros fornecedores de publicidade em{" "}
+              <a
+                href="https://www.aboutads.info/choices"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[var(--color-primary)]/50 underline-offset-2 hover:decoration-[var(--color-primary)]"
+              >
+                www.aboutads.info/choices
+              </a>
+              .
+            </p>
+
+            <h2 className="text-lg font-semibold text-[var(--color-ink)]">
               Por quanto tempo guardamos seus dados
             </h2>
             <p>

@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 
 // Data da última revisão de conteúdo das páginas estáticas do site.
 // Atualize manualmente quando o conteúdo de uma dessas páginas mudar.
-const STATIC_PAGES_LAST_MODIFIED = new Date("2026-09-05");
+const STATIC_PAGES_LAST_MODIFIED = new Date("2026-09-08");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/consorcios",
     "/consorcios/calculadora",
     "/planejamento-patrimonial",
+    "/sobre-a-revla",
     "/reinaldo-masullo",
     "/blog",
     "/politica-de-privacidade",

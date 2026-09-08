@@ -8,6 +8,8 @@ import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import PostContent from "@/components/blog/PostContent";
+import CusdisComments from "@/components/blog/CusdisComments";
+import HouseAd, { pickHouseAdProduct } from "@/components/HouseAd";
 import { getPostBySlug, posts } from "@/lib/posts";
 import { siteConfig, truncateForTitleTag } from "@/lib/site-config";
 
@@ -184,8 +186,11 @@ export default async function BlogPostPage({
             </div>
           )}
 
-          <div className="mt-8">
-            <PostContent blocks={post.content} />
+          <div className="mt-8 space-y-8">
+            <PostContent blocks={post.content.slice(0, Math.ceil(post.content.length * 0.45))} />
+            <HouseAd product={pickHouseAdProduct(`${post.slug}-1`)} variant="rectangle" />
+            <PostContent blocks={post.content.slice(Math.ceil(post.content.length * 0.45))} />
+            <HouseAd product={pickHouseAdProduct(`${post.slug}-2`)} variant="banner" />
           </div>
         </Container>
       </article>
@@ -193,6 +198,25 @@ export default async function BlogPostPage({
       {post.faq && post.faq.length > 0 && (
         <FAQ title="Perguntas frequentes sobre este assunto" items={post.faq} />
       )}
+
+      <section className="py-12 sm:py-16">
+        <Container className="max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+            Comentários
+          </h2>
+          <p className="mt-2 text-sm text-[var(--color-ink)]/60">
+            Deixe sua dúvida ou comentário — não é necessário criar conta. Comentários passam
+            por moderação antes de aparecer aqui.
+          </p>
+          <div className="mt-6">
+            <CusdisComments
+              slug={post.slug}
+              url={`${siteConfig.url}/blog/${post.slug}`}
+              title={post.title}
+            />
+          </div>
+        </Container>
+      </section>
 
       <CTASection
         title="Quer uma orientação personalizada?"

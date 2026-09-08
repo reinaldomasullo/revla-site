@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import HouseAd, { pickHouseAdProduct } from "@/components/HouseAd";
 import { posts } from "@/lib/posts";
 import { buildMetadata } from "@/lib/site-config";
+
+const ADS_EVERY = 6;
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
@@ -32,40 +36,46 @@ export default function BlogPage() {
             </p>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] transition-colors hover:border-[var(--color-primary)]"
-                >
-                  {post.coverImage && (
-                    <Image
-                      src={post.coverImage.src}
-                      alt={post.coverImage.alt}
-                      width={post.coverImage.width}
-                      height={post.coverImage.height}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="aspect-[1200/630] w-full object-cover"
-                    />
-                  )}
-                  <div className="flex flex-1 flex-col p-6">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
-                      {post.category}
-                    </span>
-                    <h2 className="mt-3 text-lg font-semibold text-[var(--color-ink)]">
-                      {post.title}
-                    </h2>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink)]/70">
-                      {post.description}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
-                      Ler artigo
-                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-                        →
+              {posts.map((post, i) => (
+                <Fragment key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] transition-colors hover:border-[var(--color-primary)]"
+                  >
+                    {post.coverImage && (
+                      <Image
+                        src={post.coverImage.src}
+                        alt={post.coverImage.alt}
+                        width={post.coverImage.width}
+                        height={post.coverImage.height}
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="aspect-[1200/630] w-full object-cover"
+                      />
+                    )}
+                    <div className="flex flex-1 flex-col p-6">
+                      <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
+                        {post.category}
                       </span>
-                    </span>
-                  </div>
-                </Link>
+                      <h2 className="mt-3 text-lg font-semibold text-[var(--color-ink)]">
+                        {post.title}
+                      </h2>
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                        {post.description}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+                        Ler artigo
+                        <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                          →
+                        </span>
+                      </span>
+                    </div>
+                  </Link>
+                  {(i + 1) % ADS_EVERY === 0 && i + 1 < posts.length && (
+                    <div className="sm:col-span-2 lg:col-span-3">
+                      <HouseAd product={pickHouseAdProduct(`blog-list-${i}`)} variant="banner" />
+                    </div>
+                  )}
+                </Fragment>
               ))}
             </div>
           )}

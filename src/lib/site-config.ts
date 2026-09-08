@@ -27,6 +27,9 @@ export const siteConfig = {
   },
   susep: "232150320",
   cnpj: "52.139.303/0001-93",
+  // App ID do projeto "Revla Corretora" no Cusdis (sistema de comentários do
+  // blog, moderado, sem exigir login do visitante) — painel em cusdis.com.
+  cusdisAppId: "47fc127f-a05b-441b-bbdb-b5f72b8300e8",
   businessHoursDisplay: "Seg. a sex., 8h às 19h · Sáb., 8h às 13h",
   social: {
     instagram: "https://instagram.com/revlacorretora",
