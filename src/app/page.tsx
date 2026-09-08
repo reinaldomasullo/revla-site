@@ -363,7 +363,7 @@ export default function HomePage() {
       {/* Dobra 3.5 — Consórcio x financiamento (comparativo) */}
       <ProductTeaser
         id="consorcio-x-financiamento"
-        eyebrow="Consórcio x Financiamento"
+        eyebrow="Consórcio de Imóveis x Financiamento"
         title="Consórcio ou financiamento: qual compensa mais para comprar seu imóvel?"
         description="Os dois caminhos levam ao mesmo imóvel, mas o custo total até a quitação pode ser bem diferente. Nossa calculadora compara o consórcio com o financiamento pelo SFH, nos sistemas SAC e SACRE, simulando parcelas, juros e o valor final de cada opção lado a lado — com números, não achismo."
         highlights={[
