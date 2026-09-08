@@ -50,7 +50,7 @@ export const posts: Post[] = [
     updated: "2026-08-13",
     coverImage: {
       src: "/images/blog/seguro-de-vida-vale-a-pena-com-plano-de-saude-capa.jpg",
-      alt: "Ilustração sobre seguro de vida e plano de saúde trabalhando juntos na proteção da família",
+      alt: "Família sorridente com duas crianças em jardim florido, símbolo da proteção do seguro de vida e do plano de saúde",
       width: 1200,
       height: 630,
     },
@@ -224,7 +224,7 @@ export const posts: Post[] = [
     date: "2026-08-13",
     coverImage: {
       src: "/images/blog/consorcio-seguro-plano-saude-estrategia-patrimonial-capa.jpg",
-      alt: "Ilustração representando os três pilares do planejamento patrimonial: consórcio, seguro e plano de saúde",
+      alt: "Casal analisando documentos financeiros à mesa, contexto da estratégia patrimonial com consórcio, seguro e plano de saúde",
       width: 1200,
       height: 630,
     },
@@ -412,7 +412,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/seguro-rc-profissional-capa.jpg",
-      "alt": "Ilustração sobre seguro de responsabilidade civil profissional para prestadores de serviço",
+      "alt": "Reunião de consultoria profissional em um escritório, contexto do seguro de responsabilidade civil profissional",
       "width": 1200,
       "height": 630
     },
@@ -593,7 +593,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/seguro-auto-vale-a-pena-capa.jpg",
-      "alt": "Ilustração sobre seguro auto e como calcular se compensa contratar",
+      "alt": "Apólice de seguro sendo analisada com lupa ao lado de uma miniatura de carro, ilustrando a avaliação de um seguro auto",
       "width": 1200,
       "height": 630
     },
@@ -632,7 +632,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Essa é a confusão mais comum na hora de contratar. O seguro compreensivo é a apólice \"completa\": cobre o seu próprio carro (colisão, roubo, incêndio) além de danos a terceiros. Já o RCF-V — Responsabilidade Civil Facultativa de Veículos — é uma cobertura só de terceiros: ela paga os prejuízos que você causar a outras pessoas em um acidente, mas não cobre reparos no seu próprio veículo. Segundo o [Compara Online](https://www.comparaonline.com.br/blog/carros/seguro-auto/rcf-v-o-que-e-e-como-funciona-o-seguro-para-terceiros/), o RCF-V garante ao segurado o pagamento de danos materiais, corporais e morais causados a terceiros, com limites de indenização definidos na contratação, e normalmente sem cobrança de franquia quando é acionado apenas para terceiros."
+        "text": "Essa é a confusão mais comum na hora de contratar. O seguro compreensivo é a apólice \"completa\": cobre o seu próprio carro (colisão, roubo, incêndio) além de danos a terceiros. Já o RCF-V — Responsabilidade Civil Facultativa de Veículos — é uma cobertura só de terceiros: ela paga os prejuízos que você causar a outras pessoas em um acidente, mas não cobre reparos no seu próprio veículo. Segundo a [SUSEP](https://www.gov.br/susep/pt-br/assuntos/meu-futuro-seguro/seguros-previdencia-e-capitalizacao/seguros/seguro-de-automoveis), o RCF-V garante o pagamento de indenizações por danos materiais e morais causados a terceiros que excedam os limites do seguro obrigatório (DPVAT) e do Carta Verde, com limites de indenização definidos na contratação — a cobrança de franquia nesses casos varia conforme a apólice contratada."
       },
       {
         "type": "h3",
@@ -767,7 +767,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/o-que-e-planejamento-patrimonial-capa.jpg",
-      "alt": "Ilustração introdutória sobre o que é planejamento patrimonial",
+      "alt": "Moedas organizadas em formato de gráfico ascendente, representando o crescimento do patrimônio",
       "width": 1200,
       "height": 630
     },
@@ -918,7 +918,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/planejamento-patrimonial-nao-e-so-para-ricos-capa.jpg",
-      "alt": "Ilustração sobre planejamento patrimonial acessível para qualquer família",
+      "alt": "Cofrinho rodeado de moedas, simbolizando que planejamento patrimonial cabe em qualquer orçamento",
       "width": 1200,
       "height": 630
     },
@@ -1068,7 +1068,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/como-proteger-patrimonio-de-imprevistos-com-seguro-capa.jpg",
-      "alt": "Ilustração sobre como o seguro protege o patrimônio contra imprevistos",
+      "alt": "Fachada de uma casa, representando o patrimônio que o seguro ajuda a proteger contra imprevistos",
       "width": 1200,
       "height": 630
     },
@@ -1230,7 +1230,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/erros-comuns-planejamento-patrimonial-capa.jpg",
-      "alt": "Ilustração sobre erros comuns de quem não faz planejamento patrimonial",
+      "alt": "Pessoa analisando contas e calculadora com preocupação, ilustrando os erros comuns de quem não planeja o patrimônio",
       "width": 1200,
       "height": 630
     },
@@ -1363,7 +1363,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/seguro-residencial-o-que-cobre-quanto-custa-capa.jpg",
-      "alt": "Ilustração sobre o que o seguro residencial cobre e não cobre",
+      "alt": "Fachada de casa moderna, representando o imóvel protegido pelo seguro residencial",
       "width": 1200,
       "height": 630
     },
@@ -1517,7 +1517,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/seguro-empresarial-guia-completo-capa.jpg",
-      "alt": "Ilustração sobre seguro empresarial para proteger negócios",
+      "alt": "Empreendedora atendendo em sua loja, representando o pequeno negócio protegido pelo seguro empresarial",
       "width": 1200,
       "height": 630
     },
@@ -1688,7 +1688,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/consorcio-vale-a-pena-capa.jpg",
-      "alt": "Ilustração comparando consórcio e financiamento",
+      "alt": "Entrega de chaves entre corretor e cliente, representando a conquista do bem pelo consórcio",
       "width": 1200,
       "height": 630
     },
@@ -1876,7 +1876,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/consorcio-de-imoveis-como-funciona-capa.jpg",
-      "alt": "Ilustração sobre como funciona o consórcio de imóveis",
+      "alt": "Close da entrega de chaves de um imóvel, ilustrando como funciona o consórcio de imóveis",
       "width": 1200,
       "height": 630
     },
@@ -2038,7 +2038,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/consorcio-de-veiculos-como-funciona-capa.jpg",
-      "alt": "Ilustração sobre consórcio de veículos sem juros",
+      "alt": "Casal escolhendo um carro em uma concessionária, ilustrando o consórcio de veículos sem juros",
       "width": 1200,
       "height": 630
     },
@@ -2212,7 +2212,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/lance-no-consorcio-como-funciona-capa.jpg",
-      "alt": "Ilustração sobre como funciona o lance no consórcio",
+      "alt": "Pessoa levantando a mão para dar um lance, ilustrando como funciona o lance no consórcio",
       "width": 1200,
       "height": 630
     },
@@ -2392,7 +2392,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/consorcio-e-seguro-regulacao-banco-central-capa.jpg",
-      "alt": "Ilustração sobre a regulação do consórcio pelo Banco Central",
+      "alt": "Fachada de um prédio bancário, representando a regulação do consórcio pelo Banco Central",
       "width": 1200,
       "height": 630
     },
@@ -2555,7 +2555,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/plano-de-saude-para-idosos-o-que-avaliar-capa.jpg",
-      "alt": "Ilustração sobre plano de saúde para idosos",
+      "alt": "Médico em um corredor de hospital ao telefone, contexto da avaliação de planos de saúde para idosos",
       "width": 1200,
       "height": 630
     },
@@ -2730,7 +2730,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/carencia-em-plano-de-saude-o-que-a-lei-garante-capa.jpg",
-      "alt": "Ilustração sobre prazos de carência em plano de saúde",
+      "alt": "Consulta entre paciente e médica, ilustrando os prazos de carência em plano de saúde",
       "width": 1200,
       "height": 630
     },
@@ -2897,7 +2897,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/plano-de-saude-ou-particular-terceira-idade-capa.jpg",
-      "alt": "Ilustração comparando plano de saúde e atendimento particular na terceira idade",
+      "alt": "Casal de idosos sorridente segurando flores, contexto do atendimento de saúde na terceira idade",
       "width": 1200,
       "height": 630
     },
@@ -3096,7 +3096,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/portabilidade-de-plano-de-saude-como-funciona-capa.jpg",
-      "alt": "Ilustração sobre portabilidade de carências em plano de saúde",
+      "alt": "Profissional de saúde preenchendo formulário com paciente, ilustrando a portabilidade de plano de saúde",
       "width": 1200,
       "height": 630
     },
@@ -3251,7 +3251,7 @@ export const posts: Post[] = [
     "date": "2026-08-13",
     "coverImage": {
       "src": "/images/blog/home-care-plano-de-saude-terceira-idade-capa.jpg",
-      "alt": "Ilustração sobre home care e assistência domiciliar na terceira idade",
+      "alt": "Profissional de home care medindo a pressão de um paciente idoso em casa",
       "width": 1200,
       "height": 630
     },
@@ -3405,7 +3405,7 @@ export const posts: Post[] = [
     "category": "Amparo Funeral",
     "coverImage": {
       "src": "/images/blog/o-que-e-amparo-funeral-como-funciona-capa.jpg",
-      "alt": "O que é amparo funeral e como funciona a assistência à família",
+      "alt": "Mão segurando uma vela acesa, simbolizando o acolhimento do amparo funeral",
       "width": 1200,
       "height": 630
     },
@@ -3609,7 +3609,7 @@ export const posts: Post[] = [
     "category": "Amparo Funeral",
     "coverImage": {
       "src": "/images/blog/amparo-funeral-senior-apos-75-anos-capa.jpg",
-      "alt": "Amparo funeral sênior: o que muda na contratação após os 75 anos",
+      "alt": "Mãos entrelaçadas de uma pessoa idosa, representando o amparo funeral sênior após os 75 anos",
       "width": 1200,
       "height": 630
     },
@@ -3787,7 +3787,7 @@ export const posts: Post[] = [
     "category": "Amparo Funeral",
     "coverImage": {
       "src": "/images/blog/amparo-funeral-vale-a-pena-custos-funeral-capa.jpg",
-      "alt": "Amparo funeral vale a pena? Entenda os custos de um funeral e como se planejar",
+      "alt": "Mãos calculando custos em uma calculadora, ilustrando o planejamento financeiro do amparo funeral",
       "width": 1200,
       "height": 630
     },
@@ -3959,7 +3959,7 @@ export const posts: Post[] = [
     "category": "Amparo Funeral",
     "coverImage": {
       "src": "/images/blog/diferenca-amparo-funeral-seguro-de-vida-plano-funerario-capa.jpg",
-      "alt": "Diferença entre amparo funeral, seguro de vida e plano funerário tradicional",
+      "alt": "Mãos de gerações diferentes entrelaçadas, simbolizando o cuidado da família no amparo funeral",
       "width": 1200,
       "height": 630
     },
@@ -4122,7 +4122,7 @@ export const posts: Post[] = [
     "category": "Amparo Funeral",
     "coverImage": {
       "src": "/images/blog/traslado-assistencia-24-horas-amparo-funeral-capa.jpg",
-      "alt": "Como funciona o traslado e a assistência 24 horas no amparo funeral",
+      "alt": "Ambulâncias estacionadas lado a lado, representando o traslado e a assistência 24 horas do amparo funeral",
       "width": 1200,
       "height": 630
     },

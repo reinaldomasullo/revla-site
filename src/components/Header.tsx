@@ -33,7 +33,7 @@ const produtos = [
 
 const calculadoras = [
   { label: "Calculadora de consórcio de imóveis", href: "/consorcios/calculadora" },
-  { label: "Calculadora de consórcio de veículos", href: "/consorcios/calculadora-veiculos" },
+  { label: "Calculadora comparativa consórcio de veículos x financiamento", href: "/consorcios/calculadora-veiculos" },
   { label: "Calculadora comparativa consórcio x financiamento", href: "/consorcios/calculadora-financiamento" },
 ];
 

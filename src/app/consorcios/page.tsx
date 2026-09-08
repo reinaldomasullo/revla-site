@@ -128,7 +128,7 @@ export default function ConsorciosPage() {
           Calculadora de consórcio de imóveis
         </CTAButton>
         <CTAButton href="/consorcios/calculadora-veiculos" variant="ghost">
-          Calculadora de consórcio de veículos
+          Calculadora comparativa consórcio de veículos x financiamento
         </CTAButton>
         <CTAButton href="/consorcios/calculadora-financiamento" variant="ghost">
           Calculadora comparativa consórcio x financiamento

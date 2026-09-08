@@ -162,7 +162,7 @@ export default function Footer() {
             </li>
             <li>
               <FooterLink href="/consorcios/calculadora-veiculos">
-                Calculadora de consórcio de veículos
+                Calculadora comparativa consórcio de veículos x financiamento
               </FooterLink>
             </li>
             <li>

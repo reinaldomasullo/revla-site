@@ -51,7 +51,17 @@ export async function generateMetadata({
         : undefined,
     },
     twitter: post.coverImage
-      ? { card: "summary_large_image", title: post.title, description: post.description, images: [post.coverImage.src] }
+      ? {
+          card: "summary_large_image",
+          title: post.title,
+          description: post.description,
+          images: [
+            {
+              url: post.coverImage.src,
+              alt: post.coverImage.alt,
+            },
+          ],
+        }
       : undefined,
   };
 }
@@ -72,7 +82,16 @@ export default async function BlogPostPage({
     description: post.description,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
-    image: post.coverImage ? [`${siteConfig.url}${post.coverImage.src}`] : undefined,
+    image: post.coverImage
+      ? [
+          {
+            "@type": "ImageObject",
+            url: `${siteConfig.url}${post.coverImage.src}`,
+            width: post.coverImage.width,
+            height: post.coverImage.height,
+          },
+        ]
+      : undefined,
     author: {
       "@type": "Person",
       name: "Reinaldo Masullo",

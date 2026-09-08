@@ -377,6 +377,25 @@ export default function HomePage() {
         whatsappMessage="Olá! Vim pelo site e quero entender se o consórcio ou o financiamento compensa mais para comprar meu imóvel."
       />
 
+      {/* Dobra 3.6 — Consórcio de veículos x financiamento (comparativo) */}
+      <ProductTeaser
+        id="consorcio-veiculos-x-financiamento"
+        eyebrow="Consórcio de Veículo x Financiamento"
+        title="Consórcio ou financiamento: qual compensa mais para comprar seu veículo?"
+        description="No consórcio de veículo, a parcela pode ser reduzida nos primeiros 24 meses e não há juros — só taxa administrativa. Já no financiamento tradicional (Tabela Price) o crédito sai na hora, mas com juros embutidos em cada parcela. Nossa calculadora simula os dois lado a lado para você comparar o total pago em cada opção."
+        highlights={[
+          "Consórcio sem juros — só taxa administrativa de 16%",
+          "Parcela reduzida nos primeiros 24 meses do consórcio",
+          "Financiamento tradicional simulado pela Tabela Price",
+          "Compare o total pago em cada opção, simulação gratuita",
+        ]}
+        ctaHref="/consorcios/calculadora-veiculos"
+        ctaLabel="Usar a calculadora comparativa"
+        whatsappMessage="Olá! Vim pelo site e quero entender se o consórcio ou o financiamento compensa mais para comprar meu veículo."
+        reverse
+        muted
+      />
+
       {/* Dobra 4 — Seguros e subprodutos */}
       <section className="section-tint-blue py-10 sm:py-14" aria-labelledby="seguros-heading">
         <Container>
