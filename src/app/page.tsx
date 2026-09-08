@@ -613,6 +613,23 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* Dobra 6.6 — Planejamento Patrimonial */}
+      <ProductTeaser
+        id="planejamento-patrimonial"
+        eyebrow="Planejamento Patrimonial"
+        title="Planejamento patrimonial: consórcio, seguro e plano de saúde juntos"
+        description="Combinamos os três produtos de forma estratégica: consórcio para alavancar patrimônio sem juros, seguro para proteger o que você já construiu e plano de saúde para proteger sua vida — com acompanhamento consultivo da Revla em todas as etapas."
+        highlights={[
+          "Consórcio sem juros para alavancar patrimônio",
+          "Seguro para proteger o que você já construiu",
+          "Plano de saúde para proteger sua vida",
+          "Acompanhamento consultivo em todas as etapas",
+        ]}
+        ctaHref="/planejamento-patrimonial"
+        ctaLabel="Saiba mais sobre planejamento patrimonial"
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla sobre planejamento patrimonial."
+      />
+
       {/* Dobra 7 — Depoimentos */}
       <Testimonials items={testimonials} accentCards darkBg />
 
