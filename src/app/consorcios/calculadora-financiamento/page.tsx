@@ -7,9 +7,9 @@ import CalculadoraFinanciamento from "@/components/calculadora-financiamento/Cal
 import { buildMetadata } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Calculadora: Consórcio de Imóvel x Financiamento SFH",
+  title: "Consórcio de Imóvel x Financiamento SFH",
   description:
-    "Compare o custo total de comprar um imóvel pelo consórcio ou pelo financiamento tradicional do SFH, nos sistemas SAC e SACRE. Simule parcelas, juros e o valor total pago em cada opção. Ferramenta gratuita da Revla Corretora.",
+    "Compare o custo total de comprar um imóvel pelo consórcio ou pelo financiamento SFH (SAC e SACRE) — simulação gratuita e sem compromisso com a Revla.",
   path: "/consorcios/calculadora-financiamento",
 });
 

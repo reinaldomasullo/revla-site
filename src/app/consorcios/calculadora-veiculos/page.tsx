@@ -7,9 +7,9 @@ import CalculadoraVeiculos from "@/components/calculadora-veiculos/CalculadoraVe
 import { buildMetadata } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Calculadora: Consórcio de Veículo x Financiamento",
+  title: "Consórcio de Veículo x Financiamento",
   description:
-    "Compare o custo total de comprar um veículo pelo consórcio ou pelo financiamento tradicional (Tabela Price). Simule parcelas, juros e o valor total pago em cada opção. Ferramenta gratuita da Revla Corretora.",
+    "Compare o custo total de comprar um veículo pelo consórcio ou pelo financiamento tradicional (Tabela Price) — simulação gratuita e sem compromisso com a Revla.",
   path: "/consorcios/calculadora-veiculos",
 });
 

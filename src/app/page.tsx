@@ -40,7 +40,10 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Consórcio, Seguros, Saúde e Patrimônio",
+  // A home é o mesmo segmento de rota do RootLayout, então o `template`
+  // "%s | Revla Corretora" definido lá NÃO se aplica aqui (só a rotas
+  // aninhadas) — por isso o nome da marca entra explícito no título.
+  title: "Revla Corretora — Consórcio, Seguros, Saúde e Patrimônio",
   description:
     "Corretora de consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial em São Paulo. Compare as melhores opções com consultoria gratuita da Revla.",
   path: "/",
@@ -567,7 +570,7 @@ export default function HomePage() {
       <section className="section-tint-silver py-8 sm:py-10" aria-labelledby="pasi-heading">
         <Container>
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-steel)]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-primary)]">
               Soluções PASI
             </p>
             <h2

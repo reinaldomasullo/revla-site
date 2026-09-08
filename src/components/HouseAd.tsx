@@ -89,13 +89,17 @@ export default function HouseAd({
 }) {
   const minHeight = variant === "rectangle" ? "min-h-[250px]" : "min-h-[120px]";
 
+  // Div simples (não <aside>/landmark): o rótulo visível "Publicidade" logo
+  // abaixo já identifica o bloco pra todo mundo, inclusive leitor de tela, na
+  // ordem normal de leitura — várias landmarks "complementary" repetidas na
+  // mesma página (e possivelmente com o mesmo produto sorteado duas vezes)
+  // poluiriam a navegação por landmarks sem ganho real de acessibilidade.
   return (
-    <aside
-      aria-label="Publicidade"
+    <div
       className={`flex ${minHeight} flex-col justify-center gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-muted)] px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6`}
     >
       <div>
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-ink)]/40">
+        <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-ink)]/65">
           Publicidade
         </p>
         <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
@@ -114,6 +118,6 @@ export default function HouseAd({
       >
         {product.ctaLabel}
       </Link>
-    </aside>
+    </div>
   );
 }

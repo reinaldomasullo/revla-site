@@ -327,7 +327,7 @@ export default function Calculadora() {
 function InfoTile({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-muted)] px-3 py-2.5">
-      <p className="text-[11px] font-medium uppercase tracking-wide text-[var(--color-ink)]/55">{label}</p>
+      <p className="text-[11px] font-medium uppercase tracking-wide text-[var(--color-ink)]/65">{label}</p>
       <p className="mt-0.5 text-sm font-semibold text-[var(--color-ink)]">{value}</p>
     </div>
   );

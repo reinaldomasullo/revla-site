@@ -7,9 +7,9 @@ import Calculadora from "@/components/calculadora/Calculadora";
 import { buildMetadata } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Calculadora de Consórcio: Venda ou Alavancagem",
+  title: "Calculadora de Venda e Alavancagem",
   description:
-    "Simule o lucro de vender sua carta de consórcio contemplada com ágio, ou de usar o consórcio para alavancagem patrimonial com renda de aluguel. Ferramenta gratuita da Revla Corretora.",
+    "Simule o lucro de vender sua carta contemplada com ágio ou usar o consórcio para alavancagem patrimonial com renda de aluguel — ferramenta gratuita da Revla.",
   path: "/consorcios/calculadora",
 });
 

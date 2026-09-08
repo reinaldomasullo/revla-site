@@ -21,7 +21,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sobre a Revla Corretora",
+  title: "Sobre a Revla",
   description:
     "Conheça a Revla Corretora: atendimento consultivo em consórcios, seguros, plano de saúde, amparo funeral e planejamento patrimonial, com sede em São Paulo e atuação em todo o Brasil.",
   path: "/sobre-a-revla",

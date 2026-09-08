@@ -1,16 +1,16 @@
 # Revla Corretora
 
-> Corretora especializada em consórcios e planejamento patrimonial, com seguros e planos de saúde, sede em São Paulo (Avenida Paulista) e atendimento em todo o Brasil.
+> Corretora especializada em consórcios e planejamento patrimonial, com seguros, plano de saúde e amparo funeral, sede em São Paulo (Avenida Paulista) e atendimento em todo o Brasil.
 
-A Revla Corretora compara opções entre seguradoras e administradoras parceiras — Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Prevent Senior — para ajudar clientes a encontrar o produto certo pelo preço certo, com consultoria gratuita.
+A Revla Corretora compara opções entre seguradoras e administradoras parceiras — Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine, Junto, Suhai e Prevent Senior — para ajudar clientes a encontrar o produto certo pelo preço certo, com consultoria gratuita.
 
 ## Produtos e serviços
 
 - Consórcios (produto principal): imóveis, veículos, motos, caminhões, máquinas, agro, investimento, serviços
 - Planejamento patrimonial: consórcio para alavancar patrimônio, seguro para proteger patrimônio, plano de saúde para proteger a vida
-- Seguros: vida (individual, familiar, PME, estagiário, resgatável, temporário), auto, residencial, empresarial, condominial, viagem, RC profissional, celular
-- Planos de saúde e odontológicos com a Prevent Senior: individual, familiar, PME, por adesão
-- Amparo funeral com a PASI: individual, familiar, sênior (acima de 75 anos)
+- Seguros: automóvel (individual, frota, carta azul), vida (individual, em grupo, PME, acidentes pessoais), residencial, empresarial, condominial, viagem, RC profissional, celular, além de previdência privada, seguro garantia e fiança locatícia
+- Plano de saúde com a Prevent Senior: 2 planos com rede própria — MA+S (São Paulo e região, Rio de Janeiro e Niterói) e 1025 (São Paulo e região) — cobertura ambulatorial e hospitalar
+- Amparo funeral com a PASI: individual (até 75 anos), familiar (titular, cônjuge e filhos) e sênior (76 a 85 anos), a partir de R$ 99/mês
 
 ## Páginas principais
 
@@ -18,9 +18,10 @@ A Revla Corretora compara opções entre seguradoras e administradoras parceiras
 - [Consórcios](https://revlacorretora.com.br/consorcios): consórcio sem juros para imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços
 - [Calculadora de consórcio](https://revlacorretora.com.br/consorcios/calculadora): simulação de venda de carta contemplada e de alavancagem patrimonial
 - [Planejamento patrimonial](https://revlacorretora.com.br/planejamento-patrimonial): estratégia combinando consórcio, seguro e plano de saúde
-- [Seguros](https://revlacorretora.com.br/seguros): vida, auto, residencial, empresarial, condominial, viagem, RC profissional, celular
-- [Plano de saúde](https://revlacorretora.com.br/plano-de-saude): planos individuais, familiares, PME e por adesão com a Prevent Senior
+- [Seguros](https://revlacorretora.com.br/seguros): automóvel, vida, residencial, empresarial, condominial, viagem, RC profissional, celular, previdência e garantias
+- [Plano de saúde](https://revlacorretora.com.br/plano-de-saude): planos MA+S e 1025 com a Prevent Senior
 - [Amparo funeral](https://revlacorretora.com.br/amparo-funeral): assistência funeral individual, familiar e sênior com a PASI
+- [Sobre a Revla](https://revlacorretora.com.br/sobre-a-revla): missão, diferenciais e registro regulatório da corretora
 - [Reinaldo Masullo](https://revlacorretora.com.br/reinaldo-masullo): especialista responsável, registro SUSEP pessoal
 - [Blog](https://revlacorretora.com.br/blog): artigos sobre planejamento patrimonial, consórcios, seguros, plano de saúde e amparo funeral
 
