@@ -14,7 +14,7 @@ import { PercentOff, ShieldCheck, HeartHand, Headset } from "@/components/icons"
 export const metadata: Metadata = buildMetadata({
   title: "Planejamento Patrimonial em São Paulo",
   description:
-    "Planejamento patrimonial com consórcio para alavancar patrimônio, seguro para proteger seus bens e plano de saúde para proteger sua vida. Consultoria gratuita com a Revla.",
+    "Planejamento patrimonial com consórcio para alavancar patrimônio, seguro para proteger seus bens e plano de saúde para proteger sua vida. Revla.",
   path: "/planejamento-patrimonial",
 });
 

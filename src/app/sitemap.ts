@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/amparo-funeral",
     "/consorcios",
     "/consorcios/calculadora",
+    "/consorcios/calculadora-veiculos",
+    "/consorcios/calculadora-financiamento",
     "/planejamento-patrimonial",
     "/sobre-a-revla",
     "/reinaldo-masullo",

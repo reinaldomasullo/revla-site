@@ -10,7 +10,7 @@ import { siteConfig, whatsappLink } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Reinaldo Masullo, Especialista Revla",
   description:
-    "Reinaldo Masullo é especialista em planejamento patrimonial na Revla Corretora, atuando com consórcio de imóveis, veículos e investimentos, seguros e planos de saúde.",
+    "Reinaldo Masullo é especialista em planejamento patrimonial na Revla Corretora, atuando com consórcio, seguros e planos de saúde.",
   alternates: { canonical: "/reinaldo-masullo" },
   openGraph: {
     type: "profile",

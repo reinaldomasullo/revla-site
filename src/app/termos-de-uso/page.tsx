@@ -6,7 +6,7 @@ import { siteConfig, socialChannels, buildMetadata } from "@/lib/site-config";
 export const metadata: Metadata = {
   ...buildMetadata({
     title: "Termos de Uso",
-    description: `Termos de uso do site da ${siteConfig.legalName}.`,
+    description: `Termos de uso do site da ${siteConfig.legalName}: regras de utilização, responsabilidades e condições para contratar pelo site.`,
     path: "/termos-de-uso",
   }),
   robots: { index: true, follow: true },

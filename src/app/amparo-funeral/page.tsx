@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Planos de Amparo Funeral PASI",
   description:
-    "Amparo Funeral PASI a partir de R$ 99/mês: planos individual, familiar e sênior, com assistência funeral 24h, cremação e sem necessidade de vínculo empregatício. Simulação gratuita com a Revla Corretora.",
+    "Amparo Funeral PASI a partir de R$ 99/mês: planos individual, familiar e sênior, com assistência 24h e cremação. Simulação gratuita com a Revla.",
   path: "/amparo-funeral",
 });
 

@@ -45,7 +45,7 @@ export const metadata: Metadata = buildMetadata({
   // aninhadas) — por isso o nome da marca entra explícito no título.
   title: "Revla Corretora — Consórcio, Seguros, Saúde e Patrimônio",
   description:
-    "Corretora de consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial em São Paulo. Compare as melhores opções com consultoria gratuita da Revla.",
+    "Corretora de consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial em São Paulo, com consultoria gratuita da Revla.",
   path: "/",
 });
 

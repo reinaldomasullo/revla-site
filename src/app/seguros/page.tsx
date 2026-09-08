@@ -50,7 +50,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Seguros: Auto, Residencial, Vida e Mais",
   description:
-    "Seguro auto, residencial, empresarial, vida, viagem, seguro garantia, fiança locatícia e muito mais — comparamos as maiores seguradoras do Brasil, como Porto Seguro, AZOS e Tokio Marine, para você.",
+    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia — comparamos as maiores seguradoras do Brasil para você.",
   path: "/seguros",
 });
 
