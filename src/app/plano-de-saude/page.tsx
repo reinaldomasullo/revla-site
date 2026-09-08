@@ -8,6 +8,16 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import {
+  HospitalCross,
+  PercentShield,
+  HeartHand,
+  Star,
+  MapPin,
+  ClockCheck,
+  VideoCall,
+  Gift,
+} from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Plano de Saúde com a Prevent Senior",
@@ -51,40 +61,49 @@ const pricingPlans = [
 const planos = pricingPlans.map((plan) => ({
   title: plan.name,
   description: `Abrangência em ${plan.areas}. Cobertura ambulatorial e hospitalar (Enfermaria ou Apartamento), a partir de ${plan.startingPrice}/mês.`,
+  icon: <HospitalCross />,
 }));
 
 const diferenciais = [
   {
     title: "Sem reajuste por faixa etária a partir dos 44 anos",
     description: "A partir dos 44 anos, a mensalidade deixa de sofrer reajuste por mudança de faixa etária — só a atualização anual prevista em contrato.",
+    icon: <PercentShield />,
   },
   {
     title: "Cuidado especializado para a melhor idade",
     description: "Equipe e protocolos pensados para as necessidades específicas de quem tem mais de 60 anos, com acompanhamento próximo.",
+    icon: <HeartHand />,
   },
   {
     title: "Única operadora do mundo com unidades temáticas",
     description: "A Prevent Senior é a única operadora do mundo com hospitais e unidades temáticas, pensadas para tornar o atendimento mais humano.",
+    icon: <Star />,
   },
   {
     title: "Estruturas modernas e acolhedoras",
     description: "Hospitais, prontos-socorros e unidades ambulatoriais com estrutura própria, projetados para o conforto de quem os utiliza.",
+    icon: <HospitalCross />,
   },
   {
     title: "Cobertura em São Paulo, Rio de Janeiro e Niterói",
     description: "Rede própria em São Paulo e região (plano 1025) e também no Rio de Janeiro e Niterói (plano MA+S).",
+    icon: <MapPin />,
   },
   {
     title: "Carências reduzidas",
     description: "Em novas adesões, a carência para lesões e doenças preexistentes cai de 730 para 180 dias.",
+    icon: <ClockCheck />,
   },
   {
     title: "Tecnologia e telemedicina",
     description: "Consultas por telemedicina e ferramentas digitais para agendar consultas, acompanhar exames e falar com a operadora sem sair de casa.",
+    icon: <VideoCall />,
   },
   {
     title: "Experiências que encantam",
     description: "Clube de benefícios com vantagens e experiências exclusivas para os beneficiários Prevent Senior.",
+    icon: <Gift />,
   },
 ];
 
@@ -155,7 +174,7 @@ export default function PlanoDeSaudePage() {
       </Hero>
 
       <section
-        className="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-dark)] py-12 sm:py-16"
+        className="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-dark)] py-10 sm:py-12"
         aria-labelledby="prevent-senior-heading"
       >
         <Container>
@@ -207,7 +226,7 @@ export default function PlanoDeSaudePage() {
         items={planos}
       />
 
-      <section className="section-muted">
+      <section className="section-tint-blue">
         <FeatureGrid
           title="Diferenciais Prevent Senior"
           description="Oito motivos pelos quais famílias escolhem a Prevent Senior."
@@ -216,7 +235,7 @@ export default function PlanoDeSaudePage() {
         />
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-10 sm:py-12">
         <Container>
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Container from "./Container";
 
@@ -6,6 +7,13 @@ export type Feature = {
   description: string;
   href?: string;
   linkLabel?: string;
+  /**
+   * Ícone da categoria, exibido sobre fundo Prata no lugar do selo
+   * numerado. Deixe de fora apenas quando a posição no array representa
+   * uma sequência real (ex.: passo a passo "Como funciona") — nesses
+   * casos o número continua fazendo sentido e é mantido automaticamente.
+   */
+  icon?: ReactNode;
 };
 
 export default function FeatureGrid({
@@ -27,7 +35,7 @@ export default function FeatureGrid({
         : "sm:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className="py-12 sm:py-16">
+    <section className="py-10 sm:py-12">
       <Container>
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
@@ -39,18 +47,27 @@ export default function FeatureGrid({
             </p>
           )}
         </div>
-        <div className={`mt-10 grid gap-6 ${cols}`}>
+        <div className={`mt-8 grid gap-6 ${cols}`}>
           {items.map((item, i) => (
             <div
               key={item.title}
               className="rounded-2xl border border-[var(--color-border)] p-6"
             >
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-accent)]/15 text-sm font-bold text-[var(--color-accent-dark)]"
-                aria-hidden="true"
-              >
-                {i + 1}
-              </span>
+              {item.icon ? (
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-silver)] text-[var(--color-primary)]"
+                  aria-hidden="true"
+                >
+                  <span className="[&>svg]:h-5 [&>svg]:w-5">{item.icon}</span>
+                </span>
+              ) : (
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-accent)]/15 text-sm font-bold text-[var(--color-accent-dark)]"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
+              )}
               <h3 className="mt-4 text-base font-semibold text-[var(--color-ink)]">
                 {item.title}
               </h3>

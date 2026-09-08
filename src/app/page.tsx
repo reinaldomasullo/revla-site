@@ -10,6 +10,34 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import { siteConfig, whatsappLink, buildMetadata, testimonials } from "@/lib/site-config";
+import {
+  House,
+  Car,
+  Motorcycle,
+  TrendingUp,
+  Sparkle,
+  Plant,
+  Machine,
+  Heart,
+  Briefcase,
+  Building,
+  Plane,
+  Scale,
+  Phone,
+  Backpack,
+  Handshake,
+  BuildingUsers,
+  ClockShort,
+  Pill,
+  ShoppingBag,
+  VideoCall,
+  ClipboardCheck,
+  Ribbon,
+  Tooth,
+  Wrench,
+  Brain,
+  PawPrint,
+} from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Consórcio, Seguros, Saúde e Patrimônio",
@@ -61,32 +89,39 @@ const consorcioSubprodutos = [
     title: "Consórcio de imóveis",
     description:
       "Crédito para comprar imóvel residencial ou comercial, sem juros, com parcelas ajustadas ao seu orçamento.",
+    icon: <House />,
   },
   {
     title: "Consórcio de veículos",
     description:
       "Carta de crédito para carro novo ou usado, com lance livre ou embutido para acelerar a contemplação.",
+    icon: <Car />,
   },
   {
     title: "Consórcio de motos",
     description: "Crédito facilitado para motocicletas, com parcelas menores que um financiamento tradicional.",
+    icon: <Motorcycle />,
   },
   {
     title: "Consórcio de investimentos",
     description:
       "Crédito para diversificar patrimônio, sem juros, aplicável em imóveis, veículos ou outros bens.",
+    icon: <TrendingUp />,
   },
   {
     title: "Consórcio de serviços",
     description: "Crédito para contratar reformas, eventos, viagens e outros serviços.",
+    icon: <Sparkle />,
   },
   {
     title: "Consórcio agro",
     description: "Crédito para maquinário, insumos e investimentos do agronegócio, com carência ajustada à safra.",
+    icon: <Plant />,
   },
   {
     title: "Consórcio de máquinas",
     description: "Crédito programado para aquisição de maquinário agrícola e industrial, sem juros.",
+    icon: <Machine />,
   },
 ];
 
@@ -94,54 +129,67 @@ const segurosSubprodutos = [
   {
     title: "Seguro de vida",
     description: "Indenização para a família em caso de morte ou invalidez, com coberturas para doenças graves.",
+    icon: <Heart />,
   },
   {
     title: "Seguro empresarial",
     description: "Proteção para patrimônio, faturamento e operação do seu negócio.",
+    icon: <Briefcase />,
   },
   {
     title: "Seguro residencial",
     description: "Cobertura para incêndio, roubo, danos elétricos e desastres naturais.",
+    icon: <House />,
   },
   {
     title: "Seguro condominial",
     description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
+    icon: <Building />,
   },
   {
     title: "Seguro auto",
     description: "Cobertura para colisão, roubo, furto e responsabilidade civil do veículo.",
+    icon: <Car />,
   },
   {
     title: "Seguro viagem",
     description: "Assistência médica, bagagem e imprevistos em viagens nacionais e internacionais.",
+    icon: <Plane />,
   },
   {
     title: "Seguro RC profissional",
     description: "Proteção contra erros e omissões no exercício da sua atividade profissional.",
+    icon: <Scale />,
   },
   {
     title: "Seguro celular",
     description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
+    icon: <Phone />,
   },
   {
     title: "Agrovida",
     description: "Seguro de vida da PASI para produtores rurais e colaboradores do agronegócio, com coberturas específicas do setor.",
+    icon: <Plant />,
   },
   {
     title: "Seguro Estagiários",
     description: "Seguro obrigatório por lei para estagiários, com planos Básico e Plus da PASI, cobrindo morte acidental e invalidez.",
+    icon: <Backpack />,
   },
   {
     title: "Convenções Coletivas (CCT)",
     description: "Seguro de vida em grupo negociado por sindicato, com indenização rápida e sem limite de idade para o ativo.",
+    icon: <Handshake />,
   },
   {
     title: "Seguro para PME",
     description: "Seguro de vida em grupo da PASI para micro, pequenas e médias empresas, a partir de 1 colaborador.",
+    icon: <BuildingUsers />,
   },
   {
     title: "AP Temporário",
     description: "Seguro de acidentes pessoais por prazo determinado, ideal para viagens, eventos ou períodos específicos.",
+    icon: <ClockShort />,
   },
 ];
 
@@ -152,42 +200,52 @@ const solucoesPasi = [
   {
     title: "Medicamento Garantido",
     description: "Crédito mensal via Pix para compra de medicamentos com receita, em qualquer farmácia do Brasil.",
+    icon: <Pill />,
   },
   {
     title: "PASI Farma",
     description: "Compra de medicamentos, vitaminas e suplementos a preço de custo, sem teto de uso, com entrega em casa.",
+    icon: <ShoppingBag />,
   },
   {
     title: "Telemedicina PASI",
     description: "9 modalidades de consulta médica remota, com pronto atendimento, especialidades e descontos em farmácia e exames.",
+    icon: <VideoCall />,
   },
   {
     title: "PASI NR-1",
     description: "Solução de compliance para a Norma Regulamentadora 1, com gestão de riscos psicossociais para empresas.",
+    icon: <ClipboardCheck />,
   },
   {
     title: "Amparo Oncológico",
     description: "Produtos dermocosméticos de apoio ao tratamento oncológico para o segurado em tratamento.",
+    icon: <Ribbon />,
   },
   {
     title: "Sorriso PASI",
     description: "Plano odontológico da PASI, com rede credenciada para tratamentos preventivos e corretivos.",
+    icon: <Tooth />,
   },
   {
     title: "Assistência Residencial",
     description: "Suporte para emergências domésticas, como problemas elétricos, hidráulicos e chaveiro.",
+    icon: <Wrench />,
   },
   {
     title: "Assistência Empresarial",
     description: "Suporte para emergências no imóvel da empresa, com a mesma lógica da assistência residencial.",
+    icon: <Building />,
   },
   {
     title: "Amparo Psicossocial",
     description: "Atendimento online com psicologia, psiquiatria, nutrição, neurologia, geriatria e educação física.",
+    icon: <Brain />,
   },
   {
     title: "PASI PET",
     description: "Plano de cuidados para o seu animal de estimação, dentro do ecossistema de benefícios PASI.",
+    icon: <PawPrint />,
   },
 ];
 
@@ -259,7 +317,7 @@ export default function HomePage() {
       </Hero>
 
       {/* Dobra 2 — Os 4 produtos */}
-      <section className="bg-[var(--color-primary)] py-10 sm:py-14" aria-labelledby="produtos-heading">
+      <section className="bg-[var(--color-primary)] py-8 sm:py-10" aria-labelledby="produtos-heading">
         <JsonLd data={servicesSchema} />
         <Container>
           <h2
@@ -304,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Dobra 3 — Consórcio e subprodutos */}
-      <section className="section-tint-red py-10 sm:py-14" aria-labelledby="consorcio-heading">
+      <section className="section-tint-red py-8 sm:py-10" aria-labelledby="consorcio-heading">
         <Container>
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
@@ -327,16 +385,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {consorcioSubprodutos.map((item, i) => (
+            {consorcioSubprodutos.map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
               >
                 <span
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-secondary)]/15 text-xs font-bold text-[var(--color-secondary)]"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-silver)] text-[var(--color-primary)] [&>svg]:h-4.5 [&>svg]:w-4.5"
                   aria-hidden="true"
                 >
-                  {i + 1}
+                  {item.icon}
                 </span>
                 <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
@@ -397,7 +455,7 @@ export default function HomePage() {
       />
 
       {/* Dobra 4 — Seguros e subprodutos */}
-      <section className="section-tint-blue py-10 sm:py-14" aria-labelledby="seguros-heading">
+      <section className="py-8 sm:py-10" aria-labelledby="seguros-heading">
         <Container>
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-accent-dark)]">
@@ -420,16 +478,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {segurosSubprodutos.map((item, i) => (
+            {segurosSubprodutos.map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
               >
                 <span
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)]/15 text-xs font-bold text-[var(--color-accent-dark)]"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-silver)] text-[var(--color-primary)] [&>svg]:h-4.5 [&>svg]:w-4.5"
                   aria-hidden="true"
                 >
-                  {i + 1}
+                  {item.icon}
                 </span>
                 <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
@@ -453,7 +511,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--color-primary)] py-8 sm:py-10" aria-label="Seguradoras parceiras">
+      <section className="bg-[var(--color-primary)] py-6 sm:py-8" aria-label="Seguradoras parceiras">
         <Container>
           <p className="text-center text-xs font-semibold uppercase tracking-wide text-white/60">
             Seguradoras e administradoras parceiras
@@ -484,7 +542,7 @@ export default function HomePage() {
         ctaHref="/plano-de-saude"
         ctaLabel="Saiba mais sobre plano de saúde"
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
-        muted
+        tint="blue"
       />
 
       {/* Dobra 6 — Amparo Funeral */}
@@ -503,11 +561,10 @@ export default function HomePage() {
         ctaLabel="Saiba mais sobre amparo funeral"
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         reverse
-        tint="blue"
       />
 
       {/* Dobra 6.5 — Mais soluções PASI (benefícios/assistências, além do amparo funeral) */}
-      <section className="section-muted py-10 sm:py-14" aria-labelledby="pasi-heading">
+      <section className="section-tint-silver py-8 sm:py-10" aria-labelledby="pasi-heading">
         <Container>
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-steel)]">
@@ -526,16 +583,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {solucoesPasi.map((item, i) => (
+            {solucoesPasi.map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
               >
                 <span
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-steel)]/15 text-xs font-bold text-[var(--color-steel)]"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-primary)] [&>svg]:h-4.5 [&>svg]:w-4.5"
                   aria-hidden="true"
                 >
-                  {i + 1}
+                  {item.icon}
                 </span>
                 <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">

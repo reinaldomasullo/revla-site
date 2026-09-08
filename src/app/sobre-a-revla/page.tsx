@@ -8,6 +8,17 @@ import JsonLd from "@/components/JsonLd";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import {
+  Headset,
+  CompareArrows,
+  Eye,
+  ChatBubble,
+  House,
+  ShieldCheck,
+  HeartHand,
+  Dove,
+  Compass,
+} from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Sobre a Revla Corretora",
@@ -21,30 +32,34 @@ const diferenciais = [
     title: "Atendimento consultivo",
     description:
       "Entendemos seu objetivo antes de sugerir qualquer produto — sem pressa e sem pressão para fechar.",
+    icon: <Headset />,
   },
   {
     title: "Comparação entre parceiros",
     description:
       "Pesquisamos entre seguradoras, administradoras de consórcio e operadoras de saúde parceiras para encontrar a opção mais vantajosa para você.",
+    icon: <CompareArrows />,
   },
   {
     title: "Transparência total",
     description:
       "Explicamos com clareza taxas, carências, coberturas e condições — sem letra miúda escondida.",
+    icon: <Eye />,
   },
   {
     title: "Suporte pelo WhatsApp",
     description:
       "Tire dúvidas, peça uma simulação ou acione um sinistro diretamente pelo WhatsApp, com resposta ágil.",
+    icon: <ChatBubble />,
   },
 ];
 
 const produtos = [
-  { title: "Consórcios", description: "Imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços, sem juros.", href: "/consorcios" },
-  { title: "Seguros", description: "Vida, auto, residencial, empresarial, responsabilidade civil e outras coberturas.", href: "/seguros" },
-  { title: "Plano de Saúde", description: "Planos individuais, PME e para a melhor idade, com a Prevent Senior.", href: "/plano-de-saude" },
-  { title: "Amparo Funeral", description: "Assistência funeral completa, com traslado e apoio 24 horas, pela PASI.", href: "/amparo-funeral" },
-  { title: "Planejamento Patrimonial", description: "Estratégias para proteger e organizar seu patrimônio ao longo da vida.", href: "/planejamento-patrimonial" },
+  { title: "Consórcios", description: "Imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços, sem juros.", href: "/consorcios", icon: <House /> },
+  { title: "Seguros", description: "Vida, auto, residencial, empresarial, responsabilidade civil e outras coberturas.", href: "/seguros", icon: <ShieldCheck /> },
+  { title: "Plano de Saúde", description: "Planos individuais, PME e para a melhor idade, com a Prevent Senior.", href: "/plano-de-saude", icon: <HeartHand /> },
+  { title: "Amparo Funeral", description: "Assistência funeral completa, com traslado e apoio 24 horas, pela PASI.", href: "/amparo-funeral", icon: <Dove /> },
+  { title: "Planejamento Patrimonial", description: "Estratégias para proteger e organizar seu patrimônio ao longo da vida.", href: "/planejamento-patrimonial", icon: <Compass /> },
 ];
 
 const aboutSchema = {
@@ -78,7 +93,7 @@ export default function SobreARevlaPage() {
         </CTAButton>
       </Hero>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-10 sm:py-12">
         <Container className="max-w-3xl">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
             Nossa missão
@@ -119,7 +134,7 @@ export default function SobreARevlaPage() {
         items={produtos.map((p) => ({ ...p, linkLabel: `Conhecer ${p.title.toLowerCase()}` }))}
       />
 
-      <section className="py-12 sm:py-16">
+      <section className="section-tint-blue py-10 sm:py-12">
         <Container className="max-w-3xl">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
             Registro e regulação

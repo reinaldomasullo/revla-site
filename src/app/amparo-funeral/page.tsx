@@ -9,6 +9,18 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import {
+  UserCheck,
+  Flame,
+  Coffee,
+  Clock24,
+  Dove,
+  Tag,
+  ShoppingBag,
+  Briefcase,
+  BuildingUsers,
+  ShieldUsers,
+} from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Amparo Funeral PASI: Individual, Familiar e Sênior",
@@ -71,18 +83,22 @@ const diferenciais = [
   {
     title: "Sem vínculo",
     description: "Não é necessário vínculo empregatício ou institucional para contratar — venda direta ao consumidor.",
+    icon: <UserCheck />,
   },
   {
     title: "Cremação",
     description: "Possibilidade de cremação conforme o plano contratado.",
+    icon: <Flame />,
   },
   {
     title: "Serviço de cafeteria",
     description: "Serviço de cafeteria disponível durante o funeral presencial.",
+    icon: <Coffee />,
   },
   {
     title: "Acionamento 24 horas",
     description: "A Assistência Funeral pode ser acionada 24 horas por dia, todos os dias.",
+    icon: <Clock24 />,
   },
 ];
 
@@ -90,14 +106,17 @@ const assistencias = [
   {
     title: "Assistência Funeral",
     description: "Serviços para a realização do funeral, trâmites administrativos, pagamento de taxas e organização do sepultamento.",
+    icon: <Dove />,
   },
   {
     title: "Clube de Vantagens PASI",
     description: "Acesso a uma plataforma com benefícios exclusivos e descontos em produtos e serviços.",
+    icon: <Tag />,
   },
   {
     title: "Assistência Alimentação",
     description: "Em caso de falecimento do titular, os beneficiários recebem R$ 300,00 para alimentação.",
+    icon: <ShoppingBag />,
   },
 ];
 
@@ -106,16 +125,19 @@ const outrasModalidades = [
     title: "PME – Seguro Funeral Individual",
     description:
       "Amparo funeral pensado para empresas contratarem para seus colaboradores, cobrindo só o titular. Coberturas e valores são definidos conforme o porte da empresa — fale com um consultor para uma cotação personalizada.",
+    icon: <Briefcase />,
   },
   {
     title: "PME – Seguro Funeral Familiar",
     description:
       "Mesma lógica do plano PME Individual, estendendo a cobertura à família do colaborador. Ideal para empresas que querem oferecer esse benefício de forma mais completa. Cotação sob consulta.",
+    icon: <BuildingUsers />,
   },
   {
     title: "Seguro Funeral PASI Colaboradores e Dependentes",
     description:
       "Modalidade coletiva de amparo funeral para empresas segurarem colaboradores e dependentes em um único convênio. Peça uma simulação para sua empresa.",
+    icon: <ShieldUsers />,
   },
 ];
 
@@ -204,7 +226,7 @@ export default function AmparoFuneralPage() {
         </CTAButton>
       </Hero>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-10 sm:py-12">
         <Container>
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
@@ -280,7 +302,7 @@ export default function AmparoFuneralPage() {
         />
       </section>
 
-      <section className="py-10 sm:py-12">
+      <section className="py-8 sm:py-10">
         <Container>
           <div className="rounded-2xl border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/10 p-6 sm:p-8">
             <h3 className="text-base font-bold text-[var(--color-ink)]">Atenção: acione antes de contratar os serviços</h3>
@@ -293,12 +315,14 @@ export default function AmparoFuneralPage() {
         </Container>
       </section>
 
-      <FeatureGrid
-        title="Amparo funeral para empresas"
-        description="Além dos planos vendidos diretamente à pessoa física, a PASI também oferece opções para empresas contratarem em nome de colaboradores. Em breve, cada uma dessas modalidades terá sua própria página com todos os detalhes."
-        columns={3}
-        items={outrasModalidades}
-      />
+      <section className="section-tint-blue">
+        <FeatureGrid
+          title="Amparo funeral para empresas"
+          description="Além dos planos vendidos diretamente à pessoa física, a PASI também oferece opções para empresas contratarem em nome de colaboradores. Em breve, cada uma dessas modalidades terá sua própria página com todos os detalhes."
+          columns={3}
+          items={outrasModalidades}
+        />
+      </section>
 
       <Testimonials title="Quem já contou com o Amparo Funeral da Revla" items={testimonials} accentCards />
 

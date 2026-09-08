@@ -8,6 +8,20 @@ import JsonLd from "@/components/JsonLd";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import {
+  House,
+  Car,
+  Motorcycle,
+  Truck,
+  Machine,
+  Plant,
+  TrendingUp,
+  Sparkle,
+  PercentOff,
+  CalendarDown,
+  HandCoin,
+  Headset,
+} from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Consórcio de Imóveis e Veículos sem Juros",
@@ -20,42 +34,50 @@ const categorias = [
   {
     title: "Imóveis",
     description: "Para casa, apartamento, terreno ou construção, sem entrada obrigatória.",
+    icon: <House />,
   },
   {
     title: "Veículos",
     description: "Carros e utilitários, com parcelas menores que o financiamento tradicional.",
+    icon: <Car />,
   },
   {
     title: "Motos",
     description: "Motocicletas de todas as categorias, com parcelas que cabem no seu orçamento.",
+    icon: <Motorcycle />,
   },
   {
     title: "Caminhões",
     description: "Caminhões e veículos pesados para renovar ou expandir a frota da sua empresa.",
+    icon: <Truck />,
   },
   {
     title: "Máquinas",
     description: "Máquinas e equipamentos agrícolas, industriais ou para construção civil.",
+    icon: <Machine />,
   },
   {
     title: "Agro",
     description: "Insumos, maquinário e expansão para o produtor rural, sem comprometer o caixa.",
+    icon: <Plant />,
   },
   {
     title: "Investimento",
     description: "Poupança programada sem juros, com possibilidade de lance para antecipar a contemplação.",
+    icon: <TrendingUp />,
   },
   {
     title: "Serviços",
     description: "Reformas, viagens, procedimentos estéticos ou odontológicos.",
+    icon: <Sparkle />,
   },
 ];
 
 const diferenciais = [
-  { title: "Sem juros", description: "Você paga apenas a taxa de administração — não há incidência de juros como em um financiamento." },
-  { title: "Parcelas reduzidas", description: "Parcelas reduzidas em até 50% durante parte do plano, conforme o grupo escolhido." },
-  { title: "Lance embutido", description: "Possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação." },
-  { title: "Consultoria completa", description: "Acompanhamento da simulação até a contemplação, com suporte da Revla em todas as etapas." },
+  { title: "Sem juros", description: "Você paga apenas a taxa de administração — não há incidência de juros como em um financiamento.", icon: <PercentOff /> },
+  { title: "Parcelas reduzidas", description: "Parcelas reduzidas em até 50% durante parte do plano, conforme o grupo escolhido.", icon: <CalendarDown /> },
+  { title: "Lance embutido", description: "Possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação.", icon: <HandCoin /> },
+  { title: "Consultoria completa", description: "Acompanhamento da simulação até a contemplação, com suporte da Revla em todas as etapas.", icon: <Headset /> },
 ];
 
 const etapas = [
@@ -141,7 +163,7 @@ export default function ConsorciosPage() {
         <FeatureGrid title="Diferenciais da Revla" columns={4} items={diferenciais} />
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="py-10 sm:py-12">
         <Container>
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
             Como funciona
@@ -160,7 +182,7 @@ export default function ConsorciosPage() {
       </section>
 
       <section
-        className="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-dark)] py-12 sm:py-16"
+        className="bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-dark)] py-10 sm:py-12"
         aria-labelledby="ademicon-heading"
       >
         <Container>

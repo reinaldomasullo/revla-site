@@ -9,6 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import { PercentOff, ShieldCheck, HeartHand, Headset } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Planejamento Patrimonial em São Paulo",
@@ -46,21 +47,25 @@ const beneficios = [
     title: "Sem juros, com disciplina",
     description:
       "O consórcio permite construir patrimônio de forma programada, sem os encargos de um financiamento tradicional.",
+    icon: <PercentOff />,
   },
   {
     title: "Proteção contra imprevistos",
     description:
       "Seguros bem dimensionados evitam que um sinistro, doença ou acidente comprometa o que você levou anos para construir.",
+    icon: <ShieldCheck />,
   },
   {
     title: "Saúde em primeiro lugar",
     description:
       "Um plano de saúde adequado evita que despesas médicas inesperadas consumam reservas e patrimônio da família.",
+    icon: <HeartHand />,
   },
   {
     title: "Acompanhamento consultivo",
     description:
       "A Revla acompanha a estratégia ao longo do tempo, ajustando produtos conforme sua fase de vida e seus objetivos.",
+    icon: <Headset />,
   },
 ];
 
@@ -128,7 +133,7 @@ export default function PlanejamentoPatrimonialPage() {
         </CTAButton>
       </Hero>
 
-      <section className="py-12 sm:py-16" aria-labelledby="pilares-heading">
+      <section className="py-10 sm:py-12" aria-labelledby="pilares-heading">
         <Container>
           <div className="max-w-2xl">
             <h2

@@ -28,15 +28,21 @@ export default function ProductTeaser({
   reverse?: boolean;
   muted?: boolean;
   /** Opt-in only: colored section background instead of plain white/muted. */
-  tint?: "blue";
+  tint?: "blue" | "silver";
 }) {
   const bgClass =
-    tint === "blue" ? "section-tint-blue" : muted ? "section-muted" : "";
+    tint === "blue"
+      ? "section-tint-blue"
+      : tint === "silver"
+        ? "section-tint-silver"
+        : muted
+          ? "section-muted"
+          : "";
 
   return (
     <section
       id={id}
-      className={`py-10 sm:py-14 ${bgClass}`}
+      className={`py-8 sm:py-10 ${bgClass}`}
       aria-labelledby={`${id}-heading`}
     >
       <Container>

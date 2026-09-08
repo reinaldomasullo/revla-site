@@ -57,6 +57,10 @@ body {
   background: #fbeae8;
 }
 
+.section-tint-silver {
+  background: var(--color-silver);
+}
+
 a {
   text-underline-offset: 3px;
 }

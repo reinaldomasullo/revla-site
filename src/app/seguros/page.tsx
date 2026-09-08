@@ -8,6 +8,44 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import {
+  Car,
+  CarFleet,
+  Tractor,
+  Plant,
+  Bike,
+  Phone,
+  Building,
+  Briefcase,
+  Camera,
+  Laptop,
+  GameController,
+  Devices,
+  PartyCalendar,
+  HouseKey,
+  Machine,
+  House,
+  Scale,
+  Package,
+  Truck,
+  Plane,
+  Heart,
+  Gift,
+  Users,
+  BuildingUsers,
+  ShieldUsers,
+  Backpack,
+  ClockShort,
+  Globe,
+  Handshake,
+  BankShield,
+  PiggyBank,
+  ShieldCheck,
+  DocumentCheck,
+  LockDocument,
+  Key,
+  Receipt,
+} from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Seguros: Auto, Residencial, Vida e Mais",
@@ -28,14 +66,17 @@ const automovel = [
     description: "Cobertura para colisão, roubo, furto, terceiros e assistência 24h para o seu carro.",
     href: "/blog/seguro-auto-vale-a-pena",
     linkLabel: "Seguro auto vale a pena?",
+    icon: <Car />,
   },
   {
     title: "Auto Frota",
     description: "Gestão de apólices e sinistros centralizada para frotas de veículos de empresas.",
+    icon: <CarFleet />,
   },
   {
     title: "Carta Azul",
     description: "Seguro de responsabilidade civil para máquinas e veículos sem placa, como tratores e equipamentos agrícolas.",
+    icon: <Tractor />,
   },
 ];
 
@@ -43,64 +84,78 @@ const ramosElementares = [
   {
     title: "Agronegócios",
     description: "Proteção para produção rural, maquinário agrícola, rebanhos e instalações do agronegócio.",
+    icon: <Plant />,
   },
   {
     title: "Bike",
     description: "Cobertura contra roubo, furto e danos para bicicletas comuns e elétricas.",
+    icon: <Bike />,
   },
   {
     title: "Celular",
     description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
+    icon: <Phone />,
   },
   {
     title: "Condomínio",
     description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
+    icon: <Building />,
   },
   {
     title: "Empresarial",
     description: "Proteção para patrimônio, faturamento e operação do seu negócio.",
     href: "/blog/seguro-empresarial-guia-completo",
     linkLabel: "Ler o guia completo",
+    icon: <Briefcase />,
   },
   {
     title: "Foto e Vídeo",
     description: "Cobertura para câmeras, lentes e equipamentos fotográficos e de filmagem.",
+    icon: <Camera />,
   },
   {
     title: "Notebook e Tablet",
     description: "Proteção contra roubo, furto e quebra acidental de notebooks e tablets.",
+    icon: <Laptop />,
   },
   {
     title: "Smart e Games",
     description: "Cobertura para smartwatches, consoles e outros equipamentos eletrônicos de jogos.",
+    icon: <GameController />,
   },
   {
     title: "Equipamentos Portáteis Multi-Itens",
     description: "Uma única apólice para proteger vários equipamentos eletrônicos portáteis ao mesmo tempo.",
+    icon: <Devices />,
   },
   {
     title: "Eventos",
     description: "Cobertura para cancelamento, responsabilidade civil e imprevistos em festas e eventos.",
+    icon: <PartyCalendar />,
   },
   {
     title: "Imobiliária",
     description: "Proteção para imóveis em construção, reforma ou comercialização, sob responsabilidade de incorporadoras e imobiliárias.",
+    icon: <HouseKey />,
   },
   {
     title: "Máquinas e Equipamentos",
     description: "Cobertura contra quebra, roubo e danos para máquinas e equipamentos industriais ou agrícolas.",
+    icon: <Machine />,
   },
   {
     title: "Residencial",
     description: "Cobertura para incêndio, roubo, danos elétricos e desastres naturais na sua casa ou apartamento.",
     href: "/blog/seguro-residencial-o-que-cobre-quanto-custa",
     linkLabel: "O que cobre e quanto custa",
+    icon: <House />,
   },
   {
     title: "Responsabilidade Civil",
     description: "Proteção contra indenizações por danos causados a terceiros, no exercício profissional ou empresarial.",
     href: "/blog/seguro-rc-profissional",
     linkLabel: "Entenda o que cobre",
+    icon: <Scale />,
   },
 ];
 
@@ -108,14 +163,17 @@ const transportesEViagem = [
   {
     title: "Seguros para Embarcadores",
     description: "Proteção para a carga durante o transporte, contratada por quem envia a mercadoria.",
+    icon: <Package />,
   },
   {
     title: "Seguros para Transportadoras",
     description: "Cobertura de responsabilidade civil e danos à carga para empresas de transporte.",
+    icon: <Truck />,
   },
   {
     title: "Viagem",
     description: "Assistência médica, bagagem e imprevistos em viagens nacionais e internacionais.",
+    icon: <Plane />,
   },
 ];
 
@@ -123,42 +181,52 @@ const vida = [
   {
     title: "Vida Individual",
     description: "Indenização para a família em caso de morte ou invalidez, com capital segurado definido conforme sua necessidade.",
+    icon: <Heart />,
   },
   {
     title: "Vida Presente",
     description: "Seguro de vida oferecido como presente para proteger uma pessoa querida, geralmente crianças.",
+    icon: <Gift />,
   },
   {
     title: "Vida em Grupo",
     description: "Seguro de vida coletivo contratado pela empresa para proteger seus colaboradores.",
+    icon: <Users />,
   },
   {
     title: "Vida PME+",
     description: "Seguro de vida em grupo desenhado especialmente para pequenas e médias empresas.",
+    icon: <BuildingUsers />,
   },
   {
     title: "Acidentes Pessoais Coletivos",
     description: "Cobertura para morte ou invalidez por acidente, contratada em grupo pela empresa.",
+    icon: <ShieldUsers />,
   },
   {
     title: "Acidentes Pessoais Escolar",
     description: "Proteção para alunos contra acidentes dentro e fora do ambiente escolar.",
+    icon: <Backpack />,
   },
   {
     title: "Acidentes Pessoais Prazo Curto",
     description: "Cobertura por acidentes para períodos determinados, como viagens corporativas ou eventos.",
+    icon: <ClockShort />,
   },
   {
     title: "Capital Global",
     description: "Apólice de acidentes pessoais para grupos, com um capital segurado único para todos os participantes.",
+    icon: <Globe />,
   },
   {
     title: "Convenções Coletivas",
     description: "Seguro de vida em grupo negociado por sindicatos para toda a categoria profissional.",
+    icon: <Handshake />,
   },
   {
     title: "Prestamista",
     description: "Quita ou reduz o saldo devedor de um financiamento em caso de morte ou invalidez do titular.",
+    icon: <BankShield />,
   },
 ];
 
@@ -166,30 +234,37 @@ const previdenciaEGarantias = [
   {
     title: "Previdência Individual",
     description: "Planos PGBL e VGBL para construir uma reserva de longo prazo com vantagens tributárias.",
+    icon: <PiggyBank />,
   },
   {
     title: "Previdência Infantil",
     description: "Reserva financeira de longo prazo construída em nome de filhos ou netos.",
+    icon: <PiggyBank />,
   },
   {
     title: "Proteção Planejada",
     description: "Combina previdência e proteção, com aportes programados conforme seus objetivos de vida.",
+    icon: <ShieldCheck />,
   },
   {
     title: "Seguro Garantia",
     description: "Garante o cumprimento de obrigações contratuais e licitações, substituindo caução em dinheiro ou carta fiança.",
+    icon: <DocumentCheck />,
   },
   {
     title: "Capitalização Garantia Contratual",
     description: "Título de capitalização usado como garantia em contratos, com possibilidade de resgate.",
+    icon: <LockDocument />,
   },
   {
     title: "Fiança Locatícia",
     description: "Substitui o fiador na locação de imóveis, com aprovação mais rápida para o inquilino.",
+    icon: <Key />,
   },
   {
     title: "Título de Capitalização Aluguel",
     description: "Título de capitalização usado como garantia de aluguel, no lugar de fiador ou caução.",
+    icon: <Receipt />,
   },
 ];
 
@@ -249,7 +324,7 @@ export default function SegurosPage() {
         </CTAButton>
       </Hero>
 
-      <section className="bg-[var(--color-primary)] py-8 sm:py-10" aria-label="Seguradoras parceiras">
+      <section className="bg-[var(--color-primary)] py-6 sm:py-8" aria-label="Seguradoras parceiras">
         <Container>
           <p className="text-center text-xs font-semibold uppercase tracking-wide text-white/60">
             Parceria com as maiores seguradoras do Brasil
@@ -271,7 +346,7 @@ export default function SegurosPage() {
         items={automovel}
       />
 
-      <section className="section-muted">
+      <section className="section-tint-blue">
         <FeatureGrid
           title="Ramos Elementares"
           description="Proteção para bens, equipamentos e negócios — do dia a dia às operações da sua empresa."
@@ -287,7 +362,7 @@ export default function SegurosPage() {
         items={transportesEViagem}
       />
 
-      <section className="section-muted">
+      <section className="section-tint-silver">
         <FeatureGrid
           title="Seguro de Vida"
           description="Para você, sua família ou seus colaboradores — individual ou em grupo."

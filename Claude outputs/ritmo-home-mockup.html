@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Ritmo de cores — Antes e Depois</title>
+<style>
+  :root {
+    --ink: #111111;
+    --paper: #ffffff;
+    --muted: #f4f6fa;
+    --border: #e2e6ed;
+    --primary: #0a1f44;
+    --accent: #e2231a;
+    --accent-dark: #b81811;
+    --tint-blue: #e6f0fb;
+    --blue-grad: #1e90ff;
+    --silver: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #dfe3ea;
+    color: var(--ink);
+    font-family: "Segoe UI", ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+  }
+  .page { max-width: 1280px; margin: 0 auto; padding: 40px 24px 64px; }
+  .eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent-dark); margin: 0; }
+  h1 { margin: 8px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.01em; color: var(--primary); }
+  .lede { margin: 12px 0 0; max-width: 720px; font-size: 15px; line-height: 1.6; color: rgba(17,17,17,0.72); }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 32px; align-items: start; }
+  .col-head { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .dot { width: 10px; height: 10px; border-radius: 999px; flex-shrink: 0; }
+  .dot.old { background: var(--accent); }
+  .dot.new { background: var(--primary); }
+  .col-head h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; margin: 0; }
+  .frame { border: 1px solid #c6cbd6; border-radius: 14px; overflow: hidden; background: var(--paper); box-shadow: 0 1px 3px rgba(15,23,42,0.08); }
+
+  .band { padding: 22px 22px; }
+  .band.tight { padding: 16px 22px; }
+  .band .kicker { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent-dark); margin: 0; }
+  .band h3 { margin: 4px 0 0; font-size: 17px; font-weight: 800; color: var(--primary); letter-spacing: -0.01em; }
+  .band p.desc { margin: 8px 0 0; font-size: 12.5px; line-height: 1.55; color: rgba(17,17,17,0.68); max-width: 520px; }
+
+  .cards { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+  .badge { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 6px; background: rgba(226,35,26,0.15); color: var(--accent-dark); font-weight: 700; font-size: 11px; }
+  .card h4 { margin: 8px 0 0; font-size: 12.5px; font-weight: 700; }
+  .card p { margin: 4px 0 0; font-size: 11px; line-height: 1.45; color: rgba(17,17,17,0.65); }
+
+  .teaser-grid { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chip { border: 1px solid var(--border); border-left: 3px solid var(--blue-grad); border-radius: 8px; background: var(--paper); padding: 8px 10px; font-size: 11px; line-height: 1.4; }
+  .ctas { margin-top: 14px; display: flex; gap: 8px; }
+  .btn { display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .btn.primary { background: var(--primary); color: white; }
+  .btn.ghost { border: 1px solid var(--primary); color: var(--primary); }
+
+  .partners { background: var(--primary); color: white; text-align: center; }
+  .partners p.kicker2 { margin: 0; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: rgba(255,255,255,0.6); }
+  .partners .names { margin-top: 8px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; font-size: 11px; color: rgba(255,255,255,0.9); }
+
+  /* tons de fundo */
+  .bg-white   { background: var(--paper); }
+  .bg-navy    { background: var(--primary); color: white; }
+  .bg-muted   { background: var(--muted); }
+  .bg-tint    { background: var(--tint-blue); }
+  .bg-silver  { background: var(--silver); }
+
+  .seam { height: 1px; background: rgba(0,0,0,0.05); }
+
+  .note { margin-top: 28px; background: var(--paper); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; font-size: 13.5px; line-height: 1.6; color: rgba(17,17,17,0.78); }
+  .note strong { color: var(--primary); }
+  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; border: 1px solid rgba(0,0,0,0.1); }
+
+  @media (max-width: 900px) {
+    .columns { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+    <p class="eyebrow">Rascunho pra avaliação — nada publicado no site</p>
+    <h1>Ritmo de cores e espaçamento: Seguros → Plano de Saúde → Amparo Funeral → PASI</h1>
+    <p class="lede">
+      Mesmo trecho da home, mesmo conteúdo (grades de card reduzidas pra caber na comparação —
+      na home real elas têm mais itens). À esquerda, a sequência de cor e o respiro de hoje;
+      à direita, cores redistribuídas pra nunca repetir entre vizinhos e espaçamento mais enxuto.
+    </p>
+
+    <div class="columns">
+
+      <!-- ===================== ANTES ===================== -->
+      <div>
+        <div class="col-head"><span class="dot old"></span><h2>Como está hoje</h2></div>
+        <div class="frame">
+
+          <div class="bg-tint band">
+            <p class="kicker">Seguros</p>
+            <h3>Seguros para proteger você, sua família e seu patrimônio</h3>
+            <p class="desc">Trabalhamos com todos os tipos de seguro, comparando as melhores seguradoras do Brasil para encontrar a cobertura certa pra você.</p>
+            <div class="cards">
+              <div class="card"><span class="badge">1</span><h4>Seguro de vida</h4><p>Indenização em caso de morte ou invalidez.</p></div>
+              <div class="card"><span class="badge">2</span><h4>Seguro empresarial</h4><p>Proteção para patrimônio e operação do negócio.</p></div>
+              <div class="card"><span class="badge">3</span><h4>Seguro residencial</h4><p>Incêndio, roubo, danos elétricos e mais.</p></div>
+              <div class="card"><span class="badge">4</span><h4>Seguro auto</h4><p>Colisão, roubo, furto e responsabilidade civil.</p></div>
+            </div>
+          </div>
+
+          <div class="bg-navy band tight partners">
+            <p class="kicker2">Seguradoras e administradoras parceiras</p>
+            <div class="names"><span>Porto Seguro</span><span>Icatu</span><span>MAG Mongeral</span><span>AZOS</span><span>PASI</span></div>
+          </div>
+
+          <div class="bg-muted band">
+            <p class="kicker">Plano de Saúde</p>
+            <h3>Plano de saúde Prevent Senior, com rede própria em São Paulo</h3>
+            <p class="desc">Planos individuais, familiares e empresariais, com rede própria e parceria com a Sancta Maggiore.</p>
+            <div class="teaser-grid">
+              <div class="chip">Rede própria Prevent Senior + Sancta Maggiore</div>
+              <div class="chip">Cobertura em SP, ABC, Baixada Santista e região</div>
+              <div class="chip">Carência de 180 dias p/ doenças preexistentes</div>
+              <div class="chip">Teleconsulta incluída no plano</div>
+            </div>
+            <div class="ctas"><span class="btn primary">Falar com um consultor</span><span class="btn ghost">Saiba mais</span></div>
+          </div>
+
+          <div class="bg-tint band">
+            <p class="kicker">Amparo Funeral</p>
+            <h3>Amparo funeral PASI, sem necessidade de vínculo</h3>
+            <p class="desc">Três modalidades de contratação e suporte imediato à família nos momentos mais difíceis.</p>
+            <div class="teaser-grid">
+              <div class="chip">3 modalidades: Individual, Familiar e Sênior</div>
+              <div class="chip">Capitais de R$ 5.000, R$ 7.000 ou R$ 10.000</div>
+              <div class="chip">Traslado, urna e trâmites inclusos</div>
+              <div class="chip">Atendimento 24h em todo o Brasil</div>
+            </div>
+            <div class="ctas"><span class="btn primary">Falar com um consultor</span><span class="btn ghost">Saiba mais</span></div>
+          </div>
+
+          <div class="bg-muted band">
+            <p class="kicker" style="color:#8b8f99">Soluções PASI</p>
+            <h3>Mais soluções PASI para você e sua empresa</h3>
+            <p class="desc">Além do amparo funeral, a PASI oferece um catálogo de produtos e assistências para pessoas físicas e empresas.</p>
+            <div class="cards">
+              <div class="card"><span class="badge" style="background:rgba(168,168,168,0.2);color:#6b6f78">1</span><h4>Medicamento Garantido</h4><p>Crédito mensal via Pix pra compra de remédios.</p></div>
+              <div class="card"><span class="badge" style="background:rgba(168,168,168,0.2);color:#6b6f78">2</span><h4>PASI Farma</h4><p>Medicamentos a preço de custo, entrega em casa.</p></div>
+              <div class="card"><span class="badge" style="background:rgba(168,168,168,0.2);color:#6b6f78">3</span><h4>Telemedicina PASI</h4><p>9 modalidades de consulta médica remota.</p></div>
+              <div class="card"><span class="badge" style="background:rgba(168,168,168,0.2);color:#6b6f78">4</span><h4>PASI NR-1</h4><p>Compliance da Norma Regulamentadora 1.</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===================== DEPOIS ===================== -->
+      <div>
+        <div class="col-head"><span class="dot new"></span><h2>Sugestão: contraste redistribuído + respiro menor</h2></div>
+        <div class="frame">
+
+          <div class="bg-white band tight">
+            <p class="kicker">Seguros</p>
+            <h3>Seguros para proteger você, sua família e seu patrimônio</h3>
+            <p class="desc">Trabalhamos com todos os tipos de seguro, comparando as melhores seguradoras do Brasil para encontrar a cobertura certa pra você.</p>
+            <div class="cards">
+              <div class="card"><span class="badge">1</span><h4>Seguro de vida</h4><p>Indenização em caso de morte ou invalidez.</p></div>
+              <div class="card"><span class="badge">2</span><h4>Seguro empresarial</h4><p>Proteção para patrimônio e operação do negócio.</p></div>
+              <div class="card"><span class="badge">3</span><h4>Seguro residencial</h4><p>Incêndio, roubo, danos elétricos e mais.</p></div>
+              <div class="card"><span class="badge">4</span><h4>Seguro auto</h4><p>Colisão, roubo, furto e responsabilidade civil.</p></div>
+            </div>
+          </div>
+
+          <div class="bg-navy band tight partners">
+            <p class="kicker2">Seguradoras e administradoras parceiras</p>
+            <div class="names"><span>Porto Seguro</span><span>Icatu</span><span>MAG Mongeral</span><span>AZOS</span><span>PASI</span></div>
+          </div>
+
+          <div class="bg-tint band tight">
+            <p class="kicker">Plano de Saúde</p>
+            <h3>Plano de saúde Prevent Senior, com rede própria em São Paulo</h3>
+            <p class="desc">Planos individuais, familiares e empresariais, com rede própria e parceria com a Sancta Maggiore.</p>
+            <div class="teaser-grid">
+              <div class="chip">Rede própria Prevent Senior + Sancta Maggiore</div>
+              <div class="chip">Cobertura em SP, ABC, Baixada Santista e região</div>
+              <div class="chip">Carência de 180 dias p/ doenças preexistentes</div>
+              <div class="chip">Teleconsulta incluída no plano</div>
+            </div>
+            <div class="ctas"><span class="btn primary">Falar com um consultor</span><span class="btn ghost">Saiba mais</span></div>
+          </div>
+
+          <div class="bg-white band tight">
+            <p class="kicker">Amparo Funeral</p>
+            <h3>Amparo funeral PASI, sem necessidade de vínculo</h3>
+            <p class="desc">Três modalidades de contratação e suporte imediato à família nos momentos mais difíceis.</p>
+            <div class="teaser-grid">
+              <div class="chip">3 modalidades: Individual, Familiar e Sênior</div>
+              <div class="chip">Capitais de R$ 5.000, R$ 7.000 ou R$ 10.000</div>
+              <div class="chip">Traslado, urna e trâmites inclusos</div>
+              <div class="chip">Atendimento 24h em todo o Brasil</div>
+            </div>
+            <div class="ctas"><span class="btn primary">Falar com um consultor</span><span class="btn ghost">Saiba mais</span></div>
+          </div>
+
+          <div class="bg-silver band tight">
+            <p class="kicker" style="color:#5b5f68">Soluções PASI</p>
+            <h3>Mais soluções PASI para você e sua empresa</h3>
+            <p class="desc">Além do amparo funeral, a PASI oferece um catálogo de produtos e assistências para pessoas físicas e empresas.</p>
+            <div class="cards">
+              <div class="card"><span class="badge" style="background:rgba(10,31,68,0.1);color:var(--primary)">1</span><h4>Medicamento Garantido</h4><p>Crédito mensal via Pix pra compra de remédios.</p></div>
+              <div class="card"><span class="badge" style="background:rgba(10,31,68,0.1);color:var(--primary)">2</span><h4>PASI Farma</h4><p>Medicamentos a preço de custo, entrega em casa.</p></div>
+              <div class="card"><span class="badge" style="background:rgba(10,31,68,0.1);color:var(--primary)">3</span><h4>Telemedicina PASI</h4><p>9 modalidades de consulta médica remota.</p></div>
+              <div class="card"><span class="badge" style="background:rgba(10,31,68,0.1);color:var(--primary)">4</span><h4>PASI NR-1</h4><p>Compliance da Norma Regulamentadora 1.</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <strong>O que muda:</strong> a sequência de fundo hoje é
+      <span class="swatch" style="background:#e6f0fb"></span>azul clarinho →
+      <span class="swatch" style="background:#0a1f44"></span>navy →
+      <span class="swatch" style="background:#f4f6fa"></span>cinza →
+      <span class="swatch" style="background:#e6f0fb"></span>azul clarinho →
+      <span class="swatch" style="background:#f4f6fa"></span>cinza de novo — dois tons quase idênticos se alternando.
+      Na sugestão fica
+      <span class="swatch" style="background:#ffffff"></span>branco →
+      <span class="swatch" style="background:#0a1f44"></span>navy →
+      <span class="swatch" style="background:#e6f0fb"></span>azul clarinho →
+      <span class="swatch" style="background:#ffffff"></span>branco →
+      <span class="swatch" style="background:#e5e5e5"></span>Prata — nenhum vizinho repete tom, e o Prata (mais escuro que o cinza atual) fecha o trecho com contraste real.
+      O respiro vertical de cada bloco também foi reduzido (de <code>py-10 sm:py-14</code> pra algo como <code>py-8 sm:py-10</code>), então a transição de cor passa a fazer o trabalho de separar os blocos, em vez do espaço em branco sozinho.
+    </div>
+
+  </div>
+
+</body>
+</html>
