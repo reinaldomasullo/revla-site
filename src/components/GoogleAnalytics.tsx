@@ -35,6 +35,28 @@ export default function GoogleAnalytics() {
     return () => window.removeEventListener(CONSENT_EVENT, handleConsentChange);
   }, []);
 
+  // Conversão "Contato Whatsapp" do Google Ads: dispara no clique de
+  // qualquer link `wa.me` do site (WhatsAppButton flutuante + todos os
+  // CTAButton que usam whatsappLink()), sem precisar editar cada botão um
+  // por um. Delegado no document, fase de captura (roda antes de qualquer
+  // outro handler dar preventDefault). Só registra depois do consentimento
+  // (gtag só existe nesse ponto) e o ID + rótulo estarem configurados.
+  useEffect(() => {
+    if (!allowed || !siteConfig.googleAdsId || !siteConfig.googleAdsWhatsappConversionLabel) return;
+
+    function handleWhatsAppClick(event: MouseEvent) {
+      const link = (event.target as HTMLElement | null)?.closest('a[href^="https://wa.me/"]');
+      if (!link) return;
+      const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+      gtag?.("event", "conversion", {
+        send_to: `${siteConfig.googleAdsId}/${siteConfig.googleAdsWhatsappConversionLabel}`,
+      });
+    }
+
+    document.addEventListener("click", handleWhatsAppClick, true);
+    return () => document.removeEventListener("click", handleWhatsAppClick, true);
+  }, [allowed]);
+
   if (!allowed || (!siteConfig.gaMeasurementId && !siteConfig.googleAdsId)) return null;
 
   // Carrega o gtag.js usando qualquer um dos dois IDs disponíveis (a

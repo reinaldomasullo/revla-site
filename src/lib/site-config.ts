@@ -40,6 +40,10 @@ export const siteConfig = {
   // de conversão específicos (ex.: clique no WhatsApp) usam esse ID + um
   // rótulo de conversão criado à parte no Google Ads.
   googleAdsId: "AW-11443702133",
+  // Rótulo da ação de conversão "Contato Whatsapp" (Google Ads > Conversões).
+  // Disparado no clique de qualquer link `wa.me` do site — ver
+  // GoogleAnalytics.tsx (listener de clique global, delegado no document).
+  googleAdsWhatsappConversionLabel: "ep5PCP7Iu_McEPWS5NAq",
   businessHoursDisplay: "Seg. a sex., 8h às 19h · Sáb., 8h às 13h",
   social: {
     instagram: "https://instagram.com/revlacorretora",
