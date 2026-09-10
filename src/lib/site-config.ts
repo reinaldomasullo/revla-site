@@ -30,6 +30,10 @@ export const siteConfig = {
   // App ID do projeto "Revla Corretora" no Cusdis (sistema de comentários do
   // blog, moderado, sem exigir login do visitante) — painel em cusdis.com.
   cusdisAppId: "47fc127f-a05b-441b-bbdb-b5f72b8300e8",
+  // ID de métricas do Google Analytics 4 (propriedade "Revla Corretora").
+  // Carregado só depois que o visitante aceita cookies analíticos no banner
+  // de consentimento (CookieConsent.tsx) — ver GoogleAnalytics.tsx.
+  gaMeasurementId: "G-RE8BLMM9NF",
   businessHoursDisplay: "Seg. a sex., 8h às 19h · Sáb., 8h às 13h",
   social: {
     instagram: "https://instagram.com/revlacorretora",

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { CONSENT_EVENT } from "@/components/GoogleAnalytics";
 
 const STORAGE_KEY = "revla-cookie-consent";
 
@@ -39,6 +40,7 @@ export default function CookieConsent() {
     } catch {
       // segue sem salvar — o banner pode reaparecer na próxima visita, sem problema
     }
+    window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: value }));
     setVisible(false);
     setShowPrefs(false);
   }

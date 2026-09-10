@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieConsent";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import JsonLd from "@/components/JsonLd";
 import { siteConfig, testimonials } from "@/lib/site-config";
 
@@ -130,6 +131,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <CookieConsent />
+        <GoogleAnalytics />
       </body>
     </html>
   );
