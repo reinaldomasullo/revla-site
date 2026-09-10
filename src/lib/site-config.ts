@@ -34,6 +34,12 @@ export const siteConfig = {
   // Carregado só depois que o visitante aceita cookies analíticos no banner
   // de consentimento (CookieConsent.tsx) — ver GoogleAnalytics.tsx.
   gaMeasurementId: "G-RE8BLMM9NF",
+  // ID da tag do Google Ads (conta "Revla Corretora", Central de dados >
+  // Tag do Google). Mesmo carregamento consent-gated do GA4 — ver
+  // GoogleAnalytics.tsx. Ativa remarketing/observação de conversões; eventos
+  // de conversão específicos (ex.: clique no WhatsApp) usam esse ID + um
+  // rótulo de conversão criado à parte no Google Ads.
+  googleAdsId: "AW-11443702133",
   businessHoursDisplay: "Seg. a sex., 8h às 19h · Sáb., 8h às 13h",
   social: {
     instagram: "https://instagram.com/revlacorretora",

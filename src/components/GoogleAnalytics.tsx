@@ -8,7 +8,8 @@ const STORAGE_KEY = "revla-cookie-consent";
 export const CONSENT_EVENT = "revla-cookie-consent-changed";
 
 /**
- * Carrega o gtag.js do Google Analytics (GA4) só depois que o visitante
+ * Carrega o gtag.js do Google Analytics (GA4) + a tag do Google Ads (mesma
+ * biblioteca gtag.js, um único carregamento) só depois que o visitante
  * aceita cookies analíticos no banner de consentimento (CookieConsent.tsx).
  * Escolha "Somente essenciais" = nunca carrega. Lê o valor já salvo no
  * localStorage ao montar (visitante recorrente que já aceitou antes) e
@@ -34,19 +35,25 @@ export default function GoogleAnalytics() {
     return () => window.removeEventListener(CONSENT_EVENT, handleConsentChange);
   }, []);
 
-  if (!allowed || !siteConfig.gaMeasurementId) return null;
+  if (!allowed || (!siteConfig.gaMeasurementId && !siteConfig.googleAdsId)) return null;
+
+  // Carrega o gtag.js usando qualquer um dos dois IDs disponíveis (a
+  // biblioteca é a mesma; cada `gtag('config', ...)` abaixo ativa um produto).
+  const bootstrapId = siteConfig.gaMeasurementId || siteConfig.googleAdsId;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gaMeasurementId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${bootstrapId}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${siteConfig.gaMeasurementId}');`}
+          ${siteConfig.gaMeasurementId ? `gtag('config', '${siteConfig.gaMeasurementId}');` : ""}
+          ${siteConfig.googleAdsId ? `gtag('config', '${siteConfig.googleAdsId}');` : ""}
+          window.__gtagReady = true;`}
       </Script>
     </>
   );
