@@ -44,6 +44,14 @@ export const siteConfig = {
   // Disparado no clique de qualquer link `wa.me` do site — ver
   // GoogleAnalytics.tsx (listener de clique global, delegado no document).
   googleAdsWhatsappConversionLabel: "ep5PCP7Iu_McEPWS5NAq",
+  // ID do Meta Pixel (Business Manager "revlacorretora" > Conjuntos de dados >
+  // "Revla Corretora - Site Principal"). Já existia e tinha rodado no site
+  // antigo em WordPress até a migração pro Next.js, quando ficou "órfão"
+  // (parou de receber eventos). Reinstalado aqui no mesmo padrão
+  // consent-gated do GA4/Google Ads — ver MetaPixel.tsx. Sem relação com a
+  // campanha de Meta Ads que usa Formulário Instantâneo nativo + WhatsApp
+  // (esse fluxo roda inteiro dentro do Meta, nunca passa pelo site).
+  metaPixelId: "944350138689081",
   businessHoursDisplay: "Seg. a sex., 8h às 19h · Sáb., 8h às 13h",
   social: {
     instagram: "https://instagram.com/revlacorretora",
