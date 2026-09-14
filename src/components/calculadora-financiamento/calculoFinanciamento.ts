@@ -76,14 +76,47 @@ export function calcularConsorcioImovelUso(input: ConsorcioImovelInput): Resulta
     totalAportadoAteContemplacao += parcelaReduzidaBase * fatorMes(indiceCorrecao, mes);
   }
 
-  const totalDevidoConsorcio = credito * (1 + TAXA_ADMINISTRATIVA_PCT / 100);
-  const parcelaPosContemplacao =
-    prazoRestante > 0
-      ? Math.max(0, totalDevidoConsorcio - totalAportadoAteContemplacao) / prazoRestante
-      : 0;
-
+  // Corrige o saldo devedor (crédito + taxa administrativa) pelo índice informado até o
+  // mês da contemplação — mesma lógica já usada em calcularCenarioAlavancagem (calculo.ts).
+  // Antes, aqui, o "totalDevidoConsorcio" ficava sem correção nenhuma, então o total pago
+  // no prazo dava sempre credito * (1 + taxa administrativa), igual pra qualquer índice ou
+  // mês de contemplação — bug reportado pelo usuário em 13/09/2026.
   const creditoAtualizado = credito * fatorMes(indiceCorrecao, mesContemplacao);
-  const totalPagoPrazoTotal = totalAportadoAteContemplacao + parcelaPosContemplacao * prazoRestante;
+
+  // Saldo devedor na contemplação: total devido (crédito + taxa administrativa, já corrigido
+  // até a contemplação) menos o que já foi pago na fase reduzida.
+  let saldoDevedor = Math.max(
+    0,
+    creditoAtualizado * (1 + TAXA_ADMINISTRATIVA_PCT / 100) - totalAportadoAteContemplacao
+  );
+
+  // Pós-contemplação, o saldo devedor NÃO fica congelado: continua sendo corrigido pelo
+  // índice uma vez por ano (degrau anual), até a quitação no fim do prazo total — mesmo
+  // espírito do degrau anual que o SACRE já usa aqui pra TR (calcularFinanciamentoSACRE),
+  // e o que de fato acontece num consórcio real. A cada "aniversário" o saldo corrigido é
+  // redividido pelos meses restantes, dando o efeito de parcela subindo em degraus.
+  let totalPosContemplacao = 0;
+  let parcelaPosContemplacaoInicial = 0;
+  let mes = mesContemplacao + 1;
+  let primeiroBloco = true;
+  while (mes <= prazoTotal) {
+    const mesesRestantesNoBloco = prazoTotal - mes + 1;
+    const tamanhoBloco = Math.min(12, mesesRestantesNoBloco);
+    if (!primeiroBloco) {
+      saldoDevedor *= 1 + indiceCorrecao / 100;
+    }
+    primeiroBloco = false;
+    const parcelaBloco = mesesRestantesNoBloco > 0 ? saldoDevedor / mesesRestantesNoBloco : 0;
+    if (parcelaPosContemplacaoInicial === 0) parcelaPosContemplacaoInicial = parcelaBloco;
+    for (let k = 0; k < tamanhoBloco; k += 1) {
+      totalPosContemplacao += parcelaBloco;
+      saldoDevedor -= parcelaBloco;
+      mes += 1;
+    }
+  }
+
+  const parcelaPosContemplacao = parcelaPosContemplacaoInicial;
+  const totalPagoPrazoTotal = totalAportadoAteContemplacao + totalPosContemplacao;
 
   return {
     prazoRestante,
