@@ -19,6 +19,12 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function BlogPage() {
+  // Mais recente primeiro — com a publicação agora em ritmo diário (1
+  // post por dia), a ordem de cadastro no array deixou de bastar: sem
+  // esse sort, cada post novo aparecia no FINAL da listagem, escondido
+  // atrás dos 25 posts antigos que têm todos a mesma data.
+  const sortedPosts = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
@@ -30,13 +36,13 @@ export default function BlogPage() {
 
       <section className="pb-12 sm:pb-16">
         <Container>
-          {posts.length === 0 ? (
+          {sortedPosts.length === 0 ? (
             <p className="text-sm text-[var(--color-ink)]/60">
               Em breve, novos artigos por aqui.
             </p>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post, i) => (
+              {sortedPosts.map((post, i) => (
                 <Fragment key={post.slug}>
                   <Link
                     href={`/blog/${post.slug}`}
@@ -70,7 +76,7 @@ export default function BlogPage() {
                       </span>
                     </div>
                   </Link>
-                  {(i + 1) % ADS_EVERY === 0 && i + 1 < posts.length && (
+                  {(i + 1) % ADS_EVERY === 0 && i + 1 < sortedPosts.length && (
                     <div className="sm:col-span-2 lg:col-span-3">
                       <HouseAd product={pickHouseAdProduct(`blog-list-${i}`)} variant="banner" />
                     </div>

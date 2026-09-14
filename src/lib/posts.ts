@@ -47,7 +47,7 @@ export const posts: Post[] = [
       "Entenda a diferença entre seguro de vida e plano de saúde, e por que ter os dois não é redundante — cada um protege uma coisa diferente.",
     category: "Seguros",
     date: "2026-08-13",
-    updated: "2026-08-13",
+    updated: "2026-09-14",
     coverImage: {
       src: "/images/blog/seguro-de-vida-vale-a-pena-com-plano-de-saude-capa.jpg",
       alt: "Família sorridente com duas crianças em jardim florido, símbolo da proteção do seguro de vida e do plano de saúde",
@@ -112,7 +112,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "Não existe uma fórmula única, mas um ponto de partida comum é multiplicar a renda anual por um número de anos suficiente para a família se reorganizar — normalmente entre 5 e 10 anos — e somar dívidas em aberto, como financiamento imobiliário. Por exemplo: alguém com renda anual de R$ 90.000 e um financiamento de R$ 200.000 em aberto chegaria a uma estimativa inicial entre R$ 650.000 e R$ 1.100.000 de capital segurado, antes de qualquer ajuste. Esse valor é só um ponto de partida — a Revla ajusta a conta considerando idade, número de dependentes e objetivos específicos de cada família.",
+        text: "Não existe uma fórmula única, mas um ponto de partida comum é multiplicar a renda anual por um número de anos suficiente para a família se reorganizar — normalmente entre 5 e 10 anos — e somar dívidas em aberto, como financiamento imobiliário. Por exemplo: alguém com renda anual de R$ 90.000 e um financiamento de R$ 200.000 em aberto chegaria a uma estimativa inicial entre R$ 650.000 e R$ 1.100.000 de capital segurado, antes de qualquer ajuste. Esse valor é só um ponto de partida — a Revla ajusta a conta considerando idade, número de dependentes e objetivos específicos de cada família. Vale revisar essa conta sempre que a vida muda — nascimento de um filho, um novo financiamento ou uma mudança relevante de renda —, já que o capital segurado ideal de alguns anos atrás pode não refletir mais a realidade da família hoje.",
       },
       {
         type: "ol",
@@ -765,6 +765,7 @@ export const posts: Post[] = [
     "description": "Entenda o que é planejamento patrimonial, por que não é só para quem já é rico e como consórcio, seguro e plano de saúde protegem sua família e seus bens.",
     "category": "Planejamento Patrimonial",
     "date": "2026-08-13",
+    "updated": "2026-09-14",
     "coverImage": {
       "src": "/images/blog/o-que-e-planejamento-patrimonial-capa.jpg",
       "alt": "Moedas organizadas em formato de gráfico ascendente, representando o crescimento do patrimônio",
@@ -774,7 +775,7 @@ export const posts: Post[] = [
     "content": [
       {
         "type": "p",
-        "text": "Planejamento patrimonial é o conjunto de decisões e instrumentos financeiros que uma pessoa ou família organiza para proteger, preservar e transmitir aquilo que já construiu — casa, poupança, negócio, bens e renda — reduzindo o risco de perdas causadas por imprevistos, doenças, acidentes ou morte prematura. Não é um produto único nem uma fórmula fechada: é um processo contínuo, que combina ferramentas como seguro, consórcio e plano de saúde para que um problema de saúde ou um falecimento não comprometa o que a família levou anos para construir. Você não precisa ter um patrimônio grande para começar a planejar — precisa apenas começar antes de precisar."
+        "text": "Planejamento patrimonial é o conjunto de decisões e instrumentos financeiros que uma pessoa ou família organiza para proteger, preservar e transmitir aquilo que já construiu — casa, poupança, negócio, bens e renda — reduzindo o risco de perdas causadas por imprevistos, doenças, acidentes ou morte prematura. Não é um produto único nem uma fórmula fechada: é um processo contínuo, que combina ferramentas como seguro, consórcio e plano de saúde para que um problema de saúde ou um falecimento não comprometa o que a família levou anos para construir. Você não precisa ter um patrimônio grande para começar a planejar — precisa apenas começar antes de precisar. Por isso, mais do que um evento único, o planejamento patrimonial deve ser revisto periodicamente, sempre que a vida da família muda — casamento, filhos, um novo negócio ou uma mudança relevante de renda."
       },
       {
         "type": "h2",
@@ -1686,6 +1687,7 @@ export const posts: Post[] = [
     "description": "Entenda como funciona o consórcio, compare com financiamento e descubra quando essa modalidade sem juros compensa mais para comprar seu bem.",
     "category": "Consórcios",
     "date": "2026-08-13",
+    "updated": "2026-09-14",
     "coverImage": {
       "src": "/images/blog/consorcio-vale-a-pena-capa.jpg",
       "alt": "Entrega de chaves entre corretor e cliente, representando a conquista do bem pelo consórcio",
@@ -1788,7 +1790,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Quando a Revla menciona consórcio de investimentos, o sentido é o de poupança programada sem juros para reunir recursos com um objetivo definido, e não uma promessa de retorno financeiro. Quem busca rentabilidade deve considerar produtos de investimento propriamente ditos, tratando o consórcio como o que ele é: uma forma disciplinada e sem juros de guardar dinheiro com destino certo, seja um imóvel, um veículo, uma máquina ou um projeto pessoal."
+        "text": "Quando a Revla menciona consórcio de investimentos, o sentido é o de poupança programada sem juros para reunir recursos com um objetivo definido, e não uma promessa de retorno financeiro. Quem busca rentabilidade deve considerar produtos de investimento propriamente ditos, tratando o consórcio como o que ele é: uma forma disciplinada e sem juros de guardar dinheiro com destino certo, seja um imóvel, um veículo, uma máquina ou um projeto pessoal. Por isso, antes de contratar, vale confirmar com a administradora qual é exatamente a finalidade do grupo escolhido, para não criar expectativa de rendimento que o produto não oferece."
       },
       {
         "type": "h2",
@@ -2553,6 +2555,7 @@ export const posts: Post[] = [
     "description": "Saiba o que avaliar antes de contratar plano de saúde para idosos: rede credenciada, carência, reajuste por faixa etária e coparticipação, com dicas práticas.",
     "category": "Plano de Saúde",
     "date": "2026-08-13",
+    "updated": "2026-09-14",
     "coverImage": {
       "src": "/images/blog/plano-de-saude-para-idosos-o-que-avaliar-capa.jpg",
       "alt": "Médico em um corredor de hospital ao telefone, contexto da avaliação de planos de saúde para idosos",
@@ -2593,7 +2596,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Antes de qualquer coisa, verifique se os hospitais, laboratórios e clínicas de referência da sua cidade fazem parte da rede credenciada da operadora. Para quem viaja com frequência ou tem familiares em outros estados, também vale checar a abrangência geográfica do plano — nacional, estadual ou municipal — porque um plano com cobertura restrita pode deixar o beneficiário sem atendimento fora de sua região de residência."
+        "text": "Antes de qualquer coisa, verifique se os hospitais, laboratórios e clínicas de referência da sua cidade fazem parte da rede credenciada da operadora. Para quem viaja com frequência ou tem familiares em outros estados, também vale checar a abrangência geográfica do plano — nacional, estadual ou municipal — porque um plano com cobertura restrita pode deixar o beneficiário sem atendimento fora de sua região de residência. Uma forma prática de confirmar isso é ligar diretamente para os hospitais de referência e checar com eles quais operadoras estão realmente credenciadas no momento, já que a lista publicada pela operadora nem sempre reflete mudanças recentes de credenciamento."
       },
       {
         "type": "h3",
@@ -3402,6 +3405,7 @@ export const posts: Post[] = [
     "title": "O que é amparo funeral e como funciona a assistência à família",
     "description": "Entenda o que é amparo funeral, quais coberturas inclui e como a assistência à família funciona nos momentos mais difíceis. Guia completo e sem rodeios.",
     "date": "2026-08-13",
+    "updated": "2026-09-14",
     "category": "Amparo Funeral",
     "coverImage": {
       "src": "/images/blog/o-que-e-amparo-funeral-como-funciona-capa.jpg",
@@ -3429,7 +3433,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Vale lembrar que o amparo funeral não é a mesma coisa que um seguro de vida. O seguro de vida paga uma indenização em dinheiro aos beneficiários, que pode ser usada livremente, inclusive para cobrir despesas de funeral. Já o amparo funeral entrega, na maior parte dos casos, um serviço direto (a própria assistência funerária), e não um valor em espécie. Muitas famílias optam por ter as duas proteções combinadas, uma cobrindo a parte operacional imediata e outra oferecendo suporte financeiro mais amplo."
+        "text": "Vale lembrar que o amparo funeral não é a mesma coisa que um seguro de vida. O seguro de vida paga uma indenização em dinheiro aos beneficiários, que pode ser usada livremente, inclusive para cobrir despesas de funeral. Já o amparo funeral entrega, na maior parte dos casos, um serviço direto (a própria assistência funerária), e não um valor em espécie. Muitas famílias optam por ter as duas proteções combinadas, uma cobrindo a parte operacional imediata e outra oferecendo suporte financeiro mais amplo. Antes de decidir, vale simular os dois cenários — o custo de um funeral pago à vista hoje, e o valor que um seguro de vida deixaria disponível em dinheiro — para entender qual combinação faz mais sentido para a sua família."
       },
       {
         "type": "h2",
@@ -4292,6 +4296,175 @@ export const posts: Post[] = [
       {
         "question": "O plano sênior também oferece assistência 24 horas e traslado?",
         "answer": "Sim, o plano sênior, voltado a pessoas acima de 75 anos, mantém a mesma lógica de funcionamento da assistência 24 horas e do traslado presente nas demais modalidades de amparo funeral. Essa cobertura costuma ser especialmente relevante para esse público, que muitas vezes encontra mais dificuldade para contratar proteções semelhantes em condições regulares no mercado."
+      }
+    ]
+  },
+  {
+    "slug": "consorcio-fgts-lance-imovel",
+    "title": "Como usar o FGTS para dar lance no consórcio de imóvel (passo a passo)",
+    "description": "Veja como usar o FGTS para dar lance no consórcio de imóvel: quem tem direito, requisitos do imóvel e o passo a passo para não travar o pedido na Caixa.",
+    "category": "Consórcios",
+    "date": "2026-09-14",
+    "updated": "2026-09-14",
+    "coverImage": {
+      "src": "/images/blog/consorcio-fgts-lance-imovel-capa.jpg",
+      "alt": "Empresário segurando nas mãos a miniatura de uma casa de madeira, simbolizando o uso do FGTS para conquistar um imóvel pelo consórcio",
+      "width": 1200,
+      "height": 630
+    },
+    "content": [
+      {
+        "type": "p",
+        "text": "Sim, é possível usar o FGTS para dar lance no consórcio de imóvel — a regra está prevista na Lei 8.036/1990 e detalhada no Manual da Moradia Própria da Caixa, agente operador do fundo. O saldo do FGTS pode cobrir até 100% do valor do lance, mas o benefício não é automático: existem requisitos sobre o participante, sobre o imóvel e um passo a passo específico para o pedido não travar na Caixa e acabar ficando de fora da data-limite do grupo. Veja a seguir como funciona e como aplicar isso na prática."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-a-lei-permite-4-formas-de-usar-o-fgts",
+        "text": "O que a lei permite: as 4 formas de usar o FGTS no consórcio de imóvel"
+      },
+      {
+        "type": "p",
+        "text": "O FGTS pode ser usado no consórcio de imóvel de quatro formas diferentes, cada uma com sua própria regra e seu próprio momento dentro da jornada do consorciado:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Lance: até 100% do saldo disponível na conta do FGTS pode ser oferecido como lance para tentar antecipar a contemplação.",
+          "Complementação da carta de crédito: se o valor da carta contemplada não for suficiente para o imóvel escolhido, o FGTS pode complementar a diferença.",
+          "Amortização ou quitação do saldo devedor: depois de contemplado e com o imóvel já em nome do consorciado, o FGTS pode reduzir ou quitar o valor que ainda falta pagar.",
+          "Pagamento de parcela: até 80% do valor de cada parcela, incluindo eventuais encargos, pode ser pago com o FGTS, limitado a 12 parcelas por uso."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "quem-tem-direito-a-usar-o-fgts-no-consorcio",
+        "text": "Quem tem direito a usar o FGTS no consórcio de imóvel"
+      },
+      {
+        "type": "p",
+        "text": "Antes de contar com o FGTS no planejamento, vale confirmar se o seu caso se encaixa nos requisitos do participante:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Ser o titular do contrato de consórcio, ou cotista no caso de casal em comunhão de bens.",
+          "Ter pelo menos 3 anos de trabalho sob o regime do FGTS, seguidos ou não, em uma ou mais empresas — exigência geral do fundo, não específica do consórcio.",
+          "Não ser proprietário de outro imóvel residencial concluído no mesmo município ou na mesma região metropolitana onde mora ou trabalha.",
+          "Não ter financiamento ativo pelo Sistema Financeiro da Habitação (SFH) em nenhum lugar do Brasil."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "requisitos-do-imovel-para-usar-o-fgts",
+        "text": "Requisitos do imóvel para usar o FGTS"
+      },
+      {
+        "type": "p",
+        "text": "O imóvel escolhido também precisa atender a algumas condições para que o FGTS seja liberado:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Ser urbano e destinado à moradia — o FGTS não pode ser usado em imóvel rural.",
+          "Ter valor dentro do limite estabelecido para operações do SFH, atualizado periodicamente pelo Conselho Curador do FGTS.",
+          "Estar localizado no município onde o comprador mora ou trabalha, ou na respectiva região metropolitana.",
+          "Não pode ser usado para compra de terreno isolado, nem para reforma ou ampliação de um imóvel já existente."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "passo-a-passo-para-usar-o-fgts-como-lance",
+        "text": "Passo a passo para usar o FGTS como lance no consórcio"
+      },
+      {
+        "type": "p",
+        "text": "Na prática, usar o FGTS como lance depende de alinhar o prazo da administradora do consórcio com o prazo de análise da Caixa — por isso vale seguir esta ordem:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Confirme com a Revla, ou diretamente com a administradora, a data-limite para dar o lance no grupo — o pedido do FGTS não é liberado na hora, a Caixa pode levar alguns dias úteis para analisar e repassar o valor.",
+          "Solicite o extrato analítico da conta do FGTS, pelo aplicativo FGTS ou pelo app Caixa Trabalhador, para confirmar o saldo disponível antes de decidir o valor do lance.",
+          "Formalize com a administradora do consórcio a intenção de usar o FGTS como parte do lance, informando também o valor complementar que sairá do próprio bolso, se houver.",
+          "Dê entrada no pedido de liberação em uma agência da Caixa, ou pelos canais indicados pela administradora, apresentando documentos pessoais, comprovante de participação no consórcio e dados do imóvel pretendido, quando já definido.",
+          "Acompanhe a análise: a Caixa confere se o participante e o imóvel atendem aos requisitos antes de liberar o valor diretamente para a administradora do consórcio, nunca para a conta do próprio consorciado.",
+          "Depois da liberação, o valor é somado ao lance e o resultado da contemplação segue o mesmo processo dos demais participantes do grupo."
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "de-quanto-em-quanto-tempo-posso-usar-o-fgts-de-novo",
+        "text": "De quanto em quanto tempo posso usar o FGTS de novo"
+      },
+      {
+        "type": "p",
+        "text": "Os intervalos variam conforme a finalidade: um novo uso do FGTS para aquisição ou lance exige 3 anos desde o uso anterior; para amortizar ou quitar saldo devedor, o intervalo mínimo é de 2 anos; já o uso para pagamento de parcela pode ser solicitado de novo assim que o período anterior, de até 12 parcelas, se encerrar."
+      },
+      {
+        "type": "h2",
+        "id": "fgts-como-lance-x-lance-com-recursos-proprios",
+        "text": "FGTS como lance x lance com recursos próprios: o que muda"
+      },
+      {
+        "type": "p",
+        "text": "A principal diferença não está na disputa da contemplação em si — para a administradora, o valor total do lance conta da mesma forma, seja ele feito com FGTS, dinheiro próprio ou lance embutido a partir da própria carta de crédito. A diferença está no tempo: um lance só com recursos próprios pode ser formalizado e pago no mesmo dia, enquanto o lance com FGTS depende da análise da Caixa, que pode levar dias úteis para liberar o valor à administradora. Por isso, quem pretende usar o FGTS deve iniciar o pedido de liberação com folga em relação à data-limite do lance no grupo, para não perder a chance de participar daquela assembleia."
+      },
+      {
+        "type": "h2",
+        "id": "erros-comuns-que-atrasam-ou-travam-o-uso-do-fgts",
+        "text": "Erros comuns que atrasam ou travam o uso do FGTS"
+      },
+      {
+        "type": "p",
+        "text": "Alguns deslizes simples são responsáveis pela maioria dos pedidos negados ou atrasados:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Deixar para pedir a liberação do FGTS em cima da data-limite do lance, sem margem para a análise da Caixa.",
+          "Não verificar antes se já é proprietário de outro imóvel na mesma região, o que barra automaticamente o uso do benefício.",
+          "Escolher um imóvel com valor acima do limite do SFH sem confirmar isso antes de contar com o FGTS na conta.",
+          "Confundir o uso para lance com o uso para quitação de saldo devedor — são pedidos diferentes, com documentação e momentos distintos dentro do consórcio."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "vale-a-pena-usar-o-fgts-no-consorcio-de-imovel",
+        "text": "Vale a pena usar o FGTS no consórcio de imóvel?"
+      },
+      {
+        "type": "p",
+        "text": "Vale a pena para quem já tem saldo parado no FGTS e quer usá-lo para antecipar a contemplação sem comprometer o orçamento mensal — afinal, esse dinheiro não é o salário do mês, é um valor que já estava disponível e, de outra forma, ficaria só rendendo a correção mínima do fundo. Para simular como o lance com FGTS impacta o prazo e o valor final da carta de crédito, dá pra ajustar os cenários na [calculadora de consórcio de imóveis da Revla](/consorcios/calculadora). Quem tem dúvidas sobre o próprio caso — se atende aos requisitos, se o imóvel se encaixa no limite do SFH ou como formalizar o pedido junto à administradora — pode conversar diretamente com [Reinaldo Masullo](/reinaldo-masullo), especialista da Revla, ou conhecer as demais modalidades de [consórcio da Revla](/consorcios)."
+      },
+      {
+        "type": "p",
+        "text": "Para entender outras formas de antecipar a contemplação, além do FGTS, vale ler também sobre os [tipos de lance no consórcio](/blog/lance-no-consorcio-como-funciona) e sobre [como funciona o consórcio de imóveis](/blog/consorcio-de-imoveis-como-funciona) na prática, do grupo até a entrega das chaves."
+      },
+      {
+        "type": "p",
+        "text": "Segundo a [ABAC – Associação Brasileira de Administradoras de Consórcios](https://blog.abac.org.br/consorcio-de-a-a-z/como-e-quando-usar-o-fgts-no-consorcio-de-imoveis), essas quatro modalidades seguem as regras do Manual da Moradia Própria, documento oficial da Caixa Econômica Federal como agente operador do FGTS — a versão mais atual do manual, com os valores e limites vigentes, está disponível para consulta no [site da Caixa](https://www.caixa.gov.br/Downloads/fgts-moradia/MANUAL_DA_MORADIA_PROPRIA_02_12_2025_V_035.pdf). O sistema de consórcios como um todo é regulado e supervisionado pelo Banco Central, conforme a [Lei 11.795/2008](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11795.htm)."
+      }
+    ],
+    "faq": [
+      {
+        "question": "Posso usar 100% do saldo do FGTS como lance no consórcio de imóvel?",
+        "answer": "Sim, é permitido oferecer até 100% do saldo disponível na conta do FGTS como lance no consórcio de imóvel, desde que o participante e o imóvel escolhido atendam aos requisitos da Caixa, como não possuir outro imóvel na região e o valor do bem estar dentro do limite do SFH."
+      },
+      {
+        "question": "Quanto tempo a Caixa demora para liberar o FGTS para o lance?",
+        "answer": "O prazo varia conforme a análise de cada agência e a complexidade do pedido, mas costuma levar alguns dias úteis. Por isso, o ideal é dar entrada no pedido de liberação com antecedência em relação à data-limite de lances definida pela administradora do consórcio, evitando perder a assembleia."
+      },
+      {
+        "question": "Posso usar o FGTS para quitar o saldo devedor depois de contemplado?",
+        "answer": "Sim. Depois da contemplação, e com o imóvel já formalizado em nome do consorciado, o FGTS pode ser usado para amortizar ou quitar o saldo devedor — a amortização exige parcelas em dia, enquanto a quitação também é aceita com parcelas em atraso, dentro das regras da Caixa."
+      },
+      {
+        "question": "Quem já tem financiamento pelo SFH pode usar o FGTS no consórcio de imóvel?",
+        "answer": "Não. Ter um financiamento ativo pelo Sistema Financeiro da Habitação (SFH) em qualquer lugar do Brasil impede o uso do FGTS para essa finalidade, assim como já ser proprietário de outro imóvel residencial concluído na mesma região onde mora ou trabalha."
+      },
+      {
+        "question": "O FGTS usado como lance é descontado da minha conta imediatamente?",
+        "answer": "O valor só é debitado da conta do FGTS depois que a Caixa aprova o pedido e libera o valor diretamente para a administradora do consórcio, não para o próprio participante. Até lá, o saldo continua disponível e rendendo a correção normal do fundo."
       }
     ]
   },
