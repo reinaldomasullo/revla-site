@@ -20,7 +20,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Plano de Saúde com a Prevent Senior",
+  title: "Plano de Saúde em São Paulo | Prevent Senior",
   description:
     "Planos de saúde Prevent Senior (MA+S e 1025), com rede própria em São Paulo, Rio de Janeiro e Niterói. Simulação gratuita e sem compromisso.",
   path: "/plano-de-saude",
@@ -73,6 +73,8 @@ const diferenciais = [
   {
     title: "Cuidado especializado para a melhor idade",
     description: "Equipe e protocolos pensados para as necessidades específicas de quem tem mais de 60 anos, com acompanhamento próximo.",
+    href: "/blog/plano-de-saude-para-idosos-o-que-avaliar",
+    linkLabel: "O que avaliar num plano para idosos",
     icon: <HeartHand />,
   },
   {
@@ -93,6 +95,8 @@ const diferenciais = [
   {
     title: "Carências reduzidas",
     description: "Em novas adesões, a carência para lesões e doenças preexistentes cai de 730 para 180 dias.",
+    href: "/blog/carencia-em-plano-de-saude-o-que-a-lei-garante",
+    linkLabel: "O que a lei garante sobre carência",
     icon: <ClockCheck />,
   },
   {
@@ -137,6 +141,16 @@ const faqItems = [
     question: "A Revla trabalha só com a Prevent Senior?",
     answer:
       "A Prevent Senior é nossa parceira oficial em plano de saúde, e trabalhamos com os dois planos disponíveis — MA+S e 1025. Para necessidades específicas, também ajudamos a avaliar outras operadoras — fale com um consultor para entender a melhor opção para seu caso.",
+  },
+  {
+    question: "A Revla é registrada em algum órgão regulador?",
+    answer:
+      "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320. A Prevent Senior, nossa parceira em plano de saúde, é operadora registrada na ANS (Agência Nacional de Saúde Suplementar).",
+  },
+  {
+    question: "Em quais cidades a Prevent Senior tem rede própria?",
+    answer:
+      "O plano MA+S atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. O plano 1025 atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande.",
   },
 ];
 

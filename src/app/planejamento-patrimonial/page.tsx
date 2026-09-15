@@ -47,12 +47,16 @@ const beneficios = [
     title: "Sem juros, com disciplina",
     description:
       "O consórcio permite construir patrimônio de forma programada, sem os encargos de um financiamento tradicional.",
+    href: "/blog/planejamento-patrimonial-nao-e-so-para-ricos",
+    linkLabel: "Planejamento patrimonial não é só para ricos",
     icon: <PercentOff />,
   },
   {
     title: "Proteção contra imprevistos",
     description:
       "Seguros bem dimensionados evitam que um sinistro, doença ou acidente comprometa o que você levou anos para construir.",
+    href: "/blog/como-proteger-patrimonio-de-imprevistos-com-seguro",
+    linkLabel: "Como proteger o patrimônio com seguro",
     icon: <ShieldCheck />,
   },
   {
@@ -65,6 +69,8 @@ const beneficios = [
     title: "Acompanhamento consultivo",
     description:
       "A Revla acompanha a estratégia ao longo do tempo, ajustando produtos conforme sua fase de vida e seus objetivos.",
+    href: "/blog/erros-comuns-planejamento-patrimonial",
+    linkLabel: "Erros comuns no planejamento patrimonial",
     icon: <Headset />,
   },
 ];
@@ -94,6 +100,11 @@ const faqItems = [
     question: "A Revla é uma consultoria de investimentos?",
     answer:
       "Não. A Revla é uma corretora de seguros registrada na SUSEP. Nosso planejamento patrimonial usa consórcio, seguro e plano de saúde como ferramentas de proteção e construção de patrimônio — não fazemos gestão de investimentos em bolsa, fundos ou renda fixa.",
+  },
+  {
+    question: "A Revla atende em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
   },
 ];
 

@@ -48,9 +48,9 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Seguros: Auto, Residencial, Vida e Mais",
+  title: "Seguro em São Paulo: Auto, Vida e Mais",
   description:
-    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia — comparamos as maiores seguradoras do Brasil para você.",
+    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia em São Paulo — comparamos as maiores seguradoras do Brasil para você.",
   path: "/seguros",
 });
 
@@ -294,6 +294,16 @@ const faqItems = [
     answer:
       "O valor depende do tipo de seguro, das coberturas escolhidas e da seguradora. Fazemos uma simulação gratuita comparando opções entre parceiros para encontrar o melhor custo-benefício.",
   },
+  {
+    question: "A Revla é uma corretora regulamentada?",
+    answer:
+      "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320, órgão federal que regula e fiscaliza a atividade de corretagem de seguros no Brasil.",
+  },
+  {
+    question: "A Revla atende em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
+  },
 ];
 
 const serviceSchema = {
@@ -315,9 +325,9 @@ export default function SegurosPage() {
       <JsonLd data={serviceSchema} />
       <Breadcrumbs items={[{ label: "Seguros", href: "/seguros" }]} />
       <Hero
-        eyebrow="Seguros"
+        eyebrow="Seguros em São Paulo"
         title="Seguros para proteger você, sua família, seu negócio e seu patrimônio"
-        description="Trabalhamos com praticamente todos os ramos de seguro — automóvel, residencial, empresarial, vida, viagem, transportes, previdência, seguro garantia e fiança locatícia — comparando as maiores seguradoras do Brasil para encontrar a cobertura ideal, com simulação gratuita."
+        description="Trabalhamos com praticamente todos os ramos de seguro — automóvel, residencial, empresarial, vida, viagem, transportes, previdência, seguro garantia e fiança locatícia — comparando as maiores seguradoras do Brasil para encontrar a cobertura ideal, com simulação gratuita. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Cotar seguro

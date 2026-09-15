@@ -24,9 +24,9 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Consórcio de Imóveis e Veículos sem Juros",
+  title: "Consórcio em São Paulo: Imóveis e Veículos",
   description:
-    "Carta de crédito sem juros para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita e sem compromisso com a Revla Corretora.",
+    "Consórcio sem juros em São Paulo: carta de crédito para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita com a Revla Corretora.",
   path: "/consorcios",
 });
 
@@ -34,11 +34,15 @@ const categorias = [
   {
     title: "Imóveis",
     description: "Para casa, apartamento, terreno ou construção, sem entrada obrigatória.",
+    href: "/blog/consorcio-de-imoveis-como-funciona",
+    linkLabel: "Como funciona o consórcio de imóveis",
     icon: <House />,
   },
   {
     title: "Veículos",
     description: "Carros e utilitários, com parcelas menores que o financiamento tradicional.",
+    href: "/blog/consorcio-de-veiculos-como-funciona",
+    linkLabel: "Como funciona o consórcio de veículos",
     icon: <Car />,
   },
   {
@@ -76,7 +80,7 @@ const categorias = [
 const diferenciais = [
   { title: "Sem juros", description: "Você paga apenas a taxa de administração — não há incidência de juros como em um financiamento.", icon: <PercentOff /> },
   { title: "Parcelas reduzidas", description: "Parcelas reduzidas em até 50% durante parte do plano, conforme o grupo escolhido.", icon: <CalendarDown /> },
-  { title: "Lance embutido", description: "Possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação.", icon: <HandCoin /> },
+  { title: "Lance embutido", description: "Possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação.", href: "/blog/lance-no-consorcio-como-funciona", linkLabel: "Como funciona o lance no consórcio", icon: <HandCoin /> },
   { title: "Consultoria completa", description: "Acompanhamento da simulação até a contemplação, com suporte da Revla em todas as etapas.", icon: <Headset /> },
 ];
 
@@ -118,6 +122,11 @@ const faqItems = [
     answer:
       "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central para encontrar o grupo mais vantajoso para você.",
   },
+  {
+    question: "A Revla atende em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
+  },
 ];
 
 const serviceSchema = {
@@ -139,9 +148,9 @@ export default function ConsorciosPage() {
       <JsonLd data={serviceSchema} />
       <Breadcrumbs items={[{ label: "Consórcios", href: "/consorcios" }]} />
       <Hero
-        eyebrow="Consórcios"
+        eyebrow="Consórcios em São Paulo"
         title="Carta de crédito sem juros: simule seu consórcio contemplado agora"
-        description="A Revla pesquisa entre administradoras autorizadas pelo Banco Central para oferecer parcelas flexíveis e suporte completo, da simulação até a contemplação."
+        description="A Revla pesquisa entre administradoras autorizadas pelo Banco Central para oferecer parcelas flexíveis e suporte completo, da simulação até a contemplação. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Iniciar minha simulação gratuita

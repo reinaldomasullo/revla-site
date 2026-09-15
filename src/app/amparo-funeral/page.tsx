@@ -23,9 +23,9 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Planos de Amparo Funeral PASI",
+  title: "Amparo Funeral PASI em São Paulo",
   description:
-    "Amparo Funeral PASI a partir de R$ 99/mês: planos individual, familiar e sênior, com assistência 24h e cremação. Simulação gratuita com a Revla.",
+    "Amparo Funeral PASI em São Paulo a partir de R$ 99/mês: planos individual, familiar e sênior, com assistência 24h e cremação. Simulação gratuita com a Revla.",
   path: "/amparo-funeral",
 });
 
@@ -88,6 +88,8 @@ const diferenciais = [
   {
     title: "Cremação",
     description: "Possibilidade de cremação conforme o plano contratado.",
+    href: "/blog/amparo-funeral-vale-a-pena-custos-funeral",
+    linkLabel: "Amparo funeral vale a pena? Veja os custos",
     icon: <Flame />,
   },
   {
@@ -98,6 +100,8 @@ const diferenciais = [
   {
     title: "Acionamento 24 horas",
     description: "A Assistência Funeral pode ser acionada 24 horas por dia, todos os dias.",
+    href: "/blog/traslado-assistencia-24-horas-amparo-funeral",
+    linkLabel: "Como funciona a assistência 24h",
     icon: <Clock24 />,
   },
 ];
@@ -106,6 +110,8 @@ const assistencias = [
   {
     title: "Assistência Funeral",
     description: "Serviços para a realização do funeral, trâmites administrativos, pagamento de taxas e organização do sepultamento.",
+    href: "/blog/diferenca-amparo-funeral-seguro-de-vida-plano-funerario",
+    linkLabel: "Amparo funeral x seguro de vida x plano funerário",
     icon: <Dove />,
   },
   {
@@ -144,13 +150,9 @@ const outrasModalidades = [
 const testimonials = [
   {
     name: "Aurencie",
+    city: "Diadema",
     quote:
       "Passei por um momento muito difícil no ano passado e o amparo funeral foi acionado exatamente como contratado. A equipe da Revla esteve ao meu lado com todo o cuidado e respeito que eu precisava naquele momento.",
-  },
-  {
-    name: "Maria Aparecida",
-    quote:
-      "O Amparo Funeral Sênior da Revla foi um alívio para mim e minha família. A Revla ofereceu uma solução personalizada para pessoas como eu, com idade entre 76 e 85 anos, com clareza em todos os detalhes.",
   },
 ];
 
@@ -190,6 +192,16 @@ const faqItems = [
     answer:
       "Sim — além dos planos individual, familiar e sênior vendidos diretamente à pessoa física, a PASI também oferece o Seguro Funeral PME (individual e familiar) e o Seguro Funeral PASI para Colaboradores e Dependentes, pensados para empresas. Fale com um consultor da Revla para uma cotação personalizada.",
   },
+  {
+    question: "A Revla é uma corretora regulamentada?",
+    answer:
+      "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320, e o Amparo Funeral é comercializado através da seguradora parceira PASI.",
+  },
+  {
+    question: "A Revla atende em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
+  },
 ];
 
 const serviceSchema = {
@@ -217,9 +229,9 @@ export default function AmparoFuneralPage() {
       <JsonLd data={serviceSchema} />
       <Breadcrumbs items={[{ label: "Amparo Funeral", href: "/amparo-funeral" }]} />
       <Hero
-        eyebrow="Amparo funeral · Seguradora PASI"
+        eyebrow="Amparo funeral em São Paulo · Seguradora PASI"
         title="Amparo Funeral PASI: tranquilidade para sua família nos momentos mais difíceis"
-        description="Planos individual, familiar e sênior, a partir de R$ 99,00 por mês, com assistência funeral 24 horas, cremação e sem necessidade de vínculo empregatício. Compare as opções e simule gratuitamente com a Revla."
+        description="Planos individual, familiar e sênior, a partir de R$ 99,00 por mês, com assistência funeral 24 horas, cremação e sem necessidade de vínculo empregatício. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil. Compare as opções e simule gratuitamente com a Revla."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de simular um Amparo Funeral PASI.")} external>
           Simular amparo funeral

@@ -3,6 +3,9 @@ import Container from "./Container";
 export type Testimonial = {
   name: string;
   quote: string;
+  /** Opcional — cidade do cliente, exibida junto ao nome quando informada.
+   *  Reforça sinais de SEO local (menções reais de cidades atendidas). */
+  city?: string;
 };
 
 export default function Testimonials({
@@ -58,6 +61,7 @@ export default function Testimonials({
               </blockquote>
               <figcaption className="mt-4 text-sm font-semibold text-[var(--color-primary)]">
                 {t.name}
+                {t.city && <span className="font-normal text-[var(--color-ink)]/60">, {t.city}</span>}
               </figcaption>
             </figure>
           ))}
