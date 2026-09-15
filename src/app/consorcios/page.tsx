@@ -50,6 +50,8 @@ const categorias = [
   {
     title: "Motos",
     description: "Motocicletas de todas as categorias, com parcelas que cabem no seu orçamento.",
+    href: "/consorcios/motos",
+    linkLabel: "Consórcio de moto por marca",
     icon: <Motorcycle />,
   },
   {
