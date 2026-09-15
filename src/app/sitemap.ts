@@ -89,6 +89,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/consorcios/carro`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/servicos`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/cirurgia-plastica`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/viagem`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/energia-solar`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
   ];
 
   const motoBrandRoutes = motoBrands.map((brand) => ({

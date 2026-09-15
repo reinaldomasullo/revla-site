@@ -41,10 +41,10 @@ const categorias = [
     icon: <House />,
   },
   {
-    title: "Veículos",
-    description: "Carros e utilitários, com parcelas menores que o financiamento tradicional.",
-    href: "/blog/consorcio-de-veiculos-como-funciona",
-    linkLabel: "Como funciona o consórcio de veículos",
+    title: "Carro",
+    description: "Carros novos, usados ou elétricos, com parcelas menores que o financiamento tradicional.",
+    href: "/consorcios/carro",
+    linkLabel: "Consórcio de carro sem juros",
     icon: <Car />,
   },
   {
@@ -76,7 +76,9 @@ const categorias = [
   },
   {
     title: "Serviços",
-    description: "Reformas, viagens, procedimentos estéticos ou odontológicos.",
+    description: "Cirurgia plástica, viagem e energia solar, com parcelas que cabem no seu orçamento.",
+    href: "/consorcios/servicos",
+    linkLabel: "Consórcio de serviços",
     icon: <Sparkle />,
   },
 ];
