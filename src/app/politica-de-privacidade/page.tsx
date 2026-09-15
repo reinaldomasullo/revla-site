@@ -223,7 +223,7 @@ export default function PoliticaDePrivacidadePage() {
               {siteConfig.email}.
             </p>
 
-            <p className="text-xs text-[var(--color-ink)]/50">
+            <p className="text-xs text-[var(--color-ink)]/70">
               Última atualização: setembro de 2026.
             </p>
           </div>

@@ -101,7 +101,7 @@ export default function DisclaimerPage() {
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">Contato</h2>
             <p>Dúvidas podem ser enviadas para {siteConfig.email}.</p>
 
-            <p className="text-xs text-[var(--color-ink)]/50">
+            <p className="text-xs text-[var(--color-ink)]/70">
               Última atualização: setembro de 2026.
             </p>
           </div>

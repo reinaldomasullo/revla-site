@@ -20,8 +20,13 @@ import {
   Gift,
 } from "@/components/icons";
 
+// Título sem "em São Paulo" (Onda 6, 15/09): desde que /plano-de-saude/sao-paulo
+// passou a existir como página própria, manter "São Paulo" no título do hub
+// nacional geraria canibalização de palavra-chave entre as duas páginas pro
+// mesmo termo de busca. O hub agora mira o termo genérico + marca; cada
+// cidade (incluindo São Paulo) tem sua própria página pro termo geolocalizado.
 export const metadata: Metadata = buildMetadata({
-  title: "Plano de Saúde em São Paulo | Prevent Senior",
+  title: "Plano de Saúde Prevent Senior",
   description:
     "Planos de saúde Prevent Senior (MA+S e 1025), com rede própria em São Paulo, Rio de Janeiro e Niterói. Simulação gratuita e sem compromisso.",
   path: "/plano-de-saude",

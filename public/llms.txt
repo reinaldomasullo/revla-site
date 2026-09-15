@@ -1,29 +1,36 @@
 # Revla Corretora
 
-> Corretora especializada em consórcios e planejamento patrimonial, com seguros, plano de saúde e amparo funeral, sede em São Paulo (Avenida Paulista) e atendimento em todo o Brasil.
+> Corretora especializada em consórcios e planejamento patrimonial, com seguros, plano de saúde e plano funerário, sede em São Paulo (Avenida Paulista) e atendimento em todo o Brasil.
 
 A Revla Corretora compara opções entre seguradoras e administradoras parceiras — Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine, Junto, Suhai e Prevent Senior — para ajudar clientes a encontrar o produto certo pelo preço certo, com consultoria gratuita.
 
 ## Produtos e serviços
 
-- Consórcios (produto principal): imóveis, veículos, motos, caminhões, máquinas, agro, investimento, serviços
+- Consórcios (produto principal): imóveis, carro (incluindo elétrico), motos (9 marcas com página própria), caminhões, máquinas, agro, investimento e serviços (cirurgia plástica, viagem, energia solar)
+- Empréstimo com garantia: de imóvel e de veículo, via Ademicon
 - Planejamento patrimonial: consórcio para alavancar patrimônio, seguro para proteger patrimônio, plano de saúde para proteger a vida
-- Seguros: automóvel (individual, frota, carta azul), vida (individual, em grupo, PME, acidentes pessoais), residencial, empresarial, condominial, viagem, RC profissional, celular, além de previdência privada, seguro garantia e fiança locatícia
-- Plano de saúde com a Prevent Senior: 2 planos com rede própria — MA+S (São Paulo e região, Rio de Janeiro e Niterói) e 1025 (São Paulo e região) — cobertura ambulatorial e hospitalar
-- Amparo funeral com a PASI: individual (até 75 anos), familiar (titular, cônjuge e filhos) e sênior (76 a 85 anos), a partir de R$ 99/mês
+- Seguros: automóvel, vida, residencial, celular, moto, fiança locatícia, empresarial, seguro garantia, RC profissional, condominial, bicicleta, viagem, previdência privada — cada um com página própria em /seguros
+- Plano de saúde com a Prevent Senior: 2 planos com rede própria — MA+S (São Paulo e região, Rio de Janeiro e Niterói) e 1025 (São Paulo e região) — cobertura ambulatorial e hospitalar, com página nacional e 8 páginas por cidade
+- Plano funerário com a PASI (Amparo Funeral): individual (até 75 anos), familiar (titular, cônjuge e filhos) e sênior (76 a 85 anos), a partir de R$ 99/mês, com página nacional e 5 páginas por cidade
 
 ## Páginas principais
 
 - [Início](https://revlacorretora.com.br/): visão geral de todos os produtos da Revla
-- [Consórcios](https://revlacorretora.com.br/consorcios): consórcio sem juros para imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços
-- [Calculadora de consórcio](https://revlacorretora.com.br/consorcios/calculadora): simulação de venda de carta contemplada e de alavancagem patrimonial
+- [Consórcios](https://revlacorretora.com.br/consorcios): hub com todas as categorias de consórcio sem juros
+- [Consórcio de imóveis](https://revlacorretora.com.br/consorcios/imoveis): carta de crédito pra casa própria, terreno ou construção
+- [Consórcio de carro](https://revlacorretora.com.br/consorcios/carro): carro novo, usado ou elétrico
+- [Consórcio de motos](https://revlacorretora.com.br/consorcios/motos): hub com 9 marcas (Honda, Yamaha, BMW Motorrad, Royal Enfield, Suzuki, Kawasaki, Harley-Davidson, Dafra, Shineray)
+- [Consórcio de serviços](https://revlacorretora.com.br/consorcios/servicos): hub com cirurgia plástica, viagem e energia solar
+- [Empréstimo com garantia de imóvel](https://revlacorretora.com.br/consorcios/emprestimo-garantia-imovel) e [de veículo](https://revlacorretora.com.br/consorcios/emprestimo-garantia-veiculo)
+- [Ademicon é confiável?](https://revlacorretora.com.br/consorcios/e-confiavel): resposta institucional sobre a administradora parceira
+- [Calculadora de consórcio](https://revlacorretora.com.br/consorcios/calculadora), [calculadora consórcio x financiamento de veículos](https://revlacorretora.com.br/consorcios/calculadora-veiculos) e [calculadora consórcio x financiamento](https://revlacorretora.com.br/consorcios/calculadora-financiamento)
 - [Planejamento patrimonial](https://revlacorretora.com.br/planejamento-patrimonial): estratégia combinando consórcio, seguro e plano de saúde
-- [Seguros](https://revlacorretora.com.br/seguros): automóvel, vida, residencial, empresarial, condominial, viagem, RC profissional, celular, previdência e garantias
-- [Plano de saúde](https://revlacorretora.com.br/plano-de-saude): planos MA+S e 1025 com a Prevent Senior
-- [Amparo funeral](https://revlacorretora.com.br/amparo-funeral): assistência funeral individual, familiar e sênior com a PASI
+- [Seguros](https://revlacorretora.com.br/seguros): hub com todos os tipos de seguro, cada um com página própria
+- [Plano de saúde](https://revlacorretora.com.br/plano-de-saude): planos MA+S e 1025 com a Prevent Senior, com página própria para 8 cidades (São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói)
+- [Plano funerário](https://revlacorretora.com.br/plano-funerario): assistência funeral individual, familiar e sênior com a PASI, com página própria para 5 cidades (São Paulo, Campinas, São Bernardo do Campo, Osasco e Guarulhos)
 - [Sobre a Revla](https://revlacorretora.com.br/sobre-a-revla): missão, diferenciais e registro regulatório da corretora
 - [Reinaldo Masullo](https://revlacorretora.com.br/reinaldo-masullo): especialista responsável, registro SUSEP pessoal
-- [Blog](https://revlacorretora.com.br/blog): artigos sobre planejamento patrimonial, consórcios, seguros, plano de saúde e amparo funeral
+- [Blog](https://revlacorretora.com.br/blog): artigos sobre planejamento patrimonial, consórcios, seguros, plano de saúde e plano funerário
 
 ## Contato
 
