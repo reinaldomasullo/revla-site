@@ -45,6 +45,7 @@ import {
   LockDocument,
   Key,
   Receipt,
+  Motorcycle,
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
@@ -78,6 +79,13 @@ const automovel = [
     description: "Seguro de responsabilidade civil para máquinas e veículos sem placa, como tratores e equipamentos agrícolas.",
     icon: <Tractor />,
   },
+  {
+    title: "Moto",
+    description: "Cobertura contra colisão, roubo, furto e responsabilidade civil a terceiros, com assistência 24h.",
+    href: "/seguros/moto",
+    linkLabel: "Ver seguro de moto",
+    icon: <Motorcycle />,
+  },
 ];
 
 const ramosElementares = [
@@ -89,23 +97,29 @@ const ramosElementares = [
   {
     title: "Bike",
     description: "Cobertura contra roubo, furto e danos para bicicletas comuns e elétricas.",
+    href: "/seguros/bicicleta",
+    linkLabel: "Ver seguro de bicicleta",
     icon: <Bike />,
   },
   {
     title: "Celular",
     description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
+    href: "/seguros/celular",
+    linkLabel: "Ver seguro celular",
     icon: <Phone />,
   },
   {
     title: "Condomínio",
     description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
+    href: "/seguros/condominial",
+    linkLabel: "Ver seguro condominial",
     icon: <Building />,
   },
   {
     title: "Empresarial",
     description: "Proteção para patrimônio, faturamento e operação do seu negócio.",
-    href: "/blog/seguro-empresarial-guia-completo",
-    linkLabel: "Ler o guia completo",
+    href: "/seguros/empresarial",
+    linkLabel: "Ver seguro empresarial",
     icon: <Briefcase />,
   },
   {
@@ -146,15 +160,15 @@ const ramosElementares = [
   {
     title: "Residencial",
     description: "Cobertura para incêndio, roubo, danos elétricos e desastres naturais na sua casa ou apartamento.",
-    href: "/blog/seguro-residencial-o-que-cobre-quanto-custa",
-    linkLabel: "O que cobre e quanto custa",
+    href: "/seguros/residencial",
+    linkLabel: "Ver seguro residencial",
     icon: <House />,
   },
   {
     title: "Responsabilidade Civil",
     description: "Proteção contra indenizações por danos causados a terceiros, no exercício profissional ou empresarial.",
-    href: "/blog/seguro-rc-profissional",
-    linkLabel: "Entenda o que cobre",
+    href: "/seguros/rc-profissional",
+    linkLabel: "Ver seguro RC profissional",
     icon: <Scale />,
   },
 ];
@@ -249,6 +263,8 @@ const previdenciaEGarantias = [
   {
     title: "Seguro Garantia",
     description: "Garante o cumprimento de obrigações contratuais e licitações, substituindo caução em dinheiro ou carta fiança.",
+    href: "/seguros/garantia",
+    linkLabel: "Ver seguro garantia",
     icon: <DocumentCheck />,
   },
   {
@@ -259,6 +275,8 @@ const previdenciaEGarantias = [
   {
     title: "Fiança Locatícia",
     description: "Substitui o fiador na locação de imóveis, com aprovação mais rápida para o inquilino.",
+    href: "/seguros/fianca",
+    linkLabel: "Ver seguro fiança",
     icon: <Key />,
   },
   {

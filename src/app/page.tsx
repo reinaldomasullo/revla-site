@@ -128,72 +128,56 @@ const consorcioSubprodutos = [
   },
 ];
 
-const segurosSubprodutos = [
+// Onda 8 (Estratégia 1): modelo "destaques + ver todos" — só os 5 seguros
+// de maior busca real (Keyword Planner, 15/09) viram cards completos na
+// home; os demais tipos entram na faixa "veja todos os tipos" logo abaixo,
+// linkando pro hub /seguros com o catálogo completo.
+const segurosDestaques = [
   {
-    title: "Seguro de vida",
-    description: "Indenização para a família em caso de morte ou invalidez, com coberturas para doenças graves.",
-    icon: <Heart />,
-  },
-  {
-    title: "Seguro empresarial",
-    description: "Proteção para patrimônio, faturamento e operação do seu negócio.",
-    icon: <Briefcase />,
-  },
-  {
-    title: "Seguro residencial",
+    title: "Seguro Residencial",
     description: "Cobertura para incêndio, roubo, danos elétricos e desastres naturais.",
+    href: "/seguros/residencial",
     icon: <House />,
   },
   {
-    title: "Seguro condominial",
-    description: "Proteção para áreas comuns e responsabilidade civil do condomínio.",
-    icon: <Building />,
+    title: "Seguro Celular",
+    description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
+    href: "/seguros/celular",
+    icon: <Phone />,
   },
   {
-    title: "Seguro auto",
+    title: "Seguro de Moto",
+    description: "Cobertura contra colisão, roubo, furto e responsabilidade civil a terceiros.",
+    href: "/seguros/moto",
+    icon: <Motorcycle />,
+  },
+  {
+    title: "Seguro Auto",
     description: "Cobertura para colisão, roubo, furto e responsabilidade civil do veículo.",
     icon: <Car />,
   },
   {
-    title: "Seguro viagem",
-    description: "Assistência médica, bagagem e imprevistos em viagens nacionais e internacionais.",
-    icon: <Plane />,
+    title: "Seguro de Vida",
+    description: "Indenização para a família em caso de morte ou invalidez, com coberturas para doenças graves.",
+    icon: <Heart />,
   },
-  {
-    title: "Seguro RC profissional",
-    description: "Proteção contra erros e omissões no exercício da sua atividade profissional.",
-    icon: <Scale />,
-  },
-  {
-    title: "Seguro celular",
-    description: "Cobertura contra roubo, furto e quebra acidental do aparelho.",
-    icon: <Phone />,
-  },
-  {
-    title: "Agrovida",
-    description: "Seguro de vida da PASI para produtores rurais e colaboradores do agronegócio, com coberturas específicas do setor.",
-    icon: <Plant />,
-  },
-  {
-    title: "Seguro Estagiários",
-    description: "Seguro obrigatório por lei para estagiários, com planos Básico e Plus da PASI, cobrindo morte acidental e invalidez.",
-    icon: <Backpack />,
-  },
-  {
-    title: "Convenções Coletivas (CCT)",
-    description: "Seguro de vida em grupo negociado por sindicato, com indenização rápida e sem limite de idade para o ativo.",
-    icon: <Handshake />,
-  },
-  {
-    title: "Seguro para PME",
-    description: "Seguro de vida em grupo da PASI para micro, pequenas e médias empresas, a partir de 1 colaborador.",
-    icon: <BuildingUsers />,
-  },
-  {
-    title: "AP Temporário",
-    description: "Seguro de acidentes pessoais por prazo determinado, ideal para viagens, eventos ou períodos específicos.",
-    icon: <ClockShort />,
-  },
+];
+
+// Demais tipos de seguro — aparecem em letra menor na faixa "veja todos os
+// tipos", que linka pro hub /seguros com o catálogo completo (17 tipos).
+const segurosOutrosTipos = [
+  "Seguro Empresarial",
+  "Seguro Condominial",
+  "Seguro Viagem",
+  "Seguro RC Profissional",
+  "Seguro Fiança",
+  "Seguro Garantia",
+  "Seguro Bicicleta",
+  "Agrovida",
+  "Seguro Estagiários",
+  "Convenções Coletivas (CCT)",
+  "Seguro para PME",
+  "AP Temporário",
 ];
 
 // Demais produtos e benefícios PASI que ainda não são "seguro" no sentido
@@ -480,24 +464,39 @@ export default function HomePage() {
               .
             </p>
           </div>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {segurosSubprodutos.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
-              >
-                <span
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-silver)] text-[var(--color-primary)] [&>svg]:h-4.5 [&>svg]:w-4.5"
-                  aria-hidden="true"
-                >
-                  {item.icon}
-                </span>
-                <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {segurosDestaques.map((item) => {
+              const content = (
+                <>
+                  <span
+                    className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-silver)] text-[var(--color-primary)] [&>svg]:h-4.5 [&>svg]:w-4.5"
+                    aria-hidden="true"
+                  >
+                    {item.icon}
+                  </span>
+                  <h3 className="mt-3 text-sm font-semibold text-[var(--color-ink)]">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                    {item.description}
+                  </p>
+                  {item.href && (
+                    <span className="mt-3 inline-flex text-sm font-semibold text-[var(--color-secondary)]">
+                      Saiba mais →
+                    </span>
+                  )}
+                </>
+              );
+              const cardClassName =
+                "rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5";
+              return item.href ? (
+                <Link key={item.title} href={item.href} className={cardClassName}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={item.title} className={cardClassName}>
+                  {content}
+                </div>
+              );
+            })}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <CTAButton
@@ -510,6 +509,36 @@ export default function HomePage() {
             <CTAButton href="/seguros" variant="ghost" className="px-5 py-3 text-sm">
               Ver todos os seguros
             </CTAButton>
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-tint-blue py-6 sm:py-8" aria-labelledby="seguros-outros-heading">
+        <Container>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p
+              id="seguros-outros-heading"
+              className="text-sm font-semibold uppercase tracking-wide text-[var(--color-primary)]"
+            >
+              Veja todos os tipos de seguros
+            </p>
+            <Link
+              href="/seguros"
+              className="text-sm font-semibold text-[var(--color-secondary)] hover:underline"
+            >
+              Ver catálogo completo →
+            </Link>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+            {segurosOutrosTipos.map((tipo) => (
+              <Link
+                key={tipo}
+                href="/seguros"
+                className="text-sm text-[var(--color-ink)]/70 hover:text-[var(--color-secondary)] hover:underline"
+              >
+                {tipo}
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

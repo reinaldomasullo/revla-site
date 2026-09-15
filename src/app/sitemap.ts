@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
 import { motoBrands } from "@/lib/moto-brands";
 import { planoFunerarioCidades } from "@/lib/plano-funerario-cidades";
+import { segurosProdutos } from "@/lib/seguros-produtos";
 import { siteConfig } from "@/lib/site-config";
 
 // Data da última revisão de conteúdo das páginas estáticas do site.
@@ -104,11 +105,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const segurosProdutoRoutes = segurosProdutos.map((produto) => ({
+    url: `${siteConfig.url}/seguros/${produto.slug}`,
+    lastModified: STRATEGY1_LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticRoutes,
     ...postRoutes,
     ...strategy1Routes,
     ...motoBrandRoutes,
     ...planoFunerarioCidadeRoutes,
+    ...segurosProdutoRoutes,
   ];
 }
