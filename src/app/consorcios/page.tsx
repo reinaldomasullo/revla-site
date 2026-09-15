@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
 import FeatureGrid from "@/components/FeatureGrid";
@@ -247,6 +248,14 @@ export default function ConsorciosPage() {
               Fonte: dados institucionais da Ademicon, administradora parceira da Revla para
               consórcios.
             </span>
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/consorcios/e-confiavel"
+              className="inline-flex text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            >
+              A Ademicon é confiável? Veja a resposta completa →
+            </Link>
           </div>
         </Container>
       </section>
