@@ -8,6 +8,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import { planoDeSaudePlanos, planoDeSaudeCidades } from "@/lib/plano-de-saude-cidades";
 import {
   HospitalCross,
   PercentShield,
@@ -28,40 +29,23 @@ export const metadata: Metadata = buildMetadata({
 
 // A Prevent Senior tem apenas 2 planos: MA+S (abrangência maior, inclui Rio
 // de Janeiro e Niterói) e 1025 (região de São Paulo/Baixada Santista). Cada
-// um tem 2 opções de acomodação (Enfermaria/Apartamento) — mesma fonte de
-// dados usada na seção "Os 2 planos" e na tabela de preços abaixo.
-const pricingPlans = [
-  {
-    name: "Prevent MA+S",
-    areas:
-      "São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói",
-    ansEnfermaria: "505.028/25-6",
-    ansApartamento: "505.029/25-4",
-    startingPrice: "R$ 883,53",
-    rows: [
-      { faixa: "Até 43 anos", enfermaria: "R$ 883,53", apartamento: "R$ 1.055,50" },
-      { faixa: "44 a 58 anos", enfermaria: "R$ 1.162,60", apartamento: "R$ 1.389,60" },
-      { faixa: "59 anos em diante", enfermaria: "R$ 1.529,75", apartamento: "R$ 1.828,43" },
-    ],
-  },
-  {
-    name: "Prevent Senior 1025",
-    areas: "São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande",
-    ansEnfermaria: "505.407/25-9",
-    ansApartamento: "505.408/25-7",
-    startingPrice: "R$ 759,84",
-    rows: [
-      { faixa: "Até 43 anos", enfermaria: "R$ 759,84", apartamento: "R$ 907,73" },
-      { faixa: "44 a 58 anos", enfermaria: "R$ 999,84", apartamento: "R$ 1.195,06" },
-      { faixa: "59 anos em diante", enfermaria: "R$ 1.315,59", apartamento: "R$ 1.572,45" },
-    ],
-  },
-];
+// um tem 2 opções de acomodação (Enfermaria/Apartamento) — dados agora
+// centralizados em src/lib/plano-de-saude-cidades.ts, reaproveitados também
+// pelas 8 páginas de cidade da Onda 6.
+const pricingPlans = planoDeSaudePlanos;
 
 const planos = pricingPlans.map((plan) => ({
-  title: plan.name,
+  title: plan.nome,
   description: `Abrangência em ${plan.areas}. Cobertura ambulatorial e hospitalar (Enfermaria ou Apartamento), a partir de ${plan.startingPrice}/mês.`,
   icon: <HospitalCross />,
+}));
+
+const cidadesFeatures = planoDeSaudeCidades.map((cidade) => ({
+  title: cidade.nome,
+  description: `Plano de saúde Prevent Senior com atendimento para ${cidade.nome}.`,
+  href: `/plano-de-saude/${cidade.slug}`,
+  linkLabel: `Plano de saúde em ${cidade.nome}`,
+  icon: <MapPin />,
 }));
 
 const diferenciais = [
@@ -150,7 +134,7 @@ const faqItems = [
   {
     question: "Em quais cidades a Prevent Senior tem rede própria?",
     answer:
-      "O plano MA+S atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. O plano 1025 atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande.",
+      "O plano MA+S atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. O plano 1025 atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande. Temos página própria para cada uma: [São Paulo](/plano-de-saude/sao-paulo), [Santo André](/plano-de-saude/santo-andre), [São Bernardo do Campo](/plano-de-saude/sao-bernardo-do-campo), [São Caetano do Sul](/plano-de-saude/sao-caetano-do-sul), [Santos](/plano-de-saude/santos), [Praia Grande](/plano-de-saude/praia-grande), [Rio de Janeiro](/plano-de-saude/rio-de-janeiro) e [Niterói](/plano-de-saude/niteroi).",
   },
 ];
 
@@ -263,8 +247,8 @@ export default function PlanoDeSaudePage() {
 
           <div className="mt-10 space-y-10">
             {pricingPlans.map((plan) => (
-              <div key={plan.name}>
-                <h3 className="text-lg font-semibold text-[var(--color-ink)]">{plan.name}</h3>
+              <div key={plan.codigo}>
+                <h3 className="text-lg font-semibold text-[var(--color-ink)]">{plan.nome}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink)]/70">
                   Abrangência: {plan.areas}.
                 </p>
@@ -318,6 +302,13 @@ export default function PlanoDeSaudePage() {
           </p>
         </Container>
       </section>
+
+      <FeatureGrid
+        title="Plano de saúde na sua cidade"
+        description="Informações e atendimento específicos para as 8 cidades onde a Prevent Senior tem rede própria."
+        columns={4}
+        items={cidadesFeatures}
+      />
 
       <section className="section-muted">
         <FAQ items={faqItems} />
