@@ -1,15 +1,18 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site-config";
-import { consorcioImoveisCities } from "@/lib/city-pages/consorcio-imoveis";
 
 // Data da última revisão de conteúdo das páginas estáticas do site.
 // Atualize manualmente quando o conteúdo de uma dessas páginas mudar.
 const STATIC_PAGES_LAST_MODIFIED = new Date("2026-09-08");
 
-// Data de publicação das páginas locais de produto+cidade (Estratégia 1 de
-// SEO/GEO — onda 1: Consórcio de Imóveis).
-const CITY_PAGES_LAST_MODIFIED = new Date("2026-09-15");
+// Data de publicação/reestruturação das páginas da Estratégia 1 de SEO/GEO.
+// Onda 1 (15/09): Consórcio de Imóveis deixou de ser 4 páginas por cidade e
+// virou uma página nacional única — sem sinal real de busca diferenciado por
+// cidade nos dados do Keyword Planner (diferente do que se viu depois em
+// Amparo Funeral/Plano Funerário, que manteve páginas de cidade por ter
+// sinal real).
+const STRATEGY1_LAST_MODIFIED = new Date("2026-09-15");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -47,12 +50,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const consorcioImoveisCityRoutes = consorcioImoveisCities.map((city) => ({
-    url: `${siteConfig.url}/consorcios/imoveis/${city.citySlug}`,
-    lastModified: CITY_PAGES_LAST_MODIFIED,
-    changeFrequency: "monthly" as const,
-    priority: 0.65,
-  }));
+  const strategy1Routes = [
+    {
+      url: `${siteConfig.url}/consorcios/imoveis`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+  ];
 
-  return [...staticRoutes, ...postRoutes, ...consorcioImoveisCityRoutes];
+  return [...staticRoutes, ...postRoutes, ...strategy1Routes];
 }

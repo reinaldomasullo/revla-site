@@ -48,6 +48,15 @@ const nextConfig: NextConfig = {
       // nesse formato manda pra listagem atual do blog
       { source: "/category/:path*", destination: "/blog", permanent: true },
       { source: "/tag/:path*", destination: "/blog", permanent: true },
+
+      // Consórcio de Imóveis (Estratégia 1, Onda 1, 15/09): as 4 páginas por
+      // cidade viraram uma única página nacional — sem sinal real de busca
+      // diferenciado por cidade nos dados do Keyword Planner. Redireciona
+      // qualquer link/indexação antiga das 4 URLs pra página nova.
+      { source: "/consorcios/imoveis/sao-paulo", destination: "/consorcios/imoveis", permanent: true },
+      { source: "/consorcios/imoveis/santo-andre", destination: "/consorcios/imoveis", permanent: true },
+      { source: "/consorcios/imoveis/guarulhos", destination: "/consorcios/imoveis", permanent: true },
+      { source: "/consorcios/imoveis/osasco", destination: "/consorcios/imoveis", permanent: true },
     ];
   },
 };

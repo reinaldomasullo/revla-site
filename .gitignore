@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# arquivos de referência/entrega salvos automaticamente pelo app do Claude
+# nessa pasta — não fazem parte do código do site, nunca devem ir pro repo
+/Claude outputs/

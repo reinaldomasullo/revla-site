@@ -34,8 +34,8 @@ const categorias = [
   {
     title: "Imóveis",
     description: "Para casa, apartamento, terreno ou construção, sem entrada obrigatória.",
-    href: "/blog/consorcio-de-imoveis-como-funciona",
-    linkLabel: "Como funciona o consórcio de imóveis",
+    href: "/consorcios/imoveis",
+    linkLabel: "Consórcio de imóveis para a casa própria",
     icon: <House />,
   },
   {
