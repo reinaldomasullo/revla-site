@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/politica-de-privacidade",
     "/termos-de-uso",
     "/disclaimer",
+    "/mapa-do-site",
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: STATIC_PAGES_LAST_MODIFIED,
@@ -41,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       path === ""
         ? 1
-        : ["/politica-de-privacidade", "/termos-de-uso", "/disclaimer"].includes(path)
+        : ["/politica-de-privacidade", "/termos-de-uso", "/disclaimer", "/mapa-do-site"].includes(path)
           ? 0.3
           : 0.7,
   }));

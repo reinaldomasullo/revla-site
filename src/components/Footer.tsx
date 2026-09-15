@@ -8,6 +8,7 @@ import CTAButton from "./CTAButton";
 import { mainNav, siteConfig, whatsappLink } from "@/lib/site-config";
 
 const legalLinks = [
+  { label: "Mapa do Site", href: "/mapa-do-site" },
   { label: "Política de Privacidade", href: "/politica-de-privacidade" },
   { label: "Termos de Uso", href: "/termos-de-uso" },
   { label: "Disclaimer", href: "/disclaimer" },
