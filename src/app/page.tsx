@@ -72,10 +72,10 @@ const products = [
     accent: "var(--color-blue-gradient)",
   },
   {
-    title: "Amparo Funeral",
+    title: "Plano Funerário",
     description:
-      "Assistência funeral individual, familiar e sênior com a PASI, com suporte imediato à família nos momentos mais difíceis.",
-    href: "/amparo-funeral",
+      "Amparo Funeral PASI individual, familiar e sênior, com suporte imediato à família nos momentos mais difíceis.",
+    href: "/plano-funerario",
     accent: "var(--color-steel)",
   },
   {
@@ -548,20 +548,20 @@ export default function HomePage() {
         tint="blue"
       />
 
-      {/* Dobra 6 — Amparo Funeral */}
+      {/* Dobra 6 — Plano Funerário */}
       <ProductTeaser
-        id="amparo-funeral"
-        eyebrow="Amparo Funeral"
-        title="Amparo funeral PASI, sem necessidade de vínculo"
-        description="Trabalhamos com o Amparo Funeral da PASI — também conhecido como assistência funeral ou plano funeral — com três modalidades de contratação e suporte imediato à família nos momentos mais difíceis, em qualquer lugar do Brasil."
+        id="plano-funerario"
+        eyebrow="Plano Funerário"
+        title="Plano funerário PASI, sem necessidade de vínculo"
+        description="Trabalhamos com o Amparo Funeral da PASI — o plano funerário com três modalidades de contratação e suporte imediato à família nos momentos mais difíceis, em qualquer lugar do Brasil."
         highlights={[
           "3 modalidades: Individual, Familiar e Sênior (até 85 anos)",
           "Capitais de R$ 5.000, R$ 7.000 ou R$ 10.000",
           "Traslado, urna e trâmites administrativos inclusos",
           "Atendimento 24 horas em todo o Brasil",
         ]}
-        ctaHref="/amparo-funeral"
-        ctaLabel="Saiba mais sobre amparo funeral"
+        ctaHref="/plano-funerario"
+        ctaLabel="Saiba mais sobre o plano funerário"
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         reverse
       />

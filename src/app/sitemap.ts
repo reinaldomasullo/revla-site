@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
 import { motoBrands } from "@/lib/moto-brands";
+import { planoFunerarioCidades } from "@/lib/plano-funerario-cidades";
 import { siteConfig } from "@/lib/site-config";
 
 // Data da última revisão de conteúdo das páginas estáticas do site.
@@ -20,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/seguros",
     "/plano-de-saude",
-    "/amparo-funeral",
     "/consorcios",
     "/consorcios/calculadora",
     "/consorcios/calculadora-veiculos",
@@ -82,6 +82,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/plano-funerario`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
   ];
 
   const motoBrandRoutes = motoBrands.map((brand) => ({
@@ -91,5 +97,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...postRoutes, ...strategy1Routes, ...motoBrandRoutes];
+  const planoFunerarioCidadeRoutes = planoFunerarioCidades.map((cidade) => ({
+    url: `${siteConfig.url}/plano-funerario/${cidade.slug}`,
+    lastModified: STRATEGY1_LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...postRoutes,
+    ...strategy1Routes,
+    ...motoBrandRoutes,
+    ...planoFunerarioCidadeRoutes,
+  ];
 }

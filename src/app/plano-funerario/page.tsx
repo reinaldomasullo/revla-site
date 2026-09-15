@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import { planoFunerarioCidades } from "@/lib/plano-funerario-cidades";
 import {
   UserCheck,
   Flame,
@@ -20,13 +21,24 @@ import {
   Briefcase,
   BuildingUsers,
   ShieldUsers,
+  MapPin,
 } from "@/components/icons";
 
+// Plano Funerário / Amparo Funeral (Estratégia 1 — Onda 7).
+// Pesquisa de palavras-chave confirmou que o termo real de busca é "plano
+// funerário"/"plano funeral", não "amparo funeral" (nome da marca PASI,
+// quase sem busca pública). Migrado de /amparo-funeral para /plano-funerario
+// com redirect 301 obrigatório (ver next.config.ts). "Amparo Funeral"
+// continua citado no conteúdo como o nome real do produto da PASI. Mantém 5
+// páginas de cidade (São Paulo, Campinas, São Bernardo do Campo, Osasco,
+// Guarulhos) — únicas com volume real e distinto por cidade nos dados do
+// Keyword Planner.
+
 export const metadata: Metadata = buildMetadata({
-  title: "Amparo Funeral PASI em São Paulo",
+  title: "Plano Funerário PASI desde R$ 99/mês",
   description:
-    "Amparo Funeral PASI em São Paulo a partir de R$ 99/mês: planos individual, familiar e sênior, com assistência 24h e cremação. Simulação gratuita com a Revla.",
-  path: "/amparo-funeral",
+    "Plano funerário PASI (Amparo Funeral) a partir de R$ 99/mês: planos individual, familiar e sênior, com assistência 24h em todo o Brasil. Simulação gratuita.",
+  path: "/plano-funerario",
 });
 
 type Tier = { capital: string; mensalidade: string };
@@ -89,7 +101,7 @@ const diferenciais = [
     title: "Cremação",
     description: "Possibilidade de cremação conforme o plano contratado.",
     href: "/blog/amparo-funeral-vale-a-pena-custos-funeral",
-    linkLabel: "Amparo funeral vale a pena? Veja os custos",
+    linkLabel: "Plano funerário vale a pena? Veja os custos",
     icon: <Flame />,
   },
   {
@@ -111,7 +123,7 @@ const assistencias = [
     title: "Assistência Funeral",
     description: "Serviços para a realização do funeral, trâmites administrativos, pagamento de taxas e organização do sepultamento.",
     href: "/blog/diferenca-amparo-funeral-seguro-de-vida-plano-funerario",
-    linkLabel: "Amparo funeral x seguro de vida x plano funerário",
+    linkLabel: "Amparo funeral x seguro de vida x plano funerário tradicional",
     icon: <Dove />,
   },
   {
@@ -128,19 +140,19 @@ const assistencias = [
 
 const outrasModalidades = [
   {
-    title: "PME – Seguro Funeral Individual",
+    title: "PME – Plano Funerário Individual",
     description:
       "Amparo funeral pensado para empresas contratarem para seus colaboradores, cobrindo só o titular. Coberturas e valores são definidos conforme o porte da empresa — fale com um consultor para uma cotação personalizada.",
     icon: <Briefcase />,
   },
   {
-    title: "PME – Seguro Funeral Familiar",
+    title: "PME – Plano Funerário Familiar",
     description:
       "Mesma lógica do plano PME Individual, estendendo a cobertura à família do colaborador. Ideal para empresas que querem oferecer esse benefício de forma mais completa. Cotação sob consulta.",
     icon: <BuildingUsers />,
   },
   {
-    title: "Seguro Funeral PASI Colaboradores e Dependentes",
+    title: "Plano Funerário PASI Colaboradores e Dependentes",
     description:
       "Modalidade coletiva de amparo funeral para empresas segurarem colaboradores e dependentes em um único convênio. Peça uma simulação para sua empresa.",
     icon: <ShieldUsers />,
@@ -158,9 +170,9 @@ const testimonials = [
 
 const faqItems = [
   {
-    question: "O que é o Amparo Funeral PASI?",
+    question: "O que é o Plano Funerário PASI (Amparo Funeral)?",
     answer:
-      "É um plano de assistência da seguradora PASI, parceira da Revla, que organiza e cobre as despesas do funeral do titular (e, conforme o plano, de dependentes), com uma Central de Assistência Funeral disponível 24 horas por dia.",
+      "É um plano de assistência da seguradora PASI, parceira da Revla, comercializado sob o nome Amparo Funeral, que organiza e cobre as despesas do funeral do titular (e, conforme o plano, de dependentes), com uma Central de Assistência Funeral disponível 24 horas por dia.",
   },
   {
     question: "Qual a diferença entre os planos Individual, Familiar e Sênior?",
@@ -168,7 +180,7 @@ const faqItems = [
       "O Individual cobre só o titular e pode ser contratado até 75 anos. O Familiar estende a cobertura a cônjuge/companheiro(a) e filhos até 25 anos. O Sênior é a versão do plano individual voltada a quem tem entre 76 e 85 anos, faixa que o plano Individual comum não atende mais.",
   },
   {
-    question: "Quanto custa o Amparo Funeral PASI?",
+    question: "Quanto custa o plano funerário PASI?",
     answer:
       "Os planos individual e familiar começam em R$ 99,00 e R$ 169,00 por mês, respectivamente, para um capital de R$ 5.000,00, com opções de R$ 7.000,00 e R$ 10.000,00. O plano Sênior começa em R$ 299,00 por mês. Os valores são de planos anuais (12 meses).",
   },
@@ -188,9 +200,9 @@ const faqItems = [
       "Sim: 24 horas de carência para morte acidental e 90 dias para morte natural, em todos os planos.",
   },
   {
-    question: "A empresa pode contratar amparo funeral para os colaboradores?",
+    question: "A empresa pode contratar plano funerário para os colaboradores?",
     answer:
-      "Sim — além dos planos individual, familiar e sênior vendidos diretamente à pessoa física, a PASI também oferece o Seguro Funeral PME (individual e familiar) e o Seguro Funeral PASI para Colaboradores e Dependentes, pensados para empresas. Fale com um consultor da Revla para uma cotação personalizada.",
+      "Sim — além dos planos individual, familiar e sênior vendidos diretamente à pessoa física, a PASI também oferece o Plano Funerário PME (individual e familiar) e o Plano Funerário PASI para Colaboradores e Dependentes, pensados para empresas. Fale com um consultor da Revla para uma cotação personalizada.",
   },
   {
     question: "A Revla é uma corretora regulamentada?",
@@ -200,14 +212,22 @@ const faqItems = [
   {
     question: "A Revla atende em quais cidades?",
     answer:
-      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Temos páginas específicas para [São Paulo](/plano-funerario/sao-paulo), [Campinas](/plano-funerario/campinas), [São Bernardo do Campo](/plano-funerario/sao-bernardo-do-campo), [Osasco](/plano-funerario/osasco) e [Guarulhos](/plano-funerario/guarulhos).",
   },
 ];
+
+const cidadesFeatures = planoFunerarioCidades.map((cidade) => ({
+  title: cidade.nome,
+  description: `Plano funerário PASI com atendimento para ${cidade.nome}.`,
+  href: `/plano-funerario/${cidade.slug}`,
+  linkLabel: `Plano funerário em ${cidade.nome}`,
+  icon: <MapPin />,
+}));
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Corretagem de amparo funeral",
+  serviceType: "Corretagem de plano funerário (Amparo Funeral)",
   provider: {
     "@type": "InsuranceAgency",
     name: siteConfig.legalName,
@@ -223,18 +243,18 @@ const serviceSchema = {
   })),
 };
 
-export default function AmparoFuneralPage() {
+export default function PlanoFunerarioPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
-      <Breadcrumbs items={[{ label: "Amparo Funeral", href: "/amparo-funeral" }]} />
+      <Breadcrumbs items={[{ label: "Plano Funerário", href: "/plano-funerario" }]} />
       <Hero
-        eyebrow="Amparo funeral em São Paulo · Seguradora PASI"
-        title="Amparo Funeral PASI: tranquilidade para sua família nos momentos mais difíceis"
+        eyebrow="Plano Funerário · Amparo Funeral PASI"
+        title="Plano Funerário PASI: tranquilidade para sua família nos momentos mais difíceis"
         description="Planos individual, familiar e sênior, a partir de R$ 99,00 por mês, com assistência funeral 24 horas, cremação e sem necessidade de vínculo empregatício. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil. Compare as opções e simule gratuitamente com a Revla."
       >
-        <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de simular um Amparo Funeral PASI.")} external>
-          Simular amparo funeral
+        <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de simular um plano funerário (Amparo Funeral PASI).")} external>
+          Simular plano funerário
         </CTAButton>
       </Hero>
 
@@ -327,9 +347,16 @@ export default function AmparoFuneralPage() {
         </Container>
       </section>
 
+      <FeatureGrid
+        title="Plano funerário na sua cidade"
+        description="Informações e atendimento específicos para as principais cidades onde a Revla atua."
+        columns={3}
+        items={cidadesFeatures}
+      />
+
       <section className="section-tint-blue">
         <FeatureGrid
-          title="Amparo funeral para empresas"
+          title="Plano funerário para empresas"
           description="Além dos planos vendidos diretamente à pessoa física, a PASI também oferece opções para empresas contratarem em nome de colaboradores. Em breve, cada uma dessas modalidades terá sua própria página com todos os detalhes."
           columns={3}
           items={outrasModalidades}
@@ -342,8 +369,8 @@ export default function AmparoFuneralPage() {
 
       <CTASection
         title="Garanta essa tranquilidade para quem você ama"
-        description="Fale com um consultor da Revla e entenda qual plano de Amparo Funeral PASI faz sentido para sua família."
-        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla sobre Amparo Funeral."
+        description="Fale com um consultor da Revla e entenda qual plano funerário PASI faz sentido para sua família."
+        whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla sobre o plano funerário."
         buttonLabel="Simular agora"
       />
     </>

@@ -57,6 +57,14 @@ const nextConfig: NextConfig = {
       { source: "/consorcios/imoveis/santo-andre", destination: "/consorcios/imoveis", permanent: true },
       { source: "/consorcios/imoveis/guarulhos", destination: "/consorcios/imoveis", permanent: true },
       { source: "/consorcios/imoveis/osasco", destination: "/consorcios/imoveis", permanent: true },
+
+      // Amparo Funeral → Plano Funerário (Estratégia 1, Onda 7, 15/09): o
+      // termo real de busca é "plano funerário"/"plano funeral" — "amparo
+      // funeral" é o nome da marca PASI, com volume de busca pública quase
+      // nulo. Redireciona a URL antiga (e qualquer indexação/backlink já
+      // existente) pra página nova, que mantém "Amparo Funeral" citado no
+      // conteúdo como o nome real do produto.
+      { source: "/amparo-funeral", destination: "/plano-funerario", permanent: true },
     ];
   },
 };

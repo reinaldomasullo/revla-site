@@ -21,8 +21,8 @@ const produtos = [
     href: "/plano-de-saude",
   },
   {
-    label: "Amparo Funeral",
-    href: "/amparo-funeral",
+    label: "Plano Funerário",
+    href: "/plano-funerario",
   },
   {
     label: "Planejamento Patrimonial",

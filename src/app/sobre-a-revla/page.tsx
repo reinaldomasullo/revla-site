@@ -58,7 +58,7 @@ const produtos = [
   { title: "Consórcios", description: "Imóveis, veículos, motos, caminhões, máquinas, agro, investimento e serviços, sem juros.", href: "/consorcios", icon: <House /> },
   { title: "Seguros", description: "Vida, auto, residencial, empresarial, responsabilidade civil e outras coberturas.", href: "/seguros", icon: <ShieldCheck /> },
   { title: "Plano de Saúde", description: "Planos individuais, PME e para a melhor idade, com a Prevent Senior.", href: "/plano-de-saude", icon: <HeartHand /> },
-  { title: "Amparo Funeral", description: "Assistência funeral completa, com traslado e apoio 24 horas, pela PASI.", href: "/amparo-funeral", icon: <Dove /> },
+  { title: "Plano Funerário", description: "Amparo Funeral PASI completo, com traslado e apoio 24 horas.", href: "/plano-funerario", icon: <Dove /> },
   { title: "Planejamento Patrimonial", description: "Estratégias para proteger e organizar seu patrimônio ao longo da vida.", href: "/planejamento-patrimonial", icon: <Compass /> },
 ];
 

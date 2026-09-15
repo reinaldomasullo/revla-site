@@ -980,7 +980,7 @@ export const posts: Post[] = [
           "Reserva de emergência organizada: manter recursos líquidos disponíveis para cobrir de três a seis meses de despesas, separados dos investimentos de longo prazo.",
           "Formação de patrimônio com disciplina: usar instrumentos como o consórcio para juntar dinheiro de forma programada para metas como imóvel, veículo ou reforma, sem recorrer a financiamentos com juros altos.",
           "Clareza sobre bens e documentos: manter escrituras, contratos, apólices e certidões organizados e acessíveis, para que a família não perca tempo nem dinheiro em caso de necessidade.",
-          "Cobertura para despesas de última hora: considerar proteções específicas, como o [amparo funeral](/amparo-funeral), que evitam que a família precise reunir dinheiro às pressas em um momento delicado.",
+          "Cobertura para despesas de última hora: considerar proteções específicas, como o [amparo funeral](/plano-funerario), que evitam que a família precise reunir dinheiro às pressas em um momento delicado.",
           "Revisão periódica: reavaliar coberturas, valores segurados e prioridades a cada mudança relevante de vida, como casamento, filhos, troca de emprego ou compra de um imóvel."
         ]
       },
@@ -2686,7 +2686,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Cuidar da saúde na terceira idade costuma vir acompanhado de outras decisões de planejamento. Organizar as finanças com apoio de [planejamento patrimonial](/planejamento-patrimonial) ajuda a manter a estabilidade orçamentária necessária para sustentar a mensalidade do plano de saúde ao longo dos anos, inclusive diante dos reajustes por faixa etária. Da mesma forma, contar com um serviço de [amparo funeral](/amparo-funeral) pode aliviar a família de decisões difíceis em um momento delicado, complementando a proteção que o plano de saúde já oferece em vida."
+        "text": "Cuidar da saúde na terceira idade costuma vir acompanhado de outras decisões de planejamento. Organizar as finanças com apoio de [planejamento patrimonial](/planejamento-patrimonial) ajuda a manter a estabilidade orçamentária necessária para sustentar a mensalidade do plano de saúde ao longo dos anos, inclusive diante dos reajustes por faixa etária. Da mesma forma, contar com um serviço de [amparo funeral](/plano-funerario) pode aliviar a família de decisões difíceis em um momento delicado, complementando a proteção que o plano de saúde já oferece em vida."
       },
       {
         "type": "h2",
@@ -3035,7 +3035,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Para quem tem patrimônio consolidado, renda estável e histórico de saúde favorável, manter-se sem plano e pagar particular pode ser uma opção viável, desde que exista de fato uma reserva dedicada a emergências médicas, separada de outros objetivos financeiros. Nesse caso, vale avaliar a decisão dentro de um contexto mais amplo de [planejamento patrimonial](/planejamento-patrimonial), que ajuda a dimensionar quanto do patrimônio deveria ficar reservado para saúde e quanto pode ser direcionado a outros objetivos, como herança ou proteção familiar por meio de instrumentos como o [amparo funeral](/amparo-funeral)."
+        "text": "Para quem tem patrimônio consolidado, renda estável e histórico de saúde favorável, manter-se sem plano e pagar particular pode ser uma opção viável, desde que exista de fato uma reserva dedicada a emergências médicas, separada de outros objetivos financeiros. Nesse caso, vale avaliar a decisão dentro de um contexto mais amplo de [planejamento patrimonial](/planejamento-patrimonial), que ajuda a dimensionar quanto do patrimônio deveria ficar reservado para saúde e quanto pode ser direcionado a outros objetivos, como herança ou proteção familiar por meio de instrumentos como o [amparo funeral](/plano-funerario)."
       },
       {
         "type": "p",
@@ -3373,7 +3373,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "Mesmo quando o plano de saúde cobre parte da atenção domiciliar, é comum que despesas complementares apareçam: cuidador particular em turnos não cobertos, adaptações na casa, itens de conforto ou medicamentos de uso contínuo não inclusos no pacote. Por isso, cuidar da saúde do idoso costuma andar junto com o planejamento financeiro da família. Um [planejamento patrimonial](/planejamento-patrimonial) bem estruturado ajuda a organizar reservas para esse tipo de despesa sem comprometer o orçamento familiar, enquanto instrumentos como o [amparo funeral](/amparo-funeral) evitam que a família precise lidar com decisões financeiras urgentes em momentos de luto. Como cada situação envolve variáveis próprias de saúde, idade e orçamento, buscar orientação com um especialista, como o corretor [Reinaldo Masullo](/reinaldo-masullo), pode ajudar a montar uma estratégia que combine plano de saúde adequado, proteção patrimonial e tranquilidade para toda a família."
+        "text": "Mesmo quando o plano de saúde cobre parte da atenção domiciliar, é comum que despesas complementares apareçam: cuidador particular em turnos não cobertos, adaptações na casa, itens de conforto ou medicamentos de uso contínuo não inclusos no pacote. Por isso, cuidar da saúde do idoso costuma andar junto com o planejamento financeiro da família. Um [planejamento patrimonial](/planejamento-patrimonial) bem estruturado ajuda a organizar reservas para esse tipo de despesa sem comprometer o orçamento familiar, enquanto instrumentos como o [amparo funeral](/plano-funerario) evitam que a família precise lidar com decisões financeiras urgentes em momentos de luto. Como cada situação envolve variáveis próprias de saúde, idade e orçamento, buscar orientação com um especialista, como o corretor [Reinaldo Masullo](/reinaldo-masullo), pode ajudar a montar uma estratégia que combine plano de saúde adequado, proteção patrimonial e tranquilidade para toda a família."
       }
     ],
     "faq": [
@@ -3575,7 +3575,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "A Revla Corretora, registrada na SUSEP e especializada em consórcio, seguro e plano de saúde, oferece o [amparo funeral](/amparo-funeral) nas três modalidades apresentadas neste artigo: individual, familiar e sênior. A proposta é conectar cada família à opção que faz mais sentido para o seu momento de vida, sempre com transparência sobre o que está incluso em cada plano e sem promessas que fujam do que realmente está previsto em contrato."
+        "text": "A Revla Corretora, registrada na SUSEP e especializada em consórcio, seguro e plano de saúde, oferece o [amparo funeral](/plano-funerario) nas três modalidades apresentadas neste artigo: individual, familiar e sênior. A proposta é conectar cada família à opção que faz mais sentido para o seu momento de vida, sempre com transparência sobre o que está incluso em cada plano e sem promessas que fujam do que realmente está previsto em contrato."
       },
       {
         "type": "p",
@@ -3629,7 +3629,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "O amparo funeral sênior é uma modalidade de assistência funeral voltada especificamente para pessoas com mais de 75 anos, um público que, em muitas seguradoras tradicionais, encontra restrições de idade máxima para entrada. Diferente do amparo funeral individual ou familiar — pensados para contratantes mais jovens ou para grupos familiares de diferentes idades — a versão sênior é estruturada considerando o perfil de quem está em uma fase da vida na qual o planejamento desse tipo de proteção costuma se tornar mais urgente e mais presente nas conversas em família. Para conhecer o panorama completo dos produtos de amparo funeral e como eles se organizam, vale visitar a página de [amparo funeral](/amparo-funeral), que reúne as informações gerais sobre o tema."
+        "text": "O amparo funeral sênior é uma modalidade de assistência funeral voltada especificamente para pessoas com mais de 75 anos, um público que, em muitas seguradoras tradicionais, encontra restrições de idade máxima para entrada. Diferente do amparo funeral individual ou familiar — pensados para contratantes mais jovens ou para grupos familiares de diferentes idades — a versão sênior é estruturada considerando o perfil de quem está em uma fase da vida na qual o planejamento desse tipo de proteção costuma se tornar mais urgente e mais presente nas conversas em família. Para conhecer o panorama completo dos produtos de amparo funeral e como eles se organizam, vale visitar a página de [amparo funeral](/plano-funerario), que reúne as informações gerais sobre o tema."
       },
       {
         "type": "p",
@@ -3811,7 +3811,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "A [SUSEP](https://www.gov.br/susep/pt-br/copy_of_planos-e-produtos/seguros/seguro-de-pessoas), órgão que regula seguros no Brasil, explica que o seguro funeral tem por objetivo garantir uma indenização — na forma de reembolso de despesas ou prestação de serviços — desde que relacionadas à realização do funeral, com a indenização limitada ao capital contratado. Isso reforça um ponto importante: existe regulação e fiscalização sobre esse tipo de produto, o que dá mais segurança para quem está avaliando contratar. Você pode ler mais sobre como funciona esse tipo de cobertura na página de [amparo funeral](/amparo-funeral) da Revla."
+        "text": "A [SUSEP](https://www.gov.br/susep/pt-br/copy_of_planos-e-produtos/seguros/seguro-de-pessoas), órgão que regula seguros no Brasil, explica que o seguro funeral tem por objetivo garantir uma indenização — na forma de reembolso de despesas ou prestação de serviços — desde que relacionadas à realização do funeral, com a indenização limitada ao capital contratado. Isso reforça um ponto importante: existe regulação e fiscalização sobre esse tipo de produto, o que dá mais segurança para quem está avaliando contratar. Você pode ler mais sobre como funciona esse tipo de cobertura na página de [amparo funeral](/plano-funerario) da Revla."
       },
       {
         "type": "h2",
@@ -3929,13 +3929,13 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "A Revla é uma corretora registrada na SUSEP e atua com consórcio, seguro e plano de saúde, o que permite avaliar o amparo funeral dentro do contexto financeiro completo de cada família, e não como um produto isolado. Antes de contratar, é importante entender qual modalidade faz mais sentido para o seu momento de vida, quais assistências estão incluídas e como funciona o acionamento em caso de necessidade. Esse é um dos motivos pelos quais recomendamos conversar com um especialista antes de fechar qualquer plano, em vez de decidir apenas com base no preço mensal. Para tirar dúvidas e receber uma orientação personalizada, você pode falar com [Reinaldo Masullo](/reinaldo-masullo), especialista da Revla, ou conhecer diretamente a página de [amparo funeral](/amparo-funeral) com detalhes sobre coberturas e modalidades disponíveis."
+        "text": "A Revla é uma corretora registrada na SUSEP e atua com consórcio, seguro e plano de saúde, o que permite avaliar o amparo funeral dentro do contexto financeiro completo de cada família, e não como um produto isolado. Antes de contratar, é importante entender qual modalidade faz mais sentido para o seu momento de vida, quais assistências estão incluídas e como funciona o acionamento em caso de necessidade. Esse é um dos motivos pelos quais recomendamos conversar com um especialista antes de fechar qualquer plano, em vez de decidir apenas com base no preço mensal. Para tirar dúvidas e receber uma orientação personalizada, você pode falar com [Reinaldo Masullo](/reinaldo-masullo), especialista da Revla, ou conhecer diretamente a página de [amparo funeral](/plano-funerario) com detalhes sobre coberturas e modalidades disponíveis."
       }
     ],
     "faq": [
       {
         "question": "Amparo funeral é a mesma coisa que seguro funeral?",
-        "answer": "São produtos com a mesma finalidade prática — cobrir despesas e organizar a logística de um funeral —, mas podem ter estruturas contratuais diferentes conforme a seguradora ou prestadora. O importante é verificar quais coberturas estão incluídas, como assistência 24h e traslado do corpo, e se a empresa é regulada pela SUSEP. A Revla explica essas diferenças na página de [amparo funeral](/amparo-funeral)."
+        "answer": "São produtos com a mesma finalidade prática — cobrir despesas e organizar a logística de um funeral —, mas podem ter estruturas contratuais diferentes conforme a seguradora ou prestadora. O importante é verificar quais coberturas estão incluídas, como assistência 24h e traslado do corpo, e se a empresa é regulada pela SUSEP. A Revla explica essas diferenças na página de [amparo funeral](/plano-funerario)."
       },
       {
         "question": "Quanto custa contratar um amparo funeral?",
@@ -3979,7 +3979,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "O amparo funeral é um produto voltado especificamente para cobrir os custos que surgem logo após um óbito: urna, velório, translado, sepultamento ou cremação, muitas vezes com assistência de apoio à família nas primeiras horas. Diferente do seguro de vida, ele não paga uma indenização livre em dinheiro — a cobertura é acionada para custear os serviços funerários efetivamente utilizados, dentro dos limites contratados. Por ser oferecido por corretoras e seguradoras registradas na SUSEP, o produto segue regras de transparência contratual, carência e reajuste definidas pelo órgão regulador, algo que nem sempre existe em contratos firmados diretamente com funerárias. Quem quiser entender as condições gerais pode consultar a página de [amparo funeral](/amparo-funeral) da corretora."
+        "text": "O amparo funeral é um produto voltado especificamente para cobrir os custos que surgem logo após um óbito: urna, velório, translado, sepultamento ou cremação, muitas vezes com assistência de apoio à família nas primeiras horas. Diferente do seguro de vida, ele não paga uma indenização livre em dinheiro — a cobertura é acionada para custear os serviços funerários efetivamente utilizados, dentro dos limites contratados. Por ser oferecido por corretoras e seguradoras registradas na SUSEP, o produto segue regras de transparência contratual, carência e reajuste definidas pelo órgão regulador, algo que nem sempre existe em contratos firmados diretamente com funerárias. Quem quiser entender as condições gerais pode consultar a página de [amparo funeral](/plano-funerario) da corretora."
       },
       {
         "type": "h3",
@@ -4233,7 +4233,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "A lógica da assistência 24 horas e do traslado é semelhante nas três modalidades de [amparo funeral](/amparo-funeral) oferecidas pela Revla, mas a abrangência de beneficiários muda. No plano individual, a cobertura protege apenas o titular. No plano familiar, cônjuge, filhos e outros dependentes cadastrados também podem ser cobertos, o que costuma ser relevante para famílias que querem centralizar esse cuidado em um único contrato. Já o plano sênior é pensado para pessoas acima de 75 anos, público que muitas vezes tem mais dificuldade de acesso a esse tipo de proteção em condições regulares no mercado."
+        "text": "A lógica da assistência 24 horas e do traslado é semelhante nas três modalidades de [amparo funeral](/plano-funerario) oferecidas pela Revla, mas a abrangência de beneficiários muda. No plano individual, a cobertura protege apenas o titular. No plano familiar, cônjuge, filhos e outros dependentes cadastrados também podem ser cobertos, o que costuma ser relevante para famílias que querem centralizar esse cuidado em um único contrato. Já o plano sênior é pensado para pessoas acima de 75 anos, público que muitas vezes tem mais dificuldade de acesso a esse tipo de proteção em condições regulares no mercado."
       },
       {
         "type": "p",

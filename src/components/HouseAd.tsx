@@ -49,12 +49,12 @@ export const HOUSE_AD_PRODUCTS: Record<string, HouseAdProduct> = {
     href: "/plano-de-saude",
   },
   "amparo-funeral": {
-    eyebrow: "Amparo Funeral Revla",
-    title: "Amparo funeral com traslado e apoio 24 horas",
+    eyebrow: "Plano Funerário Revla",
+    title: "Plano funerário com traslado e apoio 24 horas",
     description:
-      "Assistência completa em um momento difícil, pela PASI — planos individuais, familiares e sênior.",
-    ctaLabel: "Conhecer o amparo funeral",
-    href: "/amparo-funeral",
+      "Assistência completa em um momento difícil, pelo Amparo Funeral da PASI — planos individuais, familiares e sênior.",
+    ctaLabel: "Conhecer o plano funerário",
+    href: "/plano-funerario",
   },
   "planejamento-patrimonial": {
     eyebrow: "Planejamento Patrimonial Revla",
