@@ -57,6 +57,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/consorcios/emprestimo-garantia-imovel`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/emprestimo-garantia-veiculo`,
+      lastModified: STRATEGY1_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
   ];
 
   return [...staticRoutes, ...postRoutes, ...strategy1Routes];
