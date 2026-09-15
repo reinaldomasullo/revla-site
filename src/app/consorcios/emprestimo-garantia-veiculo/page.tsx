@@ -27,7 +27,7 @@ const CTA_LABEL = "Simular empréstimo com garantia de veículo";
 export const metadata: Metadata = buildMetadata({
   title: "Empréstimo com Garantia de Veículo",
   description:
-    "Empréstimo com garantia de veículo: taxas menores que o crédito sem garantia, prazos longos e você continua dirigindo normalmente. Simulação gratuita com a Revla.",
+    "Empréstimo com garantia de veículo: taxas menores, prazos longos, e você continua dirigindo normalmente. Simulação gratuita com a Revla.",
   path: "/consorcios/emprestimo-garantia-veiculo",
 });
 

@@ -28,7 +28,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Consórcio em São Paulo: Imóveis e Veículos",
   description:
-    "Consórcio sem juros em São Paulo: carta de crédito para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita com a Revla Corretora.",
+    "Consórcio sem juros em São Paulo: carta de crédito para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita com a Revla.",
   path: "/consorcios",
 });
 
