@@ -82,6 +82,11 @@ const faqItems = [
     answer:
       "Não. A Revla é uma corretora parceira que intermedia a contratação junto a instituições financeiras autorizadas, como a Ademicon, buscando as condições mais vantajosas para o seu caso.",
   },
+  {
+    question: "A Revla atende empréstimo com garantia de veículo em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com a mesma consultoria completa.",
+  },
 ];
 
 const serviceSchema = {

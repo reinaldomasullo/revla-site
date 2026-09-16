@@ -107,6 +107,11 @@ const faqItems = [
     answer:
       "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo a Ademicon, para encontrar o grupo mais vantajoso para você.",
   },
+  {
+    question: "A Revla atende consórcio de carro em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com o mesmo acompanhamento consultivo até a contemplação.",
+  },
 ];
 
 const serviceSchema = {

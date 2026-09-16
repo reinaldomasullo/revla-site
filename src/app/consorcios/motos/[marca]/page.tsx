@@ -94,6 +94,11 @@ export default async function MotoBrandPage({
       answer:
         "Não há prazo de validade para usar a carta de crédito depois da contemplação — você pode aguardar o momento certo para escolher o modelo e a concessionária.",
     },
+    {
+      question: `A Revla atende consórcio de moto ${brand.name} em quais cidades?`,
+      answer:
+        "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com o mesmo acompanhamento consultivo até a contemplação.",
+    },
   ];
 
   const serviceSchema = {

@@ -60,6 +60,11 @@ const faqItems = [
     answer:
       "A carta de crédito do consórcio pode ser usada em qualquer marca e concessionária autorizada. Temos páginas dedicadas com informações específicas para Honda, Yamaha, BMW Motorrad, Royal Enfield, Suzuki, Kawasaki, Harley-Davidson, Dafra e Shineray.",
   },
+  {
+    question: "A Revla atende consórcio de moto em quais cidades?",
+    answer:
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com o mesmo acompanhamento consultivo até a contemplação.",
+  },
 ];
 
 const serviceSchema = {
