@@ -99,6 +99,11 @@ export default async function MotoBrandPage({
       answer:
         "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com o mesmo acompanhamento consultivo até a contemplação.",
     },
+    {
+      question: `Tem consórcio de moto ${brand.name} perto de mim?`,
+      answer:
+        "Se você está em São Paulo, sim — nosso escritório fica na Avenida Paulista, com atendimento presencial na capital. Se estiver em outra cidade, atendemos do mesmo jeito consultivo pelo telefone e WhatsApp, sem você precisar se deslocar até um escritório físico.",
+    },
   ];
 
   const serviceSchema = {

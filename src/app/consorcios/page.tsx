@@ -158,6 +158,11 @@ const faqItems = [
     answer:
       "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
   },
+  {
+    question: "Tem consórcio perto de mim?",
+    answer:
+      "Se você está em São Paulo, sim — nosso escritório fica na Avenida Paulista, com atendimento presencial na capital. Se estiver em outra cidade, atendemos do mesmo jeito consultivo pelo telefone e WhatsApp, sem você precisar se deslocar até um escritório físico.",
+  },
 ];
 
 const serviceSchema = {

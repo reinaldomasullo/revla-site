@@ -99,6 +99,11 @@ export default async function SeguroProdutoPage({
         "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com a mesma consultoria completa.",
     },
     {
+      question: `Tem ${p.nome.toLowerCase()} perto de mim?`,
+      answer:
+        "Se você está em São Paulo, sim — nosso escritório fica na Avenida Paulista, com atendimento presencial na capital. Se estiver em outra cidade, atendemos do mesmo jeito consultivo pelo telefone e WhatsApp, sem você precisar se deslocar até um escritório físico.",
+    },
+    {
       question: "Como funciona a contratação com a Revla?",
       answer:
         "Você fala com um consultor da Revla, que compara as opções entre seguradoras parceiras e monta uma simulação gratuita e sem compromisso, ajustada ao seu perfil e orçamento.",
