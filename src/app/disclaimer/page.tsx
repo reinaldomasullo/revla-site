@@ -85,7 +85,15 @@ export default function DisclaimerPage() {
               <li>E-mail: {siteConfig.email}</li>
               {socialChannels.map((social) => (
                 <li key={social.label}>
-                  {social.label}: {social.href}
+                  {social.label}:{" "}
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    className="break-all text-[var(--color-primary)] underline underline-offset-2 hover:no-underline"
+                  >
+                    {social.href}
+                  </a>
                 </li>
               ))}
             </ul>
