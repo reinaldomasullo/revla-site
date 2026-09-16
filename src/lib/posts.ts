@@ -4468,6 +4468,162 @@ export const posts: Post[] = [
       }
     ]
   },
+  {
+    "slug": "seguro-de-moto-vale-a-pena-quanto-custa",
+    "title": "Seguro de moto: vale a pena e o que considerar antes de contratar",
+    "description": "Entenda o que o seguro de moto costuma cobrir, o que fica de fora e os fatores que mais pesam no preço da apólice, segundo a SUSEP.",
+    "category": "Seguros",
+    "date": "2026-09-15",
+    "coverImage": {
+      "src": "/images/blog/seguro-de-moto-vale-a-pena-quanto-custa-capa.jpg",
+      "alt": "Motociclista com capacete e jaqueta de proteção pilotando em alta velocidade em uma via urbana, representando os riscos cobertos pelo seguro de moto",
+      "width": 1200,
+      "height": 630
+    },
+    "content": [
+      {
+        "type": "p",
+        "text": "Sim, o seguro de moto vale a pena pra quem depende do veículo no dia a dia ou mora em região com histórico de roubo e furto — mas \"vale a pena\" depende do custo-benefício entre o valor do prêmio e o risco real ao qual a moto está exposta. A cobertura, ao contrário do que muita gente pensa, não é padronizada: cada seguradora define seu próprio conjunto de proteções, e o preço varia principalmente conforme o modelo da moto, a região e o perfil de quem pilota. Veja a seguir o que costuma estar incluso, o que fica de fora, e os fatores que mais pesam no valor final."
+      },
+      {
+        "type": "h2",
+        "id": "por-que-considerar-seguro-de-moto",
+        "text": "Por que considerar um seguro de moto"
+      },
+      {
+        "type": "p",
+        "text": "Motocicletas são, proporcionalmente, um dos veículos mais visados por roubo e furto nas grandes cidades brasileiras, além de estarem mais expostas a acidentes de trânsito do que automóveis, por oferecerem menos proteção estrutural ao condutor. Isso torna o seguro de moto especialmente relevante pra quem usa a moto como meio de transporte principal, seja no trajeto diário pro trabalho ou como ferramenta de trabalho, como no caso de entregadores e motofretistas — hipótese em que vale confirmar com a seguradora se esse uso profissional precisa ser declarado na contratação, já que pode alterar tanto a cobertura quanto o valor do prêmio."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-o-seguro-de-moto-costuma-cobrir",
+        "text": "O que o seguro de moto costuma cobrir"
+      },
+      {
+        "type": "p",
+        "text": "Segundo a [SUSEP](https://www.gov.br/susep/pt-br/assuntos/meu-futuro-seguro/seguros-previdencia-e-capitalizacao/seguros/seguro-de-automoveis), órgão que regula o mercado de seguros no Brasil, são seguráveis todos os veículos terrestres de propulsão a motor — o que inclui motocicletas dentro das mesmas regras gerais aplicadas a automóveis. As coberturas básicas mais comuns nas apólices de moto são:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Colisão, capotagem e acidentes de trânsito: indeniza os danos causados à própria moto em batidas ou tombamentos, dentro dos limites contratados.",
+          "Roubo e furto qualificado: reembolsa o valor da moto (ou repõe por um modelo equivalente) em caso de roubo ou furto com arrombamento, respeitando o critério de indenização escolhido na contratação — valor de mercado referenciado ou valor determinado, segundo a SUSEP.",
+          "Incêndio, explosão e queda de raio: cobertura tradicional presente na maioria das apólices veiculares, moto incluída.",
+          "Responsabilidade civil a terceiros: indeniza danos materiais ou corporais causados a outras pessoas em caso de acidente causado pelo condutor da moto.",
+          "Assistência 24 horas: guincho, chaveiro e socorro mecânico disponíveis a qualquer hora, geralmente com um número limitado de acionamentos por ano."
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "coberturas-opcionais-para-moto",
+        "text": "Coberturas opcionais mais comuns pra moto"
+      },
+      {
+        "type": "p",
+        "text": "Além do pacote básico, é possível incluir coberturas específicas conforme o uso da moto: acidentes pessoais de passageiros (APP), que protege quem anda na garupa; cobertura para acessórios e equipamentos instalados, como baú, alarme e proteção lateral; e moto reserva, que disponibiliza um veículo — ou auxílio de transporte — enquanto a moto está em conserto após um sinistro coberto."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-o-seguro-de-moto-nao-costuma-cobrir",
+        "text": "O que o seguro de moto normalmente não cobre"
+      },
+      {
+        "type": "p",
+        "text": "Assim como em qualquer seguro de danos, as exclusões fazem parte do contrato e merecem atenção antes da contratação. As mais comuns em apólices de moto são:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Uso profissional não declarado: motos usadas para motofrete ou aplicativos de entrega, quando contratadas como uso pessoal, podem ter a cobertura negada em caso de sinistro durante essa atividade.",
+          "Condução sem habilitação na categoria correta (CNH categoria A) ou por terceiro não incluído na apólice, dependendo das condições contratadas.",
+          "Alterações e modificações não homologadas no veículo, como potência do motor fora de especificação de fábrica.",
+          "Desgaste natural de peças e falta de manutenção, como pneus carecas ou freios desgastados — considerado problema de manutenção, não sinistro.",
+          "Sinistros ocorridos sob efeito de álcool ou substâncias que alterem a capacidade de condução do piloto."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Antes de assinar, vale ler as condições gerais da apólice e confirmar com a seguradora — ou com um corretor registrado na SUSEP — se o seu uso específico da moto (lazer, trabalho, aplicativo) está compatível com o que foi declarado na contratação."
+      },
+      {
+        "type": "h2",
+        "id": "quanto-custa-o-seguro-de-moto",
+        "text": "Quanto custa o seguro de moto"
+      },
+      {
+        "type": "p",
+        "text": "Não existe uma tabela única de preço pra seguro de moto no Brasil — cada seguradora calcula o prêmio combinando fatores de risco próprios. Os principais fatores que influenciam o valor são:"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Modelo e cilindrada da moto: motos de alta cilindrada ou modelos muito visados por roubo costumam ter prêmio mais alto, independente do valor de mercado do veículo.",
+          "Perfil do condutor: idade, tempo de habilitação e histórico de sinistros anteriores influenciam diretamente o risco percebido pela seguradora.",
+          "Região de circulação (CEP): cidades e bairros com maior incidência de roubo e furto de motos tendem a ter prêmios mais altos pra essa cobertura específica.",
+          "Uso declarado: moto usada só aos fins de semana costuma ter prêmio menor que uma usada diariamente pro trabalho ou como ferramenta de entrega.",
+          "Coberturas e assistências escolhidas: quanto mais amplo o pacote — incluindo APP, acessórios e moto reserva — maior o prêmio total.",
+          "Valor da franquia: franquias mais altas reduzem o valor do prêmio, transferindo mais risco pro segurado em caso de sinistro pequeno."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Como o preço depende dessa combinação de variáveis, a forma mais confiável de saber quanto custaria o seguro pra uma moto específica é simular a cotação informando modelo, CEP e perfil de uso — comparando mais de uma seguradora com as mesmas coberturas."
+      },
+      {
+        "type": "h2",
+        "id": "moto-zero-km-e-mais-cara-no-seguro",
+        "text": "Moto zero km paga mais caro no seguro?"
+      },
+      {
+        "type": "p",
+        "text": "Geralmente sim, porque o valor segurado costuma ser maior — mas o custo final também depende do modelo, da cilindrada, da região e do perfil de quem vai pilotar. Duas motos de valor parecido podem ter prêmios bem diferentes se uma delas está entre os modelos mais visados por roubo naquela região. Por isso, a comparação entre seguradoras — e não só o valor da moto — é o que de fato define se o seguro compensa no seu caso."
+      },
+      {
+        "type": "h2",
+        "id": "seguro-de-moto-e-obrigatorio",
+        "text": "Seguro de moto é obrigatório por lei?"
+      },
+      {
+        "type": "p",
+        "text": "Não. O seguro de moto tratado neste artigo é uma contratação voluntária — diferente de obrigações legais como o licenciamento anual e o IPVA, que incidem sobre o veículo independentemente de haver ou não uma apólice de seguro contratada. Isso significa que a decisão de contratar, e o quanto contratar de cobertura, depende inteiramente da avaliação de risco e do orçamento de quem pilota."
+      },
+      {
+        "type": "h2",
+        "id": "como-escolher-o-seguro-de-moto-certo",
+        "text": "Como escolher o seguro de moto certo pra você"
+      },
+      {
+        "type": "p",
+        "text": "A escolha ideal depende de como a moto é usada no dia a dia. Quem usa a moto como ferramenta de trabalho, como entregadores e motofretistas, deve declarar esse uso na contratação e priorizar responsabilidade civil e assistência 24h, já que passa mais tempo exposto no trânsito. Já quem usa a moto só como lazer, aos fins de semana, pode equilibrar melhor entre cobertura básica e franquia mais alta pra reduzir o prêmio. A Revla compara seguro de moto entre seguradoras especializadas nesse ramo, como a Suhai e a Porto Seguro, pra encontrar a cobertura com melhor custo-benefício conforme o modelo e o uso da sua moto — veja mais detalhes na página de [seguro de moto](/seguros/moto) ou no catálogo completo de [seguros](/seguros) da Revla."
+      },
+      {
+        "type": "p",
+        "text": "Quem já pensa em trocar de moto também pode considerar o [consórcio de motos](/consorcios/motos) como alternativa sem juros pra chegar ao modelo desejado, incluindo o seguro no planejamento desde o início. Se tiver dúvidas sobre como esse seguro se encaixa no seu caso, é possível conversar diretamente com [Reinaldo Masullo](/reinaldo-masullo), especialista responsável pela Revla Corretora."
+      }
+    ],
+    "faq": [
+      {
+        "question": "O seguro de moto cobre acessórios como baú e alarme?",
+        "answer": "Sim, mas geralmente como cobertura opcional à parte — acessórios e equipamentos instalados na moto podem ser incluídos na apólice, normalmente com um limite de indenização específico. É importante declarar todos os itens instalados no momento da contratação."
+      },
+      {
+        "question": "Preciso declarar se uso a moto para trabalhar como entregador?",
+        "answer": "Sim. Usar a moto pra motofrete ou aplicativos de entrega sem declarar esse uso na contratação pode levar à negativa de cobertura em caso de sinistro durante essa atividade — o uso profissional costuma exigir uma modalidade de apólice específica."
+      },
+      {
+        "question": "O seguro de moto cobre o passageiro da garupa?",
+        "answer": "Não automaticamente. A cobertura para quem anda na garupa costuma ser uma cobertura opcional chamada Acidentes Pessoais de Passageiros (APP), contratada à parte da cobertura básica da moto."
+      },
+      {
+        "question": "Moto muito roubada na região custa mais caro no seguro?",
+        "answer": "Sim. A região de circulação, incluindo o histórico de roubo e furto por CEP, é um dos fatores que a seguradora usa pra calcular o risco e, consequentemente, o valor do prêmio — mesmo que o modelo da moto seja o mesmo em outra região."
+      },
+      {
+        "question": "Posso contratar seguro de moto financiada?",
+        "answer": "Sim, e em muitos financiamentos de motocicleta o seguro é oferecido (ou exigido) já na hora da compra. Vale comparar essa oferta com outras seguradoras antes de aceitar automaticamente a opção oferecida pela financeira, já que as condições podem variar bastante."
+      }
+    ]
+  },
 ];
 
 export function getPostBySlug(slug: string) {
