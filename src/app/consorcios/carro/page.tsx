@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
 import FeatureGrid from "@/components/FeatureGrid";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
@@ -67,6 +68,13 @@ const eletricoFeatures = [
     icon: <CompareArrows />,
   },
 ];
+
+const depoimento = {
+  name: "Walmir",
+  city: "Mauá",
+  quote:
+    "O que mais me chamou atenção foi a transparência: me mostraram exatamente quanto era taxa de administração e quanto ia pro crédito, sem letra miúda. Isso me deu confiança pra fechar.",
+};
 
 const faqItems = [
   {
@@ -144,6 +152,8 @@ export default function ConsorcioCarroPage() {
           items={eletricoFeatures}
         />
       </section>
+
+      <Testimonials title="Quem já fez consórcio de carro com a Revla" items={[depoimento]} accentCards />
 
       <FAQ items={faqItems} />
 

@@ -83,7 +83,7 @@ export default async function SeguroProdutoPage({
   if (!p) notFound();
 
   const WHATSAPP_MESSAGE = `Olá! Vim pelo site e gostaria de cotar um ${p.nome.toLowerCase()}.`;
-  const CTA_LABEL = `Cotar ${p.nome.toLowerCase()}`;
+  const CTA_LABEL = `Cote grátis: ${p.nome.toLowerCase()}`;
 
   const coberturaItems = p.coberturas.map((c) => ({
     title: c.title,
@@ -145,6 +145,10 @@ export default async function SeguroProdutoPage({
           <div className="mt-4 space-y-4">
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{p.introParagrafo}</p>
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{p.seguradorasTexto}</p>
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              Cotamos em até 18 seguradoras, dependendo do produto, para comparar cobertura e preço e te mostrar a
+              opção com melhor custo-benefício — sem nenhum custo pela cotação.
+            </p>
           </div>
         </Container>
       </section>

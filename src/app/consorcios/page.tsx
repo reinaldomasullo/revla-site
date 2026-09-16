@@ -3,6 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
 import FeatureGrid from "@/components/FeatureGrid";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
@@ -114,6 +115,13 @@ const emprestimosGarantia = [
   },
 ];
 
+const depoimento = {
+  name: "Ginaldo",
+  city: "São Caetano do Sul",
+  quote:
+    "Pesquisei sozinho antes e me perdi entre tantas administradoras. A Revla comparou as opções pra mim e me mostrou o grupo com o prazo que fazia sentido pro meu bolso, sem pressa nenhuma.",
+};
+
 const ademiconStats = [
   { value: "35+", label: "anos de história" },
   { value: "+675 mil", label: "clientes atendidos" },
@@ -172,7 +180,7 @@ export default function ConsorciosPage() {
       <Breadcrumbs items={[{ label: "Consórcios", href: "/consorcios" }]} />
       <Hero
         eyebrow="Consórcios em São Paulo"
-        title="Carta de crédito sem juros: simule seu consórcio contemplado agora"
+        title="Consórcio sem juros: simule sua carta de crédito contemplada agora"
         description="A Revla pesquisa entre administradoras autorizadas pelo Banco Central para oferecer parcelas flexíveis e suporte completo, da simulação até a contemplação. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
@@ -270,6 +278,8 @@ export default function ConsorciosPage() {
         columns={2}
         items={emprestimosGarantia}
       />
+
+      <Testimonials title="Quem já fez consórcio com a Revla" items={[depoimento]} accentCards />
 
       <FAQ items={faqItems} />
 

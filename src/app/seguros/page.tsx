@@ -51,7 +51,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Seguro em São Paulo: Auto, Vida e Mais",
   description:
-    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia em São Paulo — comparamos as maiores seguradoras do Brasil para você.",
+    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia em São Paulo — cotamos em até 18 seguradoras, entre as maiores do Brasil, para você.",
   path: "/seguros",
 });
 
@@ -299,7 +299,7 @@ const faqItems = [
   {
     question: "Como funciona a comparação entre seguradoras?",
     answer:
-      "Comparamos as condições de seguradoras parceiras — como Porto Seguro, AZOS, Tokio Marine, Icatu, MAG Mongeral e PASI — para encontrar a cobertura com melhor custo-benefício para o seu caso, com simulação gratuita e sem compromisso.",
+      "Cotamos em até 18 seguradoras, dependendo do produto — parceiras como Porto Seguro, AZOS, Tokio Marine, Icatu, MAG Mongeral e PASI, entre outras — para encontrar a cobertura com melhor custo-benefício para o seu caso, com simulação gratuita e sem compromisso.",
   },
   {
     question: "O que é a Carta Azul?",
@@ -349,10 +349,10 @@ export default function SegurosPage() {
       <Hero
         eyebrow="Seguros em São Paulo"
         title="Seguros para proteger você, sua família, seu negócio e seu patrimônio"
-        description="Trabalhamos com praticamente todos os ramos de seguro — automóvel, residencial, empresarial, vida, viagem, transportes, previdência, seguro garantia e fiança locatícia — comparando as maiores seguradoras do Brasil para encontrar a cobertura ideal, com simulação gratuita. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
+        description="Trabalhamos com praticamente todos os ramos de seguro — automóvel, residencial, empresarial, vida, viagem, transportes, previdência, seguro garantia e fiança locatícia. Cotamos em até 18 seguradoras, dependendo do produto, para encontrar a cobertura ideal, com simulação gratuita. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
-          Cotar seguro
+          Cote grátis
         </CTAButton>
       </Hero>
 
@@ -418,7 +418,7 @@ export default function SegurosPage() {
         title="Descubra qual seguro faz sentido para você"
         description="Fale com um consultor da Revla e receba uma comparação gratuita entre seguradoras."
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
-        buttonLabel="Cotar agora"
+        buttonLabel="Cote grátis agora"
       />
     </>
   );
