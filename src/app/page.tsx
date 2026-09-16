@@ -154,11 +154,13 @@ const segurosDestaques = [
   {
     title: "Seguro Auto",
     description: "Cobertura para colisão, roubo, furto e responsabilidade civil do veículo.",
+    href: "/seguros/auto",
     icon: <Car />,
   },
   {
     title: "Seguro de Vida",
     description: "Indenização para a família em caso de morte ou invalidez, com coberturas para doenças graves.",
+    href: "/seguros/vida",
     icon: <Heart />,
   },
 ];

@@ -35,7 +35,18 @@ export type CoberturaIcon =
   | "TrendingUp"
   | "DocumentCheck"
   | "LockDocument"
-  | "Sparkle";
+  | "Sparkle"
+  | "HospitalCross"
+  | "Backpack"
+  | "Plane"
+  | "Heart"
+  | "ShieldUsers"
+  | "ClockShort";
+
+/** Depoimento real de cliente (mesma fonte de src/lib/site-config.ts),
+ * usado só quando o relato bate de verdade com o produto da página —
+ * evita reaproveitar fora de contexto. */
+export type SeguroTestemunho = { name: string; city: string; quote: string };
 
 export type SeguroProduto = {
   slug: string;
@@ -54,6 +65,9 @@ export type SeguroProduto = {
   coberturas: { title: string; description: string; icon: CoberturaIcon }[];
   /** Perguntas específicas deste produto, além das genéricas compartilhadas. */
   faqEspecifica: { question: string; answer: string }[];
+  /** Opcional — só preenchido quando um depoimento real já aprovado fala
+   * especificamente desse produto. */
+  testemunho?: SeguroTestemunho;
 };
 
 export const segurosProdutos: SeguroProduto[] = [
@@ -459,6 +473,151 @@ export const segurosProdutos: SeguroProduto[] = [
           "Sim, o boletim de ocorrência é obrigatório pra acionar o seguro em caso de roubo ou furto — é um dos documentos pedidos na hora do sinistro.",
       },
     ],
+  },
+  {
+    // Onda 9 (16/09): as 3 páginas de maior volume real que ainda não
+    // tinham página própria — "seguro de vida" sozinho (74 mil/mês) é a
+    // maior oportunidade de todo o site, maior que qualquer outra palavra-
+    // chave mapeada até aqui. Auto e Viagem completam o trio (ambos já
+    // apareciam como card sem link na home e no hub /seguros).
+    slug: "auto",
+    nome: "Seguro Auto",
+    tituloMeta: "Seguro Auto: Cotação Online",
+    descricaoMeta:
+      "Seguro auto com cobertura contra colisão, roubo, furto e assistência 24h. Comparamos as melhores seguradoras. Simulação gratuita com a Revla.",
+    heroEyebrow: "Seguro Auto",
+    heroTitle: "Seguro Auto: cotação com as melhores seguradoras",
+    heroDescription:
+      "Cobertura contra colisão, roubo, furto e responsabilidade civil a terceiros, com assistência 24 horas para o seu carro.",
+    introParagrafo:
+      "O seguro auto protege seu carro contra colisão, roubo, furto e danos causados a terceiros, com assistência 24 horas em qualquer lugar do Brasil. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura com melhor custo-benefício pro seu perfil e pro seu carro.",
+    seguradorasTexto:
+      "Cotamos seguro auto com as principais seguradoras do mercado, como a Porto Seguro, entre outras, comparando cobertura e franquia conforme o modelo do seu carro e o seu perfil de condutor.",
+    coberturas: [
+      {
+        title: "Colisão, roubo e furto",
+        description:
+          "Cobertura para colisão, roubo e furto qualificado do veículo, com indenização conforme a modalidade contratada.",
+        icon: "ShieldCheck",
+      },
+      {
+        title: "Responsabilidade civil a terceiros",
+        description: "Indenização por danos materiais ou corporais causados a terceiros em caso de acidente com o seu carro.",
+        icon: "Scale",
+      },
+      {
+        title: "Assistência 24 horas",
+        description: "Guincho, chaveiro, troca de pneu e outros serviços de assistência disponíveis a qualquer hora, todos os dias.",
+        icon: "Truck",
+      },
+    ],
+    faqEspecifica: [
+      {
+        question: "O seguro auto cobre carro usado como aplicativo?",
+        answer:
+          "Depende da seguradora — carros usados para aplicativos de transporte costumam precisar de uma modalidade específica, com prêmio calculado pelo uso comercial do veículo. Informe esse uso na hora da simulação.",
+      },
+      {
+        question: "Ficar tempo sem acionar o seguro reduz o valor?",
+        answer:
+          "Sim. A cada ano sem sinistro, você sobe uma classe de bônus, o que reduz o valor do prêmio na renovação — o histórico do condutor principal é um dos fatores mais importantes no cálculo.",
+      },
+    ],
+  },
+  {
+    slug: "viagem",
+    nome: "Seguro de Viagem",
+    tituloMeta: "Seguro de Viagem: Cote Agora",
+    descricaoMeta:
+      "Seguro de viagem com despesas médicas no exterior, bagagem e cancelamento de viagem. Simulação gratuita e sem compromisso com a Revla.",
+    heroEyebrow: "Seguro de Viagem",
+    heroTitle: "Seguro de Viagem: proteção pra viagens nacionais e internacionais",
+    heroDescription:
+      "Cobertura para despesas médicas, bagagem extraviada e cancelamento de viagem, com assistência 24 horas em qualquer lugar do mundo.",
+    introParagrafo:
+      "O seguro de viagem cobre despesas médicas e hospitalares, bagagem extraviada ou danificada e cancelamento ou interrupção da viagem — essencial pra quem viaja pro exterior (em vários países é até exigência de visto) ou dentro do Brasil. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura certa pro seu roteiro.",
+    seguradorasTexto:
+      "Cotamos seguro de viagem com seguradoras especializadas nesse ramo, como a Porto Seguro, comparando cobertura de despesas médicas e valor da apólice conforme o destino e a duração da sua viagem.",
+    coberturas: [
+      {
+        title: "Despesas médicas e hospitalares",
+        description:
+          "Cobertura para consultas, exames, internação e procedimentos de emergência durante a viagem, no Brasil ou no exterior.",
+        icon: "HospitalCross",
+      },
+      {
+        title: "Bagagem extraviada ou danificada",
+        description: "Indenização em caso de extravio, roubo ou dano à bagagem despachada durante o trajeto.",
+        icon: "Backpack",
+      },
+      {
+        title: "Cancelamento e interrupção de viagem",
+        description: "Reembolso de despesas não utilizadas caso a viagem precise ser cancelada ou interrompida por motivo coberto.",
+        icon: "Plane",
+      },
+    ],
+    faqEspecifica: [
+      {
+        question: "O seguro de viagem é obrigatório pra viajar pro exterior?",
+        answer:
+          "Não é obrigatório em todos os países, mas é exigência de visto em vários destinos, como os do Tratado de Schengen (Europa). Mesmo onde não é exigido, vale pela cobertura de despesas médicas, que costumam ser altas fora do Brasil.",
+      },
+      {
+        question: "Vale a pena contratar seguro de viagem nacional?",
+        answer:
+          "Sim — cobre despesas médicas, bagagem e imprevistos mesmo em viagens dentro do Brasil, sobretudo pra quem viaja pra cidades sem boa estrutura hospitalar ou tem plano de saúde sem cobertura fora da sua região.",
+      },
+    ],
+  },
+  {
+    slug: "vida",
+    nome: "Seguro de Vida",
+    tituloMeta: "Seguro de Vida: Cotação Online",
+    descricaoMeta:
+      "Seguro de vida com indenização por morte, invalidez e diária por incapacidade. Comparamos as melhores seguradoras. Simulação gratuita com a Revla.",
+    heroEyebrow: "Seguro de Vida",
+    heroTitle: "Seguro de Vida: proteção financeira pra você e sua família",
+    heroDescription:
+      "Indenização por morte, invalidez permanente por acidente e diária por incapacidade temporária, com capital segurado definido conforme sua necessidade.",
+    introParagrafo:
+      "O seguro de vida garante uma indenização em dinheiro pra sua família em caso de morte ou invalidez permanente por acidente — e também pode incluir diária por incapacidade temporária, caso você precise ficar afastado do trabalho. A Revla compara as opções entre seguradoras parceiras pra montar a cobertura certa pro seu momento de vida.",
+    seguradorasTexto:
+      "Cotamos seguro de vida com seguradoras especializadas nesse ramo, como a Icatu, a MAG Mongeral e a AZOS, comparando capital segurado e coberturas adicionais conforme a sua necessidade e o seu orçamento.",
+    coberturas: [
+      {
+        title: "Morte natural e acidental",
+        description: "Indenização em dinheiro para os beneficiários indicados, em caso de morte natural ou acidental do segurado.",
+        icon: "Heart",
+      },
+      {
+        title: "Invalidez permanente por acidente",
+        description: "Indenização proporcional ao grau da invalidez, em caso de acidente que cause perda ou redução permanente de função.",
+        icon: "ShieldUsers",
+      },
+      {
+        title: "Diária por incapacidade temporária",
+        description: "Renda extra por dia de afastamento do trabalho por doença ou acidente, conforme a cobertura contratada.",
+        icon: "ClockShort",
+      },
+    ],
+    faqEspecifica: [
+      {
+        question: "Quem pode ser beneficiário do seguro de vida?",
+        answer:
+          "Você escolhe livremente os beneficiários na contratação — geralmente cônjuge, filhos ou outros dependentes — e pode alterar essa indicação a qualquer momento durante a vigência da apólice.",
+      },
+      {
+        question: "O seguro de vida cobre doenças graves?",
+        answer:
+          "Pode cobrir, através de uma cobertura adicional específica pra diagnóstico de doenças graves, contratada junto com a cobertura básica de morte e invalidez — informe esse interesse na hora da simulação.",
+      },
+    ],
+    testemunho: {
+      name: "Paulo",
+      city: "São Bernardo do Campo",
+      quote:
+        "Eu tinha interesse em uma cobertura específica, diária por incapacidade temporária, caso precisasse ficar afastado do trabalho por algum motivo. A Revla montou meu seguro de vida já incluindo essa cobertura, e me explicaram cada detalhe com muita paciência.",
+    },
   },
 ];
 

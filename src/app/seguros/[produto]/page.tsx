@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
 import Container from "@/components/Container";
 import FeatureGrid from "@/components/FeatureGrid";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
@@ -23,6 +24,12 @@ import {
   DocumentCheck,
   LockDocument,
   Sparkle,
+  HospitalCross,
+  Backpack,
+  Plane,
+  Heart,
+  ShieldUsers,
+  ClockShort,
 } from "@/components/icons";
 
 const coberturaIcons: Record<CoberturaIcon, React.ReactNode> = {
@@ -38,6 +45,12 @@ const coberturaIcons: Record<CoberturaIcon, React.ReactNode> = {
   DocumentCheck: <DocumentCheck />,
   LockDocument: <LockDocument />,
   Sparkle: <Sparkle />,
+  HospitalCross: <HospitalCross />,
+  Backpack: <Backpack />,
+  Plane: <Plane />,
+  Heart: <Heart />,
+  ShieldUsers: <ShieldUsers />,
+  ClockShort: <ClockShort />,
 };
 
 export function generateStaticParams() {
@@ -139,6 +152,14 @@ export default async function SeguroProdutoPage({
       <section className="section-muted">
         <FeatureGrid title="O que o seguro cobre" columns={3} items={coberturaItems} />
       </section>
+
+      {p.testemunho && (
+        <Testimonials
+          title={`Quem já fez ${p.nome.toLowerCase()} com a Revla`}
+          items={[p.testemunho]}
+          accentCards
+        />
+      )}
 
       <FAQ items={faqItems} />
 

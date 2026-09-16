@@ -65,8 +65,8 @@ const automovel = [
   {
     title: "Auto Individual",
     description: "Cobertura para colisão, roubo, furto, terceiros e assistência 24h para o seu carro.",
-    href: "/blog/seguro-auto-vale-a-pena",
-    linkLabel: "Seguro auto vale a pena?",
+    href: "/seguros/auto",
+    linkLabel: "Ver seguro auto",
     icon: <Car />,
   },
   {
@@ -187,6 +187,8 @@ const transportesEViagem = [
   {
     title: "Viagem",
     description: "Assistência médica, bagagem e imprevistos em viagens nacionais e internacionais.",
+    href: "/seguros/viagem",
+    linkLabel: "Ver seguro de viagem",
     icon: <Plane />,
   },
 ];
@@ -195,6 +197,8 @@ const vida = [
   {
     title: "Vida Individual",
     description: "Indenização para a família em caso de morte ou invalidez, com capital segurado definido conforme sua necessidade.",
+    href: "/seguros/vida",
+    linkLabel: "Ver seguro de vida",
     icon: <Heart />,
   },
   {
