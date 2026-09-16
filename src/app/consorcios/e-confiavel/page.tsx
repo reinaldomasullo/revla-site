@@ -14,16 +14,24 @@ import { BankShield, ClockCheck, Users, TrendingUp } from "@/components/icons";
 // Pesquisa de palavras-chave (Google Ads Keyword Planner, 15/09) mostrou um
 // padrão de busca real bem específico: quase ninguém busca "ademicon vale a
 // pena" (10–100) ou "opiniões" (0–10) — o volume forte está em checar
-// confiança ("ademicon é confiável" e "ademicon reclame aqui", 1 mil–10 mil
-// cada) e entender o que é / como contatar ("ademicon o que é", "empresa
-// ademicon", 1 mil–10 mil; "ademicon telefone"/"contato", 100–1 mil cada).
-// "ademicon" sozinho tem volume altíssimo (100 mil–1 mi), mas pela regra do
-// treinamento de parceiro a marca nunca pode ir na URL — só no título, H1 e
-// conteúdo. Por isso a URL é /consorcios/e-confiavel (decisão confirmada com
-// o usuário), enquanto o título/H1 lideram com "Ademicon é confiável?", a
-// pergunta de maior volume real testada. Sem depoimento nesta página — o
-// objetivo aqui é prova institucional (regulamentação, histórico, números
-// reais da Ademicon), não relato de experiência com a Revla.
+// confiança ("ademicon é confiável", 1 mil–10 mil) e entender o que é / como
+// contatar ("ademicon o que é", "empresa ademicon", 1 mil–10 mil; "ademicon
+// telefone"/"contato", 100–1 mil cada). "ademicon" sozinho tem volume
+// altíssimo (100 mil–1 mi), mas pela regra do treinamento de parceiro a marca
+// nunca pode ir na URL — só no título, H1 e conteúdo. Por isso a URL é
+// /consorcios/e-confiavel (decisão confirmada com o usuário), enquanto o
+// título/H1 lideram com "Ademicon é confiável?", a pergunta de maior volume
+// real testada. Sem depoimento nesta página — o objetivo aqui é prova
+// institucional (regulamentação, histórico, números reais da Ademicon), não
+// relato de experiência com a Revla.
+//
+// DECISÃO (16/09): a página NÃO mira mais "ademicon reclame aqui" (8,1 mil
+// buscas/mês, mesmo volume alto). Apesar do volume, a intenção de busca real
+// (dado do Ubersuggest) é informacional com dificuldade paga de só 1/100 —
+// ou seja, quase nenhum anunciante disputa o termo, sinal de que é
+// majoritariamente gente já insatisfeita procurando desabafo, não um cliente
+// em potencial pra Revla. O usuário decidiu não perseguir esse público — o
+// FAQ "A Ademicon tem reclamações?" que respondia a esse termo foi removido.
 
 const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site e queria entender melhor sobre a Ademicon e o consórcio.";
@@ -70,11 +78,6 @@ const faqItems = [
     question: "O que é a Ademicon?",
     answer:
       "É uma administradora de consórcio — uma empresa autorizada pelo Banco Central a organizar grupos de consórcio (de imóveis, veículos, serviços e outras categorias) e gerenciar as contemplações. A Revla é uma corretora parceira que ajuda você a simular, escolher o grupo e acompanhar todo o processo.",
-  },
-  {
-    question: "A Ademicon tem reclamações?",
-    answer:
-      "Como qualquer administradora de grande porte, é possível encontrar avaliações variadas em plataformas como o Reclame Aqui — isso, por si só, não indica irregularidade. O que garante a segurança da operação é a fiscalização do Banco Central. Além disso, ao contratar pela Revla, você tem um consultor disponível para te acompanhar diretamente, em vez de depender só do atendimento geral da administradora.",
   },
   {
     question: "Como eu entro em contato com a Ademicon?",
