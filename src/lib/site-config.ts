@@ -58,6 +58,7 @@ export const siteConfig = {
     facebook: "https://facebook.com/revlacorretora",
     linkedin: "https://linkedin.com/company/revlacorretora",
     youtube: "https://youtube.com/@revlacorretora",
+    reclameAqui: "https://reclameaqui.com.br/empresa/revla/",
   },
   partners: [
     "Ademicon",
@@ -126,6 +127,7 @@ export const socialChannels = [
   { label: "Facebook", href: siteConfig.social.facebook },
   { label: "LinkedIn", href: siteConfig.social.linkedin },
   { label: "YouTube", href: siteConfig.social.youtube },
+  { label: "Reclame Aqui", href: siteConfig.social.reclameAqui },
 ];
 
 export const whatsappLink = (message: string) =>
