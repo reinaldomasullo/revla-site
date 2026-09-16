@@ -123,6 +123,24 @@ export default function SobreARevlaPage() {
         </Container>
       </section>
 
+      <section className="py-2 sm:py-4">
+        <Container className="max-w-3xl">
+          <div className="overflow-hidden rounded-xl border border-[var(--color-border)]">
+            <iframe
+              title={`Localização da ${siteConfig.name} na ${siteConfig.address.street}`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(
+                `${siteConfig.address.street}, ${siteConfig.address.district}, ${siteConfig.address.city} - ${siteConfig.address.state}, ${siteConfig.address.zip}`
+              )}&output=embed`}
+              width="100%"
+              height="320"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </Container>
+      </section>
+
       <section className="section-muted">
         <FeatureGrid title="Por que escolher a Revla" columns={4} items={diferenciais} />
       </section>

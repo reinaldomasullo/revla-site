@@ -89,6 +89,24 @@ const organizationSchema = {
     postalCode: siteConfig.address.zip,
     addressCountry: siteConfig.address.country,
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: siteConfig.address.geo.lat,
+    longitude: siteConfig.address.geo.lng,
+  },
+  // Raio de atendimento em torno do escritório — cobre a Grande São Paulo e
+  // o ABC (cidades citadas nos depoimentos reais abaixo: Santo André, São
+  // Caetano, São Bernardo, Diadema, Mauá), sem cravar uma lista fixa de
+  // cidades que precisaria ser mantida manualmente.
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.address.geo.lat,
+      longitude: siteConfig.address.geo.lng,
+    },
+    geoRadius: "60000",
+  },
   sameAs: Object.values(siteConfig.social),
   // Nota: o Google ignora deliberadamente review/aggregateRating "self-serving"
   // (a própria empresa avaliando a si mesma) para LocalBusiness/Organization —

@@ -188,6 +188,16 @@ export default function Footer() {
             <li>CEP {siteConfig.address.zip}</li>
             <li>
               <a
+                href={`https://www.google.com/maps/search/?api=1&query=${siteConfig.address.geo.lat},${siteConfig.address.geo.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 underline decoration-white/30 underline-offset-2 transition-colors hover:text-[var(--color-blue-gradient)]"
+              >
+                Ver no mapa
+              </a>
+            </li>
+            <li>
+              <a
                 href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
                 target="_blank"
                 rel="noopener noreferrer"

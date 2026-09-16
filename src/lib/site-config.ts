@@ -24,6 +24,14 @@ export const siteConfig = {
     state: "SP",
     zip: "01311-927",
     country: "BR",
+    // Coordenadas aproximadas (referência: estação Trianon-Masp do metrô,
+    // bem próxima ao nº 1471 da Av. Paulista) — usadas no schema.org (geo)
+    // e no mapa incorporado do site. Não é uma medição exata do endereço,
+    // mas é precisa o suficiente para sinalização de SEO local.
+    geo: {
+      lat: -23.5614,
+      lng: -46.6553,
+    },
   },
   susep: "232150320",
   cnpj: "52.139.303/0001-93",
