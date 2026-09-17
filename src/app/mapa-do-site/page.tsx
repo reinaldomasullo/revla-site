@@ -45,8 +45,6 @@ const consorcios: LinkItem[] = [
   { label: "Consórcio para Cirurgia Plástica", href: "/consorcios/cirurgia-plastica" },
   { label: "Consórcio para Viagem", href: "/consorcios/viagem" },
   { label: "Consórcio de Energia Solar", href: "/consorcios/energia-solar" },
-  { label: "Empréstimo com Garantia de Imóvel", href: "/consorcios/emprestimo-garantia-imovel" },
-  { label: "Empréstimo com Garantia de Veículo", href: "/consorcios/emprestimo-garantia-veiculo" },
   { label: "A Ademicon é confiável?", href: "/consorcios/e-confiavel" },
   { label: "Calculadora de Consórcio de Imóveis", href: "/consorcios/calculadora" },
   { label: "Calculadora Consórcio x Financiamento de Veículos", href: "/consorcios/calculadora-veiculos" },

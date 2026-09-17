@@ -65,6 +65,15 @@ const nextConfig: NextConfig = {
       // existente) pra página nova, que mantém "Amparo Funeral" citado no
       // conteúdo como o nome real do produto.
       { source: "/amparo-funeral", destination: "/plano-funerario", permanent: true },
+
+      // Empréstimo com Garantia de Imóvel/Veículo (17/09): produtos
+      // descontinuados no site e no Google Meu Negócio — a Revla não tem
+      // registro de correspondente bancário no Bacen e nunca comercializou
+      // esses produtos de crédito (mesmo constando no portfólio da
+      // Ademicon), então foram retirados por prudência regulatória.
+      // Redireciona as URLs já indexadas pro hub /consorcios.
+      { source: "/consorcios/emprestimo-garantia-imovel", destination: "/consorcios", permanent: true },
+      { source: "/consorcios/emprestimo-garantia-veiculo", destination: "/consorcios", permanent: true },
     ];
   },
 };

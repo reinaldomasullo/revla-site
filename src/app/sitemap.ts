@@ -62,18 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${siteConfig.url}/consorcios/emprestimo-garantia-imovel`,
-      lastModified: STRATEGY1_LAST_MODIFIED,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${siteConfig.url}/consorcios/emprestimo-garantia-veiculo`,
-      lastModified: STRATEGY1_LAST_MODIFIED,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    },
-    {
       url: `${siteConfig.url}/consorcios/e-confiavel`,
       lastModified: STRATEGY1_LAST_MODIFIED,
       changeFrequency: "weekly" as const,

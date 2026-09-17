@@ -23,7 +23,6 @@ import {
   CalendarDown,
   HandCoin,
   Headset,
-  HouseKey,
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
@@ -96,23 +95,6 @@ const etapas = [
   { title: "2. Escolha do grupo e prazo", description: "Apresentamos as opções disponíveis entre as administradoras parceiras autorizadas pelo Banco Central." },
   { title: "3. Pagamento das parcelas", description: "Você paga as parcelas mensais, com opção de dar lances para antecipar a contemplação." },
   { title: "4. Contemplação", description: "Por sorteio mensal ou lance — a partir daí você recebe a carta de crédito." },
-];
-
-const emprestimosGarantia = [
-  {
-    title: "Empréstimo com Garantia de Imóvel",
-    description: "Taxas menores que o crédito sem garantia, prazos longos e você continua usando o imóvel.",
-    href: "/consorcios/emprestimo-garantia-imovel",
-    linkLabel: "Simular empréstimo com garantia de imóvel",
-    icon: <HouseKey />,
-  },
-  {
-    title: "Empréstimo com Garantia de Veículo",
-    description: "Taxas menores que o crédito sem garantia, prazos longos e você continua dirigindo normalmente.",
-    href: "/consorcios/emprestimo-garantia-veiculo",
-    linkLabel: "Simular empréstimo com garantia de veículo",
-    icon: <Car />,
-  },
 ];
 
 const depoimento = {
@@ -276,13 +258,6 @@ export default function ConsorciosPage() {
           </div>
         </Container>
       </section>
-
-      <FeatureGrid
-        title="Empréstimo com garantia: outra forma de usar seu patrimônio"
-        description="Além do consórcio, a Revla também intermedia empréstimo com garantia de imóvel ou de veículo — crédito com taxas menores, sujeito a análise de crédito."
-        columns={2}
-        items={emprestimosGarantia}
-      />
 
       <Testimonials title="Quem já fez consórcio com a Revla" items={[depoimento]} accentCards />
 
