@@ -4857,6 +4857,134 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "seguro-funeral-familiar",
+    title: "Seguro funeral familiar: como funciona, o que cobre e quanto custa",
+    description:
+      "Entenda como funciona o seguro funeral familiar: o que cobre, quem pode ser incluído, faixas de preço e como acionar a assistência em caso de falecimento.",
+    date: "2026-09-17",
+    category: "Amparo Funeral",
+    coverImage: {
+      src: "/images/blog/seguro-funeral-familiar-capa.jpg",
+      alt: "Família reunida em confraternização ao ar livre, avó, filho e neto lado a lado",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O seguro funeral familiar é a modalidade mais procurada de amparo funeral, porque concentra em um único contrato a cobertura do titular, do cônjuge e dos filhos — em vez de exigir um plano individual para cada pessoa da casa. A ideia é simples: organizar com antecedência os custos e a logística de um funeral, para que a família não precise decidir tudo sob pressão emocional e financeira no momento mais difícil. Antes de contratar, vale entender exatamente o que está incluído, quem pode ser adicionado ao plano e como funciona o acionamento, já que esse último ponto costuma ser o que mais gera dúvida na hora em que a cobertura precisa ser usada.",
+      },
+      {
+        type: "h2",
+        id: "o-que-e-o-seguro-funeral-familiar",
+        text: "O que é o seguro funeral familiar",
+      },
+      {
+        type: "p",
+        text: "\"Seguro funeral\" é o termo genérico usado pelo mercado e pela própria [SUSEP](https://www.gov.br/susep/pt-br/planos-e-produtos/seguros/seguro-de-pessoas) para esse tipo de produto, mas cada seguradora comercializa sob um nome comercial próprio. Na Revla, o produto é o Amparo Funeral, da seguradora parceira PASI, na modalidade Familiar: um plano de assistência que organiza e cobre as despesas do funeral do titular e dos dependentes incluídos, com uma Central de Assistência Funeral disponível 24 horas por dia para dar suporte à família assim que for acionada. Diferente de um plano funerário contratado direto com uma funerária local, o seguro funeral é regulado pela SUSEP, o que garante regras padronizadas de transparência, carência e reajuste. Mais detalhes sobre o produto estão na página de [plano funerário](/plano-funerario) da Revla.",
+      },
+      {
+        type: "h2",
+        id: "o-que-o-plano-familiar-cobre",
+        text: "O que o plano familiar cobre",
+      },
+      {
+        type: "p",
+        text: "O Amparo Funeral Familiar cobre o titular, o cônjuge ou companheiro(a) e os filhos, com assistência para a realização do funeral, trâmites administrativos, pagamento de taxas e organização do sepultamento. Entre os diferenciais do plano estão:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Possibilidade de cremação, conforme o plano contratado.",
+          "Serviço de cafeteria disponível durante o funeral presencial.",
+          "Acionamento da Assistência Funeral 24 horas por dia, todos os dias.",
+          "Contratação sem necessidade de vínculo empregatício ou institucional — venda direta ao consumidor.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "quem-pode-ser-incluido",
+        text: "Quem pode ser incluído no seguro funeral familiar",
+      },
+      {
+        type: "p",
+        text: "O plano familiar cobre o titular, o cônjuge/companheiro(a) e os filhos. Para o titular e o cônjuge, a contratação é permitida até 75 anos, com permanência ilimitada no plano depois disso, desde que a renovação seja feita sem interrupção. Filhos e enteados ficam cobertos até completarem 25 anos, 11 meses e 29 dias — ou seja, praticamente até os 26 anos. Quem já passou dos 75 anos e quer contratar um plano individual (não o familiar) deve procurar a modalidade Sênior, pensada especificamente para essa faixa etária, com condições de idade e mensalidade próprias.",
+      },
+      {
+        type: "h2",
+        id: "quanto-custa",
+        text: "Quanto custa o seguro funeral familiar",
+      },
+      {
+        type: "p",
+        text: "O valor da mensalidade varia conforme o capital contratado — ou seja, o limite de cobertura disponível para as despesas do funeral. No Amparo Funeral Familiar, as faixas praticadas atualmente são: R$ 169/mês para capital de R$ 5.000, R$ 249/mês para capital de R$ 7.000 e R$ 339/mês para capital de R$ 10.000. Por cobrir vários membros da família em um único contrato, o custo por pessoa acaba sendo proporcionalmente menor do que contratar planos individuais separados para cada um. Como o valor exato pode variar conforme atualização da seguradora, o ideal é sempre confirmar as condições vigentes numa simulação, em vez de considerar os números como fixos.",
+      },
+      {
+        type: "h2",
+        id: "familiar-x-individual",
+        text: "Seguro funeral familiar x individual: qual escolher",
+      },
+      {
+        type: "p",
+        text: "O plano individual cobre exclusivamente o titular, com mensalidades mais baixas (a partir de R$ 99/mês para capital de R$ 5.000), sendo indicado para quem quer garantir a própria assistência sem incluir outras pessoas da casa. Já o plano familiar faz mais sentido para quem quer centralizar a cobertura do casal e dos filhos em um único contrato, evitando lidar com várias apólices separadas e, na prática, pagando menos por pessoa do que somaria contratar planos individuais para cada membro. A escolha depende da composição da família: quem mora sozinho ou quer cobrir só a si mesmo tende a preferir o individual; quem tem cônjuge e filhos dependentes tende a sair ganhando com o familiar.",
+      },
+      {
+        type: "h2",
+        id: "como-acionar-a-assistencia",
+        text: "Como funciona o acionamento em caso de falecimento",
+      },
+      {
+        type: "p",
+        text: "Esse é o ponto mais importante para deixar claro com a família com antecedência: em caso de falecimento de alguém coberto pelo plano, é preciso acionar a Central PASI (0800 703 6302 ou 4000-1989) *antes* de contratar qualquer serviço funerário por conta própria. Se a assistência não for acionada previamente, não é possível pedir reembolso das despesas depois — mesmo que o plano esteja em dia e o capital contratado seja suficiente. Vale anotar os telefones da central em um lugar de fácil acesso para todos os incluídos no plano, e não só o titular, já que no momento do óbito nem sempre é o titular quem está em condições de tomar essa providência.",
+      },
+      {
+        type: "h2",
+        id: "vale-a-pena-contratar",
+        text: "Vale a pena contratar um seguro funeral familiar?",
+      },
+      {
+        type: "p",
+        text: "Para famílias com cônjuge e filhos, o plano familiar costuma valer a pena justamente pela combinação entre custo por pessoa mais baixo e simplicidade de gerenciar um único contrato em vez de vários. Também resolve um problema prático: sem esse tipo de cobertura, a família precisa reunir dinheiro e tomar decisões sobre velório, urna e sepultamento em poucas horas, num momento de luto — muitas vezes recorrendo a crédito ou a economias que tinham outro destino. Vale lembrar que o seguro funeral não substitui o [seguro de vida](/seguros), que paga uma indenização em dinheiro de uso livre aos beneficiários: os dois produtos cobrem necessidades diferentes e costumam se complementar, um cuidando da logística imediata do funeral, o outro da reserva financeira de médio e longo prazo da família.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar o seguro funeral familiar com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320, e comercializa o Amparo Funeral Familiar através da seguradora parceira PASI. Antes de contratar, um consultor pode ajudar a definir o capital mais adequado para o orçamento e a composição da família, e esclarecer dúvidas sobre carência e idade dos incluídos. Para simular o plano familiar ou tirar dúvidas, fale com [Reinaldo Masullo](/reinaldo-masullo) ou conheça a página completa de [plano funerário](/plano-funerario), com todos os planos PASI disponíveis.",
+      },
+    ],
+    faq: [
+      {
+        question: "O que é o seguro funeral familiar?",
+        answer:
+          "É um plano de assistência, comercializado pela Revla como Amparo Funeral Familiar (seguradora parceira PASI), que cobre o titular, o cônjuge/companheiro(a) e os filhos, organizando e custeando as despesas do funeral em caso de falecimento, com Central de Assistência disponível 24 horas por dia.",
+      },
+      {
+        question: "Quem pode ser incluído no seguro funeral familiar?",
+        answer:
+          "O titular e o cônjuge/companheiro(a) podem contratar até 75 anos, com permanência ilimitada depois disso mediante renovação sem interrupção. Filhos e enteados ficam cobertos até completarem 25 anos, 11 meses e 29 dias.",
+      },
+      {
+        question: "Quanto custa o seguro funeral familiar?",
+        answer:
+          "As faixas atuais do Amparo Funeral Familiar são R$ 169/mês (capital R$ 5.000), R$ 249/mês (capital R$ 7.000) e R$ 339/mês (capital R$ 10.000). O valor pode variar conforme atualização da seguradora, por isso vale confirmar numa simulação.",
+      },
+      {
+        question: "Como funciona o acionamento do seguro funeral em caso de óbito?",
+        answer:
+          "É preciso ligar para a Central PASI (0800 703 6302 ou 4000-1989) antes de contratar qualquer serviço funerário por conta própria. Se a assistência não for acionada previamente, não é possível pedir reembolso das despesas depois.",
+      },
+      {
+        question: "A Revla vende o seguro funeral diretamente?",
+        answer:
+          "Não. A Revla é uma corretora registrada na SUSEP (nº 232150320) que intermedia a contratação junto à seguradora parceira PASI, ajudando a família a escolher o capital e a modalidade mais adequados.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
