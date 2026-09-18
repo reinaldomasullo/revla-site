@@ -44,6 +44,15 @@ const nextConfig: NextConfig = {
       { source: "/planos-de-saude-mais-baratos-em-2025-comparacao-de-precos", destination: "/plano-de-saude", permanent: true },
       { source: "/as-10-maiores-corretoras-de-seguros-do-brasil-em-2025", destination: "/blog", permanent: true },
 
+      // Achados na auditoria de indexação (18/09): mais 5 URLs 404 do
+      // relatório "Páginas" do Search Console, ainda sem redirect —
+      // posts antigos do WordPress com equivalente de assunto no site atual.
+      { source: "/seguro-residencial-quanto-custa-e-como-escolher-o-melhor", destination: "/blog/seguro-residencial-o-que-cobre-quanto-custa", permanent: true },
+      { source: "/seguro-de-vida-como-investimento-verdade-ou-mito", destination: "/blog/seguro-de-vida-vale-a-pena-com-plano-de-saude", permanent: true },
+      { source: "/consorcio-de-servicos-como-usar-para-cirurgias-e-viagens", destination: "/consorcios/servicos", permanent: true },
+      { source: "/os-beneficios-dos-planos-de-saude-para-a-prevencao-de-doencas", destination: "/plano-de-saude", permanent: true },
+      { source: "/vantagens-dos-consorcios-na-aquisicao-de-bens-e-servicos", destination: "/consorcios", permanent: true },
+
       // Taxonomias do WordPress (categorias e tags) — qualquer URL antiga
       // nesse formato manda pra listagem atual do blog
       { source: "/category/:path*", destination: "/blog", permanent: true },
