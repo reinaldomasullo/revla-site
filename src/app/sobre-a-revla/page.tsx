@@ -128,8 +128,15 @@ export default function SobreARevlaPage() {
           <div className="overflow-hidden rounded-xl border border-[var(--color-border)]">
             <iframe
               title={`Localização da ${siteConfig.name} na ${siteConfig.address.street}`}
+              // O `q=` precisa incluir o NOME do negócio, não só o endereço —
+              // testado ao vivo (18/09): `q=` só com endereço faz o Google Maps
+              // montar um pino genérico de coordenadas geográficas, sem achar a
+              // ficha verificada da Revla no Google Meu Negócio. Com o nome
+              // junto do endereço, resolve certo pro pino "Revla Corretora de
+              // Seguros" com nota/avaliações. (Testado também com o `cid` da
+              // ficha, mas esse formato não resolveu de forma confiável.)
               src={`https://www.google.com/maps?q=${encodeURIComponent(
-                `${siteConfig.address.street}, ${siteConfig.address.district}, ${siteConfig.address.city} - ${siteConfig.address.state}, ${siteConfig.address.zip}`
+                `${siteConfig.name}, ${siteConfig.address.street}, ${siteConfig.address.district}, ${siteConfig.address.city} - ${siteConfig.address.state}, ${siteConfig.address.zip}`
               )}&output=embed`}
               width="100%"
               height="320"
