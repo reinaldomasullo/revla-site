@@ -45,7 +45,7 @@ export const metadata: Metadata = buildMetadata({
   // aninhadas) — por isso o nome da marca entra explícito no título.
   title: "Revla Corretora — Consórcio, Seguros, Saúde e Patrimônio",
   description:
-    "Corretora de consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial em São Paulo, com consultoria gratuita da Revla.",
+    "Corretora de consórcio, seguros, plano de saúde, plano funerário e planejamento patrimonial em São Paulo, com consultoria gratuita da Revla.",
   path: "/",
 });
 
@@ -257,7 +257,7 @@ const faqItems = [
   {
     question: "Quais produtos a Revla oferece?",
     answer:
-      "Seguros de todos os tipos (vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular), plano de saúde, amparo funeral, consórcios de imóveis, veículos, motos, investimentos, serviços, agro e máquinas, e planejamento patrimonial — a estratégia que une consórcio, seguro e plano de saúde.",
+      "Seguros de todos os tipos (vida, auto, residencial, empresarial, condominial, viagem, RC profissional e celular), plano de saúde, plano funerário, consórcios de imóveis, veículos, motos, investimentos, serviços, agro e máquinas, e planejamento patrimonial — a estratégia que une consórcio, seguro e plano de saúde.",
   },
   {
     question: "A Revla tem registro na SUSEP?",
@@ -292,7 +292,7 @@ export default function HomePage() {
         compact
         eyebrow="Corretora de consórcio e planejamento patrimonial em São Paulo"
         title="Consórcio, seguros, plano de saúde e planejamento patrimonial para você e sua família"
-        description="A Revla Corretora compara e contrata consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial — unindo proteção e construção de patrimônio, com consultoria gratuita do início ao fim."
+        description="A Revla Corretora compara e contrata consórcio, seguros, plano de saúde, plano funerário e planejamento patrimonial — unindo proteção e construção de patrimônio, com consultoria gratuita do início ao fim."
       >
         <CTAButton
           href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")}
@@ -313,7 +313,7 @@ export default function HomePage() {
             id="produtos-heading"
             className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
           >
-            Consórcio, seguros, plano de saúde, amparo funeral e planejamento patrimonial
+            Consórcio, seguros, plano de saúde, plano funerário e planejamento patrimonial
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (

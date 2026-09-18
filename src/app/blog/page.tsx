@@ -14,7 +14,7 @@ const ADS_EVERY = 6;
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
   description:
-    "Conteúdo sobre seguros, planos de saúde, consórcios, amparo funeral e planejamento patrimonial, escrito pela equipe da Revla Corretora.",
+    "Conteúdo sobre seguros, planos de saúde, consórcios, plano funerário e planejamento patrimonial, escrito pela equipe da Revla Corretora.",
   path: "/blog",
 });
 
