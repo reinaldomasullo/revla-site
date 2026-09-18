@@ -1,3 +1,11 @@
+// CID (identificador único) da ficha verificada "Revla Corretora de Seguros"
+// no Google Maps / Google Meu Negócio. Extraído direto do painel do Perfil
+// da Empresa em 18/09/2026 (ver nota detalhada em `googleReview` abaixo) —
+// usado tanto no link do selo de nota do Google quanto no mapa incorporado
+// de /sobre-a-revla, pra garantir que os dois sempre apontem pra mesma
+// ficha certa, sem precisar repetir o número em dois lugares.
+export const GOOGLE_PLACE_CID = "5016020510652448811";
+
 export const siteConfig = {
   name: "Revla Corretora",
   legalName: "Revla Corretora de Seguros",
@@ -75,10 +83,20 @@ export const siteConfig = {
   // usa o CID do perfil (identificador numérico do Google Maps para esta
   // ficha) para levar direto pras avaliações reais, sem passar pelo funil
   // de "pedir avaliação" de /avalie.
+  //
+  // CORREÇÃO (18/09): o CID antigo (18237919382872577920) estava ERRADO —
+  // não corresponde à ficha verificada "Revla Corretora de Seguros". O CID
+  // certo (`GOOGLE_PLACE_CID`, acima) foi extraído direto do painel do
+  // Perfil da Empresa (Google Business Profile), confirmado como a ficha
+  // "Confirmado"/verificada no endereço correto (Av. Paulista, 1471), via
+  // dois caminhos que bateram entre si: o parâmetro `ludocid` do link
+  // "Gerenciar seu Perfil da Empresa" e o feature ID hexadecimal
+  // (`0x459c7c141383402b`) do link de logout do Google Maps — os dois
+  // convertem pro mesmo número decimal.
   googleReview: {
     rating: 5,
     count: 2,
-    url: "https://www.google.com/maps?cid=18237919382872577920",
+    url: `https://www.google.com/maps?cid=${GOOGLE_PLACE_CID}`,
   },
   partners: [
     "Ademicon",

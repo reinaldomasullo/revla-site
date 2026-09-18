@@ -7,7 +7,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import { siteConfig, whatsappLink, buildMetadata, GOOGLE_PLACE_CID } from "@/lib/site-config";
 import {
   Headset,
   CompareArrows,
@@ -128,16 +128,19 @@ export default function SobreARevlaPage() {
           <div className="overflow-hidden rounded-xl border border-[var(--color-border)]">
             <iframe
               title={`Localização da ${siteConfig.name} na ${siteConfig.address.street}`}
-              // O `q=` precisa incluir o NOME do negócio, não só o endereço —
-              // testado ao vivo (18/09): `q=` só com endereço faz o Google Maps
-              // montar um pino genérico de coordenadas geográficas, sem achar a
-              // ficha verificada da Revla no Google Meu Negócio. Com o nome
-              // junto do endereço, resolve certo pro pino "Revla Corretora de
-              // Seguros" com nota/avaliações. (Testado também com o `cid` da
-              // ficha, mas esse formato não resolveu de forma confiável.)
-              src={`https://www.google.com/maps?q=${encodeURIComponent(
-                `${siteConfig.name}, ${siteConfig.address.street}, ${siteConfig.address.district}, ${siteConfig.address.city} - ${siteConfig.address.state}, ${siteConfig.address.zip}`
-              )}&output=embed`}
+              // CORREÇÃO (18/09, 2ª rodada): a primeira tentativa usava busca
+              // por texto (`q=nome+endereço`), que resolvia certo num teste
+              // anônimo, mas o usuário (dono da ficha, logado com a própria
+              // conta Google) via um resultado errado — o Maps priorizava um
+              // outro perfil que ele mesmo administra ("Reinaldo Masullo -
+              // Especialista em Consórcios", ainda não verificado) por conta
+              // dessa personalização de dono de perfil. Busca por texto é
+              // ambígua; `cid` (identificador único da ficha) não é — aponta
+              // direto pra ficha exata, sem depender de nome/endereço bater.
+              // O CID certo (5016020510652448811) foi extraído direto do
+              // painel do Perfil da Empresa da Revla (ver nota em
+              // site-config.ts) — o valor antigo salvo ali estava errado.
+              src={`https://www.google.com/maps?cid=${GOOGLE_PLACE_CID}&output=embed`}
               width="100%"
               height="320"
               style={{ border: 0 }}
