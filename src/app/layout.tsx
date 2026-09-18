@@ -7,7 +7,7 @@ import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MetaPixel from "@/components/MetaPixel";
 import JsonLd from "@/components/JsonLd";
-import { siteConfig, testimonials } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -108,30 +108,13 @@ const organizationSchema = {
     geoRadius: "60000",
   },
   sameAs: Object.values(siteConfig.social),
-  // Nota: o Google ignora deliberadamente review/aggregateRating "self-serving"
-  // (a própria empresa avaliando a si mesma) para LocalBusiness/Organization —
-  // não gera estrelas na busca. Mantido mesmo assim por ser dado real e
-  // correto (depoimentos reais de clientes, aprovados por eles); estrelas de
-  // verdade na busca dependem das avaliações no Google Meu Negócio.
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    bestRating: "5",
-    reviewCount: String(testimonials.length),
-  },
-  review: testimonials.map((t) => ({
-    "@type": "Review",
-    author: {
-      "@type": "Person",
-      name: t.name,
-    },
-    reviewBody: t.quote,
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "5",
-      bestRating: "5",
-    },
-  })),
+  // Removido (18/09, auditoria SEO): review/aggregateRating "self-serving"
+  // (a própria empresa avaliando a si mesma) para Organization/InsuranceAgency
+  // não só é ignorado pelo Google pra rich snippet, como pode ser lido como
+  // spam de dado estruturado numa revisão manual. Estrelas de verdade vêm só
+  // das avaliações reais no Google Meu Negócio. Depoimentos seguem exibidos
+  // normalmente como conteúdo visível (componente Testimonials), só saíram
+  // do JSON-LD.
 };
 
 export default function RootLayout({

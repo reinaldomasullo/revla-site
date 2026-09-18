@@ -7,7 +7,6 @@ A Revla Corretora compara opções entre seguradoras e administradoras parceiras
 ## Produtos e serviços
 
 - Consórcios (produto principal): imóveis, carro (incluindo elétrico), motos (9 marcas com página própria), caminhões, máquinas, agro, investimento e serviços (cirurgia plástica, viagem, energia solar)
-- Empréstimo com garantia: de imóvel e de veículo, via Ademicon
 - Planejamento patrimonial: consórcio para alavancar patrimônio, seguro para proteger patrimônio, plano de saúde para proteger a vida
 - Seguros: automóvel, vida, residencial, celular, moto, fiança locatícia, empresarial, seguro garantia, RC profissional, condominial, bicicleta, viagem, previdência privada — cada um com página própria em /seguros
 - Plano de saúde com a Prevent Senior: 2 planos com rede própria — MA+S (São Paulo e região, Rio de Janeiro e Niterói) e 1025 (São Paulo e região) — cobertura ambulatorial e hospitalar, com página nacional e 8 páginas por cidade

@@ -51,7 +51,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Seguro em São Paulo: Auto, Vida e Mais",
   description:
-    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia em São Paulo — cotamos em até 18 seguradoras, entre as maiores do Brasil, para você.",
+    "Seguro auto, residencial, empresarial, vida, viagem, garantia e fiança locatícia em São Paulo — cotamos em até 18 seguradoras para você.",
   path: "/seguros",
 });
 
