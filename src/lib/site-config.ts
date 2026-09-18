@@ -68,6 +68,18 @@ export const siteConfig = {
     youtube: "https://youtube.com/@revlacorretora",
     reclameAqui: "https://reclameaqui.com.br/empresa/revla/",
   },
+  // Nota do Google Meu Negócio, usada no selo de prova social da home
+  // (Testimonials/googleRating). `count` é um número real que cresce aos
+  // poucos (2 avaliações em 18/09/2026) — atualizar manualmente aqui de vez
+  // em quando (não há sincronização automática com o painel do GMN). O link
+  // usa o CID do perfil (identificador numérico do Google Maps para esta
+  // ficha) para levar direto pras avaliações reais, sem passar pelo funil
+  // de "pedir avaliação" de /avalie.
+  googleReview: {
+    rating: 5,
+    count: 2,
+    url: "https://www.google.com/maps?cid=18237919382872577920",
+  },
   partners: [
     "Ademicon",
     "Porto Seguro",

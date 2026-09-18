@@ -665,7 +665,12 @@ export default function HomePage() {
       />
 
       {/* Dobra 7 — Depoimentos */}
-      <Testimonials items={testimonials} accentCards darkBg />
+      <Testimonials
+        items={testimonials}
+        accentCards
+        darkBg
+        googleRating={siteConfig.googleReview}
+      />
 
       {/* Dobra 8 — FAQ genérico */}
       <FAQ items={faqItems} />
