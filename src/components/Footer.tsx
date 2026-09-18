@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import Container from "./Container";
 import CTAButton from "./CTAButton";
-import { mainNav, siteConfig, whatsappLink } from "@/lib/site-config";
+import { mainNav, siteConfig, whatsappLink, GOOGLE_PLACE_CID } from "@/lib/site-config";
 
 const legalLinks = [
   { label: "Mapa do Site", href: "/mapa-do-site" },
@@ -187,8 +187,15 @@ export default function Footer() {
             </li>
             <li>CEP {siteConfig.address.zip}</li>
             <li>
+              {/* CORREÇÃO (18/09): usava coordenadas cruas (lat/lng) em vez do
+                  CID da ficha — por isso abria um pino sem nome nenhum, só
+                  "23°33'41.0"S 46°39'19.1"W", pra QUALQUER visitante (achado
+                  ao vivo pelo usuário, nem precisa estar logado). Trocado pro
+                  mesmo `cid=` usado no mapa incorporado e no selo de nota, que
+                  aponta direto pra ficha verificada "Revla Corretora de
+                  Seguros" (ver GOOGLE_PLACE_CID em site-config.ts). */}
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${siteConfig.address.geo.lat},${siteConfig.address.geo.lng}`}
+                href={`https://www.google.com/maps?cid=${GOOGLE_PLACE_CID}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 underline decoration-white/30 underline-offset-2 transition-colors hover:text-[var(--color-blue-gradient)]"
