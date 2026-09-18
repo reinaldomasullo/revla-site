@@ -47,7 +47,7 @@ export default function BlogPreview() {
               Do blog da Revla
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-[var(--color-ink)]/70">
-              Conteúdo educativo sobre seguros, plano de saúde, amparo funeral e consórcio.
+              Conteúdo educativo sobre seguros, plano de saúde, plano funerário e consórcio.
             </p>
           </div>
           <Link
