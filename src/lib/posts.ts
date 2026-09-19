@@ -4985,6 +4985,107 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "plano-de-saude-empresarial",
+    title: "Plano de saúde empresarial: como funciona e quem pode contratar",
+    description:
+      "Entenda como funciona o plano de saúde empresarial (coletivo): quem pode contratar, inclusive como MEI, e as regras de carência segundo a ANS.",
+    date: "2026-09-19",
+    category: "Plano de Saúde",
+    coverImage: {
+      src: "/images/blog/plano-de-saude-empresarial-capa.jpg",
+      alt: "Equipe reunida em volta de uma mesa de madeira, anotando em cadernos durante uma reunião de trabalho",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O plano de saúde empresarial — chamado de plano coletivo empresarial pela Agência Nacional de Saúde Suplementar (ANS) — é a modalidade contratada por uma empresa para oferecer cobertura de saúde aos funcionários, sócios ou administradores vinculados a ela. Diferente do plano individual/familiar, que qualquer pessoa contrata diretamente com a operadora, o empresarial exige vínculo com uma pessoa jurídica e costuma ter mensalidade mais baixa e regras de carência mais favoráveis — o que explica por que tantas empresas, inclusive MEIs (microempreendedores individuais), preferem esse caminho em vez do plano individual.",
+      },
+      {
+        type: "h2",
+        id: "o-que-e-plano-de-saude-empresarial",
+        text: "O que é o plano de saúde empresarial",
+      },
+      {
+        type: "p",
+        text: "Segundo a [ANS](https://www.gov.br/ans/pt-br/assuntos/contratacao-e-troca-de-plano/dicas-de-como-escolher-um-plano-de-saude-1/formas-de-contratacao-de-planos-de-saude-1/planos-coletivos-por-adesao-e-empresariais), existem três formas de contratação de plano de saúde: individual/familiar (contratado direto pela pessoa física, sem intermediação de empresa ou associação), coletivo por adesão (exige vínculo com associação profissional ou sindicato) e coletivo empresarial (exige vínculo com uma pessoa jurídica por relação empregatícia ou estatutária). No plano empresarial, é a empresa quem contrata a cobertura para os funcionários — o que inclui empregados CLT, servidores estatutários, sócios, administradores e estagiários, conforme as regras de cada operadora.",
+      },
+      {
+        type: "h2",
+        id: "quem-pode-contratar",
+        text: "Quem pode contratar um plano de saúde empresarial",
+      },
+      {
+        type: "p",
+        text: "Empresas com funcionários registrados são o caso mais comum, mas o MEI (microempreendedor individual) também pode contratar um plano empresarial para si e para sua família, mesmo sem ter funcionários — a modalidade é chamada de [\"Plano Coletivo Empresarial contratado por Empresário Individual\"](https://www.gov.br/ans/pt-br/assuntos/contratacao-e-troca-de-plano/dicas-de-como-escolher-um-plano-de-saude-1/formas-de-contratacao-de-planos-de-saude-1/planos-coletivos-empresariais-contratados-por-empresario-individual) pela ANS. Pra contratar nessa modalidade, o MEI precisa comprovar pelo menos 6 meses de inscrição ativa na Junta Comercial (ou outro órgão competente) e na Receita Federal — documentação que precisa ser reapresentada todo ano, no mês de aniversário do contrato. Podem ser incluídos como dependentes o cônjuge ou companheiro(a) e parentes até o 3º grau de consanguinidade ou 2º grau de afinidade, desde que vinculados ao titular.",
+      },
+      {
+        type: "h2",
+        id: "carencia-no-plano-empresarial",
+        text: "Carência no plano de saúde empresarial",
+      },
+      {
+        type: "p",
+        text: "A regra de carência muda conforme o tamanho do contrato. Em planos empresariais com 30 ou mais beneficiários, quem entra em até 30 dias da assinatura do contrato fica isento de carência e de Cobertura Parcial Temporária (CPT) para doenças ou lesões preexistentes já declaradas. Em contratos com menos de 30 beneficiários — o caso mais comum de pequenas empresas e MEIs —, a operadora pode exigir carência normalmente, e a CPT para condições preexistentes pode chegar a 24 meses. Ainda assim, mesmo com carência, as condições costumam ser mais vantajosas que num plano individual equivalente. Pra entender os prazos máximos de carência previstos em lei (independente da modalidade), vale o post sobre [carência em plano de saúde](/blog/carencia-em-plano-de-saude-o-que-a-lei-garante).",
+      },
+      {
+        type: "h2",
+        id: "por-que-costuma-sair-mais-em-conta",
+        text: "Por que o plano empresarial costuma sair mais em conta",
+      },
+      {
+        type: "p",
+        text: "A lógica é a mesma de qualquer seguro: quanto maior e mais diverso o grupo de pessoas cobertas, mais previsível fica o risco pra operadora, que consegue precificar a mensalidade de forma mais competitiva do que faria pra uma única pessoa contratando sozinha. É por isso que planos PME (pequenas e médias empresas) e o próprio plano empresarial de MEI costumam ter mensalidades mais baixas que o plano individual equivalente, mesmo cobrindo a mesma rede e os mesmos procedimentos. O valor exato varia por operadora, faixa etária e tipo de acomodação (enfermaria ou apartamento) — o caminho mais confiável é sempre pedir uma simulação com os dados reais da empresa.",
+      },
+      {
+        type: "h2",
+        id: "vantagens-para-a-empresa",
+        text: "Vantagens de oferecer plano de saúde aos funcionários",
+      },
+      {
+        type: "p",
+        text: "Além da mensalidade mais competitiva, oferecer plano de saúde é um dos benefícios mais valorizados na hora de atrair e reter funcionários — pesa tanto quanto ou mais que aumento de salário em muitas pesquisas de clima organizacional. Assim como outros benefícios corporativos, o custo do plano oferecido aos funcionários normalmente pode ser tratado como despesa operacional da empresa, mas o enquadramento tributário exato depende do regime da empresa (Simples Nacional, Lucro Presumido ou Lucro Real) — vale confirmar com o contador antes de decidir, em vez de tomar isso como regra fixa.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar o plano de saúde empresarial com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320, e trabalha com a Prevent Senior — operadora parceira registrada na ANS — para planos de saúde individuais, familiares e também empresariais/PME. Um consultor pode ajudar a levantar o número de vidas, comparar as opções de acomodação (Enfermaria ou Apartamento) e simular o valor real pra empresa, seja ela uma equipe grande ou um MEI contratando pra si. Pra conhecer os planos disponíveis ou simular, fale com [Reinaldo Masullo](/reinaldo-masullo) ou veja a página completa de [plano de saúde](/plano-de-saude).",
+      },
+    ],
+    faq: [
+      {
+        question: "O que é plano de saúde empresarial?",
+        answer:
+          "É o plano coletivo empresarial, contratado por uma pessoa jurídica (empresa ou MEI) para oferecer cobertura de saúde a funcionários, sócios ou ao próprio titular, com vínculo empregatício ou estatutário exigido pela ANS.",
+      },
+      {
+        question: "MEI pode contratar plano de saúde empresarial?",
+        answer:
+          "Sim. O MEI pode contratar na modalidade 'Plano Coletivo Empresarial para Empresário Individual', desde que comprove ao menos 6 meses de inscrição ativa na Junta Comercial e na Receita Federal, reapresentando a documentação todo ano.",
+      },
+      {
+        question: "Plano de saúde empresarial tem carência?",
+        answer:
+          "Depende do tamanho do contrato: com 30 ou mais beneficiários, quem entra em até 30 dias da assinatura fica isento de carência e de CPT para preexistências. Com menos de 30 beneficiários, a operadora pode exigir carência normalmente.",
+      },
+      {
+        question: "Por que o plano empresarial costuma ser mais barato que o individual?",
+        answer:
+          "Porque o risco é diluído entre um grupo maior de pessoas, o que permite à operadora precificar a mensalidade de forma mais competitiva do que faria para uma única pessoa contratando sozinha.",
+      },
+      {
+        question: "A Revla trabalha com plano de saúde empresarial?",
+        answer:
+          "Sim. A Revla é registrada na SUSEP (nº 232150320) e trabalha com a Prevent Senior para planos individuais, familiares e empresariais/PME — um consultor ajuda a simular o valor real para a empresa ou o MEI.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
