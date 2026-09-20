@@ -18,11 +18,18 @@ const STATIC_PAGES_LAST_MODIFIED = new Date("2026-09-08");
 // sinal real).
 const STRATEGY1_LAST_MODIFIED = new Date("2026-09-15");
 
+// 20/09: rodada de FAQs GEO/AEO (achados de teste real no Gemini/ChatGPT) em
+// seguro de vida, auto, residencial, viagem, plano de saúde e plano
+// funerário — ver src/lib/seguros-produtos.ts, plano-de-saude/page.tsx e
+// plano-funerario/page.tsx. Só essas 6 páginas mudaram nessa rodada; as
+// demais páginas de seguro/consórcio mantêm sua data anterior.
+const GEO_AEO_20SET_LAST_MODIFIED = new Date("2026-09-20");
+const GEO_AEO_20SET_SLUGS = new Set(["vida", "auto", "residencial", "viagem"]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/seguros",
-    "/plano-de-saude",
     "/consorcios",
     "/consorcios/calculadora",
     "/consorcios/calculadora-veiculos",
@@ -56,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const strategy1Routes = [
     {
+      url: `${siteConfig.url}/plano-de-saude`,
+      lastModified: GEO_AEO_20SET_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${siteConfig.url}/consorcios/imoveis`,
       lastModified: STRATEGY1_LAST_MODIFIED,
       changeFrequency: "weekly" as const,
@@ -75,7 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteConfig.url}/plano-funerario`,
-      lastModified: STRATEGY1_LAST_MODIFIED,
+      lastModified: GEO_AEO_20SET_LAST_MODIFIED,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
@@ -127,7 +140,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const segurosProdutoRoutes = segurosProdutos.map((produto) => ({
     url: `${siteConfig.url}/seguros/${produto.slug}`,
-    lastModified: STRATEGY1_LAST_MODIFIED,
+    lastModified: GEO_AEO_20SET_SLUGS.has(produto.slug) ? GEO_AEO_20SET_LAST_MODIFIED : STRATEGY1_LAST_MODIFIED,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
