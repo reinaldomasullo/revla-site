@@ -182,7 +182,7 @@ export default function PlanoDeSaudePage() {
       <JsonLd data={serviceSchema} />
       <Breadcrumbs items={[{ label: "Plano de Saúde", href: "/plano-de-saude" }]} />
       <Hero
-        eyebrow="Parceria oficial"
+        eyebrow="Corretora Prevent Senior · Parceria oficial"
         title="Revla e Prevent Senior: dois planos, com rede em SP, Rio de Janeiro e Niterói"
         description="A Revla é corretora parceira oficial da Prevent Senior. Trabalhamos com os dois planos da operadora — MA+S, com abrangência inclusive no Rio de Janeiro e Niterói, e 1025, focado em São Paulo e região —, com cobertura ambulatorial e hospitalar. Simulação gratuita e sem compromisso."
       >
@@ -238,6 +238,26 @@ export default function PlanoDeSaudePage() {
               MA+S: Enfermaria (ANS 505.028/25-6) e Apartamento (ANS 505.029/25-4). 1025:
               Enfermaria (ANS 505.407/25-9) e Apartamento (ANS 505.408/25-7).
             </span>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-10 sm:py-12">
+        <Container>
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+              Por que contratar a Prevent Senior através da Revla?
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
+              A Prevent Senior não tem uma corretora exclusiva própria: vende seus planos
+              diretamente e também através de corretoras parceiras credenciadas, como a Revla.
+              Somos corretora de seguros registrada na SUSEP sob o nº 232150320 e parceira
+              oficial da Prevent Senior — nossa função é orientar quem está avaliando os planos
+              MA+S e 1025 sobre abrangência, acomodação, carência e valores, ajudando a
+              identificar a opção certa para a idade e a cidade de cada cliente. Contratar por
+              meio de uma corretora não custa nada a mais: a comissão é paga pela operadora, não
+              pelo beneficiário.
+            </p>
           </div>
         </Container>
       </section>
