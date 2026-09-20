@@ -23,12 +23,13 @@ import {
   CalendarDown,
   HandCoin,
   Headset,
+  CompareArrows,
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Consórcio em São Paulo: Imóveis e Veículos",
   description:
-    "Consórcio sem juros em São Paulo: carta de crédito para imóveis, veículos, serviços e investimento a partir de R$ 40.000. Simulação gratuita com a Revla.",
+    "Consórcio sem juros: a Revla compara Ademicon, Porto Seguro e Rodobens para imóveis, veículos e mais, a partir de R$ 40.000. Simulação grátis em SP.",
   path: "/consorcios",
 });
 
@@ -84,6 +85,7 @@ const categorias = [
 ];
 
 const diferenciais = [
+  { title: "Comparação entre administradoras", description: "Somos corretora homologada na Ademicon, Porto Seguro e Rodobens — comparamos as opções entre elas para indicar o grupo mais vantajoso pro seu perfil.", icon: <CompareArrows /> },
   { title: "Sem juros", description: "Você paga apenas a taxa de administração — não há incidência de juros como em um financiamento.", icon: <PercentOff /> },
   { title: "Parcelas reduzidas", description: "Parcelas reduzidas em até 50% durante parte do plano, conforme o grupo escolhido.", icon: <CalendarDown /> },
   { title: "Lance embutido", description: "Possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação.", href: "/blog/lance-no-consorcio-como-funciona", linkLabel: "Como funciona o lance no consórcio", icon: <HandCoin /> },
@@ -136,6 +138,36 @@ const faqItems = [
       "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central para encontrar o grupo mais vantajoso para você.",
   },
   {
+    question: "Com quais administradoras de consórcio a Revla trabalha?",
+    answer:
+      "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pro seu objetivo.",
+  },
+  {
+    question: "O que é fundo de reserva no consórcio?",
+    answer:
+      "É um percentual cobrado junto com a parcela para cobrir eventuais inadimplências do grupo e garantir a saúde financeira do plano. Ele integra o custo total do consórcio, junto com a taxa de administração — sempre pedimos pra administradora detalhar os dois antes de você fechar.",
+  },
+  {
+    question: "O que é lance embutido e lance livre?",
+    answer:
+      "Lance embutido é quando você usa uma parte da própria carta de crédito como lance, sem precisar desembolsar recursos extras — reduz o valor final da carta. Lance livre é um valor à parte, pago do seu bolso, que aumenta as chances de contemplação sem reduzir o crédito.",
+  },
+  {
+    question: "Posso usar o FGTS para dar lance no consórcio de imóvel?",
+    answer:
+      "Sim, em consórcios de imóvel residencial é possível usar o saldo do FGTS como lance ou para complementar o pagamento após a contemplação, seguindo as regras do FGTS e da administradora escolhida. Explicamos as condições específicas na sua simulação.",
+  },
+  {
+    question: "O que acontece depois que eu sou contemplado?",
+    answer:
+      "A Revla acompanha a etapa pós-contemplação: envio de documentação, avaliação do bem (imóvel ou veículo) e liberação do pagamento direto ao vendedor pela administradora. Você não fica sozinho nessa parte burocrática.",
+  },
+  {
+    question: "A Revla tem registro na SUSEP?",
+    answer:
+      `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
+  },
+  {
     question: "A Revla atende em quais cidades?",
     answer:
       "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital e consultoria remota para todo o Brasil. Já atendemos clientes em São Paulo e em cidades da região do ABC, como Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Mauá.",
@@ -168,7 +200,7 @@ export default function ConsorciosPage() {
       <Hero
         eyebrow="Consórcios em São Paulo"
         title="Consórcio sem juros: simule sua carta de crédito contemplada agora"
-        description="A Revla pesquisa entre administradoras autorizadas pelo Banco Central para oferecer parcelas flexíveis e suporte completo, da simulação até a contemplação. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
+        description="A Revla é corretora homologada em três das maiores administradoras do Brasil — Ademicon, Porto Seguro e Rodobens — e compara as opções entre elas para oferecer parcelas flexíveis e suporte completo, da simulação até a contemplação. Atendimento presencial em São Paulo e consultoria remota para todo o Brasil."
       >
         <CTAButton href={whatsappLink("Olá! Vim pelo site e gostaria de falar com um consultor da Revla.")} external>
           Iniciar minha simulação gratuita
