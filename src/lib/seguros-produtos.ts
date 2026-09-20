@@ -84,7 +84,7 @@ export const segurosProdutos: SeguroProduto[] = [
     introParagrafo:
       "O seguro residencial protege sua casa ou apartamento contra imprevistos como incêndio, roubo e danos elétricos — seja você proprietário ou inquilino. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura com melhor custo-benefício pro seu imóvel.",
     seguradorasTexto:
-      "Cotamos seguro residencial com as principais seguradoras do mercado, como a Porto Seguro, entre outras — comparando cobertura e preço pra encontrar a opção com melhor custo-benefício pro seu imóvel.",
+      "Cotamos seguro residencial com as principais seguradoras do mercado — Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, entre outras — comparando cobertura e preço pra encontrar a opção com melhor custo-benefício pro seu imóvel.",
     coberturas: [
       {
         title: "Incêndio e explosão",
@@ -113,6 +113,11 @@ export const segurosProdutos: SeguroProduto[] = [
         question: "O que é responsabilidade civil familiar no seguro residencial?",
         answer:
           "É uma cobertura adicional que indeniza terceiros por danos causados, sem querer, por você ou por pessoas da sua casa — como um vazamento que danifica o apartamento do vizinho.",
+      },
+      {
+        question: "O que significam franquia, sinistro e apólice no seguro residencial?",
+        answer:
+          "Apólice é o contrato do seguro. Sinistro é o evento coberto — um incêndio, um roubo. Franquia é o valor que fica por sua conta no reparo, caso exista essa cláusula na modalidade contratada; muitas coberturas residenciais nem têm franquia.",
       },
     ],
   },
@@ -492,7 +497,7 @@ export const segurosProdutos: SeguroProduto[] = [
     introParagrafo:
       "O seguro auto protege seu carro contra colisão, roubo, furto e danos causados a terceiros, com assistência 24 horas em qualquer lugar do Brasil. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura com melhor custo-benefício pro seu perfil e pro seu carro.",
     seguradorasTexto:
-      "Cotamos seguro auto com as principais seguradoras do mercado, como a Porto Seguro, entre outras, comparando cobertura e franquia conforme o modelo do seu carro e o seu perfil de condutor.",
+      "Cotamos seguro auto com as principais seguradoras do mercado — Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, entre outras —, comparando cobertura e franquia conforme o modelo do seu carro e o seu perfil de condutor.",
     coberturas: [
       {
         title: "Colisão, roubo e furto",
@@ -501,7 +506,7 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "ShieldCheck",
       },
       {
-        title: "Responsabilidade civil a terceiros",
+        title: "Responsabilidade civil a terceiros (RCF-V)",
         description: "Indenização por danos materiais ou corporais causados a terceiros em caso de acidente com o seu carro.",
         icon: "Scale",
       },
@@ -522,6 +527,16 @@ export const segurosProdutos: SeguroProduto[] = [
         answer:
           "Sim. A cada ano sem sinistro, você sobe uma classe de bônus, o que reduz o valor do prêmio na renovação — o histórico do condutor principal é um dos fatores mais importantes no cálculo.",
       },
+      {
+        question: "O que significam franquia, sinistro e apólice no seguro auto?",
+        answer:
+          "Apólice é o contrato do seguro. Sinistro é o evento coberto — uma colisão, um roubo. Franquia é o valor que você paga do próprio bolso no reparo, caso opte por acionar o seguro, e varia conforme a modalidade escolhida.",
+      },
+      {
+        question: "Vale a pena contratar RCF-V (Responsabilidade Civil Facultativa de Veículos)?",
+        answer:
+          "Costuma valer, sim — é a cobertura que indeniza terceiros por danos materiais e corporais que você causar com o seu carro, incluindo o veículo de outra pessoa. Sem ela, você responde com o próprio patrimônio por esses prejuízos.",
+      },
     ],
   },
   {
@@ -537,7 +552,7 @@ export const segurosProdutos: SeguroProduto[] = [
     introParagrafo:
       "O seguro de viagem cobre despesas médicas e hospitalares, bagagem extraviada ou danificada e cancelamento ou interrupção da viagem — essencial pra quem viaja pro exterior (em vários países é até exigência de visto) ou dentro do Brasil. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura certa pro seu roteiro.",
     seguradorasTexto:
-      "Cotamos seguro de viagem com seguradoras especializadas nesse ramo, como a Porto Seguro, comparando cobertura de despesas médicas e valor da apólice conforme o destino e a duração da sua viagem.",
+      "Cotamos seguro de viagem com seguradoras especializadas nesse ramo, como a Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, comparando cobertura de despesas médicas e valor da apólice conforme o destino e a duração da sua viagem.",
     coberturas: [
       {
         title: "Despesas médicas e hospitalares",
@@ -610,6 +625,11 @@ export const segurosProdutos: SeguroProduto[] = [
         question: "O seguro de vida cobre doenças graves?",
         answer:
           "Pode cobrir, através de uma cobertura adicional específica pra diagnóstico de doenças graves, contratada junto com a cobertura básica de morte e invalidez — informe esse interesse na hora da simulação.",
+      },
+      {
+        question: "O seguro de vida entra em inventário ou paga imposto?",
+        answer:
+          "Não. A indenização do seguro de vida não entra em inventário e é isenta de ITCMD (Imposto de Transmissão Causa Mortis e Doação) — o valor vai direto para os beneficiários indicados na apólice, mesmo sem vínculo familiar com o segurado, sem passar pelo processo de partilha de bens.",
       },
     ],
     testemunho: {

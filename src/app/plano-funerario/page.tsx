@@ -200,9 +200,19 @@ const faqItems = [
       "Sim: 24 horas de carência para morte acidental e 90 dias para morte natural, em todos os planos.",
   },
   {
+    question: "Qual a distância de cobertura do traslado do corpo?",
+    answer:
+      "O traslado é coberto em todo o Brasil, mas a distância e as condições específicas variam conforme o capital contratado — quanto maior o capital, maior a cobertura de traslado. Fale com um consultor da Revla para confirmar o alcance exato do plano que você está avaliando.",
+  },
+  {
     question: "A empresa pode contratar plano funerário para os colaboradores?",
     answer:
       "Sim — além dos planos individual, familiar e sênior vendidos diretamente à pessoa física, a PASI também oferece o Plano Funerário PME (individual e familiar) e o Plano Funerário PASI para Colaboradores e Dependentes, pensados para empresas. Fale com um consultor da Revla para uma cotação personalizada.",
+  },
+  {
+    question: "A assistência funeral também pode vir dentro de um seguro de vida empresarial?",
+    answer:
+      "Em algumas seguradoras, sim — como cobertura adicional agregada à apólice de seguro de vida em grupo da empresa. A Revla trabalha com os dois formatos: o Plano Funerário PASI dedicado (mais completo, com Central de Assistência própria) e, quando a empresa já tem ou está montando um seguro de vida corporativo, também ajudamos a avaliar se faz mais sentido incluir a assistência funeral ali.",
   },
   {
     question: "A Revla é uma corretora regulamentada?",

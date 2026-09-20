@@ -117,6 +117,26 @@ const faqItems = [
       "Carência é o período entre a contratação do plano e o momento em que você pode usar determinados procedimentos. Nos planos Prevent Senior, a carência para lesões e doenças preexistentes em novas adesões caiu de 730 para 180 dias — os demais prazos variam por procedimento e detalhamos na simulação.",
   },
   {
+    question: "O que é CPT (Carência Parcial Temporária)?",
+    answer:
+      "É o nome técnico, definido pela ANS, para a carência aplicada a doenças ou lesões preexistentes declaradas na contratação — a regra permite até 24 meses de CPT, mas nos planos Prevent Senior esse prazo é de 180 dias em novas adesões.",
+  },
+  {
+    question: "A operadora pode cancelar meu plano individual sem motivo?",
+    answer:
+      "Não. A ANS proíbe a rescisão unilateral de planos individuais e familiares em vigor, exceto em caso de fraude do beneficiário ou inadimplência superior a 60 dias (consecutivos ou não) nos últimos 12 meses, com notificação prévia até o 50º dia de atraso.",
+  },
+  {
+    question: "Qual a diferença entre plano individual/familiar e plano por adesão?",
+    answer:
+      "O plano individual/familiar é contratado diretamente pela pessoa física junto à operadora. O plano por adesão é contratado através de um sindicato, associação profissional ou conselho de classe — costuma ter mensalidade mais baixa, mas depende de vínculo com a entidade. Fale com um consultor pra saber qual opção se aplica ao seu caso.",
+  },
+  {
+    question: "Existe corretora especializada em plano de saúde da Prevent Senior?",
+    answer:
+      "Sim. A Prevent Senior não tem uma corretora exclusiva própria — vende diretamente e também através de corretoras parceiras credenciadas, como a Revla. Somos corretora parceira oficial da Prevent Senior, com atendimento presencial em São Paulo (Avenida Paulista) e consultoria remota para todo o Brasil, comparando os dois planos disponíveis — MA+S e 1025 — pra encontrar a opção certa pra sua idade e cidade.",
+  },
+  {
     question: "Posso ter plano de saúde sendo MEI?",
     answer:
       "Sim. Como microempreendedor individual, você pode contratar planos PME com mensalidades geralmente mais baixas que os planos individuais, dependendo da operadora.",
