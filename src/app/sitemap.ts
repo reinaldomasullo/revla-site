@@ -21,8 +21,10 @@ const STRATEGY1_LAST_MODIFIED = new Date("2026-09-15");
 // 20/09: rodada de FAQs GEO/AEO (achados de teste real no Gemini/ChatGPT) em
 // seguro de vida, auto, residencial, viagem, plano de saúde e plano
 // funerário — ver src/lib/seguros-produtos.ts, plano-de-saude/page.tsx e
-// plano-funerario/page.tsx. Só essas 6 páginas mudaram nessa rodada; as
-// demais páginas de seguro/consórcio mantêm sua data anterior.
+// plano-funerario/page.tsx. Mesmo dia, 2ª rodada (análise comparativa x
+// concorrentes de "Prevent Senior"): as 8 páginas de cidade de plano de
+// saúde também ganharam a FAQ de corretora credenciada + selo de
+// atualização na tabela de preços — reaproveita a mesma constante de data.
 const GEO_AEO_20SET_LAST_MODIFIED = new Date("2026-09-20");
 const GEO_AEO_20SET_SLUGS = new Set(["vida", "auto", "residencial", "viagem"]);
 
@@ -147,7 +149,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const planoDeSaudeCidadeRoutes = planoDeSaudeCidades.map((cidade) => ({
     url: `${siteConfig.url}/plano-de-saude/${cidade.slug}`,
-    lastModified: STRATEGY1_LAST_MODIFIED,
+    // 20/09 (2ª rodada, GEO/AEO comparativo x concorrentes): as 8 páginas de
+    // cidade ganharam FAQ "corretora especializada em Prevent Senior" +
+    // selo de atualização na tabela de preços — mesma data do hub nacional.
+    lastModified: GEO_AEO_20SET_LAST_MODIFIED,
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));

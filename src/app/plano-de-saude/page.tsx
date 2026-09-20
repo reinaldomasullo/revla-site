@@ -8,7 +8,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
-import { planoDeSaudePlanos, planoDeSaudeCidades } from "@/lib/plano-de-saude-cidades";
+import { planoDeSaudePlanos, planoDeSaudeCidades, PRECOS_ATUALIZADO_EM } from "@/lib/plano-de-saude-cidades";
 import {
   HospitalCross,
   PercentShield,
@@ -263,6 +263,9 @@ export default function PlanoDeSaudePage() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
               Tabela de preços
+              <span className="ml-3 align-middle text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/70">
+                Atualizada em {PRECOS_ATUALIZADO_EM}
+              </span>
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
               Valores de referência, cobertura ambulatorial e hospitalar sem obstetrícia, para os

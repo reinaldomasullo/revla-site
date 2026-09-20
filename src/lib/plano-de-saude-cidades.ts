@@ -81,6 +81,15 @@ export function getPlanoDeSaudePlano(codigo: PlanoCodigo): PlanoDeSaudePlano {
   return plano;
 }
 
+// Selo de atualização exibido junto da tabela de preços (hub nacional e as 8
+// páginas de cidade) — sinal de frescor de conteúdo, tanto para SEO quanto
+// para IA generativa: concorrentes de nicho (ex. corretoras especializadas
+// em Prevent Senior) costumam anunciar isso já no título da própria página
+// ("Tabela de Preços Prevent Senior 2026: Atualizada em Setembro"). Fonte
+// única aqui pra nunca desalinhar entre as páginas — atualizar manualmente
+// sempre que os valores de `planoDeSaudePlanos` acima mudarem de verdade.
+export const PRECOS_ATUALIZADO_EM = "setembro de 2026";
+
 export type PlanoDeSaudeCidade = {
   slug: string;
   nome: string;

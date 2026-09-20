@@ -5086,6 +5086,107 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "corretora-credenciada-prevent-senior-como-funciona",
+    title: "Corretora credenciada Prevent Senior: como funciona e por que importa",
+    description:
+      "A Prevent Senior não tem corretora exclusiva própria: vende direto e por corretoras parceiras credenciadas. Entenda o que isso significa e como verificar.",
+    category: "Plano de Saúde",
+    date: "2026-09-20",
+    coverImage: {
+      src: "/images/blog/corretora-credenciada-prevent-senior-como-funciona-capa.jpg",
+      alt: "Consultor e cliente conversando sobre documentos de plano de saúde em um escritório",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "A Prevent Senior não tem uma corretora exclusiva própria. A operadora vende seus planos diretamente e também por meio de corretoras parceiras credenciadas — profissionais e empresas registrados na SUSEP e autorizados a comercializar os planos Prevent Senior, sem cobrar nada a mais do beneficiário por isso. Entender essa diferença ajuda a escolher com mais segurança quem vai te ajudar a comparar planos, faixas de preço e cobertura.",
+      },
+      {
+        type: "h2",
+        id: "por-que-a-prevent-senior-nao-tem-uma-corretora-propria",
+        text: "Por que a Prevent Senior não tem uma corretora própria",
+      },
+      {
+        type: "p",
+        text: "Operadoras de plano de saúde, como a Prevent Senior, e corretoras de seguros são atividades regulamentadas separadamente no Brasil: a operadora responde perante a Agência Nacional de Saúde Suplementar (ANS) pela cobertura e pela rede credenciada, enquanto a corretagem — a intermediação entre o consumidor e a operadora — é atividade regulada pela Superintendência de Seguros Privados (SUSEP), com exigência de registro próprio. É por isso que praticamente nenhuma operadora de grande porte mantém uma corretora \"oficial única\": o modelo do mercado é vender direto ao consumidor e, ao mesmo tempo, credenciar uma rede de corretoras parceiras independentes para ampliar o alcance comercial em diferentes cidades e perfis de cliente.",
+      },
+      {
+        type: "h2",
+        id: "o-que-significa-corretora-credenciada",
+        text: "O que significa ser uma corretora credenciada",
+      },
+      {
+        type: "p",
+        text: "Ser credenciada significa que a corretora passou por um processo formal de autorização junto à operadora para comercializar os planos dela, além de manter o registro obrigatório na SUSEP como pessoa jurídica ou física habilitada à corretagem de seguros e planos. Esse registro é público e pode ser consultado no [site da SUSEP](https://www.gov.br/susep) antes de fechar negócio com qualquer corretora — é a forma mais direta de confirmar que quem está te atendendo tem, de fato, autorização legal para intermediar a contratação.",
+      },
+      {
+        type: "h3",
+        id: "como-verificar-se-uma-corretora-e-credenciada-de-verdade",
+        text: "Como verificar se uma corretora é credenciada de verdade",
+      },
+      {
+        type: "ul",
+        items: [
+          "Peça o número de registro na SUSEP e confirme diretamente no site do órgão regulador",
+          "Confirme se a corretora menciona explicitamente a Prevent Senior entre as operadoras com que trabalha, e não só planos de saúde de forma genérica",
+          "Desconfie de quem promete condição especial fora da tabela oficial de preços por faixa etária da operadora",
+          "Prefira corretoras que mostrem endereço físico e CNPJ verificável, não só um número de WhatsApp",
+        ],
+      },
+      {
+        type: "h2",
+        id: "a-corretora-cobra-algo-a-mais-do-beneficiario",
+        text: "A corretora cobra algo a mais do beneficiário?",
+      },
+      {
+        type: "p",
+        text: "Não. A remuneração da corretora vem de uma comissão paga pela própria operadora sobre a mensalidade do plano contratado — o mesmo modelo usado na corretagem de seguros em geral —, não de uma taxa cobrada à parte do beneficiário. Contratar por meio de uma corretora credenciada custa o mesmo que contratar direto com a operadora; a diferença está no suporte que você recebe antes e depois da contratação, não no preço final da mensalidade.",
+      },
+      {
+        type: "h2",
+        id: "vantagens-de-contratar-por-uma-corretora",
+        text: "Vantagens de contratar por meio de uma corretora",
+      },
+      {
+        type: "p",
+        text: "Como o preço não muda, a vantagem prática de passar por uma corretora está no acompanhamento: comparar as opções de plano e acomodação disponíveis para a sua cidade e faixa etária, esclarecer dúvidas sobre carência e Cobertura Parcial Temporária (CPT) antes de assinar, e ter alguém para recorrer depois da contratação — em caso de dúvida sobre reajuste, inclusão de dependente ou uso da rede credenciada, por exemplo. Para quem está avaliando um plano de saúde para um familiar idoso, esse suporte tende a pesar mais do que para quem já conhece bem o funcionamento de plano de saúde — é um dos pontos que vale considerar ao [avaliar um plano de saúde para idosos](/blog/plano-de-saude-para-idosos-o-que-avaliar).",
+      },
+      {
+        type: "h2",
+        id: "como-a-revla-atua-como-corretora-credenciada-prevent-senior",
+        text: "Como a Revla atua como corretora credenciada Prevent Senior",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320 e é corretora parceira oficial da Prevent Senior, trabalhando com os dois planos disponíveis da operadora — MA+S, com abrangência inclusive no Rio de Janeiro e Niterói, e 1025, focado em São Paulo e região. O atendimento é presencial no escritório da Avenida Paulista, em São Paulo, e remoto por WhatsApp e videochamada para clientes nas demais cidades atendidas. Para comparar os planos disponíveis para sua cidade e faixa etária, veja a página completa de [plano de saúde Prevent Senior](/plano-de-saude) ou fale direto com [Reinaldo Masullo](/reinaldo-masullo).",
+      },
+    ],
+    faq: [
+      {
+        question: "A Prevent Senior tem uma corretora oficial única?",
+        answer:
+          "Não. A Prevent Senior vende diretamente e também por meio de uma rede de corretoras parceiras credenciadas — não existe uma única corretora exclusiva representando a operadora.",
+      },
+      {
+        question: "Contratar por corretora encarece o plano de saúde?",
+        answer:
+          "Não. A corretora recebe comissão da operadora sobre a mensalidade contratada, não uma taxa à parte do beneficiário — o preço final é o mesmo de contratar diretamente com a operadora.",
+      },
+      {
+        question: "Como saber se uma corretora é realmente credenciada na Prevent Senior?",
+        answer:
+          "Peça o número de registro na SUSEP e confirme no site do órgão regulador, confirme que a corretora cita a Prevent Senior explicitamente entre as operadoras parceiras, e prefira quem mostra endereço físico e CNPJ verificável.",
+      },
+      {
+        question: "A Revla é corretora credenciada da Prevent Senior?",
+        answer:
+          "Sim. A Revla Corretora de Seguros, registrada na SUSEP sob o nº 232150320, é corretora parceira oficial da Prevent Senior, com atendimento presencial em São Paulo e remoto para as demais cidades atendidas.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {

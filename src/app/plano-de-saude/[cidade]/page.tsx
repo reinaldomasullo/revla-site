@@ -13,6 +13,7 @@ import {
   planoDeSaudeCidades,
   getPlanoDeSaudeCidade,
   getPlanoDeSaudePlano,
+  PRECOS_ATUALIZADO_EM,
 } from "@/lib/plano-de-saude-cidades";
 import { PercentShield, HeartHand, Star, ClockCheck } from "@/components/icons";
 
@@ -109,6 +110,10 @@ export default async function PlanoDeSaudeCidadePage({
         "A Prevent Senior é nossa parceira oficial em plano de saúde. Para necessidades específicas, também ajudamos a avaliar outras operadoras — fale com um consultor para entender a melhor opção para o seu caso.",
     },
     {
+      question: `Existe corretora especializada em plano de saúde da Prevent Senior em ${c.nome}?`,
+      answer: `Sim. A Prevent Senior não tem uma corretora exclusiva própria — vende diretamente e também através de corretoras parceiras credenciadas, como a Revla. Somos corretora parceira oficial da Prevent Senior, com atendimento presencial em São Paulo (Avenida Paulista) e consultoria remota para clientes em ${c.nome}, comparando ${planosCidade.length === 2 ? "os dois planos disponíveis — MA+S e 1025 —" : `o plano ${planosCidade[0].nome}`} pra encontrar a opção certa pra sua idade.`,
+    },
+    {
       question: "A Revla é registrada em algum órgão regulador?",
       answer:
         "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320. A Prevent Senior, nossa parceira em plano de saúde, é operadora registrada na ANS (Agência Nacional de Saúde Suplementar).",
@@ -170,6 +175,9 @@ export default async function PlanoDeSaudeCidadePage({
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
               Tabela de preços em {c.nome}
+              <span className="ml-3 align-middle text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/70">
+                Atualizada em {PRECOS_ATUALIZADO_EM}
+              </span>
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
               Valores de referência, cobertura ambulatorial e hospitalar sem obstetrícia.
