@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
+import Container from "@/components/Container";
 import FeatureGrid from "@/components/FeatureGrid";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
-import { Sparkle, TrendingUp, Building, PercentShield } from "@/components/icons";
+import { Sparkle, TrendingUp, Building, PercentShield, Receipt } from "@/components/icons";
 
 // Consórcio de Energia Solar (Estratégia 1, Onda 5, 15/09): "consórcio de
 // energia solar" tem volume real (100–1 mil), reforçado por várias
@@ -48,6 +49,11 @@ const diferenciais = [
     description: "Sem rede credenciada obrigatória — use a carta com a empresa de instalação de sua preferência.",
     icon: <Sparkle />,
   },
+  {
+    title: "Projeto completo, não só os painéis",
+    description: "A carta cobre placas, inversor, cabeamento, estrutura de fixação e mão de obra de instalação e homologação.",
+    icon: <Receipt />,
+  },
 ];
 
 const faqItems = [
@@ -67,6 +73,16 @@ const faqItems = [
       "Não é obrigatório — você contrata pelo valor da carta de crédito, e escolhe a empresa de instalação e o projeto depois de contemplado.",
   },
   {
+    question: "O consórcio cobre só os painéis ou também a instalação?",
+    answer:
+      "A carta cobre o projeto completo: placas fotovoltaicas, inversor ou microinversor, cabeamento, estrutura de fixação e a mão de obra de instalação — não só o equipamento.",
+  },
+  {
+    question: "Preciso homologar o sistema na concessionária de energia depois de instalado?",
+    answer:
+      "Sim, essa etapa é obrigatória pra começar a gerar créditos de energia na sua conta de luz. A empresa integradora que você escolher normalmente já conduz esse processo junto à concessionária local.",
+  },
+  {
     question: "Consórcio de energia solar tem juros?",
     answer:
       "Não. Você paga apenas a taxa de administração da administradora, sem incidência de juros como ocorre em um financiamento tradicional.",
@@ -79,7 +95,17 @@ const faqItems = [
   {
     question: "A Revla é uma administradora de consórcio?",
     answer:
-      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo a Ademicon, para encontrar o grupo mais vantajoso para você.",
+      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo Ademicon, Porto Seguro e Rodobens, para encontrar o grupo mais vantajoso para você.",
+  },
+  {
+    question: "Com quais administradoras de consórcio de energia solar a Revla trabalha?",
+    answer:
+      "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pro seu projeto de energia solar.",
+  },
+  {
+    question: "A Revla tem registro na SUSEP?",
+    answer:
+      `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
   },
   {
     question: "A Revla atende consórcio de energia solar em quais cidades?",
@@ -119,7 +145,7 @@ export default function ConsorcioEnergiaSolarPage() {
       <Hero
         eyebrow="Consórcio de Energia Solar · Administradoras Parceiras da Revla"
         title="Consórcio de energia solar: carta de crédito sem juros pra instalar seus painéis"
-        description="Simule seu consórcio para instalar energia solar sem pagar juros, com liberdade pra escolher o instalador, e a possibilidade de dar lances para antecipar a contemplação."
+        description="Somos corretora homologada na Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas pra você instalar energia solar sem pagar juros, com liberdade pra escolher o instalador, e a possibilidade de dar lances para antecipar a contemplação."
       >
         <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} external>
           {CTA_LABEL}
@@ -127,6 +153,26 @@ export default function ConsorcioEnergiaSolarPage() {
       </Hero>
 
       <FeatureGrid title="Por que fazer consórcio de energia solar" columns={4} items={diferenciais} />
+
+      <section className="py-10 sm:py-12">
+        <Container className="max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+            Como funciona na prática, do sorteio até a instalação
+          </h2>
+          <div className="mt-4 space-y-4">
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              Depois de contemplado por sorteio ou lance, você escolhe livremente a empresa integradora — não
+              existe rede credenciada. Pra liberar o pagamento, a administradora pede o projeto e a nota fiscal da
+              empresa de energia solar, com CNPJ ativo, e paga o valor diretamente ao instalador, à vista.
+            </p>
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              A carta cobre o projeto completo — placas fotovoltaicas, inversor ou microinversor, cabeamento e
+              estrutura de fixação — além da mão de obra de instalação e da homologação do sistema junto à
+              concessionária de energia local, etapa obrigatória pra começar a gerar créditos na conta de luz.
+            </p>
+          </div>
+        </Container>
+      </section>
 
       <FAQ items={faqItems} />
 

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
+import Container from "@/components/Container";
 import FeatureGrid from "@/components/FeatureGrid";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
-import { Plane, Globe, Compass, CalendarDown } from "@/components/icons";
+import { Plane, Globe, Compass, CalendarDown, Receipt } from "@/components/icons";
 
 // Consórcio para Viagem (Estratégia 1, Onda 5, 15/09): pesquisa real mostrou
 // "consórcio viagem" e "consórcio para viagem" empatados em 1 mil–10 mil
@@ -33,7 +34,7 @@ const diferenciais = [
   },
   {
     title: "Nacional ou internacional",
-    description: "A carta de crédito pode ser usada em pacotes, passagens e hospedagem em qualquer destino, no Brasil ou no exterior.",
+    description: "Pacotes, passagens, hospedagem e cruzeiros em qualquer destino — viagem de férias, lua de mel, formatura, intercâmbio ou casamento no exterior.",
     icon: <Globe />,
   },
   {
@@ -45,6 +46,11 @@ const diferenciais = [
     title: "Planeje com antecedência",
     description: "Parcele hoje e use a carta quando for viajar, com prazos flexíveis conforme o grupo escolhido.",
     icon: <Plane />,
+  },
+  {
+    title: "Pagamento direto à agência",
+    description: "A administradora paga a agência ou companhia aérea diretamente, à vista, mediante nota fiscal.",
+    icon: <Receipt />,
   },
 ];
 
@@ -65,6 +71,16 @@ const faqItems = [
       "Sim. Diferente de um pacote fechado, a carta de crédito não tem agência ou plataforma obrigatória — você escolhe livremente onde comprar sua viagem.",
   },
   {
+    question: "Como a administradora paga a agência de viagens?",
+    answer:
+      "Mediante nota fiscal ou comprovante de emissão de passagens e reservas, com CNPJ ativo da agência, companhia aérea ou plataforma de hospedagem. O pagamento é feito diretamente ao fornecedor, à vista.",
+  },
+  {
+    question: "Posso usar o consórcio pra cruzeiro ou intercâmbio?",
+    answer:
+      "Sim. A carta cobre qualquer modalidade de viagem — pacotes, cruzeiros, intercâmbio, lua de mel ou viagem de formatura — dentro do valor contratado.",
+  },
+  {
     question: "Consórcio para viagem tem juros?",
     answer:
       "Não. Você paga apenas a taxa de administração da administradora, sem incidência de juros como ocorre em um financiamento tradicional.",
@@ -77,7 +93,17 @@ const faqItems = [
   {
     question: "A Revla é uma administradora de consórcio?",
     answer:
-      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo a Ademicon, para encontrar o grupo mais vantajoso para você.",
+      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo Ademicon, Porto Seguro e Rodobens, para encontrar o grupo mais vantajoso para você.",
+  },
+  {
+    question: "Com quais administradoras de consórcio para viagem a Revla trabalha?",
+    answer:
+      "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pra sua viagem.",
+  },
+  {
+    question: "A Revla tem registro na SUSEP?",
+    answer:
+      `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
   },
   {
     question: "A Revla atende consórcio para viagem em quais cidades?",
@@ -117,7 +143,7 @@ export default function ConsorcioViagemPage() {
       <Hero
         eyebrow="Consórcio para Viagem · Administradoras Parceiras da Revla"
         title="Consórcio para viagem: carta de crédito sem juros pra sua próxima viagem"
-        description="Simule seu consórcio para pacotes, passagens e hospedagem sem pagar juros, com liberdade pra escolher o destino e a agência, e a possibilidade de dar lances para antecipar a contemplação."
+        description="Somos corretora homologada na Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas pra você simular seu consórcio de pacotes, passagens e hospedagem sem pagar juros, com liberdade pra escolher o destino e a agência, e a possibilidade de dar lances para antecipar a contemplação."
       >
         <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} external>
           {CTA_LABEL}
@@ -125,6 +151,26 @@ export default function ConsorcioViagemPage() {
       </Hero>
 
       <FeatureGrid title="Por que fazer consórcio para viagem" columns={4} items={diferenciais} />
+
+      <section className="py-10 sm:py-12">
+        <Container className="max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+            Como funciona na prática, do sorteio até a viagem
+          </h2>
+          <div className="mt-4 space-y-4">
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              Depois de contemplado por sorteio ou lance, você escolhe livremente o destino, a data e a agência —
+              não existe rede credenciada. Pra liberar o pagamento, a administradora pede a nota fiscal ou o
+              comprovante de emissão de passagens e reservas, com CNPJ ativo da agência ou companhia aérea, e paga
+              o valor diretamente ao fornecedor, à vista.
+            </p>
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              Isso te coloca na posição de comprador à vista na negociação com a agência — o que costuma abrir
+              espaço pra negociar desconto no pacote, além de já eliminar os juros do parcelamento no cartão.
+            </p>
+          </div>
+        </Container>
+      </section>
 
       <FAQ items={faqItems} />
 

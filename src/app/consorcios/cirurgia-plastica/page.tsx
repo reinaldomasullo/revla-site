@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
+import Container from "@/components/Container";
 import FeatureGrid from "@/components/FeatureGrid";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
-import { HospitalCross, ClipboardCheck, Sparkle, UserCheck } from "@/components/icons";
+import { HospitalCross, ClipboardCheck, Sparkle, UserCheck, Receipt } from "@/components/icons";
 
 // Consórcio para Cirurgia Plástica (Estratégia 1, Onda 5, 15/09): pesquisa
 // real mostrou "consórcio cirurgia plástica" e "consórcio para cirurgia
@@ -40,13 +41,18 @@ const diferenciais = [
   },
   {
     title: "Diversos procedimentos",
-    description: "Rinoplastia, lipoaspiração, prótese de silicone e outros procedimentos estéticos ou reparadores.",
+    description: "Rinoplastia, lipoaspiração, prótese de silicone, abdominoplastia, mamoplastia, blefaroplastia e procedimentos reparadores — inclusive pós-bariátrica.",
     icon: <HospitalCross />,
   },
   {
     title: "Parcelas que cabem no orçamento",
     description: "Prazos e valores de parcela flexíveis, ajustados conforme o grupo e o valor da carta escolhidos.",
     icon: <Sparkle />,
+  },
+  {
+    title: "Pagamento direto ao prestador",
+    description: "A administradora paga a clínica diretamente, à vista, mediante nota fiscal — você negocia como comprador à vista.",
+    icon: <Receipt />,
   },
 ];
 
@@ -67,6 +73,16 @@ const faqItems = [
       "Sim. Diferente de um plano ou convênio, o consórcio não tem rede credenciada — você escolhe livremente onde fazer o procedimento.",
   },
   {
+    question: "Preciso apresentar nota fiscal da clínica pra usar a carta de crédito?",
+    answer:
+      "Sim. A administradora libera o pagamento mediante contrato de prestação de serviço ou nota fiscal da clínica, com CNPJ ativo, e paga diretamente ao prestador — você não recebe o dinheiro em conta.",
+  },
+  {
+    question: "O consórcio cobre cirurgia reparadora, não só estética?",
+    answer:
+      "Sim. A carta cobre tanto procedimentos estéticos quanto reparadores — incluindo cirurgia pós-bariátrica, reconstrução e outros procedimentos com indicação médica — dentro do valor contratado.",
+  },
+  {
     question: "Consórcio para cirurgia plástica tem juros?",
     answer:
       "Não. Você paga apenas a taxa de administração da administradora, sem incidência de juros como ocorre em um financiamento tradicional.",
@@ -79,7 +95,17 @@ const faqItems = [
   {
     question: "A Revla é uma administradora de consórcio?",
     answer:
-      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo a Ademicon, para encontrar o grupo mais vantajoso para você.",
+      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo Ademicon, Porto Seguro e Rodobens, para encontrar o grupo mais vantajoso para você.",
+  },
+  {
+    question: "Com quais administradoras de consórcio para cirurgia plástica a Revla trabalha?",
+    answer:
+      "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pro seu procedimento.",
+  },
+  {
+    question: "A Revla tem registro na SUSEP?",
+    answer:
+      `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
   },
   {
     question: "A Revla atende consórcio para cirurgia plástica em quais cidades?",
@@ -119,7 +145,7 @@ export default function ConsorcioCirurgiaPlasticaPage() {
       <Hero
         eyebrow="Consórcio para Cirurgia Plástica · Administradoras Parceiras da Revla"
         title="Consórcio para cirurgia plástica: carta de crédito sem juros"
-        description="Simule seu consórcio para procedimentos estéticos ou reparadores sem pagar juros, com liberdade pra escolher clínica e médico, e a possibilidade de dar lances para antecipar a contemplação."
+        description="Somos corretora homologada na Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas pra você fazer procedimentos estéticos ou reparadores sem pagar juros, com liberdade pra escolher clínica e médico, e a possibilidade de dar lances para antecipar a contemplação."
       >
         <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} external>
           {CTA_LABEL}
@@ -127,6 +153,26 @@ export default function ConsorcioCirurgiaPlasticaPage() {
       </Hero>
 
       <FeatureGrid title="Por que fazer consórcio para cirurgia plástica" columns={4} items={diferenciais} />
+
+      <section className="py-10 sm:py-12">
+        <Container className="max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+            Como funciona na prática, do sorteio até a cirurgia
+          </h2>
+          <div className="mt-4 space-y-4">
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              Depois de contemplado por sorteio ou lance, você escolhe livremente a clínica e o médico — não existe
+              rede credenciada. Pra liberar o pagamento, a administradora pede o contrato de prestação de serviço ou
+              a nota fiscal da clínica, com CNPJ ativo, e paga o valor diretamente ao prestador, à vista.
+            </p>
+            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+              Isso te coloca na posição de comprador à vista na negociação com a clínica — o que costuma abrir espaço
+              pra negociar desconto no valor do procedimento, além de já eliminar os juros do parcelamento no cartão
+              ou de um empréstimo pessoal.
+            </p>
+          </div>
+        </Container>
+      </section>
 
       <FAQ items={faqItems} />
 
