@@ -105,7 +105,17 @@ const faqItems = [
   {
     question: "A Revla é uma administradora de consórcio?",
     answer:
-      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo a Ademicon, para encontrar o grupo mais vantajoso para você.",
+      "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo Ademicon, Porto Seguro e Rodobens, para encontrar o grupo mais vantajoso para você.",
+  },
+  {
+    question: "Com quais administradoras de consórcio de carro a Revla trabalha?",
+    answer:
+      "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pro carro que você quer.",
+  },
+  {
+    question: "A Revla tem registro na SUSEP?",
+    answer:
+      `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
   },
   {
     question: "A Revla atende consórcio de carro em quais cidades?",
@@ -145,7 +155,7 @@ export default function ConsorcioCarroPage() {
       <Hero
         eyebrow="Consórcio de Carro · Administradoras Parceiras da Revla"
         title="Consórcio de carro: carta de crédito sem juros pro carro que você quer"
-        description="Simule seu consórcio para comprar um carro novo, usado ou elétrico sem pagar juros, com parcelas flexíveis e a possibilidade de dar lances para antecipar a contemplação."
+        description="Somos corretora homologada na Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas pra você comprar um carro novo, usado ou elétrico sem pagar juros, com parcelas flexíveis e a possibilidade de dar lances para antecipar a contemplação."
       >
         <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} external>
           {CTA_LABEL}

@@ -87,7 +87,17 @@ export default async function MotoBrandPage({
     {
       question: "A Revla é uma administradora de consórcio?",
       answer:
-        "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo a Ademicon, para encontrar o grupo mais vantajoso para você.",
+        "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo Ademicon, Porto Seguro e Rodobens, para encontrar o grupo mais vantajoso para você.",
+    },
+    {
+      question: `Com quais administradoras de consórcio de moto ${brand.name} a Revla trabalha?`,
+      answer:
+        "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pra sua moto.",
+    },
+    {
+      question: "A Revla tem registro na SUSEP?",
+      answer:
+        `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
     },
     {
       question: "Depois de contemplado, sou obrigado a comprar logo?",
@@ -147,9 +157,10 @@ export default async function MotoBrandPage({
           <div className="mt-4 space-y-4">
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{brand.posicionamento}</p>
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
-              A Revla pesquisa entre administradoras autorizadas pelo Banco Central — incluindo a Ademicon — para
-              te apresentar o grupo mais vantajoso, com o prazo e a parcela que cabem no seu orçamento. A carta de
-              crédito, depois de contemplada, pode ser usada em qualquer concessionária {brand.name} autorizada.
+              A Revla é homologada em três administradoras de consórcio — Ademicon, Porto Seguro e Rodobens — e
+              compara as opções entre elas para te apresentar o grupo mais vantajoso, com o prazo e a parcela que
+              cabem no seu orçamento. A carta de crédito, depois de contemplada, pode ser usada em qualquer
+              concessionária {brand.name} autorizada.
             </p>
           </div>
         </Container>

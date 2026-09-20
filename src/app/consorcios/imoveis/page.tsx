@@ -87,6 +87,16 @@ const faqItems = [
       "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central para encontrar o grupo mais vantajoso para você.",
   },
   {
+    question: "Com quais administradoras de consórcio de imóveis a Revla trabalha?",
+    answer:
+      "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pro seu objetivo com o imóvel.",
+  },
+  {
+    question: "A Revla tem registro na SUSEP?",
+    answer:
+      `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
+  },
+  {
     question: "A Revla atende consórcio de imóveis em quais cidades?",
     answer:
       "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com o mesmo acompanhamento consultivo até a contemplação.",
@@ -119,7 +129,7 @@ export default function ConsorcioImoveisPage() {
       <Hero
         eyebrow="Consórcio de Imóveis · Casa Própria sem Juros"
         title="Consórcio de imóveis: o caminho sem juros até a casa própria"
-        description="Comparamos administradoras autorizadas pelo Banco Central para encontrar a carta de crédito com o prazo e a parcela certos para comprar, quitar ou reformar seu imóvel — sem juros, só taxa de administração. Atendimento presencial na Avenida Paulista, em São Paulo, e consultoria remota para todo o Brasil."
+        description="Somos corretora homologada na Ademicon, Porto Seguro e Rodobens e comparamos as opções entre elas para encontrar a carta de crédito com o prazo e a parcela certos para comprar, quitar ou reformar seu imóvel — sem juros, só taxa de administração. Atendimento presencial na Avenida Paulista, em São Paulo, e consultoria remota para todo o Brasil."
         compact
       >
         <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} external>
@@ -134,9 +144,10 @@ export default function ConsorcioImoveisPage() {
           </h2>
           <div className="mt-4 space-y-4">
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
-              A Revla compara entre administradoras autorizadas pelo Banco Central para encontrar o grupo de consórcio
-              de imóveis com o prazo e o valor de parcela que fazem sentido para o seu caso — seja para comprar a casa
-              própria, um terreno, uma sala comercial ou quitar um financiamento em andamento.
+              A Revla é homologada em três administradoras de consórcio — Ademicon, Porto Seguro e Rodobens — e compara
+              as opções entre elas para encontrar o grupo de consórcio de imóveis com o prazo e o valor de parcela que
+              fazem sentido para o seu caso — seja para comprar a casa própria, um terreno, uma sala comercial ou
+              quitar um financiamento em andamento.
             </p>
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
               Nosso escritório fica na Avenida Paulista, no coração de São Paulo, com atendimento presencial na
