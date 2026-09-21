@@ -5086,6 +5086,207 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "corretora-credenciada-prevent-senior-como-funciona",
+    title: "Corretora credenciada Prevent Senior: como funciona e por que importa",
+    description:
+      "A Prevent Senior não tem corretora exclusiva própria: vende direto e por corretoras parceiras credenciadas. Entenda o que isso significa e como verificar.",
+    category: "Plano de Saúde",
+    date: "2026-09-20",
+    coverImage: {
+      src: "/images/blog/corretora-credenciada-prevent-senior-como-funciona-capa.jpg",
+      alt: "Consultor e cliente conversando sobre documentos de plano de saúde em um escritório",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "A Prevent Senior não tem uma corretora exclusiva própria. A operadora vende seus planos diretamente e também por meio de corretoras parceiras credenciadas — profissionais e empresas registrados na SUSEP e autorizados a comercializar os planos Prevent Senior, sem cobrar nada a mais do beneficiário por isso. Entender essa diferença ajuda a escolher com mais segurança quem vai te ajudar a comparar planos, faixas de preço e cobertura.",
+      },
+      {
+        type: "h2",
+        id: "por-que-a-prevent-senior-nao-tem-uma-corretora-propria",
+        text: "Por que a Prevent Senior não tem uma corretora própria",
+      },
+      {
+        type: "p",
+        text: "Operadoras de plano de saúde, como a Prevent Senior, e corretoras de seguros são atividades regulamentadas separadamente no Brasil: a operadora responde perante a Agência Nacional de Saúde Suplementar (ANS) pela cobertura e pela rede credenciada, enquanto a corretagem — a intermediação entre o consumidor e a operadora — é atividade regulada pela Superintendência de Seguros Privados (SUSEP), com exigência de registro próprio. É por isso que praticamente nenhuma operadora de grande porte mantém uma corretora \"oficial única\": o modelo do mercado é vender direto ao consumidor e, ao mesmo tempo, credenciar uma rede de corretoras parceiras independentes para ampliar o alcance comercial em diferentes cidades e perfis de cliente.",
+      },
+      {
+        type: "h2",
+        id: "o-que-significa-corretora-credenciada",
+        text: "O que significa ser uma corretora credenciada",
+      },
+      {
+        type: "p",
+        text: "Ser credenciada significa que a corretora passou por um processo formal de autorização junto à operadora para comercializar os planos dela, além de manter o registro obrigatório na SUSEP como pessoa jurídica ou física habilitada à corretagem de seguros e planos. Esse registro é público e pode ser consultado no [site da SUSEP](https://www.gov.br/susep) antes de fechar negócio com qualquer corretora — é a forma mais direta de confirmar que quem está te atendendo tem, de fato, autorização legal para intermediar a contratação.",
+      },
+      {
+        type: "h3",
+        id: "como-verificar-se-uma-corretora-e-credenciada-de-verdade",
+        text: "Como verificar se uma corretora é credenciada de verdade",
+      },
+      {
+        type: "ul",
+        items: [
+          "Peça o número de registro na SUSEP e confirme diretamente no site do órgão regulador",
+          "Confirme se a corretora menciona explicitamente a Prevent Senior entre as operadoras com que trabalha, e não só planos de saúde de forma genérica",
+          "Desconfie de quem promete condição especial fora da tabela oficial de preços por faixa etária da operadora",
+          "Prefira corretoras que mostrem endereço físico e CNPJ verificável, não só um número de WhatsApp",
+        ],
+      },
+      {
+        type: "h2",
+        id: "a-corretora-cobra-algo-a-mais-do-beneficiario",
+        text: "A corretora cobra algo a mais do beneficiário?",
+      },
+      {
+        type: "p",
+        text: "Não. A remuneração da corretora vem de uma comissão paga pela própria operadora sobre a mensalidade do plano contratado — o mesmo modelo usado na corretagem de seguros em geral —, não de uma taxa cobrada à parte do beneficiário. Contratar por meio de uma corretora credenciada custa o mesmo que contratar direto com a operadora; a diferença está no suporte que você recebe antes e depois da contratação, não no preço final da mensalidade.",
+      },
+      {
+        type: "h2",
+        id: "vantagens-de-contratar-por-uma-corretora",
+        text: "Vantagens de contratar por meio de uma corretora",
+      },
+      {
+        type: "p",
+        text: "Como o preço não muda, a vantagem prática de passar por uma corretora está no acompanhamento: comparar as opções de plano e acomodação disponíveis para a sua cidade e faixa etária, esclarecer dúvidas sobre carência e Cobertura Parcial Temporária (CPT) antes de assinar, e ter alguém para recorrer depois da contratação — em caso de dúvida sobre reajuste, inclusão de dependente ou uso da rede credenciada, por exemplo. Para quem está avaliando um plano de saúde para um familiar idoso, esse suporte tende a pesar mais do que para quem já conhece bem o funcionamento de plano de saúde — é um dos pontos que vale considerar ao [avaliar um plano de saúde para idosos](/blog/plano-de-saude-para-idosos-o-que-avaliar).",
+      },
+      {
+        type: "h2",
+        id: "como-a-revla-atua-como-corretora-credenciada-prevent-senior",
+        text: "Como a Revla atua como corretora credenciada Prevent Senior",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320 e é corretora parceira oficial da Prevent Senior, trabalhando com os dois planos disponíveis da operadora — MA+S, com abrangência inclusive no Rio de Janeiro e Niterói, e 1025, focado em São Paulo e região. O atendimento é presencial no escritório da Avenida Paulista, em São Paulo, e remoto por WhatsApp e videochamada para clientes nas demais cidades atendidas. Para comparar os planos disponíveis para sua cidade e faixa etária, veja a página completa de [plano de saúde Prevent Senior](/plano-de-saude) ou fale direto com [Reinaldo Masullo](/reinaldo-masullo).",
+      },
+    ],
+    faq: [
+      {
+        question: "A Prevent Senior tem uma corretora oficial única?",
+        answer:
+          "Não. A Prevent Senior vende diretamente e também por meio de uma rede de corretoras parceiras credenciadas — não existe uma única corretora exclusiva representando a operadora.",
+      },
+      {
+        question: "Contratar por corretora encarece o plano de saúde?",
+        answer:
+          "Não. A corretora recebe comissão da operadora sobre a mensalidade contratada, não uma taxa à parte do beneficiário — o preço final é o mesmo de contratar diretamente com a operadora.",
+      },
+      {
+        question: "Como saber se uma corretora é realmente credenciada na Prevent Senior?",
+        answer:
+          "Peça o número de registro na SUSEP e confirme no site do órgão regulador, confirme que a corretora cita a Prevent Senior explicitamente entre as operadoras parceiras, e prefira quem mostra endereço físico e CNPJ verificável.",
+      },
+      {
+        question: "A Revla é corretora credenciada da Prevent Senior?",
+        answer:
+          "Sim. A Revla Corretora de Seguros, registrada na SUSEP sob o nº 232150320, é corretora parceira oficial da Prevent Senior, com atendimento presencial em São Paulo e remoto para as demais cidades atendidas.",
+      },
+    ],
+  },
+  {
+    slug: "seguro-fianca-como-funciona",
+    title: "Seguro fiança: como funciona e por que substitui o fiador",
+    description:
+      "Entenda como funciona o seguro fiança na locação de imóveis: o que cobre, quem paga, e por que é mais rápido do que apresentar fiador ou pagar caução.",
+    category: "Seguros",
+    date: "2026-09-20",
+    coverImage: {
+      src: "/images/blog/seguro-fianca-como-funciona-capa.jpg",
+      alt: "Corretor mostrando contrato de locação para um casal de inquilinos",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O seguro fiança é a alternativa mais usada hoje por quem quer alugar um imóvel sem apresentar fiador nem pagar caução em dinheiro: uma seguradora garante o cumprimento do contrato de locação perante o proprietário, em troca de um prêmio pago pelo inquilino. A aprovação costuma ser mais rápida do que encontrar alguém disposto a ser fiador, e não trava dinheiro parado como a caução — por isso vem substituindo as duas opções na maioria dos contratos de aluguel residencial e comercial no Brasil.",
+      },
+      {
+        type: "h2",
+        id: "opcoes-de-garantia-na-locacao",
+        text: "As garantias de locação previstas na Lei do Inquilinato",
+      },
+      {
+        type: "p",
+        text: "A [Lei do Inquilinato](https://www.planalto.gov.br/ccivil_03/leis/l8245.htm) (Lei nº 8.245/1991) prevê algumas modalidades de garantia que o proprietário pode exigir do inquilino antes de assinar o contrato de aluguel: fiador, caução (em dinheiro, bens móveis ou imóveis), cessão fiduciária de quotas de fundo de investimento e seguro de fiança locatícia. Na prática, fiador e seguro fiança são as duas opções mais usadas — a diferença é que o fiador depende de encontrar alguém disposto a assumir a responsabilidade (muitas vezes exigindo que essa pessoa tenha imóvel próprio quitado), enquanto o seguro fiança depende só da aprovação de crédito do próprio inquilino junto à seguradora.",
+      },
+      {
+        type: "h2",
+        id: "como-funciona-seguro-fianca",
+        text: "Como funciona o seguro fiança na prática",
+      },
+      {
+        type: "p",
+        text: "O processo começa com o inquilino solicitando uma cotação, informando dados do imóvel, do contrato e da sua própria renda. A seguradora faz uma análise de crédito e cadastro — parecida com a que um fiador teria que passar informalmente — e, se aprovada, emite uma apólice que passa a valer como a garantia do contrato perante o locador. Com a apólice em mãos, o proprietário dispensa a exigência de fiador ou caução, e a locação segue normalmente pelo prazo do contrato.",
+      },
+      {
+        type: "h3",
+        id: "o-que-o-seguro-fianca-cobre",
+        text: "O que o seguro fiança cobre",
+      },
+      {
+        type: "ul",
+        items: [
+          "Aluguel, condomínio e IPTU em atraso, conforme os limites definidos na apólice",
+          "Danos ao imóvel identificados na vistoria de saída do inquilino",
+          "Em alguns contratos, despesas de ação de despejo em caso de inadimplência — vale confirmar item a item na hora da contratação, já que a cobertura varia entre seguradoras",
+        ],
+      },
+      {
+        type: "h2",
+        id: "quem-paga-o-seguro-fianca",
+        text: "Quem paga o seguro fiança: inquilino ou proprietário?",
+      },
+      {
+        type: "p",
+        text: "Na grande maioria dos contratos, é o inquilino quem contrata e paga o seguro fiança — geralmente à vista ou parcelado, conforme a política da seguradora escolhida —, como alternativa a apresentar um fiador ou imobilizar dinheiro em caução. O proprietário não paga nada pela apólice; ele só se beneficia da garantia que ela representa, o que também tende a agilizar a aprovação do contrato do lado dele.",
+      },
+      {
+        type: "h2",
+        id: "seguro-fianca-x-fiador-x-caucao",
+        text: "Seguro fiança x fiador x caução: qual vale mais a pena",
+      },
+      {
+        type: "p",
+        text: "O fiador exige encontrar alguém disposto a assumir a responsabilidade pelo contrato — em geral, alguém com imóvel próprio quitado — o que pode travar ou atrasar bastante a aprovação da locação. Já a caução em dinheiro, permitida pela Lei do Inquilinato até o equivalente a três meses de aluguel, imobiliza esse valor durante todo o contrato, sem render nada pro inquilino nesse período. O seguro fiança evita as duas travas: não depende de terceiros e não exige guardar dinheiro parado, só o pagamento do prêmio do seguro — geralmente bem menor do que o valor de três aluguéis reunidos de uma vez.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-seguro-fianca",
+        text: "Como contratar seguro fiança com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320 e cota seguro fiança com seguradoras especializadas em locação, como a Junto e a Porto Seguro, comparando as condições para agilizar a aprovação do seu contrato de aluguel. O atendimento é presencial no escritório da Avenida Paulista, em São Paulo, e remoto por WhatsApp e videochamada para inquilinos e imobiliárias em todo o Brasil. Veja mais detalhes na página de [Seguro Fiança](/seguros/fianca) ou fale direto com [Reinaldo Masullo](/reinaldo-masullo) para simular o valor do seu contrato.",
+      },
+    ],
+    faq: [
+      {
+        question: "O seguro fiança substitui o fiador de verdade?",
+        answer:
+          "Sim. Com o seguro fiança aprovado, o locador dispensa a exigência de fiador — a seguradora assume a garantia do contrato de locação perante o proprietário.",
+      },
+      {
+        question: "Quem paga o seguro fiança, inquilino ou proprietário?",
+        answer:
+          "Na grande maioria dos contratos, é o inquilino quem contrata e paga o seguro fiança, como alternativa a apresentar um fiador ou pagar caução em dinheiro.",
+      },
+      {
+        question: "O seguro fiança cobre danos ao imóvel?",
+        answer:
+          "Sim, a cobertura inclui danos ao imóvel identificados na vistoria de saída do inquilino, além de aluguel, condomínio e IPTU em atraso conforme os limites da apólice.",
+      },
+      {
+        question: "A Revla trabalha com seguro fiança?",
+        answer:
+          "Sim. A Revla, registrada na SUSEP sob o nº 232150320, cota seguro fiança com seguradoras parceiras como a Junto e a Porto Seguro, com atendimento em São Paulo e remoto para todo o Brasil.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
