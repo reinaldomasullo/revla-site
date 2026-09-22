@@ -5287,6 +5287,122 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "consorcio-de-moto-como-funciona-quanto-custa-parcela",
+    title: "Consórcio de moto: como funciona e quanto custa a parcela",
+    description:
+      "Entenda como funciona o consórcio de moto, como é calculada a parcela, o que é lance e contemplação, e quando ele compensa mais que o financiamento.",
+    category: "Consórcios",
+    date: "2026-09-21",
+    coverImage: {
+      src: "/images/blog/consorcio-de-moto-como-funciona-capa.jpg",
+      alt: "Motocicleta estacionada em concessionária, representando a compra de uma moto por consórcio",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O consórcio de moto funciona como uma poupança em grupo: várias pessoas se reúnem em um grupo administrado por uma administradora autorizada pelo Banco Central, pagam parcelas mensais ao longo de um prazo determinado, e todo mês uma ou mais pessoas do grupo são contempladas — por sorteio ou por lance — recebendo uma carta de crédito para comprar a moto à vista, em qualquer marca e concessionária. Diferente do financiamento, não há incidência de juros: você paga apenas a taxa de administração cobrada pela administradora, o que costuma deixar a parcela mensal mais baixa para o mesmo valor de crédito.",
+      },
+      {
+        type: "h2",
+        id: "como-funciona-o-consorcio-de-moto",
+        text: "Como funciona o consórcio de moto na prática",
+      },
+      {
+        type: "p",
+        text: "O consórcio é regulamentado pelo Banco Central do Brasil, sob a Lei nº 11.795/2008 (Sistema de Consórcios). Ao contratar, você escolhe o valor da carta de crédito — não precisa decidir a marca ou o modelo da moto no momento da adesão, já que a escolha só é feita depois da contemplação, quando o crédito já está disponível. O grupo é formado por participantes com o mesmo objetivo (comprar uma moto) e prazo, e as parcelas mensais de todos formam o fundo comum que financia as cartas de crédito entregues aos contemplados a cada mês.",
+      },
+      {
+        type: "h2",
+        id: "como-e-calculada-a-parcela",
+        text: "Como é calculada a parcela do consórcio de moto",
+      },
+      {
+        type: "p",
+        text: "A parcela mensal é o resultado da divisão do valor da carta de crédito pelo número de meses do plano, somada à taxa de administração (também diluída ao longo do prazo) e ao fundo de reserva, quando previsto no regulamento do grupo. Muitos planos de consórcio de moto oferecem parcelas reduzidas em até 50% durante uma parte do contrato, o que ajuda a encaixar o compromisso no orçamento nos primeiros meses. O valor exato varia conforme a administradora, o prazo escolhido e o valor da carta — por isso a simulação com dados reais costuma revelar diferenças relevantes entre uma opção e outra.",
+      },
+      {
+        type: "h2",
+        id: "contemplacao-sorteio-e-lance",
+        text: "Contemplação: sorteio e lance",
+      },
+      {
+        type: "p",
+        text: "Todo mês, ao menos um participante do grupo é contemplado de duas formas possíveis: por sorteio, no qual todos os participantes em dia com as parcelas concorrem automaticamente; ou por lance, quando o participante oferece antecipar parte do saldo devedor para aumentar as chances de ser contemplado antes do sorteio. Existe também o lance embutido, que usa parte do próprio valor da carta de crédito como lance, sem precisar desembolsar dinheiro extra do bolso — uma alternativa para quem quer se antecipar na fila sem comprometer o orçamento mensal.",
+      },
+      {
+        type: "h2",
+        id: "consorcio-de-moto-vs-financiamento",
+        text: "Consórcio de moto ou financiamento: qual compensa mais",
+      },
+      {
+        type: "p",
+        text: "A diferença central é o custo: o financiamento cobra juros sobre o valor financiado, o que costuma encarecer bastante o valor total pago ao final do contrato, enquanto o consórcio cobra apenas a taxa de administração, sem juros. Em compensação, no financiamento você sai com a moto imediatamente, enquanto no consórcio a entrega da carta de crédito depende da contemplação — por sorteio ou lance. Por isso, o consórcio costuma ser mais indicado para quem já planeja a compra com alguma antecedência e quer pagar menos ao final, enquanto o financiamento atende quem precisa da moto de forma imediata e está disposto a pagar juros por essa rapidez.",
+      },
+      {
+        type: "h2",
+        id: "posso-usar-a-carta-em-qualquer-marca",
+        text: "Posso usar a carta de crédito em qualquer marca de moto?",
+      },
+      {
+        type: "p",
+        text: "Sim. A carta de crédito do consórcio de moto não é vinculada a uma marca ou concessionária específica — você pode usá-la para comprar uma moto 0km de qualquer marca, incluindo Honda, Yamaha, BMW Motorrad, Royal Enfield, Suzuki, Kawasaki, Harley-Davidson, Dafra ou Shineray, entre outras, ou até uma moto seminova, conforme as regras do regulamento do grupo. Essa flexibilidade é uma vantagem de quem ainda não decidiu o modelo exato: dá pra contratar o consórcio pelo valor da carta e só definir a marca depois de contemplado.",
+      },
+      {
+        type: "h2",
+        id: "vantagens-do-consorcio-de-moto",
+        text: "Vantagens do consórcio de moto",
+      },
+      {
+        type: "ul",
+        items: [
+          "Sem juros: você paga apenas a taxa de administração, sem incidência de juros como no financiamento.",
+          "Parcelas reduzidas em até 50% durante parte do plano, conforme o grupo escolhido.",
+          "Lance embutido: possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação.",
+          "Flexibilidade de marca e modelo: a escolha da moto só é feita após a contemplação.",
+          "Sem análise de crédito tradicional para participar do grupo, diferente do financiamento bancário.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar o consórcio de moto com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla é uma corretora parceira da Ademicon, uma das maiores administradoras de consórcio do país, regulamentada pelo Banco Central, e ajuda a comparar as opções de grupo, prazo e valor de carta disponíveis para encontrar a condição mais vantajosa para o seu perfil. O acompanhamento vai da simulação inicial até a contemplação, com atendimento presencial em São Paulo (Avenida Paulista) e consultoria remota para todo o Brasil. Veja mais detalhes na página de [consórcio de moto](/consorcios/motos) da Revla, no catálogo completo de [consórcios](/consorcios) ou simule sem compromisso com [Reinaldo Masullo](/reinaldo-masullo).",
+      },
+    ],
+    faq: [
+      {
+        question: "Consórcio de moto tem juros?",
+        answer:
+          "Não. No consórcio de moto você paga apenas a taxa de administração da administradora, sem incidência de juros como ocorre em um financiamento.",
+      },
+      {
+        question: "Preciso escolher a marca da moto na hora de contratar o consórcio?",
+        answer:
+          "Não. Você contrata pelo valor da carta de crédito e escolhe o modelo e a marca depois de contemplado, quando o crédito já está disponível para uso em qualquer concessionária.",
+      },
+      {
+        question: "Como funciona a contemplação no consórcio de moto?",
+        answer:
+          "A contemplação ocorre por sorteio mensal entre os participantes em dia com as parcelas, ou por lance — quando o participante oferece antecipar parte do saldo devedor para aumentar suas chances.",
+      },
+      {
+        question: "O que é lance embutido no consórcio de moto?",
+        answer:
+          "É a possibilidade de usar parte da própria carta de crédito como lance para antecipar a contemplação, sem precisar desembolsar dinheiro extra do próprio bolso.",
+      },
+      {
+        question: "Consórcio de moto ou financiamento: qual vale mais a pena?",
+        answer:
+          "Depende da urgência: o financiamento entrega a moto imediatamente mas cobra juros, enquanto o consórcio não tem juros (só taxa de administração) mas depende da contemplação por sorteio ou lance.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
