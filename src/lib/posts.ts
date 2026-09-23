@@ -5402,6 +5402,114 @@ export const posts: Post[] = [
           "Depende da urgência: o financiamento entrega a moto imediatamente mas cobra juros, enquanto o consórcio não tem juros (só taxa de administração) mas depende da contemplação por sorteio ou lance.",
       },
     ],
+  },  {
+    slug: "plano-odontologico-vale-a-pena-contratar-separado",
+    title: "Plano odontológico: vale a pena contratar separado?",
+    description:
+      "Entenda a diferença entre plano de saúde com e sem cobertura odontológica, o que a ANS exige de um plano odontológico e quando vale a pena contratar em separado.",
+    category: "Plano de Saúde",
+    date: "2026-09-22",
+    coverImage: {
+      src: "/images/blog/plano-odontologico-vale-a-pena-capa.jpg",
+      alt: "Consultório odontológico com equipamentos, representando a cobertura de um plano odontológico",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Vale a pena contratar um plano odontológico separado principalmente quando o plano de saúde que você já tem (ou pretende contratar) não inclui cobertura dentária, ou cobre apenas procedimentos básicos de urgência. A maioria dos planos de saúde médico-hospitalares no Brasil não inclui atendimento odontológico completo por padrão — a Agência Nacional de Saúde Suplementar (ANS) trata planos odontológicos como uma modalidade própria, com regras e rol de procedimentos específicos, separada do plano de saúde tradicional. Por isso, quem quer cobertura para consultas, limpeza, tratamento de canal, próteses e outros procedimentos dentários geralmente precisa de um plano odontológico dedicado.",
+      },
+      {
+        type: "h2",
+        id: "plano-de-saude-cobre-dentista",
+        text: "O plano de saúde cobre consulta com dentista?",
+      },
+      {
+        type: "p",
+        text: "Depende do tipo de contrato. Existem planos de saúde que já vêm com um módulo odontológico incluso (chamados de planos com cobertura odontológica), e existem planos exclusivamente médico-hospitalares, sem nenhuma cobertura dentária. Quando não há módulo odontológico incluso, mesmo uma consulta de rotina com o dentista não é coberta pelo plano de saúde — só fica coberta uma eventual internação hospitalar decorrente de uma urgência odontológica grave, o que é bem diferente de um acompanhamento odontológico regular.",
+      },
+      {
+        type: "h2",
+        id: "o-que-e-um-plano-odontologico",
+        text: "O que é um plano odontológico",
+      },
+      {
+        type: "p",
+        text: "É uma modalidade de plano de saúde suplementar regulada pela ANS, voltada especificamente para procedimentos odontológicos: consultas, limpezas, radiografias, restaurações, tratamento de canal, extrações, próteses e, em planos mais completos, até procedimentos ortodônticos. Assim como os planos médico-hospitalares, os planos odontológicos também têm um rol mínimo de procedimentos obrigatórios definido pela ANS, que toda operadora registrada precisa cumprir — o que varia entre os planos é a rede credenciada, a abrangência geográfica e a cobertura de procedimentos além do rol mínimo, como ortodontia e implantes.",
+      },
+      {
+        type: "h2",
+        id: "o-que-costuma-estar-coberto",
+        text: "O que um plano odontológico costuma cobrir",
+      },
+      {
+        type: "ul",
+        items: [
+          "Consultas e exames preventivos, como avaliação clínica e radiografias.",
+          "Limpeza (profilaxia) e aplicação de flúor.",
+          "Restaurações e tratamento de cáries.",
+          "Tratamento de canal (endodontia).",
+          "Extrações simples e cirurgias odontológicas básicas.",
+          "Próteses dentárias, em planos com cobertura mais ampla.",
+          "Ortodontia (aparelho), quando prevista especificamente no plano contratado.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "vale-a-pena-contratar-separado",
+        text: "Quando vale a pena contratar um plano odontológico separado",
+      },
+      {
+        type: "p",
+        text: "Vale a pena principalmente para quem já tem um plano de saúde sem módulo odontológico e quer evitar pagar procedimentos dentários particulares, que costumam ter custo elevado, especialmente tratamento de canal, próteses e ortodontia. Também compensa para famílias com crianças, já que o acompanhamento odontológico preventivo regular tende a evitar problemas maiores (e mais caros) no futuro. A mensalidade de um plano odontológico costuma ser significativamente mais baixa que a de um plano médico-hospitalar, o que faz da adesão separada uma forma acessível de garantir cobertura dentária sem precisar trocar de plano de saúde.",
+      },
+      {
+        type: "h2",
+        id: "individual-familiar-ou-empresarial",
+        text: "Plano odontológico individual, familiar ou empresarial",
+      },
+      {
+        type: "p",
+        text: "Assim como o plano de saúde, o plano odontológico pode ser contratado na modalidade individual/familiar (direto pela pessoa física, cobrindo o titular e dependentes) ou na modalidade coletiva empresarial (contratada por uma empresa para os funcionários). Empresas que já oferecem plano de saúde aos colaboradores costumam agregar um plano odontológico como benefício adicional, geralmente com mensalidade baixa em relação ao custo total da folha de benefícios, e que costuma pesar positivamente na retenção de talentos.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar plano odontológico com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros trabalha com o Sorriso PASI, plano odontológico com rede credenciada para tratamentos preventivos e corretivos, disponível como complemento ao plano de saúde ou de forma independente. Um consultor pode explicar a rede credenciada e simular o valor para o seu perfil ou para a sua empresa. Veja mais soluções PASI na [página inicial da Revla](/#pasi-heading) ou conheça o catálogo completo de [plano de saúde](/plano-de-saude), e fale com [Reinaldo Masullo](/reinaldo-masullo) para uma cotação sem compromisso.",
+      },
+    ],
+    faq: [
+      {
+        question: "Meu plano de saúde já cobre dentista?",
+        answer:
+          "Só se o seu contrato incluir especificamente um módulo odontológico — a maioria dos planos médico-hospitalares não cobre consultas de rotina com dentista, apenas urgências que exijam internação hospitalar.",
+      },
+      {
+        question: "O que um plano odontológico costuma cobrir?",
+        answer:
+          "Consultas, limpeza, radiografias, restaurações, tratamento de canal e extrações fazem parte do rol mínimo da ANS. Próteses e ortodontia dependem da cobertura específica do plano contratado.",
+      },
+      {
+        question: "Vale a pena contratar plano odontológico separado do plano de saúde?",
+        answer:
+          "Sim, principalmente se o seu plano de saúde atual não tem módulo odontológico — a mensalidade costuma ser bem mais baixa que a de um plano médico-hospitalar e evita pagar procedimentos dentários particulares.",
+      },
+      {
+        question: "Empresa pode oferecer plano odontológico para os funcionários?",
+        answer:
+          "Sim, o plano odontológico também tem modalidade coletiva empresarial, geralmente com mensalidade baixa em relação ao custo total dos benefícios oferecidos.",
+      },
+      {
+        question: "A Revla trabalha com plano odontológico?",
+        answer:
+          "Sim. A Revla trabalha com o Sorriso PASI, plano odontológico com rede credenciada para tratamentos preventivos e corretivos, individual, familiar ou empresarial.",
+      },
+    ],
   },
 ];
 
