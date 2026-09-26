@@ -5510,6 +5510,326 @@ export const posts: Post[] = [
           "Sim. A Revla trabalha com o Sorriso PASI, plano odontológico com rede credenciada para tratamentos preventivos e corretivos, individual, familiar ou empresarial.",
       },
     ],
+  },  {
+    slug: "seguro-viagem-o-que-cobre-quando-e-obrigatorio",
+    title: "Seguro viagem: o que cobre e quando é obrigatório",
+    description:
+      "Entenda o que o seguro viagem cobre, em quais países ele é exigido para entrada e como escolher a cobertura certa para sua viagem nacional ou internacional.",
+    category: "Seguros",
+    date: "2026-09-23",
+    coverImage: {
+      src: "/images/blog/seguro-viagem-o-que-cobre-capa.jpg",
+      alt: "Passageiro com mala e passaporte em aeroporto, representando a contratação de um seguro viagem",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O seguro viagem é obrigatório para entrar nos países do Espaço Schengen (a maior parte da Europa), que exigem cobertura mínima de despesas médicas de 30 mil euros como condição para conceder o visto de turista a viajantes de países como o Brasil. Fora dessa exigência formal, o seguro viagem cobre despesas médicas e hospitalares, extravio ou dano de bagagem e cancelamento ou interrupção de viagem — por isso costuma ser recomendado mesmo para destinos onde não é obrigatório, incluindo viagens dentro do próprio Brasil.",
+      },
+      {
+        type: "h2",
+        id: "quando-o-seguro-viagem-e-obrigatorio",
+        text: "Quando o seguro viagem é obrigatório",
+      },
+      {
+        type: "p",
+        text: "A exigência mais conhecida é a do Espaço Schengen, bloco de países europeus (incluindo França, Alemanha, Itália, Espanha e Portugal, entre outros) que exige comprovação de seguro viagem com cobertura médica mínima de 30 mil euros para emissão do visto de turista. Outros destinos, como Cuba e alguns países que exigem visto de entrada, também condicionam a permissão de viagem à apresentação de um seguro viagem válido. Mesmo quando não há exigência formal — caso dos Estados Unidos e da maior parte da América do Sul, por exemplo — muitas companhias aéreas e agências recomendam fortemente a contratação, já que despesas médicas no exterior sem cobertura podem sair extremamente caras.",
+      },
+      {
+        type: "h2",
+        id: "o-que-o-seguro-viagem-cobre",
+        text: "O que o seguro viagem costuma cobrir",
+      },
+      {
+        type: "ul",
+        items: [
+          "Despesas médicas e hospitalares: consultas, exames, internação e procedimentos de emergência durante a viagem, no Brasil ou no exterior.",
+          "Bagagem extraviada ou danificada: indenização em caso de extravio, roubo ou dano à bagagem despachada durante o trajeto.",
+          "Cancelamento e interrupção de viagem: reembolso de despesas não utilizadas caso a viagem precise ser cancelada ou interrompida por motivo coberto.",
+          "Assistência 24 horas: suporte em qualquer lugar do mundo para emergências médicas, jurídicas ou de viagem.",
+          "Traslado médico, em casos de necessidade de remoção para um hospital mais adequado ou repatriação.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "seguro-viagem-nacional-x-internacional",
+        text: "Seguro viagem nacional ou internacional: qual escolher",
+      },
+      {
+        type: "p",
+        text: "Para viagens dentro do Brasil, o SUS garante atendimento de urgência gratuito em qualquer cidade, mas isso não significa dispensar o seguro viagem: a rede pública pode estar sobrecarregada ou distante do destino, e um seguro viagem nacional costuma incluir assistência de bagagem e cancelamento de viagem, que o SUS não cobre. Já para viagens internacionais, o seguro viagem é praticamente indispensável — além da eventual exigência de visto, o custo de atendimento médico particular no exterior costuma ser muito mais alto que no Brasil, principalmente nos Estados Unidos.",
+      },
+      {
+        type: "h2",
+        id: "como-escolher-a-cobertura-certa",
+        text: "Como escolher a cobertura certa",
+      },
+      {
+        type: "p",
+        text: "O valor de cobertura médica ideal depende do destino: para o Espaço Schengen, o mínimo exigido é 30 mil euros, mas para destinos como Estados Unidos e Canadá — onde o custo de saúde é historicamente mais alto — muitas seguradoras recomendam coberturas de 60 mil dólares ou mais. Vale também considerar a duração da viagem (apólices anuais costumam compensar para quem viaja com frequência), se o destino envolve atividades de risco (como esportes radicais, que exigem cobertura específica) e se a cobertura de bagagem e cancelamento é suficiente para o valor investido na viagem.",
+      },
+      {
+        type: "h2",
+        id: "documentos-para-contratar",
+        text: "O que é preciso para contratar o seguro viagem",
+      },
+      {
+        type: "p",
+        text: "A contratação costuma ser simples e rápida: basta informar o destino, as datas de ida e volta, o número de viajantes e as idades de cada um (a idade pode influenciar o valor do prêmio). Não costuma ser exigida análise de crédito ou exames médicos prévios para a contratação — o processo pode ser resolvido em poucos minutos, o que permite comprar o seguro viagem até mesmo próximo da data de embarque, embora o ideal seja contratar com alguma antecedência, especialmente se a viagem exigir visto com comprovação de seguro.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar o seguro viagem com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros, registrada na SUSEP sob o nº 232150320, cota o seguro viagem com seguradoras parceiras especializadas nesse ramo, comparando cobertura de despesas médicas e valor da apólice conforme o destino e a duração da viagem. Veja mais detalhes na página de [seguro viagem](/seguros/viagem) da Revla, no catálogo completo de [seguros](/seguros) ou fale com [Reinaldo Masullo](/reinaldo-masullo) para uma cotação gratuita, sem compromisso.",
+      },
+    ],
+    faq: [
+      {
+        question: "O seguro viagem é obrigatório para viajar para a Europa?",
+        answer:
+          "Sim, para os países do Espaço Schengen o seguro viagem com cobertura médica mínima de 30 mil euros é exigido para a emissão do visto de turista.",
+      },
+      {
+        question: "Preciso de seguro viagem para viajar dentro do Brasil?",
+        answer:
+          "Não é obrigatório, já que o SUS garante atendimento de urgência gratuito em qualquer cidade, mas o seguro viagem nacional ainda cobre bagagem e cancelamento de viagem, que o SUS não cobre.",
+      },
+      {
+        question: "O seguro viagem cobre bagagem extraviada?",
+        answer:
+          "Sim, a cobertura de bagagem extraviada ou danificada costuma estar entre as coberturas principais do seguro viagem, junto com despesas médicas e cancelamento de viagem.",
+      },
+      {
+        question: "Quanto de cobertura médica preciso para viajar para os Estados Unidos?",
+        answer:
+          "Não há exigência formal de visto como no Espaço Schengen, mas muitas seguradoras recomendam coberturas de 60 mil dólares ou mais, já que o custo de atendimento médico particular nos EUA é historicamente alto.",
+      },
+      {
+        question: "Preciso de exame médico para contratar seguro viagem?",
+        answer:
+          "Não. A contratação costuma ser simples, informando destino, datas e idades dos viajantes, sem exigência de exames médicos prévios ou análise de crédito.",
+      },
+    ],
+  },
+  {
+    slug: "consorcio-de-investimento-como-funciona-poupanca-programada",
+    title: "Consórcio de investimento: como funciona a poupança programada",
+    description:
+      "Entenda como funciona o consórcio de investimento, uma poupança programada sem juros para formar patrimônio ou antecipar um projeto financeiro com lance.",
+    category: "Consórcios",
+    date: "2026-09-24",
+    coverImage: {
+      src: "/images/blog/consorcio-de-investimento-capa.jpg",
+      alt: "Pessoa analisando gráficos financeiros em um notebook, representando o planejamento de um consórcio de investimento",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O consórcio de investimento funciona como uma poupança programada: você entra em um grupo administrado por uma administradora autorizada pelo Banco Central, paga parcelas mensais ao longo de um prazo determinado, e ao final do plano (ou antes, caso seja contemplado por sorteio ou lance) recebe uma carta de crédito em dinheiro, sem destinação obrigatória — diferente do consórcio de imóvel ou veículo, que exige usar o crédito na categoria contratada. É uma forma de disciplinar a poupança mensal sem pagar juros, apenas a taxa de administração da administradora.",
+      },
+      {
+        type: "h2",
+        id: "o-que-e-consorcio-de-investimento",
+        text: "O que é o consórcio de investimento",
+      },
+      {
+        type: "p",
+        text: "É uma modalidade de consórcio regulamentada pelo Banco Central sob a Lei nº 11.795/2008 (Sistema de Consórcios), na qual o objetivo não é a compra de um bem específico, mas sim a formação de um valor em dinheiro. A carta de crédito recebida ao final do plano (ou na contemplação) pode ser usada livremente: para reformar a casa, quitar dívidas, investir em outro ativo, abrir ou expandir um negócio, ou qualquer outro objetivo financeiro do participante — sem a obrigatoriedade de comprovar a destinação do valor, como ocorre nos consórcios de imóvel ou veículo.",
+      },
+      {
+        type: "h2",
+        id: "como-funciona-na-pratica",
+        text: "Como funciona o consórcio de investimento na prática",
+      },
+      {
+        type: "p",
+        text: "Assim como nas outras modalidades de consórcio, o participante escolhe o valor da carta de crédito desejada e o prazo do plano, e paga parcelas mensais que somam, ao longo do grupo, o valor total das cartas entregues aos participantes. Todo mês, um ou mais integrantes do grupo são contemplados — por sorteio entre os participantes em dia com as parcelas, ou por lance, quando alguém oferece antecipar parte do saldo devedor para furar a fila. Quem não é contemplado antes segue pagando as parcelas até o fim do prazo, quando recebe o valor total como poupança consolidada.",
+      },
+      {
+        type: "h2",
+        id: "vantagens-do-consorcio-de-investimento",
+        text: "Vantagens do consórcio de investimento",
+      },
+      {
+        type: "ul",
+        items: [
+          "Sem juros: você paga apenas a taxa de administração, ao contrário de um empréstimo ou financiamento pessoal.",
+          "Disciplina financeira: o compromisso mensal ajuda a manter a constância da poupança programada.",
+          "Uso livre do crédito: sem obrigatoriedade de destinação específica, diferente do consórcio de imóvel ou veículo.",
+          "Possibilidade de lance: acelera o recebimento do valor para quem tem parte do dinheiro disponível para antecipar.",
+          "Planejamento de médio e longo prazo: útil para objetivos que não têm data definida, como reserva para um projeto futuro.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "consorcio-de-investimento-vs-poupanca-tradicional",
+        text: "Consórcio de investimento ou poupança tradicional: qual escolher",
+      },
+      {
+        type: "p",
+        text: "A principal diferença é a disciplina e o acesso ao crédito: na poupança tradicional, o dinheiro rende (ainda que pouco) e fica disponível para saque a qualquer momento, o que facilita o resgate mas também facilita gastar antes da hora. No consórcio, o compromisso mensal é mais rígido — parcelas em atraso geram consequências contratuais — mas em troca existe a possibilidade de ser contemplado antes do fim do prazo, recebendo o valor total muito antes do que conseguiria juntar sozinho. Por isso, o consórcio de investimento costuma ser mais indicado para quem tem dificuldade de manter disciplina de poupança sozinho, ou quer a chance de antecipar o acesso ao valor via lance.",
+      },
+      {
+        type: "h2",
+        id: "quem-costuma-usar-o-consorcio-de-investimento",
+        text: "Quem costuma usar o consórcio de investimento",
+      },
+      {
+        type: "p",
+        text: "É comum entre pessoas que querem formar uma reserva para um objetivo ainda não totalmente definido, empreendedores que buscam capital de giro ou reserva para expansão sem recorrer a empréstimo com juros altos, e quem já tem outros consórcios (de imóvel ou veículo, por exemplo) e quer diversificar a estratégia de formação de patrimônio sem juros. Por não exigir comprovação de destinação, também é usado como alternativa a empréstimos pessoais para quitar dívidas ou reorganizar as finanças, evitando a incidência de juros altos característicos desse tipo de crédito.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar o consórcio de investimento com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla é corretora parceira da Ademicon, uma das maiores administradoras de consórcio do país, regulamentada pelo Banco Central, com mais de 35 anos de história e mais de 675 mil clientes atendidos. Um consultor pode simular o valor da carta, o prazo ideal e as opções de lance disponíveis conforme o seu objetivo. Conheça o catálogo completo de [consórcios](/consorcios) da Revla ou fale com [Reinaldo Masullo](/reinaldo-masullo) para uma simulação gratuita, sem compromisso.",
+      },
+    ],
+    faq: [
+      {
+        question: "O que é consórcio de investimento?",
+        answer:
+          "É uma modalidade de consórcio em que a carta de crédito recebida ao final do plano ou na contemplação pode ser usada livremente, sem obrigatoriedade de destinação específica, diferente do consórcio de imóvel ou veículo.",
+      },
+      {
+        question: "Consórcio de investimento tem juros?",
+        answer:
+          "Não. Assim como as demais modalidades de consórcio, você paga apenas a taxa de administração da administradora, sem incidência de juros.",
+      },
+      {
+        question: "Como funciona a contemplação no consórcio de investimento?",
+        answer:
+          "Por sorteio mensal entre os participantes em dia com as parcelas, ou por lance, quando o participante antecipa parte do saldo devedor para aumentar as chances de contemplação.",
+      },
+      {
+        question: "Posso usar a carta de crédito do consórcio de investimento para qualquer finalidade?",
+        answer:
+          "Sim, ao contrário do consórcio de imóvel ou veículo, não há obrigatoriedade de comprovar a destinação do valor recebido.",
+      },
+      {
+        question: "Consórcio de investimento ou poupança: qual vale mais a pena?",
+        answer:
+          "Depende do perfil: a poupança permite saque a qualquer momento, enquanto o consórcio exige disciplina de parcelas fixas, mas oferece a possibilidade de ser contemplado antes do fim do prazo via sorteio ou lance.",
+      },
+    ],
+  },
+  {
+    slug: "seguro-celular-vale-a-pena-o-que-cobre",
+    title: "Seguro celular: vale a pena e o que cobre",
+    description:
+      "Entenda o que o seguro celular cobre, quanto costuma custar e quando vale a pena contratar proteção contra roubo, furto e quebra de tela.",
+    category: "Seguros",
+    date: "2026-09-25",
+    coverImage: {
+      src: "/images/blog/seguro-celular-vale-a-pena-capa.jpg",
+      alt: "Pessoa segurando um smartphone com a tela protegida, representando a contratação de um seguro celular",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O seguro celular vale a pena principalmente para aparelhos de valor mais alto, em regiões com maior incidência de roubo e furto, ou para quem já teve o celular roubado, furtado ou quebrado antes. Ele funciona como uma apólice que protege o aparelho contra essas situações mediante o pagamento de um prêmio mensal ou anual — bem mais barato que o custo de repor um smartphone novo à vista, especialmente nos modelos mais caros do mercado.",
+      },
+      {
+        type: "h2",
+        id: "o-que-o-seguro-celular-cobre",
+        text: "O que o seguro celular costuma cobrir",
+      },
+      {
+        type: "ul",
+        items: [
+          "Roubo: subtração do aparelho mediante ameaça ou violência.",
+          "Furto qualificado: subtração sem violência, mas com rompimento de obstáculo (como arrombamento de bolsa ou veículo) — furto simples costuma não ser coberto.",
+          "Quebra acidental de tela: indenização ou conserto em caso de queda ou impacto que danifique a tela ou a carcaça.",
+          "Danos por líquido, em algumas apólices mais completas, quando previsto na cobertura contratada.",
+          "Cobertura válida em qualquer lugar do Brasil, acompanhando o aparelho e não um endereço fixo.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "furto-simples-x-furto-qualificado",
+        text: "Furto simples ou furto qualificado: qual a diferença",
+      },
+      {
+        type: "p",
+        text: "Essa distinção é importante na hora de entender a cobertura: furto simples é a subtração do bem sem violência e sem rompimento de obstáculo — por exemplo, quando o celular é esquecido em cima de uma mesa e alguém o pega sem ninguém perceber. Já o furto qualificado envolve rompimento de obstáculo, como arrombar uma bolsa, mochila ou o vidro de um carro para retirar o aparelho. A maioria das apólices de seguro celular cobre furto qualificado e roubo (com violência ou grave ameaça), mas não cobre furto simples — vale sempre confirmar essa diferença nas condições gerais antes de contratar, para não ter surpresa na hora de acionar o sinistro.",
+      },
+      {
+        type: "h2",
+        id: "quanto-custa-o-seguro-celular",
+        text: "Quanto custa o seguro celular",
+      },
+      {
+        type: "p",
+        text: "O valor do prêmio varia principalmente conforme o modelo e o valor de mercado do aparelho — celulares mais caros, como os topo de linha, têm prêmio mais alto em valor absoluto, mas o percentual sobre o valor do aparelho costuma ficar em uma faixa relativamente parecida entre os modelos. Outros fatores que influenciam o valor são a cidade de residência (regiões com maior índice de roubo/furto tendem a ter prêmio mais alto) e as coberturas escolhidas — incluir quebra acidental e danos por líquido, por exemplo, aumenta o valor da apólice em relação a uma cobertura só contra roubo e furto qualificado.",
+      },
+      {
+        type: "h2",
+        id: "vale-a-pena-contratar",
+        text: "Quando vale a pena contratar o seguro celular",
+      },
+      {
+        type: "p",
+        text: "Vale a pena especialmente para quem tem um aparelho de valor alto, mora ou circula em regiões com maior incidência de roubo e furto, ou usa o celular intensamente para trabalho — nesses casos, ficar sem o aparelho ou sem os dados nele pode gerar prejuízo além do valor do próprio celular. Também compensa para quem já passou por situações de roubo, furto ou quebra de tela antes: a recorrência desses imprevistos costuma justificar o custo do seguro frente ao risco de precisar repor o aparelho à vista mais de uma vez.",
+      },
+      {
+        type: "h2",
+        id: "como-acionar-o-seguro-celular",
+        text: "Como acionar o seguro celular em caso de sinistro",
+      },
+      {
+        type: "p",
+        text: "Em caso de roubo ou furto qualificado, o primeiro passo costuma ser registrar um boletim de ocorrência, documento exigido pela maioria das seguradoras para abertura do sinistro. Já em caso de quebra acidental, a seguradora costuma solicitar fotos do dano e, dependendo da apólice, pode indicar uma assistência técnica credenciada para o reparo ou realizar a indenização em dinheiro. O prazo de análise e o processo exato variam entre seguradoras — vale sempre confirmar essas condições no momento da contratação, para saber o que esperar caso precise acionar o seguro.",
+      },
+      {
+        type: "h2",
+        id: "como-contratar-com-a-revla",
+        text: "Como contratar o seguro celular com a Revla",
+      },
+      {
+        type: "p",
+        text: "A Revla Corretora de Seguros, registrada na SUSEP sob o nº 232150320, cota o seguro celular com as principais seguradoras do mercado, buscando a cobertura com melhor custo-benefício para o seu aparelho. Veja mais detalhes na página de [seguro celular](/seguros/celular) da Revla, no catálogo completo de [seguros](/seguros) ou fale com [Reinaldo Masullo](/reinaldo-masullo) para uma cotação gratuita, sem compromisso.",
+      },
+    ],
+    faq: [
+      {
+        question: "O seguro celular cobre furto?",
+        answer:
+          "Costuma cobrir furto qualificado (com rompimento de obstáculo, como arrombamento de bolsa ou veículo), mas geralmente não cobre furto simples — vale confirmar essa diferença nas condições gerais antes de contratar.",
+      },
+      {
+        question: "O seguro celular cobre tela quebrada?",
+        answer:
+          "Sim, a quebra acidental de tela costuma estar entre as coberturas principais, junto com roubo e furto qualificado.",
+      },
+      {
+        question: "Quanto custa o seguro celular?",
+        answer:
+          "O valor varia principalmente conforme o modelo do aparelho, a cidade de residência e as coberturas escolhidas — quanto mais caro o celular e mais ampla a cobertura, maior o prêmio.",
+      },
+      {
+        question: "Preciso de boletim de ocorrência para acionar o seguro celular?",
+        answer:
+          "Em caso de roubo ou furto qualificado, sim — a maioria das seguradoras exige o BO para abertura do sinistro. Em caso de quebra acidental, costuma bastar o registro de fotos do dano.",
+      },
+      {
+        question: "O seguro celular vale em qualquer cidade do Brasil?",
+        answer:
+          "Sim, a cobertura acompanha o aparelho e é válida em qualquer lugar do país, não um endereço fixo.",
+      },
+    ],
   },
 ];
 
