@@ -7,14 +7,61 @@ import Container from "./Container";
 import CTAButton from "./CTAButton";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
 
-const produtos = [
+type SubItem = { label: string; href: string };
+type SubGrupo = { titulo?: string; itens: SubItem[] };
+type Produto = {
+  label: string;
+  href: string;
+  navLabel?: string;
+  submenu?: { grupos: SubGrupo[]; verTodos: string };
+};
+
+// Submenus: só os produtos principais de cada categoria (4 a 6 itens) e um
+// "Ver todos" que leva à página da categoria. Páginas de cidade e de marca
+// ficam fora do menu — elas recebem links das páginas de produto.
+const produtos: Produto[] = [
   {
     label: "Consórcios",
     href: "/consorcios",
+    submenu: {
+      grupos: [
+        {
+          itens: [
+            { label: "Consórcio de imóveis", href: "/consorcios/imoveis" },
+            { label: "Consórcio de carro", href: "/consorcios/carro" },
+            { label: "Consórcio de motos", href: "/consorcios/motos" },
+            { label: "Brasileiros no Japão", href: "/consorcios/brasileiros-no-japao" },
+          ],
+        },
+        {
+          titulo: "Calculadoras",
+          itens: [
+            { label: "Simulador de consórcio de imóveis", href: "/consorcios/calculadora" },
+            { label: "Consórcio de veículo x financiamento", href: "/consorcios/calculadora-veiculos" },
+            { label: "Consórcio de imóvel x financiamento", href: "/consorcios/calculadora-financiamento" },
+          ],
+        },
+      ],
+      verTodos: "Ver todos os consórcios",
+    },
   },
   {
     label: "Seguros",
     href: "/seguros",
+    submenu: {
+      grupos: [
+        {
+          itens: [
+            { label: "Seguro de vida", href: "/seguros/vida" },
+            { label: "Seguro auto", href: "/seguros/auto" },
+            { label: "Seguro residencial", href: "/seguros/residencial" },
+            { label: "Seguro fiança", href: "/seguros/fianca" },
+            { label: "Seguro empresarial", href: "/seguros/empresarial" },
+          ],
+        },
+      ],
+      verTodos: "Ver todos os seguros",
+    },
   },
   {
     label: "Plano de Saúde",
@@ -31,41 +78,49 @@ const produtos = [
   },
 ];
 
-const calculadoras = [
-  { label: "Calculadora de consórcio de imóveis", href: "/consorcios/calculadora" },
-  { label: "Calculadora comparativa consórcio de veículos x financiamento", href: "/consorcios/calculadora-veiculos" },
-  { label: "Calculadora comparativa consórcio x financiamento", href: "/consorcios/calculadora-financiamento" },
-];
+const Chevron = ({ aberto }: { aberto: boolean }) => (
+  <svg
+    width="10"
+    height="10"
+    viewBox="0 0 10 10"
+    fill="none"
+    aria-hidden="true"
+    className={`transition-transform ${aberto ? "rotate-180" : ""}`}
+  >
+    <path d="M1.5 3.5L5 7l3.5-3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [calcOpen, setCalcOpen] = useState(false);
-  const calcRef = useRef<HTMLDivElement>(null);
+  // Submenu aberto no computador (href da categoria) e no celular.
+  const [aberto, setAberto] = useState<string | null>(null);
+  const [mobileAberto, setMobileAberto] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   const inicioAtivo = pathname === "/";
   const blogAtivo = pathname === "/blog" || pathname?.startsWith("/blog/");
-  const calculadorasAtivo = pathname?.startsWith("/consorcios/calculadora") ?? false;
+  const categoriaAtiva = (href: string) => pathname === href || (pathname?.startsWith(`${href}/`) ?? false);
 
-  // Fecha o menu mobile ao navegar (ajuste de estado durante a renderização,
+  // Fecha os menus ao navegar (ajuste de estado durante a renderização,
   // evitando o refluxo extra de fazer isso em um efeito)
   const [lastPathname, setLastPathname] = useState(pathname);
   if (pathname !== lastPathname) {
     setLastPathname(pathname);
     setMobileOpen(false);
-    setCalcOpen(false);
+    setAberto(null);
+    setMobileAberto(null);
   }
 
-  // Fecha o dropdown "Calculadoras" ao clicar fora ou pressionar Esc.
+  // Fecha o submenu ao clicar fora ou pressionar Esc.
   useEffect(() => {
-    if (!calcOpen) return;
+    if (!aberto) return;
     const handleClickOutside = (e: MouseEvent) => {
-      if (calcRef.current && !calcRef.current.contains(e.target as Node)) {
-        setCalcOpen(false);
-      }
+      if (navRef.current && !navRef.current.contains(e.target as Node)) setAberto(null);
     };
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setCalcOpen(false);
+      if (e.key === "Escape") setAberto(null);
     };
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEscape);
@@ -73,7 +128,7 @@ export default function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [calcOpen]);
+  }, [aberto]);
 
   const navLinkClass = (active: boolean) =>
     `whitespace-nowrap text-sm font-medium transition-colors hover:text-[var(--color-primary)] ${
@@ -102,7 +157,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Navegação principal">
+          <nav ref={navRef} className="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Navegação principal">
             <Link
               href="/"
               aria-current={inicioAtivo ? "page" : undefined}
@@ -111,61 +166,89 @@ export default function Header() {
               Início
             </Link>
 
-            {produtos.map((produto) => (
-              <Link
-                key={produto.href}
-                href={produto.href}
-                aria-current={pathname === produto.href ? "page" : undefined}
-                className={navLinkClass(pathname === produto.href)}
-              >
-                {produto.navLabel ?? produto.label}
-              </Link>
-            ))}
-
-            <div
-              className="relative"
-              ref={calcRef}
-              onMouseEnter={() => setCalcOpen(true)}
-              onMouseLeave={() => setCalcOpen(false)}
-            >
-              <button
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={calcOpen}
-                onClick={() => setCalcOpen(true)}
-                className={`flex items-center gap-1 ${navLinkClass(calculadorasAtivo)}`}
-              >
-                Calculadoras
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  aria-hidden="true"
-                  className={`transition-transform ${calcOpen ? "rotate-180" : ""}`}
+            {produtos.map((produto) => {
+              const ativo = categoriaAtiva(produto.href);
+              if (!produto.submenu) {
+                return (
+                  <Link
+                    key={produto.href}
+                    href={produto.href}
+                    aria-current={pathname === produto.href ? "page" : undefined}
+                    className={navLinkClass(ativo)}
+                  >
+                    {produto.navLabel ?? produto.label}
+                  </Link>
+                );
+              }
+              const estaAberto = aberto === produto.href;
+              const idMenu = `submenu${produto.href.replace(/\//g, "-")}`;
+              return (
+                <div
+                  key={produto.href}
+                  className="relative flex items-center gap-1"
+                  onMouseEnter={() => setAberto(produto.href)}
+                  onMouseLeave={() => setAberto((atual) => (atual === produto.href ? null : atual))}
                 >
-                  <path d="M1.5 3.5L5 7l3.5-3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+                  <Link
+                    href={produto.href}
+                    aria-current={pathname === produto.href ? "page" : undefined}
+                    className={navLinkClass(ativo)}
+                  >
+                    {produto.navLabel ?? produto.label}
+                  </Link>
+                  <button
+                    type="button"
+                    aria-expanded={estaAberto}
+                    aria-controls={idMenu}
+                    aria-label={`Abrir submenu de ${produto.label}`}
+                    onClick={() => setAberto(estaAberto ? null : produto.href)}
+                    className={`flex h-6 w-5 items-center justify-center ${navLinkClass(ativo)}`}
+                  >
+                    <Chevron aberto={estaAberto} />
+                  </button>
 
-              {calcOpen && (
-                <div className="absolute left-0 top-full z-10 mt-2 w-64 rounded-xl border border-[var(--color-border)] bg-[var(--color-paper)] p-2 shadow-lg">
-                  {calculadoras.map((calc) => (
-                    <Link
-                      key={calc.href}
-                      href={calc.href}
-                      onClick={() => setCalcOpen(false)}
-                      aria-current={pathname === calc.href ? "page" : undefined}
-                      className={`block rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-[var(--color-muted)] ${
-                        pathname === calc.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
-                      }`}
-                    >
-                      {calc.label}
-                    </Link>
-                  ))}
+                  {/* Os links ficam sempre no HTML (escondidos com "hidden") para
+                      que buscadores e IAs encontrem as páginas de produto. */}
+                  <div
+                    id={idMenu}
+                    hidden={!estaAberto}
+                    className="absolute left-0 top-full z-10 w-80 pt-2"
+                  >
+                    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-paper)] p-2 shadow-lg">
+                      {produto.submenu.grupos.map((grupo, i) => (
+                        <div key={grupo.titulo ?? i} className={i > 0 ? "mt-1 border-t border-[var(--color-border)] pt-1" : ""}>
+                          {grupo.titulo && (
+                            <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/70">
+                              {grupo.titulo}
+                            </p>
+                          )}
+                          {grupo.itens.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setAberto(null)}
+                              aria-current={pathname === item.href ? "page" : undefined}
+                              className={`block rounded-lg px-3 py-2 text-sm font-medium hover:bg-[var(--color-muted)] ${
+                                pathname === item.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                      <Link
+                        href={produto.href}
+                        onClick={() => setAberto(null)}
+                        className="mt-1 block rounded-lg border-t border-[var(--color-border)] px-3 py-2.5 text-sm font-semibold text-[var(--color-primary)] hover:bg-[var(--color-muted)]"
+                      >
+                        {produto.submenu.verTodos} →
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              )}
-            </div>
+              );
+            })}
 
             <Link
               href="/blog"
@@ -222,39 +305,80 @@ export default function Header() {
                 Início
               </Link>
 
-              <p className="mt-2 px-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/50">
+              <p className="mt-2 px-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/70">
                 Produtos
               </p>
-              {produtos.map((produto) => (
-                <Link
-                  key={produto.href}
-                  href={produto.href}
-                  aria-current={pathname === produto.href ? "page" : undefined}
-                  className={`rounded-md px-2 py-2.5 text-base font-medium hover:bg-[var(--color-muted)] ${
-                    pathname === produto.href
-                      ? "text-[var(--color-primary)]"
-                      : "text-[var(--color-ink)]"
-                  }`}
-                >
-                  {produto.label}
-                </Link>
-              ))}
-
-              <p className="mt-2 px-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/50">
-                Calculadoras
-              </p>
-              {calculadoras.map((calc) => (
-                <Link
-                  key={calc.href}
-                  href={calc.href}
-                  aria-current={pathname === calc.href ? "page" : undefined}
-                  className={`rounded-md px-2 py-2.5 text-base font-medium hover:bg-[var(--color-muted)] ${
-                    pathname === calc.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
-                  }`}
-                >
-                  {calc.label}
-                </Link>
-              ))}
+              {produtos.map((produto) => {
+                const classeItem = `rounded-md px-2 py-2.5 text-base font-medium hover:bg-[var(--color-muted)] ${
+                  pathname === produto.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
+                }`;
+                if (!produto.submenu) {
+                  return (
+                    <Link
+                      key={produto.href}
+                      href={produto.href}
+                      aria-current={pathname === produto.href ? "page" : undefined}
+                      className={classeItem}
+                    >
+                      {produto.label}
+                    </Link>
+                  );
+                }
+                const estaAberto = mobileAberto === produto.href;
+                const idMenu = `submenu-mobile${produto.href.replace(/\//g, "-")}`;
+                return (
+                  <div key={produto.href}>
+                    <div className="flex items-center">
+                      <Link
+                        href={produto.href}
+                        aria-current={pathname === produto.href ? "page" : undefined}
+                        className={`flex-1 ${classeItem}`}
+                      >
+                        {produto.label}
+                      </Link>
+                      <button
+                        type="button"
+                        aria-expanded={estaAberto}
+                        aria-controls={idMenu}
+                        aria-label={`${estaAberto ? "Fechar" : "Abrir"} submenu de ${produto.label}`}
+                        onClick={() => setMobileAberto(estaAberto ? null : produto.href)}
+                        className="flex h-11 w-11 items-center justify-center rounded-md text-[var(--color-ink)] hover:bg-[var(--color-muted)]"
+                      >
+                        <Chevron aberto={estaAberto} />
+                      </button>
+                    </div>
+                    <div id={idMenu} hidden={!estaAberto} className="mb-1 ml-3 border-l border-[var(--color-border)] pl-3">
+                      {produto.submenu.grupos.map((grupo, i) => (
+                        <div key={grupo.titulo ?? i}>
+                          {grupo.titulo && (
+                            <p className="px-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/70">
+                              {grupo.titulo}
+                            </p>
+                          )}
+                          {grupo.itens.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              aria-current={pathname === item.href ? "page" : undefined}
+                              className={`block rounded-md px-2 py-2.5 text-[15px] hover:bg-[var(--color-muted)] ${
+                                pathname === item.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                      <Link
+                        href={produto.href}
+                        className="block rounded-md px-2 py-2.5 text-[15px] font-semibold text-[var(--color-primary)] hover:bg-[var(--color-muted)]"
+                      >
+                        {produto.submenu.verTodos} →
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
 
               <Link
                 href="/blog"
