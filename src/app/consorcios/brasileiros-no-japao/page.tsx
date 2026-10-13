@@ -622,7 +622,7 @@ export default function BrasileirosNoJapaoPage() {
               {ademiconNumeros.map((n) => (
                 <div key={n.rotulo} className="flex flex-col">
                   <dt className="text-sm text-[var(--color-ink)]/70">{n.rotulo}</dt>
-                  <dd className="order-first text-2xl font-bold text-[var(--color-primary)]">{n.valor}</dd>
+                  <dd className="order-first text-2xl font-bold text-[#ee3124]">{n.valor}</dd>
                 </div>
               ))}
             </dl>
