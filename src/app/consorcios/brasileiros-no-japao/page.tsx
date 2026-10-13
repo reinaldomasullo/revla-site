@@ -145,7 +145,7 @@ const faqItems = [
   {
     question: "Quais documentos do Japão servem para comprovar renda?",
     answer:
-      "Na contemplação, para quem mora fora do Brasil, a Ademicon pede a declaração de rendimentos do país onde você mora e a declaração de saída definitiva do país entregue à Receita Federal. Os documentos japoneses vão com tradução juramentada, sem apostila de Haia, e extratos bancários servem só como complemento. Exemplos: comprovante anual de rendimentos (gensen chōshūhyō) e certidão de renda da prefeitura (kazei shōmeisho).",
+      "Na contemplação, para quem mora fora do Brasil, a Ademicon pede a declaração de rendimentos do país onde você mora. Os documentos japoneses vão com tradução juramentada, sem apostila de Haia, e extratos bancários servem só como complemento. Exemplos: comprovante anual de rendimentos (gensen chōshūhyō) e certidão de renda da prefeitura (kazei shōmeisho).",
   },
   {
     question: "Fui contemplado e estou no Japão. Preciso voltar para comprar o imóvel?",
@@ -441,7 +441,7 @@ export default function BrasileirosNoJapaoPage() {
           </p>
           <p className={body}>
             Para quem mora fora do Brasil, a política de crédito da Ademicon pede a declaração de rendimentos do país
-            onde você mora e a declaração de saída definitiva do país entregue à Receita Federal. Extratos bancários
+            onde você mora. Extratos bancários
             servem apenas como complemento, e o aluguel de um imóvel conta como renda quando vem com o contrato de
             locação e o extrato do recebimento.
           </p>
@@ -460,8 +460,7 @@ export default function BrasileirosNoJapaoPage() {
           </ul>
           <p className={body}>
             Os documentos vão com tradução juramentada, feita por tradutor público no Brasil a partir do documento
-            digitalizado, sem você sair do Japão. A Ademicon não exige apostila de Haia. Se você ainda não fez a
-            declaração de saída definitiva, converse comigo antes de contratar para avaliarmos o seu caso.
+            digitalizado, sem você sair do Japão. A Ademicon não exige apostila de Haia.
           </p>
           <SectionCTA label="Tirar a minha dúvida sobre renda" />
         </Container>
