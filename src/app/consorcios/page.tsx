@@ -24,6 +24,7 @@ import {
   HandCoin,
   Headset,
   CompareArrows,
+  Globe,
 } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
@@ -74,6 +75,13 @@ const categorias = [
     title: "Investimento",
     description: "Poupança programada sem juros, com possibilidade de lance para antecipar a contemplação.",
     icon: <TrendingUp />,
+  },
+  {
+    title: "Brasileiros no Japão",
+    description: "Consórcio de imóvel no Brasil contratado do Japão, com a parcela simulada em reais e ienes.",
+    href: "/consorcios/brasileiros-no-japao",
+    linkLabel: "Consórcio para quem mora no Japão",
+    icon: <Globe />,
   },
   {
     title: "Serviços",

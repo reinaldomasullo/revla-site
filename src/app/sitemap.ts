@@ -26,6 +26,11 @@ const STRATEGY1_LAST_MODIFIED = new Date("2026-09-15");
 // saúde também ganharam a FAQ de corretora credenciada + selo de
 // atualização na tabela de preços — reaproveita a mesma constante de data.
 const GEO_AEO_20SET_LAST_MODIFIED = new Date("2026-09-20");
+// 13/10: página para brasileiros que moram no Japão (teste GEO de linha de
+// base + análise de concorrentes de 12/10). Atualize junto com LAST_UPDATED
+// em src/app/consorcios/brasileiros-no-japao/page.tsx.
+const JAPAO_LAST_MODIFIED = new Date("2026-10-13");
+
 const GEO_AEO_20SET_SLUGS = new Set(["vida", "auto", "residencial", "viagem"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -75,6 +80,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: STRATEGY1_LAST_MODIFIED,
       changeFrequency: "weekly" as const,
       priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/brasileiros-no-japao`,
+      lastModified: JAPAO_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
     },
     {
       url: `${siteConfig.url}/consorcios/e-confiavel`,

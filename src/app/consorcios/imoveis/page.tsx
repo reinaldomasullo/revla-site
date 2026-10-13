@@ -92,6 +92,11 @@ const faqItems = [
       "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pro seu objetivo com o imóvel.",
   },
   {
+    question: "Moro no Japão. Posso fazer consórcio de imóveis no Brasil?",
+    answer:
+      "Sim. Na Ademicon, o brasileiro que mora no Japão contrata online, com o endereço do Japão, e paga a parcela com cartão de crédito internacional. Veja o passo a passo e simule a parcela em reais e ienes na página [consórcio para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+  },
+  {
     question: "A Revla tem registro na SUSEP?",
     answer:
       `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,

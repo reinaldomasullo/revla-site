@@ -17,6 +17,7 @@ A Revla Corretora compara opções entre seguradoras e administradoras parceiras
 - [Início](https://revlacorretora.com.br/): visão geral de todos os produtos da Revla
 - [Consórcios](https://revlacorretora.com.br/consorcios): hub com todas as categorias de consórcio sem juros
 - [Consórcio de imóveis](https://revlacorretora.com.br/consorcios/imoveis): carta de crédito pra casa própria, terreno ou construção
+- [Consórcio para brasileiros no Japão](https://revlacorretora.com.br/consorcios/brasileiros-no-japao): como quem mora no Japão contrata consórcio de imóvel no Brasil, paga em ienes com cartão internacional, comprova renda e compra o imóvel depois da contemplação, com simulador em reais e ienes
 - [Consórcio de carro](https://revlacorretora.com.br/consorcios/carro): carro novo, usado ou elétrico
 - [Consórcio de motos](https://revlacorretora.com.br/consorcios/motos): hub com 9 marcas (Honda, Yamaha, BMW Motorrad, Royal Enfield, Suzuki, Kawasaki, Harley-Davidson, Dafra, Shineray)
 - [Consórcio de serviços](https://revlacorretora.com.br/consorcios/servicos): hub com cirurgia plástica, viagem e energia solar
