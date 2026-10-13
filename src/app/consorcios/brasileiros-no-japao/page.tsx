@@ -681,7 +681,7 @@ export default function BrasileirosNoJapaoPage() {
                 não explica.
               </p>
               <p className={body}>
-                Por isso a Revla trabalha com atendimento consultivo. Eu não sou funcionário da administradora: explico
+                Por isso a Revla trabalha com atendimento consultivo. Sou consultor autorizado da Ademicon e explico
                 tudo antes, respondo a todas as perguntas e acompanho cada cliente do primeiro ao último mês do
                 consórcio. E eu sei o que é construir a vida longe de casa: meu pai saiu da Itália com 18 anos, fugindo
                 da guerra, e construiu tudo aqui no Brasil.
