@@ -661,10 +661,10 @@ export default function BrasileirosNoJapaoPage() {
               src="/images/reinaldo-masullo.webp"
               alt="Reinaldo Masullo, consultor da Revla Corretora"
               width={180}
-              height={180}
+              height={225}
               loading="lazy"
               decoding="async"
-              className="h-44 w-44 rounded-2xl object-cover"
+              className="h-56 w-44 rounded-2xl bg-gradient-to-b from-slate-200 to-slate-100 object-cover object-top"
             />
             <div>
               <h2 id="quem-atende-heading" className={h2}>
