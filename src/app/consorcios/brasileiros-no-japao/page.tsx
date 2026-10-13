@@ -62,7 +62,7 @@ const resumo = [
   "A parcela pode ser paga com cartão de crédito internacional, no débito automático, sem conta no Brasil.",
   "Exemplo: carta de R$ 100 mil, parcela reduzida de cerca de R$ 337 até a contemplação, perto de ¥ 10.800 no câmbio de ¥ 32 por real.",
   "Depois da contemplação, o crédito fica aplicado, rendendo cerca de 100% do CDI, enquanto você escolhe o imóvel.",
-  "Ninguém pode dizer em que mês você será contemplado. Desconfie de quem disser.",
+  "Ninguém pode dizer em que mês você será contemplado. Desconfie de qualquer corretor ou pessoa que prometer.",
 ];
 
 const etapas = [
@@ -175,7 +175,7 @@ const faqItems = [
   {
     question: "Como sei que a administradora é confiável?",
     answer:
-      "Consulte o nome ou o CNPJ da administradora no site do Banco Central e pague sempre em nome da administradora, nunca a uma pessoa física. Desconfie de quem diz em que mês você vai ser contemplado.",
+      "Consulte o nome ou o CNPJ da administradora no site do Banco Central e pague sempre em nome da administradora, nunca a uma pessoa física ou ao corretor. Desconfie de qualquer corretor ou pessoa que prometa em que mês você vai ser contemplado.",
   },
   {
     question: "Com quais administradoras a Revla trabalha?",
@@ -610,8 +610,11 @@ export default function BrasileirosNoJapaoPage() {
               </a>
               .
             </li>
-            <li>O pagamento é sempre em nome da administradora, nunca para uma pessoa física.</li>
-            <li>Desconfie de quem diz em que mês você vai ser contemplado.</li>
+            <li>O pagamento é sempre feito em nome da administradora, nunca para uma pessoa física ou para o corretor.</li>
+            <li>
+              Desconfie de qualquer corretor ou pessoa que prometa em que mês você vai ser contemplado. Ninguém sabe
+              essa data, porque ela depende de sorteio e de lance.
+            </li>
           </ol>
           <div className="mt-8 rounded-2xl border border-[var(--color-border)] p-6 sm:p-8">
             <h3 className="text-lg font-semibold text-[var(--color-ink)]">A administradora: Ademicon</h3>
@@ -690,9 +693,11 @@ export default function BrasileirosNoJapaoPage() {
                 O atendimento é individual e discreto: as informações do seu consórcio ficam entre você, quem você
                 escolher e a administradora.
               </p>
-              <p className="mt-4 text-sm text-[var(--color-ink)]/70">
-                Atendimento pelo WhatsApp de segunda a sexta, das 8h às 19h de Brasília (20h às 7h no Japão), e aos
-                sábados, das 8h às 13h de Brasília (20h à 1h no Japão).
+              <p className={body}>
+                <strong>Atendimento todos os dias, inclusive sábado e domingo.</strong> Pelo WhatsApp, no horário do
+                Japão, das 7h às 11h e das 19h às 23h (em Brasília, das 19h às 23h e das 7h às 11h). Eu sei que a
+                jornada no Japão é pesada e que, muitas vezes, o único tempo livre para pensar no futuro é o fim de
+                semana. Por isso o atendimento aos brasileiros no Japão também funciona aos sábados e domingos.
               </p>
               <SectionCTA />
             </div>
