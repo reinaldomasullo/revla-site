@@ -45,10 +45,14 @@ export default function SimuladorJapao() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={idCarta} className="block text-sm font-semibold text-[var(--color-ink)]">
-            Valor da carta de crédito
+            Escolha o valor da carta de crédito
           </label>
+          <p id={`${idCarta}-ajuda`} className="mt-1 text-xs text-[var(--color-ink)]/70">
+            Toque na seta para simular outros valores, de R$ 100 mil a R$ 500 mil.
+          </p>
           <select
             id={idCarta}
+            aria-describedby={`${idCarta}-ajuda`}
             value={carta}
             onChange={(e) => setCarta(Number(e.target.value))}
             className="mt-2 h-12 w-full rounded-lg border border-[var(--color-border)] bg-white px-3 text-base text-[var(--color-ink)]"
@@ -64,6 +68,9 @@ export default function SimuladorJapao() {
           <label htmlFor={idCambio} className="block text-sm font-semibold text-[var(--color-ink)]">
             Câmbio (ienes por real)
           </label>
+          <p id={`${idCambio}-ajuda`} className="mt-1 text-xs text-[var(--color-ink)]/70">
+            Valor de referência. Ajuste pelo câmbio do dia.
+          </p>
           <input
             id={idCambio}
             type="number"
@@ -75,9 +82,6 @@ export default function SimuladorJapao() {
             className="mt-2 h-12 w-full rounded-lg border border-[var(--color-border)] bg-white px-3 text-base text-[var(--color-ink)]"
             aria-describedby={`${idCambio}-ajuda`}
           />
-          <p id={`${idCambio}-ajuda`} className="mt-1 text-xs text-[var(--color-ink)]/60">
-            Valor de referência. Ajuste pelo câmbio do dia.
-          </p>
         </div>
       </div>
 

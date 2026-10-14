@@ -58,7 +58,7 @@ function SectionCTA({ label = CTA_LABEL }: { label?: string }) {
 
 const resumo = [
   "Brasileiro que mora no Japão pode contratar consórcio de imóvel no Brasil, de forma online, com o endereço do Japão.",
-  "Na Ademicon, não é exigida comprovação de renda para entrar no grupo. A renda só é analisada na contemplação, para usar a carta.",
+  "A análise de renda é feita na contemplação, quando você vai usar a carta para comprar o imóvel.",
   "A parcela pode ser paga com cartão de crédito internacional, no débito automático, sem conta no Brasil.",
   "Exemplo: carta de R$ 100 mil, parcela reduzida de cerca de R$ 337 até a contemplação, perto de ¥ 10.800 no câmbio de ¥ 32 por real.",
   "Depois da contemplação, o crédito fica aplicado, rendendo cerca de 100% do CDI, enquanto você escolhe o imóvel.",
@@ -68,7 +68,7 @@ const resumo = [
 const etapas = [
   {
     titulo: "Você contrata do Japão",
-    texto: "Online, com o seu endereço no Japão e sem comprovar renda para entrar no grupo.",
+    texto: "Online, com o seu endereço no Japão. A renda é analisada na contemplação.",
   },
   {
     titulo: "Paga a parcela todo mês",
@@ -135,12 +135,12 @@ const faqItems = [
   {
     question: "Preciso comprovar renda para entrar no grupo?",
     answer:
-      "Não na Ademicon. A comprovação de renda só é pedida depois da contemplação, quando você for usar a carta para comprar o imóvel. A regra vale igual para quem mora no Brasil, no Japão ou em outro país.",
+      "A análise de renda é feita na contemplação, quando você for usar a carta para comprar o imóvel. A regra vale igual para quem mora no Brasil, no Japão ou em outro país.",
   },
   {
     question: "Como pago a parcela recebendo em ienes?",
     answer:
-      "Na Ademicon, você pode cadastrar um cartão de crédito internacional para o débito automático da parcela, sem precisar de conta no Brasil. O cartão tem taxa de até 3,13% por parcela; o boleto não tem taxa. A parcela é em reais, e o valor em ienes muda com o câmbio.",
+      "Com cartão de crédito internacional, no débito automático, sem precisar de conta no Brasil, e eu te ajudo a cadastrar o cartão. Se preferir, também pode receber o boleto por e-mail. A primeira parcela pode ser paga por boleto, Pix ou cartão; as seguintes, por boleto ou no cartão. Para boleto ou Pix, é preciso ter conta no Brasil, que pode ser aberta em um banco digital pelo celular. A parcela é em reais, e o valor em ienes muda com o câmbio.",
   },
   {
     question: "Quais documentos do Japão servem para comprovar renda?",
@@ -267,9 +267,9 @@ export default function BrasileirosNoJapaoPage() {
               Morando no Japão, posso fazer consórcio de imóvel no Brasil?
             </h1>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-ink)]/80 sm:text-lg">
-              Sim. Na Ademicon, administradora com que a Revla trabalha, você contrata online, com o seu endereço no
-              Japão, sem comprovar renda para entrar no grupo, e paga a parcela com cartão de crédito internacional. Quando
-              for contemplado, o crédito fica rendendo enquanto você escolhe o imóvel no Brasil.
+              Sim. Você contrata online, com o seu endereço no Japão, e paga a parcela com cartão de crédito
+              internacional. A comprovação de renda é feita na contemplação, quando você vai usar o crédito, e o crédito
+              fica rendendo enquanto você escolhe o imóvel no Brasil.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
               <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} variant="secondary" external>
@@ -286,7 +286,7 @@ export default function BrasileirosNoJapaoPage() {
               {[
                 "Contratação 100% online",
                 "Endereço no Japão aceito",
-                "Sem comprovar renda para entrar",
+                "Renda analisada na contemplação",
                 "Administradora autorizada pelo Banco Central",
               ].map((item) => (
                 <li key={item} className="rounded-full bg-[var(--color-muted)] px-3 py-1.5">
@@ -343,9 +343,9 @@ export default function BrasileirosNoJapaoPage() {
             Qualquer brasileiro que mora no Japão, com CPF regular, pode contratar consórcio de imóvel na Ademicon.
           </p>
           <p className={body}>
-            O cadastro é feito com o seu endereço no Japão. Para entrar no grupo, não é exigida comprovação de renda, e
-            a regra é a mesma para quem mora no Brasil ou em qualquer outro país. A renda só é analisada depois da
-            contemplação, quando você for usar a carta para comprar o imóvel.
+            O cadastro é feito com o seu endereço no Japão. A análise de renda acontece na contemplação, quando você
+            for usar a carta para comprar o imóvel, e a regra é a mesma para quem mora no Brasil ou em qualquer outro
+            país.
           </p>
           <p className={body}>
             A Revla não é administradora: é a corretora que explica, contrata com você e acompanha o seu consórcio do
@@ -418,8 +418,11 @@ export default function BrasileirosNoJapaoPage() {
             Com cartão de crédito internacional, no débito automático, sem precisar de conta no Brasil.
           </p>
           <p className={body}>
-            Você mesmo cadastra o cartão no aplicativo da administradora, e a parcela é cobrada todo mês perto do
-            vencimento. O cartão tem uma taxa de até 3,13% por parcela; o boleto não tem taxa. A parcela é sempre em
+            Eu te ajudo a cadastrar o cartão no aplicativo da administradora, e a parcela é cobrada todo mês no dia do
+            vencimento. Se preferir, você também pode receber o boleto por e-mail todo mês. A primeira parcela pode ser
+            paga por boleto, Pix ou cartão; as seguintes, por boleto ou no cartão. Para pagar boleto ou Pix, você
+            precisa de uma conta no Brasil, e quem não tem pode abrir uma conta em um banco digital pelo celular. A
+            parcela é sempre em
             reais, então o valor em ienes muda com o câmbio: com o real mais caro, você gasta mais ienes; com o real
             mais barato, menos.
           </p>
@@ -437,7 +440,8 @@ export default function BrasileirosNoJapaoPage() {
             Como comprovar renda trabalhando no Japão?
           </h2>
           <p className={lead}>
-            Só na contemplação, e só se você for usar a carta para comprar o imóvel. Para entrar no grupo, não precisa.
+            Na contemplação, quando você for usar a carta para comprar o imóvel. É nesse momento que a análise de renda
+            acontece.
           </p>
           <p className={body}>
             Para quem mora fora do Brasil, a política de crédito da Ademicon pede a declaração de rendimentos do país
@@ -557,6 +561,11 @@ export default function BrasileirosNoJapaoPage() {
               </ul>
             </div>
           </div>
+          <p className={body}>
+            <strong>E se eu desistir?</strong> O valor pago não volta na hora: ele só é devolvido quando a sua cota for
+            sorteada entre as canceladas ou quando o grupo terminar, conforme as regras do contrato. Por isso, escolha
+            uma parcela que caiba no seu orçamento com folga, mesmo com o câmbio e o reajuste anual.
+          </p>
         </Container>
       </section>
 
@@ -573,11 +582,7 @@ export default function BrasileirosNoJapaoPage() {
           <p className={body}>
             Você não precisa vir ao Brasil para isso: uma imobiliária cuida do anúncio, da vistoria, do contrato e da
             cobrança. Para você ter mais tranquilidade com o pagamento, a Revla, que também é corretora de seguros,
-            contrata o{" "}
-            <Link href="/seguros/fianca" className="font-semibold text-[var(--color-secondary)] hover:underline">
-              seguro fiança
-            </Link>
-            , pago pelo inquilino: se ele atrasar, a seguradora paga os aluguéis devidos, conforme as condições da
+            contrata o seguro fiança, pago pelo inquilino: se ele atrasar, a seguradora paga os aluguéis devidos, conforme as condições da
             apólice.
           </p>
           <p className={body}>
@@ -717,6 +722,10 @@ export default function BrasileirosNoJapaoPage() {
             ,{" "}
             <Link href="/consorcios/calculadora" className="font-semibold text-[var(--color-secondary)] hover:underline">
               calculadora de consórcio de imóveis
+            </Link>
+            ,{" "}
+            <Link href="/seguros/fianca" className="font-semibold text-[var(--color-secondary)] hover:underline">
+              seguro fiança
             </Link>{" "}
             e{" "}
             <Link
