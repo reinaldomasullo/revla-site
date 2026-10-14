@@ -622,7 +622,7 @@ export default function BrasileirosNoJapaoPage() {
             </li>
           </ol>
           <div className="mt-8 rounded-2xl border border-[var(--color-border)] p-6 sm:p-8">
-            <h3 className="text-lg font-semibold text-[var(--color-ink)]">A administradora: Ademicon</h3>
+            <h3 className="text-lg font-semibold text-[var(--color-ink)]">Administradora parceira: Ademicon</h3>
             <dl className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-5">
               {ademiconNumeros.map((n) => (
                 <div key={n.rotulo} className="flex flex-col">
@@ -632,7 +632,7 @@ export default function BrasileirosNoJapaoPage() {
               ))}
             </dl>
             <p className="mt-5 text-sm leading-relaxed text-[var(--color-ink)]/75">
-              A Ademicon afirma ser a única administradora de consórcios do Brasil com dois fundos de private equity na
+              A Ademicon é a única administradora de consórcios do Brasil com dois fundos de private equity na
               estrutura acionária. O sistema de consórcios é regulamentado pela Lei nº 11.795/2008 e fiscalizado pelo
               Banco Central.
             </p>
