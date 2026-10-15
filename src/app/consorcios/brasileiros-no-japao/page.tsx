@@ -67,28 +67,37 @@ const resumo = [
 
 const etapas = [
   {
-    titulo: "Você contrata do Japão",
-    texto: "Online, com o seu endereço no Japão. A renda é analisada na contemplação.",
+    titulo: "Você entra no grupo, do Japão",
+    texto:
+      "Eu faço o seu cadastro no sistema da administradora, online, com o seu endereço no Japão, e você passa a ter uma cota num grupo.",
   },
   {
     titulo: "Paga a parcela todo mês",
-    texto: "Com cartão de crédito internacional no débito automático, ou por boleto.",
+    texto: "Com cartão de crédito internacional no débito automático, ou por boleto enviado por e-mail.",
   },
   {
-    titulo: "Concorre em todas as assembleias",
-    texto: "Por sorteio e, se fizer sentido para o seu plano, por lance. Eu acompanho cada assembleia com você.",
+    titulo: "Participa das assembleias",
+    texto:
+      "Todo mês tem assembleia, e a contemplação acontece por sorteio ou por lance. O lance pode ser livre, com recursos seus, ou embutido, usando parte da própria carta. Eu acompanho cada assembleia com você.",
   },
   {
-    titulo: "É contemplado e o crédito rende",
-    texto: "O crédito fica aplicado, rendendo cerca de 100% do CDI, enquanto você escolhe o imóvel.",
+    titulo: "É contemplado e a carta é liberada",
+    texto:
+      "Você apresenta a documentação, incluindo a de renda, e a administradora libera a carta de crédito. Enquanto você escolhe o imóvel, o crédito fica aplicado, rendendo cerca de 100% do CDI.",
   },
   {
-    titulo: "Compra o imóvel no Brasil",
-    texto: "À vista para o vendedor, com contratos que aceitam assinatura digital válida.",
+    titulo: "Compra o imóvel à vista",
+    texto:
+      "Com a carta, você compra como quem paga à vista, e isso dá poder de negociação com o vendedor. Os contratos aceitam assinatura digital válida.",
   },
   {
     titulo: "Mora ou aluga",
-    texto: "Você usa quando voltar, ou aluga e o aluguel ajuda a pagar a parcela até lá.",
+    texto: "Você usa o imóvel quando voltar, ou aluga, e o aluguel ajuda a pagar a parcela até lá.",
+  },
+  {
+    titulo: "Ou vende a carta",
+    texto:
+      "Se o seu plano mudar, a carta contemplada pode ser vendida. A própria administradora faz uma oferta à vista, conforme a avaliação no momento. Sem burocracia para quem está no Japão: você aceita, o dinheiro cai na sua conta, e a cota e as parcelas saem do seu nome na hora.",
   },
 ];
 
@@ -369,7 +378,14 @@ export default function BrasileirosNoJapaoPage() {
           </div>
           <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {etapas.map((etapa, i) => (
-              <li key={etapa.titulo} className="rounded-2xl border border-[var(--color-border)] p-6">
+              <li
+                key={etapa.titulo}
+                className={`rounded-2xl border p-6 ${
+                  i === etapas.length - 1
+                    ? "border-dashed border-[var(--color-secondary)]/40 bg-[var(--color-muted)] sm:col-span-2 lg:col-span-3"
+                    : "border-[var(--color-border)]"
+                }`}
+              >
                 <span
                   aria-hidden="true"
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-accent)]/15 text-sm font-bold text-[var(--color-accent-dark)]"
