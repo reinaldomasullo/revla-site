@@ -7,6 +7,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SimuladorJapao from "@/components/japao/SimuladorJapao";
+import VideoCurto from "@/components/japao/VideoCurto";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 // Página para brasileiros que moram no Japão (13/10/2026). Construída a
@@ -23,8 +24,8 @@ import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 const PATH = "/consorcios/brasileiros-no-japao";
 const PUBLISHED = "2026-10-13";
-const LAST_UPDATED = "2026-10-13";
-const LAST_UPDATED_LABEL = "13 de outubro de 2026";
+const LAST_UPDATED = "2026-10-18";
+const LAST_UPDATED_LABEL = "18 de outubro de 2026";
 
 const WHATSAPP_MESSAGE = "Olá, Reinaldo! Moro no Japão e quero entender o consórcio de imóvel no Brasil.";
 const CTA_LABEL = "Falar com o Reinaldo no WhatsApp";
@@ -249,6 +250,34 @@ const serviceSchema = {
     "Consultoria e corretagem de consórcio de imóvel no Brasil para brasileiros que moram no Japão: contratação online, pagamento com cartão internacional e acompanhamento até a compra do imóvel.",
 };
 
+// Vídeos curtos da série (canal do Reinaldo no YouTube). A transcrição é o que
+// foi falado no vídeo, para buscadores e IAs.
+const videoQuemPode = {
+  youtubeId: "IocTEfTWKNA",
+  titulo: "Morando no Japão, posso fazer consórcio de imóvel no Brasil?",
+  capa: "/images/videos/japao-v1.webp",
+  publicado: "2026-10-17",
+  duracao: "PT45S",
+  transcricao:
+    "Você mora no Japão e acha que só vai ter imóvel no Brasil quando voltar? Eu sou o Reinaldo, consultor especialista em consórcios, e te digo: não precisa esperar. Você contrata o consórcio comigo de forma totalmente online, com o seu endereço aí. Paga uma parcela por mês, sem juros, só com a taxa de administração, e ainda tem a opção de pagar a parcela reduzida até a contemplação. E pode pagar com o seu cartão de crédito internacional, boleto, Pix ou conta digital. A análise de renda só acontece na contemplação, quando você for usar o crédito. Todo mês você concorre por sorteio ou por lance. Quando for contemplado, usa o crédito para comprar um imóvel à vista aqui no Brasil. Me chama no WhatsApp e me conta o que você quer construir.",
+};
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: videoQuemPode.titulo,
+  description:
+    "Reinaldo Masullo explica em 45 segundos como o brasileiro que mora no Japão contrata consórcio de imóvel no Brasil, paga a parcela e usa o crédito para comprar o imóvel à vista.",
+  thumbnailUrl: `${siteConfig.url}${videoQuemPode.capa}`,
+  uploadDate: videoQuemPode.publicado,
+  duration: videoQuemPode.duracao,
+  embedUrl: `https://www.youtube.com/embed/${videoQuemPode.youtubeId}`,
+  url: `https://www.youtube.com/shorts/${videoQuemPode.youtubeId}`,
+  inLanguage: "pt-BR",
+  transcript: videoQuemPode.transcricao,
+  author: { "@type": "Person", name: "Reinaldo Masullo", url: `${siteConfig.url}/reinaldo-masullo` },
+};
+
 const h2 = "text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl";
 const lead = "mt-4 text-lg leading-relaxed text-[var(--color-ink)]";
 const body = "mt-4 text-base leading-relaxed text-[var(--color-ink)]/75";
@@ -258,6 +287,7 @@ export default function BrasileirosNoJapaoPage() {
     <>
       <JsonLd data={webPageSchema} />
       <JsonLd data={serviceSchema} />
+      <JsonLd data={videoSchema} />
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
@@ -344,8 +374,9 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Quem pode */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="quem-pode-heading">
-        <Container className="max-w-3xl">
-          <h2 id="quem-pode-heading" className={h2}>
+        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div>
+            <h2 id="quem-pode-heading" className={h2}>
             Quem pode fazer consórcio no Brasil morando no Japão?
           </h2>
           <p className={lead}>
@@ -361,6 +392,14 @@ export default function BrasileirosNoJapaoPage() {
             primeiro ao último mês. O dinheiro fica no grupo da administradora, autorizada e fiscalizada pelo Banco
             Central.
           </p>
+          </div>
+          <VideoCurto
+            youtubeId={videoQuemPode.youtubeId}
+            titulo={videoQuemPode.titulo}
+            capa={videoQuemPode.capa}
+            transcricao={videoQuemPode.transcricao}
+            duracaoTexto="45 s"
+          />
         </Container>
       </section>
 
