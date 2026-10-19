@@ -52,6 +52,13 @@ const nextConfig: NextConfig = {
       { source: "/consorcio-de-servicos-como-usar-para-cirurgias-e-viagens", destination: "/consorcios/servicos", permanent: true },
       { source: "/os-beneficios-dos-planos-de-saude-para-a-prevencao-de-doencas", destination: "/plano-de-saude", permanent: true },
       { source: "/vantagens-dos-consorcios-na-aquisicao-de-bens-e-servicos", destination: "/consorcios", permanent: true },
+      // URLs antigas que ainda estavam no índice do Bing (Explorador de site, 19/10/2026)
+      { source: "/previdencia-privada-no-brasil-tipos-diferencas-e-estrategias-para-um-futuro-financeiramente-seguro", destination: "/planejamento-patrimonial", permanent: true },
+      { source: "/plano-de-saude-familiar", destination: "/plano-de-saude", permanent: true },
+      { source: "/plano-de-saude-por-adesao", destination: "/plano-de-saude", permanent: true },
+      { source: "/seguro-funeral", destination: "/plano-funerario", permanent: true },
+      { source: "/seguro-de-vida-pme-protecao-essencial-para-funcionarios-e-empresas", destination: "/seguros/vida", permanent: true },
+      { source: "/beneficios-empresariais-oferecendo-mais-para-os-colaboradores", destination: "/blog/plano-de-saude-empresarial", permanent: true },
 
       // Taxonomias do WordPress (categorias e tags) — qualquer URL antiga
       // nesse formato manda pra listagem atual do blog

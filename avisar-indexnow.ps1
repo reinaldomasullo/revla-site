@@ -31,6 +31,8 @@ if (-not $noAr) {
 }
 
 # 2. Monta a lista de enderecos
+# Aceita varios enderecos separados por virgula num unico argumento (vindo do .bat)
+if ($Urls) { $Urls = @($Urls | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ }) }
 if ($Todas) {
   [xml]$sitemap = (Invoke-WebRequest -UseBasicParsing -Uri "https://$dominio/sitemap.xml").Content
   $Urls = @($sitemap.urlset.url | ForEach-Object { $_.loc })
