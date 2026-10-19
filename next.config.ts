@@ -59,6 +59,10 @@ const nextConfig: NextConfig = {
       { source: "/seguro-funeral", destination: "/plano-funerario", permanent: true },
       { source: "/seguro-de-vida-pme-protecao-essencial-para-funcionarios-e-empresas", destination: "/seguros/vida", permanent: true },
       { source: "/beneficios-empresariais-oferecendo-mais-para-os-colaboradores", destination: "/blog/plano-de-saude-empresarial", permanent: true },
+      { source: "/fianca-locaticia-ou-seguro-fianca-entenda-as-vantagens-para-locadores-e-locatarios", destination: "/blog/seguro-fianca-como-funciona", permanent: true },
+      { source: "/fianca-locaticia-ou-seguro-fianca-entenda-as-vantagens-para-locadores-e-locatarios/:path*", destination: "/blog/seguro-fianca-como-funciona", permanent: true },
+      { source: "/seguro-de-vida-agricola-para-funcionarios-protegendo-os-valores-mais-importantes", destination: "/seguros/vida", permanent: true },
+      { source: "/seguro-de-vida-agricola-para-funcionarios-protegendo-os-valores-mais-importantes/:path*", destination: "/seguros/vida", permanent: true },
 
       // Taxonomias do WordPress (categorias e tags) — qualquer URL antiga
       // nesse formato manda pra listagem atual do blog
