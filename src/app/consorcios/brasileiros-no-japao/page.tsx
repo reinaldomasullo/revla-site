@@ -66,6 +66,13 @@ const resumo = [
   "Ninguém pode dizer em que mês você será contemplado. Desconfie de qualquer corretor ou pessoa que prometer.",
 ];
 
+// Passos do primeiro contato, ao lado do vídeo da seção "Quem pode".
+const comoComecar = [
+  "Você me chama no WhatsApp e conta o que quer construir no Brasil.",
+  "Eu faço a simulação com o valor que cabe no seu mês, em reais e em ienes.",
+  "Fazemos o cadastro online, com o seu endereço no Japão.",
+];
+
 const etapas = [
   {
     titulo: "Você entra no grupo, do Japão",
@@ -375,7 +382,7 @@ export default function BrasileirosNoJapaoPage() {
       {/* Quem pode */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="quem-pode-heading">
         <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
-          <div>
+          <div className="md:col-start-1 md:row-start-1">
             <h2 id="quem-pode-heading" className={h2}>
             Quem pode fazer consórcio no Brasil morando no Japão?
           </h2>
@@ -393,6 +400,7 @@ export default function BrasileirosNoJapaoPage() {
             Central.
           </p>
           </div>
+          <div className="md:col-start-2 md:row-span-2 md:row-start-1">
           <VideoCurto
             youtubeId={videoQuemPode.youtubeId}
             titulo={videoQuemPode.titulo}
@@ -400,6 +408,24 @@ export default function BrasileirosNoJapaoPage() {
             transcricao={videoQuemPode.transcricao}
             duracaoTexto="45 s"
           />
+          </div>
+          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6 md:col-start-1 md:row-start-2">
+            <p className="text-base font-semibold text-[var(--color-primary)]">Como começar, morando no Japão</p>
+            <ol className="mt-3 list-decimal space-y-2 pl-5 text-base leading-relaxed text-[var(--color-ink)]/75">
+              {comoComecar.map((passo) => (
+                <li key={passo}>{passo}</li>
+              ))}
+            </ol>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink)]/75">
+              Atendimento pelo WhatsApp todos os dias, inclusive sábado e domingo, das 7h às 11h e das 19h às 23h no
+              horário do Japão.
+            </p>
+            <div className="mt-5">
+              <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} variant="secondary" external>
+                {CTA_LABEL}
+              </CTAButton>
+            </div>
+          </div>
         </Container>
       </section>
 
