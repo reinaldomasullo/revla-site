@@ -24,8 +24,8 @@ import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 const PATH = "/consorcios/brasileiros-no-japao";
 const PUBLISHED = "2026-10-13";
-const LAST_UPDATED = "2026-10-18";
-const LAST_UPDATED_LABEL = "18 de outubro de 2026";
+const LAST_UPDATED = "2026-10-19";
+const LAST_UPDATED_LABEL = "19 de outubro de 2026";
 
 const WHATSAPP_MESSAGE = "Olá, Reinaldo! Moro no Japão e quero entender o consórcio de imóvel no Brasil.";
 const CTA_LABEL = "Falar com o Reinaldo no WhatsApp";
@@ -60,7 +60,7 @@ function SectionCTA({ label = CTA_LABEL }: { label?: string }) {
 const resumo = [
   "Brasileiro que mora no Japão pode contratar consórcio de imóvel no Brasil, de forma online, com o endereço do Japão.",
   "A análise de renda é feita na contemplação, quando você vai usar a carta para comprar o imóvel.",
-  "A parcela pode ser paga com cartão de crédito internacional, no débito automático, sem conta no Brasil.",
+  "A parcela pode ser paga com cartão de crédito internacional, com cobrança automática todo mês, sem conta no Brasil.",
   "Exemplo: carta de R$ 100 mil, parcela reduzida de cerca de R$ 337 até a contemplação, perto de ¥ 10.800 no câmbio de ¥ 32 por real.",
   "Depois da contemplação, o crédito fica aplicado, rendendo cerca de 100% do CDI, enquanto você escolhe o imóvel.",
   "Ninguém pode dizer em que mês você será contemplado. Desconfie de qualquer corretor ou pessoa que prometer.",
@@ -81,7 +81,7 @@ const etapas = [
   },
   {
     titulo: "Paga a parcela todo mês",
-    texto: "Com cartão de crédito internacional no débito automático, ou por boleto enviado por e-mail.",
+    texto: "Com cartão de crédito internacional com cobrança automática todo mês, ou por boleto enviado por e-mail.",
   },
   {
     titulo: "Participa das assembleias",
@@ -157,7 +157,7 @@ const faqItems = [
   {
     question: "Como pago a parcela recebendo em ienes?",
     answer:
-      "Com cartão de crédito internacional, no débito automático, sem precisar de conta no Brasil, e eu te ajudo a cadastrar o cartão. Se preferir, também pode receber o boleto por e-mail. A primeira parcela pode ser paga por boleto, Pix ou cartão; as seguintes, por boleto ou no cartão. Para boleto ou Pix, é preciso ter conta no Brasil, que pode ser aberta em um banco digital pelo celular. A parcela é em reais, e o valor em ienes muda com o câmbio.",
+      "Com cartão de crédito internacional, com cobrança automática todo mês, sem precisar de conta no Brasil, e eu te ajudo a cadastrar o cartão. Se preferir, também pode receber o boleto por e-mail. A primeira parcela pode ser paga por boleto, Pix ou cartão; as seguintes, por boleto ou no cartão. Para boleto ou Pix, é preciso ter conta no Brasil, que pode ser aberta em um banco digital pelo celular. A parcela é em reais, e o valor em ienes muda com o câmbio.",
   },
   {
     question: "Quais documentos do Japão servem para comprovar renda?",
@@ -269,21 +269,42 @@ const videoQuemPode = {
     "Você mora no Japão e acha que só vai ter imóvel no Brasil quando voltar? Eu sou o Reinaldo, consultor especialista em consórcios, e te digo: não precisa esperar. Você contrata o consórcio comigo de forma totalmente online, com o seu endereço aí. Paga uma parcela por mês, sem juros, só com a taxa de administração, e ainda tem a opção de pagar a parcela reduzida até a contemplação. E pode pagar com o seu cartão de crédito internacional, boleto, Pix ou conta digital. A análise de renda só acontece na contemplação, quando você for usar o crédito. Todo mês você concorre por sorteio ou por lance. Quando for contemplado, usa o crédito para comprar um imóvel à vista aqui no Brasil. Me chama no WhatsApp e me conta o que você quer construir.",
 };
 
-const videoSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  name: videoQuemPode.titulo,
-  description:
-    "Reinaldo Masullo explica em 45 segundos como o brasileiro que mora no Japão contrata consórcio de imóvel no Brasil, paga a parcela e usa o crédito para comprar o imóvel à vista.",
-  thumbnailUrl: `${siteConfig.url}${videoQuemPode.capa}`,
-  uploadDate: videoQuemPode.publicado,
-  duration: videoQuemPode.duracao,
-  embedUrl: `https://www.youtube.com/embed/${videoQuemPode.youtubeId}`,
-  url: `https://www.youtube.com/shorts/${videoQuemPode.youtubeId}`,
-  inLanguage: "pt-BR",
-  transcript: videoQuemPode.transcricao,
-  author: { "@type": "Person", name: "Reinaldo Masullo", url: `${siteConfig.url}/reinaldo-masullo` },
+const videoPagamento = {
+  youtubeId: "By7yGguJ6S8",
+  titulo: "Recebo em ienes. Como pago a parcela do consórcio no Brasil?",
+  capa: "/images/videos/japao-v2.webp",
+  publicado: "2026-10-19",
+  duracao: "PT56S",
+  transcricao:
+    "Você recebe em ienes e a parcela do consórcio é em reais. Como paga estando no Japão? Eu sou o Reinaldo, consultor de consórcios, e te explico. O jeito mais prático é o cartão de crédito internacional, com cobrança automática todo mês. Eu te ajudo a cadastrar o cartão no aplicativo da administradora, e a parcela é cobrada no dia do vencimento. Se você tem conta no Brasil, também pode receber o boleto por e-mail ou pagar a primeira parcela por Pix. E se não tem, dá para abrir uma conta em um banco digital pelo celular. A parcela é sempre em reais, então o valor em ienes muda com o câmbio. Numa carta de R$ 100.000, a parcela reduzida fica em torno de R$ 337, pouco mais de 10.000 ienes. Me chama no WhatsApp e me conta quanto você consegue guardar por mês, em ienes, que eu te mostro qual carta se encaixa melhor para você.",
 };
+
+function videoObject(video: typeof videoQuemPode, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.titulo,
+    description,
+    thumbnailUrl: `${siteConfig.url}${video.capa}`,
+    uploadDate: video.publicado,
+    duration: video.duracao,
+    embedUrl: `https://www.youtube.com/embed/${video.youtubeId}`,
+    url: `https://www.youtube.com/shorts/${video.youtubeId}`,
+    inLanguage: "pt-BR",
+    transcript: video.transcricao,
+    author: { "@type": "Person", name: "Reinaldo Masullo", url: `${siteConfig.url}/reinaldo-masullo` },
+  };
+}
+
+const videoSchema = videoObject(
+  videoQuemPode,
+  "Reinaldo Masullo explica em 45 segundos como o brasileiro que mora no Japão contrata consórcio de imóvel no Brasil, paga a parcela e usa o crédito para comprar o imóvel à vista.",
+);
+
+const videoPagamentoSchema = videoObject(
+  videoPagamento,
+  "Reinaldo Masullo explica em menos de 1 minuto como o brasileiro que recebe em ienes paga a parcela do consórcio no Brasil: cartão de crédito internacional, boleto por e-mail ou Pix, e quanto fica em ienes.",
+);
 
 const h2 = "text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl";
 const lead = "mt-4 text-lg leading-relaxed text-[var(--color-ink)]";
@@ -295,6 +316,7 @@ export default function BrasileirosNoJapaoPage() {
       <JsonLd data={webPageSchema} />
       <JsonLd data={serviceSchema} />
       <JsonLd data={videoSchema} />
+      <JsonLd data={videoPagamentoSchema} />
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
@@ -491,12 +513,13 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Pagamento em ienes */}
       <section className="py-10 sm:py-12" aria-labelledby="pagamento-heading">
-        <Container className="max-w-3xl">
+        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div>
           <h2 id="pagamento-heading" className={h2}>
             Como pagar a parcela recebendo em ienes?
           </h2>
           <p className={lead}>
-            Com cartão de crédito internacional, no débito automático, sem precisar de conta no Brasil.
+            Com cartão de crédito internacional, com cobrança automática todo mês, sem precisar de conta no Brasil.
           </p>
           <p className={body}>
             Eu te ajudo a cadastrar o cartão no aplicativo da administradora, e a parcela é cobrada todo mês no dia do
@@ -511,6 +534,27 @@ export default function BrasileirosNoJapaoPage() {
             Um cuidado prático: deixe uma folga no orçamento para a variação do câmbio e para o reajuste anual da
             parcela. Eu te mostro o cálculo em ienes antes de você decidir.
           </p>
+          <div className="mt-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6">
+            <p className="text-base font-semibold text-[var(--color-primary)]">Exemplo em ienes</p>
+            <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/75">
+              Numa carta de R$ 100 mil, a parcela reduzida fica em torno de R$ 337 até a contemplação, pouco mais de
+              ¥ 10.000, conforme o câmbio. Me conte quanto você consegue guardar por mês, em ienes, que eu te mostro
+              qual carta encaixa.
+            </p>
+            <div className="mt-5">
+              <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} variant="secondary" external>
+                {CTA_LABEL}
+              </CTAButton>
+            </div>
+          </div>
+          </div>
+          <VideoCurto
+            youtubeId={videoPagamento.youtubeId}
+            titulo={videoPagamento.titulo}
+            capa={videoPagamento.capa}
+            transcricao={videoPagamento.transcricao}
+            duracaoTexto="56 s"
+          />
         </Container>
       </section>
 
