@@ -270,10 +270,10 @@ const videoQuemPode = {
 };
 
 const videoPagamento = {
-  youtubeId: "By7yGguJ6S8",
+  youtubeId: "rEQJhSeS6iw",
   titulo: "Recebo em ienes. Como pago a parcela do consórcio no Brasil?",
   capa: "/images/videos/japao-v2.webp",
-  publicado: "2026-10-19",
+  publicado: "2026-10-20",
   duracao: "PT56S",
   transcricao:
     "Você recebe em ienes e a parcela do consórcio é em reais. Como paga estando no Japão? Eu sou o Reinaldo, consultor de consórcios, e te explico. O jeito mais prático é o cartão de crédito internacional, com cobrança automática todo mês. Eu te ajudo a cadastrar o cartão no aplicativo da administradora, e a parcela é cobrada no dia do vencimento. Se você tem conta no Brasil, também pode receber o boleto por e-mail ou pagar a primeira parcela por Pix. E se não tem, dá para abrir uma conta em um banco digital pelo celular. A parcela é sempre em reais, então o valor em ienes muda com o câmbio. Numa carta de R$ 100.000, a parcela reduzida fica em torno de R$ 337, pouco mais de 10.000 ienes. Me chama no WhatsApp e me conta quanto você consegue guardar por mês, em ienes, que eu te mostro qual carta se encaixa melhor para você.",
