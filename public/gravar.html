@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Teleprompter Revla</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+
+/* Layout: estúdio escuro de uma tela; câmera ao fundo, texto preso no topo (perto da lente), controles embaixo. */
+:root {
+  --chao: #0e1114;        /* fundo do estúdio */
+  --painel: #171c21;      /* superfícies */
+  --linha: #2a323a;       /* divisórias */
+  --texto: #eef1f3;       /* texto principal */
+  --apagado: #93a0ab;     /* texto secundário */
+  --gravando: #ff4d3d;    /* luz de gravação */
+  --sinal: #ffd400;       /* destaque e marcador de leitura */
+  --ok: #3ccf8e;
+  --f-roteiro: "Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-ui: "Barlow Semi Condensed", "Arial Narrow", Roboto, Arial, sans-serif;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { background: var(--chao); color: var(--texto); font-family: var(--f-ui); font-size: 16px; overflow: hidden; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--sinal); outline-offset: 2px; }
+
+/* ---------- tela de preparação ---------- */
+#preparo { height: 100%; overflow-y: auto; padding-block: 20px 32px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.coluna { max-width: 640px; margin: 0 auto; display: grid; gap: 18px; }
+.topo { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: 0.01em; margin: 0; text-wrap: balance; }
+.etiqueta { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--apagado); font-weight: 600; }
+textarea { width: 100%; min-height: 34vh; resize: vertical; background: var(--painel); border: 1px solid var(--linha);
+  border-radius: 10px; padding: 14px; font-family: var(--f-roteiro); font-size: 1.05rem; line-height: 1.5; box-sizing: border-box; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.campo { display: grid; gap: 6px; min-width: 0; }
+.campo select, .campo input[type=range] { width: 100%; }
+select { background: var(--painel); border: 1px solid var(--linha); border-radius: 8px; padding: 10px; }
+.medida { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+.dica { color: var(--apagado); font-size: 0.95rem; line-height: 1.45; margin: 0; }
+.estado { background: var(--painel); border: 1px solid var(--linha); border-radius: 10px; padding: 12px 14px; line-height: 1.45; }
+.estado b { color: var(--sinal); font-weight: 700; }
+.primario { background: var(--sinal); color: #111; border: 0; border-radius: 999px; padding: 15px 22px; font-weight: 700;
+  font-size: 1.15rem; letter-spacing: 0.02em; }
+.secundario { background: transparent; border: 1px solid var(--linha); border-radius: 999px; padding: 10px 16px; }
+.arquivo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.arquivo span { color: var(--apagado); overflow-wrap: anywhere; min-width: 0; }
+
+/* ---------- tela de gravação ---------- */
+#palco { position: fixed; inset: 0; background: #000; }
+#camera { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+#react { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(120px + env(safe-area-inset-bottom, 0px));
+  width: 46%; max-width: 420px; border: 2px solid var(--texto); border-radius: 8px; background: #000; }
+#janela { position: absolute; left: 0; right: 0; top: 0; height: 38%;
+  padding-top: env(safe-area-inset-top, 0px); overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.72) 75%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 80%, transparent 100%); }
+#rolo { position: absolute; left: max(18px, env(safe-area-inset-left, 0px)); right: max(18px, env(safe-area-inset-right, 0px));
+  top: 0; font-family: var(--f-roteiro); font-weight: 700; line-height: 1.38; color: #fff; will-change: transform;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+#rolo p { margin: 0 0 0.7em; }
+#marca { position: absolute; left: 0; top: 30%; width: 8px; height: 2.2em; background: var(--sinal); border-radius: 0 4px 4px 0; }
+.sem-camera #palco { background: var(--chao); }
+.sem-camera #janela { height: 78%; background: none; -webkit-mask-image: none; mask-image: none; }
+#avisos { position: absolute; left: 50%; transform: translateX(-50%); top: calc(39% + 6px); display: flex; gap: 8px; flex-wrap: wrap;
+  justify-content: center; width: calc(100% - 32px); pointer-events: none; }
+.chip { background: rgba(14,17,20,0.85); border: 1px solid var(--linha); border-radius: 999px; padding: 5px 11px; font-size: 0.85rem; font-weight: 600; }
+.chip.alerta { border-color: var(--sinal); color: var(--sinal); }
+.chip.ruim { border-color: var(--gravando); color: #ffb3ab; }
+.chip.bom { border-color: var(--ok); color: #b6f2d6; }
+#barra { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0)); }
+.grupo { display: flex; gap: 8px; align-items: center; }
+.redondo { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.35); background: rgba(14,17,20,0.7);
+  font-weight: 700; font-size: 1.1rem; display: grid; place-items: center; }
+#gravar { width: 76px; height: 76px; border-radius: 50%; border: 5px solid #fff; background: transparent; display: grid; place-items: center; padding: 0; }
+#gravar i { display: block; width: 58px; height: 58px; border-radius: 50%; background: var(--gravando); transition: all 0.2s; }
+#gravar.on i { width: 28px; height: 28px; border-radius: 6px; }
+#tempo { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.05rem; min-width: 64px; text-align: center; }
+#tempo.on::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--gravando); margin-right: 6px; animation: piscar 1s infinite; }
+@keyframes piscar { 50% { opacity: 0.2; } }
+#contagem { position: absolute; inset: 0; display: grid; place-items: center; font-size: 9rem; font-weight: 700; color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7); pointer-events: none; }
+#vu { width: 70px; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.18); overflow: hidden; }
+#vu b { display: block; height: 100%; width: 0; background: var(--ok); }
+
+/* ---------- tela de revisão ---------- */
+#revisao { position: fixed; inset: 0; background: var(--chao); overflow-y: auto; padding-block: 20px 32px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#previa { width: 100%; max-height: 60vh; background: #000; border-radius: 10px; }
+.acoes { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { #tempo.on::before { animation: none; } #gravar i { transition: none; } }
+</style>
+</head>
+<body>
+
+
+<section id="preparo">
+  <div class="coluna">
+    <div class="topo">
+      <h1>Teleprompter</h1>
+      <span class="etiqueta">grave, salve e mande para o Claude editar</span>
+    </div>
+
+    <div class="campo">
+      <label class="etiqueta" for="roteiro">Roteiro</label>
+      <textarea id="roteiro" spellcheck="true">Você sabia que dá para comprar um imóvel sem pagar juros?
+
+O consórcio funciona como uma poupança em grupo. Todo mês, alguns participantes são contemplados e recebem a carta de crédito.
+
+E você pode dar um lance para antecipar a sua contemplação.
+
+Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
+      <p class="dica">Exemplo de roteiro. Cole o seu ou peça para o Claude escrever um. Pode errar e repetir a frase durante a gravação: na edição fica só a última vez.</p>
+    </div>
+
+    <div class="grade">
+      <div class="campo">
+        <label class="etiqueta medida" for="velocidade"><span>Velocidade</span><span id="v-vel">32</span></label>
+        <input id="velocidade" type="range" min="10" max="90" value="32">
+      </div>
+      <div class="campo">
+        <label class="etiqueta medida" for="tamanho"><span>Tamanho da letra</span><span id="v-tam">30</span></label>
+        <input id="tamanho" type="range" min="18" max="56" value="30">
+      </div>
+      <div class="campo">
+        <label class="etiqueta" for="formato">Gravação</label>
+        <select id="formato">
+          <option value="vertical">Celular em pé (Reels, TikTok, Shorts)</option>
+          <option value="horizontal">Celular deitado (YouTube)</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label class="etiqueta" for="espera">Contagem antes de começar</label>
+        <select id="espera">
+          <option value="3">3 segundos</option>
+          <option value="5">5 segundos</option>
+          <option value="0">Sem contagem</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="campo">
+      <span class="etiqueta">Modo react (opcional)</span>
+      <div class="arquivo">
+        <label class="secundario" for="arq-react">Escolher vídeo para comentar</label>
+        <input id="arq-react" type="file" accept="video/*" hidden>
+        <span id="nome-react">Nenhum vídeo escolhido. O vídeo toca na tela e começa junto com a gravação.</span>
+      </div>
+      <p class="dica">Use fone de ouvido no react, senão o microfone capta o som do vídeo junto com a sua voz.</p>
+    </div>
+
+    <div class="estado" id="estado-camera">Verificando a câmera...</div>
+
+    <button class="primario" id="abrir" type="button">Abrir câmera e teleprompter</button>
+    <p class="dica">Dicas de gravação: fique de frente para uma janela ou luminária, nunca com a luz atrás de você. Celular na altura dos olhos. O texto fica no topo da tela, logo abaixo da lente, para o seu olhar não parecer que está lendo.</p>
+  </div>
+</section>
+
+<section id="palco" hidden>
+  <video id="camera" playsinline muted autoplay></video>
+  <video id="react" playsinline hidden></video>
+  <div id="janela"><div id="rolo"></div><div id="marca"></div></div>
+  <div id="avisos"><span class="chip" id="luz" hidden></span><span class="chip" id="som-chip" hidden></span></div>
+  <div id="contagem" hidden></div>
+  <div id="barra">
+    <div class="grupo">
+      <button class="redondo" id="voltar" type="button" aria-label="Voltar para o roteiro">&#8592;</button>
+      <button class="redondo" id="mais-lento" type="button" aria-label="Mais devagar">&minus;</button>
+      <button class="redondo" id="mais-rapido" type="button" aria-label="Mais rápido">+</button>
+    </div>
+    <button id="gravar" type="button" aria-label="Começar a gravar"><i></i></button>
+    <div class="grupo"><div id="vu" aria-hidden="true"><b></b></div><span id="tempo">0:00</span></div>
+  </div>
+</section>
+
+<section id="revisao" hidden>
+  <div class="coluna">
+    <h1>Gravação pronta</h1>
+    <video id="previa" controls playsinline></video>
+    <div class="estado" id="info-gravacao"></div>
+    <div class="acoes">
+      <button class="primario" id="salvar" type="button">Salvar vídeo no celular</button>
+      <button class="secundario" id="regravar" type="button">Gravar de novo</button>
+    </div>
+    <p class="dica">Depois de salvar, abra o app do Claude, anexe o vídeo e escreva "edita". Para react, anexe também o vídeo comentado.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var LS = "teleprompter-revla-v1";
+  var estado = { stream: null, rec: null, partes: [], blob: null, ext: "webm", rodando: false, pos: 0, ultimo: 0,
+                 gravando: false, inicio: 0, timer: null, react: null, temCamera: false, wake: null };
+
+  // preferências locais (roteiro, velocidade, tamanho)
+  try {
+    var salvo = JSON.parse(localStorage.getItem(LS) || "null");
+    if (salvo) {
+      if (salvo.roteiro) $("roteiro").value = salvo.roteiro;
+      if (salvo.vel) $("velocidade").value = salvo.vel;
+      if (salvo.tam) $("tamanho").value = salvo.tam;
+      if (salvo.formato) $("formato").value = salvo.formato;
+    }
+  } catch (e) {}
+  function guardar() {
+    try { localStorage.setItem(LS, JSON.stringify({ roteiro: $("roteiro").value, vel: $("velocidade").value,
+      tam: $("tamanho").value, formato: $("formato").value })); } catch (e) {}
+  }
+  function atualizarMedidas() { $("v-vel").textContent = $("velocidade").value; $("v-tam").textContent = $("tamanho").value; }
+  ["roteiro", "velocidade", "tamanho", "formato"].forEach(function (id) {
+    $(id).addEventListener("input", function () { atualizarMedidas(); guardar(); });
+  });
+  atualizarMedidas();
+
+  // a câmera só funciona quando a página está num endereço seguro que permite câmera
+  var podeCamera = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  $("estado-camera").innerHTML = podeCamera
+    ? "Câmera disponível neste navegador. Ao abrir, permita o acesso à <b>câmera e ao microfone</b>."
+    : "Este endereço não libera a câmera. O teleprompter abre <b>só com o texto rolando</b>. Para gravar por aqui, use esta página hospedada no seu site.";
+
+  $("arq-react").addEventListener("change", function () {
+    var f = this.files && this.files[0];
+    if (!f) return;
+    estado.react = URL.createObjectURL(f);
+    $("nome-react").textContent = f.name;
+  });
+
+  function montarTexto() {
+    var rolo = $("rolo");
+    rolo.textContent = "";
+    rolo.style.fontSize = $("tamanho").value + "px";
+    $("roteiro").value.split(/\n\s*\n/).forEach(function (par) {
+      if (!par.trim()) return;
+      var p = document.createElement("p");
+      p.textContent = par.trim();
+      rolo.appendChild(p);
+    });
+    var fim = document.createElement("p");
+    fim.textContent = "— fim —";
+    fim.style.opacity = "0.5";
+    rolo.appendChild(fim);
+    estado.pos = $("janela").clientHeight * 0.30;
+    posicionar();
+  }
+  function posicionar() { $("rolo").style.transform = "translateY(" + estado.pos.toFixed(1) + "px)"; }
+
+  function animar(t) {
+    if (estado.rodando) {
+      if (estado.ultimo) {
+        var dt = (t - estado.ultimo) / 1000;
+        estado.pos -= dt * Number($("velocidade").value) * (Number($("tamanho").value) / 30);
+        var limite = -$("rolo").scrollHeight + $("janela").clientHeight * 0.3;
+        if (estado.pos < limite) estado.pos = limite;
+        posicionar();
+      }
+      estado.ultimo = t;
+    } else {
+      estado.ultimo = 0;
+    }
+    requestAnimationFrame(animar);
+  }
+  requestAnimationFrame(animar);
+
+  // toque no texto pausa e retoma; arrastar volta ou avança
+  var arrasto = null;
+  $("janela").addEventListener("pointerdown", function (e) { arrasto = { y: e.clientY, pos: estado.pos, moveu: false }; });
+  window.addEventListener("pointermove", function (e) {
+    if (!arrasto) return;
+    var d = e.clientY - arrasto.y;
+    if (Math.abs(d) > 6) arrasto.moveu = true;
+    if (arrasto.moveu) { estado.pos = arrasto.pos + d; posicionar(); }
+  });
+  window.addEventListener("pointerup", function () {
+    if (arrasto && !arrasto.moveu) estado.rodando = !estado.rodando;
+    arrasto = null;
+  });
+  function ajustarVel(d) { var v = $("velocidade"); v.value = Math.max(10, Math.min(90, Number(v.value) + d)); atualizarMedidas(); guardar(); }
+  $("mais-lento").addEventListener("click", function () { ajustarVel(-4); });
+  $("mais-rapido").addEventListener("click", function () { ajustarVel(4); });
+
+  async function manterTelaAcesa() {
+    try { if ("wakeLock" in navigator) estado.wake = await navigator.wakeLock.request("screen"); } catch (e) {}
+  }
+
+  async function abrir() {
+    guardar();
+    $("preparo").hidden = true;
+    $("palco").hidden = false;
+    document.body.classList.remove("sem-camera");
+    manterTelaAcesa();
+    if (podeCamera && !estado.stream) {
+      var horiz = $("formato").value === "horizontal";
+      try {
+        estado.stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "user", width: { ideal: horiz ? 1920 : 1080 }, height: { ideal: horiz ? 1080 : 1920 }, frameRate: { ideal: 30 } },
+          audio: { echoCancellation: false, noiseSuppression: true, autoGainControl: true }
+        });
+        $("camera").srcObject = estado.stream;
+        estado.temCamera = true;
+        medirLuz();
+        medirSom();
+      } catch (e) {
+        estado.temCamera = false;
+      }
+    }
+    if (!estado.temCamera) {
+      document.body.classList.add("sem-camera");
+      $("gravar").setAttribute("aria-label", "Começar a rolar o texto");
+    }
+    if (estado.react) { $("react").src = estado.react; $("react").hidden = false; $("react").currentTime = 0; }
+    montarTexto();
+  }
+  $("abrir").addEventListener("click", abrir);
+
+  $("voltar").addEventListener("click", function () {
+    if (estado.gravando) parar();
+    estado.rodando = false;
+    $("palco").hidden = true;
+    $("preparo").hidden = false;
+  });
+
+  // medidor de luz: brilho médio da parte central da imagem
+  function medirLuz() {
+    var c = document.createElement("canvas"); c.width = 64; c.height = 64;
+    var ctx = c.getContext("2d", { willReadFrequently: true });
+    setInterval(function () {
+      var v = $("camera");
+      if (!v.videoWidth || $("palco").hidden) return;
+      var sw = v.videoWidth * 0.5, sh = v.videoHeight * 0.4;
+      ctx.drawImage(v, v.videoWidth * 0.25, v.videoHeight * 0.18, sw, sh, 0, 0, 64, 64);
+      var d = ctx.getImageData(0, 0, 64, 64).data, s = 0;
+      for (var i = 0; i < d.length; i += 4) s += 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
+      var y = s / (d.length / 4), chip = $("luz");
+      chip.hidden = false;
+      if (y < 60) { chip.className = "chip ruim"; chip.textContent = "Pouca luz no rosto: vire-se para a janela ou acenda uma luz"; }
+      else if (y < 90) { chip.className = "chip alerta"; chip.textContent = "Luz fraca: a edição corrige, mas mais luz fica melhor"; }
+      else if (y > 200) { chip.className = "chip alerta"; chip.textContent = "Luz forte demais no rosto"; }
+      else { chip.className = "chip bom"; chip.textContent = "Luz boa"; }
+    }, 1200);
+  }
+  // medidor de som
+  function medirSom() {
+    try {
+      var ac = new (window.AudioContext || window.webkitAudioContext)();
+      var src = ac.createMediaStreamSource(estado.stream), an = ac.createAnalyser();
+      an.fftSize = 1024; src.connect(an);
+      var buf = new Float32Array(an.fftSize), pico = 0, ultimoAviso = 0;
+      (function loop() {
+        an.getFloatTimeDomainData(buf);
+        var m = 0; for (var i = 0; i < buf.length; i++) m = Math.max(m, Math.abs(buf[i]));
+        $("vu").firstElementChild.style.width = Math.min(100, m * 140) + "%";
+        $("vu").firstElementChild.style.background = m > 0.95 ? "var(--gravando)" : "var(--ok)";
+        pico = Math.max(pico * 0.995, m);
+        var agora = performance.now();
+        if (agora - ultimoAviso > 1500) {
+          ultimoAviso = agora;
+          var chip = $("som-chip");
+          if (estado.gravando && pico < 0.04) { chip.hidden = false; chip.className = "chip alerta"; chip.textContent = "Som baixo: fale mais perto do celular"; }
+          else if (pico > 0.98) { chip.hidden = false; chip.className = "chip ruim"; chip.textContent = "Som estourando: afaste um pouco o celular"; }
+          else chip.hidden = true;
+        }
+        requestAnimationFrame(loop);
+      })();
+      document.addEventListener("click", function () { if (ac.state === "suspended") ac.resume(); }, { once: true });
+    } catch (e) {}
+  }
+
+  function escolherFormato() {
+    var op = ["video/mp4;codecs=avc1.640028,mp4a.40.2", "video/mp4;codecs=avc1,mp4a", "video/mp4",
+              "video/webm;codecs=vp9,opus", "video/webm;codecs=vp8,opus", "video/webm"];
+    for (var i = 0; i < op.length; i++) if (MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(op[i])) return op[i];
+    return "";
+  }
+
+  function contar(n) {
+    return new Promise(function (ok) {
+      if (!n) return ok();
+      var el = $("contagem"); el.hidden = false;
+      (function passo(k) {
+        if (k === 0) { el.hidden = true; return ok(); }
+        el.textContent = k;
+        setTimeout(function () { passo(k - 1); }, 1000);
+      })(n);
+    });
+  }
+
+  async function gravar() {
+    if (estado.gravando) return parar();
+    montarTexto();
+    await contar(Number($("espera").value));
+    estado.rodando = true;
+    if (estado.react) { var r = $("react"); r.currentTime = 0; r.play().catch(function () {}); }
+    if (!estado.temCamera) { $("gravar").classList.add("on"); estado.gravando = true; iniciarRelogio(); return; }
+    var tipo = escolherFormato();
+    estado.ext = tipo.indexOf("mp4") >= 0 ? "mp4" : "webm";
+    estado.partes = [];
+    try {
+      estado.rec = new MediaRecorder(estado.stream, tipo ? { mimeType: tipo, videoBitsPerSecond: 10000000, audioBitsPerSecond: 192000 } : undefined);
+    } catch (e) {
+      estado.rec = new MediaRecorder(estado.stream);
+    }
+    estado.rec.ondataavailable = function (e) { if (e.data && e.data.size) estado.partes.push(e.data); };
+    estado.rec.onstop = revisar;
+    estado.rec.start(1000);
+    estado.gravando = true;
+    $("gravar").classList.add("on");
+    $("gravar").setAttribute("aria-label", "Parar a gravação");
+    iniciarRelogio();
+  }
+  function iniciarRelogio() {
+    estado.inicio = Date.now();
+    $("tempo").classList.add("on");
+    estado.timer = setInterval(function () {
+      var s = Math.floor((Date.now() - estado.inicio) / 1000);
+      $("tempo").textContent = Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+    }, 250);
+  }
+  function parar() {
+    estado.gravando = false;
+    estado.rodando = false;
+    clearInterval(estado.timer);
+    $("tempo").classList.remove("on");
+    $("gravar").classList.remove("on");
+    if (estado.react) $("react").pause();
+    if (estado.rec && estado.rec.state !== "inactive") estado.rec.stop();
+  }
+  $("gravar").addEventListener("click", gravar);
+
+  function revisar() {
+    estado.blob = new Blob(estado.partes, { type: estado.rec.mimeType || ("video/" + estado.ext) });
+    var url = URL.createObjectURL(estado.blob);
+    $("previa").src = url;
+    var mb = (estado.blob.size / 1048576).toFixed(1);
+    var s = Math.round((Date.now() - estado.inicio) / 1000);
+    var t = estado.stream.getVideoTracks()[0].getSettings();
+    $("info-gravacao").innerHTML = "Duração <b>" + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0") +
+      "</b> · " + (t.width || "?") + "x" + (t.height || "?") + " · " + mb + " MB · formato " + estado.ext.toUpperCase();
+    $("palco").hidden = true;
+    $("revisao").hidden = false;
+  }
+
+  function nomeArquivo() {
+    var d = new Date();
+    var p = function (n) { return String(n).padStart(2, "0"); };
+    return "gravacao_" + d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "_" + p(d.getHours()) + p(d.getMinutes()) + "." + estado.ext;
+  }
+  $("salvar").addEventListener("click", async function () {
+    if (!estado.blob) return;
+    var nome = nomeArquivo(), botao = this;
+    // dentro do Claude: salvamento pela própria plataforma
+    try {
+      if (window.claude && window.claude.use) {
+        var dl = await window.claude.use("downloads");
+        if (dl) {
+          try { await dl.save({ filename: nome, data: estado.blob }); botao.textContent = "Salvo"; return; }
+          catch (e) { if (e && e.code === "declined") return; }
+        }
+      }
+    } catch (e) {}
+    // hospedado no seu site: download normal do navegador
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(estado.blob);
+    a.download = nome;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    botao.textContent = "Salvo na pasta Downloads";
+  });
+  $("regravar").addEventListener("click", function () {
+    $("revisao").hidden = true;
+    $("salvar").textContent = "Salvar vídeo no celular";
+    abrir();
+  });
+})();
+</script>
+
+</body>
+</html>

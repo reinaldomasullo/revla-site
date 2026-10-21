@@ -3,6 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
 
+  // Teleprompter de gravação (21/10/2026): página estática em
+  // public/gravar.html, servida no endereço curto /gravar. Fica fora do
+  // sitemap e marcada como noindex (meta robots no próprio arquivo) —
+  // é uma ferramenta interna para gravar vídeos pelo celular.
+  async rewrites() {
+    return [{ source: "/gravar", destination: "/gravar.html" }];
+  },
+
   // Redirecionamentos permanentes (308, equivalente a 301 pra buscadores)
   // das URLs do site antigo em WordPress (pré-migração, 20/08/2026) pras
   // páginas equivalentes no site atual. Sem isso, quem chega por um link
