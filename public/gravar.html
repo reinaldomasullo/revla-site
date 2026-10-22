@@ -401,6 +401,22 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
     try { if ("wakeLock" in navigator) estado.wake = await navigator.wakeLock.request("screen"); } catch (e) {}
   }
 
+  // Pede a maior resolução que a câmera oferece. Quando a câmera frontal só entrega imagem deitada,
+  // o recorte em pé sai da altura: quanto mais alta a imagem (ex.: 4:3), mais nítido fica o vídeo em pé.
+  async function resolucaoMaxima(horiz) {
+    try {
+      var t = estado.stream.getVideoTracks()[0];
+      if (!t.getCapabilities) return;
+      var c = t.getCapabilities(), s = t.getSettings();
+      if (!c.width || !c.height) return;
+      var deitada = (s.width || 0) >= (s.height || 0);
+      if (horiz || !deitada) return;
+      var maxH = Math.min(c.height.max, 1920), maxW = Math.min(c.width.max, Math.round(maxH * 16 / 9));
+      if (maxH <= (s.height || 0)) return;
+      await t.applyConstraints({ width: { ideal: maxW }, height: { ideal: maxH }, frameRate: { ideal: 30 } });
+    } catch (e) {}
+  }
+
   async function abrir() {
     guardar();
     $("preparo").hidden = true;
@@ -414,6 +430,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
           video: { facingMode: "user", width: { ideal: horiz ? 1920 : 1080 }, height: { ideal: horiz ? 1080 : 1920 }, aspectRatio: { ideal: horiz ? 16 / 9 : 9 / 16 }, frameRate: { ideal: 30 } },
           audio: { echoCancellation: false, noiseSuppression: true, autoGainControl: true }
         });
+        await resolucaoMaxima(horiz);
         $("camera").srcObject = estado.stream;
         estado.temCamera = true;
         medirLuz();
