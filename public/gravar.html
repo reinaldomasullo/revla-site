@@ -102,6 +102,14 @@ select { background: var(--painel); border: 1px solid var(--linha); border-radiu
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 #previa { width: 100%; max-height: 60vh; background: #000; border-radius: 10px; }
 .acoes { display: flex; gap: 10px; flex-wrap: wrap; }
+.pr-lista { display: grid; gap: 8px; }
+.pr-item { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; background: var(--painel); border: 1px solid var(--linha); border-radius: 10px; padding: 10px 12px; }
+.pr-item b { font-family: var(--f-roteiro); font-size: 1.05rem; }
+.pr-item small { display: block; color: var(--sinal); font-size: 0.95rem; margin-top: 2px; }
+.pr-item small i { color: var(--apagado); font-style: normal; }
+.pr-linha { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; }
+.pr-linha input { min-width: 0; background: var(--painel); border: 1px solid var(--linha); border-radius: 10px; padding: 10px 12px; color: var(--texto); font-size: 1rem; }
+.pr-item button, .pr-linha button { padding: 8px 12px; }
 @media (prefers-reduced-motion: reduce) { #tempo.on::before { animation: none; } #gravar i { transition: none; } }
 </style>
 </head>
@@ -125,6 +133,19 @@ E você pode dar um lance para antecipar a sua contemplação.
 
 Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
       <p class="dica">Exemplo de roteiro. Cole o seu ou peça para o Claude escrever um. Se errar, pare e grave de novo do começo. Mande só a gravação boa.</p>
+    </div>
+
+
+    <div class="campo" id="pronuncia">
+      <span class="etiqueta">Pronúncia em japonês</span>
+      <p class="dica">Ouça as palavras em japonês do roteiro antes de gravar. As que o roteiro tiver aparecem aqui sozinhas; outras você digita abaixo.</p>
+      <div id="pr-lista" class="pr-lista"></div>
+      <div class="pr-linha">
+        <input id="pr-texto" type="text" placeholder="Digite em romaji ou japonês, ex.: zeirishi" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button class="secundario" id="pr-ouvir" type="button">Ouvir</button>
+        <button class="secundario" id="pr-devagar" type="button">Devagar</button>
+      </div>
+      <p class="dica" id="pr-aviso" hidden></p>
     </div>
 
     <div class="grade">
@@ -293,6 +314,88 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
   function ajustarVel(d) { var v = $("velocidade"); v.value = Math.max(10, Math.min(90, Number(v.value) + d)); atualizarMedidas(); guardar(); }
   $("mais-lento").addEventListener("click", function () { ajustarVel(-4); });
   $("mais-rapido").addEventListener("click", function () { ajustarVel(4); });
+
+
+  // ---------- Pronúncia em japonês ----------
+  // Glossário das palavras que aparecem nos roteiros: grafia japonesa (para a voz) e como se fala em português.
+  var GLOSSARIO = [
+    { termos: ["koyō keiyakusho", "koyo keiyakusho", "koyou keiyakusho", "雇用契約書"], jp: "こようけいやくしょ", pt: "cô-iôô kêi-iá-cu-xô", nota: "contrato de trabalho" },
+    { termos: ["zeirishi", "税理士"], jp: "ぜいりし", pt: "zêi-ri-xi", nota: "contador" },
+    { termos: ["gensen chōshūhyō", "gensen choshuhyo", "gensen choushuuhyou", "源泉徴収票"], jp: "げんせんちょうしゅうひょう", pt: "guên-sen tchôô-xúú-hióô", nota: "comprovante anual de rendimentos" },
+    { termos: ["zairyū kādo", "zairyu kado", "在留カード"], jp: "ざいりゅうカード", pt: "zái-riúú cáá-dô", nota: "cartão de residente" },
+    { termos: ["mai nanbā", "my number", "マイナンバー"], jp: "マイナンバー", pt: "mái nâm-báá", nota: "número de identificação" },
+    { termos: ["haken", "派遣"], jp: "はけん", pt: "rrá-quên (r de \"rato\")", nota: "trabalho por empreiteira" },
+    { termos: ["ienes", "円"], jp: "えん", pt: "ên (em japonês, iene é \"en\")", nota: "iene" }
+  ];
+  var KANA = {a:"あ",i:"い",u:"う",e:"え",o:"お",ka:"か",ki:"き",ku:"く",ke:"け",ko:"こ",ga:"が",gi:"ぎ",gu:"ぐ",ge:"げ",go:"ご",
+    sa:"さ",shi:"し",si:"し",su:"す",se:"せ",so:"そ",za:"ざ",ji:"じ",zi:"じ",zu:"ず",ze:"ぜ",zo:"ぞ",ta:"た",chi:"ち",ti:"ち",tsu:"つ",tu:"つ",te:"て",to:"と",
+    da:"だ",de:"で",do:"ど",na:"な",ni:"に",nu:"ぬ",ne:"ね",no:"の",ha:"は",hi:"ひ",fu:"ふ",hu:"ふ",he:"へ",ho:"ほ",ba:"ば",bi:"び",bu:"ぶ",be:"べ",bo:"ぼ",
+    pa:"ぱ",pi:"ぴ",pu:"ぷ",pe:"ぺ",po:"ぽ",ma:"ま",mi:"み",mu:"む",me:"め",mo:"も",ya:"や",yu:"ゆ",yo:"よ",ra:"ら",ri:"り",ru:"る",re:"れ",ro:"ろ",
+    wa:"わ",wo:"を",kya:"きゃ",kyu:"きゅ",kyo:"きょ",gya:"ぎゃ",gyu:"ぎゅ",gyo:"ぎょ",sha:"しゃ",shu:"しゅ",sho:"しょ",ja:"じゃ",ju:"じゅ",jo:"じょ",
+    cha:"ちゃ",chu:"ちゅ",cho:"ちょ",nya:"にゃ",nyu:"にゅ",nyo:"にょ",hya:"ひゃ",hyu:"ひゅ",hyo:"ひょ",bya:"びゃ",byu:"びゅ",byo:"びょ",pya:"ぴゃ",pyu:"ぴゅ",pyo:"ぴょ",
+    mya:"みゃ",myu:"みゅ",myo:"みょ",rya:"りゃ",ryu:"りゅ",ryo:"りょ"};
+  function romajiParaKana(t) {
+    t = t.toLowerCase().replace(/ā/g, "aa").replace(/ī/g, "ii").replace(/ū/g, "uu").replace(/ē/g, "ee").replace(/ō/g, "ou").replace(/[^a-z' ]/g, "");
+    var out = "", i = 0;
+    while (i < t.length) {
+      var c = t[i];
+      if (c === " " || c === "'") { i++; continue; }
+      if (c === "n" && (i + 1 >= t.length || "aiueoy".indexOf(t[i + 1]) < 0)) { out += "ん"; i++; continue; }
+      if (c === t[i + 1] && "aiueon".indexOf(c) < 0) { out += "っ"; i++; continue; }
+      var ok = false;
+      for (var L = 3; L >= 1; L--) { var k = t.substr(i, L); if (KANA[k]) { out += KANA[k]; i += L; ok = true; break; } }
+      if (!ok) i++;
+    }
+    return out;
+  }
+  function vozJaponesa() {
+    var vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+    for (var i = 0; i < vs.length; i++) if (/^ja/i.test(vs[i].lang)) return vs[i];
+    return null;
+  }
+  function falar(jp, devagar) {
+    var aviso = $("pr-aviso");
+    if (!window.speechSynthesis) { aviso.hidden = false; aviso.textContent = "Este navegador não tem leitura em voz alta. Abra a página no Chrome."; return; }
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(jp);
+    u.lang = "ja-JP"; u.rate = devagar ? 0.55 : 0.9;
+    var v = vozJaponesa(); if (v) u.voice = v;
+    aviso.hidden = !!v || speechSynthesis.getVoices().length === 0;
+    if (!v && speechSynthesis.getVoices().length) aviso.textContent = "O celular não tem voz em japonês instalada, então a pronúncia pode sair errada. Instale a voz japonesa nas configurações de conversão de texto em voz do celular.";
+    speechSynthesis.speak(u);
+  }
+  function paraJapones(txt) { return /[\u3040-\u30ff\u4e00-\u9fff]/.test(txt) ? txt : romajiParaKana(txt); }
+  function montarPronuncia() {
+    var r = $("roteiro").value.toLowerCase(), lista = $("pr-lista"), achados = [];
+    lista.innerHTML = "";
+    GLOSSARIO.forEach(function (g) {
+      for (var i = 0; i < g.termos.length; i++) if (r.indexOf(g.termos[i].toLowerCase()) >= 0) { achados.push(g); break; }
+    });
+    // palavras com mácron (ō, ū) que não estão no glossário
+    (r.match(/[a-z]*[āīūēō][a-zāīūēō]*/g) || []).forEach(function (w) {
+      if (!achados.some(function (g) { return g.termos.some(function (t) { return t.toLowerCase().indexOf(w) >= 0; }); }))
+        achados.push({ termos: [w], jp: romajiParaKana(w), pt: "", nota: "" });
+    });
+    $("pronuncia").querySelector(".dica").textContent = achados.length
+      ? "Toque em Ouvir antes de gravar. Em amarelo, como se fala em português."
+      : "Nenhuma palavra em japonês encontrada no roteiro. Digite uma abaixo para ouvir.";
+    achados.forEach(function (g) {
+      var d = document.createElement("div"); d.className = "pr-item";
+      var t = document.createElement("div");
+      var b = document.createElement("b"); b.textContent = g.termos[0]; t.appendChild(b);
+      if (g.pt) { var s = document.createElement("small"); s.textContent = g.pt; if (g.nota) { var n = document.createElement("i"); n.textContent = " · " + g.nota; s.appendChild(n); } t.appendChild(s); }
+      var b1 = document.createElement("button"); b1.type = "button"; b1.className = "secundario"; b1.textContent = "Ouvir";
+      var b2 = document.createElement("button"); b2.type = "button"; b2.className = "secundario"; b2.textContent = "Devagar";
+      b1.onclick = function () { falar(g.jp, false); }; b2.onclick = function () { falar(g.jp, true); };
+      d.appendChild(t); d.appendChild(b1); d.appendChild(b2); lista.appendChild(d);
+    });
+  }
+  $("pr-ouvir").addEventListener("click", function () { var v = $("pr-texto").value.trim(); if (v) falar(paraJapones(v), false); });
+  $("pr-devagar").addEventListener("click", function () { var v = $("pr-texto").value.trim(); if (v) falar(paraJapones(v), true); });
+  $("roteiro").addEventListener("input", montarPronuncia);
+  if (window.speechSynthesis) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = function () {}; }
+  window.addEventListener("load", montarPronuncia);
+  montarPronuncia();
 
   async function manterTelaAcesa() {
     try { if ("wakeLock" in navigator) estado.wake = await navigator.wakeLock.request("screen"); } catch (e) {}
