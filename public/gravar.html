@@ -403,17 +403,21 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
 
   // Pede a maior resolução que a câmera oferece. Quando a câmera frontal só entrega imagem deitada,
   // o recorte em pé sai da altura: quanto mais alta a imagem (ex.: 4:3), mais nítido fica o vídeo em pé.
+  // Procura um modo da câmera que cubra 1080x1920 (em pé) ou 1920x1080 (deitado) sem passar muito disso.
+  // Modos grandes demais (ex.: 1920x3264) derrubam os quadros por segundo; pequenos demais deixam o vídeo borrado.
   async function resolucaoMaxima(horiz) {
     try {
       var t = estado.stream.getVideoTracks()[0];
-      if (!t.getCapabilities) return;
-      var c = t.getCapabilities(), s = t.getSettings();
-      if (!c.width || !c.height) return;
-      var deitada = (s.width || 0) >= (s.height || 0);
-      if (horiz || !deitada) return;
-      var maxH = Math.min(c.height.max, 1920), maxW = Math.min(c.width.max, Math.round(maxH * 16 / 9));
-      if (maxH <= (s.height || 0)) return;
-      await t.applyConstraints({ width: { ideal: maxW }, height: { ideal: maxH }, frameRate: { ideal: 30 } });
+      if (!t.applyConstraints) return;
+      function cobre() { var s = t.getSettings(), w = s.width || 0, h = s.height || 0; return horiz ? (w >= 1920 && h >= 1080 && w <= 2400) : (w >= 1080 && h >= 1920 && h <= 2400); }
+      if (cobre()) return;
+      var tentativas = [[1920, 1080], [1080, 1920], [2560, 1440], [1440, 2560]];
+      for (var i = 0; i < tentativas.length; i++) {
+        try { await t.applyConstraints({ width: { ideal: tentativas[i][0] }, height: { ideal: tentativas[i][1] }, frameRate: { ideal: 30 } }); } catch (e) {}
+        if (cobre()) return;
+      }
+      var c = t.getCapabilities ? t.getCapabilities() : null;
+      if (c && c.height && c.width) await t.applyConstraints({ width: { ideal: c.width.max }, height: { ideal: c.height.max }, frameRate: { ideal: 30 } });
     } catch (e) {}
   }
 
@@ -523,23 +527,26 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
   // Garante o formato escolhido. Alguns celulares Android entregam a câmera frontal
   // deitada (ex.: 1920x1080) mesmo pedindo em pé. Nesse caso, grava um recorte central
   // no formato certo, desenhado num canvas, com o mesmo áudio.
+  // Grava sempre no formato e tamanho finais (1080x1920 em pé, 1920x1080 deitado): recorta o centro
+  // e reduz quando a câmera entrega outro tamanho. Conta os quadros reais da câmera para mostrar na revisão.
   function fonteNoFormato() {
     var v = $("camera"), vw = v.videoWidth, vh = v.videoHeight;
     var querEmPe = $("formato").value !== "horizontal";
-    estado.recorte = null;
-    if (!vw || !vh || (querEmPe ? vh >= vw : vw >= vh)) return estado.stream;
-    var cw, ch;
-    if (querEmPe) { ch = vh; cw = Math.round(vh * 9 / 16 / 2) * 2; }
-    else { cw = vw; ch = Math.round(vw * 9 / 16 / 2) * 2; }
-    var c = document.createElement("canvas"); c.width = cw; c.height = ch;
+    estado.recorte = null; estado.quadros = 0;
+    if (!vw || !vh) return estado.stream;
+    var tw = querEmPe ? 1080 : 1920, th = querEmPe ? 1920 : 1080;
+    var esc = Math.max(tw / vw, th / vh);
+    if (esc > 1) { tw = Math.round(tw / esc / 2) * 2; th = Math.round(th / esc / 2) * 2; esc = 1; }
+    var sw = tw / esc, sh = th / esc, sx = (vw - sw) / 2, sy = (vh - sh) / 2;
+    var c = document.createElement("canvas"); c.width = tw; c.height = th;
     var ctx = c.getContext("2d");
-    var sx = (vw - cw) / 2, sy = (vh - ch) / 2;
-    estado.recorte = { w: cw, h: ch };
-    (function desenhar() {
-      if (!estado.recorte) return;
-      ctx.drawImage(v, sx, sy, cw, ch, 0, 0, cw, ch);
-      requestAnimationFrame(desenhar);
-    })();
+    estado.recorte = { w: tw, h: th };
+    function quadro() { ctx.drawImage(v, sx, sy, sw, sh, 0, 0, tw, th); estado.quadros++; }
+    if (v.requestVideoFrameCallback) {
+      (function cb() { if (!estado.recorte) return; quadro(); v.requestVideoFrameCallback(cb); })();
+    } else {
+      (function desenhar() { if (!estado.recorte) return; quadro(); requestAnimationFrame(desenhar); })();
+    }
     var saida = c.captureStream(30);
     estado.stream.getAudioTracks().forEach(function (t) { saida.addTrack(t); });
     return saida;
@@ -594,10 +601,13 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
     $("previa").src = url;
     var mb = (estado.blob.size / 1048576).toFixed(1);
     var s = Math.round((Date.now() - estado.inicio) / 1000);
-    var t = estado.recorte ? { width: estado.recorte.w, height: estado.recorte.h } : estado.stream.getVideoTracks()[0].getSettings();
+    var cam = estado.stream.getVideoTracks()[0].getSettings();
+    var t = estado.recorte ? { width: estado.recorte.w, height: estado.recorte.h } : cam;
+    var fps = estado.recorte && s > 0 ? Math.round(estado.quadros / s) : Math.round(cam.frameRate || 0);
     estado.recorte = null;
     $("info-gravacao").innerHTML = "Duração <b>" + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0") +
-      "</b> · " + (t.width || "?") + "x" + (t.height || "?") + " · " + mb + " MB · formato " + estado.ext.toUpperCase();
+      "</b> · " + (t.width || "?") + "x" + (t.height || "?") + " · " + (fps ? fps + " quadros/s · " : "") + mb + " MB · formato " + estado.ext.toUpperCase() +
+      "<br><small>Câmera: " + (cam.width || "?") + "x" + (cam.height || "?") + "</small>";
     $("palco").hidden = true;
     $("revisao").hidden = false;
   }
