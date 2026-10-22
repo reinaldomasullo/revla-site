@@ -467,8 +467,24 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
       var sup = await VideoEncoder.isConfigSupported(cfg);
       if (!sup.supported) { cfg.codec = "vp09.00.10.08"; trilha = "V_VP9"; sup = await VideoEncoder.isConfigSupported(cfg); }
       if (!sup.supported) throw new Error("codec");
-      var muxer = new WebMMuxer.Muxer({ target: new WebMMuxer.ArrayBufferTarget(), video: { codec: trilha, width: W, height: H, frameRate: FPS } });
+      // Trilha de áudio em silêncio: o Android só mostra os botões ▶/⏸ na janela flutuante para vídeo com som.
       var erro = null;
+      var comAudio = !!(window.AudioEncoder && window.AudioData);
+      if (comAudio) { try { comAudio = (await AudioEncoder.isConfigSupported({ codec: "opus", sampleRate: 48000, numberOfChannels: 1, bitrate: 32000 })).supported; } catch (e) { comAudio = false; } }
+      var opcoesMux = { target: new WebMMuxer.ArrayBufferTarget(), video: { codec: trilha, width: W, height: H, frameRate: FPS } };
+      if (comAudio) opcoesMux.audio = { codec: "A_OPUS", sampleRate: 48000, numberOfChannels: 1 };
+      var muxer = new WebMMuxer.Muxer(opcoesMux);
+      if (comAudio) {
+        var aenc = new AudioEncoder({ output: function (chunk, meta) { muxer.addAudioChunk(chunk, meta); }, error: function (e) { erro = e; } });
+        aenc.configure({ codec: "opus", sampleRate: 48000, numberOfChannels: 1, bitrate: 32000 });
+        var bloco = 960, silencio = new Float32Array(bloco), nA = Math.ceil(dur * 48000 / bloco);
+        for (var k = 0; k < nA; k++) {
+          var ad = new AudioData({ format: "f32-planar", sampleRate: 48000, numberOfFrames: bloco, numberOfChannels: 1, timestamp: Math.round(k * bloco * 1e6 / 48000), data: silencio });
+          aenc.encode(ad); ad.close();
+          if (aenc.encodeQueueSize > 20) await new Promise(function (ok) { setTimeout(ok, 2); });
+        }
+        await aenc.flush(); aenc.close();
+      }
       var enc = new VideoEncoder({ output: function (chunk, meta) { muxer.addVideoChunk(chunk, meta); }, error: function (e) { erro = e; } });
       enc.configure(cfg);
       for (var i = 0; i < N; i++) {
@@ -486,7 +502,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
       if (flut.url) URL.revokeObjectURL(flut.url);
       flut.url = URL.createObjectURL(blob);
       if (!flut.v) {
-        flut.v = document.createElement("video"); flut.v.muted = true; flut.v.playsInline = true;
+        flut.v = document.createElement("video"); flut.v.muted = false; flut.v.volume = 1; flut.v.playsInline = true;
         flut.v.style.cssText = "position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:0.01;pointer-events:none";
         document.body.appendChild(flut.v);
       }
