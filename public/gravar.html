@@ -188,7 +188,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
 
     <button class="primario" id="abrir" type="button">Abrir câmera e teleprompter</button>
     <button class="secundario" id="flutuante" type="button">Teleprompter flutuante (gravar com a câmera do celular)</button>
-    <p class="dica" id="flutuante-dica">O texto abre numa janelinha por cima de tudo. Depois abra a câmera do celular, posicione a janelinha perto da lente e o texto começa a rolar depois de uma contagem de 10 segundos. Antes de abrir, a página prepara o texto por alguns segundos. Grava em qualidade máxima, sem passar pela página.</p>
+    <p class="dica" id="flutuante-dica">O texto abre numa janelinha por cima de tudo. Depois abra a câmera do celular, posicione a janelinha perto da lente e a janela abre parada: quando você estiver pronto, toque nela e em ▶ (conta 3 e o texto rola). Antes de abrir, a página prepara o texto por alguns segundos. Grava em qualidade máxima, sem passar pela página.</p>
     <p class="dica">Dicas de gravação: fique de frente para uma janela ou luminária, nunca com a luz atrás de você. Celular na altura dos olhos. O texto fica no topo da tela, logo abaixo da lente, para o seu olhar não parecer que está lendo.</p>
   </div>
 </section>
@@ -425,12 +425,19 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
     var y0 = 30 - pos;
     for (var i = 0; i < linhas.length; i++) { var y = y0 + i * LH; if (y > -LH && y < H) ctx.fillText(linhas[i], 30, y); }
     ctx.fillStyle = "#ffd400"; ctx.fillRect(0, 30, 10, F);
-    if (contagem > 0) {
+    if (contagem > 0 && contagem !== Infinity) {
       ctx.fillStyle = "rgba(0,0,0,.72)"; ctx.fillRect(0, 0, W, H);
       ctx.fillStyle = "#ffd400"; ctx.font = "800 " + Math.round(F * 2.5) + "px sans-serif";
-      ctx.fillText(String(Math.ceil(contagem)), W / 2 - F, H / 2 - F * 1.3);
+      if (contagem !== Infinity) ctx.fillText(String(Math.ceil(contagem)), W / 2 - F, H / 2 - F * 1.3);
       ctx.font = "700 " + Math.round(F * 0.5) + "px sans-serif";
-      ctx.fillText("comece a gravar na câmera", 30, H - F * 0.8);
+      ctx.fillText("prepare-se", 30, H - F * 0.8);
+    }
+    if (contagem === Infinity) {
+      ctx.fillStyle = "rgba(0,0,0,.8)"; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = "#ffd400"; ctx.font = "800 " + Math.round(F * 0.75) + "px sans-serif";
+      ctx.fillText("Pronto para começar.", 30, H / 2 - F * 1.1);
+      ctx.fillStyle = "#fff"; ctx.font = "700 " + Math.round(F * 0.55) + "px sans-serif";
+      ctx.fillText("Toque na janela e depois em ▶", 30, H / 2 + F * 0.1);
     }
     if (fim) { ctx.fillStyle = "#ffd400"; ctx.font = "800 " + F + "px sans-serif"; ctx.fillText("Fim", 30, H / 2 - F / 2); }
   }
@@ -448,7 +455,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
       var ctx = c.getContext("2d");
       ctx.font = "700 " + F + "px sans-serif";
       var linhas = linhasDoRoteiro(ctx, W - 60);
-      var espera = Math.max(10, Number($("espera").value) || 0);
+      var INICIO = 1, espera = INICIO + 3;   // 1 s de "pronto para começar" (quadro de pausa) + contagem de 3
       var vel = Number($("velocidade").value) * F / 30;
       var distancia = linhas.length * LH + 30;
       var dur = espera + distancia / vel + 2;
@@ -464,7 +471,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
       enc.configure(cfg);
       for (var i = 0; i < N; i++) {
         if (erro) throw erro;
-        var t = i / FPS, cont = espera - t, pos = Math.max(0, t - espera) * vel;
+        var t = i / FPS, cont = t < INICIO ? Infinity : espera - t, pos = Math.max(0, t - espera) * vel;
         quadroTexto(ctx, W, H, F, LH, linhas, Math.min(pos, distancia), cont, pos >= distancia);
         var fr = new VideoFrame(c, { timestamp: Math.round(i * 1e6 / FPS), duration: Math.round(1e6 / FPS) });
         enc.encode(fr, { keyFrame: i % (FPS * 2) === 0 });
@@ -485,7 +492,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
       await new Promise(function (ok) { flut.v.onloadeddata = ok; flut.v.load(); });
       flut.estado = "pronto"; botao.disabled = false;
       botao.textContent = "Abrir janela flutuante";
-      aviso.textContent = "Pronto (" + Math.round(dur) + " segundos de texto). Toque em \"Abrir janela flutuante\", vá para a câmera e comece a gravar durante a contagem. Na janela, os botões do próprio Android pausam e continuam.";
+      aviso.textContent = "Pronto (" + Math.round(dur) + " segundos de texto). Toque em \"Abrir janela flutuante\". A janela abre parada e só começa quando você tocar em ▶ nela.";
     } catch (e) {
       flut.estado = "parado"; botao.disabled = false;
       aviso.textContent = "Não consegui preparar o texto (" + (e && (e.name || e.message) || "erro") + "). Me mande um print desta mensagem.";
@@ -495,10 +502,24 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
     if (flut.estado !== "pronto") return prepararFlutuante();
     var aviso = $("flutuante-dica");
     try {
-      flut.v.currentTime = 0;
-      await flut.v.play();
-      await flut.v.requestPictureInPicture();
-      aviso.textContent = "Janela aberta. Vá para a câmera e comece a gravar durante a contagem. Para recomeçar, feche a janela e toque no botão de novo.";
+      var v = flut.v;
+      v.pause(); v.currentTime = 0;
+      await v.requestPictureInPicture();
+      if ("mediaSession" in navigator) {
+        try { navigator.mediaSession.metadata = new MediaMetadata({ title: "Teleprompter Revla" }); } catch (e) {}
+        var ms = navigator.mediaSession;
+        ms.setActionHandler("play", function () { if (v.ended || v.currentTime >= v.duration - 0.1) v.currentTime = 0; v.play(); });
+        ms.setActionHandler("pause", function () { v.pause(); });
+        ms.setActionHandler("previoustrack", function () { v.currentTime = Math.max(0, v.currentTime - 5); });
+        ms.setActionHandler("nexttrack", function () { v.currentTime = Math.min(v.duration, v.currentTime + 5); });
+        try { ms.setActionHandler("seekbackward", function () { v.currentTime = Math.max(0, v.currentTime - 5); }); } catch (e) {}
+        try { ms.setActionHandler("seekforward", function () { v.currentTime = Math.min(v.duration, v.currentTime + 5); }); } catch (e) {}
+      }
+      if (!v.dataset.ok) {
+        v.dataset.ok = "1";
+        v.addEventListener("ended", function () { v.pause(); });
+      }
+      aviso.textContent = "Janela aberta e parada. Vá para a câmera, prepare tudo e comece a gravar. Depois toque na janela e em ▶: conta 3 e o texto rola. ⏸ para, ▶ continua, ⏮ volta 5 segundos e ⏭ avança 5 segundos.";
     } catch (e) {
       aviso.textContent = "Não consegui abrir a janela flutuante (" + (e.name || "erro") + "). Me mande um print desta mensagem.";
     }
