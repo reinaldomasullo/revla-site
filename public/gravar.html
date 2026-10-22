@@ -405,20 +405,34 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
   // o recorte em pé sai da altura: quanto mais alta a imagem (ex.: 4:3), mais nítido fica o vídeo em pé.
   // Procura um modo da câmera que cubra 1080x1920 (em pé) ou 1920x1080 (deitado) sem passar muito disso.
   // Modos grandes demais (ex.: 1920x3264) derrubam os quadros por segundo; pequenos demais deixam o vídeo borrado.
+  // Procura um modo da câmera que cubra 1080x1920 (em pé) ou 1920x1080 (deitado). O Chrome do Android
+  // às vezes só entrega a imagem em pé quando se pede um modo grande; o excesso é reduzido no canvas.
+  // Guarda o que cada tentativa devolveu, para diagnóstico na tela de revisão.
   async function resolucaoMaxima(horiz) {
+    estado.diag = [];
     try {
       var t = estado.stream.getVideoTracks()[0];
       if (!t.applyConstraints) return;
-      function cobre() { var s = t.getSettings(), w = s.width || 0, h = s.height || 0; return horiz ? (w >= 1920 && h >= 1080 && w <= 2400) : (w >= 1080 && h >= 1920 && h <= 2400); }
-      if (cobre()) return;
-      var tentativas = [[1920, 1080], [1080, 1920], [2560, 1440], [1440, 2560]];
+      function med() { var s = t.getSettings(); return [s.width || 0, s.height || 0]; }
+      function cobre() { var m = med(); return horiz ? (m[0] >= 1920 && m[1] >= 1080) : (m[1] >= 1920 && m[0] >= 1080); }
+      function custo() { var m = med(); return m[0] * m[1]; }
+      estado.diag.push("início " + med().join("x"));
+      if (cobre() && custo() <= 1080 * 1920 * 1.3) return;
+      var c = t.getCapabilities ? t.getCapabilities() : {};
+      if (c.width && c.height) estado.diag.push("máx " + c.width.max + "x" + c.height.max);
+      var tentativas = horiz ? [[1920, 1080], [2560, 1440]] :
+        [[1080, 1920], [1920, 1080], [1440, 2560], [2560, 1440], [3413, 1920], [1920, 3413]];
+      var melhor = null;
       for (var i = 0; i < tentativas.length; i++) {
         try { await t.applyConstraints({ width: { ideal: tentativas[i][0] }, height: { ideal: tentativas[i][1] }, frameRate: { ideal: 30 } }); } catch (e) {}
-        if (cobre()) return;
+        estado.diag.push(tentativas[i].join("x") + "→" + med().join("x"));
+        if (cobre()) { if (custo() <= 1080 * 1920 * 1.3) return; if (!melhor || custo() < melhor.c) melhor = { t: tentativas[i], c: custo() }; }
       }
-      var c = t.getCapabilities ? t.getCapabilities() : null;
-      if (c && c.height && c.width) await t.applyConstraints({ width: { ideal: c.width.max }, height: { ideal: c.height.max }, frameRate: { ideal: 30 } });
-    } catch (e) {}
+      if (melhor) {
+        await t.applyConstraints({ width: { ideal: melhor.t[0] }, height: { ideal: melhor.t[1] }, frameRate: { ideal: 30 } });
+        estado.diag.push("final " + med().join("x"));
+      }
+    } catch (e) { estado.diag.push("erro " + e.name); }
   }
 
   async function abrir() {
@@ -607,7 +621,7 @@ Quer saber se vale a pena para você? Me chama no WhatsApp.</textarea>
     estado.recorte = null;
     $("info-gravacao").innerHTML = "Duração <b>" + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0") +
       "</b> · " + (t.width || "?") + "x" + (t.height || "?") + " · " + (fps ? fps + " quadros/s · " : "") + mb + " MB · formato " + estado.ext.toUpperCase() +
-      "<br><small>Câmera: " + (cam.width || "?") + "x" + (cam.height || "?") + "</small>";
+      "<br><small>Câmera: " + (cam.width || "?") + "x" + (cam.height || "?") + (estado.diag && estado.diag.length ? " · " + estado.diag.join(" · ") : "") + "</small>";
     $("palco").hidden = true;
     $("revisao").hidden = false;
   }
