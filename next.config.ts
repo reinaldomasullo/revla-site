@@ -30,8 +30,18 @@ const nextConfig: NextConfig = {
   // conhecidas até agora — se aparecer alguma URL antiga nova (ex.: via
   // busca "site:revlacorretora.com.br" ou no Search Console), é só
   // adicionar mais uma entrada nesta lista, seguindo o mesmo padrão.
+  // Página "Pontos Revla Japão" (23/10/2026): /pontos é só um endereço da
+  // Revla que leva o cliente para a página hospedada no Claude. Não libera
+  // acesso: o cliente precisa ter sido convidado por e-mail e estar
+  // conectado à conta dele no Claude. Fica fora do sitemap e bloqueada no
+  // robots.txt. Um endereço que só redireciona não vira página indexada, e
+  // o destino é privado (exige login), então não há o que o Google mostrar.
   async redirects() {
     return [
+      // Pontos Revla Japão (23/10/2026). Temporário (307), não permanente:
+      // se a página mudar de endereço, basta trocar o destino aqui.
+      { source: "/pontos", destination: "https://claude.ai/artifact/DLDmneVgE2twMzqwCWNcu4", permanent: false },
+
       // Páginas institucionais antigas → equivalente atual
       { source: "/sobre-nos", destination: "/sobre-a-revla", permanent: true },
       { source: "/contato", destination: "/", permanent: true },
