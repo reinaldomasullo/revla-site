@@ -162,7 +162,7 @@ const faqItems = [
   {
     question: "Quais documentos do Japão servem para comprovar renda?",
     answer:
-      "Na contemplação, para quem mora fora do Brasil, a Ademicon pede a declaração de rendimentos do país onde você mora. Os documentos japoneses vão com tradução juramentada, sem apostila de Haia, e extratos bancários servem só como complemento. Exemplos: comprovante anual de rendimentos (gensen chōshūhyō) e certidão de renda da prefeitura (kazei shōmeisho).",
+      "Na contemplação, a Ademicon aceita um documento real de renda emitido no Japão, com tradução juramentada e sem apostila de Haia. Extratos bancários servem só como complemento. Exemplos: contrato de trabalho (koyō keiyakusho), documento do seu contador (zeirishi) com o ganho anual, comprovante anual de rendimentos (gensen chōshūhyō) e certidão de renda da prefeitura (kazei shōmeisho).",
   },
   {
     question: "Fui contemplado e estou no Japão. Preciso voltar para comprar o imóvel?",
@@ -279,6 +279,16 @@ const videoPagamento = {
     "Você recebe em ienes e a parcela do consórcio é em reais. Como paga estando no Japão? Eu sou o Reinaldo, consultor de consórcios, e te explico. O jeito mais prático é o cartão de crédito internacional, com cobrança automática todo mês. Eu te ajudo a cadastrar o cartão no aplicativo da administradora, e a parcela é cobrada no dia do vencimento. Se você tem conta no Brasil, também pode receber o boleto por e-mail ou pagar a primeira parcela por Pix. E se não tem, dá para abrir uma conta em um banco digital pelo celular. A parcela é sempre em reais, então o valor em ienes muda com o câmbio. Numa carta de R$ 100.000, a parcela reduzida fica em torno de R$ 337, pouco mais de 10.000 ienes. Me chama no WhatsApp e me conta quanto você consegue guardar por mês, em ienes, que eu te mostro qual carta se encaixa melhor para você.",
 };
 
+const videoRenda = {
+  youtubeId: "6y5fPY5nTwM",
+  titulo: "Moro no Japão. Preciso comprovar renda para fazer consórcio no Brasil?",
+  capa: "/images/videos/japao-v3.webp",
+  publicado: "2026-10-24",
+  duracao: "PT48S",
+  transcricao:
+    "Morando no Japão, você precisa comprovar a renda para fazer consórcio no Brasil? Eu sou o Reinaldo e te explico. Para entrar, não precisa. Você contrata daí, com seu endereço no Japão. A renda só é analisada na contemplação, e só se você for usar a carta para comprar o imóvel. Se você é funcionário de empresa ou de empreiteira, comprova com seu contrato de trabalho, o koyō keiyakusho. Se você é patrão do seu negócio, o seu contador, o zeirishi, emite um documento com seu ganho anual. Nos dois casos, com tradução juramentada. Apostila de Haia não é exigida. E se você vender a carta em vez de comprar o imóvel, não precisa comprovar renda. Quer saber mais? Me chama no WhatsApp.",
+};
+
 function videoObject(video: typeof videoQuemPode, description: string) {
   return {
     "@context": "https://schema.org",
@@ -306,6 +316,11 @@ const videoPagamentoSchema = videoObject(
   "Reinaldo Masullo explica em menos de 1 minuto como o brasileiro que recebe em ienes paga a parcela do consórcio no Brasil: cartão de crédito internacional, boleto por e-mail ou Pix, e quanto fica em ienes.",
 );
 
+const videoRendaSchema = videoObject(
+  videoRenda,
+  "Reinaldo Masullo explica em 48 segundos quando o brasileiro que mora no Japão precisa comprovar renda no consórcio de imóvel no Brasil e quais documentos japoneses usar, com tradução juramentada.",
+);
+
 const h2 = "text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl";
 const lead = "mt-4 text-lg leading-relaxed text-[var(--color-ink)]";
 const body = "mt-4 text-base leading-relaxed text-[var(--color-ink)]/75";
@@ -317,6 +332,7 @@ export default function BrasileirosNoJapaoPage() {
       <JsonLd data={serviceSchema} />
       <JsonLd data={videoSchema} />
       <JsonLd data={videoPagamentoSchema} />
+      <JsonLd data={videoRendaSchema} />
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
@@ -560,7 +576,8 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Renda */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="renda-heading">
-        <Container className="max-w-3xl">
+        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div>
           <h2 id="renda-heading" className={h2}>
             Como comprovar renda trabalhando no Japão?
           </h2>
@@ -569,13 +586,20 @@ export default function BrasileirosNoJapaoPage() {
             acontece.
           </p>
           <p className={body}>
-            Para quem mora fora do Brasil, a política de crédito da Ademicon pede a declaração de rendimentos do país
-            onde você mora. Extratos bancários
+            A Ademicon aceita um documento real de renda emitido no Japão, com tradução juramentada. Extratos bancários
             servem apenas como complemento, e o aluguel de um imóvel conta como renda quando vem com o contrato de
             locação e o extrato do recebimento.
           </p>
           <p className={body}>Exemplos de documentos japoneses de renda:</p>
           <ul className="mt-3 space-y-2 text-base leading-relaxed text-[var(--color-ink)]/75">
+            <li>
+              Contrato de trabalho, para quem é funcionário de empresa ou de empreiteira:{" "}
+              <Ja kanji="雇用契約書" leitura="koyō keiyakusho" />.
+            </li>
+            <li>
+              Documento do seu contador com o ganho anual, para quem tem negócio próprio:{" "}
+              <Ja kanji="税理士" leitura="zeirishi" />.
+            </li>
             <li>
               Comprovante anual de rendimentos emitido pela empresa: <Ja kanji="源泉徴収票" leitura="gensen chōshūhyō" />.
             </li>
@@ -592,6 +616,14 @@ export default function BrasileirosNoJapaoPage() {
             digitalizado, sem você sair do Japão. A Ademicon não exige apostila de Haia.
           </p>
           <SectionCTA label="Tirar a minha dúvida sobre renda" />
+          </div>
+          <VideoCurto
+            youtubeId={videoRenda.youtubeId}
+            titulo={videoRenda.titulo}
+            capa={videoRenda.capa}
+            transcricao={videoRenda.transcricao}
+            duracaoTexto="48 s"
+          />
         </Container>
       </section>
 
