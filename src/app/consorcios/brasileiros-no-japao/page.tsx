@@ -280,7 +280,7 @@ const videoPagamento = {
 };
 
 const videoRenda = {
-  youtubeId: "6y5fPY5nTwM",
+  youtubeId: "mj8us4gBypA",
   titulo: "Moro no Japão. Preciso comprovar renda para fazer consórcio no Brasil?",
   capa: "/images/videos/japao-v3.webp",
   publicado: "2026-10-24",
