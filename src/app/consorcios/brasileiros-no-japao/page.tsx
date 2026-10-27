@@ -289,6 +289,16 @@ const videoRenda = {
     "Morando no Japão, você precisa comprovar a renda para fazer consórcio no Brasil? Eu sou o Reinaldo e te explico. Para entrar, não precisa. Você contrata daí, com seu endereço no Japão. A renda só é analisada na contemplação, e só se você for usar a carta para comprar o imóvel. Se você é funcionário de empresa ou de empreiteira, comprova com seu contrato de trabalho, o koyō keiyakusho. Se você é patrão do seu negócio, o seu contador, o zeirishi, emite um documento com seu ganho anual. Nos dois casos, com tradução juramentada. Apostila de Haia não é exigida. E se você vender a carta em vez de comprar o imóvel, não precisa comprovar renda. Quer saber mais? Me chama no WhatsApp.",
 };
 
+const videoContemplado = {
+  youtubeId: "apnGfmuAS9Q",
+  titulo: "Como comprar o imóvel no Brasil se eu for contemplado morando no Japão?",
+  capa: "/images/videos/japao-v4.webp",
+  publicado: "2026-10-25",
+  duracao: "PT42S",
+  transcricao:
+    "Como comprar o imóvel no Brasil se for contemplado morando no Japão? Eu sou o Reinaldo e te explico. Contemplado, você tem três caminhos: comprar o imóvel na hora, deixar o crédito guardado enquanto escolhe com calma, ou vender a carta, se esse for o seu plano. Para comprar, você faz tudo daí. O contrato aceita assinatura digital válida. E se alguma etapa pedir presença, um procurador de confiança no Brasil resolve. E como a carta vale como pagamento à vista, você ainda negocia desconto com o vendedor. Quer saber mais? Me chama no WhatsApp.",
+};
+
 function videoObject(video: typeof videoQuemPode, description: string) {
   return {
     "@context": "https://schema.org",
@@ -321,6 +331,11 @@ const videoRendaSchema = videoObject(
   "Reinaldo Masullo explica em 48 segundos quando o brasileiro que mora no Japão precisa comprovar renda no consórcio de imóvel no Brasil e quais documentos japoneses usar, com tradução juramentada.",
 );
 
+const videoContempladoSchema = videoObject(
+  videoContemplado,
+  "Reinaldo Masullo explica em 42 segundos os três caminhos de quem é contemplado no consórcio morando no Japão: comprar o imóvel no Brasil, deixar o crédito guardado ou vender a carta, com assinatura digital ou procurador.",
+);
+
 const h2 = "text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl";
 const lead = "mt-4 text-lg leading-relaxed text-[var(--color-ink)]";
 const body = "mt-4 text-base leading-relaxed text-[var(--color-ink)]/75";
@@ -333,6 +348,7 @@ export default function BrasileirosNoJapaoPage() {
       <JsonLd data={videoSchema} />
       <JsonLd data={videoPagamentoSchema} />
       <JsonLd data={videoRendaSchema} />
+      <JsonLd data={videoContempladoSchema} />
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
@@ -629,13 +645,14 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Contemplação no Japão */}
       <section className="py-10 sm:py-12" aria-labelledby="contemplado-heading">
-        <Container className="max-w-3xl">
+        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div>
           <h2 id="contemplado-heading" className={h2}>
             Fui contemplado e moro no Japão. E agora?
           </h2>
           <p className={lead}>
-            Você pode comprar o imóvel na hora ou deixar o crédito aplicado, rendendo cerca de 100% do CDI, enquanto
-            escolhe com calma.
+            Você tem três caminhos: comprar o imóvel na hora, deixar o crédito aplicado, rendendo cerca de 100% do CDI,
+            enquanto escolhe com calma, ou vender a carta, se esse for o seu plano.
           </p>
           <p className={body}>
             O contrato de compra e venda e o de alienação fiduciária aceitam assinatura digital válida ou firma
@@ -648,6 +665,14 @@ export default function BrasileirosNoJapaoPage() {
             contrato com profissional habilitado. A documentação da compra (ITBI, escritura e registro) fica por conta
             de quem compra; como você paga o vendedor à vista, o desconto que negociar ajuda a cobrir esses custos.
           </p>
+          </div>
+          <VideoCurto
+            youtubeId={videoContemplado.youtubeId}
+            titulo={videoContemplado.titulo}
+            capa={videoContemplado.capa}
+            transcricao={videoContemplado.transcricao}
+            duracaoTexto="42 s"
+          />
         </Container>
       </section>
 
