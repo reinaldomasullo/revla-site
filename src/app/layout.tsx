@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MetaPixel from "@/components/MetaPixel";
+import MicrosoftClarity from "@/components/MicrosoftClarity";
 import JsonLd from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site-config";
 
@@ -135,6 +136,7 @@ export default function RootLayout({
         <CookieConsent />
         <GoogleAnalytics />
         <MetaPixel />
+        <MicrosoftClarity />
       </body>
     </html>
   );

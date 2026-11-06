@@ -106,6 +106,22 @@ export default function PoliticaDePrivacidadePage() {
               navegador. Cookies essenciais (necessários para o funcionamento do site) não
               dependem dessa escolha.
             </p>
+            <p>
+              Quando você aceita todos os cookies, também usamos o Microsoft Clarity, ferramenta
+              de análise da Microsoft que registra de forma agregada como as páginas são usadas
+              (cliques, rolagem e movimentos do cursor) para melhorarmos a experiência do site.
+              Os textos digitados em campos de formulário são mascarados e não são coletados.
+              Saiba mais na{" "}
+              <a
+                href="https://privacy.microsoft.com/pt-br/privacystatement"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[var(--color-primary)]/50 underline-offset-2 hover:decoration-[var(--color-primary)]"
+              >
+                Declaração de Privacidade da Microsoft
+              </a>
+              .
+            </p>
 
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">
               Publicidade e cookies de terceiros
@@ -232,7 +248,7 @@ export default function PoliticaDePrivacidadePage() {
             </p>
 
             <p className="text-xs text-[var(--color-ink)]/70">
-              Última atualização: setembro de 2026.
+              Última atualização: novembro de 2026.
             </p>
           </div>
         </Container>

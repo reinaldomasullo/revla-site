@@ -68,6 +68,10 @@ export const siteConfig = {
   // campanha de Meta Ads que usa Formulário Instantâneo nativo + WhatsApp
   // (esse fluxo roda inteiro dentro do Meta, nunca passa pelo site).
   metaPixelId: "944350138689081",
+  // ID do projeto no Microsoft Clarity (clarity.microsoft.com > projeto >
+  // Settings > Overview). Mesmo carregamento consent-gated do GA4/Meta Pixel —
+  // ver MicrosoftClarity.tsx. Vazio = Clarity desligado.
+  clarityProjectId: "z963410ygu",
   businessHoursDisplay: "Seg. a sex., 8h às 19h · Sáb., 8h às 13h",
   social: {
     instagram: "https://instagram.com/revlacorretora",
