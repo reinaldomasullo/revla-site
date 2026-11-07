@@ -309,6 +309,16 @@ const videoGolpe = {
     "Mora no Japão e tem medo de cair num golpe fazendo consórcio no Brasil? Esse medo faz sentido. Antes de pagar qualquer coisa, confira três coisas. Primeiro: a administradora precisa ser autorizada pelo Banco Central. Você confere pelo nome ou pelo CNPJ, no site do próprio Banco Central. Segundo: o pagamento vai sempre para a administradora. Nunca para uma pessoa, nunca para o corretor. Terceiro: desconfie de quem promete em que mês você vai ser contemplado. Ninguém sabe essa data, porque depende de sorteio e de lance. Eu te mando o contrato e o CNPJ e explico tudo antes de você pagar qualquer valor. Quer conferir tudo isso comigo? Me chama no WhatsApp: 55 11 94726 3140.",
 };
 
+const videoAluguel = {
+  youtubeId: "LdgXm6XnqVk",
+  titulo: "O aluguel pode pagar a parcela do consórcio? (Morando no Japão)",
+  capa: "/images/videos/japao-v6.webp",
+  publicado: "2026-11-07",
+  duracao: "PT46S",
+  transcricao:
+    "E se o imóvel que você comprar no Brasil ajudasse a pagar a própria parcela? Funciona assim: você é contemplado e compra um imóvel pensado para alugar. O aluguel entra todo mês e ajuda a pagar a parcela do consórcio. Quando o consórcio termina, esse aluguel fica para você. E você não precisa vir ao Brasil: uma imobiliária cuida do inquilino. A Revla ainda faz o seguro fiança, que é pago pelo inquilino. Se ele atrasar, a seguradora paga para você. O segredo está na escolha do imóvel, e eu analiso cada opção junto com você. Quer ver um exemplo com números? Me chama no WhatsApp: 55 11 94726 3140.",
+};
+
 function videoObject(video: typeof videoQuemPode, description: string) {
   return {
     "@context": "https://schema.org",
@@ -351,6 +361,11 @@ const videoGolpeSchema = videoObject(
   "Reinaldo Masullo explica em 50 segundos as três conferências para o brasileiro que mora no Japão não cair em golpe ao fazer consórcio no Brasil: administradora autorizada pelo Banco Central, pagamento sempre em nome da administradora e desconfiança de quem promete data de contemplação.",
 );
 
+const videoAluguelSchema = videoObject(
+  videoAluguel,
+  "Reinaldo Masullo explica em 46 segundos como o brasileiro que mora no Japão usa o consórcio para comprar um imóvel no Brasil e colocar para alugar: o aluguel ajuda a pagar a parcela, uma imobiliária cuida do inquilino e o seguro fiança é pago pelo inquilino.",
+);
+
 const h2 = "text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl";
 const lead = "mt-4 text-lg leading-relaxed text-[var(--color-ink)]";
 const body = "mt-4 text-base leading-relaxed text-[var(--color-ink)]/75";
@@ -365,6 +380,7 @@ export default function BrasileirosNoJapaoPage() {
       <JsonLd data={videoRendaSchema} />
       <JsonLd data={videoContempladoSchema} />
       <JsonLd data={videoGolpeSchema} />
+      <JsonLd data={videoAluguelSchema} />
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
@@ -769,7 +785,8 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Aluguel */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="aluguel-heading">
-        <Container className="max-w-3xl">
+        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div>
           <h2 id="aluguel-heading" className={h2}>
             O aluguel pode ajudar a pagar a parcela?
           </h2>
@@ -787,6 +804,14 @@ export default function BrasileirosNoJapaoPage() {
             Se a conta fecha depende do imóvel escolhido, do valor do aluguel e do momento da contemplação. Por isso eu
             analiso cada opção com você, com números, antes da compra.
           </p>
+          </div>
+          <VideoCurto
+            youtubeId={videoAluguel.youtubeId}
+            titulo={videoAluguel.titulo}
+            capa={videoAluguel.capa}
+            transcricao={videoAluguel.transcricao}
+            duracaoTexto="46 s"
+          />
         </Container>
       </section>
 

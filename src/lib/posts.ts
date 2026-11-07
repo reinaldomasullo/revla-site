@@ -6465,6 +6465,95 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "aluguel-pagar-parcela-consorcio-morando-no-japao",
+    title: "Mora no Japão: o aluguel pode pagar a parcela do consórcio?",
+    description:
+      "Contemplado, você compra um imóvel pensado para alugar, o aluguel ajuda a pagar a parcela e, no fim do consórcio, fica para você. Imobiliária e seguro fiança cuidam do resto.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/aluguel-pagar-parcela-consorcio-morando-no-japao-capa.jpg",
+      alt: "Capa: o aluguel pode pagar a parcela do consórcio?",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Pode ajudar. Depois da contemplação, você compra um imóvel pensado para alugar, e o aluguel que entra todo mês ajuda a pagar a parcela do consórcio. Quando o consórcio termina, esse aluguel fica para você. E tudo isso dá para fazer morando no Japão.",
+      },
+      {
+        type: "video",
+        youtubeId: "LdgXm6XnqVk",
+        title: "O aluguel pode pagar a parcela do consórcio? (Morando no Japão)",
+        description: "Como o aluguel do imóvel comprado com o consórcio ajuda a pagar a parcela, para quem mora no Japão.",
+        uploadDate: "2026-11-07",
+        duration: "PT46S",
+        vertical: true,
+        poster: "/images/videos/japao-v6.webp",
+      },
+      {
+        type: "h2",
+        id: "como-funciona",
+        text: "Como funciona, passo a passo",
+      },
+      {
+        type: "ol",
+        items: [
+          "Você é contemplado no consórcio, por sorteio ou por lance.",
+          "Usa a carta de crédito para comprar à vista um imóvel pensado para alugar.",
+          "Coloca o imóvel para alugar, e o aluguel passa a entrar todo mês.",
+          "O aluguel ajuda a pagar a parcela até o fim do consórcio.",
+          "Quando o consórcio termina, o aluguel fica para você.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "sem-vir-ao-brasil",
+        text: "Você não precisa vir ao Brasil",
+      },
+      {
+        type: "p",
+        text: "Uma imobiliária cuida do anúncio, da vistoria, do contrato e da cobrança do inquilino. Você acompanha tudo do Japão e recebe o aluguel na sua conta.",
+      },
+      {
+        type: "h2",
+        id: "seguro-fianca",
+        text: "Seguro fiança, pago pelo inquilino",
+      },
+      {
+        type: "p",
+        text: "A Revla também é corretora de seguros e faz o seguro fiança do aluguel. Quem paga é o inquilino. Se ele atrasar, a seguradora paga os aluguéis devidos, conforme as condições da apólice.",
+      },
+      {
+        type: "h2",
+        id: "escolha-do-imovel",
+        text: "O segredo está na escolha do imóvel",
+      },
+      {
+        type: "p",
+        text: "O quanto o aluguel ajuda na parcela depende do imóvel escolhido, da região e do valor da carta. Por isso, antes da compra, eu analiso cada opção com você, com números. Teste valores de carta na [calculadora de consórcio](/consorcios/calculadora) e veja as outras dúvidas na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+      },
+    ],
+    faq: [
+      {
+        question: "Posso comprar um imóvel para alugar com a carta de consórcio?",
+        answer:
+          "Sim. Depois de contemplado, você usa o crédito para comprar o imóvel à vista e pode colocá-lo para alugar.",
+      },
+      {
+        question: "Preciso estar no Brasil para alugar o imóvel?",
+        answer:
+          "Não. Uma imobiliária cuida do inquilino, do contrato e da cobrança, e você acompanha do Japão.",
+      },
+      {
+        question: "O que é o seguro fiança?",
+        answer:
+          "É um seguro pago pelo inquilino que substitui o fiador. Se ele atrasar, a seguradora paga os aluguéis devidos, conforme as condições da apólice.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
