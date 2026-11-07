@@ -6202,6 +6202,177 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "consorcio-de-imovel-no-brasil-morando-no-japao",
+    title: "Morando no Japão, posso fazer consórcio de imóvel no Brasil?",
+    description:
+      "Sim. Quem mora no Japão pode contratar consórcio de imóvel no Brasil de forma online, com endereço no Japão. Veja como funciona, como pagar e quando a renda é analisada.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/consorcio-de-imovel-no-brasil-morando-no-japao-capa.jpg",
+      alt: "Capa: morando no Japão, posso fazer consórcio de imóvel no Brasil?",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Sim. Você contrata o consórcio de forma totalmente online, com o seu endereço no Japão, e não precisa esperar voltar para começar a construir o seu imóvel no Brasil. Paga uma parcela por mês, que pode ser a parcela reduzida até a contemplação, concorre todo mês por sorteio e por lance e, quando for contemplado, usa o crédito para comprar o imóvel à vista.",
+      },
+      {
+        type: "video",
+        youtubeId: "IocTEfTWKNA",
+        title: "Morando no Japão, posso fazer consórcio de imóvel no Brasil?",
+        description: "Como brasileiros que moram no Japão contratam consórcio de imóvel no Brasil.",
+        uploadDate: "2026-10-17",
+        duration: "PT45S",
+        vertical: true,
+        poster: "/images/videos/japao-v1.webp",
+      },
+      {
+        type: "h2",
+        id: "como-funciona",
+        text: "Como funciona, passo a passo",
+      },
+      {
+        type: "ol",
+        items: [
+          "Você escolhe o valor da carta de crédito e entra no grupo pela internet, com endereço no Japão.",
+          "Paga a parcela todo mês. Até a contemplação, pode optar pela parcela reduzida.",
+          "Todo mês o grupo faz assembleias: você concorre por sorteio e pode oferecer lance.",
+          "Contemplado, a análise de renda é feita e o crédito é liberado para comprar o imóvel à vista no Brasil.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "quanto-custa",
+        text: "Quanto custa",
+      },
+      {
+        type: "p",
+        text: "O consórcio não cobra juros. O custo está na taxa de administração, diluída nas parcelas. Além disso, o valor da carta e das parcelas é reajustado uma vez por ano por um índice previsto no contrato, e depois da contemplação passa a ser obrigatório um seguro sobre o saldo devedor. Para ver valores de carta e parcela, use a [calculadora de consórcio](/consorcios/calculadora).",
+      },
+      {
+        type: "h2",
+        id: "como-pagar",
+        text: "Como pagar estando no Japão",
+      },
+      {
+        type: "p",
+        text: "A forma mais prática é o cartão de crédito internacional com cobrança automática. Quem tem conta no Brasil também pode pagar por boleto, e quem não tem pode abrir uma conta digital pelo celular. Explicamos as opções e o efeito do câmbio em [como pagar o consórcio morando no Japão](/blog/como-pagar-consorcio-no-brasil-morando-no-japao).",
+      },
+      {
+        type: "h2",
+        id: "renda",
+        text: "E a comprovação de renda?",
+      },
+      {
+        type: "p",
+        text: "Para entrar no grupo, não é pedida. A renda só é analisada na contemplação, quando você for usar o crédito para comprar o imóvel. Veja os documentos do Japão que costumam servir em [comprovar renda morando no Japão](/blog/comprovar-renda-consorcio-morando-no-japao) e as demais dúvidas na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+      },
+    ],
+    faq: [
+      {
+        question: "Preciso estar no Brasil para contratar o consórcio?",
+        answer:
+          "Não. A contratação é feita online, com o seu endereço no Japão.",
+      },
+      {
+        question: "Consórcio tem juros?",
+        answer:
+          "Não. Tem taxa de administração diluída nas parcelas, reajuste anual e, depois da contemplação, seguro obrigatório sobre o saldo devedor.",
+      },
+      {
+        question: "Quando posso comprar o imóvel?",
+        answer:
+          "Depois de ser contemplado, por sorteio ou por lance. Não existe data garantida para a contemplação.",
+      },
+    ],
+  },
+  {
+    slug: "comprar-imovel-no-brasil-antes-de-voltar-do-japao",
+    title: "Como comprar um imóvel no Brasil antes de voltar do Japão?",
+    description:
+      "Com uma carta de crédito de R$ 350 mil e parcela reduzida, você concorre todo mês por sorteio e lance embutido e compra o imóvel à vista no Brasil antes de voltar.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/comprar-imovel-no-brasil-antes-de-voltar-do-japao-capa.jpg",
+      alt: "Capa: como comprar um imóvel no Brasil antes de voltar do Japão?",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Uma forma é entrar numa carta de crédito de R$ 350 mil enquanto você ainda trabalha no Japão. Até a contemplação, a parcela reduzida fica em torno de R$ 1.180 por mês. Todo mês você concorre por sorteio e pelo lance embutido, que usa parte da própria carta, sem tirar dinheiro do seu bolso. Contemplado, compra o imóvel à vista no Brasil e, se quiser, pode alugá-lo. Assim, quando voltar, você não começa do zero.",
+      },
+      {
+        type: "video",
+        youtubeId: "fHzhcGGzaO4",
+        title: "Como comprar um imóvel no Brasil antes de voltar do Japão?",
+        description: "Carta de crédito de R$ 350 mil, parcela reduzida e lance embutido para comprar um imóvel no Brasil antes de voltar do Japão.",
+        uploadDate: "2026-10-24",
+        duration: "PT43S",
+        vertical: true,
+        poster: "/images/blog/imovel-antes-de-voltar-video-capa.jpg",
+      },
+      {
+        type: "h2",
+        id: "a-conta",
+        text: "A conta da carta de R$ 350 mil",
+      },
+      {
+        type: "ul",
+        items: [
+          "Carta de crédito: R$ 350 mil.",
+          "Parcela reduzida até a contemplação: cerca de R$ 1.180 por mês, em reais.",
+          "Em ienes, o valor depende do câmbio do dia em que você paga; planeje com folga para as oscilações.",
+          "Depois da contemplação, a parcela é recalculada, e o valor da carta e das parcelas tem reajuste anual.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Os valores são de uma simulação com valores de hoje e mudam conforme o grupo. Teste outros valores na [calculadora de consórcio](/consorcios/calculadora).",
+      },
+      {
+        type: "h2",
+        id: "lance-embutido",
+        text: "O que é o lance embutido",
+      },
+      {
+        type: "p",
+        text: "No lance embutido, você oferece como lance uma parte da própria carta, em geral em torno de 25% do valor, sem usar dinheiro guardado. A contrapartida é que, se for contemplado assim, o crédito que sobra para comprar o imóvel fica menor que o valor total da carta. Por isso, vale escolher a carta já pensando no valor do imóvel que você quer. O lance embutido aumenta a chance de contemplação, mas não garante data.",
+      },
+      {
+        type: "h2",
+        id: "depois-de-contemplado",
+        text: "Depois de contemplado",
+      },
+      {
+        type: "p",
+        text: "Você pode comprar o imóvel estando no Japão, com assinatura digital ou com um procurador no Brasil, e decidir se vai morar nele quando voltar ou alugar até lá. Explicamos a compra à distância em [contemplado morando no Japão](/blog/comprar-imovel-contemplado-morando-no-japao) e as outras dúvidas na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+      },
+    ],
+    faq: [
+      {
+        question: "Preciso usar dinheiro guardado para dar lance?",
+        answer:
+          "Não necessariamente. No lance embutido, o lance sai de uma parte da própria carta, o que reduz o crédito disponível para a compra.",
+      },
+      {
+        question: "Posso alugar o imóvel até voltar ao Brasil?",
+        answer:
+          "Sim, o imóvel é seu e pode ser alugado.",
+      },
+      {
+        question: "Quanto tempo leva para ser contemplado?",
+        answer:
+          "Não existe prazo garantido. A contemplação acontece por sorteio ou por lance, nas assembleias mensais do grupo.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
