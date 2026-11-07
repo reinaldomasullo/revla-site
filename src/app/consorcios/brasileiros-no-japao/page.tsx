@@ -299,6 +299,16 @@ const videoContemplado = {
     "Como comprar o imóvel no Brasil se for contemplado morando no Japão? Eu sou o Reinaldo e te explico. Contemplado, você tem três caminhos: comprar o imóvel na hora, deixar o crédito guardado enquanto escolhe com calma, ou vender a carta, se esse for o seu plano. Para comprar, você faz tudo daí. O contrato aceita assinatura digital válida. E se alguma etapa pedir presença, um procurador de confiança no Brasil resolve. E como a carta vale como pagamento à vista, você ainda negocia desconto com o vendedor. Quer saber mais? Me chama no WhatsApp.",
 };
 
+const videoGolpe = {
+  youtubeId: "aU1XSQkR2ew",
+  titulo: "Como saber se o consórcio é golpe? (Morando no Japão)",
+  capa: "/images/videos/japao-v5.webp",
+  publicado: "2026-11-07",
+  duracao: "PT50S",
+  transcricao:
+    "Mora no Japão e tem medo de cair num golpe fazendo consórcio no Brasil? Esse medo faz sentido. Antes de pagar qualquer coisa, confira três coisas. Primeiro: a administradora precisa ser autorizada pelo Banco Central. Você confere pelo nome ou pelo CNPJ, no site do próprio Banco Central. Segundo: o pagamento vai sempre para a administradora. Nunca para uma pessoa, nunca para o corretor. Terceiro: desconfie de quem promete em que mês você vai ser contemplado. Ninguém sabe essa data, porque depende de sorteio e de lance. Eu te mando o contrato e o CNPJ e explico tudo antes de você pagar qualquer valor. Quer conferir tudo isso comigo? Me chama no WhatsApp: 55 11 94726 3140.",
+};
+
 function videoObject(video: typeof videoQuemPode, description: string) {
   return {
     "@context": "https://schema.org",
@@ -336,6 +346,11 @@ const videoContempladoSchema = videoObject(
   "Reinaldo Masullo explica em 42 segundos os três caminhos de quem é contemplado no consórcio morando no Japão: comprar o imóvel no Brasil, deixar o crédito guardado ou vender a carta, com assinatura digital ou procurador.",
 );
 
+const videoGolpeSchema = videoObject(
+  videoGolpe,
+  "Reinaldo Masullo explica em 50 segundos as três conferências para o brasileiro que mora no Japão não cair em golpe ao fazer consórcio no Brasil: administradora autorizada pelo Banco Central, pagamento sempre em nome da administradora e desconfiança de quem promete data de contemplação.",
+);
+
 const h2 = "text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl";
 const lead = "mt-4 text-lg leading-relaxed text-[var(--color-ink)]";
 const body = "mt-4 text-base leading-relaxed text-[var(--color-ink)]/75";
@@ -349,6 +364,7 @@ export default function BrasileirosNoJapaoPage() {
       <JsonLd data={videoPagamentoSchema} />
       <JsonLd data={videoRendaSchema} />
       <JsonLd data={videoContempladoSchema} />
+      <JsonLd data={videoGolpeSchema} />
       <Breadcrumbs
         items={[
           { label: "Consórcios", href: "/consorcios" },
@@ -776,7 +792,9 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Golpe e solidez */}
       <section className="py-10 sm:py-12" aria-labelledby="golpe-heading">
-        <Container className="max-w-4xl">
+        <Container className="max-w-5xl">
+          <div className="grid items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div>
           <h2 id="golpe-heading" className={h2}>
             Como saber que não é golpe?
           </h2>
@@ -803,6 +821,15 @@ export default function BrasileirosNoJapaoPage() {
               essa data, porque ela depende de sorteio e de lance.
             </li>
           </ol>
+          </div>
+          <VideoCurto
+            youtubeId={videoGolpe.youtubeId}
+            titulo={videoGolpe.titulo}
+            capa={videoGolpe.capa}
+            transcricao={videoGolpe.transcricao}
+            duracaoTexto="50 s"
+          />
+          </div>
           <div className="mt-8 rounded-2xl border border-[var(--color-border)] p-6 sm:p-8">
             <h3 className="text-lg font-semibold text-[var(--color-ink)]">Administradora parceira: Ademicon</h3>
             <dl className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-5">

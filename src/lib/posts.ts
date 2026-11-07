@@ -6373,6 +6373,98 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "consorcio-e-golpe-morando-no-japao",
+    title: "Mora no Japão: como saber se o consórcio no Brasil é golpe?",
+    description:
+      "Três conferências antes de pagar qualquer valor: a administradora autorizada pelo Banco Central, o pagamento sempre em nome dela e a desconfiança de quem promete data de contemplação.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/consorcio-e-golpe-morando-no-japao-capa.jpg",
+      alt: "Capa: mora no Japão? Como saber se o consórcio é golpe",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Antes de pagar qualquer valor, confira três coisas: se a administradora é autorizada pelo Banco Central, se o pagamento vai para a administradora e não para uma pessoa, e se alguém está prometendo o mês da sua contemplação. Essas três conferências você faz sozinho, do Japão, em poucos minutos.",
+      },
+      {
+        type: "video",
+        youtubeId: "aU1XSQkR2ew",
+        title: "Como saber se o consórcio é golpe? (Morando no Japão)",
+        description: "Três conferências para quem mora no Japão não cair em golpe ao fazer consórcio no Brasil.",
+        uploadDate: "2026-11-07",
+        duration: "PT50S",
+        vertical: true,
+        poster: "/images/videos/japao-v5.webp",
+      },
+      {
+        type: "h2",
+        id: "banco-central",
+        text: "1. A administradora é autorizada pelo Banco Central?",
+      },
+      {
+        type: "p",
+        text: "Toda administradora de consórcio precisa de autorização do Banco Central para funcionar. Você confere pelo nome ou pelo CNPJ na página [Encontre uma instituição](https://www.bcb.gov.br/meubc/encontreinstituicao), no site do próprio Banco Central. Se a empresa não aparecer lá, não pague nada.",
+      },
+      {
+        type: "h2",
+        id: "pagamento",
+        text: "2. Para quem vai o pagamento?",
+      },
+      {
+        type: "p",
+        text: "O pagamento é sempre feito em nome da administradora: boleto emitido por ela, cobrança no cartão pelo aplicativo dela ou conta em nome dela. Nunca para uma pessoa física, nunca para a conta do corretor. Se pedirem para depositar na conta de alguém, pare a conversa.",
+      },
+      {
+        type: "h2",
+        id: "promessa",
+        text: "3. Alguém prometeu o mês da contemplação?",
+      },
+      {
+        type: "p",
+        text: "Desconfie de quem diz em que mês você vai ser contemplado. Ninguém sabe essa data, porque a contemplação depende de sorteio e de lance, nas assembleias do grupo. Promessa de contemplação em data certa é o sinal mais comum de golpe com consórcio.",
+      },
+      {
+        type: "h2",
+        id: "antes-de-pagar",
+        text: "O que pedir antes de pagar",
+      },
+      {
+        type: "ul",
+        items: [
+          "O contrato da administradora, para ler com calma antes de assinar.",
+          "O CNPJ da administradora, para conferir no site do Banco Central.",
+          "A explicação de como funcionam a parcela, o reajuste anual, o sorteio e o lance.",
+          "Os dados do corretor ou da corretora que está te atendendo, como o registro na SUSEP.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Veja as outras dúvidas de quem mora no Japão na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao). Se quiser conferir tudo isso comigo antes de decidir, me chama no WhatsApp.",
+      },
+    ],
+    faq: [
+      {
+        question: "Como conferir se a administradora de consórcio é autorizada?",
+        answer:
+          "Pelo nome ou pelo CNPJ, na página Encontre uma instituição, no site do Banco Central (bcb.gov.br).",
+      },
+      {
+        question: "Posso pagar o consórcio na conta do corretor?",
+        answer:
+          "Não. O pagamento é sempre feito em nome da administradora, nunca para uma pessoa física ou para o corretor.",
+      },
+      {
+        question: "Alguém pode garantir o mês da minha contemplação?",
+        answer:
+          "Não. A contemplação depende de sorteio e de lance nas assembleias do grupo. Ninguém sabe essa data com antecedência.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
