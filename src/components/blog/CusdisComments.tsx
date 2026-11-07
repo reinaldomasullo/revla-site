@@ -73,6 +73,12 @@ export default function CusdisComments({
 
   return (
     <>
+      {!falhou && (
+        <p className="mb-6 text-sm text-[var(--color-ink)]/60">
+          Deixe sua dúvida ou comentário — não é necessário criar conta. Comentários passam
+          por moderação antes de aparecer aqui.
+        </p>
+      )}
       <div
         ref={ref}
         id="cusdis_thread"

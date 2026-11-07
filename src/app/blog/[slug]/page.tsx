@@ -221,11 +221,7 @@ export default async function BlogPostPage({
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
             Comentários
           </h2>
-          <p className="mt-2 text-sm text-[var(--color-ink)]/60">
-            Deixe sua dúvida ou comentário — não é necessário criar conta. Comentários passam
-            por moderação antes de aparecer aqui.
-          </p>
-          <div className="mt-6">
+          <div className="mt-2">
             <CusdisComments
               slug={post.slug}
               url={`${siteConfig.url}/blog/${post.slug}`}
