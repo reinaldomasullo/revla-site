@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ContentBlock } from "@/lib/posts";
 import { renderInline } from "@/lib/inline-markdown";
+import VideoEmbed from "./VideoEmbed";
 
 export default function PostContent({ blocks }: { blocks: ContentBlock[] }) {
   return (
@@ -52,6 +53,20 @@ export default function PostContent({ blocks }: { blocks: ContentBlock[] }) {
                   </li>
                 ))}
               </ol>
+            );
+          case "video":
+            return (
+              <figure key={i} className="!my-8">
+                <VideoEmbed
+                  youtubeId={block.youtubeId}
+                  title={block.title}
+                  poster={block.poster}
+                  vertical={block.vertical}
+                />
+                <figcaption className="mt-2 text-center text-xs text-[var(--color-ink)]/70">
+                  {block.title}
+                </figcaption>
+              </figure>
             );
           case "image":
             return (

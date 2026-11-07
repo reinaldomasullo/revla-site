@@ -10,6 +10,16 @@ export type ContentBlock =
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
   | {
+      type: "video";
+      youtubeId: string;
+      title: string;
+      description: string;
+      uploadDate: string; // ISO
+      duration?: string; // ISO 8601, ex.: PT1M8S
+      vertical?: boolean;
+      poster?: string; // capa propria (o YouTube escolhe uma aleatoria em Shorts)
+    }
+  | {
       type: "image";
       src: string;
       alt: string;
@@ -5828,6 +5838,111 @@ export const posts: Post[] = [
         question: "O seguro celular vale em qualquer cidade do Brasil?",
         answer:
           "Sim, a cobertura acompanha o aparelho e é válida em qualquer lugar do país, não um endereço fixo.",
+      },
+    ],
+  },
+  {
+    slug: "como-comprar-casa-500-mil-e-sobrar-200-mil-consorcio",
+    title: "Como comprar uma casa de R$ 500 mil e ainda sobrar R$ 200 mil",
+    description:
+      "Simulação com carta de crédito de R$ 500 mil: parcela reduzida, lance de R$ 300 mil e R$ 200 mil aplicados. Veja a conta, os riscos e para quem faz sentido.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/como-comprar-casa-500-mil-e-sobrar-200-mil-consorcio-capa.jpg",
+      alt: "Capa com a pergunta: tem R$ 500 mil para a casa à vista? Compre a mesma casa e sobre R$ 200 mil",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Em vez de usar os R$ 500 mil para pagar a casa à vista, você pode entrar numa carta de crédito de R$ 500 mil, oferecer R$ 300 mil como lance para aumentar a chance de contemplação e deixar os outros R$ 200 mil aplicados. Quando for contemplado, compra a mesma casa à vista com a carta, e o dinheiro aplicado continua seu. É uma simulação com valores de hoje, e ela tem riscos e condições que explicamos abaixo.",
+      },
+      {
+        type: "video",
+        youtubeId: "h3ehMRVdhzA",
+        title: "Como comprar uma casa de R$ 500 mil e ainda sobrar R$ 200 mil",
+        description: "Simulação com carta de crédito de R$ 500 mil: parcela reduzida até a contemplação, lance de R$ 300 mil (60% da carta) e R$ 200 mil aplicados.",
+        uploadDate: "2026-11-07T12:01:00-03:00",
+        duration: "PT1M10S",
+        vertical: true,
+        poster: "/images/blog/casa-500-mil-sobrar-200-mil-video-capa.jpg",
+      },
+      {
+        type: "h2",
+        id: "a-conta-passo-a-passo",
+        text: "A conta passo a passo",
+      },
+      {
+        type: "ol",
+        items: [
+          "Você entra numa carta de crédito de R$ 500 mil.",
+          "A parcela cheia fica em cerca de R$ 2.823 por mês, mas o consórcio permite começar pela parcela reduzida, de cerca de R$ 1.686, até a contemplação.",
+          "Você oferece um lance de R$ 300 mil, que é 60% do valor da carta. Isso aumenta bastante a sua chance de ser contemplado, mas não garante a contemplação.",
+          "Os outros R$ 200 mil ficam aplicados.",
+          "Contemplado, você compra a casa à vista com a carta e ainda pode negociar um desconto com o vendedor, como qualquer comprador à vista.",
+          "Depois da contemplação, com o lance abatido do saldo, a parcela fica em torno de R$ 1.463 por mês.",
+          "Se a aplicação dos R$ 200 mil render 1% ao mês, são cerca de R$ 2.000 por mês. O rendimento paga a parcela e ainda sobram cerca de R$ 537.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Os valores de parcela são de uma simulação com valores de hoje e mudam conforme o grupo e o reajuste anual. Para testar outros valores de carta e de lance, use a [calculadora de consórcio da Revla](/consorcios/calculadora).",
+      },
+      {
+        type: "h2",
+        id: "por-que-o-lance-aumenta-a-chance",
+        text: "Por que o lance aumenta a chance de contemplação",
+      },
+      {
+        type: "p",
+        text: "Todo mês o grupo contempla consorciados por sorteio e por lance. No lance, quem oferece o maior percentual da carta naquele mês é contemplado. Um lance de 60% é alto e, por isso, aumenta bastante a chance. Mas o resultado depende dos lances dos outros participantes, então não existe data garantida para a contemplação.",
+      },
+      {
+        type: "h2",
+        id: "cuidados-antes-de-decidir",
+        text: "Cuidados antes de decidir",
+      },
+      {
+        type: "ul",
+        items: [
+          "Contemplação sem data: Até ser contemplado, você continua pagando a parcela e ainda não tem a casa.",
+          "Rendimento não garantido: O 1% ao mês é uma hipótese. O rendimento real depende da aplicação escolhida e dos juros do momento, e em geral sofre desconto de imposto de renda.",
+          "Reajuste anual: O valor da carta e das parcelas é corrigido todo ano por um índice previsto no contrato.",
+          "Taxa de administração: O consórcio não cobra juros, mas cobra taxa de administração, que já está embutida nas parcelas mostradas acima.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "para-quem-faz-sentido",
+        text: "Para quem essa estratégia faz sentido",
+      },
+      {
+        type: "p",
+        text: "Ela faz mais sentido para quem já tem o dinheiro guardado, não tem pressa absoluta para mudar e quer comprar o imóvel sem zerar a reserva. Para quem precisa da casa imediatamente, a compra à vista ou outras opções podem ser mais adequadas. Veja mais sobre [consórcio de imóveis](/consorcios/imoveis) e, se quiser essa conta com os seus números, fale com a Revla pelo WhatsApp.",
+      },
+    ],
+    faq: [
+      {
+        question: "Consórcio cobra juros?",
+        answer:
+          "Não. O consórcio não cobra juros, mas cobra taxa de administração, diluída nas parcelas, e tem reajuste anual do valor da carta e das parcelas.",
+      },
+      {
+        question: "O lance de R$ 300 mil garante a contemplação?",
+        answer:
+          "Não. Um lance de 60% da carta aumenta bastante a chance, mas a contemplação por lance vai para quem oferece o maior percentual no mês, então depende também dos lances dos outros consorciados.",
+      },
+      {
+        question: "Posso usar a carta de crédito para comprar um imóvel usado?",
+        answer:
+          "Em geral, sim: a carta de imóveis pode ser usada para imóvel novo ou usado, desde que o imóvel seja aprovado na análise da administradora. As regras exatas estão no contrato do grupo.",
+      },
+      {
+        question: "E se a aplicação render menos de 1% ao mês?",
+        answer:
+          "Aí o rendimento cobre uma parte menor da parcela, e a diferença sai do seu bolso. Por isso vale simular com um rendimento conservador antes de decidir.",
       },
     ],
   },

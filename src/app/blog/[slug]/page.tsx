@@ -112,9 +112,26 @@ export default async function BlogPostPage({
     mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
   };
 
+  const videoSchemas = post.content
+    .filter((b): b is Extract<typeof b, { type: "video" }> => b.type === "video")
+    .map((v) => ({
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: v.title,
+      description: v.description,
+      thumbnailUrl: [v.poster ? `${siteConfig.url}${v.poster}` : `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`],
+      uploadDate: v.uploadDate,
+      ...(v.duration ? { duration: v.duration } : {}),
+      embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
+      contentUrl: `https://www.youtube.com/shorts/${v.youtubeId}`,
+    }));
+
   return (
     <>
       <JsonLd data={articleSchema} />
+      {videoSchemas.map((s, i) => (
+        <JsonLd key={`video-${i}`} data={s} />
+      ))}
       <Breadcrumbs
         items={[
           { label: "Blog", href: "/blog" },
