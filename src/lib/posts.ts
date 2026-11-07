@@ -5946,6 +5946,262 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "como-pagar-consorcio-no-brasil-morando-no-japao",
+    title: "Recebo em ienes: como pagar a parcela do consórcio no Brasil morando no Japão?",
+    description:
+      "Cartão de crédito internacional com cobrança automática, conta digital no Brasil e o efeito do câmbio: como brasileiros no Japão pagam a parcela do consórcio em reais.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/como-pagar-consorcio-no-brasil-morando-no-japao-capa.jpg",
+      alt: "Capa: recebo em ienes, como pago a parcela do consórcio no Brasil?",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "O jeito mais prático é o cartão de crédito internacional, com cobrança automática todo mês. Você cadastra o cartão no aplicativo da administradora e a parcela, que é sempre em reais, é cobrada no vencimento. Quem tem conta no Brasil também pode pagar por boleto. O ponto de atenção é o câmbio: como você ganha em ienes, o valor da parcela em ienes muda conforme a cotação.",
+      },
+      {
+        type: "video",
+        youtubeId: "rEQJhSeS6iw",
+        title: "Recebo em ienes. Como pago a parcela do consórcio no Brasil?",
+        description: "Como brasileiros que moram no Japão pagam a parcela do consórcio em reais: cartão internacional, boleto e câmbio.",
+        uploadDate: "2026-10-20",
+        duration: "PT56S",
+        vertical: true,
+        poster: "/images/videos/japao-v2.webp",
+      },
+      {
+        type: "h2",
+        id: "cartao-internacional",
+        text: "Cartão de crédito internacional, com cobrança automática",
+      },
+      {
+        type: "p",
+        text: "Na administradora com que trabalhamos, quem mora fora do Brasil pode pagar as parcelas com cartão de crédito internacional, sem precisar de conta bancária no Brasil. O cartão é cadastrado no aplicativo e fica em débito recorrente. A cobrança é tentada dois dias antes do vencimento e no próprio vencimento. Se o cartão falhar três vezes seguidas, o pagamento passa para boleto.",
+      },
+      {
+        type: "p",
+        text: "Existe um custo: o pagamento recorrente no cartão tem uma taxa de até cerca de 3% sobre a parcela. Numa parcela de R$ 1.000, isso dá até uns R$ 31. O boleto não tem essa taxa. Vale colocar esse custo na conta na hora de escolher a forma de pagamento.",
+      },
+      {
+        type: "h2",
+        id: "conta-no-brasil",
+        text: "Se você tem conta no Brasil",
+      },
+      {
+        type: "p",
+        text: "Quem mantém conta em banco brasileiro pode pagar pelo boleto, que chega por e-mail e no aplicativo, sem a taxa do cartão. Se você não tem conta, dá para abrir uma conta digital pelo celular e mandar o dinheiro para ela com a remessa que você já usa.",
+      },
+      {
+        type: "h2",
+        id: "cambio",
+        text: "O efeito do câmbio na parcela",
+      },
+      {
+        type: "p",
+        text: "A parcela é fixada em reais. Se o iene se desvaloriza frente ao real, você gasta mais ienes para pagar a mesma parcela; se o iene se valoriza, gasta menos. Numa carta de R$ 100 mil, a parcela reduzida fica em cerca de R$ 337 por mês até a contemplação. Em ienes, esse valor depende da cotação do dia, por isso é bom planejar com uma folga para as oscilações.",
+      },
+      {
+        type: "ul",
+        items: [
+          "A parcela é sempre em reais e corrigida uma vez por ano pelo índice do contrato.",
+          "Planeje a parcela com folga de câmbio, e não no limite do que você guarda por mês.",
+          "Se possível, mantenha uma pequena reserva em reais para não depender da cotação de um mês específico.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Veja todas as dúvidas de quem mora no Japão na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao) e, se quiser, me conte quanto você consegue guardar por mês em ienes pelo WhatsApp, que eu mostro qual carta cabe no seu planejamento.",
+      },
+    ],
+    faq: [
+      {
+        question: "Preciso ter conta no Brasil para pagar o consórcio?",
+        answer:
+          "Não. Na administradora com que trabalhamos, é possível pagar com cartão de crédito internacional em débito recorrente, sem conta bancária no Brasil.",
+      },
+      {
+        question: "Tem taxa para pagar com cartão?",
+        answer:
+          "Sim. No pagamento recorrente com cartão há uma taxa de até cerca de 3% por parcela. O boleto não tem essa taxa.",
+      },
+      {
+        question: "A parcela muda com o câmbio?",
+        answer:
+          "Em reais, a parcela só muda no reajuste anual. Em ienes, ela muda conforme a cotação do dia em que você paga ou converte o dinheiro.",
+      },
+    ],
+  },
+  {
+    slug: "comprovar-renda-consorcio-morando-no-japao",
+    title: "Moro no Japão: preciso comprovar renda para fazer consórcio no Brasil?",
+    description:
+      "Para entrar no consórcio, não. A renda só é analisada na contemplação, se você usar a carta para comprar o imóvel. Veja quais documentos do Japão costumam servir.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/comprovar-renda-consorcio-morando-no-japao-capa.jpg",
+      alt: "Capa: moro no Japão, preciso comprovar renda para fazer consórcio no Brasil?",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Para entrar no consórcio, não. Você contrata daí, com o seu endereço no Japão. A renda só é analisada na contemplação, e só se você for usar a carta de crédito para comprar o imóvel. Se o seu plano for vender a carta contemplada, não há análise de renda.",
+      },
+      {
+        type: "video",
+        youtubeId: "mj8us4gBypA",
+        title: "Moro no Japão. Preciso comprovar renda para fazer consórcio no Brasil?",
+        description: "Quando e como brasileiros que moram no Japão comprovam renda no consórcio de imóveis.",
+        uploadDate: "2026-10-24",
+        duration: "PT48S",
+        vertical: true,
+        poster: "/images/videos/japao-v3.webp",
+      },
+      {
+        type: "h2",
+        id: "quando-a-renda-e-analisada",
+        text: "Quando a renda é analisada",
+      },
+      {
+        type: "p",
+        text: "No consórcio, a análise de crédito acontece depois da contemplação, quando você pede a liberação da carta para comprar o imóvel. É nesse momento que a administradora confere se a sua renda comporta as parcelas que faltam. Antes disso, para aderir ao grupo e pagar as parcelas, não é preciso apresentar comprovante.",
+      },
+      {
+        type: "h2",
+        id: "documentos-do-japao",
+        text: "Documentos do Japão que costumam servir",
+      },
+      {
+        type: "ul",
+        items: [
+          "Funcionário de empresa ou de empreiteira: o contrato de trabalho, chamado koyō keiyakusho (雇用契約書).",
+          "Dono do próprio negócio: um documento do contador, o zeirishi (税理士), com o seu ganho anual.",
+          "Nos dois casos, com tradução juramentada para o português. A apostila de Haia não é exigida.",
+          "Extratos bancários podem complementar a análise, mas não substituem o documento de renda.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A lista exata de documentos é confirmada pela administradora no momento da análise e pode variar conforme o caso. Por isso, vale organizar esses papéis com antecedência, antes de ser contemplado.",
+      },
+      {
+        type: "h2",
+        id: "vender-a-carta",
+        text: "E se eu vender a carta?",
+      },
+      {
+        type: "p",
+        text: "Se em vez de comprar o imóvel você vender a carta contemplada, não existe análise da sua renda, porque quem passa a pagar as parcelas é o comprador. Essa é uma das estratégias que alguns brasileiros no Japão usam. Veja as outras dúvidas na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+      },
+    ],
+    faq: [
+      {
+        question: "Preciso comprovar renda para entrar no consórcio morando no Japão?",
+        answer:
+          "Não. A comprovação de renda só é pedida na contemplação, se você for usar a carta para comprar o imóvel.",
+      },
+      {
+        question: "Precisa de apostila de Haia nos documentos do Japão?",
+        answer:
+          "Não é exigida. O que se pede é a tradução juramentada do documento de renda para o português.",
+      },
+      {
+        question: "Quem é dono de negócio no Japão comprova como?",
+        answer:
+          "Com um documento emitido pelo contador (zeirishi) informando o ganho anual, com tradução juramentada.",
+      },
+    ],
+  },
+  {
+    slug: "comprar-imovel-contemplado-morando-no-japao",
+    title: "Fui contemplado morando no Japão: como comprar o imóvel no Brasil?",
+    description:
+      "Três caminhos depois da contemplação, assinatura digital, procurador no Brasil, custos de escritura e como a carta vale como pagamento à vista na negociação.",
+    category: "Consórcios",
+    date: "2026-11-07",
+    coverImage: {
+      src: "/images/blog/comprar-imovel-contemplado-morando-no-japao-capa.jpg",
+      alt: "Capa: como comprar o imóvel no Brasil se eu for contemplado morando no Japão?",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Contemplado, você tem três caminhos: comprar o imóvel na hora, deixar o crédito guardado enquanto escolhe com calma, ou vender a carta, se esse for o seu plano. Para comprar, dá para fazer quase tudo do Japão: o contrato aceita assinatura digital válida, e se alguma etapa exigir presença, um procurador de confiança no Brasil resolve.",
+      },
+      {
+        type: "video",
+        youtubeId: "apnGfmuAS9Q",
+        title: "Como comprar o imóvel no Brasil se eu for contemplado morando no Japão?",
+        description: "Os caminhos depois da contemplação para quem mora no Japão e como comprar o imóvel no Brasil à distância.",
+        uploadDate: "2026-10-25",
+        duration: "PT42S",
+        vertical: true,
+        poster: "/images/videos/japao-v4.webp",
+      },
+      {
+        type: "h2",
+        id: "tres-caminhos",
+        text: "Os três caminhos depois da contemplação",
+      },
+      {
+        type: "ol",
+        items: [
+          "Comprar o imóvel agora: você escolhe o imóvel, a administradora faz a análise e libera o pagamento ao vendedor.",
+          "Deixar o crédito guardado: enquanto você não usa, o crédito fica aplicado e é corrigido (na administradora com que trabalhamos, rende cerca de 100% do CDI).",
+          "Vender a carta contemplada: em vez de comprar, você transfere a cota para outra pessoa, conforme as regras do grupo.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "comprar-a-distancia",
+        text: "Como comprar estando no Japão",
+      },
+      {
+        type: "ul",
+        items: [
+          "Assinatura: o contrato de compra e venda e a alienação fiduciária aceitam firma reconhecida ou assinatura digital válida.",
+          "Procurador: se alguma etapa pedir presença, uma pessoa de confiança no Brasil pode representar você. A procuração pública tem validade de 30 dias para esse uso, e a particular, de 90 dias.",
+          "Pagamento: a administradora libera 80% do valor ao vendedor com o contrato assinado e os 20% restantes depois do registro no cartório.",
+          "Prazo: depois de aprovada, a análise de crédito vale por 120 dias, então é bom já ter o imóvel em vista.",
+        ],
+      },
+      {
+        type: "h2",
+        id: "custos-e-negociacao",
+        text: "Custos e negociação",
+      },
+      {
+        type: "p",
+        text: "Os custos de ITBI, escritura e registro ficam por conta de quem compra, como em qualquer compra de imóvel. Por outro lado, a carta de crédito funciona como pagamento à vista para o vendedor, o que costuma abrir espaço para negociar desconto. Veja as demais dúvidas na [página para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+      },
+    ],
+    faq: [
+      {
+        question: "Preciso ir ao Brasil para comprar o imóvel depois de contemplado?",
+        answer:
+          "Não necessariamente. O contrato aceita assinatura digital válida, e um procurador de confiança no Brasil pode cuidar das etapas presenciais.",
+      },
+      {
+        question: "Posso esperar para escolher o imóvel?",
+        answer:
+          "Sim. Depois da contemplação, o crédito pode ficar guardado e aplicado enquanto você escolhe, conforme as regras do grupo.",
+      },
+      {
+        question: "Quem paga ITBI, escritura e registro?",
+        answer:
+          "Quem compra o imóvel, ou seja, o consorciado. Esses custos não estão incluídos na carta de crédito.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
