@@ -370,7 +370,11 @@ export default function PlanoDeSaudePage() {
               Outras operadoras de plano de saúde
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
-              Além da Prevent Senior, a Revla cota e contrata planos de outras operadoras e compara as opções para o seu perfil.
+              Além da Prevent Senior, a Revla cota e contrata planos de outras operadoras e compara as opções para o seu perfil.{" "}
+              <Link href="/plano-de-saude/operadoras" className="font-semibold text-[var(--color-primary)] underline">
+                Ver todas as operadoras
+              </Link>
+              .
             </p>
           </div>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

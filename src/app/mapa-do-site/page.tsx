@@ -58,8 +58,16 @@ const seguros: LinkItem[] = [
 ];
 
 const planoDeSaude: LinkItem[] = [
-  { label: "Plano de Saúde (hub)", href: "/plano-de-saude" },
-  ...planoDeSaudeCidades.map((c) => ({ label: `Plano de Saúde em ${c.nome}`, href: `/plano-de-saude/${c.slug}` })),
+  { label: "Plano de Saúde (hub de operadoras)", href: "/plano-de-saude/operadoras" },
+  { label: "Plano de Saúde Prevent Senior", href: "/plano-de-saude" },
+  { label: "Plano de Saúde Amil", href: "/plano-de-saude/amil" },
+  { label: "Plano de Saúde Bradesco Saúde", href: "/plano-de-saude/bradesco-saude" },
+  { label: "Plano de Saúde SulAmérica", href: "/plano-de-saude/sulamerica" },
+  { label: "Plano de Saúde Hapvida", href: "/plano-de-saude/hapvida" },
+  { label: "Plano de Saúde NotreDame Intermédica", href: "/plano-de-saude/notredame" },
+  { label: "Plano de Saúde MedSênior", href: "/plano-de-saude/medsenior" },
+  { label: "Plano de Saúde Empresarial (PJ e MEI)", href: "/plano-de-saude/empresarial" },
+  ...planoDeSaudeCidades.map((c) => ({ label: `Plano de Saúde Prevent Senior em ${c.nome}`, href: `/plano-de-saude/${c.slug}` })),
 ];
 
 const planoFunerario: LinkItem[] = [

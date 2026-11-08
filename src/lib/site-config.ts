@@ -258,7 +258,7 @@ export const mainNav = [
   { label: "Início", href: "/" },
   { label: "Consórcios", href: "/consorcios" },
   { label: "Seguros", href: "/seguros" },
-  { label: "Plano de Saúde", href: "/plano-de-saude" },
+  { label: "Plano de Saúde", href: "/plano-de-saude/operadoras" },
   { label: "Plano Funerário", href: "/plano-funerario" },
   { label: "Planejamento Patrimonial", href: "/planejamento-patrimonial" },
   { label: "Blog", href: "/blog" },

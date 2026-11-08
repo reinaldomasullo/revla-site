@@ -172,6 +172,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const planoDeSaudeOperadorasHubRoute = {
+    url: `${siteConfig.url}/plano-de-saude/operadoras`,
+    lastModified: PLANO_SAUDE_LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  };
+
   const planoDeSaudeEmpresarialRoute = {
     url: `${siteConfig.url}/plano-de-saude/empresarial`,
     lastModified: PLANO_SAUDE_LAST_MODIFIED,
@@ -196,5 +203,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...planoDeSaudeCidadeRoutes,
     ...planoDeSaudeOperadoraRoutes,
     planoDeSaudeEmpresarialRoute,
+    planoDeSaudeOperadorasHubRoute,
   ];
 }

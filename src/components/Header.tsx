@@ -13,6 +13,7 @@ type Produto = {
   label: string;
   href: string;
   navLabel?: string;
+  activePrefix?: string;
   submenu?: { grupos: SubGrupo[]; verTodos: string };
 };
 
@@ -65,7 +66,8 @@ const produtos: Produto[] = [
   },
   {
     label: "Plano de Saúde",
-    href: "/plano-de-saude",
+    href: "/plano-de-saude/operadoras",
+    activePrefix: "/plano-de-saude",
   },
   {
     label: "Plano Funerário",
@@ -102,6 +104,7 @@ export default function Header() {
   const inicioAtivo = pathname === "/";
   const blogAtivo = pathname === "/blog" || pathname?.startsWith("/blog/");
   const categoriaAtiva = (href: string) => pathname === href || (pathname?.startsWith(`${href}/`) ?? false);
+  const produtoAtivo = (p: Produto) => categoriaAtiva(p.activePrefix ?? p.href);
 
   // Fecha os menus ao navegar (ajuste de estado durante a renderização,
   // evitando o refluxo extra de fazer isso em um efeito)
@@ -172,7 +175,7 @@ export default function Header() {
             </Link>
 
             {produtos.map((produto) => {
-              const ativo = categoriaAtiva(produto.href);
+              const ativo = produtoAtivo(produto);
               if (!produto.submenu) {
                 return (
                   <Link
