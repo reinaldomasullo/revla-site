@@ -4,6 +4,14 @@
 // Fatos conferidos nos sites oficiais em novembro de 2026. Sem tabela de
 // preços: as cotações são individuais (idade, cidade, tipo de contrato e
 // número de vidas). Nada aqui pode prometer o que o site oficial não diz.
+//
+// CORREÇÃO (auditoria SEO, 08/11/2026): metaTitle (+ sufixo " | Revla
+// Corretora" do layout) e metaDescription das 6 operadoras passavam do
+// orçamento de ~60/~160 caracteres que o resto do site respeita — mesma
+// classe de problema do title truncado do blog (ver buildBlogTitle em
+// site-config.ts), só que aqui nunca corrigido porque essas páginas usam
+// buildMetadata() direto, sem nenhum teto de caracteres. Textos encurtados
+// abaixo sem perder o fato principal de cada operadora.
 
 export type OperadoraSlug =
   | "amil"
@@ -36,8 +44,8 @@ export const operadoras: Operadora[] = [
   {
     slug: "amil",
     nome: "Amil",
-    metaTitle: "Plano de Saúde Amil: Convênio, Planos e Cotação",
-    metaDescription: "Plano de saúde Amil (convênio Amil): linhas Amil, Amil One, Amil Fácil e Amil Black. Cotação com a Revla por WhatsApp, e confirmamos o que está à venda na sua região.",
+    metaTitle: "Plano de Saúde Amil: Convênio e Cotação",
+    metaDescription: "Plano de saúde Amil (convênio Amil): linhas Amil One, Amil Fácil e Amil Black. Cotação com a Revla por WhatsApp, sem compromisso.",
     heroTitle: "Plano de saúde Amil: cotação e contratação com a Revla",
     heroDescription:
       "A Revla cota e contrata planos Amil e compara com outras operadoras para o seu perfil. Atendimento por WhatsApp e videochamada, com simulação gratuita e sem compromisso.",
@@ -107,8 +115,8 @@ export const operadoras: Operadora[] = [
   {
     slug: "bradesco-saude",
     nome: "Bradesco Saúde",
-    metaTitle: "Plano de Saúde Bradesco Saúde: Empresarial e Adesão",
-    metaDescription: "Plano de saúde Bradesco Saúde empresarial e por adesão com a Revla. A Bradesco Saúde não vende plano individual ou pessoa física. Veja como contratar e cote sem compromisso.",
+    metaTitle: "Plano de Saúde Bradesco Saúde: Empresarial",
+    metaDescription: "Plano de saúde Bradesco Saúde empresarial e por adesão. A Bradesco Saúde não vende plano individual. Cote com a Revla sem compromisso.",
     heroTitle: "Plano de saúde Bradesco Saúde: empresarial e por adesão",
     heroDescription:
       "A Revla cota e contrata planos Bradesco Saúde para empresas e para quem tem direito a plano por adesão. A operadora não comercializa plano individual ou familiar.",
@@ -178,8 +186,8 @@ export const operadoras: Operadora[] = [
   {
     slug: "sulamerica",
     nome: "SulAmérica",
-    metaTitle: "Plano de Saúde SulAmérica: Planos, Convênio e Cotação",
-    metaDescription: "Plano de saúde SulAmérica empresarial a partir de 3 vidas: linhas SulAmérica, Vital e Profissões, com ou sem coparticipação. Cotação com a Revla por WhatsApp, sem compromisso.",
+    metaTitle: "Plano de Saúde SulAmérica: Cotação",
+    metaDescription: "Plano de saúde SulAmérica empresarial a partir de 3 vidas: linhas SulAmérica, Vital e Profissões. Cotação com a Revla por WhatsApp.",
     heroTitle: "Plano de saúde SulAmérica: cotação e contratação com a Revla",
     heroDescription:
       "A Revla cota e contrata planos SulAmérica para empresas e profissionais, e compara com outras operadoras. Atendimento por WhatsApp, com simulação gratuita.",
@@ -249,8 +257,8 @@ export const operadoras: Operadora[] = [
   {
     slug: "hapvida",
     nome: "Hapvida",
-    metaTitle: "Plano de Saúde Hapvida: Individual, Empresa e Planos",
-    metaDescription: "Plano de saúde Hapvida individual, familiar, empresarial e microempresa, com rede própria de hospitais e clínicas. Simulação com a Revla por WhatsApp, sem compromisso.",
+    metaTitle: "Plano de Saúde Hapvida: Cotação",
+    metaDescription: "Plano de saúde Hapvida individual, familiar, empresarial e microempresa, com rede própria. Simulação com a Revla por WhatsApp.",
     heroTitle: "Plano de saúde Hapvida: cotação e contratação com a Revla",
     heroDescription:
       "A Revla cota e contrata planos Hapvida para pessoas físicas, famílias e empresas, e compara com outras operadoras. Simulação gratuita e sem compromisso.",
@@ -322,8 +330,8 @@ export const operadoras: Operadora[] = [
   {
     slug: "notredame",
     nome: "NotreDame",
-    metaTitle: "Plano de Saúde NotreDame Intermédica: SP e RJ",
-    metaDescription: "Plano de saúde NotreDame (antiga Intermédica/GNDI), hoje do grupo Hapvida, em São Paulo e Rio de Janeiro. Convênio NotreDame com cotação da Revla, sem compromisso.",
+    metaTitle: "Plano de Saúde NotreDame: SP e RJ",
+    metaDescription: "Plano de saúde NotreDame (antiga Intermédica), hoje do grupo Hapvida, em SP e RJ. Cotação com a Revla, sem compromisso.",
     heroTitle: "Plano de saúde NotreDame: cotação e contratação com a Revla",
     heroDescription:
       "A Revla cota e contrata planos NotreDame Saúde em São Paulo e no Rio de Janeiro e compara com outras operadoras. Simulação gratuita e sem compromisso.",
@@ -391,8 +399,8 @@ export const operadoras: Operadora[] = [
   {
     slug: "medsenior",
     nome: "MedSênior",
-    metaTitle: "Plano de Saúde MedSênior: Valores, Cidades e Cotação",
-    metaDescription: "Plano de saúde MedSênior (Med Senior) para a terceira idade em SP, Campinas, RJ, ES e outras cidades. Compare com a Prevent Senior e cote com a Revla, sem compromisso.",
+    metaTitle: "Plano de Saúde MedSênior: Cotação",
+    metaDescription: "Plano de saúde MedSênior para a terceira idade em SP, Campinas, RJ, ES e outras cidades. Compare e cote com a Revla.",
     heroTitle: "Plano de saúde MedSênior para a terceira idade",
     heroDescription:
       "A Revla cota e contrata planos MedSênior e compara com a Prevent Senior e outras operadoras para o seu perfil e a sua cidade. Simulação gratuita e sem compromisso.",

@@ -16,10 +16,12 @@ import { HospitalCross, HeartHand, Star, ClockCheck } from "@/components/icons";
 // "plano de saude para empresas", "plano de saude empresa" (1 mil a 10 mil cada);
 // "amil empresa" e "hapvida empresa" (10 mil a 100 mil). Sem tabela de preços.
 
+// CORREÇÃO (auditoria SEO, 08/11/2026): title+sufixo e description
+// passavam do orçamento de ~60/~160 caracteres do resto do site.
 export const metadata = buildMetadata({
-  title: "Plano de Saúde Empresarial: PJ, MEI e Empresas",
+  title: "Plano de Saúde Empresarial: PJ e MEI",
   description:
-    "Plano de saúde empresarial para empresas, PJ e MEI: como contratar, quantas vidas são necessárias e comparação entre Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior.",
+    "Plano de saúde empresarial para empresas, PJ e MEI: como contratar e comparação entre Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior.",
   path: "/plano-de-saude/empresarial",
 });
 

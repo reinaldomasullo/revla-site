@@ -15,10 +15,12 @@ import { HospitalCross, HeartHand, Star, MapPin, ClockCheck } from "@/components
 // Prevent Senior (indexada desde setembro, mantida para não perder posição).
 // Daqui saem as páginas de cada operadora, a de plano empresarial e as
 // páginas de cidade da Prevent Senior. Não há tabela de preços geral: o valor depende de cada cotação.
+// CORREÇÃO (auditoria SEO, 08/11/2026): title+sufixo e description
+// passavam do orçamento de ~60/~160 caracteres do resto do site.
 export const metadata: Metadata = buildMetadata({
-  title: "Operadoras de Plano de Saúde: Compare e Cote com a Revla",
+  title: "Operadoras de Plano de Saúde: Compare",
   description:
-    "Compare planos de saúde Prevent Senior, Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior, para pessoa física e empresas. Cotação gratuita com a Revla, sem compromisso.",
+    "Compare planos de saúde Prevent Senior, Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior. Cotação gratuita com a Revla.",
   path: "/plano-de-saude/operadoras",
 });
 

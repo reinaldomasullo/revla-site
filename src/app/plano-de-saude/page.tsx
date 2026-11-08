@@ -303,6 +303,18 @@ export default function PlanoDeSaudePage() {
               Valores de referência, cobertura ambulatorial e hospitalar sem obstetrícia, para os
               dois planos Prevent Senior.
             </p>
+            {/* CORREÇÃO (auditoria SEO/clareza, 08/11/2026): a tabela mostra
+                3 faixas com valor crescente, incluindo uma faixa 59+ mais
+                cara — o que pode parecer contradizer o diferencial "sem
+                aumento a partir dos 44 anos" acima pra quem só olha a
+                tabela. Essa frase deixa explícito que a tabela é o valor de
+                ENTRADA por idade, e que quem já está no plano a partir dos
+                44 fica travado nesse valor (não migra pra faixa seguinte). */}
+            <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/60">
+              A tabela mostra o valor de entrada por idade na contratação. Quem já é beneficiário
+              a partir dos 44 anos fica travado no valor da sua faixa de entrada e não migra para
+              a faixa seguinte, mesmo completando 59 anos.
+            </p>
           </div>
 
           <div className="mt-10 space-y-10">

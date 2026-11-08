@@ -317,8 +317,17 @@ export default function Header() {
                 Produtos
               </p>
               {produtos.map((produto) => {
+                // CORREÇÃO (auditoria SEO/UX, 08/11/2026): o menu mobile
+                // comparava a URL atual direto com `produto.href`, então
+                // desde que "Plano de Saúde" passou a apontar para
+                // /plano-de-saude/operadoras (com `activePrefix` pra cobrir
+                // as sub-páginas), o destaque de "ativo" parou de funcionar
+                // no celular ao navegar por /plano-de-saude, pelas 6
+                // operadoras ou por /plano-de-saude/empresarial — o menu de
+                // computador já usava `produtoAtivo()` e não teve esse bug.
+                const ativoMobile = produtoAtivo(produto);
                 const classeItem = `rounded-md px-2 py-2.5 text-base font-medium hover:bg-[var(--color-muted)] ${
-                  pathname === produto.href ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
+                  ativoMobile ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
                 }`;
                 if (!produto.submenu) {
                   return (
