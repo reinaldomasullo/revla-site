@@ -762,6 +762,7 @@ export default function BrasileirosNoJapaoPage() {
             contrato com profissional habilitado. A documentação da compra (ITBI, escritura e registro) fica por conta
             de quem compra; como você paga o vendedor à vista, o desconto que negociar ajuda a cobrir esses custos.
           </p>
+          <SectionCTA label="Fui contemplado, quero ajuda para comprar" />
           </div>
           <VideoCurto
             youtubeId={videoContemplado.youtubeId}
@@ -869,6 +870,7 @@ export default function BrasileirosNoJapaoPage() {
             Se a conta fecha depende do imóvel escolhido, do valor do aluguel e do momento da contemplação. Por isso eu
             analiso cada opção com você, com números, antes da compra.
           </p>
+          <SectionCTA label="Simular com o aluguel ajudando a pagar" />
           </div>
           <VideoCurto
             youtubeId={videoAluguel.youtubeId}
@@ -911,6 +913,7 @@ export default function BrasileirosNoJapaoPage() {
               essa data, porque ela depende de sorteio e de lance.
             </li>
           </ol>
+          <SectionCTA label="Tirar minha dúvida sobre segurança" />
           </div>
           <VideoCurto
             youtubeId={videoGolpe.youtubeId}
