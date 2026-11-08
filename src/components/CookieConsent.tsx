@@ -3,63 +3,89 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import { CONSENT_EVENT } from "@/components/GoogleAnalytics";
+import {
+  FULL_CONSENT,
+  NO_CONSENT,
+  readConsent,
+  saveConsent,
+  type ConsentState,
+} from "@/lib/consent";
 
-const STORAGE_KEY = "revla-cookie-consent";
+/** Evento que reabre o banner nas preferências (ver CookiePreferencesButton). */
+export const OPEN_COOKIE_PREFS_EVENT = "revla-open-cookie-preferences";
 
 function buildMailto(subject: string) {
   return `mailto:${siteConfig.lgpdEmail}?subject=${encodeURIComponent(subject)}`;
 }
 
 /**
- * Banner de cookies/privacidade — aparece na primeira visita (guardado em
- * localStorage) e sempre dá acesso aos 3 pedidos obrigatórios da LGPD
- * (acesso, correção e exclusão de dados), via e-mail pronto para o canal do
- * Encarregado de Dados. Sem biblioteca externa de propósito: componente
- * cliente simples, `position: fixed` (não desloca o resto da página, não
- * afeta CLS) e renderiza `null` até confirmar no `useEffect` que ainda não
- * houve consentimento salvo, evitando qualquer peso extra no carregamento
- * inicial ou impacto no PageSpeed.
+ * Banner de cookies/privacidade (LGPD) — aparece na primeira visita
+ * (guardado em localStorage, formato em src/lib/consent.ts) e dá acesso aos
+ * pedidos de acesso, correção e exclusão de dados via e-mail pronto para o
+ * canal do Encarregado de Dados.
+ *
+ * Três categorias, com consentimento SEPARADO para as duas opcionais:
+ * - essenciais (sempre ativos)
+ * - analíticos: Google Analytics e Microsoft Clarity
+ * - publicidade: Meta Pixel (Facebook/Instagram) e tag do Google Ads
+ *
+ * Sem biblioteca externa de propósito: componente cliente simples,
+ * `position: fixed` (não desloca a página, não afeta CLS) e renderiza
+ * `null` até confirmar no `useEffect` que ainda não houve consentimento.
  */
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
   const [showPrefs, setShowPrefs] = useState(false);
+  const [choice, setChoice] = useState<ConsentState>(NO_CONSENT);
 
   useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (!stored) setVisible(true);
-    } catch {
-      // localStorage indisponível (ex.: modo privado) — não bloqueia a navegação
+    const stored = readConsent();
+    if (!stored) setVisible(true);
+    else setChoice(stored);
+
+    function handleOpen() {
+      setChoice(readConsent() ?? NO_CONSENT);
+      setShowPrefs(true);
+      setVisible(true);
     }
+
+    window.addEventListener(OPEN_COOKIE_PREFS_EVENT, handleOpen);
+    return () => window.removeEventListener(OPEN_COOKIE_PREFS_EVENT, handleOpen);
   }, []);
 
-  function saveConsent(value: "all" | "essential") {
-    try {
-      window.localStorage.setItem(STORAGE_KEY, value);
-    } catch {
-      // segue sem salvar — o banner pode reaparecer na próxima visita, sem problema
-    }
-    window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: value }));
+  function confirm(state: ConsentState) {
+    const previous = readConsent();
+    saveConsent(state);
+    setChoice(state);
     setVisible(false);
     setShowPrefs(false);
+    // Scripts de terceiros já carregados não "descarregam": se a pessoa
+    // retirou uma permissão que tinha dado, recarrega para parar de vez.
+    const revoked =
+      previous && ((previous.analytics && !state.analytics) || (previous.ads && !state.ads));
+    if (revoked) window.location.reload();
   }
 
   if (!visible) return null;
+
+  const secondaryButton =
+    "rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-muted)]";
+  const primaryButton =
+    "rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]";
 
   return (
     <div
       role="region"
       aria-label="Aviso de cookies e privacidade"
-      className="fixed inset-x-0 bottom-0 z-[60] border-t border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-4 shadow-[0_-4px_20px_rgba(10,31,68,0.15)] sm:px-6"
+      className="fixed inset-x-0 bottom-0 z-[60] max-h-[90vh] overflow-y-auto border-t border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-4 shadow-[0_-4px_20px_rgba(10,31,68,0.15)] sm:px-6"
     >
       <div className="mx-auto max-w-6xl">
         {!showPrefs ? (
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <p className="text-sm leading-relaxed text-[var(--color-ink)]/80">
-              Usamos cookies para melhorar sua experiência neste site e entender como ele é
-              utilizado. Você pode aceitar todos os cookies, usar apenas os essenciais, ou ver
-              suas opções de privacidade.{" "}
+              Usamos cookies essenciais para o site funcionar e, com a sua permissão, cookies
+              analíticos (para entender como o site é usado) e de publicidade (Meta e Google,
+              para medir e exibir nossos anúncios). Você escolhe cada um.{" "}
               <Link
                 href="/politica-de-privacidade"
                 className="font-semibold text-[var(--color-secondary)] hover:underline"
@@ -68,25 +94,13 @@ export default function CookieConsent() {
               </Link>
             </p>
             <div className="flex flex-wrap gap-2.5">
-              <button
-                type="button"
-                onClick={() => setShowPrefs(true)}
-                className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-muted)]"
-              >
+              <button type="button" onClick={() => setShowPrefs(true)} className={secondaryButton}>
                 Preferências e meus dados
               </button>
-              <button
-                type="button"
-                onClick={() => saveConsent("essential")}
-                className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-muted)]"
-              >
+              <button type="button" onClick={() => confirm(NO_CONSENT)} className={secondaryButton}>
                 Somente essenciais
               </button>
-              <button
-                type="button"
-                onClick={() => saveConsent("all")}
-                className="rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
-              >
+              <button type="button" onClick={() => confirm(FULL_CONSENT)} className={primaryButton}>
                 Aceitar todos
               </button>
             </div>
@@ -99,9 +113,9 @@ export default function CookieConsent() {
                   Preferências de privacidade
                 </h2>
                 <p className="mt-1 text-sm leading-relaxed text-[var(--color-ink)]/70">
-                  Cookies essenciais mantêm o site funcionando e estão sempre ativos. Cookies
-                  analíticos nos ajudam a entender o uso do site e só são usados com sua
-                  permissão.
+                  Cookies essenciais mantêm o site funcionando e estão sempre ativos. Os
+                  analíticos e os de publicidade só são usados com a sua permissão, e você pode
+                  aceitar um sem o outro.
                 </p>
               </div>
               <button
@@ -114,7 +128,7 @@ export default function CookieConsent() {
               </button>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-[var(--color-border)] p-4">
                 <p className="text-sm font-semibold text-[var(--color-ink)]">
                   Cookies essenciais
@@ -123,29 +137,50 @@ export default function CookieConsent() {
                   Necessários para o funcionamento do site. Sempre ativos.
                 </p>
               </div>
-              <div className="rounded-xl border border-[var(--color-border)] p-4">
-                <p className="text-sm font-semibold text-[var(--color-ink)]">
-                  Cookies analíticos
-                </p>
-                <p className="mt-1 text-xs leading-relaxed text-[var(--color-ink)]/60">
-                  Nos ajudam a entender como o site é utilizado, para melhorá-lo.
-                </p>
-              </div>
+              <label className="flex cursor-pointer gap-3 rounded-xl border border-[var(--color-border)] p-4">
+                <input
+                  type="checkbox"
+                  checked={choice.analytics}
+                  onChange={(e) => setChoice({ ...choice, analytics: e.target.checked })}
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--color-primary)]"
+                />
+                <span>
+                  <span className="block text-sm font-semibold text-[var(--color-ink)]">
+                    Cookies analíticos
+                  </span>
+                  <span className="mt-1 block text-xs leading-relaxed text-[var(--color-ink)]/60">
+                    Google Analytics e Microsoft Clarity: mostram como o site é usado, para
+                    melhorá-lo.
+                  </span>
+                </span>
+              </label>
+              <label className="flex cursor-pointer gap-3 rounded-xl border border-[var(--color-border)] p-4">
+                <input
+                  type="checkbox"
+                  checked={choice.ads}
+                  onChange={(e) => setChoice({ ...choice, ads: e.target.checked })}
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--color-primary)]"
+                />
+                <span>
+                  <span className="block text-sm font-semibold text-[var(--color-ink)]">
+                    Cookies de publicidade
+                  </span>
+                  <span className="mt-1 block text-xs leading-relaxed text-[var(--color-ink)]/60">
+                    Meta Pixel (Facebook e Instagram) e Google Ads: medem nossos anúncios e
+                    permitem mostrar anúncios da Revla a quem visitou o site.
+                  </span>
+                </span>
+              </label>
             </div>
 
             <div className="flex flex-wrap gap-2.5">
-              <button
-                type="button"
-                onClick={() => saveConsent("essential")}
-                className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-muted)]"
-              >
+              <button type="button" onClick={() => confirm(NO_CONSENT)} className={secondaryButton}>
                 Somente essenciais
               </button>
-              <button
-                type="button"
-                onClick={() => saveConsent("all")}
-                className="rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
-              >
+              <button type="button" onClick={() => confirm(choice)} className={secondaryButton}>
+                Salvar minhas escolhas
+              </button>
+              <button type="button" onClick={() => confirm(FULL_CONSENT)} className={primaryButton}>
                 Aceitar todos
               </button>
             </div>

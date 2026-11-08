@@ -1,18 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Script from "next/script";
 import { siteConfig } from "@/lib/site-config";
-import { CONSENT_EVENT } from "@/components/GoogleAnalytics";
-
-const STORAGE_KEY = "revla-cookie-consent";
+import { useConsent } from "@/components/useConsent";
 
 /**
  * Carrega o Meta Pixel (conjunto de dados "Revla Corretora - Site
  * Principal", ID em siteConfig.metaPixelId) só depois que o visitante
- * aceita cookies analíticos no banner de consentimento — mesmo padrão
- * consent-gated do GoogleAnalytics.tsx (lê o localStorage no mount +
- * escuta o evento customizado disparado pelo CookieConsent). Esse Pixel já
+ * aceita COOKIES DE PUBLICIDADE no banner de consentimento (categoria
+ * separada dos analíticos desde nov/2026 — ver src/lib/consent.ts). Esse Pixel já
  * existia e rodava no site antigo em WordPress; ficou "órfão" (sem receber
  * eventos) desde a migração pro Next.js — aqui só reinstala o código base
  * no site atual, sem criar um pixel novo.
@@ -22,23 +19,7 @@ const STORAGE_KEY = "revla-cookie-consent";
  * Meta e nunca passa pelo site, então esse Pixel não o afeta.
  */
 export default function MetaPixel() {
-  const [allowed, setAllowed] = useState(false);
-
-  useEffect(() => {
-    try {
-      if (window.localStorage.getItem(STORAGE_KEY) === "all") setAllowed(true);
-    } catch {
-      // localStorage indisponível (ex.: modo privado) — segue sem carregar
-    }
-
-    function handleConsentChange(event: Event) {
-      const detail = (event as CustomEvent<string>).detail;
-      if (detail === "all") setAllowed(true);
-    }
-
-    window.addEventListener(CONSENT_EVENT, handleConsentChange);
-    return () => window.removeEventListener(CONSENT_EVENT, handleConsentChange);
-  }, []);
+  const allowed = useConsent().ads;
 
   // Evento padrão "Lead" do Meta: dispara no clique de qualquer link
   // `wa.me` do site (botão flutuante + todo CTAButton que usa

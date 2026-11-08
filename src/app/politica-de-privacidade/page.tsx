@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, socialChannels, buildMetadata } from "@/lib/site-config";
+import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -58,6 +59,16 @@ export default function PoliticaDePrivacidadePage() {
               visitadas e tempo de permanência) por meio de ferramentas de análise de
               audiência, para entender como o site é utilizado e melhorá-lo continuamente.
             </p>
+            <p>
+              Também recebemos dados quando você responde a um anúncio da {siteConfig.name} no
+              Facebook ou no Instagram: se você preenche o formulário exibido dentro do
+              anúncio, a Meta (empresa responsável por essas redes) nos repassa as informações
+              que você enviou, como nome, telefone, e-mail e as respostas às perguntas do
+              formulário; se você clica no anúncio para conversar pelo WhatsApp, recebemos a
+              sua mensagem e o seu número. Usamos esses dados apenas para atender à
+              solicitação feita no anúncio, com as mesmas finalidades e garantias desta
+              política.
+            </p>
 
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">
               Para que usamos seus dados
@@ -93,6 +104,17 @@ export default function PoliticaDePrivacidadePage() {
               restritos ao necessário para a prestação desses serviços.{" "}
               <strong>Não vendemos seus dados pessoais a terceiros.</strong>
             </p>
+            <p>
+              Para medir e melhorar nossos anúncios, podemos enviar à Meta e ao Google
+              informações sobre o andamento do seu atendimento (por exemplo, se o contato virou
+              uma proposta ou uma contratação), junto com dados de contato como e-mail e
+              telefone. Também podemos enviar a lista de clientes atuais para que eles deixem
+              de receber anúncios de captação. Esses dados de contato são transformados em
+              código criptografado (hash) antes do envio e são usados por essas plataformas
+              para relacionar o contato às contas delas, medir resultados e ajustar a exibição
+              de anúncios, conforme as políticas de cada empresa. Você pode se opor a esse
+              uso a qualquer momento pelo canal do Encarregado de Dados.
+            </p>
 
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">
               Cookies e tecnologias semelhantes
@@ -100,14 +122,16 @@ export default function PoliticaDePrivacidadePage() {
             <p>
               Este site pode utilizar cookies e tecnologias semelhantes para lembrar
               preferências, viabilizar funcionalidades e entender como os visitantes navegam
-              pelo site. Na sua primeira visita, um aviso permite escolher entre aceitar todos
-              os cookies ou apenas os essenciais; você pode revisar essa escolha a qualquer
-              momento limpando os dados de navegação deste site nas configurações do seu
-              navegador. Cookies essenciais (necessários para o funcionamento do site) não
-              dependem dessa escolha.
+              pelo site. Na sua primeira visita, um aviso permite escolher, separadamente, se
+              aceita cookies analíticos e cookies de publicidade, ou apenas os essenciais.
+              Cookies essenciais (necessários para o funcionamento do site) não dependem dessa
+              escolha. Você pode rever ou retirar o seu consentimento a qualquer momento:{" "}
+              <CookiePreferencesButton />.
             </p>
             <p>
-              Quando você aceita todos os cookies, também usamos o Microsoft Clarity, ferramenta
+              <strong>Cookies analíticos.</strong> Com a sua permissão, usamos o Google
+              Analytics, que mede de forma agregada as páginas visitadas, o tempo de
+              permanência e a origem das visitas. Também usamos o Microsoft Clarity, ferramenta
               de análise da Microsoft que registra de forma agregada como as páginas são usadas
               (cliques, rolagem e movimentos do cursor) para melhorarmos a experiência do site.
               Os textos digitados em campos de formulário são mascarados e não são coletados.
@@ -126,6 +150,18 @@ export default function PoliticaDePrivacidadePage() {
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">
               Publicidade e cookies de terceiros
             </h2>
+            <p>
+              <strong>Cookies de publicidade.</strong> Com a sua permissão, usamos o Meta Pixel
+              (da Meta, responsável pelo Facebook e pelo Instagram) e a tag do Google Ads. Eles
+              registram ações feitas neste site, como as páginas visitadas e o clique para
+              falar conosco pelo WhatsApp, para medirmos o resultado dos nossos anúncios e para
+              que anúncios da {siteConfig.name} possam ser exibidos a quem já visitou o site.
+              Essas informações são tratadas pela Meta e pelo Google também conforme as
+              políticas de privacidade de cada empresa. Sem a sua permissão, essas ferramentas
+              não são carregadas. Você também pode ajustar os anúncios que vê nas
+              configurações de anúncios do Facebook e do Instagram (Central de Contas da
+              Meta).
+            </p>
             <p>
               Este site pode exibir anúncios de terceiros, incluindo do Google. Esses
               parceiros — assim como o próprio Google — podem usar cookies para veicular

@@ -84,7 +84,9 @@ export default function TermosDeUsoPage() {
               Ao preencher um formulário ou nos enviar uma mensagem pelo WhatsApp ou por
               qualquer um dos nossos canais oficiais, você concorda em ser contatado por um de
               nossos consultores para dar continuidade ao seu atendimento, simulação ou
-              proposta. Você pode solicitar o encerramento desse contato a qualquer momento.
+              proposta. O mesmo vale para os formulários e as conversas iniciadas a partir de
+              anúncios da {siteConfig.name} no Facebook e no Instagram. Você pode solicitar o
+              encerramento desse contato a qualquer momento.
             </p>
 
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">Uso do conteúdo</h2>
@@ -163,7 +165,7 @@ export default function TermosDeUsoPage() {
             <p>Dúvidas sobre estes termos podem ser enviadas para {siteConfig.email}.</p>
 
             <p className="text-xs text-[var(--color-ink)]/70">
-              Última atualização: setembro de 2026.
+              Última atualização: novembro de 2026.
             </p>
           </div>
         </Container>

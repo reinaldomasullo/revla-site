@@ -47,6 +47,19 @@ export default function DisclaimerPage() {
             </p>
 
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">
+              Anúncios e conteúdo nas redes sociais
+            </h2>
+            <p>
+              Os avisos desta página valem também para os anúncios e publicações da{" "}
+              {siteConfig.name} no Facebook, no Instagram, no Google e em outras redes. Os
+              anúncios têm caráter informativo e de divulgação: não constituem oferta
+              vinculante nem garantia de contemplação, aprovação, cobertura, preço ou qualquer
+              resultado. Valores, condições e disponibilidade citados em anúncios dependem de
+              análise individual e das regras da seguradora, administradora ou operadora
+              responsável pelo produto, e podem mudar sem aviso.
+            </p>
+
+            <h2 className="text-lg font-semibold text-[var(--color-ink)]">
               Produtos de terceiros
             </h2>
             <p>
@@ -110,7 +123,7 @@ export default function DisclaimerPage() {
             <p>Dúvidas podem ser enviadas para {siteConfig.email}.</p>
 
             <p className="text-xs text-[var(--color-ink)]/70">
-              Última atualização: setembro de 2026.
+              Última atualização: novembro de 2026.
             </p>
           </div>
         </Container>

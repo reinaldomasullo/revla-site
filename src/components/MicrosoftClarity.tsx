@@ -1,11 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
 import { siteConfig } from "@/lib/site-config";
-import { CONSENT_EVENT } from "@/components/GoogleAnalytics";
-
-const STORAGE_KEY = "revla-cookie-consent";
+import { useConsent } from "@/components/useConsent";
 
 /**
  * Carrega o Microsoft Clarity (gravação de sessão, mapas de calor e
@@ -22,23 +19,7 @@ const STORAGE_KEY = "revla-cookie-consent";
  * Sem ID configurado, não renderiza nada.
  */
 export default function MicrosoftClarity() {
-  const [allowed, setAllowed] = useState(false);
-
-  useEffect(() => {
-    try {
-      if (window.localStorage.getItem(STORAGE_KEY) === "all") setAllowed(true);
-    } catch {
-      // localStorage indisponível (ex.: modo privado) — segue sem carregar
-    }
-
-    function handleConsentChange(event: Event) {
-      const detail = (event as CustomEvent<string>).detail;
-      if (detail === "all") setAllowed(true);
-    }
-
-    window.addEventListener(CONSENT_EVENT, handleConsentChange);
-    return () => window.removeEventListener(CONSENT_EVENT, handleConsentChange);
-  }, []);
+  const allowed = useConsent().analytics;
 
   if (!allowed || !siteConfig.clarityProjectId) return null;
 
