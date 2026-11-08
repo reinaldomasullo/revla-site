@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
 import FeatureGrid from "@/components/FeatureGrid";
@@ -8,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
+import { operadoras } from "@/lib/plano-de-saude-operadoras";
 import { planoDeSaudePlanos, planoDeSaudeCidades, PRECOS_ATUALIZADO_EM } from "@/lib/plano-de-saude-cidades";
 import {
   HospitalCross,
@@ -358,6 +360,39 @@ export default function PlanoDeSaudePage() {
             a 18 anos, a adesão passa por entrevista qualificada, conforme a Resolução Normativa
             ANS nº 558/2022.
           </p>
+        </Container>
+      </section>
+
+      <section className="py-10 sm:py-12">
+        <Container>
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+              Outras operadoras de plano de saúde
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
+              Além da Prevent Senior, a Revla cota e contrata planos de outras operadoras e compara as opções para o seu perfil.
+            </p>
+          </div>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <li>
+              <Link
+                href="/plano-de-saude/empresarial"
+                className="block rounded-2xl border border-[var(--color-border)] px-5 py-4 font-semibold text-[var(--color-primary)] hover:bg-[var(--color-muted)]"
+              >
+                Plano de saúde empresarial (PJ e MEI)
+              </Link>
+            </li>
+            {operadoras.map((op) => (
+              <li key={op.slug}>
+                <Link
+                  href={`/plano-de-saude/${op.slug}`}
+                  className="block rounded-2xl border border-[var(--color-border)] px-5 py-4 font-semibold text-[var(--color-primary)] hover:bg-[var(--color-muted)]"
+                >
+                  Plano de saúde {op.nome}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 

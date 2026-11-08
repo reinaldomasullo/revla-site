@@ -3,6 +3,7 @@ import { posts } from "@/lib/posts";
 import { motoBrands } from "@/lib/moto-brands";
 import { planoFunerarioCidades } from "@/lib/plano-funerario-cidades";
 import { planoDeSaudeCidades } from "@/lib/plano-de-saude-cidades";
+import { operadoras } from "@/lib/plano-de-saude-operadoras";
 import { segurosProdutos } from "@/lib/seguros-produtos";
 import { siteConfig } from "@/lib/site-config";
 
@@ -171,6 +172,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const planoDeSaudeEmpresarialRoute = {
+    url: `${siteConfig.url}/plano-de-saude/empresarial`,
+    lastModified: PLANO_SAUDE_LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  };
+
+  const planoDeSaudeOperadoraRoutes = operadoras.map((op) => ({
+    url: `${siteConfig.url}/plano-de-saude/${op.slug}`,
+    lastModified: PLANO_SAUDE_LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...postRoutes,
@@ -179,5 +194,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...planoFunerarioCidadeRoutes,
     ...segurosProdutoRoutes,
     ...planoDeSaudeCidadeRoutes,
+    ...planoDeSaudeOperadoraRoutes,
+    planoDeSaudeEmpresarialRoute,
   ];
 }
