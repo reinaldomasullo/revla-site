@@ -58,10 +58,10 @@ const diferenciais = [
     // Diferencial (confirmado no site oficial da Prevent Senior, plano 1025):
     // "A partir dos 44 anos, o plano mantém o valor sem aumento por faixa
     // etária". A lei (RN ANS 63/2003) só impede aumento por faixa a partir
-    // dos 59 anos; a Prevent Senior antecipa isso para os 44. Não prometer
-    // aqui o caso de quem contrata antes dos 44 (a regra varia por plano).
+    // dos 59 anos; a Prevent Senior antecipa isso para os 44. Quem entra antes
+    // dos 44 tem os aumentos legais até os 44; aos 44 vem o último enquadramento.
     title: "Sem aumento por faixa etária a partir dos 44 anos",
-    description: "A Prevent Senior mantém a mensalidade sem reajuste por faixa etária a partir dos 44 anos — a lei só exige isso a partir dos 59. Você paga o valor da sua faixa e, daí em diante, só o reajuste anual do contrato.",
+    description: "Na Prevent Senior, o último aumento por faixa etária acontece aos 44 anos; a lei só encerra isso aos 59. Quem entra a partir dos 44 já começa no valor da tabela e não sofre mais aumento por idade, nem aos 59. Quem entra mais novo tem os reajustes de faixa até os 44 e, depois, só o reajuste anual do contrato.",
     icon: <PercentShield />,
   },
   {
@@ -149,7 +149,7 @@ const faqItems = [
   {
     question: "A Prevent Senior reajusta o plano por faixa etária depois dos 44 anos?",
     answer:
-      "Não. Pela regra da ANS, o aumento por mudança de faixa etária só deixa de existir a partir dos 59 anos. A Prevent Senior vai além e mantém o valor sem aumento por faixa etária a partir dos 44 anos: quem contrata a partir dessa idade começa pelo valor da faixa de entrada na tabela e não sofre novos aumentos por idade, nem aos 59. Continua existindo apenas o reajuste anual do contrato. A regra vale para os dois planos, 1025 e MA+S.",
+      "Não. Pela regra da ANS, o aumento por mudança de faixa etária só deixa de existir a partir dos 59 anos. A Prevent Senior antecipa isso: o último enquadramento por faixa etária acontece aos 44 anos e, dali em diante, não há mais aumento por idade, nem aos 59. Quem contrata a partir dos 44 já começa no valor da faixa de entrada da tabela. Quem contrata mais jovem tem os aumentos previstos em lei até completar 44 anos. Depois disso, continua existindo apenas o reajuste anual do contrato. A regra vale para os dois planos, 1025 e MA+S.",
   },
   {
     question: "Quanto custa um plano de saúde?",
