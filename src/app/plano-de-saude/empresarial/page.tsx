@@ -202,10 +202,9 @@ export default function PlanoEmpresarialPage() {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--color-ink)]/75">
             É um plano coletivo contratado por uma pessoa jurídica para sócios, funcionários e
-            dependentes. O contrato é da empresa, e o custo costuma ser menor que o do plano
-            individual de uma faixa etária equivalente, mas as regras de reajuste, carência e rede
-            mudam conforme a operadora e o número de vidas, por isso a comparação importa mais do
-            que o nome da marca.
+            dependentes. O contrato é da empresa, e as regras de reajuste, carência e rede mudam
+            conforme a operadora e o número de vidas, por isso a comparação importa mais do que o
+            nome da marca.
           </p>
         </Container>
       </section>
