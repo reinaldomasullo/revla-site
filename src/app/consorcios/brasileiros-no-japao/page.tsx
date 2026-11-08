@@ -3,11 +3,13 @@ import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
 import Container from "@/components/Container";
 import FAQ from "@/components/FAQ";
+import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SimuladorJapao from "@/components/japao/SimuladorJapao";
 import VideoCurto from "@/components/japao/VideoCurto";
+import { DocumentCheck } from "@/components/icons";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 // Página para brasileiros que moram no Japão (13/10/2026). Construída a
@@ -24,8 +26,71 @@ import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 const PATH = "/consorcios/brasileiros-no-japao";
 const PUBLISHED = "2026-10-13";
-const LAST_UPDATED = "2026-10-19";
-const LAST_UPDATED_LABEL = "19 de outubro de 2026";
+const LAST_UPDATED = "2026-11-08";
+const LAST_UPDATED_LABEL = "08 de novembro de 2026";
+
+// Os 7 posts do blog escritos especificamente para quem mora no Japão
+// (todos publicados em 07/11/2026, cada um já linka de volta pra esta
+// página). Mantido aqui pra fechar o link interno nos dois sentidos —
+// adicionar um novo post dessa série também aqui.
+const postsRelacionados = [
+  {
+    title: "Como pagar a parcela em ienes",
+    description:
+      "Cartão de crédito internacional com cobrança automática, conta digital no Brasil e o efeito do câmbio.",
+    href: "/blog/como-pagar-consorcio-no-brasil-morando-no-japao",
+    linkLabel: "Recebo em ienes: como pagar a parcela do consórcio?",
+    icon: <DocumentCheck />,
+  },
+  {
+    title: "Precisa comprovar renda?",
+    description:
+      "Para entrar no consórcio, não. A renda só é analisada na contemplação, se você usar a carta para comprar o imóvel.",
+    href: "/blog/comprovar-renda-consorcio-morando-no-japao",
+    linkLabel: "Preciso comprovar renda morando no Japão?",
+    icon: <DocumentCheck />,
+  },
+  {
+    title: "Como comprar depois de contemplado",
+    description:
+      "Assinatura digital, procurador no Brasil e como a carta vale como pagamento à vista na negociação.",
+    href: "/blog/comprar-imovel-contemplado-morando-no-japao",
+    linkLabel: "Fui contemplado morando no Japão: e agora?",
+    icon: <DocumentCheck />,
+  },
+  {
+    title: "Pode fazer consórcio estando no Japão?",
+    description:
+      "Sim, de forma totalmente online, com endereço no Japão — veja como funciona do início ao fim.",
+    href: "/blog/consorcio-de-imovel-no-brasil-morando-no-japao",
+    linkLabel: "Morando no Japão, posso fazer consórcio no Brasil?",
+    icon: <DocumentCheck />,
+  },
+  {
+    title: "Comprar um imóvel antes de voltar",
+    description:
+      "Carta de R$ 350 mil, parcela reduzida e lance embutido pra chegar com patrimônio pronto no Brasil.",
+    href: "/blog/comprar-imovel-no-brasil-antes-de-voltar-do-japao",
+    linkLabel: "Como comprar um imóvel antes de voltar do Japão?",
+    icon: <DocumentCheck />,
+  },
+  {
+    title: "Como saber se não é golpe",
+    description:
+      "Três conferências antes de pagar qualquer valor: administradora autorizada, pagamento em nome dela e desconfiar de data garantida.",
+    href: "/blog/consorcio-e-golpe-morando-no-japao",
+    linkLabel: "Como saber se o consórcio é golpe?",
+    icon: <DocumentCheck />,
+  },
+  {
+    title: "O aluguel pode pagar a parcela",
+    description:
+      "Depois da contemplação, você compra um imóvel pra alugar e o aluguel ajuda a pagar a parcela até o fim do consórcio.",
+    href: "/blog/aluguel-pagar-parcela-consorcio-morando-no-japao",
+    linkLabel: "O aluguel pode pagar a parcela do consórcio?",
+    icon: <DocumentCheck />,
+  },
+];
 
 const WHATSAPP_MESSAGE = "Olá, Reinaldo! Moro no Japão e quero entender o consórcio de imóvel no Brasil.";
 const CTA_LABEL = "Falar com o Reinaldo no WhatsApp";
@@ -945,6 +1010,13 @@ export default function BrasileirosNoJapaoPage() {
       </section>
 
       <FAQ title="Perguntas frequentes de quem mora no Japão" items={faqItems} />
+
+      <FeatureGrid
+        title="Leia também: dúvidas de quem mora no Japão"
+        description="Sete respostas específicas pra quem vai pagar, acompanhar e usar o consórcio estando no Japão."
+        items={postsRelacionados}
+        columns={3}
+      />
 
       <section className="pb-10 sm:pb-12">
         <Container className="max-w-3xl">
