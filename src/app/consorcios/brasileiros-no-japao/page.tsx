@@ -532,7 +532,7 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Quem pode */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="quem-pode-heading">
-        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+        <Container className="grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_280px]">
           <div className="md:col-start-1 md:row-start-1">
             <h2 id="quem-pode-heading" className={h2}>
             Quem pode fazer consórcio no Brasil morando no Japão?
@@ -642,7 +642,7 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Pagamento em ienes */}
       <section className="py-10 sm:py-12" aria-labelledby="pagamento-heading">
-        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+        <Container className="grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_280px]">
           <div>
           <h2 id="pagamento-heading" className={h2}>
             Como pagar a parcela recebendo em ienes?
@@ -689,7 +689,7 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Renda */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="renda-heading">
-        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+        <Container className="grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_280px]">
           <div>
           <h2 id="renda-heading" className={h2}>
             Como comprovar renda trabalhando no Japão?
@@ -742,7 +742,7 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Contemplação no Japão */}
       <section className="py-10 sm:py-12" aria-labelledby="contemplado-heading">
-        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+        <Container className="grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_280px]">
           <div>
           <h2 id="contemplado-heading" className={h2}>
             Fui contemplado e moro no Japão. E agora?
@@ -850,7 +850,7 @@ export default function BrasileirosNoJapaoPage() {
 
       {/* Aluguel */}
       <section className="section-muted py-10 sm:py-12" aria-labelledby="aluguel-heading">
-        <Container className="grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+        <Container className="grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_280px]">
           <div>
           <h2 id="aluguel-heading" className={h2}>
             O aluguel pode ajudar a pagar a parcela?
@@ -883,7 +883,7 @@ export default function BrasileirosNoJapaoPage() {
       {/* Golpe e solidez */}
       <section className="py-10 sm:py-12" aria-labelledby="golpe-heading">
         <Container className="max-w-5xl">
-          <div className="grid items-start gap-10 md:grid-cols-[1fr_280px]">
+          <div className="grid items-center gap-10 md:grid-cols-[1fr_280px]">
           <div>
           <h2 id="golpe-heading" className={h2}>
             Como saber que não é golpe?
@@ -1017,6 +1017,14 @@ export default function BrasileirosNoJapaoPage() {
         items={postsRelacionados}
         columns={3}
       />
+
+      <section className="pb-2 text-center sm:pb-4">
+        <Container>
+          <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} variant="secondary" external>
+            Ainda com dúvida? Fala com o Reinaldo no WhatsApp
+          </CTAButton>
+        </Container>
+      </section>
 
       <section className="pb-10 sm:pb-12">
         <Container className="max-w-3xl">
