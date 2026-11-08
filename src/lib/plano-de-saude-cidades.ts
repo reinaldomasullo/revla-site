@@ -53,11 +53,11 @@ export const planoDeSaudePlanos: PlanoDeSaudePlano[] = [
       "São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói",
     ansEnfermaria: "505.028/25-6",
     ansApartamento: "505.029/25-4",
-    startingPrice: "R$ 883,53",
+    startingPrice: "R$ 928,65",
     rows: [
-      { faixa: "Até 43 anos", enfermaria: "R$ 883,53", apartamento: "R$ 1.055,50" },
-      { faixa: "44 a 58 anos", enfermaria: "R$ 1.162,60", apartamento: "R$ 1.389,60" },
-      { faixa: "59 anos em diante", enfermaria: "R$ 1.529,75", apartamento: "R$ 1.828,43" },
+      { faixa: "Até 43 anos", enfermaria: "R$ 928,65", apartamento: "R$ 1.109,44" },
+      { faixa: "44 a 58 anos", enfermaria: "R$ 1.222,01", apartamento: "R$ 1.460,61" },
+      { faixa: "59 anos em diante", enfermaria: "R$ 1.607,92", apartamento: "R$ 1.921,86" },
     ],
   },
   {
@@ -66,11 +66,11 @@ export const planoDeSaudePlanos: PlanoDeSaudePlano[] = [
     areas: "São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande",
     ansEnfermaria: "505.407/25-9",
     ansApartamento: "505.408/25-7",
-    startingPrice: "R$ 759,84",
+    startingPrice: "R$ 798,67",
     rows: [
-      { faixa: "Até 43 anos", enfermaria: "R$ 759,84", apartamento: "R$ 907,73" },
-      { faixa: "44 a 58 anos", enfermaria: "R$ 999,84", apartamento: "R$ 1.195,06" },
-      { faixa: "59 anos em diante", enfermaria: "R$ 1.315,59", apartamento: "R$ 1.572,45" },
+      { faixa: "Até 43 anos", enfermaria: "R$ 798,67", apartamento: "R$ 954,12" },
+      { faixa: "44 a 58 anos", enfermaria: "R$ 1.050,93", apartamento: "R$ 1.256,13" },
+      { faixa: "59 anos em diante", enfermaria: "R$ 1.382,82", apartamento: "R$ 1.652,80" },
     ],
   },
 ];
@@ -88,7 +88,7 @@ export function getPlanoDeSaudePlano(codigo: PlanoCodigo): PlanoDeSaudePlano {
 // ("Tabela de Preços Prevent Senior 2026: Atualizada em Setembro"). Fonte
 // única aqui pra nunca desalinhar entre as páginas — atualizar manualmente
 // sempre que os valores de `planoDeSaudePlanos` acima mudarem de verdade.
-export const PRECOS_ATUALIZADO_EM = "setembro de 2026";
+export const PRECOS_ATUALIZADO_EM = "novembro de 2026";
 
 export type PlanoDeSaudeCidade = {
   slug: string;

@@ -42,17 +42,13 @@ export async function generateMetadata({
 
 const diferenciais = [
   {
-    // CORREÇÃO (auditoria SEO, nov/2026): o card dizia "a partir dos 44
-    // anos", mas a própria tabela de preços da página (ver
-    // planoDeSaudePlanos em lib/plano-de-saude-cidades.ts) mostra uma
-    // faixa "44 a 58 anos" com valor diferente da faixa seguinte "59 anos
-    // em diante" — ou seja, HÁ reajuste por faixa etária entre 44 e 59. A
-    // faixa que realmente fica estável (sem novo salto por idade, só
-    // reajuste anual contratual) é a última, "59 anos em diante", que não
-    // tem próxima faixa. Corrigido de 44 para 59 pra bater com os dados
-    // reais da tabela.
-    title: "Sem reajuste por faixa etária a partir dos 59 anos",
-    description: "A partir dos 59 anos, a mensalidade deixa de sofrer reajuste por mudança de faixa etária — só a atualização anual prevista em contrato.",
+    // Diferencial (confirmado no site oficial da Prevent Senior, plano 1025):
+    // "A partir dos 44 anos, o plano mantém o valor sem aumento por faixa
+    // etária". A lei (RN ANS 63/2003) só impede aumento por faixa a partir
+    // dos 59 anos; a Prevent Senior antecipa isso para os 44. Não prometer
+    // aqui o caso de quem contrata antes dos 44 (a regra varia por plano).
+    title: "Sem aumento por faixa etária a partir dos 44 anos",
+    description: "A Prevent Senior mantém a mensalidade sem reajuste por faixa etária a partir dos 44 anos — a lei só exige isso a partir dos 59. Você paga o valor da sua faixa e, daí em diante, só o reajuste anual do contrato.",
     icon: <PercentShield />,
   },
   {

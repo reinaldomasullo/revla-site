@@ -55,13 +55,13 @@ const cidadesFeatures = planoDeSaudeCidades.map((cidade) => ({
 
 const diferenciais = [
   {
-    // CORREÇÃO (auditoria SEO, nov/2026): "44" estava errado — a tabela de
-    // preços mostra reajuste entre as faixas "44 a 58 anos" e "59 anos em
-    // diante". Quem fica estável, sem novo salto por idade (só reajuste
-    // anual contratual), é a faixa final, "59 anos em diante". Ver mesma
-    // correção em app/plano-de-saude/[cidade]/page.tsx.
-    title: "Sem reajuste por faixa etária a partir dos 59 anos",
-    description: "A partir dos 59 anos, a mensalidade deixa de sofrer reajuste por mudança de faixa etária — só a atualização anual prevista em contrato.",
+    // Diferencial (confirmado no site oficial da Prevent Senior, plano 1025):
+    // "A partir dos 44 anos, o plano mantém o valor sem aumento por faixa
+    // etária". A lei (RN ANS 63/2003) só impede aumento por faixa a partir
+    // dos 59 anos; a Prevent Senior antecipa isso para os 44. Não prometer
+    // aqui o caso de quem contrata antes dos 44 (a regra varia por plano).
+    title: "Sem aumento por faixa etária a partir dos 44 anos",
+    description: "A Prevent Senior mantém a mensalidade sem reajuste por faixa etária a partir dos 44 anos — a lei só exige isso a partir dos 59. Você paga o valor da sua faixa e, daí em diante, só o reajuste anual do contrato.",
     icon: <PercentShield />,
   },
   {
@@ -147,9 +147,14 @@ const faqItems = [
       "Sim. Como microempreendedor individual, você pode contratar planos PME com mensalidades geralmente mais baixas que os planos individuais, dependendo da operadora.",
   },
   {
+    question: "A Prevent Senior reajusta o plano por faixa etária depois dos 44 anos?",
+    answer:
+      "Não. Pela regra da ANS, o aumento por mudança de faixa etária só deixa de existir a partir dos 59 anos. A Prevent Senior vai além e mantém o valor sem aumento por faixa etária a partir dos 44 anos: quem contrata a partir dessa idade começa pelo valor da faixa de entrada na tabela e não sofre novos aumentos por idade, nem aos 59. Continua existindo apenas o reajuste anual do contrato. A regra vale para os dois planos, 1025 e MA+S.",
+  },
+  {
     question: "Quanto custa um plano de saúde?",
     answer:
-      "Os planos Prevent Senior partem de R$ 759,84/mês (1025 Enfermaria) e R$ 883,53/mês (MA+S Enfermaria) para beneficiários de até 43 anos, com valores por faixa etária — veja a tabela de preços completa acima ou fale com um consultor para a tabela vigente.",
+      "Os planos Prevent Senior partem de R$ 798,67/mês (1025 Enfermaria) e R$ 928,65/mês (MA+S Enfermaria) para beneficiários de até 43 anos, com valores por faixa etária — veja a tabela de preços completa acima ou fale com um consultor para a tabela vigente.",
   },
   {
     question: "A Revla trabalha só com a Prevent Senior?",

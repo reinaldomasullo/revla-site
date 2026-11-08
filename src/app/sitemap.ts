@@ -26,6 +26,9 @@ const STRATEGY1_LAST_MODIFIED = new Date("2026-09-15");
 // saúde também ganharam a FAQ de corretora credenciada + selo de
 // atualização na tabela de preços — reaproveita a mesma constante de data.
 const GEO_AEO_20SET_LAST_MODIFIED = new Date("2026-09-20");
+
+// Atualização de tabelas de preço e regra de faixa etária (Prevent Senior).
+const PLANO_SAUDE_LAST_MODIFIED = new Date("2026-11-08");
 // 13/10: página para brasileiros que moram no Japão (teste GEO de linha de
 // base + análise de concorrentes de 12/10). Atualize junto com LAST_UPDATED
 // em src/app/consorcios/brasileiros-no-japao/page.tsx.
@@ -71,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const strategy1Routes = [
     {
       url: `${siteConfig.url}/plano-de-saude`,
-      lastModified: GEO_AEO_20SET_LAST_MODIFIED,
+      lastModified: PLANO_SAUDE_LAST_MODIFIED,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
@@ -163,7 +166,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 20/09 (2ª rodada, GEO/AEO comparativo x concorrentes): as 8 páginas de
     // cidade ganharam FAQ "corretora especializada em Prevent Senior" +
     // selo de atualização na tabela de preços — mesma data do hub nacional.
-    lastModified: GEO_AEO_20SET_LAST_MODIFIED,
+    lastModified: PLANO_SAUDE_LAST_MODIFIED,
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
