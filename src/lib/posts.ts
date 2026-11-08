@@ -6554,6 +6554,73 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "aposentadoria-imobiliaria-morando-no-japao",
+    title: "Aposentadoria imobiliária: vale a pena pensar nisso morando no Japão?",
+    description:
+      "O acordo de previdência entre Brasil e Japão soma o tempo contribuído nos dois países, mas o INSS paga só a parte proporcional. Entenda por que isso muda o seu planejamento.",
+    category: "Consórcios",
+    date: "2026-11-08",
+    coverImage: {
+      src: "/images/blog/aposentadoria-imobiliaria-morando-no-japao-capa.jpg",
+      alt: "Mão segurando um chaveiro em formato de casa, com as chaves do imóvel, em frente a uma escada",
+      width: 1200,
+      height: 630,
+    },
+    content: [
+      {
+        type: "p",
+        text: "Vale, e o planejamento de quem mora no Japão é diferente do de quem nunca saiu do Brasil. Existe um acordo de previdência social entre os dois países, mas ele não dá direito a uma segunda aposentadoria — e é por isso que muita gente no Japão começa a pensar em uma fonte própria de renda, como um imóvel alugado, para completar o que vier do INSS.",
+      },
+      {
+        type: "h2",
+        id: "acordo-previdenciario",
+        text: "O que o acordo Brasil-Japão realmente garante",
+      },
+      {
+        type: "p",
+        text: "O acordo de previdência social entre Brasil e Japão está em vigor desde 2012. Ele permite somar o tempo contribuído nos dois países para completar o tempo mínimo de aposentadoria no Brasil — por exemplo, alguns anos de contribuição aqui mais alguns anos de nenkin (年金, a previdência japonesa) lá. Mas o INSS paga só a parte proporcional ao tempo contribuído no Brasil, não o valor cheio e não um segundo benefício. Os detalhes completos estão na [página oficial do INSS sobre o acordo com o Japão](https://www.gov.br/inss/pt-br/direitos-e-deveres/acordos-internacionais/paises/japao).",
+      },
+      {
+        type: "h2",
+        id: "por-que-pensar-em-renda-propria",
+        text: "Por que pensar numa renda própria além do INSS",
+      },
+      {
+        type: "p",
+        text: "Como o valor pago pelo INSS é proporcional ao tempo contribuído no Brasil, quem passou anos trabalhando no Japão tende a receber um benefício menor do que receberia se tivesse contribuído o tempo todo por aqui. Isso não é um problema do acordo — é só a lógica da proporcionalidade — mas é um motivo real para montar, enquanto ainda está no Japão, uma segunda fonte de renda que não dependa só do benefício oficial.",
+      },
+      {
+        type: "h2",
+        id: "aposentadoria-imobiliaria",
+        text: "O que eu chamo de aposentadoria imobiliária",
+      },
+      {
+        type: "p",
+        text: "É usar o consórcio para chegar à volta ao Brasil com um imóvel já comprado e alugado, com o aluguel virando renda mensal além do que o INSS vai pagar. Funciona assim: você contrata o consórcio do Japão, é contemplado, compra um imóvel pensado para alugar e, quando o consórcio termina, o aluguel fica inteiro para você — veja os detalhes em [como o aluguel pode pagar a parcela do consórcio](/blog/aluguel-pagar-parcela-consorcio-morando-no-japao). Quanto antes você começar, mais tempo o plano tem para amadurecer até a sua volta.",
+      },
+      {
+        type: "p",
+        text: "Veja as outras dúvidas de quem mora no Japão na [página de consórcio para brasileiros no Japão](/consorcios/brasileiros-no-japao).",
+      },
+    ],
+    faq: [
+      {
+        question: "O acordo entre Brasil e Japão garante duas aposentadorias?",
+        answer:
+          "Não. Ele soma o tempo contribuído nos dois países para completar o tempo mínimo de aposentadoria no Brasil, mas o INSS paga só a parte proporcional ao tempo contribuído aqui — não é um segundo benefício.",
+      },
+      {
+        question: "Desde quando o acordo de previdência Brasil-Japão está em vigor?",
+        answer: "Desde 2012. O texto completo está na página oficial do INSS sobre acordos internacionais.",
+      },
+      {
+        question: "O que é aposentadoria imobiliária?",
+        answer:
+          "É a ideia de usar o consórcio para comprar um imóvel e colocá-lo para alugar, fazendo do aluguel uma renda que complementa o que vier do INSS depois que você voltar ao Brasil.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {

@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SimuladorJapao from "@/components/japao/SimuladorJapao";
 import VideoCurto from "@/components/japao/VideoCurto";
-import { Receipt, DocumentCheck, Key, Laptop, Building, ShieldCheck, HandCoin } from "@/components/icons";
+import { Receipt, DocumentCheck, Key, Laptop, Building, ShieldCheck, HandCoin, PiggyBank } from "@/components/icons";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 // Página para brasileiros que moram no Japão (13/10/2026). Construída a
@@ -89,6 +89,14 @@ const postsRelacionados = [
     href: "/blog/aluguel-pagar-parcela-consorcio-morando-no-japao",
     linkLabel: "O aluguel pode pagar a parcela do consórcio?",
     icon: <HandCoin />,
+  },
+  {
+    title: "Aposentadoria imobiliária",
+    description:
+      "O acordo de previdência com o Japão soma o tempo contribuído lá, mas o INSS paga só a parte proporcional. Veja por que isso muda o seu planejamento.",
+    href: "/blog/aposentadoria-imobiliaria-morando-no-japao",
+    linkLabel: "Vale a pena pensar em aposentadoria imobiliária morando no Japão?",
+    icon: <PiggyBank />,
   },
 ];
 
@@ -217,7 +225,7 @@ const faqItems = [
   {
     question: "Preciso comprovar renda para entrar no grupo?",
     answer:
-      "A análise de renda é feita na contemplação, quando você for usar a carta para comprar o imóvel. A regra vale igual para quem mora no Brasil, no Japão ou em outro país.",
+      "A análise de renda é feita na contemplação, quando você for usar a carta para comprar o imóvel. A regra vale igual para quem mora no Brasil, no Japão ou em qualquer outro país — o consórcio para brasileiros no exterior segue a mesma regra do Japão.",
   },
   {
     question: "Como pago a parcela recebendo em ienes?",
@@ -268,6 +276,31 @@ const faqItems = [
     question: "Outras pessoas vão saber do meu consórcio?",
     answer:
       "Não. O atendimento é individual, direto com o Reinaldo, e as informações do seu consórcio ficam entre você, quem você escolher e a administradora.",
+  },
+  {
+    question: "Posso usar o dinheiro que já guardei no Japão para começar?",
+    answer:
+      "Sim. Uma transferência internacional do Japão para o Brasil (o furikomi, como é chamado por lá) pode virar a primeira parcela ou um lance livre com recursos próprios, aumentando sua carta ou suas chances na contemplação. Fora isso, não é preciso fazer remessa todo mês: a parcela normal é cobrada direto no seu cartão de crédito internacional.",
+  },
+  {
+    question: "Ainda não sei quando vou voltar para o Brasil. Faz sentido começar agora?",
+    answer:
+      "Faz. A contemplação não tem data certa de qualquer forma — ela depende de sorteio ou lance, não de quando você decide usar o crédito. Enquanto isso, você paga a parcela normalmente; depois de contemplado, pode deixar o crédito aplicado, rendendo, até decidir o que fazer, mesmo sem data para voltar.",
+  },
+  {
+    question: "O que acontece com o consórcio se eu voltar para o Brasil antes de ser contemplado?",
+    answer:
+      "Nada muda no consórcio em si: você continua pagando a parcela normalmente, só que agora com endereço no Brasil em vez do Japão. A contemplação continua acontecendo por sorteio ou lance, do mesmo jeito.",
+  },
+  {
+    question: "Consórcio é melhor que financiamento para quem mora fora do Brasil?",
+    answer:
+      "Depende do seu momento. O consórcio não cobra juros (só taxa de administração) e a contemplação acontece por sorteio ou lance; o financiamento tem juros durante todo o contrato, mas entrega o crédito logo após a aprovação, exigindo entrada e comprovação de renda já na contratação. Para quem está no Japão sem pressa de uma data certa, o consórcio costuma pesar menos no orçamento mensal.",
+  },
+  {
+    question: "Vale a pena pensar em aposentadoria enquanto moro no Japão?",
+    answer:
+      "Vale, e o planejamento é diferente do de quem nunca saiu do Brasil. O acordo de previdência social entre Brasil e Japão, em vigor desde 2012, permite somar o tempo contribuído nos dois países para completar o tempo mínimo de aposentadoria no Brasil — mas o INSS paga só a parte proporcional ao tempo contribuído aqui, não um benefício cheio nem uma segunda aposentadoria. Por isso muita gente no Japão usa o consórcio para montar, além do que vier do INSS, uma fonte própria de renda: um imóvel que, alugado, complementa a aposentadoria na volta ao Brasil.",
   },
 ];
 
@@ -538,7 +571,8 @@ export default function BrasileirosNoJapaoPage() {
             Quem pode fazer consórcio no Brasil morando no Japão?
           </h2>
           <p className={lead}>
-            Qualquer brasileiro que mora no Japão, com CPF regular, pode contratar consórcio de imóvel na Ademicon.
+            Qualquer brasileiro que mora no Japão — dekassegui ou não, há pouco tempo ou há décadas — com CPF regular,
+            pode contratar consórcio de imóvel na Ademicon.
           </p>
           <p className={body}>
             O cadastro é feito com o seu endereço no Japão. A análise de renda acontece na contemplação, quando você
@@ -882,6 +916,39 @@ export default function BrasileirosNoJapaoPage() {
         </Container>
       </section>
 
+      {/* Aposentadoria imobiliária */}
+      <section className="py-10 sm:py-12" aria-labelledby="aposentadoria-heading">
+        <Container className="max-w-3xl">
+          <h2 id="aposentadoria-heading" className={h2}>
+            Aposentadoria imobiliária: pensando no que vem depois do Japão
+          </h2>
+          <p className={lead}>
+            O acordo de previdência social entre Brasil e Japão, em vigor desde 2012, soma o tempo contribuído nos
+            dois países para completar o tempo mínimo de aposentadoria no Brasil. Não é uma segunda aposentadoria: o
+            INSS paga só a parte proporcional ao tempo contribuído aqui.
+          </p>
+          <p className={body}>
+            Por isso, quem mora no Japão costuma pensar num complemento próprio de renda, e não só no que o INSS vai
+            pagar. É aí que entra o que eu chamo de aposentadoria imobiliária: usar o consórcio para chegar à volta ao
+            Brasil com um ou mais imóveis já comprados e alugados, com o aluguel virando renda mensal além do
+            benefício oficial.
+          </p>
+          <p className={body}>
+            Fonte oficial sobre o acordo:{" "}
+            <a
+              href="https://www.gov.br/inss/pt-br/direitos-e-deveres/acordos-internacionais/paises/japao"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--color-secondary)] hover:underline"
+            >
+              Acordo Brasil-Japão, no site do INSS
+            </a>
+            .
+          </p>
+          <SectionCTA label="Pensar na minha aposentadoria imobiliária" />
+        </Container>
+      </section>
+
       {/* Golpe e solidez */}
       <section className="py-10 sm:py-12" aria-labelledby="golpe-heading">
         <Container className="max-w-5xl">
@@ -1016,7 +1083,7 @@ export default function BrasileirosNoJapaoPage() {
 
       <FeatureGrid
         title="Leia também: dúvidas de quem mora no Japão"
-        description="Sete respostas específicas pra quem vai pagar, acompanhar e usar o consórcio estando no Japão."
+        description="Oito respostas específicas pra quem vai pagar, acompanhar e usar o consórcio estando no Japão."
         items={postsRelacionados}
         columns={3}
       />
