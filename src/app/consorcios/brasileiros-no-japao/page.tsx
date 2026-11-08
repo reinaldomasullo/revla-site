@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SimuladorJapao from "@/components/japao/SimuladorJapao";
 import VideoCurto from "@/components/japao/VideoCurto";
-import { DocumentCheck } from "@/components/icons";
+import { Receipt, DocumentCheck, Key, Laptop, Building, ShieldCheck, HandCoin } from "@/components/icons";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 // Página para brasileiros que moram no Japão (13/10/2026). Construída a
@@ -40,7 +40,7 @@ const postsRelacionados = [
       "Cartão de crédito internacional com cobrança automática, conta digital no Brasil e o efeito do câmbio.",
     href: "/blog/como-pagar-consorcio-no-brasil-morando-no-japao",
     linkLabel: "Recebo em ienes: como pagar a parcela do consórcio?",
-    icon: <DocumentCheck />,
+    icon: <Receipt />,
   },
   {
     title: "Precisa comprovar renda?",
@@ -56,7 +56,7 @@ const postsRelacionados = [
       "Assinatura digital, procurador no Brasil e como a carta vale como pagamento à vista na negociação.",
     href: "/blog/comprar-imovel-contemplado-morando-no-japao",
     linkLabel: "Fui contemplado morando no Japão: e agora?",
-    icon: <DocumentCheck />,
+    icon: <Key />,
   },
   {
     title: "Pode fazer consórcio estando no Japão?",
@@ -64,7 +64,7 @@ const postsRelacionados = [
       "Sim, de forma totalmente online, com endereço no Japão — veja como funciona do início ao fim.",
     href: "/blog/consorcio-de-imovel-no-brasil-morando-no-japao",
     linkLabel: "Morando no Japão, posso fazer consórcio no Brasil?",
-    icon: <DocumentCheck />,
+    icon: <Laptop />,
   },
   {
     title: "Comprar um imóvel antes de voltar",
@@ -72,7 +72,7 @@ const postsRelacionados = [
       "Carta de R$ 350 mil, parcela reduzida e lance embutido pra chegar com patrimônio pronto no Brasil.",
     href: "/blog/comprar-imovel-no-brasil-antes-de-voltar-do-japao",
     linkLabel: "Como comprar um imóvel antes de voltar do Japão?",
-    icon: <DocumentCheck />,
+    icon: <Building />,
   },
   {
     title: "Como saber se não é golpe",
@@ -80,7 +80,7 @@ const postsRelacionados = [
       "Três conferências antes de pagar qualquer valor: administradora autorizada, pagamento em nome dela e desconfiar de data garantida.",
     href: "/blog/consorcio-e-golpe-morando-no-japao",
     linkLabel: "Como saber se o consórcio é golpe?",
-    icon: <DocumentCheck />,
+    icon: <ShieldCheck />,
   },
   {
     title: "O aluguel pode pagar a parcela",
@@ -88,7 +88,7 @@ const postsRelacionados = [
       "Depois da contemplação, você compra um imóvel pra alugar e o aluguel ajuda a pagar a parcela até o fim do consórcio.",
     href: "/blog/aluguel-pagar-parcela-consorcio-morando-no-japao",
     linkLabel: "O aluguel pode pagar a parcela do consórcio?",
-    icon: <DocumentCheck />,
+    icon: <HandCoin />,
   },
 ];
 
