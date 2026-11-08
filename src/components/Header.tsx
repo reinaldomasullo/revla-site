@@ -130,8 +130,13 @@ export default function Header() {
     };
   }, [aberto]);
 
+  // CORREÇÃO (acessibilidade WCAG 2.2 — 2.5.8 Target Size, auditoria
+  // nov/2026): os links de texto do menu principal tinham ~20px de altura
+  // (sem padding vertical), abaixo do mínimo de 24x24px recomendado pro
+  // alvo de toque. `py-2` eleva a área clicável pra ~36px sem mudar o
+  // texto visível.
   const navLinkClass = (active: boolean) =>
-    `whitespace-nowrap text-sm font-medium transition-colors hover:text-[var(--color-primary)] ${
+    `inline-flex items-center whitespace-nowrap py-2 text-sm font-medium transition-colors hover:text-[var(--color-primary)] ${
       active ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
     }`;
 

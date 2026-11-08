@@ -176,19 +176,32 @@ export const whatsappLink = (message: string) =>
   `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 
 /**
- * Shortens a long, fully-descriptive page title (used for the H1 and for
- * social sharing) down to something that fits a SERP <title> tag alongside
- * the " | Revla Corretora" template suffix (18 chars), cutting at a word
- * boundary. Budget: 40 chars here + 18 for the suffix ≈ 58-60 chars total,
- * within Google/Bing's recommended title length (avoids "title too long"
- * warnings in Bing Webmaster Tools' site audit).
- * Only meant for the <title> tag — og:title/H1 should keep the full text.
+ * Builds the <title> tag value for a blog post.
+ *
+ * CORREÇÃO (auditoria SEO, nov/2026): a versão anterior desta função
+ * cortava QUALQUER título com mais de 40 caracteres no meio da frase e
+ * colava "…" antes do sufixo da marca — ex.: "Seguro de vida vale a pena
+ * para quem já… | Revla Corretora". Como a mediana real dos títulos de
+ * post é ~65 caracteres (confirmado: todos os 53 posts publicados tinham
+ * mais de 40 caracteres), isso truncava literalmente 100% dos posts do
+ * blog, sempre no meio de uma frase/pergunta — visível na aba do
+ * navegador e nos resultados de busca, prejudicando CTR. O Google não
+ * penaliza títulos mais longos: ele mesmo trunca/reescreve a exibição no
+ * SERP por largura de pixel quando necessário, sem precisar que a gente
+ * corte o texto antes.
+ *
+ * Nova estratégia: nunca cortar o título no meio da frase. Se "título |
+ * Revla Corretora" cabe num orçamento generoso, usa como está (o layout
+ * raiz adiciona o sufixo da marca via template). Caso contrário, mostra o
+ * título completo e sem corte, só sem o sufixo da marca (como título
+ * "absolute", pra não herdar o template "%s | Revla Corretora" do layout
+ * raiz) — preferível a uma frase cortada ao meio.
  */
-export function truncateForTitleTag(title: string, maxLength = 40): string {
-  if (title.length <= maxLength) return title;
-  const cut = title.slice(0, maxLength);
-  const lastSpace = cut.lastIndexOf(" ");
-  return `${cut.slice(0, lastSpace > 30 ? lastSpace : maxLength).trimEnd()}…`;
+export function buildBlogTitle(title: string): string | { absolute: string } {
+  const suffix = ` | ${siteConfig.name}`;
+  const budget = 60;
+  if (title.length + suffix.length <= budget) return title;
+  return { absolute: title };
 }
 
 /**

@@ -55,8 +55,13 @@ const cidadesFeatures = planoDeSaudeCidades.map((cidade) => ({
 
 const diferenciais = [
   {
-    title: "Sem reajuste por faixa etária a partir dos 44 anos",
-    description: "A partir dos 44 anos, a mensalidade deixa de sofrer reajuste por mudança de faixa etária — só a atualização anual prevista em contrato.",
+    // CORREÇÃO (auditoria SEO, nov/2026): "44" estava errado — a tabela de
+    // preços mostra reajuste entre as faixas "44 a 58 anos" e "59 anos em
+    // diante". Quem fica estável, sem novo salto por idade (só reajuste
+    // anual contratual), é a faixa final, "59 anos em diante". Ver mesma
+    // correção em app/plano-de-saude/[cidade]/page.tsx.
+    title: "Sem reajuste por faixa etária a partir dos 59 anos",
+    description: "A partir dos 59 anos, a mensalidade deixa de sofrer reajuste por mudança de faixa etária — só a atualização anual prevista em contrato.",
     icon: <PercentShield />,
   },
   {

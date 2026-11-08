@@ -190,7 +190,7 @@ export const planoDeSaudeCidades: PlanoDeSaudeCidade[] = [
     nome: "Niterói",
     planos: ["maes"],
     contexto:
-      "Assim como no Rio de Janeiro, em Niterói só o plano MA+S está disponível, já que é o único com abrangência além da região de São Paulo e Baixada Santista. Toda a simulação e contratação são feitas remotamente, por WhatsApp e videochamada.",
+      "Em Niterói, a cobertura Prevent Senior disponível é o plano MA+S — o único dos dois planos com abrangência fora do eixo São Paulo/Baixada Santista, cobrindo também a Região Metropolitana do Rio de Janeiro. Toda a simulação e contratação são feitas remotamente, por WhatsApp e videochamada, com um consultor da Revla acompanhando o processo de ponta a ponta.",
     faqEspecifica: {
       question: "Moro em Niterói, posso contratar o plano 1025?",
       answer:

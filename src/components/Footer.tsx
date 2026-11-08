@@ -67,10 +67,13 @@ function FooterLink({
   children: ReactNode;
 }) {
   return (
+    // CORREÇÃO (acessibilidade WCAG 2.2 — 2.5.8 Target Size, auditoria
+    // nov/2026): sem padding vertical, os links do rodapé tinham ~20px de
+    // altura. `py-1.5` eleva a área clicável pra ~32px.
     <Link
       href={href}
       onClick={onClick}
-      className="group flex items-center gap-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
+      className="group flex items-center gap-2 py-1.5 text-sm font-medium text-white/80 transition-colors hover:text-white"
     >
       <span
         className="h-1 w-1 shrink-0 rounded-full bg-white/30 transition-colors group-hover:bg-[var(--color-blue-gradient)]"

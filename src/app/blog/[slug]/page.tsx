@@ -11,7 +11,7 @@ import PostContent from "@/components/blog/PostContent";
 import CusdisComments from "@/components/blog/CusdisComments";
 import HouseAd, { pickHouseAdProduct } from "@/components/HouseAd";
 import { getPostBySlug, posts } from "@/lib/posts";
-import { siteConfig, truncateForTitleTag } from "@/lib/site-config";
+import { siteConfig, buildBlogTitle } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -29,7 +29,7 @@ export async function generateMetadata({
   const url = `${siteConfig.url}/blog/${post.slug}`;
 
   return {
-    title: truncateForTitleTag(post.title),
+    title: buildBlogTitle(post.title),
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     authors: [{ name: "Reinaldo Masullo", url: `${siteConfig.url}/reinaldo-masullo` }],
