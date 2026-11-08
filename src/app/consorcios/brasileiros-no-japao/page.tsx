@@ -130,6 +130,28 @@ function SectionCTA({ label = CTA_LABEL }: { label?: string }) {
   );
 }
 
+function SectionCard({ titulo, passos, label = CTA_LABEL }: { titulo: string; passos: string[]; label?: string }) {
+  return (
+    <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-6">
+      <p className="text-base font-semibold text-[var(--color-primary)]">{titulo}</p>
+      <ol className="mt-3 list-decimal space-y-2 pl-5 text-base leading-relaxed text-[var(--color-ink)]/75">
+        {passos.map((passo) => (
+          <li key={passo}>{passo}</li>
+        ))}
+      </ol>
+      <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink)]/75">
+        Atendimento pelo WhatsApp todos os dias, inclusive sábado e domingo, das 7h às 11h e das 19h às 23h no horário
+        do Japão.
+      </p>
+      <div className="mt-5">
+        <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} variant="secondary" external>
+          {label}
+        </CTAButton>
+      </div>
+    </div>
+  );
+}
+
 const resumo = [
   "Brasileiro que mora no Japão pode contratar consórcio de imóvel no Brasil, de forma online, com o endereço do Japão.",
   "A análise de renda é feita na contemplação, quando você vai usar a carta para comprar o imóvel.",
@@ -796,7 +818,15 @@ export default function BrasileirosNoJapaoPage() {
             contrato com profissional habilitado. A documentação da compra (ITBI, escritura e registro) fica por conta
             de quem compra; como você paga o vendedor à vista, o desconto que negociar ajuda a cobrir esses custos.
           </p>
-          <SectionCTA label="Fui contemplado, quero ajuda para comprar" />
+          <SectionCard
+            titulo="Como eu te acompanho depois da contemplação"
+            passos={[
+              "Analiso com você os imóveis e a documentação do vendedor antes da compra.",
+              "Organizo a assinatura digital ou o procurador de confiança no Brasil.",
+              "Acompanho o registro no cartório até a liberação dos 20% finais do crédito.",
+            ]}
+            label="Fui contemplado, quero ajuda para comprar"
+          />
           </div>
           <VideoCurto
             youtubeId={videoContemplado.youtubeId}
@@ -904,7 +934,15 @@ export default function BrasileirosNoJapaoPage() {
             Se a conta fecha depende do imóvel escolhido, do valor do aluguel e do momento da contemplação. Por isso eu
             analiso cada opção com você, com números, antes da compra.
           </p>
-          <SectionCTA label="Simular com o aluguel ajudando a pagar" />
+          <SectionCard
+            titulo="Como eu monto essa conta com você"
+            passos={[
+              "Simulo a carta e a parcela, em reais e em ienes.",
+              "Comparo o aluguel esperado na região do imóvel com a parcela depois da contemplação.",
+              "Faço o seguro fiança do contrato de aluguel, pago pelo inquilino.",
+            ]}
+            label="Simular com o aluguel ajudando a pagar"
+          />
           </div>
           <VideoCurto
             youtubeId={videoAluguel.youtubeId}
@@ -980,7 +1018,15 @@ export default function BrasileirosNoJapaoPage() {
               essa data, porque ela depende de sorteio e de lance.
             </li>
           </ol>
-          <SectionCTA label="Tirar minha dúvida sobre segurança" />
+          <SectionCard
+            titulo="O que eu te mando antes de você pagar qualquer valor"
+            passos={[
+              "O contrato da administradora, para você ler com calma.",
+              "O CNPJ da administradora, para conferir no site do Banco Central.",
+              "O meu registro de corretor na SUSEP.",
+            ]}
+            label="Tirar minha dúvida sobre segurança"
+          />
           </div>
           <VideoCurto
             youtubeId={videoGolpe.youtubeId}
