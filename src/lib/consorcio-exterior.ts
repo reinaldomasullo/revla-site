@@ -39,7 +39,11 @@ export const exteriorPaises: ExteriorPais[] = [
     nome: "Estados Unidos",
     em: "nos Estados Unidos",
     moeda: "dólares",
-    metaTitle: "Consórcio para brasileiros nos Estados Unidos",
+    // CORREÇÃO (auditoria SEO, 09/11/2026): "Consórcio para brasileiros nos
+    // Estados Unidos" + sufixo " | Revla Corretora" dava 63 caracteres, 3
+    // acima do orçamento de ~60 usado no resto do site. "EUA" é como
+    // brasileiros normalmente buscam, então mantém a força de busca.
+    metaTitle: "Consórcio para brasileiros nos EUA",
     metaDescription:
       "Mora nos Estados Unidos? Veja como contratar consórcio de imóvel no Brasil online, pagar a parcela com cartão internacional e comprovar renda na contemplação.",
     h1: "Morando nos Estados Unidos, posso fazer consórcio de imóvel no Brasil?",
