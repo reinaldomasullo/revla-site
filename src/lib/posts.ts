@@ -5950,7 +5950,9 @@ export const posts: Post[] = [
     slug: "como-pagar-consorcio-no-brasil-morando-no-japao",
     title: "Recebo em ienes: como pagar a parcela do consórcio no Brasil morando no Japão?",
     description:
-      "Cartão de crédito internacional com cobrança automática, conta digital no Brasil e o efeito do câmbio: como brasileiros no Japão pagam a parcela do consórcio em reais.",
+      // CORREÇÃO (auditoria SEO, 09/11/2026): description tinha 167 caracteres, acima
+      // do orçamento de ~160 usado no resto do site.
+      "Cartão de crédito internacional com cobrança automática e o efeito do câmbio: como brasileiros no Japão pagam a parcela do consórcio em reais.",
     category: "Consórcios",
     date: "2026-11-07",
     coverImage: {
@@ -6206,7 +6208,9 @@ export const posts: Post[] = [
     slug: "consorcio-de-imovel-no-brasil-morando-no-japao",
     title: "Morando no Japão, posso fazer consórcio de imóvel no Brasil?",
     description:
-      "Sim. Quem mora no Japão pode contratar consórcio de imóvel no Brasil de forma online, com endereço no Japão. Veja como funciona, como pagar e quando a renda é analisada.",
+      // CORREÇÃO (auditoria SEO, 09/11/2026): description tinha 169 caracteres, acima
+      // do orçamento de ~160 usado no resto do site.
+      "Sim. Quem mora no Japão pode contratar consórcio de imóvel no Brasil online, com endereço no Japão. Veja como funciona e quando a renda é analisada.",
     category: "Consórcios",
     date: "2026-11-07",
     coverImage: {
@@ -6377,7 +6381,9 @@ export const posts: Post[] = [
     slug: "consorcio-e-golpe-morando-no-japao",
     title: "Mora no Japão: como saber se o consórcio no Brasil é golpe?",
     description:
-      "Três conferências antes de pagar qualquer valor: a administradora autorizada pelo Banco Central, o pagamento sempre em nome dela e a desconfiança de quem promete data de contemplação.",
+      // CORREÇÃO (auditoria SEO, 09/11/2026): description tinha 183 caracteres, acima
+      // do orçamento de ~160 usado no resto do site.
+      "Três conferências antes de pagar: administradora autorizada pelo Banco Central, pagamento em nome dela e desconfiança de quem promete data certa.",
     category: "Consórcios",
     date: "2026-11-07",
     coverImage: {
@@ -6469,7 +6475,9 @@ export const posts: Post[] = [
     slug: "aluguel-pagar-parcela-consorcio-morando-no-japao",
     title: "Mora no Japão: o aluguel pode pagar a parcela do consórcio?",
     description:
-      "Contemplado, você compra um imóvel pensado para alugar, o aluguel ajuda a pagar a parcela e, no fim do consórcio, fica para você. Imobiliária e seguro fiança cuidam do resto.",
+      // CORREÇÃO (auditoria SEO, 09/11/2026): description tinha 174 caracteres, acima
+      // do orçamento de ~160 usado no resto do site.
+      "Contemplado, você compra um imóvel para alugar: o aluguel ajuda a pagar a parcela e, no fim do consórcio, fica para você. Veja como funciona.",
     category: "Consórcios",
     date: "2026-11-07",
     coverImage: {
@@ -6558,7 +6566,9 @@ export const posts: Post[] = [
     slug: "aposentadoria-imobiliaria-morando-no-japao",
     title: "Aposentadoria imobiliária: vale a pena pensar nisso morando no Japão?",
     description:
-      "O acordo de previdência entre Brasil e Japão soma o tempo contribuído nos dois países, mas o INSS paga só a parte proporcional. Entenda por que isso muda o seu planejamento.",
+      // CORREÇÃO (auditoria SEO, 09/11/2026): description tinha 173 caracteres, acima
+      // do orçamento de ~160 usado no resto do site.
+      "O acordo de previdência entre Brasil e Japão soma o tempo contribuído nos dois países, mas o INSS paga só a parte proporcional. Entenda o porquê.",
     category: "Consórcios",
     date: "2026-11-08",
     coverImage: {

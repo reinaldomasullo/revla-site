@@ -83,6 +83,23 @@ const categorias = [
     linkLabel: "Consórcio para quem mora no Japão",
     icon: <Globe />,
   },
+  // CORREÇÃO (auditoria SEO/UX, 09/11/2026): a grade de categorias só tinha
+  // o card do Japão — os cards de Estados Unidos e Europa faltavam aqui,
+  // mesmo já estando no menu, no rodapé, na home e no mapa do site.
+  {
+    title: "Brasileiros nos Estados Unidos",
+    description: "Consórcio de imóvel no Brasil contratado dos Estados Unidos e pagar a parcela em dólares.",
+    href: "/consorcios/brasileiros-nos-estados-unidos",
+    linkLabel: "Consórcio para quem mora nos Estados Unidos",
+    icon: <Globe />,
+  },
+  {
+    title: "Brasileiros na Europa",
+    description: "Consórcio de imóvel no Brasil contratado da Europa e pagar a parcela em euros.",
+    href: "/consorcios/brasileiros-na-europa",
+    linkLabel: "Consórcio para quem mora na Europa",
+    icon: <Globe />,
+  },
   {
     title: "Serviços",
     description: "Cirurgia plástica, viagem e energia solar, com parcelas que cabem no seu orçamento.",
