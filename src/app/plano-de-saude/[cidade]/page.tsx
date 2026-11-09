@@ -191,6 +191,16 @@ export default async function PlanoDeSaudeCidadePage({
             <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
               Valores de referência, cobertura ambulatorial e hospitalar sem obstetrícia.
             </p>
+            {/* CORREÇÃO (auditoria SEO/clareza, 08/11/2026): ver mesma nota
+                em plano-de-saude/page.tsx — evita a tabela (3 faixas, com a
+                de 59+ mais cara) parecer contradizer o diferencial "sem
+                aumento a partir dos 44 anos". */}
+            <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/60">
+              A tabela mostra o valor de cada faixa na contratação. Segundo a Prevent Senior, o último
+              aumento por faixa etária acontece aos 44 anos: quem já está no plano e completa 59 anos
+              continua na faixa de 44 a 58 anos e não passa para a de 59 anos ou mais. Quem contrata já com
+              59 anos ou mais paga o valor dessa última faixa desde o início.
+            </p>
           </div>
 
           <div className="mt-10 space-y-10">

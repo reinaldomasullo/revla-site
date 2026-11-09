@@ -308,12 +308,15 @@ export default function PlanoDeSaudePage() {
                 cara — o que pode parecer contradizer o diferencial "sem
                 aumento a partir dos 44 anos" acima pra quem só olha a
                 tabela. Essa frase deixa explícito que a tabela é o valor de
-                ENTRADA por idade, e que quem já está no plano a partir dos
-                44 fica travado nesse valor (não migra pra faixa seguinte). */}
+                cada faixa na contratação e que, segundo a Prevent Senior, o
+                último aumento por idade ocorre aos 44 anos (09/11/2026: texto
+                revisado, a versão anterior dizia "faixa de entrada", o que
+                estava impreciso para quem entra antes dos 44). */}
             <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/60">
-              A tabela mostra o valor de entrada por idade na contratação. Quem já é beneficiário
-              a partir dos 44 anos fica travado no valor da sua faixa de entrada e não migra para
-              a faixa seguinte, mesmo completando 59 anos.
+              A tabela mostra o valor de cada faixa na contratação. Segundo a Prevent Senior, o último
+              aumento por faixa etária acontece aos 44 anos: quem já está no plano e completa 59 anos
+              continua na faixa de 44 a 58 anos e não passa para a de 59 anos ou mais. Quem contrata já com
+              59 anos ou mais paga o valor dessa última faixa desde o início.
             </p>
           </div>
 
