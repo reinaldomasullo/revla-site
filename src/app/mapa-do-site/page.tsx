@@ -39,6 +39,8 @@ const consorcios: LinkItem[] = [
   { label: "Consórcios (hub)", href: "/consorcios" },
   { label: "Consórcio de Imóveis", href: "/consorcios/imoveis" },
   { label: "Consórcio para Brasileiros no Japão", href: "/consorcios/brasileiros-no-japao" },
+  { label: "Consórcio para Brasileiros nos Estados Unidos", href: "/consorcios/brasileiros-nos-estados-unidos" },
+  { label: "Consórcio para Brasileiros na Europa", href: "/consorcios/brasileiros-na-europa" },
   { label: "Consórcio de Carro", href: "/consorcios/carro" },
   { label: "Consórcio de Motos (hub)", href: "/consorcios/motos" },
   ...motoBrands.map((b) => ({ label: `Consórcio de Moto ${b.name}`, href: `/consorcios/motos/${b.slug}` })),

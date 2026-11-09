@@ -31,7 +31,14 @@ const produtos: Produto[] = [
             { label: "Consórcio de imóveis", href: "/consorcios/imoveis" },
             { label: "Consórcio de carro", href: "/consorcios/carro" },
             { label: "Consórcio de motos", href: "/consorcios/motos" },
+          ],
+        },
+        {
+          titulo: "Brasileiros no exterior",
+          itens: [
             { label: "Brasileiros no Japão", href: "/consorcios/brasileiros-no-japao" },
+            { label: "Brasileiros nos Estados Unidos", href: "/consorcios/brasileiros-nos-estados-unidos" },
+            { label: "Brasileiros na Europa", href: "/consorcios/brasileiros-na-europa" },
           ],
         },
         {

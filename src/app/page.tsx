@@ -443,6 +443,70 @@ export default function HomePage() {
         muted
       />
 
+      {/* Consórcio para brasileiros no exterior */}
+      <section className="py-8 sm:py-10" aria-labelledby="exterior-heading">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
+              Brasileiros no exterior
+            </p>
+            <h2
+              id="exterior-heading"
+              className="mt-2 text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl"
+            >
+              Mora fora do Brasil? Faça consórcio de imóvel de onde estiver
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
+              Contratação online, parcela paga com cartão de crédito internacional e renda analisada só na
+              contemplação. Escolha o país onde você mora.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-5 sm:grid-cols-3">
+            {[
+              {
+                title: "Brasileiros no Japão",
+                description: "Como contratar, pagar a parcela recebendo em ienes e comprovar renda com documentos do Japão.",
+                href: "/consorcios/brasileiros-no-japao",
+              },
+              {
+                title: "Brasileiros nos Estados Unidos",
+                description: "Como contratar o consórcio no Brasil morando nos Estados Unidos e pagar a parcela em dólares.",
+                href: "/consorcios/brasileiros-nos-estados-unidos",
+              },
+              {
+                title: "Brasileiros na Europa",
+                description: "Como contratar o consórcio no Brasil morando na Europa e pagar a parcela em euros.",
+                href: "/consorcios/brasileiros-na-europa",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5 transition hover:border-[var(--color-secondary)]/50"
+              >
+                <h3 className="text-base font-semibold text-[var(--color-ink)]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">{item.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--color-secondary)] group-hover:underline">
+                  Ver a página
+                </span>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-[var(--color-ink)]/70">
+            Mora em outro país?{" "}
+            <a
+              href={whatsappLink("Olá, Reinaldo! Moro fora do Brasil e quero entender o consórcio de imóvel.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--color-secondary)] hover:underline"
+            >
+              Fale com o Reinaldo no WhatsApp
+            </a>
+            .
+          </p>
+        </Container>
+      </section>
+
       {/* Dobra 4 — Seguros e subprodutos */}
       <section className="py-8 sm:py-10" aria-labelledby="seguros-heading">
         <Container>

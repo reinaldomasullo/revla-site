@@ -160,6 +160,21 @@ export default function Footer() {
             </li>
           </ul>
 
+          <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-white/50">Brasileiros no exterior</p>
+          <ul className="mt-3 space-y-3">
+            <li>
+              <FooterLink href="/consorcios/brasileiros-no-japao">Consórcio para brasileiros no Japão</FooterLink>
+            </li>
+            <li>
+              <FooterLink href="/consorcios/brasileiros-nos-estados-unidos">
+                Consórcio para brasileiros nos Estados Unidos
+              </FooterLink>
+            </li>
+            <li>
+              <FooterLink href="/consorcios/brasileiros-na-europa">Consórcio para brasileiros na Europa</FooterLink>
+            </li>
+          </ul>
+
           <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-white/50">Calculadoras</p>
           <ul className="mt-3 space-y-3">
             <li>
