@@ -33,7 +33,9 @@ const PLANO_SAUDE_LAST_MODIFIED = new Date("2026-11-08");
 // 13/10: página para brasileiros que moram no Japão (teste GEO de linha de
 // base + análise de concorrentes de 12/10). Atualize junto com LAST_UPDATED
 // em src/app/consorcios/brasileiros-no-japao/page.tsx.
-const JAPAO_LAST_MODIFIED = new Date("2026-11-08");
+const JAPAO_LAST_MODIFIED = new Date("2026-11-09");
+// 09/11: páginas de consórcio para brasileiros nos Estados Unidos e na Europa.
+const EXTERIOR_LAST_MODIFIED = new Date("2026-11-09");
 
 const GEO_AEO_20SET_SLUGS = new Set(["vida", "auto", "residencial", "viagem"]);
 
@@ -88,6 +90,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteConfig.url}/consorcios/brasileiros-no-japao`,
       lastModified: JAPAO_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/brasileiros-nos-estados-unidos`,
+      lastModified: EXTERIOR_LAST_MODIFIED,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/consorcios/brasileiros-na-europa`,
+      lastModified: EXTERIOR_LAST_MODIFIED,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },

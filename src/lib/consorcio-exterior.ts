@@ -7,17 +7,12 @@
 // Japão (documentos japoneses, apostila de Haia, ienes, câmbio, horário,
 // acordo previdenciário, vídeos, simulador) ficaram de fora.
 //
-// PENDENTE DE CONFIRMAÇÃO com a Ademicon antes de liberar para o Google:
-//  - contratação online com endereço nos Estados Unidos / na Europa;
-//  - quais documentos de renda são aceitos e se exigem tradução juramentada ou
-//    apostila em cada país (o texto repete a regra do Japão: documento real de
-//    renda do país, tradução juramentada, sem apostila de Haia);
-//  - horário de atendimento: mesmas janelas do Japão (7h-11h e 19h-23h), no
-//    horário local de cada país; ajustar em `horario` se mudar.
-// Enquanto isso, as páginas ficam com noindex (INDEXAR = false) e fora do
-// sitemap. Para liberar: INDEXAR = true aqui e incluir as rotas em sitemap.ts.
+// Regras de contratação online e de documentos de renda para Estados Unidos e
+// Europa confirmadas com a Ademicon em 09/11/2026 (informado pelo Reinaldo).
+// Páginas liberadas para indexação e incluídas no sitemap (src/app/sitemap.ts).
+// Para voltar a esconder: INDEXAR = false aqui e remover as rotas do sitemap.
 
-export const INDEXAR = false;
+export const INDEXAR = true;
 export const EXTERIOR_PUBLICADO = "2026-11-09";
 export const EXTERIOR_ATUALIZADO = "2026-11-09";
 export const EXTERIOR_ATUALIZADO_LABEL = "09 de novembro de 2026";

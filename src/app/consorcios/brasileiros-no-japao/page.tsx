@@ -26,8 +26,8 @@ import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 
 const PATH = "/consorcios/brasileiros-no-japao";
 const PUBLISHED = "2026-10-13";
-const LAST_UPDATED = "2026-11-08";
-const LAST_UPDATED_LABEL = "08 de novembro de 2026";
+const LAST_UPDATED = "2026-11-09";
+const LAST_UPDATED_LABEL = "09 de novembro de 2026";
 
 // Os 7 posts do blog escritos especificamente para quem mora no Japão
 // (todos publicados em 07/11/2026, cada um já linka de volta pra esta
@@ -1146,6 +1146,20 @@ export default function BrasileirosNoJapaoPage() {
         <Container className="max-w-3xl">
           <p className="text-sm leading-relaxed text-[var(--color-ink)]/70">
             Veja também:{" "}
+            <Link
+              href="/consorcios/brasileiros-nos-estados-unidos"
+              className="font-semibold text-[var(--color-secondary)] hover:underline"
+            >
+              consórcio para brasileiros nos Estados Unidos
+            </Link>
+            ,{" "}
+            <Link
+              href="/consorcios/brasileiros-na-europa"
+              className="font-semibold text-[var(--color-secondary)] hover:underline"
+            >
+              consórcio para brasileiros na Europa
+            </Link>
+            ,{" "}
             <Link href="/consorcios/imoveis" className="font-semibold text-[var(--color-secondary)] hover:underline">
               consórcio de imóveis
             </Link>
