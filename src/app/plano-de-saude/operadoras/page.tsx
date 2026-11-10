@@ -31,7 +31,7 @@ const operadorasCards = [
   {
     title: "Prevent Senior",
     description:
-      "Rede própria em São Paulo, Rio de Janeiro e Niterói, com foco na melhor idade. Tabela de preços e a regra de sem aumento por faixa etária a partir dos 44 anos.",
+      "Unidades próprias em São Paulo e no Rio de Janeiro e cobertura em Niterói, com foco na melhor idade. Tabela de preços e a regra de sem aumento por faixa etária a partir dos 44 anos.",
     href: "/plano-de-saude",
     linkLabel: "Ver planos Prevent Senior",
     icon: <HeartHand />,
@@ -111,10 +111,10 @@ const criterios = [
 ];
 
 const cidadesFeatures = planoDeSaudeCidades.map((cidade) => ({
-  title: cidade.nome,
-  description: `Plano de saúde Prevent Senior com atendimento para ${cidade.nome}.`,
+  title: cidade.tituloLocal ?? cidade.nome,
+  description: `Plano de saúde Prevent Senior com a rede de hospitais e a tabela de preços para ${cidade.tituloLocal ?? cidade.nome}.`,
   href: `/plano-de-saude/${cidade.slug}`,
-  linkLabel: `Plano de saúde em ${cidade.nome}`,
+  linkLabel: `Plano de saúde em ${cidade.tituloLocal ?? cidade.nome}`,
   icon: <MapPin />,
 }));
 
@@ -157,7 +157,7 @@ const faqItems = [
   {
     question: "Existe plano de saúde da Prevent Senior em quais cidades?",
     answer:
-      "A Prevent Senior atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. Temos uma página para cada uma, listadas mais acima.",
+      "A Prevent Senior atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. Temos uma página com a rede de hospitais para cada região, listadas mais acima.",
   },
   {
     question: "A Revla é registrada em algum órgão regulador?",
@@ -214,7 +214,7 @@ export default function OperadorasPage() {
 
       <FeatureGrid
         title="Plano de saúde Prevent Senior na sua cidade"
-        description="Páginas com atendimento e contexto das 8 cidades onde a Prevent Senior tem rede própria."
+        description="Páginas com a rede de hospitais das regiões onde a Prevent Senior atende."
         columns={4}
         items={cidadesFeatures}
       />

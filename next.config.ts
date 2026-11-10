@@ -42,6 +42,13 @@ const nextConfig: NextConfig = {
       // se a página mudar de endereço, basta trocar o destino aqui.
       { source: "/pontos", destination: "https://claude.ai/artifact/DLDmneVgE2twMzqwCWNcu4", permanent: false },
 
+      // Plano de saúde Prevent Senior: cidades de pouca busca unidas à vizinha
+      // (10/11/2026). Santo André passou a cobrir o Grande ABC e o Rio de
+      // Janeiro passou a cobrir Niterói.
+      { source: "/plano-de-saude/sao-bernardo-do-campo", destination: "/plano-de-saude/santo-andre", permanent: true },
+      { source: "/plano-de-saude/sao-caetano-do-sul", destination: "/plano-de-saude/santo-andre", permanent: true },
+      { source: "/plano-de-saude/niteroi", destination: "/plano-de-saude/rio-de-janeiro", permanent: true },
+
       // Páginas institucionais antigas → equivalente atual
       { source: "/sobre-nos", destination: "/sobre-a-revla", permanent: true },
       { source: "/contato", destination: "/", permanent: true },

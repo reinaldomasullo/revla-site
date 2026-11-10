@@ -30,7 +30,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Plano de Saúde Prevent Senior",
   description:
-    "Planos de saúde Prevent Senior (MA+S e 1025), com rede própria em São Paulo, Rio de Janeiro e Niterói. Simulação gratuita e sem compromisso.",
+    "Planos de saúde Prevent Senior (MA+S e 1025), com unidades próprias em São Paulo e no Rio de Janeiro. Simulação gratuita e sem compromisso.",
   path: "/plano-de-saude",
 });
 
@@ -38,7 +38,7 @@ export const metadata: Metadata = buildMetadata({
 // de Janeiro e Niterói) e 1025 (região de São Paulo/Baixada Santista). Cada
 // um tem 2 opções de acomodação (Enfermaria/Apartamento) — dados agora
 // centralizados em src/lib/plano-de-saude-cidades.ts, reaproveitados também
-// pelas 8 páginas de cidade da Onda 6.
+// pelas 5 páginas de cidade (8 até 10/11/2026).
 const pricingPlans = planoDeSaudePlanos;
 
 const planos = pricingPlans.map((plan) => ({
@@ -48,10 +48,10 @@ const planos = pricingPlans.map((plan) => ({
 }));
 
 const cidadesFeatures = planoDeSaudeCidades.map((cidade) => ({
-  title: cidade.nome,
-  description: `Plano de saúde Prevent Senior com atendimento para ${cidade.nome}.`,
+  title: cidade.tituloLocal ?? cidade.nome,
+  description: `Plano de saúde Prevent Senior com a rede de hospitais e a tabela de preços para ${cidade.tituloLocal ?? cidade.nome}.`,
   href: `/plano-de-saude/${cidade.slug}`,
-  linkLabel: `Plano de saúde em ${cidade.nome}`,
+  linkLabel: `Plano de saúde em ${cidade.tituloLocal ?? cidade.nome}`,
   icon: <MapPin />,
 }));
 
@@ -85,7 +85,7 @@ const diferenciais = [
   },
   {
     title: "Cobertura em São Paulo, Rio de Janeiro e Niterói",
-    description: "Rede própria em São Paulo e região (plano 1025) e também no Rio de Janeiro e Niterói (plano MA+S).",
+    description: "Unidades próprias e rede credenciada em São Paulo e região (plano 1025) e também no Rio de Janeiro e Niterói (plano MA+S).",
     icon: <MapPin />,
   },
   {
@@ -169,9 +169,9 @@ const faqItems = [
       "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320. A Prevent Senior, nossa parceira em plano de saúde, é operadora registrada na ANS (Agência Nacional de Saúde Suplementar).",
   },
   {
-    question: "Em quais cidades a Prevent Senior tem rede própria?",
+    question: "Em quais cidades a Prevent Senior atende?",
     answer:
-      "O plano MA+S atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. O plano 1025 atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande. Temos página própria para cada uma: [São Paulo](/plano-de-saude/sao-paulo), [Santo André](/plano-de-saude/santo-andre), [São Bernardo do Campo](/plano-de-saude/sao-bernardo-do-campo), [São Caetano do Sul](/plano-de-saude/sao-caetano-do-sul), [Santos](/plano-de-saude/santos), [Praia Grande](/plano-de-saude/praia-grande), [Rio de Janeiro](/plano-de-saude/rio-de-janeiro) e [Niterói](/plano-de-saude/niteroi).",
+      "O plano MA+S atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos, Praia Grande, Rio de Janeiro e Niterói. O plano 1025 atende São Paulo, Santo André, São Bernardo do Campo, São Caetano do Sul, Santos e Praia Grande. Temos página com a lista de hospitais da rede para: [São Paulo](/plano-de-saude/sao-paulo), [Santo André, São Bernardo do Campo e São Caetano do Sul](/plano-de-saude/santo-andre), [Santos](/plano-de-saude/santos), [Praia Grande](/plano-de-saude/praia-grande) e [Rio de Janeiro e Niterói](/plano-de-saude/rio-de-janeiro).",
   },
 ];
 
@@ -229,7 +229,7 @@ export default function PlanoDeSaudePage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             <div className="rounded-2xl border border-white/30 p-6">
               <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">2</p>
-              <p className="mt-2 text-sm text-white">planos com rede própria: MA+S e 1025</p>
+              <p className="mt-2 text-sm text-white">planos de saúde: MA+S e 1025</p>
             </div>
             <div className="rounded-2xl border border-white/30 p-6">
               <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">8</p>
@@ -417,7 +417,7 @@ export default function PlanoDeSaudePage() {
 
       <FeatureGrid
         title="Plano de saúde na sua cidade"
-        description="Informações e atendimento específicos para as 8 cidades onde a Prevent Senior tem rede própria."
+        description="Hospitais da rede e atendimento nas regiões onde a Prevent Senior atende: São Paulo, Grande ABC, Baixada Santista, Rio de Janeiro e Niterói."
         columns={4}
         items={cidadesFeatures}
       />

@@ -34,21 +34,8 @@ export default function OperadoraPage({ slug }: { slug: OperadoraSlug }) {
   const faqItems = [
     ...op.faq,
     {
-      question: `A Revla é a ${op.nome}?`,
-      answer: `Não. A Revla é uma corretora de seguros que cota e contrata planos de saúde de várias operadoras, inclusive a ${op.nome}, e compara com outras opções para o seu perfil. O plano, a rede e as regras do contrato são da operadora.`,
-    },
-    {
-      question: `Quanto custa o plano de saúde ${op.nome}? Qual o preço?`,
-      answer: `O valor depende da idade, da cidade, do tipo de contrato e do número de vidas, por isso não publicamos tabela de preços. Envie esses dados pelo WhatsApp e receba a cotação ${op.nome} comparada com outras operadoras, sem compromisso.`,
-    },
-    {
-      question: `Convênio ${op.nome} e plano de saúde ${op.nome} são a mesma coisa?`,
-      answer: `Na prática, sim. "Convênio" é o nome popular do plano de saúde. Legalmente, o plano é regulado pela ANS, e as regras de carência, cobertura e reajuste valem conforme o contrato. A Revla cota o plano ${op.nome} e explica as condições antes da contratação.`,
-    },
-    {
-      question: "A Revla é registrada em algum órgão regulador?",
-      answer:
-        "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320. As operadoras de plano de saúde são registradas na ANS (Agência Nacional de Saúde Suplementar).",
+      question: `Quem regula a ${op.nome} e a Revla?`,
+      answer: `A ${op.nome} é uma operadora regulada pela ANS (Agência Nacional de Saúde Suplementar). A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320. O plano, a rede e as regras do contrato são da operadora, e a Revla intermedeia a cotação e a contratação.`,
     },
   ];
 
@@ -114,8 +101,8 @@ export default function OperadoraPage({ slug }: { slug: OperadoraSlug }) {
       <FAQ items={faqItems} />
 
       <CTASection
-        title={`Cote o plano ${op.nome} com a Revla`}
-        description="Envie sua idade, cidade e tipo de contratação pelo WhatsApp e receba uma comparação gratuita entre operadoras."
+        title={op.ctaTitulo}
+        description={op.ctaDescricao}
         whatsappMessage={message}
         buttonLabel={cta}
       />

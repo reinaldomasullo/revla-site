@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "@/components/Hero";
 import CTAButton from "@/components/CTAButton";
+import Link from "next/link";
 import Container from "@/components/Container";
-import FeatureGrid from "@/components/FeatureGrid";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
@@ -15,7 +15,6 @@ import {
   getPlanoDeSaudePlano,
   PRECOS_ATUALIZADO_EM,
 } from "@/lib/plano-de-saude-cidades";
-import { PercentShield, HeartHand, Star, ClockCheck } from "@/components/icons";
 
 export function generateStaticParams() {
   return planoDeSaudeCidades.map((c) => ({ cidade: c.slug }));
@@ -34,39 +33,11 @@ export async function generateMetadata({
   const cheapest = getPlanoDeSaudePlano(c.planos.includes("1025") ? "1025" : "maes");
 
   return buildMetadata({
-    title: `Plano de Saúde em ${c.nome}`,
+    title: `Plano de Saúde em ${c.tituloLocal ?? c.nome}`,
     description: `Plano de saúde ${planosNomes} em ${c.nome}, a partir de ${cheapest.startingPrice}/mês. Simulação gratuita e sem compromisso com a Revla.`,
     path: `/plano-de-saude/${c.slug}`,
   });
 }
-
-const diferenciais = [
-  {
-    // Diferencial (confirmado no site oficial da Prevent Senior, plano 1025):
-    // "A partir dos 44 anos, o plano mantém o valor sem aumento por faixa
-    // etária". A lei (RN ANS 63/2003) só impede aumento por faixa a partir
-    // dos 59 anos; a Prevent Senior antecipa isso para os 44. Quem entra antes
-    // dos 44 tem os aumentos legais até os 44; aos 44 vem o último enquadramento.
-    title: "Sem aumento por faixa etária a partir dos 44 anos",
-    description: "Na Prevent Senior, o último aumento por faixa etária acontece aos 44 anos; a lei só encerra isso aos 59. Quem entra a partir dos 44 já começa no valor da tabela e não sofre mais aumento por idade, nem aos 59. Quem entra mais novo tem os reajustes de faixa até os 44 e, depois, só o reajuste anual do contrato.",
-    icon: <PercentShield />,
-  },
-  {
-    title: "Cuidado especializado para a melhor idade",
-    description: "Equipe e protocolos pensados para as necessidades específicas de quem tem mais de 60 anos, com acompanhamento próximo.",
-    icon: <HeartHand />,
-  },
-  {
-    title: "Única operadora do mundo com unidades temáticas",
-    description: "A Prevent Senior é a única operadora do mundo com hospitais e unidades temáticas, pensadas para tornar o atendimento mais humano.",
-    icon: <Star />,
-  },
-  {
-    title: "Carências reduzidas",
-    description: "Em novas adesões, a carência para lesões e doenças preexistentes cai de 730 para 180 dias.",
-    icon: <ClockCheck />,
-  },
-];
 
 export default async function PlanoDeSaudeCidadePage({
   params,
@@ -95,37 +66,10 @@ export default async function PlanoDeSaudeCidadePage({
       : `O plano Prevent Senior ${planosCidade[0].nome} em ${c.nome} parte de ${planosCidade[0].startingPrice}/mês (Enfermaria) para beneficiários de até 43 anos, com valores por faixa etária — fale com um consultor para a tabela vigente.`;
 
   const faqItems = [
-    c.faqEspecifica,
-    ...(planosCidade.length === 2
-      ? [
-          {
-            question: "Qual a diferença entre os planos MA+S e 1025?",
-            answer:
-              "A principal diferença é a área de abrangência: o MA+S atende também Rio de Janeiro e Niterói, além de São Paulo e região; o 1025 atende só a região de São Paulo e Baixada Santista. A cobertura ambulatorial e hospitalar é equivalente nos dois.",
-          },
-        ]
-      : []),
+    ...c.faqs,
     {
-      question: "A Prevent Senior reajusta o plano por faixa etária depois dos 44 anos?",
-      answer: `Não. Pela regra da ANS, o aumento por mudança de faixa etária só deixa de existir a partir dos 59 anos. A Prevent Senior antecipa isso: o último enquadramento por faixa etária acontece aos 44 anos e, dali em diante, não há mais aumento por idade, nem aos 59. Quem contrata a partir dos 44 já começa no valor da faixa de entrada da tabela. Quem contrata mais jovem tem os aumentos previstos em lei até completar 44 anos. Depois disso, continua existindo apenas o reajuste anual do contrato. ${planosCidade.length === 2 ? "A regra vale para os dois planos, 1025 e MA+S." : "A regra vale para o plano MA+S."}`,
-    },
-    {
-      question: "Quanto custa um plano de saúde?",
+      question: `Quanto custa o plano de saúde Prevent Senior em ${c.nome}?`,
       answer: quantoCustaAnswer,
-    },
-    {
-      question: "A Revla trabalha só com a Prevent Senior?",
-      answer:
-        "A Prevent Senior é nossa parceira oficial em plano de saúde. Para necessidades específicas, também ajudamos a avaliar outras operadoras — fale com um consultor para entender a melhor opção para o seu caso.",
-    },
-    {
-      question: `Existe corretora especializada em plano de saúde da Prevent Senior em ${c.nome}?`,
-      answer: `Sim. A Prevent Senior não tem uma corretora exclusiva própria — vende diretamente e também através de corretoras parceiras credenciadas, como a Revla. Somos corretora parceira oficial da Prevent Senior, com atendimento presencial em São Paulo (Avenida Paulista) e consultoria remota para clientes em ${c.nome}, comparando ${planosCidade.length === 2 ? "os dois planos disponíveis — MA+S e 1025 —" : `o plano ${planosCidade[0].nome}`} pra encontrar a opção certa pra sua idade.`,
-    },
-    {
-      question: "A Revla é registrada em algum órgão regulador?",
-      answer:
-        "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320. A Prevent Senior, nossa parceira em plano de saúde, é operadora registrada na ANS (Agência Nacional de Saúde Suplementar).",
     },
   ];
 
@@ -175,8 +119,35 @@ export default async function PlanoDeSaudeCidadePage({
         </Container>
       </section>
 
-      <section className="section-muted">
-        <FeatureGrid title="Diferenciais Prevent Senior" columns={4} items={diferenciais} />
+      <section className="section-muted py-10 sm:py-12">
+        <Container className="max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+            Hospitais e pronto-atendimentos da rede em {c.tituloLocal ?? c.nome}
+          </h2>
+          <ul className="mt-4 list-disc space-y-1 pl-5 text-base leading-relaxed text-[var(--color-ink)]/75">
+            {c.hospitais.map((h) => (
+              <li key={h}>{h}</li>
+            ))}
+          </ul>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink)]/70">{c.redeNota}</p>
+          <p className="mt-2 text-xs text-[var(--color-ink)]/60">
+            Conferido no site oficial da Prevent Senior em novembro de 2026. A rede muda com o tempo:
+            confirme na consulta oficial antes de contratar.
+          </p>
+        </Container>
+      </section>
+
+      <section className="py-6">
+        <Container className="max-w-3xl">
+          <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+            A regra do último aumento por faixa etária aos 44 anos, as carências e os demais diferenciais da
+            operadora estão explicados na{" "}
+            <Link href="/plano-de-saude" className="font-semibold text-[var(--color-primary)] underline">
+              página do plano de saúde Prevent Senior
+            </Link>
+            .
+          </p>
+        </Container>
       </section>
 
       <section className="py-10 sm:py-12">
@@ -188,18 +159,8 @@ export default async function PlanoDeSaudeCidadePage({
                 Atualizada em {PRECOS_ATUALIZADO_EM}
               </span>
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--color-ink)]/70">
-              Valores de referência, cobertura ambulatorial e hospitalar sem obstetrícia.
-            </p>
-            {/* CORREÇÃO (auditoria SEO/clareza, 08/11/2026): ver mesma nota
-                em plano-de-saude/page.tsx — evita a tabela (3 faixas, com a
-                de 59+ mais cara) parecer contradizer o diferencial "sem
-                aumento a partir dos 44 anos". */}
-            <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/60">
-              A tabela mostra o valor de cada faixa na contratação. Segundo a Prevent Senior, o último
-              aumento por faixa etária acontece aos 44 anos: quem já está no plano e completa 59 anos
-              continua na faixa de 44 a 58 anos e não passa para a de 59 anos ou mais. Quem contrata já com
-              59 anos ou mais paga o valor dessa última faixa desde o início.
+            <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/60">
+              Valor de cada faixa na contratação, para {planosCidade.length === 2 ? "os dois planos" : "o plano MA+S"} em {c.nome}, com cobertura ambulatorial e hospitalar sem obstetrícia. A explicação da regra dos 44 anos está na página do plano.
             </p>
           </div>
 
@@ -250,10 +211,7 @@ export default async function PlanoDeSaudeCidadePage({
           </div>
 
           <p className="mt-6 text-xs leading-relaxed text-[var(--color-ink)]/70">
-            Valores de referência, sujeitos a atualização e à faixa etária vigente na data da
-            contratação — fale com um consultor para a tabela atualizada. Para beneficiários de 0
-            a 18 anos, a adesão passa por entrevista qualificada, conforme a Resolução Normativa
-            ANS nº 558/2022.
+            Valores sujeitos a atualização: fale com um consultor para a tabela vigente.
           </p>
         </Container>
       </section>

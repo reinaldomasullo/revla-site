@@ -36,6 +36,8 @@ export type Operadora = {
   diferenciais: OperadoraTipo[];
   paraQuem: string;
   faq: OperadoraFaq[];
+  ctaTitulo: string;
+  ctaDescricao: string;
 };
 
 export const OPERADORAS_CONFERIDO_EM = "novembro de 2026";
@@ -110,7 +112,15 @@ export const operadoras: Operadora[] = [
         answer:
           "Depende do produto disponível na sua região e do seu perfil. Muitas contratações acontecem por plano coletivo, empresarial ou por adesão. Conferimos qual caminho existe para você antes de enviar qualquer proposta.",
       },
+      {
+        question: "Qual o preço do plano Amil?",
+        answer:
+          "O preço do plano Amil muda conforme a linha escolhida, a idade, a cidade e, nos planos empresariais, o número de vidas. Informe esses dados pelo WhatsApp e a Revla monta a simulação Amil lado a lado com outras operadoras.",
+      },
     ],
+    ctaTitulo: "Compare a Amil com outras operadoras",
+    ctaDescricao:
+      "Informe a idade dos beneficiários e a cidade pelo WhatsApp. A Revla simula as linhas Amil disponíveis para você e mostra como ficam frente a outras operadoras.",
   },
   {
     slug: "bradesco-saude",
@@ -181,7 +191,15 @@ export const operadoras: Operadora[] = [
         answer:
           "A operadora informa que há reembolso das despesas médicas feitas fora da rede referenciada, e as regras e os limites dependem do plano contratado. Explicamos o reembolso do plano que você estiver avaliando antes da contratação.",
       },
+      {
+        question: "Quanto custa a Bradesco Saúde?",
+        answer:
+          "Não há preço único. O valor da Bradesco Saúde depende do porte da empresa ou do vínculo que dá direito ao plano por adesão, das idades e da região. A Revla pede esses dados e devolve uma simulação comparada.",
+      },
     ],
+    ctaTitulo: "Veja se a Bradesco Saúde cabe na sua empresa",
+    ctaDescricao:
+      "Conte pelo WhatsApp quantas vidas terá o plano e em que cidade. A Revla verifica se a contratação é possível e compara a Bradesco Saúde com outras opções.",
   },
   {
     slug: "sulamerica",
@@ -253,6 +271,9 @@ export const operadoras: Operadora[] = [
           "A operadora informa que há modelos com e sem coparticipação. Mostramos os dois lado a lado na cotação, para você comparar mensalidade e custo de uso.",
       },
     ],
+    ctaTitulo: "Simule a SulAmérica para a sua equipe",
+    ctaDescricao:
+      "Envie o número de vidas, a cidade e, se for profissional, a sua categoria. A Revla simula a SulAmérica e compara com outras operadoras.",
   },
   {
     slug: "hapvida",
@@ -326,6 +347,9 @@ export const operadoras: Operadora[] = [
           "São do mesmo grupo. O site que antes era da GNDI/NotreDame hoje é identificado como Hapvida SP/RJ e anuncia a nova NotreDame Saúde para São Paulo e Rio de Janeiro. Temos também uma página sobre o plano de saúde NotreDame.",
       },
     ],
+    ctaTitulo: "Descubra se a Hapvida atende a sua região",
+    ctaDescricao:
+      "Envie a sua cidade e as idades pelo WhatsApp. A Revla confere a disponibilidade da Hapvida onde você mora e compara com outras operadoras.",
   },
   {
     slug: "notredame",
@@ -394,7 +418,15 @@ export const operadoras: Operadora[] = [
         answer:
           "O site da operadora fala em rede integrada em São Paulo e no Rio de Janeiro. A abrangência de cada plano depende do contrato, e verificamos se a sua cidade está coberta antes da proposta.",
       },
+      {
+        question: "Qual o valor do plano NotreDame?",
+        answer:
+          "O valor do plano NotreDame depende da região (São Paulo ou Rio de Janeiro), da idade, do tipo de contrato e do número de vidas. A Revla faz a simulação e compara com outras operadoras antes de você decidir.",
+      },
     ],
+    ctaTitulo: "Cote a NotreDame em São Paulo ou no Rio",
+    ctaDescricao:
+      "Diga em qual das duas cidades você mora, as idades e o tipo de contrato. A Revla cota a NotreDame e mostra alternativas de outras operadoras.",
   },
   {
     slug: "medsenior",
@@ -470,6 +502,9 @@ export const operadoras: Operadora[] = [
           "As regras de idade e de carência dependem do plano e da região, e não constam de forma clara no site da operadora. Confirmamos esses pontos na cotação, antes de qualquer proposta.",
       },
     ],
+    ctaTitulo: "Compare a MedSênior com a Prevent Senior",
+    ctaDescricao:
+      "Envie a idade e a cidade pelo WhatsApp. A Revla cota a MedSênior e coloca a Prevent Senior ao lado para você comparar.",
   },
 ];
 
