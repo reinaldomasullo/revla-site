@@ -20,6 +20,25 @@ export type MotoBrand = {
   posicionamento: string;
   /** Pergunta de FAQ específica dessa marca (além das 5 genéricas). */
   faqEspecifica: { question: string; answer: string };
+  /**
+   * Conteúdo editorial extra, opcional. Quando preenchido, a página da marca
+   * deixa de depender só do molde compartilhado (09/11/2026: as 9 páginas
+   * tinham ~85% do texto idêntico porque só `posicionamento` e
+   * `faqEspecifica` variavam). Marcas sem esses campos continuam no molde.
+   */
+  /** Título da aba, sem o sufixo " | Revla Corretora" (o layout acrescenta). */
+  metaTitle?: string;
+  metaDescription?: string;
+  /** H1 próprio. */
+  h1?: string;
+  /** Texto do Hero. */
+  heroDescription?: string;
+  /** Seções de texto próprias, exibidas depois de "como funciona". */
+  secoes?: { title: string; paragraphs: string[] }[];
+  /** Modelos mais procurados, exibidos em grade (sem preço). */
+  modelos?: { title: string; intro?: string; items: { name: string; description: string }[] };
+  /** FAQs extras da marca, logo após `faqEspecifica`. */
+  faqsExtras?: { question: string; answer: string }[];
 };
 
 export const motoBrands: MotoBrand[] = [
@@ -34,6 +53,79 @@ export const motoBrands: MotoBrand[] = [
       answer:
         "Sim. A carta de crédito contemplada pode ser usada em qualquer concessionária Honda autorizada, em qualquer modelo novo, dentro do valor da carta.",
     },
+    // Conteúdo próprio da Honda (09/11/2026). Fontes: Motonline, 29/01/2026
+    // (Consórcio Honda, fundado em jan/1981) e ranking de emplacamentos
+    // jan–set/2026 compilado a partir do informativo da Fenabrave.
+    // Sem valores de carta nem de parcela, por decisão do usuário.
+    metaTitle: "Consórcio de Moto Honda: Como Funciona",
+    metaDescription:
+      "Consórcio de moto Honda: como funciona, a diferença para o Consórcio Honda, os modelos mais procurados e como simular sem compromisso com a Revla.",
+    h1: "Consórcio de moto Honda: como funciona e como simular",
+    heroDescription:
+      "Entenda como funciona o consórcio para comprar uma moto Honda, qual a diferença entre o Consórcio Honda e a carta de crédito de administradoras comparadas pela Revla, e peça uma simulação sem compromisso.",
+    secoes: [
+      {
+        title: "Consórcio Honda ou carta de crédito de administradora: qual a diferença?",
+        paragraphs: [
+          "O Consórcio Honda é a administradora da própria marca. Segundo o Motonline, ele existe desde janeiro de 1981 e vende cotas de motocicletas, automóveis e máquinas Honda. Quem já decidiu comprar uma Honda e quer fazer o consórcio direto com a fabricante tem aí uma opção natural, e vale conhecê-la antes de decidir.",
+          "A Revla não é o Consórcio Honda e não administra grupos. Somos uma corretora que cota e compara cartas de crédito de administradoras autorizadas pelo Banco Central com as quais trabalhamos: Ademicon, Porto Seguro e Rodobens. Depois da contemplação, a carta é usada para comprar a moto em uma concessionária da marca que você escolher, inclusive a Honda.",
+          "Na prática, a comparação que vale fazer é entre taxa de administração, prazo do grupo, forma de lance, regras de contemplação e reajuste da carta. Peça as condições de cada opção por escrito antes de assinar qualquer contrato.",
+        ],
+      },
+    ],
+    modelos: {
+      title: "Modelos Honda mais procurados",
+      intro:
+        "Segundo um levantamento baseado nos dados da Fenabrave, de janeiro a setembro de 2026, oito dos dez modelos de moto mais emplacados do Brasil são Honda. O valor da carta e da parcela depende do modelo, do grupo e da administradora, por isso o caminho é simular o modelo que você quer.",
+      items: [
+        {
+          name: "CG 160",
+          description: "Moto de uso diário e de trabalho, a mais emplacada do país no período, segundo esse levantamento.",
+        },
+        {
+          name: "Biz",
+          description: "Modelo urbano e prático, pensado para o trânsito da cidade e para o deslocamento diário.",
+        },
+        {
+          name: "Pop 110i",
+          description: "Modelo de entrada, comum entre quem está comprando a primeira moto.",
+        },
+        {
+          name: "NXR 160 Bros",
+          description: "Trail urbana, para quem alterna cidade e trechos de terra.",
+        },
+        {
+          name: "PCX 160",
+          description: "Scooter urbana, procurada por quem prefere câmbio automático no dia a dia.",
+        },
+        {
+          name: "CB 300F, XRE 190 e XRE 300",
+          description: "Modelos de cilindrada intermediária, para quem já pilota e quer mais desempenho do que uma 160, na rua ou em uso misto.",
+        },
+      ],
+    },
+    faqsExtras: [
+      {
+        question: "O Consórcio Honda e a Revla são a mesma coisa?",
+        answer:
+          "Não. O Consórcio Honda é a administradora da própria marca. A Revla é uma corretora que cota cartas de crédito de outras administradoras autorizadas pelo Banco Central (Ademicon, Porto Seguro e Rodobens) e ajuda você a comparar as condições. A carta contemplada pode ser usada para comprar uma moto Honda em concessionária autorizada.",
+      },
+      {
+        question: "O que comparar entre o Consórcio Honda e outra administradora?",
+        answer:
+          "Compare taxa de administração, fundo de reserva, prazo do grupo, modalidades de lance, regras de contemplação e reajuste da carta, sempre com as condições por escrito. O custo total e o tempo até a contemplação mudam de um grupo para outro, e não dá para dizer qual é melhor sem olhar o seu caso.",
+      },
+      {
+        question: "Qual moto Honda eu consigo comprar com o consórcio?",
+        answer:
+          "Qualquer modelo novo cujo preço caiba no valor da carta contratada, como CG 160, Biz, Pop 110i, NXR 160 Bros, PCX 160 ou os de cilindrada intermediária, como CB 300F e XRE 300. Os preços das motos mudam com frequência, então a carta é definida na simulação, com o modelo que você quer.",
+      },
+      {
+        question: "Vale mais a pena consórcio ou financiamento para comprar uma Honda?",
+        answer:
+          "Depende da urgência. No financiamento a moto é liberada logo, mas com juros. No consórcio não há juros, só taxa de administração, mas você precisa esperar a contemplação, por sorteio ou lance. Quem precisa da moto agora tende a preferir o financiamento; quem pode aguardar pode considerar o consórcio. Compare o custo total das duas opções antes de decidir.",
+      },
+    ],
   },
   {
     slug: "yamaha",

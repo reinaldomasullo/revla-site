@@ -10,7 +10,7 @@ import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 import { motoBrands, getMotoBrand } from "@/lib/moto-brands";
-import { PercentOff, CalendarDown, HandCoin, Headset } from "@/components/icons";
+import { PercentOff, CalendarDown, HandCoin, Headset, Motorcycle } from "@/components/icons";
 
 export function generateStaticParams() {
   return motoBrands.map((b) => ({ marca: b.slug }));
@@ -26,8 +26,10 @@ export async function generateMetadata({
   if (!brand) return {};
 
   return buildMetadata({
-    title: `Consórcio de Moto ${brand.name}`,
-    description: `Consórcio de moto ${brand.name}: carta de crédito sem juros, parcelas flexíveis e lance para antecipar a contemplação. Simulação gratuita com a Revla.`,
+    title: brand.metaTitle ?? `Consórcio de Moto ${brand.name}`,
+    description:
+      brand.metaDescription ??
+      `Consórcio de moto ${brand.name}: carta de crédito sem juros, parcelas flexíveis e lance para antecipar a contemplação. Simulação gratuita com a Revla.`,
     path: `/consorcios/motos/${brand.slug}`,
   });
 }
@@ -69,6 +71,7 @@ export default async function MotoBrandPage({
 
   const faqItems = [
     brand.faqEspecifica,
+    ...(brand.faqsExtras ?? []),
     {
       question: "Consórcio de moto tem juros?",
       answer:
@@ -140,8 +143,11 @@ export default async function MotoBrandPage({
       />
       <Hero
         eyebrow={`Consórcio de Moto ${brand.name} · Administradoras Parceiras da Revla`}
-        title={`Consórcio de moto ${brand.name}: carta de crédito sem juros`}
-        description={`Simule seu consórcio para comprar uma moto ${brand.name} sem pagar juros. Parcelas flexíveis, possibilidade de lance para antecipar a contemplação e consultoria completa da Revla do início ao fim.`}
+        title={brand.h1 ?? `Consórcio de moto ${brand.name}: carta de crédito sem juros`}
+        description={
+          brand.heroDescription ??
+          `Simule seu consórcio para comprar uma moto ${brand.name} sem pagar juros. Parcelas flexíveis, possibilidade de lance para antecipar a contemplação e consultoria completa da Revla do início ao fim.`
+        }
         compact
       >
         <CTAButton href={whatsappLink(WHATSAPP_MESSAGE)} external>
@@ -165,6 +171,36 @@ export default async function MotoBrandPage({
           </div>
         </Container>
       </section>
+
+      {brand.secoes?.map((secao) => (
+        <section key={secao.title} className="pb-10 sm:pb-12">
+          <Container className="max-w-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+              {secao.title}
+            </h2>
+            <div className="mt-4 space-y-4">
+              {secao.paragraphs.map((paragrafo) => (
+                <p key={paragrafo} className="text-base leading-relaxed text-[var(--color-ink)]/75">
+                  {paragrafo}
+                </p>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ))}
+
+      {brand.modelos && (
+        <FeatureGrid
+          title={brand.modelos.title}
+          description={brand.modelos.intro}
+          columns={3}
+          items={brand.modelos.items.map((m) => ({
+            title: m.name,
+            description: m.description,
+            icon: <Motorcycle />,
+          }))}
+        />
+      )}
 
       <section className="section-muted">
         <FeatureGrid title="Diferenciais do consórcio de moto" columns={4} items={diferenciais} />
