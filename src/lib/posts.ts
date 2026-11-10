@@ -4869,10 +4869,11 @@ export const posts: Post[] = [
   },
   {
     slug: "seguro-funeral-familiar",
-    title: "Seguro funeral familiar: como funciona, o que cobre e quanto custa",
+    title: "Seguro funeral familiar: como funciona e preço",
     description:
       "Entenda como funciona o seguro funeral familiar: o que cobre, quem pode ser incluído, faixas de preço e como acionar a assistência em caso de falecimento.",
     date: "2026-09-17",
+    updated: "2026-11-10",
     category: "Amparo Funeral",
     coverImage: {
       src: "/images/blog/seguro-funeral-familiar-capa.jpg",
@@ -5736,11 +5737,12 @@ export const posts: Post[] = [
   },
   {
     slug: "seguro-celular-vale-a-pena-o-que-cobre",
-    title: "Seguro celular: vale a pena e o que cobre",
+    title: "Seguro celular cobre roubo e furto? Veja o que cobre",
     description:
       "Entenda o que o seguro celular cobre, quanto costuma custar e quando vale a pena contratar proteção contra roubo, furto e quebra de tela.",
     category: "Seguros",
     date: "2026-09-25",
+    updated: "2026-11-10",
     coverImage: {
       src: "/images/blog/seguro-celular-vale-a-pena-capa.jpg",
       alt: "Pessoa segurando um smartphone com a tela protegida, representando a contratação de um seguro celular",
@@ -5748,6 +5750,10 @@ export const posts: Post[] = [
       height: 630,
     },
     content: [
+      {
+        type: "p",
+        text: "Sim, o seguro celular costuma cobrir roubo e furto qualificado, e o furto simples costuma ficar de fora. A cobertura exata depende da apólice contratada, por isso confira se ela inclui roubo, furto qualificado, quebra de tela e danos por líquido antes de contratar.",
+      },
       {
         type: "p",
         text: "O seguro celular vale a pena principalmente para aparelhos de valor mais alto, em regiões com maior incidência de roubo e furto, ou para quem já teve o celular roubado, furtado ou quebrado antes. Ele funciona como uma apólice que protege o aparelho contra essas situações mediante o pagamento de um prêmio mensal ou anual — bem mais barato que o custo de repor um smartphone novo à vista, especialmente nos modelos mais caros do mercado.",
