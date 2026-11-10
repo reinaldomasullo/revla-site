@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
-import { motoBrands, getMotoBrand } from "@/lib/moto-brands";
+import { motoBrands, getMotoBrand, type FaqGenericaKey } from "@/lib/moto-brands";
 import { PercentOff, CalendarDown, HandCoin, Headset, Motorcycle } from "@/components/icons";
 
 export function generateStaticParams() {
@@ -69,54 +69,63 @@ export default async function MotoBrandPage({
   const WHATSAPP_MESSAGE = `Olá! Vim pelo site e gostaria de simular um consórcio de moto ${brand.name}.`;
   const CTA_LABEL = `Simular consórcio ${brand.name}`;
 
-  const faqItems = [
-    brand.faqEspecifica,
-    ...(brand.faqsExtras ?? []),
+  const faqsGenericas: { key: FaqGenericaKey; question: string; answer: string }[] = [
     {
+      key: "juros",
       question: "Consórcio de moto tem juros?",
       answer:
         "Não. No consórcio você paga apenas a taxa de administração da administradora, sem incidência de juros como ocorre em um financiamento.",
     },
     {
+      key: "contemplacao",
       question: "Como funciona a contemplação?",
       answer:
         "A contemplação ocorre por sorteio mensal entre os participantes do grupo, ou por lance — quando você oferece antecipar parte do saldo devedor para aumentar suas chances.",
     },
     {
+      key: "valorMinimo",
       question: "Qual o valor mínimo de uma carta de consórcio de moto?",
       answer:
         "Varia conforme o grupo e a administradora — fale com um consultor da Revla para uma simulação com valores atualizados para o modelo que você quer.",
     },
     {
-      question: "A Revla é uma administradora de consórcio?",
-      answer:
-        "Não. A Revla é uma corretora parceira que pesquisa entre administradoras autorizadas pelo Banco Central, incluindo Ademicon, Porto Seguro e Rodobens, para encontrar o grupo mais vantajoso para você.",
-    },
-    {
+      key: "administradorasMarca",
       question: `Com quais administradoras de consórcio de moto ${brand.name} a Revla trabalha?`,
       answer:
-        "A Revla é homologada em três administradoras de consórcio: Ademicon, Porto Seguro e Rodobens. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pra sua moto.",
+        "A Revla trabalha com administradoras de consórcio autorizadas pelo Banco Central. Comparamos as opções entre elas — taxa de administração, prazo e histórico de lances do grupo — para indicar a que faz mais sentido pra sua moto.",
     },
     {
+      key: "susep",
       question: "A Revla tem registro na SUSEP?",
       answer:
         `Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº ${siteConfig.susep}, órgão federal que regula e fiscaliza a atividade de corretagem no Brasil.`,
     },
     {
+      key: "obrigado",
       question: "Depois de contemplado, sou obrigado a comprar logo?",
       answer:
         "Não há prazo de validade para usar a carta de crédito depois da contemplação — você pode aguardar o momento certo para escolher o modelo e a concessionária.",
     },
     {
+      key: "cidades",
       question: `A Revla atende consórcio de moto ${brand.name} em quais cidades?`,
       answer:
         "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com o mesmo acompanhamento consultivo até a contemplação.",
     },
     {
+      key: "pertoDeMim",
       question: `Tem consórcio de moto ${brand.name} perto de mim?`,
       answer:
         "Se você está em São Paulo, sim — nosso escritório fica na Avenida Paulista, com atendimento presencial na capital. Se estiver em outra cidade, atendemos do mesmo jeito consultivo pelo telefone e WhatsApp, sem você precisar se deslocar até um escritório físico.",
     },
+  ];
+
+  const faqItems = [
+    brand.faqEspecifica,
+    ...(brand.faqsExtras ?? []),
+    ...faqsGenericas
+      .filter((f) => !brand.faqGenericas || brand.faqGenericas.includes(f.key))
+      .map(({ question, answer }) => ({ question, answer })),
   ];
 
   const serviceSchema = {
@@ -142,7 +151,7 @@ export default async function MotoBrandPage({
         ]}
       />
       <Hero
-        eyebrow={`Consórcio de Moto ${brand.name} · Administradoras Parceiras da Revla`}
+        eyebrow={brand.eyebrow ?? `Consórcio de Moto ${brand.name} · Administradoras Parceiras da Revla`}
         title={brand.h1 ?? `Consórcio de moto ${brand.name}: carta de crédito sem juros`}
         description={
           brand.heroDescription ??
@@ -158,16 +167,26 @@ export default async function MotoBrandPage({
       <section className="py-10 sm:py-12">
         <Container className="max-w-3xl">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
-            Consórcio para {brand.name}: como funciona
+            {brand.comoFuncionaTitulo ?? `Consórcio para ${brand.name}: como funciona`}
           </h2>
           <div className="mt-4 space-y-4">
-            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{brand.posicionamento}</p>
-            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
-              A Revla é homologada em três administradoras de consórcio — Ademicon, Porto Seguro e Rodobens — e
-              compara as opções entre elas para te apresentar o grupo mais vantajoso, com o prazo e a parcela que
-              cabem no seu orçamento. A carta de crédito, depois de contemplada, pode ser usada em qualquer
-              concessionária {brand.name} autorizada.
-            </p>
+            {brand.comoFuncionaParagrafos ? (
+              brand.comoFuncionaParagrafos.map((paragrafo) => (
+                <p key={paragrafo} className="text-base leading-relaxed text-[var(--color-ink)]/75">
+                  {paragrafo}
+                </p>
+              ))
+            ) : (
+              <>
+                <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{brand.posicionamento}</p>
+                <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
+                  A Revla trabalha com administradoras de consórcio autorizadas pelo Banco Central e
+                  compara as opções entre elas para te apresentar o grupo mais vantajoso, com o prazo e a parcela que
+                  cabem no seu orçamento. A carta de crédito, depois de contemplada, pode ser usada em qualquer
+                  concessionária {brand.name} autorizada.
+                </p>
+              </>
+            )}
           </div>
         </Container>
       </section>
@@ -193,7 +212,7 @@ export default async function MotoBrandPage({
         <FeatureGrid
           title={brand.modelos.title}
           description={brand.modelos.intro}
-          columns={3}
+          columns={brand.modelos.columns ?? 3}
           items={brand.modelos.items.map((m) => ({
             title: m.name,
             description: m.description,
@@ -202,15 +221,17 @@ export default async function MotoBrandPage({
         />
       )}
 
-      <section className="section-muted">
-        <FeatureGrid title="Diferenciais do consórcio de moto" columns={4} items={diferenciais} />
-      </section>
+      {!brand.ocultarDiferenciais && (
+        <section className="section-muted">
+          <FeatureGrid title="Diferenciais do consórcio de moto" columns={4} items={diferenciais} />
+        </section>
+      )}
 
       <FAQ items={faqItems} />
 
       <CTASection
-        title={`Simule seu consórcio de moto ${brand.name}`}
-        description="Fale com um consultor da Revla e receba uma simulação gratuita e sem compromisso."
+        title={brand.ctaTitulo ?? `Simule seu consórcio de moto ${brand.name}`}
+        description={brand.ctaDescricao ?? "Fale com um consultor da Revla e receba uma simulação gratuita e sem compromisso."}
         whatsappMessage={WHATSAPP_MESSAGE}
         buttonLabel={CTA_LABEL}
       />
