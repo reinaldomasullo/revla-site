@@ -67,7 +67,7 @@ const products = [
   {
     title: "Plano de Saúde",
     description:
-      "Planos de saúde individuais, familiares e empresariais com a Prevent Senior, com rede própria e cobertura em São Paulo e região.",
+      "Planos de saúde individuais, familiares e empresariais das principais operadoras — Prevent Senior, Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior —, com cotação comparada pela Revla.",
     href: "/plano-de-saude",
     accent: "var(--color-blue-gradient)",
   },
@@ -238,11 +238,21 @@ const solucoesPasi = [
   },
 ];
 
+const operadorasSaudeHome = [
+  { label: "Prevent Senior", href: "/plano-de-saude" },
+  { label: "Amil", href: "/plano-de-saude/amil" },
+  { label: "Bradesco Saúde", href: "/plano-de-saude/bradesco-saude" },
+  { label: "SulAmérica", href: "/plano-de-saude/sulamerica" },
+  { label: "Hapvida", href: "/plano-de-saude/hapvida" },
+  { label: "NotreDame Intermédica", href: "/plano-de-saude/notredame" },
+  { label: "MedSênior", href: "/plano-de-saude/medsenior" },
+];
+
 const faqItems = [
   {
     question: "A Revla é uma seguradora ou uma corretora?",
     answer:
-      "A Revla é uma corretora de seguros registrada na SUSEP. Comparamos opções entre seguradoras e administradoras parceiras — como Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Prevent Senior — para encontrar a que melhor atende cada cliente, sem custo pela consultoria.",
+      "A Revla é uma corretora de seguros registrada na SUSEP. Comparamos opções entre seguradoras e administradoras parceiras — como Ademicon, Porto Seguro, Icatu, MAG Mongeral, AZOS, PASI, Tokio Marine e Prevent Senior — e cotamos planos de saúde de operadoras como Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame Intermédica e MedSênior, para encontrar a que melhor atende cada cliente, sem custo pela consultoria.",
   },
   {
     question: "Quanto custa falar com um consultor da Revla?",
@@ -252,7 +262,7 @@ const faqItems = [
   {
     question: "A Revla atende em quais regiões?",
     answer:
-      "Nosso escritório fica na Avenida Paulista, em São Paulo, e atendemos clientes de todo o Brasil por telefone, WhatsApp e videochamada. Alguns produtos, como os planos de saúde Prevent Senior, têm cobertura regional — fale com um consultor para confirmar a disponibilidade na sua cidade.",
+      "Nosso escritório fica na Avenida Paulista, em São Paulo, e atendemos clientes de todo o Brasil por telefone, WhatsApp e videochamada. Alguns produtos, como os planos de saúde, têm cobertura regional — fale com um consultor para confirmar a disponibilidade na sua cidade.",
   },
   {
     question: "Quais produtos a Revla oferece?",
@@ -612,14 +622,36 @@ export default function HomePage() {
       <section className="bg-[var(--color-primary)] py-6 sm:py-8" aria-label="Seguradoras parceiras">
         <Container>
           <p className="text-center text-xs font-semibold uppercase tracking-wide text-white/60">
-            Seguradoras e administradoras parceiras
+            Seguradoras, administradoras e operadoras de saúde
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-            {siteConfig.partners.map((partner) => (
-              <span key={partner} className="text-sm font-medium text-white/85">
-                {partner}
-              </span>
-            ))}
+            {siteConfig.partners.map((partner) => {
+              const operadora = operadorasSaudeHome.find((o) => o.label === partner);
+              return operadora ? (
+                <Link
+                  key={partner}
+                  href={operadora.href}
+                  className="text-sm font-medium text-white/85 hover:text-white hover:underline"
+                >
+                  {partner}
+                </Link>
+              ) : (
+                <span key={partner} className="text-sm font-medium text-white/85">
+                  {partner}
+                </span>
+              );
+            })}
+            {operadorasSaudeHome
+              .filter((o) => !siteConfig.partners.includes(o.label))
+              .map((o) => (
+                <Link
+                  key={o.href}
+                  href={o.href}
+                  className="text-sm font-medium text-white/85 hover:text-white hover:underline"
+                >
+                  {o.label}
+                </Link>
+              ))}
           </div>
         </Container>
       </section>
@@ -628,17 +660,18 @@ export default function HomePage() {
       <ProductTeaser
         id="plano-de-saude"
         eyebrow="Plano de Saúde"
-        title="Plano de saúde Prevent Senior, com rede própria em São Paulo"
-        description="Trabalhamos com os planos de saúde da Prevent Senior, individuais, familiares e empresariais, com rede própria e parceria com a Sancta Maggiore. Cobertura ambulatorial e hospitalar, com carência reduzida para doenças preexistentes — proteger a vida é também proteger o patrimônio da família contra despesas médicas inesperadas."
+        title="Plano de saúde das principais operadoras, comparado para você"
+        description="A Revla cota e contrata planos de saúde individuais, familiares, por adesão e empresariais de várias operadoras e compara as opções para a sua idade, cidade e orçamento. A Prevent Senior tem página própria, com os planos 1025 e MA+S, tabela de preços e rede de hospitais; as demais operadoras têm cotação comparada."
         highlights={[
-          "Rede própria Prevent Senior + Sancta Maggiore",
-          "Cobertura em São Paulo, ABC, Baixada Santista e região",
-          "Carência de 180 dias para doenças preexistentes",
-          "Teleconsulta incluída no plano",
+          "Prevent Senior: planos 1025 e MA+S, com unidades próprias em São Paulo e no Rio de Janeiro",
+          "Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior",
+          "Planos individuais, familiares, por adesão e empresariais (PJ e MEI)",
+          "Carência reduzida para doenças preexistentes em novas adesões da Prevent Senior",
         ]}
-        note="Valores a partir de R$ 759,84/mês (referência, sujeito a faixa etária e atualização mensal) — fale com um consultor para a tabela vigente."
-        ctaHref="/plano-de-saude"
-        ctaLabel="Saiba mais sobre plano de saúde"
+        note="Prevent Senior a partir de R$ 798,67/mês (plano 1025, referência, sujeito a faixa etária e atualização) — fale com um consultor para a tabela vigente."
+        links={operadorasSaudeHome}
+        ctaHref="/plano-de-saude/operadoras"
+        ctaLabel="Ver todas as operadoras"
         whatsappMessage="Olá! Vim pelo site e gostaria de falar com um consultor da Revla."
         tint="blue"
       />

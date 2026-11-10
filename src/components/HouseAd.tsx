@@ -42,11 +42,11 @@ export const HOUSE_AD_PRODUCTS: Record<string, HouseAdProduct> = {
   },
   "plano-de-saude": {
     eyebrow: "Plano de Saúde Revla",
-    title: "Plano de saúde com a Prevent Senior",
+    title: "Plano de saúde: compare operadoras com a Revla",
     description:
-      "Planos individuais e para a melhor idade, com rede credenciada e atendimento consultivo da Revla.",
+      "Prevent Senior, Amil, Bradesco Saúde, SulAmérica, Hapvida, NotreDame e MedSênior, com cotação comparada e atendimento consultivo da Revla.",
     ctaLabel: "Ver planos de saúde",
-    href: "/plano-de-saude",
+    href: "/plano-de-saude/operadoras",
   },
   "amparo-funeral": {
     eyebrow: "Plano Funerário Revla",

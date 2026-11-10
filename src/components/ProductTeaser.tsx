@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "./Container";
 import CTAButton from "./CTAButton";
 import { whatsappLink } from "@/lib/site-config";
@@ -9,6 +10,7 @@ export default function ProductTeaser({
   description,
   highlights,
   note,
+  links,
   ctaHref,
   ctaLabel = "Saiba mais",
   whatsappMessage,
@@ -22,6 +24,8 @@ export default function ProductTeaser({
   description: string;
   highlights: string[];
   note?: string;
+  /** Links extras (ex.: uma página por operadora), exibidos abaixo da descrição. */
+  links?: { label: string; href: string }[];
   ctaHref: string;
   ctaLabel?: string;
   whatsappMessage: string;
@@ -64,6 +68,19 @@ export default function ProductTeaser({
             <p className="mt-4 text-base leading-relaxed text-[var(--color-ink)]/75">
               {description}
             </p>
+            {links && links.length > 0 && (
+              <p className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
+                {links.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="font-semibold text-[var(--color-primary)] underline decoration-[var(--color-primary)]/30 underline-offset-2 hover:decoration-[var(--color-primary)]"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </p>
+            )}
             <div className="mt-7 flex flex-wrap gap-3">
               <CTAButton
                 href={whatsappLink(whatsappMessage)}
