@@ -93,30 +93,16 @@ export default async function SeguroProdutoPage({
 
   const faqItems = [
     ...p.faqEspecifica,
+    p.faqPreco,
     {
       question: `A Revla atende ${p.nome.toLowerCase()} em quais cidades?`,
       answer:
         "Nosso escritório fica na Avenida Paulista, em São Paulo, com atendimento presencial na capital. Também atendemos por telefone e WhatsApp em todo o Brasil, com a mesma consultoria completa.",
     },
     {
-      question: `Tem ${p.nome.toLowerCase()} perto de mim?`,
-      answer:
-        "Se você está em São Paulo, sim — nosso escritório fica na Avenida Paulista, com atendimento presencial na capital. Se estiver em outra cidade, atendemos do mesmo jeito consultivo pelo telefone e WhatsApp, sem você precisar se deslocar até um escritório físico.",
-    },
-    {
-      question: "Como funciona a contratação com a Revla?",
-      answer:
-        "Você fala com um consultor da Revla, que compara as opções entre seguradoras parceiras e monta uma simulação gratuita e sem compromisso, ajustada ao seu perfil e orçamento.",
-    },
-    {
       question: "A Revla é uma corretora regulamentada?",
       answer:
         "Sim. A Revla Corretora de Seguros é registrada na SUSEP (Superintendência de Seguros Privados) sob o nº 232150320, órgão federal que regula e fiscaliza a atividade de corretagem de seguros no Brasil.",
-    },
-    {
-      question: `Quanto custa contratar ${p.nome.toLowerCase()}?`,
-      answer:
-        "O valor depende do perfil, da cobertura escolhida e da seguradora. Fazemos uma simulação gratuita comparando opções entre parceiros para encontrar o melhor custo-benefício.",
     },
   ];
 
@@ -155,10 +141,6 @@ export default async function SeguroProdutoPage({
           <div className="mt-4 space-y-4">
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{p.introParagrafo}</p>
             <p className="text-base leading-relaxed text-[var(--color-ink)]/75">{p.seguradorasTexto}</p>
-            <p className="text-base leading-relaxed text-[var(--color-ink)]/75">
-              Cotamos em até 18 seguradoras, dependendo do produto, para comparar cobertura e preço e te mostrar a
-              opção com melhor custo-benefício — sem nenhum custo pela cotação.
-            </p>
           </div>
         </Container>
       </section>
@@ -166,6 +148,23 @@ export default async function SeguroProdutoPage({
       <section className="section-muted">
         <FeatureGrid title="O que o seguro cobre" columns={3} items={coberturaItems} />
       </section>
+
+      {p.secoes.map((secao, i) => (
+        <section key={secao.title} className={i % 2 === 0 ? "section-muted py-10 sm:py-12" : "py-10 sm:py-12"}>
+          <Container className="max-w-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-[var(--color-primary)] sm:text-3xl">
+              {secao.title}
+            </h2>
+            <div className="mt-4 space-y-4">
+              {secao.paragrafos.map((texto) => (
+                <p key={texto} className="text-base leading-relaxed text-[var(--color-ink)]/75">
+                  {texto}
+                </p>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ))}
 
       {p.testemunho && (
         <Testimonials
@@ -179,7 +178,7 @@ export default async function SeguroProdutoPage({
 
       <CTASection
         title={`Simule seu ${p.nome.toLowerCase()} agora`}
-        description="Fale com um consultor da Revla e receba uma comparação gratuita entre seguradoras."
+        description={`Fale com um consultor da Revla e receba a simulação do ${p.nome.toLowerCase()} comparada entre seguradoras.`}
         whatsappMessage={WHATSAPP_MESSAGE}
         buttonLabel={CTA_LABEL}
       />

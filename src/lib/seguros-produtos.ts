@@ -63,6 +63,10 @@ export type SeguroProduto = {
   /** Menção às seguradoras parceiras, respeitando a regra de marca do produto. */
   seguradorasTexto: string;
   coberturas: { title: string; description: string; icon: CoberturaIcon }[];
+  /** Seções de conteúdo próprio (exclusões, como acionar, documentos etc.) — nunca reaproveitadas entre produtos. */
+  secoes: { title: string; paragrafos: string[] }[];
+  /** Pergunta de preço própria do produto (fatores que pesam no valor). */
+  faqPreco: { question: string; answer: string };
   /** Perguntas específicas deste produto, além das genéricas compartilhadas. */
   faqEspecifica: { question: string; answer: string }[];
   /** Opcional — só preenchido quando um depoimento real já aprovado fala
@@ -82,7 +86,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura contra incêndio, roubo, danos elétricos e desastres naturais, com simulação gratuita e sem compromisso.",
     introParagrafo:
-      "O seguro residencial protege sua casa ou apartamento contra imprevistos como incêndio, roubo e danos elétricos — seja você proprietário ou inquilino. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura com melhor custo-benefício pro seu imóvel.",
+      "O seguro residencial protege sua casa ou apartamento contra imprevistos como incêndio, roubo e danos elétricos — seja você proprietário ou inquilino. Na simulação, a Revla ajusta o valor do imóvel, o dos bens e as coberturas ao seu caso, seja casa ou apartamento, próprio ou alugado.",
     seguradorasTexto:
       "Cotamos seguro residencial com as principais seguradoras do mercado — Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, entre outras — comparando cobertura e preço pra encontrar a opção com melhor custo-benefício pro seu imóvel.",
     coberturas: [
@@ -103,6 +107,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Wrench",
       },
     ],
+    secoes: [
+      { title: "O que costuma ficar de fora do seguro residencial", paragrafos: ["Toda apólice traz uma lista de exclusões, e vale lê-la antes de contratar. No seguro residencial, costumam ficar de fora o desgaste natural, a falta de manutenção (uma infiltração antiga que nunca foi consertada, por exemplo) e os danos causados de propósito por quem mora no imóvel.", "O furto simples, sem arrombamento ou outro vestígio de invasão, também costuma não ser coberto: a cobertura de furto normalmente exige o chamado furto qualificado. Objetos de grande valor, como joias e obras de arte, em geral precisam ser declarados à parte. As regras exatas dependem da seguradora e do contrato."] },
+      { title: "Como acionar o seguro residencial depois de um sinistro", paragrafos: ["Avise a seguradora assim que possível, pelo canal indicado na apólice, e preserve o local e os objetos danificados até a vistoria. Fotografe tudo antes de qualquer reparo e guarde notas fiscais e orçamentos.", "Em caso de roubo ou arrombamento, o boletim de ocorrência costuma ser exigido. A Revla acompanha o processo com você, desde o aviso até a resposta da seguradora."] },
+    ],
+    faqPreco: { question: "De que depende o preço do seguro residencial?", answer: "O preço varia com o valor do imóvel e o dos bens que você quer proteger, o tipo de moradia (casa ou apartamento), a região, as coberturas escolhidas e a franquia, quando houver. Dizer o valor certo dos bens importa: segurar por menos do que vale pode reduzir a indenização no sinistro. A Revla faz a simulação e compara as propostas sem custo." },
     faqEspecifica: [
       {
         question: "O seguro residencial cobre imóvel alugado?",
@@ -132,7 +141,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura para roubo, furto qualificado e quebra acidental de tela, válida em qualquer lugar do Brasil.",
     introParagrafo:
-      "O seguro celular protege seu aparelho contra roubo, furto e quebra acidental — situações que costumam pegar a maioria das pessoas de surpresa e sem previsão no orçamento. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura ideal pro seu modelo.",
+      "O seguro celular protege seu aparelho contra roubo, furto e quebra acidental — situações que costumam pegar a maioria das pessoas de surpresa e sem previsão no orçamento. A simulação considera o modelo, o valor e a idade do aparelho para chegar a uma cobertura que faça sentido.",
     seguradorasTexto:
       "Cotamos seguro celular com as principais seguradoras do mercado, como a Porto Seguro, entre outras, buscando a cobertura com melhor custo-benefício pro seu aparelho.",
     coberturas: [
@@ -152,6 +161,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Globe",
       },
     ],
+    secoes: [
+      { title: "O que o seguro celular normalmente não cobre", paragrafos: ["Perda ou esquecimento do aparelho, defeitos de fabricação (que ficam com a garantia do fabricante) e danos por mau uso, como molhar o celular em situação não prevista, costumam ficar fora. O furto simples, quando o aparelho some sem violência e sem vestígio, também costuma não ser coberto, e é a dúvida mais comum de quem contrata.", "A franquia, o prazo de contratação em relação à data de compra do aparelho e as exclusões variam por seguradora. Por isso conferimos essas regras na simulação e não só o preço."] },
+      { title: "O que fazer em caso de roubo ou quebra", paragrafos: ["Em caso de roubo, registre o boletim de ocorrência e peça à operadora o bloqueio da linha e do aparelho. Depois, acione a seguradora com os documentos que ela pedir, normalmente a nota fiscal ou outro comprovante do aparelho e o próprio boletim.", "Na quebra de tela, a seguradora indica o conserto ou a indenização conforme a apólice. Evite mandar o aparelho para uma assistência não autorizada antes de avisá-la."] },
+    ],
+    faqPreco: { question: "Quanto custa um seguro celular?", answer: "O valor depende principalmente do modelo e do preço do aparelho, da idade dele e das coberturas escolhidas, como roubo, furto qualificado e quebra de tela. Aparelhos mais caros costumam ter prêmio maior. A Revla simula o seu modelo e compara as opções entre seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro celular cobre tela quebrada?",
@@ -176,7 +190,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura contra colisão, roubo, furto e responsabilidade civil a terceiros, com assistência 24 horas.",
     introParagrafo:
-      "O seguro de moto cobre colisão, roubo, furto e responsabilidade civil a terceiros, além de assistência 24 horas — essencial pra quem usa a moto no dia a dia ou como meio de trabalho. A Revla compara as opções entre seguradoras especializadas nesse ramo.",
+      "O seguro de moto cobre colisão, roubo, furto e responsabilidade civil a terceiros, além de assistência 24 horas — essencial pra quem usa a moto no dia a dia ou como meio de trabalho. A simulação leva em conta o modelo, a cilindrada, o uso e a cidade onde a moto passa a noite.",
     seguradorasTexto:
       "Cotamos seguro de moto com seguradoras especializadas nesse ramo, como a Suhai e a Porto Seguro, comparando cobertura e preço conforme o modelo e o uso da sua moto.",
     coberturas: [
@@ -196,6 +210,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Truck",
       },
     ],
+    secoes: [
+      { title: "Situações em que o seguro de moto pode ser negado", paragrafos: ["As apólices costumam excluir sinistros em que o condutor estava sem habilitação válida para a categoria, dirigia sob efeito de álcool ou de outras substâncias, ou usava a moto de forma diferente da declarada, como entrega por aplicativo informada como uso pessoal. Corridas, manobras e trilhas também costumam ficar de fora.", "Declarar o uso real da moto na contratação evita surpresa na hora de acionar o seguro. As regras exatas variam por seguradora e estão na apólice."] },
+      { title: "Como acionar o seguro após roubo, furto ou colisão", paragrafos: ["Em roubo ou furto, registre o boletim de ocorrência e avise a seguradora o quanto antes. Em colisão, use a assistência 24 horas para o guincho e, se houver terceiros envolvidos, troque dados e registre a ocorrência.", "Evite mandar a moto para conserto antes da vistoria ou da autorização da seguradora."] },
+    ],
+    faqPreco: { question: "De que depende o preço do seguro de moto?", answer: "Pesam o modelo e a cilindrada, o valor de mercado da moto, a cidade e o local onde ela dorme (garagem ou rua), a idade e o histórico do condutor, o uso (pessoal ou trabalho) e as coberturas escolhidas. A Revla simula com os seus dados e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "Moto zero km paga mais caro no seguro?",
@@ -220,7 +239,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Aprovação mais rápida pro inquilino, sem precisar apresentar fiador ou pagar caução em dinheiro.",
     introParagrafo:
-      "O seguro fiança é a alternativa mais usada hoje pra quem não tem um fiador ou não quer imobilizar dinheiro em caução — a seguradora garante o contrato de locação perante o proprietário do imóvel. A Revla compara as opções entre seguradoras parceiras pra agilizar sua aprovação.",
+      "O seguro fiança é a alternativa mais usada hoje pra quem não tem um fiador ou não quer imobilizar dinheiro em caução — a seguradora garante o contrato de locação perante o proprietário do imóvel. A Revla faz a simulação e acompanha a análise cadastral do inquilino na seguradora.",
     seguradorasTexto:
       "Cotamos seguro fiança com seguradoras especializadas em locação, como a Junto e a Porto Seguro, comparando as condições pra aprovar seu contrato de aluguel mais rápido.",
     coberturas: [
@@ -241,6 +260,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Wrench",
       },
     ],
+    secoes: [
+      { title: "Como é a aprovação do seguro fiança", paragrafos: ["A seguradora faz uma análise cadastral do inquilino, normalmente com base em renda e histórico de crédito, e define se aprova o contrato e em quais condições. Os documentos pedidos variam, mas costumam incluir identidade, comprovante de renda e dados do imóvel e do locador.", "A imobiliária ou o proprietário precisa aceitar o seguro fiança como garantia do contrato. Vale confirmar isso antes de fechar o aluguel."] },
+      { title: "Prazo, renovação e vistoria do imóvel", paragrafos: ["O seguro fiança costuma ser contratado por prazo definido e renovado junto com o contrato de locação. Confira na apólice as condições de renovação e de reajuste.", "A garantia também não substitui a vistoria de entrada e de saída do imóvel: ela segue sendo o registro do estado em que o imóvel foi entregue e devolvido."] },
+    ],
+    faqPreco: { question: "Quanto custa o seguro fiança?", answer: "O custo costuma ser calculado sobre o valor do aluguel e dos encargos previstos no contrato, e varia conforme o perfil do inquilino, o prazo e a seguradora. Cada uma tem as suas regras de cobrança e de parcelamento. A Revla simula com o valor do seu aluguel e compara as condições, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro fiança substitui o fiador de verdade?",
@@ -265,7 +289,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura para patrimônio, faturamento e responsabilidade civil das operações da sua empresa.",
     introParagrafo:
-      "O seguro empresarial protege o patrimônio, o faturamento e a operação do seu negócio contra imprevistos como incêndio, roubo e paralisação das atividades. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura certa pro porte da sua empresa.",
+      "O seguro empresarial protege o patrimônio, o faturamento e a operação do seu negócio contra imprevistos como incêndio, roubo e paralisação das atividades. A simulação parte da atividade, do endereço e do valor do patrimônio da empresa.",
     seguradorasTexto:
       "Cotamos seguro empresarial com as principais seguradoras do mercado, como a Porto Seguro, entre outras, ajustando a cobertura ao porte e ao tipo de operação do seu negócio.",
     coberturas: [
@@ -285,6 +309,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Scale",
       },
     ],
+    secoes: [
+      { title: "Como definir os valores no seguro empresarial", paragrafos: ["O valor segurado do prédio, do estoque, das máquinas e dos móveis deve refletir o que custaria repor tudo. Segurar por menos do que o patrimônio vale pode reduzir a indenização em caso de sinistro, porque a seguradora pode aplicar rateio proporcional.", "As coberturas adicionais, como lucros cessantes, danos elétricos e responsabilidade civil, são escolhidas conforme os riscos da atividade. Uma loja, um escritório e uma oficina têm exposições diferentes."] },
+      { title: "O que costuma ficar de fora e como acionar", paragrafos: ["Desgaste, falta de manutenção, atividades não declaradas e riscos que não foram contratados costumam não ser cobertos. Informar corretamente a atividade e o endereço na contratação evita problemas depois.", "Em um sinistro, avise a seguradora o quanto antes, preserve o local, fotografe os danos e guarde notas fiscais do patrimônio. A Revla acompanha o processo junto com você."] },
+    ],
+    faqPreco: { question: "O que define o preço do seguro empresarial?", answer: "O preço depende da atividade da empresa, do endereço e do tipo de construção, do valor do patrimônio a segurar, das coberturas escolhidas e do histórico de sinistros. Negócios com maior risco de incêndio ou de furto tendem a pagar mais. A Revla simula com os dados da sua empresa e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro empresarial cobre perda de faturamento?",
@@ -309,7 +338,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Alternativa à caução em dinheiro ou carta fiança bancária, pra obrigações judiciais, contratuais e de licitação.",
     introParagrafo:
-      "O seguro garantia substitui a caução em dinheiro ou a carta fiança bancária em contratos, licitações e processos judiciais — liberando capital que, de outra forma, ficaria imobilizado como garantia. A Revla trabalha com seguradora especializada nesse ramo pra cada modalidade.",
+      "O seguro garantia substitui a caução em dinheiro ou a carta fiança bancária em contratos, licitações e processos judiciais — liberando capital que, de outra forma, ficaria imobilizado como garantia. A Revla acompanha a modalidade, o valor e o prazo exigidos no contrato, na licitação ou no processo.",
     seguradorasTexto:
       "Trabalhamos com a Junto, seguradora especializada em seguro garantia, comparando as condições pra cada modalidade — judicial, contratual ou de licitação — conforme a sua necessidade.",
     coberturas: [
@@ -330,6 +359,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "LockDocument",
       },
     ],
+    secoes: [
+      { title: "Quem participa de um seguro garantia", paragrafos: ["No seguro garantia há três partes: o tomador, que é a empresa ou pessoa obrigada a cumprir o contrato ou a obrigação; o segurado, que é quem recebe a garantia, como o órgão público ou o contratante; e a seguradora, que paga a indenização se o tomador não cumprir o que prometeu.", "A seguradora analisa o pedido antes de emitir a apólice, e os critérios variam por seguradora."] },
+      { title: "Prazo, valor e documentos", paragrafos: ["O valor da garantia e o prazo de vigência normalmente vêm do edital, do contrato ou da decisão judicial, e a apólice precisa atender exatamente a essas exigências. Em licitações, o texto do edital define quais modalidades são aceitas.", "Os documentos pedidos costumam incluir dados cadastrais e financeiros da empresa e cópia do contrato ou do edital. A Revla orienta a montagem do pedido para evitar recusa por detalhe de forma."] },
+    ],
+    faqPreco: { question: "Como é calculado o custo do seguro garantia?", answer: "O custo costuma ser um percentual sobre o valor da garantia, aplicado pelo prazo de vigência, e varia conforme a modalidade, o perfil financeiro do tomador e a seguradora. Garantias maiores ou por prazos mais longos tendem a custar mais. A Revla simula conforme o seu edital ou contrato, sem custo." },
     faqEspecifica: [
       {
         question: "Qual a diferença entre seguro garantia e caução em dinheiro?",
@@ -354,7 +388,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura contra indenizações por erros técnicos cometidos no exercício da sua atividade profissional.",
     introParagrafo:
-      "O seguro de Responsabilidade Civil Profissional protege quem presta serviços contra indenizações por erros técnicos cometidos no exercício da atividade — comum entre advogados, engenheiros, médicos, contadores e outros profissionais liberais. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura certa pra sua profissão.",
+      "O seguro de Responsabilidade Civil Profissional protege quem presta serviços contra indenizações por erros técnicos cometidos no exercício da atividade — comum entre advogados, engenheiros, médicos, contadores e outros profissionais liberais. A simulação parte da profissão, do faturamento e do limite de indenização que você quer contratar.",
     // Regra de arquitetura fechada: RC Profissional usa Porto Seguro, mas
     // sem citar o nome dela no conteúdo — linguagem só genérica.
     seguradorasTexto:
@@ -376,6 +410,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "DocumentCheck",
       },
     ],
+    secoes: [
+      { title: "Como funciona o limite de indenização", paragrafos: ["O limite máximo de indenização é o teto que a seguradora paga por reclamação ou durante a vigência, conforme a apólice. Quanto maior o risco da atividade e maior o prejuízo que um erro pode causar, mais alto costuma ser o limite recomendado.", "Também vale conferir a franquia e se as despesas de defesa entram dentro do limite ou além dele. Essas regras mudam de uma seguradora para outra."] },
+      { title: "O que costuma ficar de fora e o que fazer ao receber uma reclamação", paragrafos: ["Atos dolosos (feitos de propósito), atividades fora da profissão declarada e multas costumam não ser cobertos. Declare corretamente a atividade e o faturamento na contratação.", "Ao receber uma notificação, uma reclamação ou um processo, avise a seguradora dentro do prazo da apólice e evite assumir culpa ou fazer acordos sem consultá-la. A Revla acompanha você no aviso."] },
+    ],
+    faqPreco: { question: "De que depende o preço do seguro RC Profissional?", answer: "Pesam a profissão e a especialidade, o faturamento, o limite de indenização escolhido, a franquia e o histórico de reclamações. Atividades com maior risco de prejuízo a terceiros costumam ter prêmio maior. A Revla simula para a sua profissão e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "Quais profissões precisam de RC Profissional?",
@@ -400,7 +439,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura obrigatória por lei para incêndio e outros riscos que atinjam a estrutura e as áreas comuns.",
     introParagrafo:
-      "O seguro condominial é obrigatório por lei e protege a estrutura e as áreas comuns do prédio contra incêndio e outros riscos que causem destruição total ou parcial. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura certa pro porte do seu condomínio.",
+      "O seguro condominial é obrigatório por lei e protege a estrutura e as áreas comuns do prédio contra incêndio e outros riscos que causem destruição total ou parcial. A simulação parte do porte do prédio, do tipo de construção e das coberturas que o síndico precisa contratar.",
     // Mesma regra de arquitetura do RC Profissional: sem citar o nome da
     // seguradora no conteúdo.
     seguradorasTexto:
@@ -422,6 +461,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Wrench",
       },
     ],
+    secoes: [
+      { title: "O papel do síndico na contratação", paragrafos: ["A contratação do seguro do condomínio costuma ficar a cargo do síndico, que deve manter a apólice em dia e informar a seguradora sobre mudanças relevantes, como obras e ampliações. A assembleia pode decidir sobre coberturas além da básica.", "Atualizar o valor segurado da edificação evita que a indenização fique abaixo do custo de reconstrução. A Revla ajuda a organizar as informações do prédio para a simulação."] },
+      { title: "Coberturas adicionais e o que costuma ficar de fora", paragrafos: ["Além do incêndio, o condomínio pode contratar coberturas como danos elétricos, vendaval, responsabilidade civil e quebra de vidros. Cada uma deve ser avaliada conforme os riscos do prédio.", "Danos causados por falta de manutenção, obras sem autorização e bens dentro das unidades (que cada morador segura à parte) costumam ficar fora da apólice do condomínio."] },
+    ],
+    faqPreco: { question: "O que define o preço do seguro condominial?", answer: "O preço depende da área construída, da idade e do tipo de construção, do número de torres e de elevadores, da localização, das coberturas escolhidas e do histórico de sinistros. A Revla simula com os dados do seu prédio e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro condominial é obrigatório por lei?",
@@ -446,7 +490,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura contra roubo, furto e danos por colisão ou queda, incluindo bikes elétricas e acessórios.",
     introParagrafo:
-      "O seguro de bicicleta protege sua bike — comum ou elétrica — contra roubo, furto e danos por colisão ou queda, incluindo os acessórios instalados. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura ideal pro valor da sua bicicleta.",
+      "O seguro de bicicleta protege sua bike — comum ou elétrica — contra roubo, furto e danos por colisão ou queda, incluindo os acessórios instalados. A simulação considera o valor da bike, o uso e os acessórios que você quer incluir.",
     seguradorasTexto:
       "Cotamos seguro de bicicleta com seguradoras especializadas, como a Porto Seguro, comparando cobertura e preço conforme o valor e o uso da sua bike.",
     coberturas: [
@@ -466,6 +510,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Sparkle",
       },
     ],
+    secoes: [
+      { title: "O que o seguro de bicicleta costuma excluir", paragrafos: ["Desgaste de peças, como pneus, corrente e freios, e a falta de manutenção costumam ficar fora. O uso em competições e provas também pode ser excluído, a menos que a apólice preveja. O furto simples, sem vestígio de arrombamento do local onde a bike estava guardada, costuma não ser coberto.", "As regras variam por seguradora, inclusive sobre bikes deixadas na rua ou presas em bicicletários. Confira os requisitos de guarda antes de contratar."] },
+      { title: "Documentos e cuidados para a contratação e o sinistro", paragrafos: ["Guarde a nota fiscal, o número de série do quadro e fotos da bicicleta e dos acessórios. Esses dados ajudam a comprovar o valor e a identificar o bem em caso de roubo.", "Em roubo ou furto, o boletim de ocorrência é um dos documentos pedidos pela seguradora. Informe todos os acessórios na contratação para que entrem na cobertura."] },
+    ],
+    faqPreco: { question: "De que depende o preço do seguro de bicicleta?", answer: "O preço varia com o valor da bike e dos acessórios, o tipo (comum ou elétrica), o uso, a cidade e as coberturas escolhidas. Bicicletas mais caras costumam ter prêmio maior. A Revla simula com os dados da sua bike e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro de bicicleta cobre bike elétrica?",
@@ -495,7 +544,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura contra colisão, roubo, furto e responsabilidade civil a terceiros, com assistência 24 horas para o seu carro.",
     introParagrafo:
-      "O seguro auto protege seu carro contra colisão, roubo, furto e danos causados a terceiros, com assistência 24 horas em qualquer lugar do Brasil. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura com melhor custo-benefício pro seu perfil e pro seu carro.",
+      "O seguro auto protege seu carro contra colisão, roubo, furto e danos causados a terceiros, com assistência 24 horas em qualquer lugar do Brasil. A simulação leva em conta o modelo e o ano do carro, o CEP onde ele passa a noite e o seu histórico como condutor.",
     seguradorasTexto:
       "Cotamos seguro auto com as principais seguradoras do mercado — Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, entre outras —, comparando cobertura e franquia conforme o modelo do seu carro e o seu perfil de condutor.",
     coberturas: [
@@ -516,6 +565,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Truck",
       },
     ],
+    secoes: [
+      { title: "Como a franquia afeta o preço do seguro auto", paragrafos: ["A franquia é o valor que fica por sua conta em um sinistro de colisão. Em geral, escolher uma franquia maior reduz o prêmio e uma franquia menor o aumenta, então vale pensar no valor que você conseguiria pagar de uma vez em um imprevisto.", "O prêmio também muda com o modelo e o ano do carro, o CEP de pernoite, o perfil e o histórico do condutor principal e o uso do veículo. Comparar mais de uma proposta ajuda a equilibrar preço e cobertura."] },
+      { title: "O que costuma ficar de fora e como acionar o seguro", paragrafos: ["Sinistros com condutor sem habilitação válida ou sob efeito de álcool, uso do carro diferente do declarado e desgaste natural costumam não ser cobertos. As regras exatas estão na apólice.", "Depois de um acidente, acione a assistência 24 horas, registre o boletim de ocorrência quando houver terceiros, roubo ou furto, e avise a seguradora antes de mandar o carro para conserto. A Revla acompanha o processo."] },
+    ],
+    faqPreco: { question: "Por que o seguro auto custa tanto para uns e menos para outros?", answer: "Cada seguradora pondera de forma própria o modelo e o ano do veículo, o CEP de pernoite, a idade e o histórico do condutor, o uso e a franquia. Duas pessoas com o mesmo carro podem receber valores diferentes. A Revla compara as propostas e mostra a que melhor equilibra preço e cobertura, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro auto cobre carro usado como aplicativo?",
@@ -550,7 +604,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Cobertura para despesas médicas, bagagem extraviada e cancelamento de viagem, com assistência 24 horas em qualquer lugar do mundo.",
     introParagrafo:
-      "O seguro de viagem cobre despesas médicas e hospitalares, bagagem extraviada ou danificada e cancelamento ou interrupção da viagem — essencial pra quem viaja pro exterior (em vários países é até exigência de visto) ou dentro do Brasil. A Revla compara as opções entre seguradoras parceiras pra encontrar a cobertura certa pro seu roteiro.",
+      "O seguro de viagem cobre despesas médicas e hospitalares, bagagem extraviada ou danificada e cancelamento ou interrupção da viagem — essencial pra quem viaja pro exterior (em vários países é até exigência de visto) ou dentro do Brasil. A simulação parte do destino, da duração da viagem e da idade de quem viaja.",
     seguradorasTexto:
       "Cotamos seguro de viagem com seguradoras especializadas nesse ramo, como a Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, comparando cobertura de despesas médicas e valor da apólice conforme o destino e a duração da sua viagem.",
     coberturas: [
@@ -571,6 +625,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "Plane",
       },
     ],
+    secoes: [
+      { title: "Como escolher a cobertura do seguro de viagem", paragrafos: ["O destino, a duração da viagem, a idade dos viajantes e as atividades previstas ajudam a definir o limite de despesas médicas e as coberturas extras. Esportes de risco e a prática de atividades específicas costumam exigir uma cobertura à parte.", "Se o destino exigir seguro para visto, confira o valor mínimo de cobertura pedido por esse país antes de contratar."] },
+      { title: "Doenças preexistentes e como acionar a assistência", paragrafos: ["Doenças que você já tinha antes da viagem costumam ter restrições ou exclusões, e as regras variam por seguradora. Leia com atenção essa parte da apólice e informe condições de saúde quando solicitado.", "Em caso de necessidade, entre em contato com a central de assistência 24 horas antes de procurar um atendimento sempre que possível: ela orienta o local e define o que será pago direto pela seguradora. Guarde recibos e relatórios médicos para eventual reembolso."] },
+    ],
+    faqPreco: { question: "O que muda o preço do seguro de viagem?", answer: "O preço varia com o destino, o número de dias, a idade dos viajantes, o limite de despesas médicas e as coberturas extras escolhidas, como bagagem e cancelamento. Viagens mais longas e destinos com atendimento médico mais caro tendem a custar mais. A Revla simula o seu roteiro e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "O seguro de viagem é obrigatório pra viajar pro exterior?",
@@ -595,7 +654,7 @@ export const segurosProdutos: SeguroProduto[] = [
     heroDescription:
       "Indenização por morte, invalidez permanente por acidente e diária por incapacidade temporária, com capital segurado definido conforme sua necessidade.",
     introParagrafo:
-      "O seguro de vida garante uma indenização em dinheiro pra sua família em caso de morte ou invalidez permanente por acidente — e também pode incluir diária por incapacidade temporária, caso você precise ficar afastado do trabalho. A Revla compara as opções entre seguradoras parceiras pra montar a cobertura certa pro seu momento de vida.",
+      "O seguro de vida garante uma indenização em dinheiro pra sua família em caso de morte ou invalidez permanente por acidente — e também pode incluir diária por incapacidade temporária, caso você precise ficar afastado do trabalho. A simulação parte da sua idade, da renda que a família precisa proteger e das coberturas adicionais que você quer.",
     seguradorasTexto:
       "Cotamos seguro de vida com seguradoras especializadas nesse ramo, como a Icatu, a MAG Mongeral e a AZOS, comparando capital segurado e coberturas adicionais conforme a sua necessidade e o seu orçamento.",
     coberturas: [
@@ -615,6 +674,11 @@ export const segurosProdutos: SeguroProduto[] = [
         icon: "ClockShort",
       },
     ],
+    secoes: [
+      { title: "Como pensar o valor do capital segurado", paragrafos: ["O capital segurado é o valor que os beneficiários recebem. Uma forma comum de pensar nele é considerar por quanto tempo a família precisaria de renda, as dívidas a quitar, como financiamentos, e despesas futuras, como a educação dos filhos.", "Não existe valor único correto: ele depende da sua situação e do orçamento. A Revla ajuda a comparar diferentes valores de capital e o impacto de cada um no preço."] },
+      { title: "Declaração de saúde e como é o pagamento aos beneficiários", paragrafos: ["Na contratação, a seguradora pode pedir uma declaração de saúde. Informar tudo corretamente é importante: dados omitidos ou incorretos podem levar à recusa da indenização.", "Depois do sinistro, os beneficiários apresentam à seguradora os documentos exigidos, como a certidão de óbito e documentos pessoais, e a seguradora analisa o pedido. Os prazos e documentos exatos estão na apólice."] },
+    ],
+    faqPreco: { question: "De que depende o preço do seguro de vida?", answer: "Os principais fatores são a idade, o capital segurado, a profissão, os hábitos de saúde (como fumar) e as coberturas adicionais, como invalidez e doenças graves. Quem contrata mais jovem costuma pagar menos pela mesma cobertura. A Revla simula com os seus dados e compara seguradoras, sem custo." },
     faqEspecifica: [
       {
         question: "Quem pode ser beneficiário do seguro de vida?",
