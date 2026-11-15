@@ -6642,6 +6642,12 @@ export const posts: Post[] = [
     "title": "Plano Amil: como comparar as linhas antes de contratar",
     "description": "Amil, Amil One, Amil Fácil e Amil Black: o que comparar entre as linhas de plano de saúde da Amil antes de contratar, sem depender só do nome do produto.",
     "category": "Plano de Saúde",
+    "coverImage": {
+      "src": "/images/blog/plano-amil-como-comparar-linhas-antes-de-contratar-capa.jpg",
+      "alt": "Ícone de prontuário médico e de comparação entre opções, representando a comparação das linhas de plano de saúde da Amil",
+      "width": 1200,
+      "height": 630
+    },
     "content": [
       {
         "type": "p",
@@ -6711,6 +6717,12 @@ export const posts: Post[] = [
     "title": "Bradesco Saúde individual existe? Veja as alternativas",
     "description": "A Bradesco Saúde não vende plano individual ou familiar, só coletivo empresarial ou por adesão. Veja os caminhos para pessoa física.",
     "category": "Plano de Saúde",
+    "coverImage": {
+      "src": "/images/blog/bradesco-saude-individual-existe-e-quais-alternativas-capa.jpg",
+      "alt": "Ícone de verificação de perfil ao lado de um prontuário médico, representando a checagem de alternativas ao plano individual da Bradesco Saúde",
+      "width": 1200,
+      "height": 630
+    },
     "content": [
       {
         "type": "p",
@@ -6778,6 +6790,12 @@ export const posts: Post[] = [
     "title": "SulAmérica Saúde para profissionais: linha Profissões",
     "description": "Como funciona a linha Profissões da SulAmérica: contratação empresarial de 3 a 29 vidas, plano hospitalar com seguro de vida e check-up, segundo a operadora.",
     "category": "Plano de Saúde",
+    "coverImage": {
+      "src": "/images/blog/sulamerica-saude-para-profissionais-liberais-linha-profissoes-capa.jpg",
+      "alt": "Ícone de maleta profissional ao lado de um prontuário médico, representando o plano de saúde da SulAmérica para profissionais liberais",
+      "width": 1200,
+      "height": 630
+    },
     "content": [
       {
         "type": "p",
@@ -6846,6 +6864,12 @@ export const posts: Post[] = [
     "title": "Hapvida: como funciona o plano de saúde de rede própria",
     "description": "Entenda o modelo de rede própria da Hapvida, com hospitais e clínicas da própria operadora, o que isso muda na escolha do plano e o que conferir na sua cidade.",
     "category": "Plano de Saúde",
+    "coverImage": {
+      "src": "/images/blog/hapvida-rede-propria-como-funciona-o-modelo-capa.jpg",
+      "alt": "Ícone de prédio de hospital ao lado de um prontuário médico, representando a rede própria de hospitais da Hapvida",
+      "width": 1200,
+      "height": 630
+    },
     "content": [
       {
         "type": "p",
@@ -6914,6 +6938,12 @@ export const posts: Post[] = [
     "title": "NotreDame, Intermédica e GNDI: o que mudou no plano",
     "description": "Intermédica, GNDI e NotreDame Saúde: entenda a ligação com o grupo Hapvida, o que a mudança de marca significa e como buscar o plano em SP e no Rio.",
     "category": "Plano de Saúde",
+    "coverImage": {
+      "src": "/images/blog/notredame-intermedica-gndi-o-que-mudou-no-plano-de-saude-capa.jpg",
+      "alt": "Ícone de relógio com checagem ao lado de um prontuário médico, representando as mudanças no plano da NotreDame Intermédica (GNDI)",
+      "width": 1200,
+      "height": 630
+    },
     "content": [
       {
         "type": "p",
@@ -6986,6 +7016,12 @@ export const posts: Post[] = [
     "title": "MedSênior ou Prevent Senior: o que comparar",
     "description": "MedSênior e Prevent Senior atendem a terceira idade. Veja os critérios para comparar rede, unidades, regiões e programas de cuidado antes de escolher.",
     "category": "Plano de Saúde",
+    "coverImage": {
+      "src": "/images/blog/medsenior-ou-prevent-senior-o-que-comparar-capa.jpg",
+      "alt": "Ícone de mão com coração e de comparação entre opções, representando a comparação entre MedSênior e Prevent Senior",
+      "width": 1200,
+      "height": 630
+    },
     "content": [
       {
         "type": "p",
@@ -7050,6 +7086,12 @@ export const posts: Post[] = [
     "title": "Seguro Pier: o que cobre no celular e no auto",
     "description": "Seguro Pier para celular e para carro: o que cobre, o que não cobre, como funciona a Tabela PIPE e o que pesa na hora de contratar via corretor.",
     "category": "Seguros",
+    "coverImage": {
+      "src": "/images/blog/seguro-pier-celular-e-auto-o-que-cobre-e-como-funciona-capa.jpg",
+      "alt": "Ícone de celular e de carro, representando as coberturas do seguro celular e do seguro auto da Pier",
+      "width": 1200,
+      "height": 630
+    },
     "date": "2026-11-15",
     "content": [
       {
