@@ -13,6 +13,7 @@ import {
   OPERADORAS_CONFERIDO_EM,
   type OperadoraSlug,
 } from "@/lib/plano-de-saude-operadoras";
+import Link from "next/link";
 import { HospitalCross, HeartHand, Star, ClockCheck } from "@/components/icons";
 
 const icons = [<HospitalCross key="a" />, <HeartHand key="b" />, <Star key="c" />, <ClockCheck key="d" />];
@@ -25,6 +26,15 @@ export function operadoraMetadata(slug: OperadoraSlug): Metadata {
     path: `/plano-de-saude/${op.slug}`,
   });
 }
+
+const ARTIGOS_RELACIONADOS: Record<string, { href: string; titulo: string }> = {
+  amil: { href: "/blog/plano-amil-como-comparar-linhas-antes-de-contratar", titulo: "Plano Amil: como comparar as linhas antes de contratar" },
+  "bradesco-saude": { href: "/blog/bradesco-saude-individual-existe-e-quais-alternativas", titulo: "Bradesco Saúde individual existe? Veja as alternativas" },
+  sulamerica: { href: "/blog/sulamerica-saude-para-profissionais-liberais-linha-profissoes", titulo: "SulAmérica Saúde para profissionais: linha Profissões" },
+  hapvida: { href: "/blog/hapvida-rede-propria-como-funciona-o-modelo", titulo: "Hapvida: como funciona o plano de saúde de rede própria" },
+  notredame: { href: "/blog/notredame-intermedica-gndi-o-que-mudou-no-plano-de-saude", titulo: "NotreDame, Intermédica e GNDI: o que mudou no plano" },
+  medsenior: { href: "/blog/medsenior-ou-prevent-senior-o-que-comparar", titulo: "MedSênior ou Prevent Senior: o que comparar" },
+};
 
 export default function OperadoraPage({ slug }: { slug: OperadoraSlug }) {
   const op = getOperadora(slug);
@@ -97,6 +107,19 @@ export default function OperadoraPage({ slug }: { slug: OperadoraSlug }) {
           <p className="mt-4 text-base leading-relaxed text-[var(--color-ink)]/75">{op.paraQuem}</p>
         </Container>
       </section>
+
+      {ARTIGOS_RELACIONADOS[op.slug] && (
+        <section className="py-8">
+          <Container className="max-w-3xl">
+            <p className="text-base text-[var(--color-ink)]/75">
+              Leia também:{" "}
+              <Link href={ARTIGOS_RELACIONADOS[op.slug].href} className="font-semibold text-[var(--color-primary)] underline">
+                {ARTIGOS_RELACIONADOS[op.slug].titulo}
+              </Link>
+            </p>
+          </Container>
+        </section>
+      )}
 
       <FAQ items={faqItems} />
 

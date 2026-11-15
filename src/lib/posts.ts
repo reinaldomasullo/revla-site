@@ -67,7 +67,7 @@ export const posts: Post[] = [
     content: [
       {
         type: "p",
-        text: "Sim, na maioria dos casos vale a pena. Plano de saúde e seguro de vida cobrem riscos diferentes: o plano de saúde paga pelo seu tratamento enquanto você está vivo; o seguro de vida garante uma indenização em dinheiro para sua família caso você venha a falecer ou fique inválido. Ter só um dos dois deixa uma lacuna de proteção que o outro não cobre.",
+        text: "Sim, na maioria dos casos vale a pena. Plano de saúde e [seguro de vida](/seguros/vida) cobrem riscos diferentes: o plano de saúde paga pelo seu tratamento enquanto você está vivo; o seguro de vida garante uma indenização em dinheiro para sua família caso você venha a falecer ou fique inválido. Ter só um dos dois deixa uma lacuna de proteção que o outro não cobre.",
       },
       {
         type: "h2",
@@ -437,7 +437,7 @@ export const posts: Post[] = [
     content: [
       {
         type: "p",
-        text: "O Seguro RC Profissional (Responsabilidade Civil Profissional) é o seguro que protege profissionais liberais e autônomos contra os custos de processos judiciais movidos por clientes que alegam ter sofrido prejuízo por erro, omissão ou negligência na prestação de um serviço. Também chamado de E&O (Errors and Omissions) em algumas apólices, ele cobre principalmente indenizações e custos de defesa jurídica, e não danos causados por dolo. É diferente do seguro de RC geral, que trata de danos físicos ou materiais causados a terceiros, e diferente também de um plano de saúde ou seguro de vida, já que o foco aqui é o risco financeiro de uma acusação de má prática profissional, e não a saúde ou a vida do próprio segurado.",
+        text: "O [Seguro RC Profissional](/seguros/rc-profissional) (Responsabilidade Civil Profissional) é o seguro que protege profissionais liberais e autônomos contra os custos de processos judiciais movidos por clientes que alegam ter sofrido prejuízo por erro, omissão ou negligência na prestação de um serviço. Também chamado de E&O (Errors and Omissions) em algumas apólices, ele cobre principalmente indenizações e custos de defesa jurídica, e não danos causados por dolo. É diferente do seguro de RC geral, que trata de danos físicos ou materiais causados a terceiros, e diferente também de um plano de saúde ou seguro de vida, já que o foco aqui é o risco financeiro de uma acusação de má prática profissional, e não a saúde ou a vida do próprio segurado.",
       },
       {
         type: "h2",
@@ -624,7 +624,7 @@ export const posts: Post[] = [
     content: [
       {
         type: "p",
-        text: 'Na maioria dos casos, sim: o seguro auto vale a pena porque troca um prejuízo potencialmente alto e imprevisível (colisão grave, roubo, incêndio, indenização a terceiros) por uma despesa fixa e previsível todo mês ou ano. Mas "vale a pena" não é igual para todo mundo — depende do valor do seu carro, da sua capacidade de arcar com um prejuízo do próprio bolso e de quanto o seu perfil pesa no cálculo do prêmio. Neste artigo você vai ver como funciona essa conta.',
+        text: 'Na maioria dos casos, sim: o [seguro auto](/seguros/auto) vale a pena porque troca um prejuízo potencialmente alto e imprevisível (colisão grave, roubo, incêndio, indenização a terceiros) por uma despesa fixa e previsível todo mês ou ano. Mas "vale a pena" não é igual para todo mundo — depende do valor do seu carro, da sua capacidade de arcar com um prejuízo do próprio bolso e de quanto o seu perfil pesa no cálculo do prêmio. Neste artigo você vai ver como funciona essa conta.',
       },
       {
         type: "h2",
@@ -837,7 +837,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "O seguro é o instrumento mais direto de proteção patrimonial. Um seguro de vida garante uma indenização à família em caso de morte ou invalidez do segurado, evitando que a perda de renda de um provedor obrigue a família a vender bens ou recorrer a dívidas. Já um seguro residencial ou patrimonial protege o imóvel e os bens dentro dele contra incêndio, roubo, danos elétricos e outros riscos. Existem também apólices com cobertura de assistência funeral, que aliviam a família de um custo inesperado e relevante justamente no momento mais difícil. Você pode conhecer as [opções de seguro disponíveis](/seguros) e entender qual cobertura faz sentido para o seu momento de vida.",
+        text: "O seguro é o instrumento mais direto de proteção patrimonial. Um [seguro de vida](/seguros/vida) garante uma indenização à família em caso de morte ou invalidez do segurado, evitando que a perda de renda de um provedor obrigue a família a vender bens ou recorrer a dívidas. Já um seguro residencial ou patrimonial protege o imóvel e os bens dentro dele contra incêndio, roubo, danos elétricos e outros riscos. Existem também apólices com cobertura de assistência funeral, que aliviam a família de um custo inesperado e relevante justamente no momento mais difícil. Você pode conhecer as [opções de seguro disponíveis](/seguros) e entender qual cobertura faz sentido para o seu momento de vida.",
       },
       {
         type: "h3",
@@ -1301,7 +1301,7 @@ export const posts: Post[] = [
     content: [
       {
         type: "p",
-        text: 'Os erros mais comuns de quem não faz planejamento patrimonial são: deixar a família sem proteção financeira em caso de morte ou invalidez, não ter seguro de vida ou seguro patrimonial, não formalizar acordos e bens por escrito, ignorar o plano de saúde como parte da proteção patrimonial, contar apenas com dinheiro guardado em conta corrente para imprevistos, adiar o planejamento para "quando tiver mais dinheiro" e não revisar a estratégia com o passar dos anos. Cada um desses erros tem solução simples, geralmente com ferramentas acessíveis como seguro, consórcio e plano de saúde bem estruturados — não é preciso ser milionário nem contratar uma gestora de investimentos para começar. Na maioria dos casos, o problema não é falta de dinheiro, e sim falta de organização: a família tem patrimônio, mas ele fica exposto porque ninguém colocou no papel o que fazer em caso de imprevisto.',
+        text: 'Os erros mais comuns de quem não faz planejamento patrimonial são: deixar a família sem proteção financeira em caso de morte ou invalidez, não ter [seguro de vida](/seguros/vida) ou seguro patrimonial, não formalizar acordos e bens por escrito, ignorar o plano de saúde como parte da proteção patrimonial, contar apenas com dinheiro guardado em conta corrente para imprevistos, adiar o planejamento para "quando tiver mais dinheiro" e não revisar a estratégia com o passar dos anos. Cada um desses erros tem solução simples, geralmente com ferramentas acessíveis como seguro, consórcio e plano de saúde bem estruturados — não é preciso ser milionário nem contratar uma gestora de investimentos para começar. Na maioria dos casos, o problema não é falta de dinheiro, e sim falta de organização: a família tem patrimônio, mas ele fica exposto porque ninguém colocou no papel o que fazer em caso de imprevisto.',
       },
       {
         type: "h2",
@@ -1310,7 +1310,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "Existe a ideia de que planejamento patrimonial é assunto de gente rica, com holding familiar e escritório de advocacia sucessória. Não é. Na prática, planejamento patrimonial é o conjunto de decisões que protege o que uma família já construiu — casa, carro, poupança, saúde, renda — contra imprevistos como morte, invalidez, doença grave ou desorganização financeira. Isso vale para qualquer família, especialmente num país que está envelhecendo rápido: segundo o [IBGE](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/41056-populacao-do-pais-vai-parar-de-crescer-em-2041), a proporção de brasileiros com 60 anos ou mais quase dobrou entre 2000 e 2023, saindo de 8,7% para 15,6% da população, e deve chegar a 37,8% em 2070. Mais gente vivendo mais tempo significa mais tempo de exposição a imprevistos de saúde e mais necessidade de organizar sucessão, herança e renda na terceira idade — e isso é planejamento patrimonial, não luxo. As ferramentas para isso também não são exclusivas de quem tem grande fortuna: seguro de vida, seguro residencial, consórcio e plano de saúde são contratados em faixas de valor bem diferentes, o que permite a qualquer família começar pelo tamanho de proteção que cabe no orçamento e ajustar depois.",
+        text: "Existe a ideia de que planejamento patrimonial é assunto de gente rica, com holding familiar e escritório de advocacia sucessória. Não é. Na prática, planejamento patrimonial é o conjunto de decisões que protege o que uma família já construiu — casa, carro, poupança, saúde, renda — contra imprevistos como morte, invalidez, doença grave ou desorganização financeira. Isso vale para qualquer família, especialmente num país que está envelhecendo rápido: segundo o [IBGE](https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/41056-populacao-do-pais-vai-parar-de-crescer-em-2041), a proporção de brasileiros com 60 anos ou mais quase dobrou entre 2000 e 2023, saindo de 8,7% para 15,6% da população, e deve chegar a 37,8% em 2070. Mais gente vivendo mais tempo significa mais tempo de exposição a imprevistos de saúde e mais necessidade de organizar sucessão, herança e renda na terceira idade — e isso é planejamento patrimonial, não luxo. As ferramentas para isso também não são exclusivas de quem tem grande fortuna: seguro de vida, [seguro residencial](/seguros/residencial), consórcio e plano de saúde são contratados em faixas de valor bem diferentes, o que permite a qualquer família começar pelo tamanho de proteção que cabe no orçamento e ajustar depois.",
       },
       {
         type: "h2",
@@ -1442,7 +1442,7 @@ export const posts: Post[] = [
     content: [
       {
         type: "p",
-        text: "Seguro residencial é um seguro de danos que protege o imóvel (casa ou apartamento) e, dependendo da apólice, também os bens dentro dele contra riscos como incêndio, roubo, alagamento e outros eventos definidos em contrato. Ele cobre exatamente o que está listado nas condições gerais e na apólice contratada — nunca tudo automaticamente — e o preço varia principalmente conforme o valor do imóvel, a região, as coberturas escolhidas e a franquia, não existindo um valor único de mercado.",
+        text: "[Seguro residencial](/seguros/residencial) é um seguro de danos que protege o imóvel (casa ou apartamento) e, dependendo da apólice, também os bens dentro dele contra riscos como incêndio, roubo, alagamento e outros eventos definidos em contrato. Ele cobre exatamente o que está listado nas condições gerais e na apólice contratada — nunca tudo automaticamente — e o preço varia principalmente conforme o valor do imóvel, a região, as coberturas escolhidas e a franquia, não existindo um valor único de mercado.",
       },
       {
         type: "h2",
@@ -1605,7 +1605,7 @@ export const posts: Post[] = [
     content: [
       {
         type: "p",
-        text: "Seguro empresarial é o conjunto de apólices contratadas por uma empresa para proteger seu patrimônio, sua operação e sua responsabilidade legal contra riscos como incêndio, roubo, danos elétricos, paralisação das atividades e processos movidos por terceiros. Na prática, ele funciona como uma rede de segurança financeira: em vez de o negócio arcar sozinho com o prejuízo de um sinistro, a seguradora assume o custo mediante o pagamento de um prêmio periódico, o que permite à empresa continuar operando mesmo diante de um imprevisto grave.",
+        text: "[Seguro empresarial](/seguros/empresarial) é o conjunto de apólices contratadas por uma empresa para proteger seu patrimônio, sua operação e sua responsabilidade legal contra riscos como incêndio, roubo, danos elétricos, paralisação das atividades e processos movidos por terceiros. Na prática, ele funciona como uma rede de segurança financeira: em vez de o negócio arcar sozinho com o prejuízo de um sinistro, a seguradora assume o custo mediante o pagamento de um prêmio periódico, o que permite à empresa continuar operando mesmo diante de um imprevisto grave.",
       },
       {
         type: "h2",
@@ -5172,7 +5172,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320 e é corretora parceira oficial da Prevent Senior, trabalhando com os dois planos disponíveis da operadora — MA+S, com abrangência inclusive no Rio de Janeiro e Niterói, e 1025, focado em São Paulo e região. O atendimento é presencial no escritório da Avenida Paulista, em São Paulo, e remoto por WhatsApp e videochamada para clientes nas demais cidades atendidas. Para comparar os planos disponíveis para sua cidade e faixa etária, veja a página completa de [plano de saúde Prevent Senior](/plano-de-saude) ou fale direto com [Reinaldo Masullo](/reinaldo-masullo).",
+        text: "A Revla Corretora de Seguros é registrada na SUSEP sob o nº 232150320 e é corretora parceira oficial da Prevent Senior, trabalhando com os dois planos disponíveis da operadora — MA+S, com abrangência inclusive no [Rio de Janeiro](/plano-de-saude/rio-de-janeiro) e Niterói, e 1025, focado em São Paulo e região. O atendimento é presencial no escritório da Avenida Paulista, em São Paulo, e remoto por WhatsApp e videochamada para clientes nas demais cidades atendidas. Para comparar os planos disponíveis para sua cidade e faixa etária, veja a página completa de [plano de saúde Prevent Senior](/plano-de-saude) ou fale direto com [Reinaldo Masullo](/reinaldo-masullo).",
       },
     ],
     faq: [
@@ -5359,7 +5359,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "Sim. A carta de crédito do consórcio de moto não é vinculada a uma marca ou concessionária específica — você pode usá-la para comprar uma moto 0km de qualquer marca, incluindo Honda, Yamaha, BMW Motorrad, Royal Enfield, Suzuki, Kawasaki, Harley-Davidson, Dafra ou Shineray, entre outras, ou até uma moto seminova, conforme as regras do regulamento do grupo. Essa flexibilidade é uma vantagem de quem ainda não decidiu o modelo exato: dá pra contratar o consórcio pelo valor da carta e só definir a marca depois de contemplado.",
+        text: "Sim. A carta de crédito do consórcio de moto não é vinculada a uma marca ou concessionária específica — você pode usá-la para comprar uma moto 0km de qualquer marca, incluindo [Honda](/consorcios/motos/honda), Yamaha, BMW Motorrad, Royal Enfield, Suzuki, [Kawasaki](/consorcios/motos/kawasaki), [Harley-Davidson](/consorcios/motos/harley-davidson), [Dafra](/consorcios/motos/dafra) ou [Shineray](/consorcios/motos/shineray), entre outras, ou até uma moto seminova, conforme as regras do regulamento do grupo. Essa flexibilidade é uma vantagem de quem ainda não decidiu o modelo exato: dá pra contratar o consórcio pelo valor da carta e só definir a marca depois de contemplado.",
       },
       {
         type: "h2",
@@ -6538,7 +6538,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "A Revla também é corretora de seguros e faz o seguro fiança do aluguel. Quem paga é o inquilino. Se ele atrasar, a seguradora paga os aluguéis devidos, conforme as condições da apólice.",
+        text: "A Revla também é corretora de seguros e faz o [seguro fiança](/seguros/fianca) do aluguel. Quem paga é o inquilino. Se ele atrasar, a seguradora paga os aluguéis devidos, conforme as condições da apólice.",
       },
       {
         type: "h2",
@@ -6636,6 +6636,414 @@ export const posts: Post[] = [
           "É a ideia de usar o consórcio para comprar um imóvel e colocá-lo para alugar, fazendo do aluguel uma renda que complementa o que vier do INSS depois que você voltar ao Brasil.",
       },
     ],
+  },
+  {
+    "slug": "plano-amil-como-comparar-linhas-antes-de-contratar",
+    "title": "Plano Amil: como comparar as linhas antes de contratar",
+    "description": "Amil, Amil One, Amil Fácil e Amil Black: o que comparar entre as linhas de plano de saúde da Amil antes de contratar, sem depender só do nome do produto.",
+    "category": "Plano de Saúde",
+    "content": [
+      {
+        "type": "p",
+        "text": "Para comparar as linhas da Amil, olhe cinco itens que valem para qualquer plano: a rede de hospitais e laboratórios perto de você, o tipo de acomodação, a existência de coparticipação, a abrangência geográfica e o tipo de contrato. O nome da linha (Amil, Amil One, Amil Fácil, Amil Black) indica o posicionamento do produto, mas não substitui a leitura dessas condições. A disponibilidade de cada linha muda por região e por tipo de contratação."
+      },
+      {
+        "type": "h2",
+        "id": "linhas-citadas",
+        "text": "Quais linhas aparecem no material da Amil"
+      },
+      {
+        "type": "p",
+        "text": "A Amil é uma operadora registrada na Agência Nacional de Saúde Suplementar (ANS). O material público dela cita linhas como Amil, Amil One, Amil Fácil e Amil Black, em níveis diferentes, de opções de entrada a planos de padrão mais alto. Quais delas estão à venda na sua cidade e para o seu perfil não é fixo, e é isso que conferimos na cotação. A página da Revla sobre o [plano de saúde Amil](/plano-de-saude/amil) resume as linhas e as dúvidas mais comuns."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-comparar",
+        "text": "O que comparar entre uma linha e outra"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Rede: quais hospitais, clínicas e laboratórios o plano inclui na sua cidade, e se os que você usa estão na lista.",
+          "Acomodação: quarto individual ou enfermaria, quando o plano tem internação.",
+          "Coparticipação: se você paga parte de cada consulta ou exame, além da mensalidade.",
+          "Abrangência: se o plano vale só na sua cidade, no estado ou no país.",
+          "Tipo de contrato: individual, coletivo por adesão ou empresarial, porque as regras de reajuste e de rescisão mudam."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "tipo-de-contrato",
+        "text": "Por que o tipo de contrato pesa tanto"
+      },
+      {
+        "type": "p",
+        "text": "Dois planos com o mesmo nome podem ter regras bem diferentes se um for empresarial e o outro por adesão. A ANS regula os planos de saúde, e o contrato define reajuste, carências e as condições de permanência. Antes de comparar preço, confirme em qual modalidade a proposta está enquadrada. Se você tem empresa, vale perguntar sobre a contratação por CNPJ."
+      },
+      {
+        "type": "h2",
+        "id": "preco",
+        "text": "Por que não existe preço único"
+      },
+      {
+        "type": "p",
+        "text": "O valor muda conforme a linha, a idade dos beneficiários, a cidade e, nos planos empresariais, o número de vidas. Por isso a Revla não publica tabela de preços da Amil: informamos a cotação individual, lado a lado com outras operadoras. Para comparar a opção certa para o seu caso, [chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20as%20linhas%20da%20Amil%20e%20quero%20cotar%20um%20plano.) e fale com [Reinaldo Masullo](/reinaldo-masullo). A Revla é corretora registrada na SUSEP (nº 232150320), cota e contrata o plano e compara com outras operadoras, sem custo pela comparação. Veja também todas as [operadoras de plano de saúde que a Revla cota](/plano-de-saude/operadoras)"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Qual a diferença entre Amil e Amil One?",
+        "answer": "São linhas diferentes da mesma operadora, e o Amil One é associado a padrão mais alto no material comercial. As condições exatas de rede e acomodação dependem da região e do contrato, e confirmamos na cotação."
+      },
+      {
+        "question": "Existe plano Amil para empresa?",
+        "answer": "Sim. A Amil comercializa planos para empresas. As condições dependem do porte da empresa e da região, e a Revla monta a simulação conforme o número de vidas."
+      },
+      {
+        "question": "Dá para contratar Amil como pessoa física?",
+        "answer": "Depende do produto disponível na sua região e do seu perfil. Muitas contratações acontecem por plano coletivo, empresarial ou por adesão, e conferimos qual caminho existe para você antes de qualquer proposta."
+      }
+    ],
+    "date": "2026-11-15"
+  },
+  {
+    "slug": "bradesco-saude-individual-existe-e-quais-alternativas",
+    "title": "Bradesco Saúde individual existe? Veja as alternativas",
+    "description": "A Bradesco Saúde não vende plano individual ou familiar, só coletivo empresarial ou por adesão. Veja os caminhos para pessoa física.",
+    "category": "Plano de Saúde",
+    "content": [
+      {
+        "type": "p",
+        "text": "Não existe plano Bradesco Saúde individual ou familiar. Segundo o site da Bradesco Seguros (conferido em novembro de 2026), a Bradesco Saúde comercializa exclusivamente planos e seguros de saúde coletivos, que podem ser empresariais ou por adesão. Quem é pessoa física sem vínculo com empresa ou entidade de classe não consegue contratar diretamente, e precisa avaliar outras operadoras."
+      },
+      {
+        "type": "h2",
+        "id": "empresarial-ou-adesao",
+        "text": "Plano empresarial e plano por adesão"
+      },
+      {
+        "type": "p",
+        "text": "No plano coletivo empresarial, o contratante é uma pessoa jurídica ou um empresário individual, e o plano é para quem tem vínculo com a empresa e seus dependentes. No plano por adesão, o contrato é feito por uma entidade de classe, como conselho profissional, sindicato, associação ou cooperativa, para as pessoas vinculadas a ela, conforme as regras da ANS. Veja os detalhes na página sobre o [plano de saúde Bradesco Saúde](/plano-de-saude/bradesco-saude)."
+      },
+      {
+        "type": "h2",
+        "id": "quem-consegue",
+        "text": "Quem consegue contratar"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Empresas e empresários individuais, para a equipe e os dependentes.",
+          "Pessoas que pertencem a uma entidade de classe com contrato por adesão.",
+          "Quem não se enquadra em nenhuma das duas situações precisa de outra operadora."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "sou-pessoa-fisica",
+        "text": "E se eu sou pessoa física sem vínculo?"
+      },
+      {
+        "type": "p",
+        "text": "Nesse caso, o caminho é comparar outras operadoras que tenham plano individual, familiar ou outra modalidade disponível na sua cidade."
+      },
+      {
+        "type": "h2",
+        "id": "reembolso",
+        "text": "Reembolso e rede"
+      },
+      {
+        "type": "p",
+        "text": "A operadora informa que há atendimento na rede referenciada e reembolso das despesas feitas fora dela, com regras e limites que dependem do plano. Peça essas regras por escrito antes de contratar. Para comparar a opção certa para o seu caso, [chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20Bradesco%20Sa%C3%BAde%20e%20quero%20saber%20qual%20plano%20posso%20contratar.) e fale com [Reinaldo Masullo](/reinaldo-masullo). A Revla é corretora registrada na SUSEP (nº 232150320), cota e contrata o plano e compara com outras operadoras, sem custo pela comparação. Veja também todas as [operadoras de plano de saúde que a Revla cota](/plano-de-saude/operadoras)"
+      }
+    ],
+    "faq": [
+      {
+        "question": "A Bradesco Saúde vende plano individual ou familiar?",
+        "answer": "Não. O site oficial da Bradesco Seguros informa que a Bradesco Saúde não comercializa seguro individual ou familiar, apenas planos coletivos empresariais ou por adesão."
+      },
+      {
+        "question": "Preciso ter CNPJ para contratar Bradesco Saúde?",
+        "answer": "Para o plano empresarial, sim: o contratante é uma pessoa jurídica ou um empresário individual. Para o plano por adesão, o contrato é feito por uma entidade de classe, e a pessoa precisa ter vínculo com ela."
+      },
+      {
+        "question": "Como funciona o reembolso da Bradesco Saúde?",
+        "answer": "A operadora informa que há reembolso das despesas médicas feitas fora da rede referenciada, e as regras e os limites dependem do plano contratado."
+      }
+    ],
+    "date": "2026-11-15"
+  },
+  {
+    "slug": "sulamerica-saude-para-profissionais-liberais-linha-profissoes",
+    "title": "SulAmérica Saúde para profissionais: linha Profissões",
+    "description": "Como funciona a linha Profissões da SulAmérica: contratação empresarial de 3 a 29 vidas, plano hospitalar com seguro de vida e check-up, segundo a operadora.",
+    "category": "Plano de Saúde",
+    "content": [
+      {
+        "type": "p",
+        "text": "A linha Profissões é o plano de saúde da SulAmérica voltado a profissionais como médicos, dentistas, advogados, engenheiros, psicólogos e corretores. Segundo o portal da operadora (conferido em novembro de 2026), é um plano hospitalar com seguro de vida e check-up inclusos, em contratação empresarial de 3 a 29 vidas. Ou seja, não é um plano individual: a contratação é feita por uma empresa."
+      },
+      {
+        "type": "h2",
+        "id": "como-funciona",
+        "text": "Como a linha funciona"
+      },
+      {
+        "type": "p",
+        "text": "O contrato é empresarial, e a faixa informada pela operadora vai de 3 a 29 vidas. Isso inclui o titular, os sócios ou funcionários que forem participar e os dependentes, conforme as regras da proposta. Para o profissional liberal, isso costuma significar contratar por meio de uma pequena empresa. Confira o que a Revla reúne sobre o [plano de saúde SulAmérica](/plano-de-saude/sulamerica)."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-informa-a-operadora",
+        "text": "O que a operadora informa sobre a linha"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Plano de saúde hospitalar.",
+          "Seguro de vida e check-up inclusos.",
+          "Contratação empresarial de 3 a 29 vidas.",
+          "Voltado a profissões como medicina, odontologia, advocacia, engenharia, psicologia e corretagem."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "comparar",
+        "text": "O que conferir antes de contratar"
+      },
+      {
+        "type": "p",
+        "text": "Como o plano é hospitalar, vale perguntar o que fica fora da cobertura, como consultas e exames ambulatoriais, e como você pagaria por eles. Confirme também a rede na sua cidade, a existência de coparticipação e as regras de reajuste do contrato. A SulAmérica também tem as linhas SulAmérica e Vital, com modelos com e sem coparticipação, que podem fazer mais sentido para quem quer cobertura ambulatorial."
+      },
+      {
+        "type": "h2",
+        "id": "sem-cnpj",
+        "text": "E se eu não tenho empresa?"
+      },
+      {
+        "type": "p",
+        "text": "Sem CNPJ, a linha empresarial não está disponível diretamente. Conferimos na cotação se há outro caminho com a SulAmérica ou se outra operadora serve melhor. Para comparar a opção certa para o seu caso, [chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20a%20linha%20Profiss%C3%B5es%20da%20SulAm%C3%A9rica%20e%20quero%20uma%20cota%C3%A7%C3%A3o.) e fale com [Reinaldo Masullo](/reinaldo-masullo). A Revla é corretora registrada na SUSEP (nº 232150320), cota e contrata o plano e compara com outras operadoras, sem custo pela comparação. Veja também todas as [operadoras de plano de saúde que a Revla cota](/plano-de-saude/operadoras)"
+      }
+    ],
+    "faq": [
+      {
+        "question": "O que é a linha Profissões da SulAmérica?",
+        "answer": "É um plano de saúde hospitalar com seguro de vida e check-up inclusos, para contratação empresarial de 3 a 29 vidas, destinado a profissionais como médicos, dentistas, advogados, engenheiros, psicólogos e corretores, segundo a operadora."
+      },
+      {
+        "question": "A partir de quantas vidas dá para contratar SulAmérica?",
+        "answer": "Segundo o portal da operadora, os planos empresariais das linhas SulAmérica e Vital partem de 3 vidas, e a linha Profissões é para 3 a 29 vidas."
+      },
+      {
+        "question": "O plano SulAmérica tem coparticipação?",
+        "answer": "A operadora informa que há modelos com e sem coparticipação. Mostramos os dois lado a lado na cotação."
+      }
+    ],
+    "date": "2026-11-15"
+  },
+  {
+    "slug": "hapvida-rede-propria-como-funciona-o-modelo",
+    "title": "Hapvida: como funciona o plano de saúde de rede própria",
+    "description": "Entenda o modelo de rede própria da Hapvida, com hospitais e clínicas da própria operadora, o que isso muda na escolha do plano e o que conferir na sua cidade.",
+    "category": "Plano de Saúde",
+    "content": [
+      {
+        "type": "p",
+        "text": "No modelo de rede própria, a operadora atende o beneficiário em hospitais, clínicas e centros médicos que ela mesma administra, em vez de depender só de prestadores credenciados. A Hapvida segue esse modelo: segundo o site da operadora (conferido em novembro de 2026), são 86 hospitais próprios e 365 clínicas e centros médicos, com mais de 15 milhões de beneficiários ativos. O ponto de atenção é que a rede varia muito por região, então a pergunta decisiva é o que existe perto de você."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-e-rede-propria",
+        "text": "O que é rede própria na prática"
+      },
+      {
+        "type": "p",
+        "text": "Rede própria significa atendimento integrado dentro da estrutura da operadora, com consultas, exames e internações em unidades dela. A operadora informa também teleconsulta, o programa de prevenção Qualivida e clube de vantagens. Já os planos de rede credenciada permitem escolher entre prestadores independentes, com a rede definida em contrato. Nenhum modelo é melhor em geral: depende de onde você mora e do que usa."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-conferir",
+        "text": "O que conferir antes de contratar"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Onde ficam os hospitais e as clínicas da operadora na sua cidade e quanto tempo levam até você.",
+          "Se os médicos e especialidades que você usa atendem na rede do plano.",
+          "Se o plano vale só na sua região ou em outras cidades.",
+          "Como funciona o atendimento de urgência fora da região contratada."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "tipos",
+        "text": "Tipos de plano que a operadora apresenta"
+      },
+      {
+        "type": "p",
+        "text": "O site apresenta planos para pessoa física (individual e familiar), pessoa jurídica e microempresa. Quais estão disponíveis na sua cidade confirmamos na cotação. Veja a página sobre o [plano de saúde Hapvida](/plano-de-saude/hapvida)."
+      },
+      {
+        "type": "h2",
+        "id": "hapvida-e-notredame",
+        "text": "Hapvida e NotreDame"
+      },
+      {
+        "type": "p",
+        "text": "Hapvida e NotreDame são do mesmo grupo. Para São Paulo e Rio de Janeiro, o site da antiga GNDI hoje aparece como Hapvida SP/RJ e anuncia a NotreDame Saúde. Se você mora nessas cidades, compare as duas, como explicamos em [NotreDame, Intermédica e GNDI: o que mudou](/blog/notredame-intermedica-gndi-o-que-mudou-no-plano-de-saude). Para comparar a opção certa para o seu caso, [chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20a%20Hapvida%20e%20quero%20cotar%20um%20plano%20na%20minha%20cidade.) e fale com [Reinaldo Masullo](/reinaldo-masullo). A Revla é corretora registrada na SUSEP (nº 232150320), cota e contrata o plano e compara com outras operadoras, sem custo pela comparação. Veja também todas as [operadoras de plano de saúde que a Revla cota](/plano-de-saude/operadoras)"
+      }
+    ],
+    "faq": [
+      {
+        "question": "A Hapvida tem rede própria?",
+        "answer": "Sim. A operadora informa 86 hospitais próprios e 365 clínicas e centros médicos. A cobertura de cada plano depende da região contratada."
+      },
+      {
+        "question": "A Hapvida tem plano individual e familiar?",
+        "answer": "Sim. O site da operadora apresenta planos individual e familiar, além de planos empresariais e para microempresa. Quais estão disponíveis na sua cidade confirmamos na cotação."
+      },
+      {
+        "question": "Hapvida e NotreDame são a mesma operadora?",
+        "answer": "São do mesmo grupo. O site da antiga GNDI hoje é identificado como Hapvida SP/RJ e anuncia a nova NotreDame Saúde."
+      }
+    ],
+    "date": "2026-11-15"
+  },
+  {
+    "slug": "notredame-intermedica-gndi-o-que-mudou-no-plano-de-saude",
+    "title": "NotreDame, Intermédica e GNDI: o que mudou no plano",
+    "description": "Intermédica, GNDI e NotreDame Saúde: entenda a ligação com o grupo Hapvida, o que a mudança de marca significa e como buscar o plano em SP e no Rio.",
+    "category": "Plano de Saúde",
+    "content": [
+      {
+        "type": "p",
+        "text": "Intermédica, GNDI e NotreDame são nomes ligados à mesma operadora, que hoje faz parte do grupo Hapvida. Segundo o site da operadora (conferido em novembro de 2026), o endereço que era da GNDI (NotreDame Intermédica) aparece agora como Hapvida SP/RJ e anuncia a nova NotreDame Saúde, com rede integrada em São Paulo e no Rio de Janeiro, para pessoa física e pessoa jurídica."
+      },
+      {
+        "type": "h2",
+        "id": "nomes",
+        "text": "Por que existem tantos nomes"
+      },
+      {
+        "type": "p",
+        "text": "Muita gente ainda busca \"convênio Intermédica\" ou \"plano GNDI\", nomes anteriores da operadora. A marca NotreDame passou a integrar o grupo Hapvida, e a imprensa noticiou o relançamento da NotreDame Saúde em agosto de 2026, voltada ao segmento premium. Nós não conseguimos confirmar nos sites oficiais todos os detalhes desse produto, então confirmamos o que está à venda no momento da cotação."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-muda",
+        "text": "O que a mudança de marca muda para quem contrata"
+      },
+      {
+        "type": "p",
+        "text": "A mudança de marca não cancela contratos vigentes por si só, mas as condições de cada contrato valem o que está no documento. Quem já tem plano deve conferir a carta do contrato e os canais da operadora. Quem vai contratar agora deve comparar a oferta atual, e não a que lembrava dos tempos da Intermédica."
+      },
+      {
+        "type": "h2",
+        "id": "onde-atende",
+        "text": "Onde o plano atende"
+      },
+      {
+        "type": "p",
+        "text": "O site fala em rede integrada em São Paulo e no Rio de Janeiro. Fora dessas duas regiões, a Hapvida costuma ser o caminho, e cotamos as duas. Veja as páginas sobre o [plano de saúde NotreDame](/plano-de-saude/notredame) e o [plano de saúde Hapvida](/plano-de-saude/hapvida)."
+      },
+      {
+        "type": "h2",
+        "id": "comparar",
+        "text": "O que comparar"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Hospitais e clínicas disponíveis na sua zona da cidade.",
+          "Tipo de contrato: individual, empresarial ou outro.",
+          "Se o produto é da linha premium ou de entrada.",
+          "Coparticipação e regras de reajuste do contrato."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Para comparar a opção certa para o seu caso, [chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20a%20NotreDame%20e%20quero%20cotar%20um%20plano.) e fale com [Reinaldo Masullo](/reinaldo-masullo). A Revla é corretora registrada na SUSEP (nº 232150320), cota e contrata o plano e compara com outras operadoras, sem custo pela comparação. Veja também todas as [operadoras de plano de saúde que a Revla cota](/plano-de-saude/operadoras)"
+      }
+    ],
+    "faq": [
+      {
+        "question": "NotreDame Intermédica e NotreDame Saúde são a mesma coisa?",
+        "answer": "A marca NotreDame Intermédica (antiga GNDI) passou a integrar o grupo Hapvida, e o site anuncia a nova NotreDame Saúde para São Paulo e Rio de Janeiro. Confirmamos na cotação qual produto está à venda na sua cidade."
+      },
+      {
+        "question": "O que é o convênio Intermédica (GNDI)?",
+        "answer": "Intermédica e GNDI são nomes anteriores da operadora que hoje faz parte do grupo Hapvida e usa a marca NotreDame."
+      },
+      {
+        "question": "Em quais cidades o plano NotreDame atende?",
+        "answer": "O site da operadora fala em rede integrada em São Paulo e no Rio de Janeiro. A abrangência de cada plano depende do contrato."
+      }
+    ],
+    "date": "2026-11-15"
+  },
+  {
+    "slug": "medsenior-ou-prevent-senior-o-que-comparar",
+    "title": "MedSênior ou Prevent Senior: o que comparar",
+    "description": "MedSênior e Prevent Senior atendem a terceira idade. Veja os critérios para comparar rede, unidades, regiões e programas de cuidado antes de escolher.",
+    "category": "Plano de Saúde",
+    "content": [
+      {
+        "type": "p",
+        "text": "A escolha entre MedSênior e Prevent Senior depende de três fatores: a região onde você mora, as unidades próprias perto de você e o programa de cuidado que cada uma oferece. Ambas têm foco na terceira idade, mas não atendem os mesmos lugares nem têm a mesma rede. Por isso não existe um vencedor geral, e a comparação precisa ser feita com a sua cidade e a sua idade."
+      },
+      {
+        "type": "h2",
+        "id": "medsenior",
+        "text": "O que o site da MedSênior informa"
+      },
+      {
+        "type": "p",
+        "text": "Segundo o site da operadora (conferido em novembro de 2026), a MedSênior tem mais de 16 anos de atuação e 45 unidades próprias, com diversas especialidades e oficinas de saúde, além de laboratório próprio e coleta domiciliar em alguns serviços. Há planos por localidade: Campinas, Distrito Federal, Espírito Santo, Minas Gerais, Paraná, Pernambuco, Rio de Janeiro, Rio Grande do Sul e São Paulo. O programa de cuidado se chama Bem Envelhecer. Veja a página sobre o [plano de saúde MedSênior](/plano-de-saude/medsenior)."
+      },
+      {
+        "type": "h2",
+        "id": "comparar",
+        "text": "Critérios para comparar as duas"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Região: se a operadora atende a sua cidade ou uma cidade próxima.",
+          "Unidades: quantas ficam perto de você e quais especialidades oferecem.",
+          "Programas de cuidado: o que cada uma oferece para o acompanhamento de quem está envelhecendo.",
+          "Mensalidade por faixa etária: como o valor muda com a idade, que é onde as propostas mais diferem."
+        ]
+      },
+      {
+        "type": "h2",
+        "id": "regiao",
+        "text": "A região costuma decidir"
+      },
+      {
+        "type": "p",
+        "text": "Como cada operadora tem presença forte em locais diferentes, em muitas cidades só uma delas é realista. A Revla tem página própria sobre o [plano de saúde Prevent Senior](/plano-de-saude), com as condições dela. Quando as duas atendem a sua cidade, fazemos a comparação lado a lado."
+      },
+      {
+        "type": "h2",
+        "id": "idoso",
+        "text": "Antes de decidir"
+      },
+      {
+        "type": "p",
+        "text": "Peça a proposta por escrito, leia as condições de reajuste e visite uma unidade, se possível. Plano para a terceira idade é compromisso de longo prazo, e vale conferir a rede que você realmente usaria. Para comparar a opção certa para o seu caso, [chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20MedS%C3%AAnior%20e%20Prevent%20Senior%20e%20quero%20comparar%20para%20o%20meu%20caso.) e fale com [Reinaldo Masullo](/reinaldo-masullo). A Revla é corretora registrada na SUSEP (nº 232150320), cota e contrata o plano e compara com outras operadoras, sem custo pela comparação. Veja também todas as [operadoras de plano de saúde que a Revla cota](/plano-de-saude/operadoras)"
+      }
+    ],
+    "faq": [
+      {
+        "question": "O plano MedSênior é bom?",
+        "answer": "Depende do que você precisa e de onde mora. Os pontos a comparar são as unidades próprias perto de você, as especialidades disponíveis, o programa de cuidado para a terceira idade e a mensalidade por faixa etária."
+      },
+      {
+        "question": "A MedSênior atende em São Paulo e no Espírito Santo?",
+        "answer": "Sim. São Paulo e Espírito Santo aparecem entre as localidades com plano no site da operadora, junto com outras. Confirmamos a rede disponível na sua cidade na cotação."
+      }
+    ],
+    "date": "2026-11-15"
   },
 ];
 
