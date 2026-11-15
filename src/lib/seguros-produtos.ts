@@ -143,7 +143,7 @@ export const segurosProdutos: SeguroProduto[] = [
     introParagrafo:
       "O seguro celular protege seu aparelho contra roubo, furto e quebra acidental — situações que costumam pegar a maioria das pessoas de surpresa e sem previsão no orçamento. A simulação considera o modelo, o valor e a idade do aparelho para chegar a uma cobertura que faça sentido.",
     seguradorasTexto:
-      "Cotamos seguro celular com as principais seguradoras do mercado, como a Porto Seguro, entre outras, buscando a cobertura com melhor custo-benefício pro seu aparelho.",
+      "Cotamos seguro celular com as principais seguradoras do mercado, como a Pier (da qual a Revla é parceira) e a Porto Seguro, entre outras, buscando a cobertura com melhor custo-benefício pro seu aparelho.",
     coberturas: [
       {
         title: "Roubo e furto qualificado",
@@ -162,11 +162,17 @@ export const segurosProdutos: SeguroProduto[] = [
       },
     ],
     secoes: [
-      { title: "O que o seguro celular normalmente não cobre", paragrafos: ["Perda ou esquecimento do aparelho, defeitos de fabricação (que ficam com a garantia do fabricante) e danos por mau uso, como molhar o celular em situação não prevista, costumam ficar fora. O furto simples, quando o aparelho some sem violência e sem vestígio, também costuma não ser coberto, e é a dúvida mais comum de quem contrata.", "A franquia, o prazo de contratação em relação à data de compra do aparelho e as exclusões variam por seguradora. Por isso conferimos essas regras na simulação e não só o preço."] },
+      { title: "Seguro celular da Pier: como funciona", paragrafos: ["A Revla é parceira da Pier, seguradora digital autorizada pela SUSEP, e cota o seguro celular dela. Segundo o site da Pier (conferido em novembro de 2026), o seguro cobre roubo, furto qualificado e furto simples, sem franquia e sem carência, e o reembolso é feito em dinheiro. A proteção vale no Brasil e no exterior e não exige nota fiscal do aparelho.", "O valor do reembolso segue a Tabela PIPE, que indica o preço de um aparelho seminovo em boas condições na data da ocorrência, em duas modalidades: 100% ou 80% desse valor. A Pier protege um aparelho por CPF e exige o aplicativo instalado no aparelho, o boletim de ocorrência e o bloqueio do IMEI. A cobertura de quebra acidental está disponível via corretor, conforme as condições da proposta, e confirmamos na simulação."] },
+      { title: "O que o seguro celular normalmente não cobre", paragrafos: ["Perda ou esquecimento do aparelho, defeitos de fabricação (que ficam com a garantia do fabricante) e danos por mau uso, como molhar o celular em situação não prevista, costumam ficar fora. O furto simples, quando o aparelho some sem violência e sem vestígio, costuma não ser coberto pelas seguradoras em geral, e é a dúvida mais comum de quem contrata. A Pier é uma das que cobre.", "A franquia, o prazo de contratação em relação à data de compra do aparelho e as exclusões variam por seguradora. Por isso conferimos essas regras na simulação e não só o preço."] },
       { title: "O que fazer em caso de roubo ou quebra", paragrafos: ["Em caso de roubo, registre o boletim de ocorrência e peça à operadora o bloqueio da linha e do aparelho. Depois, acione a seguradora com os documentos que ela pedir, normalmente a nota fiscal ou outro comprovante do aparelho e o próprio boletim.", "Na quebra de tela, a seguradora indica o conserto ou a indenização conforme a apólice. Evite mandar o aparelho para uma assistência não autorizada antes de avisá-la."] },
     ],
     faqPreco: { question: "Quanto custa um seguro celular?", answer: "O valor depende principalmente do modelo e do preço do aparelho, da idade dele e das coberturas escolhidas, como roubo, furto qualificado e quebra de tela. Aparelhos mais caros costumam ter prêmio maior. A Revla simula o seu modelo e compara as opções entre seguradoras, sem custo." },
     faqEspecifica: [
+      {
+        question: "O seguro celular da Pier cobre furto simples?",
+        answer:
+          "Sim. Segundo o site da Pier, o seguro cobre roubo, furto qualificado e furto simples, sem franquia e sem carência. O reembolso segue a Tabela PIPE, em 100% ou 80% do valor de um aparelho seminovo.",
+      },
       {
         question: "O seguro celular cobre tela quebrada?",
         answer:
@@ -546,7 +552,7 @@ export const segurosProdutos: SeguroProduto[] = [
     introParagrafo:
       "O seguro auto protege seu carro contra colisão, roubo, furto e danos causados a terceiros, com assistência 24 horas em qualquer lugar do Brasil. A simulação leva em conta o modelo e o ano do carro, o CEP onde ele passa a noite e o seu histórico como condutor.",
     seguradorasTexto:
-      "Cotamos seguro auto com as principais seguradoras do mercado — Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, entre outras —, comparando cobertura e franquia conforme o modelo do seu carro e o seu perfil de condutor.",
+      "Cotamos seguro auto com as principais seguradoras do mercado — Pier (da qual a Revla é parceira), Porto Seguro, Zurich, HDI, AXA, Ezze, Ituran, Akad, Capemisa, Mongeral e Omint, entre outras —, comparando cobertura e franquia conforme o modelo do seu carro e o seu perfil de condutor.",
     coberturas: [
       {
         title: "Colisão, roubo e furto",
@@ -566,11 +572,17 @@ export const segurosProdutos: SeguroProduto[] = [
       },
     ],
     secoes: [
+      { title: "Seguro auto da Pier: como funciona", paragrafos: ["A Revla é parceira da Pier, seguradora digital autorizada pela SUSEP, e cota o seguro auto dela. Segundo o site da Pier (conferido em novembro de 2026), a contratação é digital, com vistoria feita pelo aplicativo e resposta em até 3 dias, prorrogáveis se outros documentos forem necessários. A cobertura inclui roubo e furto, com assistências como reboque em raio de 200 km, pane elétrica e mecânica, pane seca, troca de pneus, chaveiro e guarda do veículo por uma noite. Indenização integral, danos parciais e danos a terceiros podem ser contratados.", "Pontos que pesam na decisão: o valor do reembolso é definido após a vistoria e pode variar entre 60% e 100% da tabela FIPE do mês do sinistro, e podem ser descontados parcelas pendentes e débitos do veículo, como multas e IPVA. A mensalidade pode ser reajustada todo mês, com aviso prévio, conforme a avaliação de risco da Pier. O reembolso é feito em 20 dias úteis após a documentação completa, podendo chegar a 30. O cancelamento é sem custo, mas depois de 7 dias de vigência o seguro segue ativo até o fim do período, sem estorno."] },
       { title: "Como a franquia afeta o preço do seguro auto", paragrafos: ["A franquia é o valor que fica por sua conta em um sinistro de colisão. Em geral, escolher uma franquia maior reduz o prêmio e uma franquia menor o aumenta, então vale pensar no valor que você conseguiria pagar de uma vez em um imprevisto.", "O prêmio também muda com o modelo e o ano do carro, o CEP de pernoite, o perfil e o histórico do condutor principal e o uso do veículo. Comparar mais de uma proposta ajuda a equilibrar preço e cobertura."] },
       { title: "O que costuma ficar de fora e como acionar o seguro", paragrafos: ["Sinistros com condutor sem habilitação válida ou sob efeito de álcool, uso do carro diferente do declarado e desgaste natural costumam não ser cobertos. As regras exatas estão na apólice.", "Depois de um acidente, acione a assistência 24 horas, registre o boletim de ocorrência quando houver terceiros, roubo ou furto, e avise a seguradora antes de mandar o carro para conserto. A Revla acompanha o processo."] },
     ],
     faqPreco: { question: "Por que o seguro auto custa tanto para uns e menos para outros?", answer: "Cada seguradora pondera de forma própria o modelo e o ano do veículo, o CEP de pernoite, a idade e o histórico do condutor, o uso e a franquia. Duas pessoas com o mesmo carro podem receber valores diferentes. A Revla compara as propostas e mostra a que melhor equilibra preço e cobertura, sem custo." },
     faqEspecifica: [
+      {
+        question: "Como é a vistoria do seguro auto da Pier?",
+        answer:
+          "Segundo o site da Pier, a vistoria é feita pelo aplicativo, com fotos internas e externas do carro e do documento do veículo. A resposta sai em até 3 dias, prorrogáveis se outros documentos forem necessários.",
+      },
       {
         question: "O seguro auto cobre carro usado como aplicativo?",
         answer:

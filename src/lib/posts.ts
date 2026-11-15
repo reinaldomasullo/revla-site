@@ -7045,6 +7045,91 @@ export const posts: Post[] = [
     ],
     "date": "2026-11-15"
   },
+  {
+    "slug": "seguro-pier-celular-e-auto-o-que-cobre-e-como-funciona",
+    "title": "Seguro Pier: o que cobre no celular e no auto",
+    "description": "Seguro Pier para celular e para carro: o que cobre, o que não cobre, como funciona a Tabela PIPE e o que pesa na hora de contratar via corretor.",
+    "category": "Seguros",
+    "date": "2026-11-15",
+    "content": [
+      {
+        "type": "p",
+        "text": "A Pier é uma seguradora digital autorizada pela SUSEP que vende seguro de celular e seguro auto, com contratação pelo site ou pelo aplicativo. No celular, cobre roubo, furto qualificado e furto simples, sem franquia e sem carência. No auto, cobre roubo e furto e oferece assistência, e você pode incluir indenização integral, danos parciais e danos a terceiros. Estas informações vêm do site da Pier, conferido em novembro de 2026."
+      },
+      {
+        "type": "h2",
+        "id": "seguro-celular",
+        "text": "Seguro celular da Pier: o que cobre"
+      },
+      {
+        "type": "p",
+        "text": "Segundo a Pier, o seguro de celular cobre roubo (quando há ameaça ou violência), furto qualificado (quando há vestígio do crime) e furto simples (quando o aparelho some sem vestígio, cobertura que poucas seguradoras oferecem). Não há franquia nem carência, o reembolso é feito em dinheiro e a proteção vale no Brasil e no exterior. Também não é exigida nota fiscal do aparelho."
+      },
+      {
+        "type": "h2",
+        "id": "tabela-pipe",
+        "text": "Como o valor do reembolso é calculado"
+      },
+      {
+        "type": "p",
+        "text": "O reembolso segue a Tabela PIPE, que indica o valor de um aparelho seminovo em boas condições na data da ocorrência e é atualizada de forma recorrente. Há duas modalidades, de 100% ou de 80% desse valor. A Pier protege um aparelho por CPF, e o seguro precisa estar no CPF de quem usa o celular."
+      },
+      {
+        "type": "h2",
+        "id": "regras-celular",
+        "text": "Regras que você precisa cumprir no celular"
+      },
+      {
+        "type": "p",
+        "text": "Para ser reembolsado, é preciso manter o aplicativo da Pier instalado, enviar o boletim de ocorrência em até 5 dias úteis e bloquear o IMEI junto à operadora de telefonia. Perdas do aparelho e danos por líquidos não são reembolsáveis na cobertura de roubo e furto. A cobertura de quebra acidental está disponível via corretor, conforme as condições da proposta. Confirme os detalhes na simulação."
+      },
+      {
+        "type": "h2",
+        "id": "seguro-auto",
+        "text": "Seguro auto da Pier: o que muda em relação ao tradicional"
+      },
+      {
+        "type": "p",
+        "text": "No auto, a vistoria é feita pelo aplicativo, com fotos do carro e do documento, e a resposta sai em até 3 dias. A cobertura inclui roubo e furto, com assistências como reboque em raio de 200 km, pane elétrica e mecânica, pane seca, troca de pneus, chaveiro e guarda por uma noite. O valor do reembolso é definido após a vistoria e pode variar de 60% a 100% da tabela FIPE do mês do sinistro. Podem ser descontados parcelas pendentes e débitos do veículo, como multas e IPVA."
+      },
+      {
+        "type": "h2",
+        "id": "o-que-pesa",
+        "text": "O que pesa na decisão"
+      },
+      {
+        "type": "p",
+        "text": "Duas regras merecem atenção antes de contratar o auto: a mensalidade pode ser reajustada todo mês, com aviso prévio, e o reembolso sai em 20 dias úteis após a documentação completa, podendo chegar a 30. O cancelamento é sem custo, mas depois de 7 dias de vigência o seguro segue ativo até o fim do período, sem estorno. Compare essas condições com as de outras seguradoras na [página de seguro auto](/seguros/auto) e, para o aparelho, na [página de seguro celular](/seguros/celular)."
+      },
+      {
+        "type": "h2",
+        "id": "como-contratar",
+        "text": "Como contratar pela Revla"
+      },
+      {
+        "type": "p",
+        "text": "A Revla é parceira da Pier e cota o seguro dela junto com outras seguradoras. [Chame a Revla no WhatsApp](https://wa.me/5511947263140?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20o%20seguro%20Pier%20e%20quero%20cotar%20celular%20ou%20auto.) e fale com [Reinaldo Masullo](/reinaldo-masullo): informe o modelo do aparelho ou os dados do carro e receba a simulação, sem custo pela comparação."
+      }
+    ],
+    "faq": [
+      {
+        "question": "O seguro celular da Pier cobre furto simples?",
+        "answer": "Sim. Segundo o site da Pier, o seguro cobre roubo, furto qualificado e furto simples, sem franquia e sem carência."
+      },
+      {
+        "question": "A Pier exige nota fiscal do celular?",
+        "answer": "Não. O site da Pier informa que não é pedida nota fiscal do aparelho para disponibilizar a proteção."
+      },
+      {
+        "question": "Quanto a Pier paga no seguro auto?",
+        "answer": "O valor do reembolso é definido após a vistoria e pode variar entre 60% e 100% da tabela FIPE do mês do sinistro, conforme os termos de contratação da Pier."
+      },
+      {
+        "question": "Posso contratar o seguro Pier pela Revla?",
+        "answer": "Sim. A Revla é parceira da Pier e cota o seguro de celular e o seguro auto dela, comparando com outras seguradoras."
+      }
+    ]
+  },
 ];
 
 export function getPostBySlug(slug: string) {
