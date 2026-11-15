@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { renderInline } from "@/lib/inline-markdown";
 import { siteConfig, whatsappLink, buildMetadata } from "@/lib/site-config";
 import { segurosProdutos, getSeguroProduto, type CoberturaIcon } from "@/lib/seguros-produtos";
 import {
@@ -158,7 +159,7 @@ export default async function SeguroProdutoPage({
             <div className="mt-4 space-y-4">
               {secao.paragrafos.map((texto) => (
                 <p key={texto} className="text-base leading-relaxed text-[var(--color-ink)]/75">
-                  {texto}
+                  {renderInline(texto)}
                 </p>
               ))}
             </div>

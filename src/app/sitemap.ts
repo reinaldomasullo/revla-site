@@ -39,6 +39,12 @@ const EXTERIOR_LAST_MODIFIED = new Date("2026-11-09");
 
 const GEO_AEO_20SET_SLUGS = new Set(["vida", "auto", "residencial", "viagem"]);
 
+// 15/11: Pier (celular e auto) nas páginas de produto, com link para o novo
+// artigo do blog, e "Leia também" com artigo novo nas 6 páginas de operadora
+// de plano de saúde. Atualize junto com as mudanças de conteúdo dessas páginas.
+const ARTIGOS_15NOV_LAST_MODIFIED = new Date("2026-11-15");
+const SEGUROS_PIER_SLUGS = new Set(["celular", "auto"]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
@@ -171,7 +177,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const segurosProdutoRoutes = segurosProdutos.map((produto) => ({
     url: `${siteConfig.url}/seguros/${produto.slug}`,
-    lastModified: GEO_AEO_20SET_SLUGS.has(produto.slug) ? GEO_AEO_20SET_LAST_MODIFIED : STRATEGY1_LAST_MODIFIED,
+    lastModified: SEGUROS_PIER_SLUGS.has(produto.slug)
+      ? ARTIGOS_15NOV_LAST_MODIFIED
+      : GEO_AEO_20SET_SLUGS.has(produto.slug)
+        ? GEO_AEO_20SET_LAST_MODIFIED
+        : STRATEGY1_LAST_MODIFIED,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -202,7 +212,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const planoDeSaudeOperadoraRoutes = operadoras.map((op) => ({
     url: `${siteConfig.url}/plano-de-saude/${op.slug}`,
-    lastModified: PLANO_SAUDE_LAST_MODIFIED,
+    lastModified: ARTIGOS_15NOV_LAST_MODIFIED,
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));

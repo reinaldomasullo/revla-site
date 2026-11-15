@@ -753,7 +753,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "A Revla é uma corretora de seguros registrada na SUSEP e compara propostas de seguradoras parceiras — como Porto Seguro, Tokio Marine, MAG Mongeral, Icatu, AZOS e PASI — para te ajudar a entender não só qual é mais barata, mas qual cobertura realmente faz sentido para o seu perfil, seu carro e sua região. Como corretora, a Revla não vende apólice própria: ela trabalha para você, comparando condições, franquias e coberturas antes de indicar a melhor opção. Se o seguro auto é parte de uma estratégia maior de proteção patrimonial e familiar, você também pode explorar a página de [seguros](/seguros) da Revla, ou conhecer melhor o trabalho do corretor [Reinaldo Masullo](/reinaldo-masullo), responsável por orientar essas escolhas caso a caso.",
+        text: "A Revla é uma corretora de seguros registrada na SUSEP e compara propostas de seguradoras parceiras — como Porto Seguro, Tokio Marine, MAG Mongeral, Icatu, AZOS, PASI e [Pier](/blog/seguro-pier-celular-e-auto-o-que-cobre-e-como-funciona) — para te ajudar a entender não só qual é mais barata, mas qual cobertura realmente faz sentido para o seu perfil, seu carro e sua região. Como corretora, a Revla não vende apólice própria: ela trabalha para você, comparando condições, franquias e coberturas antes de indicar a melhor opção. Se o seguro auto é parte de uma estratégia maior de proteção patrimonial e familiar, você também pode explorar a página de [seguros](/seguros) da Revla, ou conhecer melhor o trabalho do corretor [Reinaldo Masullo](/reinaldo-masullo), responsável por orientar essas escolhas caso a caso.",
       },
       {
         type: "p",
@@ -5816,7 +5816,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "A Revla Corretora de Seguros, registrada na SUSEP sob o nº 232150320, cota o seguro celular com as principais seguradoras do mercado, buscando a cobertura com melhor custo-benefício para o seu aparelho. Veja mais detalhes na página de [seguro celular](/seguros/celular) da Revla, no catálogo completo de [seguros](/seguros) ou fale com [Reinaldo Masullo](/reinaldo-masullo) para uma cotação gratuita, sem compromisso.",
+        text: "A Revla Corretora de Seguros, registrada na SUSEP sob o nº 232150320, cota o seguro celular com as principais seguradoras do mercado, buscando a cobertura com melhor custo-benefício para o seu aparelho. Entre elas está a Pier, que, segundo o site da própria seguradora, cobre também o furto simples: veja [o que cobre o seguro Pier](/blog/seguro-pier-celular-e-auto-o-que-cobre-e-como-funciona). Veja mais detalhes na página de [seguro celular](/seguros/celular) da Revla, no catálogo completo de [seguros](/seguros) ou fale com [Reinaldo Masullo](/reinaldo-masullo) para uma cotação gratuita, sem compromisso.",
       },
     ],
     faq: [
