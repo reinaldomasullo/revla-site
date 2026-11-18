@@ -95,6 +95,10 @@ export default function Footer() {
     }
   };
 
+  // A página /links é uma página estilo Linktree, de layout próprio —
+  // não exibe o footer padrão do site.
+  if (pathname === "/links") return null;
+
   return (
     <footer className="mt-auto border-t border-[var(--color-border)] bg-[var(--color-primary)] text-white">
       <div className="h-1.5 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-gradient)] to-[var(--color-blue-gradient)]" />

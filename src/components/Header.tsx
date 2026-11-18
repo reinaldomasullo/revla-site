@@ -150,6 +150,10 @@ export default function Header() {
       active ? "text-[var(--color-primary)]" : "text-[var(--color-ink)]"
     }`;
 
+  // A página /links é uma página estilo Linktree, de layout próprio
+  // (fundo escuro, sem navegação) — não exibe o header padrão do site.
+  if (pathname === "/links") return null;
+
   return (
     <>
       <a

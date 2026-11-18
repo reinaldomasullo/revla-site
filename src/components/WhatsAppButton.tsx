@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { whatsappLink } from "@/lib/site-config";
 
 export default function WhatsAppButton({
@@ -5,6 +8,12 @@ export default function WhatsAppButton({
 }: {
   message?: string;
 }) {
+  const pathname = usePathname();
+
+  // A página /links já tem o próprio botão de WhatsApp em destaque —
+  // não duplica o atalho flutuante do site.
+  if (pathname === "/links") return null;
+
   return (
     <div role="complementary" aria-label="Atalho de contato pelo WhatsApp">
       <a
