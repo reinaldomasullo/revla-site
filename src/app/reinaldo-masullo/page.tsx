@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/reinaldo-masullo.png",
-        width: 800,
-        height: 1200,
+        width: 1254,
+        height: 1254,
         alt: "Reinaldo Masullo, especialista em planejamento patrimonial na Revla Corretora",
       },
     ],
@@ -133,6 +133,15 @@ export default function ReinaldoMasulloPage() {
               <CTAButton href={`tel:+${siteConfig.whatsapp}`} variant="ghost">
                 {siteConfig.whatsappDisplay}
               </CTAButton>
+              <CTAButton href="/agendar" variant="ghost">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+                  <path d="M3 9.5h18" />
+                  <path d="M8 3v3" />
+                  <path d="M16 3v3" />
+                </svg>
+                Agendar uma conversa
+              </CTAButton>
             </div>
           </div>
 
@@ -144,8 +153,8 @@ export default function ReinaldoMasulloPage() {
             <Image
               src="/images/reinaldo-masullo.webp"
               alt="Reinaldo Masullo, especialista em planejamento patrimonial na Revla Corretora"
-              width={800}
-              height={1200}
+              width={1000}
+              height={1000}
               sizes="(min-width: 640px) 320px, 280px"
               priority
               className="relative mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-xs"

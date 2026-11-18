@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/reinaldo-masullo.png",
-        width: 800,
-        height: 1200,
+        width: 1254,
+        height: 1254,
         alt: "Reinaldo Masullo, especialista em planejamento patrimonial na Revla Corretora",
       },
     ],
@@ -143,15 +143,16 @@ export default function LinksPage() {
         </div>
 
         <div className="relative mb-5 h-[148px] w-[148px]">
-          <div className="absolute -inset-[6px] rounded-full bg-[conic-gradient(from_210deg,#4fa3dc,#16a38c,#4fa3dc)]" />
-          <div className="relative h-[148px] w-[148px] overflow-hidden rounded-full border-[3px] border-[#061227] bg-[var(--color-primary)] shadow-[0_18px_40px_-16px_rgba(0,0,0,0.55)]">
+          {/* A própria foto já traz um anel dourado — sem anel extra por cima,
+              só uma sombra suave pra dar profundidade. */}
+          <div className="relative h-[148px] w-[148px] overflow-hidden rounded-full bg-[var(--color-primary)] shadow-[0_18px_40px_-16px_rgba(0,0,0,0.55)]">
             <Image
               src="/images/reinaldo-masullo.png"
               alt="Reinaldo Masullo"
-              width={296}
-              height={444}
+              width={400}
+              height={400}
               priority
-              className="h-full w-full object-cover object-[center_18%]"
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
@@ -181,6 +182,19 @@ export default function LinksPage() {
             <path d="M20.5 3.5A11.8 11.8 0 0012 .1 11.9 11.9 0 00.3 12a11.8 11.8 0 001.6 6L0 24l6.2-1.6A12 12 0 0012 23.9 11.9 11.9 0 0023.9 12a11.8 11.8 0 00-3.4-8.5zM12 21.9c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 01-1.5-5.3A10 10 0 0112 2a9.9 9.9 0 017 2.9 9.8 9.8 0 012.9 7A10 10 0 0112 21.9z" />
           </svg>
           Falar no WhatsApp
+        </a>
+
+        <a
+          href="/agendar"
+          className="mb-6 flex w-full items-center justify-center gap-2.5 rounded-[14px] border border-white/15 bg-white/[0.06] px-5 py-[15px] text-[15.5px] font-bold text-white backdrop-blur-sm transition-transform hover:-translate-y-0.5 hover:border-[#c9a24b]/60"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0" aria-hidden="true">
+            <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+            <path d="M3 9.5h18" />
+            <path d="M8 3v3" />
+            <path d="M16 3v3" />
+          </svg>
+          Agendar uma conversa
         </a>
 
         <div className="mb-8 flex w-full flex-col gap-[11px]">

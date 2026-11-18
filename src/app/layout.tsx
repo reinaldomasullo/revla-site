@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SchedulerButton from "@/components/SchedulerButton";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MetaPixel from "@/components/MetaPixel";
@@ -133,6 +134,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        <SchedulerButton />
         <CookieConsent />
         <GoogleAnalytics />
         <MetaPixel />
