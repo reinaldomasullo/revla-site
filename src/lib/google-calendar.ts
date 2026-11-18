@@ -1,4 +1,5 @@
 import { google } from "googleapis";
+import { enviarAvisoReserva } from "@/lib/email-aviso";
 
 /**
  * Integração com o Google Agenda para o agendador de reuniões (/components
@@ -207,14 +208,14 @@ export async function criarReserva(
     ? `${interesseLabel} - ${detalhe}`
     : interesseLabel;
 
+  // OBS: uma service account sem "domain-wide delegation" (indisponível pra
+  // Gmail pessoal) não pode convidar "attendees" nem usar sendUpdates — a
+  // API rejeita com "Service accounts cannot invite attendees without
+  // Domain-Wide Delegation of Authority". Por isso o aviso por e-mail dos
+  // novos agendamentos é mandado à parte, via SMTP do Gmail (ver
+  // email-aviso.ts), e não por um convite de evento.
   await calendar.events.insert({
     calendarId,
-    // sendUpdates: "all" + o dono da agenda como attendee faz o Google
-    // Agenda mandar um e-mail de verdade pra revlacorretora@gmail.com a
-    // cada novo agendamento, sem depender da configuração "Novos eventos"
-    // (que é controlada por "Adicionar convites à minha agenda" e não dá
-    // pra alterar por aqui).
-    sendUpdates: "all",
     requestBody: {
       summary: `Reunião: ${input.nome} (${interesseCompleto})`,
       description: [
@@ -225,8 +226,17 @@ export async function criarReserva(
       ].join("\n"),
       start: { dateTime: slotStart.toISOString(), timeZone: TIMEZONE },
       end: { dateTime: slotEnd.toISOString(), timeZone: TIMEZONE },
-      attendees: [{ email: calendarId, responseStatus: "accepted" }],
     },
+  });
+
+  // O e-mail é "melhor esforço": se falhar, não deve derrubar a resposta de
+  // sucesso pro usuário que agendou (o evento já foi criado na agenda).
+  await enviarAvisoReserva({
+    nome: input.nome,
+    whatsapp: input.whatsapp,
+    interesseCompleto,
+    data: input.data,
+    horario: input.horario,
   });
 
   return { ok: true, inicio: slotStart.toISOString() };
